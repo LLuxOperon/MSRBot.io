@@ -774,6 +774,9 @@
               },
               "overridden": {
                 "type": "boolean"
+              },
+              "excludeChanges": {
+                "type": "boolean"
               }
             },
             "additionalProperties": false
