@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2025-10-24T19:44:07.069Z",
+  "generatedAt": "2025-10-25T23:47:26.969Z",
   "sourcePath": "src/main/data/documents.json",
-  "sourceHash": "sha256:7898d4f4d6bcbbe152589ae8e1bd8a02f5af7dd8d0accff620dbd02067bd71eb",
+  "sourceHash": "sha256:d1e2c06179fcb9adf5afc595c79f414f935e43028e4041e820fcf27012e7601e",
   "publisherCounts": {
     "total": 1909,
     "counts": {
@@ -2630,6 +2630,43 @@
           }
         ]
       },
+      "MULTIPLE_LATEST_FLAGS": {
+        "count": 8,
+        "examples": [
+          {
+            "lineage": "SMPTE|RDD|48|",
+            "flag": "MULTIPLE_LATEST_FLAGS"
+          },
+          {
+            "lineage": "SMPTE|ST|331|",
+            "flag": "MULTIPLE_LATEST_FLAGS"
+          },
+          {
+            "lineage": "SMPTE|ST|335|",
+            "flag": "MULTIPLE_LATEST_FLAGS"
+          },
+          {
+            "lineage": "SMPTE|ST|338|",
+            "flag": "MULTIPLE_LATEST_FLAGS"
+          },
+          {
+            "lineage": "SMPTE|ST|385|",
+            "flag": "MULTIPLE_LATEST_FLAGS"
+          },
+          {
+            "lineage": "SMPTE|ST|430|4",
+            "flag": "MULTIPLE_LATEST_FLAGS"
+          },
+          {
+            "lineage": "SMPTE|ST|430|7",
+            "flag": "MULTIPLE_LATEST_FLAGS"
+          },
+          {
+            "lineage": "SMPTE|ST|430|9",
+            "flag": "MULTIPLE_LATEST_FLAGS"
+          }
+        ]
+      },
       "LATEST_FLAG_BEFORE_DATE": {
         "count": 8,
         "examples": [
@@ -2664,48 +2701,6 @@
           {
             "lineage": "SMPTE|ST|430|9",
             "flag": "LATEST_FLAG_BEFORE_DATE"
-          }
-        ]
-      },
-      "LATEST_FLAG_CONFLICT_WITH_GRAPH": {
-        "count": 7,
-        "examples": [
-          {
-            "lineage": "SMPTE|RDD|48|",
-            "flag": "LATEST_FLAG_CONFLICT_WITH_GRAPH:any:SMPTE.RDD48.2018<>SMPTE.RDD48.2018Am1.2022"
-          },
-          {
-            "lineage": "SMPTE|ST|331|",
-            "flag": "LATEST_FLAG_CONFLICT_WITH_GRAPH:any:SMPTE.ST331.2011<>SMPTE.ST331.2011Am1.2023"
-          },
-          {
-            "lineage": "SMPTE|ST|335|",
-            "flag": "LATEST_FLAG_CONFLICT_WITH_GRAPH:any:SMPTE.ST335.2012<>SMPTE.ST335.2012Am1.2019"
-          },
-          {
-            "lineage": "SMPTE|ST|338|",
-            "flag": "LATEST_FLAG_CONFLICT_WITH_GRAPH:any:SMPTE.ST338.2016<>SMPTE.ST338.2016Am1.2019"
-          },
-          {
-            "lineage": "SMPTE|ST|385|",
-            "flag": "LATEST_FLAG_CONFLICT_WITH_GRAPH:any:SMPTE.ST385.2012<>SMPTE.ST385.2012Am1.2022"
-          },
-          {
-            "lineage": "SMPTE|ST|430|4",
-            "flag": "LATEST_FLAG_CONFLICT_WITH_GRAPH:any:SMPTE.ST430-4.2008<>SMPTE.ST430-4.2008Am1.2011"
-          },
-          {
-            "lineage": "SMPTE|ST|430|7",
-            "flag": "LATEST_FLAG_CONFLICT_WITH_GRAPH:any:SMPTE.ST430-7.2008<>SMPTE.ST430-7.2008Am1.2011"
-          }
-        ]
-      },
-      "MULTIPLE_LATEST_FLAGS": {
-        "count": 1,
-        "examples": [
-          {
-            "lineage": "SMPTE|ST|430|9",
-            "flag": "MULTIPLE_LATEST_FLAGS"
           }
         ]
       },
@@ -23410,8 +23405,8 @@
           "docId": "SMPTE.RDD48.2018Am1.2022",
           "publicationDate": "2022-02-22",
           "releaseTag": "20220222-am1-pub",
-          "statusActive": false,
-          "statusSuperseded": true,
+          "statusActive": true,
+          "statusSuperseded": false,
           "statusWithdrawn": false,
           "statusStabilized": false,
           "statusAmended": false,
@@ -23419,8 +23414,8 @@
         }
       ],
       "latestBaseId": "SMPTE.RDD48.2018",
-      "latestAnyId": "SMPTE.RDD48.2018",
-      "latestDateKey": "20181203",
+      "latestAnyId": "SMPTE.RDD48.2018Am1.2022",
+      "latestDateKey": "20220222",
       "hasActiveBase": true,
       "hasWithdrawn": false,
       "hasStabilized": false,
@@ -23428,8 +23423,8 @@
       "latestSupersededBaseId": null,
       "prevBaseId": null,
       "flagInconsistencies": [
-        "LATEST_FLAG_BEFORE_DATE",
-        "LATEST_FLAG_CONFLICT_WITH_GRAPH:any:SMPTE.RDD48.2018<>SMPTE.RDD48.2018Am1.2022"
+        "MULTIPLE_LATEST_FLAGS",
+        "LATEST_FLAG_BEFORE_DATE"
       ],
       "counts": {
         "bases": 1,
@@ -39823,8 +39818,8 @@
         }
       ],
       "latestBaseId": "SMPTE.ST331.2011",
-      "latestAnyId": "SMPTE.ST331.2011",
-      "latestDateKey": "20110512",
+      "latestAnyId": "SMPTE.ST331.2011Am1.2023",
+      "latestDateKey": "20231010",
       "hasActiveBase": true,
       "hasWithdrawn": false,
       "hasStabilized": false,
@@ -39832,8 +39827,8 @@
       "latestSupersededBaseId": "SMPTE.ST331.2004",
       "prevBaseId": "SMPTE.ST331.2004",
       "flagInconsistencies": [
-        "LATEST_FLAG_BEFORE_DATE",
-        "LATEST_FLAG_CONFLICT_WITH_GRAPH:any:SMPTE.ST331.2011<>SMPTE.ST331.2011Am1.2023"
+        "MULTIPLE_LATEST_FLAGS",
+        "LATEST_FLAG_BEFORE_DATE"
       ],
       "counts": {
         "bases": 2,
@@ -40036,8 +40031,8 @@
           "docId": "SMPTE.ST335.2012Am1.2019",
           "publicationDate": "2019-01-01",
           "releaseTag": "20190101-am1-pub",
-          "statusActive": false,
-          "statusSuperseded": true,
+          "statusActive": true,
+          "statusSuperseded": false,
           "statusWithdrawn": false,
           "statusStabilized": false,
           "statusAmended": false,
@@ -40045,8 +40040,8 @@
         }
       ],
       "latestBaseId": "SMPTE.ST335.2012",
-      "latestAnyId": "SMPTE.ST335.2012",
-      "latestDateKey": "20120113",
+      "latestAnyId": "SMPTE.ST335.2012Am1.2019",
+      "latestDateKey": "20190101",
       "hasActiveBase": true,
       "hasWithdrawn": false,
       "hasStabilized": false,
@@ -40054,8 +40049,8 @@
       "latestSupersededBaseId": "SMPTE.ST335.2001",
       "prevBaseId": "SMPTE.ST335.2001",
       "flagInconsistencies": [
-        "LATEST_FLAG_BEFORE_DATE",
-        "LATEST_FLAG_CONFLICT_WITH_GRAPH:any:SMPTE.ST335.2012<>SMPTE.ST335.2012Am1.2019"
+        "MULTIPLE_LATEST_FLAGS",
+        "LATEST_FLAG_BEFORE_DATE"
       ],
       "counts": {
         "bases": 2,
@@ -40221,8 +40216,8 @@
           "docId": "SMPTE.ST338.2016Am1.2019",
           "publicationDate": "2019-10-18",
           "releaseTag": "20191018-am1-pub",
-          "statusActive": false,
-          "statusSuperseded": true,
+          "statusActive": true,
+          "statusSuperseded": false,
           "statusWithdrawn": false,
           "statusStabilized": false,
           "statusAmended": false,
@@ -40230,8 +40225,8 @@
         }
       ],
       "latestBaseId": "SMPTE.ST338.2016",
-      "latestAnyId": "SMPTE.ST338.2016",
-      "latestDateKey": "20160715",
+      "latestAnyId": "SMPTE.ST338.2016Am1.2019",
+      "latestDateKey": "20191018",
       "hasActiveBase": true,
       "hasWithdrawn": false,
       "hasStabilized": false,
@@ -40239,8 +40234,8 @@
       "latestSupersededBaseId": "SMPTE.ST338.2015",
       "prevBaseId": "SMPTE.ST338.2015",
       "flagInconsistencies": [
-        "LATEST_FLAG_BEFORE_DATE",
-        "LATEST_FLAG_CONFLICT_WITH_GRAPH:any:SMPTE.ST338.2016<>SMPTE.ST338.2016Am1.2019"
+        "MULTIPLE_LATEST_FLAGS",
+        "LATEST_FLAG_BEFORE_DATE"
       ],
       "counts": {
         "bases": 4,
@@ -42498,8 +42493,8 @@
           "docId": "SMPTE.ST385.2012Am1.2022",
           "publicationDate": "2022-08-17",
           "releaseTag": "20220817-am1-pub",
-          "statusActive": false,
-          "statusSuperseded": true,
+          "statusActive": true,
+          "statusSuperseded": false,
           "statusWithdrawn": false,
           "statusStabilized": false,
           "statusAmended": false,
@@ -42507,8 +42502,8 @@
         }
       ],
       "latestBaseId": "SMPTE.ST385.2012",
-      "latestAnyId": "SMPTE.ST385.2012",
-      "latestDateKey": "20120605",
+      "latestAnyId": "SMPTE.ST385.2012Am1.2022",
+      "latestDateKey": "20220817",
       "hasActiveBase": true,
       "hasWithdrawn": false,
       "hasStabilized": false,
@@ -42516,8 +42511,8 @@
       "latestSupersededBaseId": "SMPTE.ST385.2004",
       "prevBaseId": "SMPTE.ST385.2004",
       "flagInconsistencies": [
-        "LATEST_FLAG_BEFORE_DATE",
-        "LATEST_FLAG_CONFLICT_WITH_GRAPH:any:SMPTE.ST385.2012<>SMPTE.ST385.2012Am1.2022"
+        "MULTIPLE_LATEST_FLAGS",
+        "LATEST_FLAG_BEFORE_DATE"
       ],
       "counts": {
         "bases": 2,
@@ -45611,8 +45606,8 @@
         }
       ],
       "latestBaseId": "SMPTE.ST430-4.2008",
-      "latestAnyId": "SMPTE.ST430-4.2008",
-      "latestDateKey": "20080303",
+      "latestAnyId": "SMPTE.ST430-4.2008Am1.2011",
+      "latestDateKey": "20111205",
       "hasActiveBase": true,
       "hasWithdrawn": false,
       "hasStabilized": false,
@@ -45620,8 +45615,8 @@
       "latestSupersededBaseId": null,
       "prevBaseId": null,
       "flagInconsistencies": [
-        "LATEST_FLAG_BEFORE_DATE",
-        "LATEST_FLAG_CONFLICT_WITH_GRAPH:any:SMPTE.ST430-4.2008<>SMPTE.ST430-4.2008Am1.2011"
+        "MULTIPLE_LATEST_FLAGS",
+        "LATEST_FLAG_BEFORE_DATE"
       ],
       "counts": {
         "bases": 1,
@@ -45755,7 +45750,7 @@
           "publicationDate": "2011-12-05",
           "releaseTag": "20111205-am1-pub",
           "statusActive": false,
-          "statusSuperseded": true,
+          "statusSuperseded": false,
           "statusWithdrawn": true,
           "statusStabilized": false,
           "statusAmended": false,
@@ -45763,8 +45758,8 @@
         }
       ],
       "latestBaseId": "SMPTE.ST430-7.2008",
-      "latestAnyId": "SMPTE.ST430-7.2008",
-      "latestDateKey": "20081028",
+      "latestAnyId": "SMPTE.ST430-7.2008Am1.2011",
+      "latestDateKey": "20111205",
       "hasActiveBase": false,
       "hasWithdrawn": true,
       "hasStabilized": false,
@@ -45772,8 +45767,8 @@
       "latestSupersededBaseId": null,
       "prevBaseId": null,
       "flagInconsistencies": [
-        "LATEST_FLAG_BEFORE_DATE",
-        "LATEST_FLAG_CONFLICT_WITH_GRAPH:any:SMPTE.ST430-7.2008<>SMPTE.ST430-7.2008Am1.2011"
+        "MULTIPLE_LATEST_FLAGS",
+        "LATEST_FLAG_BEFORE_DATE"
       ],
       "counts": {
         "bases": 1,
