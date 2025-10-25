@@ -396,6 +396,79 @@ function injectMeta(doc, field, source, mode, oldValue) {
   doc[`${field}$meta`] = meta;
 }
 
+// --- LOCKING HELPERS ($meta.excludeOverwrite / $meta.excludeChanges) ---
+// Read adjacent meta for a dot path (e.g., "status.active" -> parent["active$meta"])
+function _getAdjacentMeta(root, path) {
+  const parts = String(path).split('.');
+  let obj = root;
+  for (let i = 0; i < parts.length - 1; i++) {
+    obj = obj && obj[parts[i]];
+    if (!obj || typeof obj !== 'object') return null;
+  }
+  const key = parts[parts.length - 1];
+  const metaKey = key + '$meta';
+  return (obj && typeof obj === 'object') ? obj[metaKey] || null : null;
+}
+
+// Should we allow updating this path? True = allowed, False = locked
+function canUpdateFieldWithMetaGuard(doc, path, { allowOverride = false } = {}) {
+  if (allowOverride) return true;
+  const meta = _getAdjacentMeta(doc, path);
+  if (!meta || typeof meta !== 'object') return true;
+  // Lock semantics: either flag name is accepted; if true, block writes.
+  if (meta.excludeOverwrite === true || meta.excludeChanges === true) return false;
+  return true;
+}
+
+// Central updater that blocks when the adjacent $meta has excludeOverwrite / excludeChanges.
+// Also refreshes descriptive $meta.source / $meta.updated ONLY when a change succeeds.
+function updateFieldGuarded(doc, path, newValue, {
+  incomingSource = 'unknown',
+  allowOverride = false,
+  log = true
+} = {}) {
+  // Resolve parent + key
+  const parts = String(path).split('.');
+  let parent = doc;
+  for (let i = 0; i < parts.length - 1; i++) {
+    parent = parent?.[parts[i]];
+    if (!parent || typeof parent !== 'object') {
+      return { updated: false, reason: 'no-parent' };
+    }
+  }
+  const key = parts[parts.length - 1];
+  const metaKey = key + '$meta';
+  const meta = parent?.[metaKey] || null;
+
+  // Hard lock from adjacent $meta
+  const locked = !allowOverride && !!(meta && (meta.excludeOverwrite === true || meta.excludeChanges === true));
+  if (locked) {
+    if (log) {
+      try {
+        fs.appendFileSync(prLogPath, `skipped update: ${path} — locked by ${meta.excludeOverwrite === true ? 'excludeOverwrite' : 'excludeChanges'} in $meta\n`, 'utf8');
+        fs.appendFileSync(fullDetailsPath, `skipped update: ${path} — locked by ${meta.excludeOverwrite === true ? 'excludeOverwrite' : 'excludeChanges'} in $meta\n`, 'utf8');
+      } catch {}
+    }
+    return { updated: false, reason: 'locked' };
+  }
+
+  // Avoid churn
+  const oldValue = parent[key];
+  const same = JSON.stringify(oldValue) === JSON.stringify(newValue);
+  if (same) return { updated: false, reason: 'no-change' };
+
+  // Apply
+  parent[key] = newValue;
+
+  // Refresh descriptive meta only when base field changed and meta exists
+  if (meta && typeof meta === 'object') {
+    if (meta.source !== incomingSource) meta.source = incomingSource;
+    try { meta.updated = new Date().toISOString(); } catch (_) {}
+  }
+
+  return { updated: true, oldValue, newValue };
+}
+
 function mdEscape(val) {
   if (val === null || val === undefined) return String(val);
   const s = String(val);
@@ -440,7 +513,7 @@ function injectMetaForDoc(doc, source, mode, changedFieldsMap = {}) {
   }
 }
 
-function inferMetadataFromPath(rootUrl, releaseTag, baseReleases = []) {
+function inferMetadataFromPath(rootUrl, releaseTag, baseReleases = [], latestTag = null) {
 
   const match = rootUrl.match(/doc\/([^/]+)\/$/);
   const pubTypeNum = match ? match[1].toUpperCase() : null;
@@ -481,6 +554,16 @@ function inferMetadataFromPath(rootUrl, releaseTag, baseReleases = []) {
     }
   }
 
+  // Determine "latest" for status:
+  // - If the latestTag is an amendment (e.g., 20220222-am1-pub), the BASE it amends should still be considered latest.
+  // - Only a newer BASE release supersedes the previous base.
+  const lastBase = baseReleases[baseReleases.length - 1];
+  const isAmendmentLatest = latestTag ? /-am\d+-/i.test(latestTag) : false;
+  const isThisBase = !/-am\d+-/i.test(releaseTag);
+  const isLatestOverall =
+    (latestTag ? (releaseTag === latestTag) : (releaseTag === lastBase)) ||
+    (isThisBase && isAmendmentLatest && releaseTag === lastBase);
+
   return {
     docId,
     docLabel,
@@ -494,9 +577,9 @@ function inferMetadataFromPath(rootUrl, releaseTag, baseReleases = []) {
     docNumber,
     docPart,
     status: {
-      active: releaseTag === baseReleases[baseReleases.length - 1],
-      latestVersion: releaseTag === baseReleases[baseReleases.length - 1],
-      superseded: releaseTag !== baseReleases[baseReleases.length - 1]
+      active: isLatestOverall,
+      latestVersion: isLatestOverall,
+      superseded: !isLatestOverall
     }
   };
 }
@@ -687,7 +770,12 @@ const extractFromUrl = async (rootUrl) => {
   let countHTML = 0, countPDF = 0, countNoIframe = 0;
 
   for (const releaseTag of folderLinks) {
-    const isLatest = releaseTag === latestTag;
+    const lastBase = baseReleases[baseReleases.length - 1];
+    const isAmendmentLatest = /-am\d+-/i.test(latestTag);
+    const isThisBase = !/-am\d+-/i.test(releaseTag);
+    const isLatestForStatus =
+      (releaseTag === latestTag) ||
+      (isThisBase && isAmendmentLatest && releaseTag === lastBase);
     const sourceUrl = `${rootUrl}${releaseTag}`
 
     console.log(`\n🔍 Processing ${sourceUrl}/`);
@@ -726,7 +814,7 @@ const extractFromUrl = async (rootUrl) => {
     if (iframeSrc && /\.pdf$/i.test(iframeSrc)) {
       try {
         // Baseline from path inference (keeps your releaseTag/date/publisher etc.)
-        const inferred = inferMetadataFromPath(rootUrl, releaseTag, baseReleases);
+        const inferred = inferMetadataFromPath(rootUrl, releaseTag, baseReleases, latestTag);
         // Title: prefer #designator (strip leading designator chunk), fallback to wrapper <title>
         let docTitle = null;
         if (wrapperDesignator) {
@@ -851,13 +939,13 @@ const extractFromUrl = async (rootUrl) => {
         publisher: pubPublisher,
         href,
         repo: repoUrl,
-        status: {
-          active: isLatest && pubStage === 'PUB' && pubState === 'pub',
-          latestVersion: isLatest,
-          stage: pubStage,
-          state: pubState,
-          superseded: !isLatest
-        },
+      status: {
+        active: isLatestForStatus && pubStage === 'PUB' && pubState === 'pub',
+        latestVersion: isLatestForStatus,
+        stage: pubStage,
+        state: pubState,
+        superseded: !isLatestForStatus
+      },
         ...(hasRefsOut ? { references: refsOut } : {}),
         ...(revisionOf && { revisionOf })
       };
@@ -873,7 +961,7 @@ const extractFromUrl = async (rootUrl) => {
       if (err.response?.status === 403 || err.response?.status === 404) {
         console.warn(`⚠️ No index.html found at ${sourceUrl}/`);
 
-        const inferred = inferMetadataFromPath(rootUrl, releaseTag, baseReleases);
+        const inferred = inferMetadataFromPath(rootUrl, releaseTag, baseReleases, latestTag);
         Object.defineProperty(inferred, '__sourceUrl', {
           value: `${sourceUrl}/`,
           enumerable: false
@@ -1195,20 +1283,52 @@ for (const doc of results) {
           const fieldSource = doc.__inferred ? 'inferred' : 'parsed';
 
           if (!hasNormNew && !hasBiblNew) {
-            delete existingDoc.references;
-            delete newValues.references;
+            // Guarded delete of entire references object
+            if (canUpdateFieldWithMetaGuard(existingDoc, 'references')) {
+              delete existingDoc.references;
+              delete newValues.references;
+            }
           } else {
-            existingDoc.references = {
-              ...(hasNormNew ? { normative: newRefs.normative } : {}),
-              ...(hasBiblNew ? { bibliographic: newRefs.bibliographic } : {})
-            };
-            newValues.references = existingDoc.references;
+            // Ensure container
+            if (!existingDoc.references) existingDoc.references = {};
 
             if (hasNormNew && normChanged) {
-              injectMeta(existingDoc.references, 'normative', fieldSource, 'update', oldRefs.normative || []);
+              const resNorm = updateFieldGuarded(existingDoc, 'references.normative', newRefs.normative, { incomingSource: fieldSource, log: true });
+              if (resNorm.updated) {
+                if (!newValues.references) newValues.references = {};
+                newValues.references.normative = newRefs.normative;
+                injectMeta(existingDoc.references, 'normative', fieldSource, 'update', oldRefs.normative || []);
+              }
+            } else if (!hasNormNew && Array.isArray(oldRefs.normative)) {
+              if (canUpdateFieldWithMetaGuard(existingDoc, 'references.normative')) {
+                delete existingDoc.references.normative;
+                delete existingDoc.references['normative$meta'];
+              }
             }
+
             if (hasBiblNew && biblChanged) {
-              injectMeta(existingDoc.references, 'bibliographic', fieldSource, 'update', oldRefs.bibliographic || []);
+              const resBibl = updateFieldGuarded(existingDoc, 'references.bibliographic', newRefs.bibliographic, { incomingSource: fieldSource, log: true });
+              if (resBibl.updated) {
+                if (!newValues.references) newValues.references = {};
+                newValues.references.bibliographic = newRefs.bibliographic;
+                injectMeta(existingDoc.references, 'bibliographic', fieldSource, 'update', oldRefs.bibliographic || []);
+              }
+            } else if (!hasBiblNew && Array.isArray(oldRefs.bibliographic)) {
+              if (canUpdateFieldWithMetaGuard(existingDoc, 'references.bibliographic')) {
+                delete existingDoc.references.bibliographic;
+                delete existingDoc.references['bibliographic$meta'];
+              }
+            }
+
+            // Clean container if both arrays gone
+            const hasAny =
+              (existingDoc.references && Array.isArray(existingDoc.references.normative) && existingDoc.references.normative.length) ||
+              (existingDoc.references && Array.isArray(existingDoc.references.bibliographic) && existingDoc.references.bibliographic.length);
+            if (!hasAny) {
+              if (canUpdateFieldWithMetaGuard(existingDoc, 'references')) {
+                delete existingDoc.references;
+                delete newValues.references;
+              }
             }
           }
         }
@@ -1246,14 +1366,14 @@ for (const doc of results) {
               'versionless'
             ];
             for (const field of statusFields) {
-              if (newVal[field] !== undefined && existingDoc.status[field] !== newVal[field]) {
+              if (newVal[field] !== undefined) {
                 const oldStatusVal = existingDoc.status[field];
-                existingDoc.status[field] = newVal[field];
                 const fieldSource = resolvedStatusFields.includes(field) ? 'resolved' : 'parsed';
-                // Pass fully qualified name for correct metaConfig lookup
-                injectMeta(existingDoc.status, field, fieldSource, 'update', oldStatusVal);
-                if (!changedFields.includes('status')) changedFields.push('status');
-
+                const res = updateFieldGuarded(existingDoc, `status.${field}`, newVal[field], { incomingSource: fieldSource, log: true });
+                if (res.updated) {
+                  injectMeta(existingDoc.status, field, fieldSource, 'update', oldStatusVal);
+                  if (!changedFields.includes('status')) changedFields.push('status');
+                }
               }
             }
             // Handle amendedBy (array) separately
@@ -1263,15 +1383,18 @@ for (const doc of results) {
               const same = JSON.stringify(oldAB) === JSON.stringify(newAB);
               if (!same) {
                 if (newAB.length > 0) {
-                  existingDoc.status.amendedBy = newAB;
-                  const fieldSourceAB = 'parsed';
-                  injectMeta(existingDoc.status, 'amendedBy', fieldSourceAB, 'update', oldAB);
+                  const resAB = updateFieldGuarded(existingDoc, 'status.amendedBy', newAB, { incomingSource: 'parsed', log: true });
+                  if (resAB.updated) {
+                    injectMeta(existingDoc.status, 'amendedBy', 'parsed', 'update', oldAB);
+                    if (!changedFields.includes('status')) changedFields.push('status');
+                  }
                 } else {
-                  // Drop empty arrays and their meta
-                  delete existingDoc.status.amendedBy;
-                  delete existingDoc.status['amendedBy$meta'];
+                  if (canUpdateFieldWithMetaGuard(existingDoc, 'status.amendedBy')) {
+                    delete existingDoc.status.amendedBy;
+                    delete existingDoc.status['amendedBy$meta'];
+                    if (!changedFields.includes('status')) changedFields.push('status');
+                  }
                 }
-                if (!changedFields.includes('status')) changedFields.push('status');
               }
             }
             // Handle supersededBy (array) similarly
@@ -1281,14 +1404,18 @@ for (const doc of results) {
               const sameSB = JSON.stringify(oldSB) === JSON.stringify(newSB);
               if (!sameSB) {
                 if (newSB.length > 0) {
-                  existingDoc.status.supersededBy = newSB;
-                  const fieldSourceSB = 'resolved'; // derived from cross-version wiring logic
-                  injectMeta(existingDoc.status, 'supersededBy', fieldSourceSB, 'update', oldSB);
+                  const resSB = updateFieldGuarded(existingDoc, 'status.supersededBy', newSB, { incomingSource: 'resolved', log: true });
+                  if (resSB.updated) {
+                    injectMeta(existingDoc.status, 'supersededBy', 'resolved', 'update', oldSB);
+                    if (!changedFields.includes('status')) changedFields.push('status');
+                  }
                 } else {
-                  delete existingDoc.status.supersededBy;
-                  delete existingDoc.status['supersededBy$meta'];
+                  if (canUpdateFieldWithMetaGuard(existingDoc, 'status.supersededBy')) {
+                    delete existingDoc.status.supersededBy;
+                    delete existingDoc.status['supersededBy$meta'];
+                    if (!changedFields.includes('status')) changedFields.push('status');
+                  }
                 }
-                if (!changedFields.includes('status')) changedFields.push('status');
               }
             }
             const newWN = newVal.withdrawnNotice;
@@ -1320,22 +1447,24 @@ for (const doc of results) {
             const merged = Array.from(new Set([...oldList, ...newList]));
 
             if (JSON.stringify(merged) !== JSON.stringify(oldList)) {
-              existingDoc[key] = merged;
-              newValues[key] = merged;
-
               const fieldSource = doc.__inferred ? 'inferred' : 'parsed';
-              injectMeta(existingDoc, key, fieldSource, 'update', oldList);
-
-              changedFields.push(key);
+              const resRev = updateFieldGuarded(existingDoc, key, merged, { incomingSource: fieldSource, log: true });
+              if (resRev.updated) {
+                newValues[key] = merged;
+                injectMeta(existingDoc, key, fieldSource, 'update', oldList);
+                changedFields.push(key);
+              }
             }
 
             newValues[key] = existingDoc[key];
 
           } else {
-            existingDoc[key] = newVal;
             const fieldSource = resolvedFields.includes(key) ? 'resolved' : 'parsed';
-            injectMeta(existingDoc, key, fieldSource, 'update', oldVal);
-            changedFields.push(key);
+            const resGen = updateFieldGuarded(existingDoc, key, newVal, { incomingSource: fieldSource, log: true });
+            if (resGen.updated) {
+              injectMeta(existingDoc, key, fieldSource, 'update', oldVal);
+              changedFields.push(key);
+            }
           }
         }
       }
