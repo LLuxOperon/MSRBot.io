@@ -298,6 +298,9 @@
                   },
                   "overridden": {
                     "type": "boolean"
+                  },
+                  "excludeChanges": {
+                    "type": "boolean"
                   }
                 },
                 "additionalProperties": false
@@ -462,6 +465,9 @@
                   },
                   "overridden": {
                     "type": "boolean"
+                  },
+                  "excludeChanges": {
+                    "type": "boolean"
                   }
                 },
                 "additionalProperties": false
@@ -517,6 +523,9 @@
                       "format": "uri"
                     },
                     "overridden": {
+                      "type": "boolean"
+                    },
+                    "excludeChanges": {
                       "type": "boolean"
                     }
                   },
@@ -613,6 +622,9 @@
                         },
                         "overridden": {
                           "type": "boolean"
+                        },
+                        "excludeChanges": {
+                          "type": "boolean"
                         }
                       },
                       "additionalProperties": false
@@ -670,6 +682,9 @@
                           "format": "uri"
                         },
                         "overridden": {
+                          "type": "boolean"
+                        },
+                        "excludeChanges": {
                           "type": "boolean"
                         }
                       },
