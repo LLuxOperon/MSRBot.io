@@ -358,7 +358,7 @@ const metaConfig = {
   },
 
   manual: {
-    default: { confidence: 'medium', note: 'Manually entered value' }
+    default: { confidence: 'medium' }
   },
 
   unknown: {
