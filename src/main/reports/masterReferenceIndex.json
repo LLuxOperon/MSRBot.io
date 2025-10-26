@@ -1,8 +1,8 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-10-26T17:02:35.294Z",
+  "generatedAt": "2025-10-26T20:59:16.382Z",
   "stats": {
-    "uniqueRefIds": 1056
+    "uniqueRefIds": 1057
   },
   "refs": {
     "40290752": {
@@ -14302,7 +14302,15 @@
       },
       "rawVariants": [
         {
-          "docId": "SMPTE.ST2029.2023-04",
+          "docId": "SMPTE.ST2029.2022",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "SMPTE.ST2029.2023-10",
           "type": "bibliographic",
           "cite": "",
           "href": "",
@@ -14750,7 +14758,15 @@
           "title": null
         },
         {
-          "docId": "SMPTE.ST2029.2023-04",
+          "docId": "SMPTE.ST2029.2022",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "SMPTE.ST2029.2023-10",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -16010,7 +16026,15 @@
       },
       "rawVariants": [
         {
-          "docId": "SMPTE.ST2029.2023-04",
+          "docId": "SMPTE.ST2029.2022",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "SMPTE.ST2029.2023-10",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -16200,7 +16224,15 @@
           "title": null
         },
         {
-          "docId": "SMPTE.ST2029.2023-04",
+          "docId": "SMPTE.ST2029.2022",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "SMPTE.ST2029.2023-10",
           "type": "bibliographic",
           "cite": "",
           "href": "",
@@ -16534,7 +16566,15 @@
           "title": null
         },
         {
-          "docId": "SMPTE.ST2029.2023-04",
+          "docId": "SMPTE.ST2029.2022",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "SMPTE.ST2029.2023-10",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -16814,7 +16854,15 @@
       },
       "rawVariants": [
         {
-          "docId": "SMPTE.ST2029.2023-04",
+          "docId": "SMPTE.ST2029.2022",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "SMPTE.ST2029.2023-10",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -17058,7 +17106,15 @@
       },
       "rawVariants": [
         {
-          "docId": "SMPTE.ST2029.2023-04",
+          "docId": "SMPTE.ST2029.2022",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "SMPTE.ST2029.2023-10",
           "type": "bibliographic",
           "cite": "",
           "href": "",
@@ -17642,7 +17698,15 @@
       },
       "rawVariants": [
         {
-          "docId": "SMPTE.ST2029.2023-04",
+          "docId": "SMPTE.ST2029.2022",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "SMPTE.ST2029.2023-10",
           "type": "bibliographic",
           "cite": "",
           "href": "",
@@ -25184,7 +25248,7 @@
       "normalized": null,
       "resolution": {
         "sourcePresent": true,
-        "sourceDocId": "SMPTE.ST2029.2023-04",
+        "sourceDocId": "SMPTE.ST2029.2023-10",
         "firstConfirmedSourceAt": "2025-10-07T22:56:58.831Z"
       },
       "provenance": {
@@ -25920,7 +25984,7 @@
       },
       "rawVariants": [
         {
-          "docId": "SMPTE.ST2065-5.2023",
+          "docId": "SMPTE.ST2065-5.2023-02",
           "type": "bibliographic",
           "cite": "",
           "href": "",
@@ -26080,7 +26144,7 @@
       },
       "rawVariants": [
         {
-          "docId": "SMPTE.ST2065-5.2023",
+          "docId": "SMPTE.ST2065-5.2023-02",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -29808,7 +29872,15 @@
           "title": null
         },
         {
-          "docId": "SMPTE.ST2029.2023-04",
+          "docId": "SMPTE.ST2029.2022",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "SMPTE.ST2029.2023-10",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -29892,7 +29964,7 @@
           "title": null
         },
         {
-          "docId": "SMPTE.ST2065-5.2023",
+          "docId": "SMPTE.ST2065-5.2023-02",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -30562,7 +30634,15 @@
       },
       "rawVariants": [
         {
-          "docId": "SMPTE.ST2029.2023-04",
+          "docId": "SMPTE.ST2029.2022",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "SMPTE.ST2029.2023-10",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -32460,7 +32540,7 @@
           "title": null
         },
         {
-          "docId": "SMPTE.ST2065-5.2023",
+          "docId": "SMPTE.ST2065-5.2023-02",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -33278,7 +33358,7 @@
           "title": null
         },
         {
-          "docId": "SMPTE.ST2065-5.2023",
+          "docId": "SMPTE.ST2065-5.2023-02",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -40068,11 +40148,29 @@
       "normalized": null,
       "resolution": {
         "sourcePresent": true,
-        "sourceDocId": "SMPTE.ST434.2014",
+        "sourceDocId": "SMPTE.ST434.2015",
         "firstConfirmedSourceAt": "2025-10-07T22:56:58.837Z"
       },
       "provenance": {
         "firstSeen": "2025-10-07T22:56:58.742Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      }
+    },
+    "SMPTE.ST434.2015": {
+      "refId": "SMPTE.ST434.2015",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "SMPTE.ST434.2015",
+        "firstConfirmedSourceAt": "2025-10-26T20:59:16.371Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-10-26T20:59:16.259Z",
         "mapSource": [
           "replay"
         ],
