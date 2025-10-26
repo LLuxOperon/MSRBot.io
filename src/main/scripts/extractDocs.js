@@ -443,12 +443,8 @@ function updateFieldGuarded(doc, path, newValue, {
   // Hard lock from adjacent $meta
   const locked = !allowOverride && !!(meta && (meta.excludeOverwrite === true || meta.excludeChanges === true));
   if (locked) {
-    if (log) {
-      try {
-        fs.appendFileSync(prLogPath, `skipped update: ${path} — locked by ${meta.excludeOverwrite === true ? 'excludeOverwrite' : 'excludeChanges'} in $meta\n`, 'utf8');
-        fs.appendFileSync(fullDetailsPath, `skipped update: ${path} — locked by ${meta.excludeOverwrite === true ? 'excludeOverwrite' : 'excludeChanges'} in $meta\n`, 'utf8');
-      } catch {}
-    }
+    const lockType = meta.excludeOverwrite === true ? 'excludeOverwrite' : 'excludeChanges';
+    console.log(`🔒 skipped update: ${path} — locked by ${lockType} in $meta`);
     return { updated: false, reason: 'locked' };
   }
 
