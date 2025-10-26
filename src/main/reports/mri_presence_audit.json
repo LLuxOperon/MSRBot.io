@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2025-10-25T23:56:30.735Z",
+  "generatedAt": "2025-10-26T20:59:16.398Z",
   "sourcePath": "src/main/data/documents.json",
-  "processedDocs": 1909,
+  "processedDocs": 2087,
   "replayMode": "full-replay",
-  "seenRefs": 2811,
-  "seenSightings": 2811,
-  "presentCount": 1022,
-  "missingCount": 34,
+  "seenRefs": 2821,
+  "seenSightings": 2821,
+  "presentCount": 1024,
+  "missingCount": 33,
   "missing": [
     {
       "refId": "AES3-1.2009",
@@ -536,45 +536,6 @@
           "href": "https://www.ietf.org/rfc/rfc9231.txt",
           "rawRef": "IETF RFC 9231, Additional XML Security Uniform Resource Identifiers (URIs). url: https://www.ietf.org/rfc/rfc9231.txt",
           "title": "Additional XML Security Uniform Resource Identifiers (URIs)."
-        }
-      ]
-    },
-    {
-      "refId": "SMPTE.ST2041-1.2010",
-      "sourceDocId": null,
-      "sightingCount": 4,
-      "sightings": [
-        {
-          "docId": "SMPTE.ST338.2010",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "SMPTE.ST338.2015",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "SMPTE.ST338.2016Am1.2019",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "SMPTE.ST338.2016",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
         }
       ]
     },
