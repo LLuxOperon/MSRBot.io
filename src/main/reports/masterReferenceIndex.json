@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-10-24T19:22:59.746Z",
+  "generatedAt": "2025-10-26T17:02:35.294Z",
   "stats": {
     "uniqueRefIds": 1056
   },
@@ -25497,7 +25497,9 @@
       "refId": "SMPTE.ST2041-1.2010",
       "normalized": null,
       "resolution": {
-        "sourcePresent": false
+        "sourcePresent": true,
+        "sourceDocId": "SMPTE.ST2041-1.2010",
+        "firstConfirmedSourceAt": "2025-10-26T17:02:35.281Z"
       },
       "provenance": {
         "firstSeen": "2025-10-07T22:56:58.750Z",
