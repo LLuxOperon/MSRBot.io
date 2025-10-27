@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2025-10-27T19:13:49.930Z",
+  "generatedAt": "2025-10-27T19:48:52.400Z",
   "sourcePath": "src/main/data/documents.json",
-  "sourceHash": "sha256:7febf64d369471f785c54dc2d56b1e63ddbf185181e72b857edc3670364e0606",
+  "sourceHash": "sha256:fddace36737c6407cf33c3ac7cb265ac66972af9721d6fa5f70811e830663223",
   "publisherCounts": {
-    "total": 2218,
+    "total": 2210,
     "counts": {
-      "SMPTE": 1502,
+      "SMPTE": 1494,
       "IETF": 109,
       "ISO": 105,
       "ISO/IEC": 87,
@@ -100,7 +100,7 @@
     }
   },
   "skippedDocs": {
-    "totalSkipped": 199,
+    "totalSkipped": 191,
     "byPublisher": {
       "POLYMER DEGRADATION AND STABILITY": {
         "count": 1,
@@ -932,7 +932,7 @@
         ]
       },
       "SMPTE": {
-        "count": 102,
+        "count": 94,
         "docIds": [
           "J01217",
           "J01273",
@@ -1025,17 +1025,9 @@
           "SMPTE.RA.2021",
           "SMPTE.RDD53.20XX",
           "SMPTE.RP200.20XX",
-          "SMPTE.RP428-22.20XX",
           "SMPTE.SGR.21DC.AFR.200707",
           "SMPTE.SGR.21DC.HFR.201111",
-          "SMPTE.SGR.21DC.S.2005",
-          "SMPTE.ST2067-101.20XX",
-          "SMPTE.ST2067-104.20XX",
-          "SMPTE.ST2067-105.20XX",
-          "SMPTE.ST2067-106.20XX",
-          "SMPTE.ST2067-70.20XX",
-          "SMPTE.ST2095-1.20XX",
-          "SMPTE.ST377-42.20XX"
+          "SMPTE.SGR.21DC.S.2005"
         ],
         "items": [
           {
@@ -1676,13 +1668,6 @@
             "category": "policy"
           },
           {
-            "docId": "SMPTE.RP428-22.20XX",
-            "reason": "FILTERED",
-            "rule": "FILTERED",
-            "ruleDetail": "status.draft=true",
-            "category": "policy"
-          },
-          {
             "docId": "SMPTE.SGR.21DC.AFR.200707",
             "reason": "FILTERED",
             "rule": "FILTERED",
@@ -1702,55 +1687,6 @@
             "rule": "FILTERED",
             "ruleDetail": "docType=Study Group Report",
             "category": "docType"
-          },
-          {
-            "docId": "SMPTE.ST2067-101.20XX",
-            "reason": "FILTERED",
-            "rule": "FILTERED",
-            "ruleDetail": "status.draft=true",
-            "category": "policy"
-          },
-          {
-            "docId": "SMPTE.ST2067-104.20XX",
-            "reason": "FILTERED",
-            "rule": "FILTERED",
-            "ruleDetail": "status.draft=true",
-            "category": "policy"
-          },
-          {
-            "docId": "SMPTE.ST2067-105.20XX",
-            "reason": "FILTERED",
-            "rule": "FILTERED",
-            "ruleDetail": "status.draft=true",
-            "category": "policy"
-          },
-          {
-            "docId": "SMPTE.ST2067-106.20XX",
-            "reason": "FILTERED",
-            "rule": "FILTERED",
-            "ruleDetail": "status.draft=true",
-            "category": "policy"
-          },
-          {
-            "docId": "SMPTE.ST2067-70.20XX",
-            "reason": "FILTERED",
-            "rule": "FILTERED",
-            "ruleDetail": "status.draft=true",
-            "category": "policy"
-          },
-          {
-            "docId": "SMPTE.ST2095-1.20XX",
-            "reason": "FILTERED",
-            "rule": "FILTERED",
-            "ruleDetail": "status.draft=true",
-            "category": "policy"
-          },
-          {
-            "docId": "SMPTE.ST377-42.20XX",
-            "reason": "FILTERED",
-            "rule": "FILTERED",
-            "ruleDetail": "status.draft=true",
-            "category": "policy"
           }
         ]
       },
@@ -2067,7 +2003,7 @@
       }
     },
     "summaryByReason": {
-      "FILTERED": 199,
+      "FILTERED": 191,
       "UNKEYED": 0,
       "UNKNOWN": 0
     }
