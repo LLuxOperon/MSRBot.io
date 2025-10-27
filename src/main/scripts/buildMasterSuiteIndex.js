@@ -181,7 +181,7 @@ function computePublisherCounts(allDocs) {
   return { total, counts: sorted };
 }
 
-function computeFlagSummary(lineages, maxExamplesPerType = 100) {
+function computeFlagSummary(lineages, maxExamplesPerType = 250) {
   const acc = {
     totalFlags: 0,
     byType: {}
@@ -285,10 +285,12 @@ function buildIndex(allDocs) {
     // Capture original SMPTE doc type token and part (if present) for lineage diagnostics
     let _srcDocType = null;
     let _srcPart = null;
-    const smpteHead = d.docId.match(/^SMPTE\.(OM|AG|ST|RP|EG|RDD|OV)(\d+)(?:-(\d+))?\./i);
+    // More permissive: supports alpha identifiers like OM.BL and AG.10C (alphanumeric) before the year
+    const smpteHead = d.docId.match(/^SMPTE\.([A-Z]+)([0-9A-Z]*)(?:-([0-9A-Z]+))?\./i);
     if (smpteHead) {
-      _srcDocType = smpteHead[1].toUpperCase();
-      _srcPart = smpteHead[3] ? String(smpteHead[3]) : (smpteHead[1].toUpperCase() === 'OV' ? '0' : null);
+      _srcDocType = smpteHead[1] ? smpteHead[1].toUpperCase() : null;
+      // Preserve previous OV special-case; otherwise use captured hyphen-part token if present
+      _srcPart = smpteHead[3] ? String(smpteHead[3]) : (_srcDocType === 'OV' ? '0' : null);
     }
 
     const keyStr = [k.publisher, k.suite || '', k.number, k.part || ''].join('|');
@@ -488,10 +490,12 @@ function buildIndex(allDocs) {
         }
       }
 
-      // SMPTE-only: flag documents missing a releaseTag (helps surface gaps in latest/active logic)
+      // SMPTE-only: flag documents missing a releaseTag
+      // Skip Application Guides (AG) and Operational Metadata (OM)
       if (entry.key.publisher === 'SMPTE') {
         const rt = (x.releaseTag == null) ? '' : String(x.releaseTag).trim();
-        if (!rt) {
+        const token = (x._srcDocType || entry.key.suite || '').toUpperCase();
+        if (!rt && token !== 'AG' && token !== 'OM') {
           flags.push(`SMPTE_MISSING_RELEASE_TAG:${x.docId}`);
         }
       }

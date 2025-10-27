@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-10-27T16:23:44.045Z",
+  "generatedAt": "2025-10-27T19:13:49.930Z",
   "sourcePath": "src/main/data/documents.json",
   "sourceHash": "sha256:7febf64d369471f785c54dc2d56b1e63ddbf185181e72b857edc3670364e0606",
   "publisherCounts": {
@@ -2073,7 +2073,7 @@
     }
   },
   "flagSummary": {
-    "totalFlags": 337,
+    "totalFlags": 303,
     "byType": {
       "DOCID_PUBDATE_MISMATCH": {
         "count": 29,
@@ -2595,132 +2595,8 @@
         ]
       },
       "SMPTE_MISSING_RELEASE_TAG": {
-        "count": 154,
+        "count": 120,
         "examples": [
-          {
-            "lineage": "SMPTE|AG|01|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG01.2020"
-          },
-          {
-            "lineage": "SMPTE|AG|01|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG01.2014"
-          },
-          {
-            "lineage": "SMPTE|AG|02|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG02.2014"
-          },
-          {
-            "lineage": "SMPTE|AG|02|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG02.2015"
-          },
-          {
-            "lineage": "SMPTE|AG|03|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG03.2014"
-          },
-          {
-            "lineage": "SMPTE|AG|04|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG04.2016"
-          },
-          {
-            "lineage": "SMPTE|AG|04|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG04.EG.2020"
-          },
-          {
-            "lineage": "SMPTE|AG|04|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG04.RP.2020"
-          },
-          {
-            "lineage": "SMPTE|AG|04|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG04.ST.2020"
-          },
-          {
-            "lineage": "SMPTE|AG|05|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG05.2018"
-          },
-          {
-            "lineage": "SMPTE|AG|06|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG06.2016"
-          },
-          {
-            "lineage": "SMPTE|AG|06|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG06.2020"
-          },
-          {
-            "lineage": "SMPTE|AG|06|01",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG06-01.2020"
-          },
-          {
-            "lineage": "SMPTE|AG|06|02",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG06-02.2021"
-          },
-          {
-            "lineage": "SMPTE|AG|07|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG07.2016"
-          },
-          {
-            "lineage": "SMPTE|AG|08|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG08.2014"
-          },
-          {
-            "lineage": "SMPTE|AG|10|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG10.2020"
-          },
-          {
-            "lineage": "SMPTE|AG|10B|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG10B.2020"
-          },
-          {
-            "lineage": "SMPTE|AG|10C|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG10C"
-          },
-          {
-            "lineage": "SMPTE|AG|12|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG12.2017"
-          },
-          {
-            "lineage": "SMPTE|AG|12|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG12.2021"
-          },
-          {
-            "lineage": "SMPTE|AG|14|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG14.2014"
-          },
-          {
-            "lineage": "SMPTE|AG|15|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG15.2015"
-          },
-          {
-            "lineage": "SMPTE|AG|16|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG16.2020"
-          },
-          {
-            "lineage": "SMPTE|AG|16|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG16.2020-08"
-          },
-          {
-            "lineage": "SMPTE|AG|18|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG18.2017"
-          },
-          {
-            "lineage": "SMPTE|AG|19|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG19.2019"
-          },
-          {
-            "lineage": "SMPTE|AG|20|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG20.2019"
-          },
-          {
-            "lineage": "SMPTE|AG|22|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG22.2018"
-          },
-          {
-            "lineage": "SMPTE|AG|22|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG22.2020"
-          },
-          {
-            "lineage": "SMPTE|AG|24|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG24.2019"
-          },
           {
             "lineage": "SMPTE|EG|9|",
             "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.EG9.1995"
@@ -2740,18 +2616,6 @@
           {
             "lineage": "SMPTE|ER|1008|",
             "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ER1008.2022"
-          },
-          {
-            "lineage": "SMPTE|OM|BL|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.OM.BL.2010"
-          },
-          {
-            "lineage": "SMPTE|OM|Mem|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.OM.Mem.2018"
-          },
-          {
-            "lineage": "SMPTE|OM|Std|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.OM.Std.2015"
           },
           {
             "lineage": "SMPTE|RDD|44|",
@@ -2996,6 +2860,222 @@
           {
             "lineage": "SMPTE|ST|196|",
             "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST196.1993"
+          },
+          {
+            "lineage": "SMPTE|ST|196|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST196.1995"
+          },
+          {
+            "lineage": "SMPTE|ST|202|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST202.1991"
+          },
+          {
+            "lineage": "SMPTE|ST|202|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST202.1998"
+          },
+          {
+            "lineage": "SMPTE|ST|214|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST214.1999"
+          },
+          {
+            "lineage": "SMPTE|ST|223|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST223.1996"
+          },
+          {
+            "lineage": "SMPTE|ST|231|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST231.1995"
+          },
+          {
+            "lineage": "SMPTE|ST|231|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST231.1999"
+          },
+          {
+            "lineage": "SMPTE|ST|233|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST233.1992"
+          },
+          {
+            "lineage": "SMPTE|ST|233|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST233.1998"
+          },
+          {
+            "lineage": "SMPTE|ST|237|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST237.1998"
+          },
+          {
+            "lineage": "SMPTE|ST|239|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST239.1994"
+          },
+          {
+            "lineage": "SMPTE|ST|239|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST239.1999"
+          },
+          {
+            "lineage": "SMPTE|ST|242|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST242.1993"
+          },
+          {
+            "lineage": "SMPTE|ST|254|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST254.2002"
+          },
+          {
+            "lineage": "SMPTE|ST|258|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST258.1993"
+          },
+          {
+            "lineage": "SMPTE|ST|270|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST270.1994"
+          },
+          {
+            "lineage": "SMPTE|ST|270|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST270.2005"
+          },
+          {
+            "lineage": "SMPTE|ST|271|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST271.2002"
+          },
+          {
+            "lineage": "SMPTE|ST|274|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST274.2003"
+          },
+          {
+            "lineage": "SMPTE|ST|274|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST274.2005"
+          },
+          {
+            "lineage": "SMPTE|ST|291|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST291.2010"
+          },
+          {
+            "lineage": "SMPTE|ST|291|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST291.2011"
+          },
+          {
+            "lineage": "SMPTE|ST|292|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST292.2008"
+          },
+          {
+            "lineage": "SMPTE|ST|298|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST298.1997"
+          },
+          {
+            "lineage": "SMPTE|ST|301|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST301.1999"
+          },
+          {
+            "lineage": "SMPTE|ST|313|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST313.1999"
+          },
+          {
+            "lineage": "SMPTE|ST|313|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST313.2005"
+          },
+          {
+            "lineage": "SMPTE|ST|336|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST336.2001"
+          },
+          {
+            "lineage": "SMPTE|ST|338|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST338.2008"
+          },
+          {
+            "lineage": "SMPTE|ST|352|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST352.2002"
+          },
+          {
+            "lineage": "SMPTE|ST|352|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST352.2010"
+          },
+          {
+            "lineage": "SMPTE|ST|372|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST372.2002"
+          },
+          {
+            "lineage": "SMPTE|ST|372|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST372.2009"
+          },
+          {
+            "lineage": "SMPTE|ST|390|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST390.2004"
+          },
+          {
+            "lineage": "SMPTE|ST|425|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST425.2006"
+          },
+          {
+            "lineage": "SMPTE|ST|425|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST425.2008"
+          },
+          {
+            "lineage": "SMPTE|ST|429|2",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST429-2.2019Am1.2019"
+          },
+          {
+            "lineage": "SMPTE|ST|429|3",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST429-3.2006"
+          },
+          {
+            "lineage": "SMPTE|ST|430|3",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST430-3.2006"
+          },
+          {
+            "lineage": "SMPTE|ST|430|6",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST430-6.2008"
+          },
+          {
+            "lineage": "SMPTE|ST|2029|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST2029.2023-10"
+          },
+          {
+            "lineage": "SMPTE|ST|2059|1",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST2059-1.2021"
+          },
+          {
+            "lineage": "SMPTE|ST|2065|1",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST2065-1.2021"
+          },
+          {
+            "lineage": "SMPTE|ST|2065|4",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST2065-4.2023-02"
+          },
+          {
+            "lineage": "SMPTE|ST|2067|21",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST2067-21.2023-02"
+          },
+          {
+            "lineage": "SMPTE|ST|2067|60",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST2067-60.2023"
+          },
+          {
+            "lineage": "SMPTE|ST|2067|103",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST2067-103.2021"
+          },
+          {
+            "lineage": "SMPTE|ST|2067|201",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST2067-201.2021"
+          },
+          {
+            "lineage": "SMPTE|ST|2067|202",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST2067-202.2023-07"
+          },
+          {
+            "lineage": "SMPTE|ST|2094|10",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST2094-10.2021"
+          },
+          {
+            "lineage": "SMPTE|ST|2123|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST2123.2021-01"
+          },
+          {
+            "lineage": "SMPTE|ST|2123|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST2123.2023-04"
+          },
+          {
+            "lineage": "SMPTE|TSP|2121|1",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.TSP2121-1.2018"
+          },
+          {
+            "lineage": "SMPTE|TSP|2121|4",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.TSP2121-4.2019"
           }
         ]
       },
@@ -18970,9 +19050,7 @@
       "prevBaseId": "SMPTE.AG01.2014",
       "flagInconsistencies": [
         "DOCID_PUBDATE_MISMATCH:SMPTE.AG01.2020:docIdYear=2020,pubYear=2014",
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG01.2020",
-        "DOCID_PUBDATE_MISMATCH:SMPTE.AG01.2014:docIdYear=2014,pubYear=2020",
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG01.2014"
+        "DOCID_PUBDATE_MISMATCH:SMPTE.AG01.2014:docIdYear=2014,pubYear=2020"
       ],
       "counts": {
         "bases": 3,
@@ -19031,9 +19109,7 @@
       "latestSupersededBaseId": "SMPTE.AG02.2015",
       "prevBaseId": "SMPTE.AG02.2015",
       "flagInconsistencies": [
-        "DOCID_PUBDATE_MISMATCH:SMPTE.AG02.2014:docIdYear=2014,pubYear=2015",
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG02.2014",
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG02.2015"
+        "DOCID_PUBDATE_MISMATCH:SMPTE.AG02.2014:docIdYear=2014,pubYear=2015"
       ],
       "counts": {
         "bases": 3,
@@ -19080,9 +19156,7 @@
       "latestActiveBaseId": "SMPTE.AG03",
       "latestSupersededBaseId": "SMPTE.AG03.2014",
       "prevBaseId": "SMPTE.AG03.2014",
-      "flagInconsistencies": [
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG03.2014"
-      ],
+      "flagInconsistencies": [],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -19161,12 +19235,7 @@
       "latestActiveBaseId": "SMPTE.AG04",
       "latestSupersededBaseId": "SMPTE.AG04.ST.2020",
       "prevBaseId": "SMPTE.AG04.ST.2020",
-      "flagInconsistencies": [
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG04.2016",
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG04.EG.2020",
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG04.RP.2020",
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG04.ST.2020"
-      ],
+      "flagInconsistencies": [],
       "counts": {
         "bases": 5,
         "amendments": 0,
@@ -19213,8 +19282,7 @@
       "latestSupersededBaseId": "SMPTE.AG05.2018",
       "prevBaseId": "SMPTE.AG05.2018",
       "flagInconsistencies": [
-        "DOCID_PUBDATE_MISMATCH:SMPTE.AG05.2018:docIdYear=2018,pubYear=2016",
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG05.2018"
+        "DOCID_PUBDATE_MISMATCH:SMPTE.AG05.2018:docIdYear=2018,pubYear=2016"
       ],
       "counts": {
         "bases": 2,
@@ -19274,9 +19342,7 @@
       "prevBaseId": "SMPTE.AG06.2020",
       "flagInconsistencies": [
         "SUPERSEDED_BY_OUT_OF_LINEAGE:SMPTE.AG06.2020->SMPTE.AG06-01.2020",
-        "SUPERSEDED_BY_OUT_OF_LINEAGE:SMPTE.AG06.2020->SMPTE.AG06-02.2021",
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG06.2016",
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG06.2020"
+        "SUPERSEDED_BY_OUT_OF_LINEAGE:SMPTE.AG06.2020->SMPTE.AG06-02.2021"
       ],
       "counts": {
         "bases": 3,
@@ -19314,8 +19380,7 @@
       "prevBaseId": null,
       "flagInconsistencies": [
         "SUPERSEDED_BY_OUT_OF_LINEAGE:SMPTE.AG06-01.2020->SMPTE.AG06",
-        "DOCID_PUBDATE_MISMATCH:SMPTE.AG06-01.2020:docIdYear=2020,pubYear=2021",
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG06-01.2020"
+        "DOCID_PUBDATE_MISMATCH:SMPTE.AG06-01.2020:docIdYear=2020,pubYear=2021"
       ],
       "counts": {
         "bases": 1,
@@ -19352,8 +19417,7 @@
       "latestSupersededBaseId": "SMPTE.AG06-02.2021",
       "prevBaseId": null,
       "flagInconsistencies": [
-        "SUPERSEDED_BY_OUT_OF_LINEAGE:SMPTE.AG06-02.2021->SMPTE.AG06",
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG06-02.2021"
+        "SUPERSEDED_BY_OUT_OF_LINEAGE:SMPTE.AG06-02.2021->SMPTE.AG06"
       ],
       "counts": {
         "bases": 1,
@@ -19400,9 +19464,7 @@
       "latestActiveBaseId": "SMPTE.AG07",
       "latestSupersededBaseId": "SMPTE.AG07.2016",
       "prevBaseId": "SMPTE.AG07.2016",
-      "flagInconsistencies": [
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG07.2016"
-      ],
+      "flagInconsistencies": [],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -19448,9 +19510,7 @@
       "latestActiveBaseId": "SMPTE.AG08",
       "latestSupersededBaseId": "SMPTE.AG08.2014",
       "prevBaseId": "SMPTE.AG08.2014",
-      "flagInconsistencies": [
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG08.2014"
-      ],
+      "flagInconsistencies": [],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -19496,9 +19556,7 @@
       "latestActiveBaseId": "SMPTE.AG10",
       "latestSupersededBaseId": null,
       "prevBaseId": "SMPTE.AG10.2020",
-      "flagInconsistencies": [
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG10.2020"
-      ],
+      "flagInconsistencies": [],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -19544,9 +19602,7 @@
       "latestActiveBaseId": "SMPTE.AG10B",
       "latestSupersededBaseId": "SMPTE.AG10B.2020",
       "prevBaseId": "SMPTE.AG10B.2020",
-      "flagInconsistencies": [
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG10B.2020"
-      ],
+      "flagInconsistencies": [],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -19581,9 +19637,7 @@
       "latestActiveBaseId": "SMPTE.AG10C",
       "latestSupersededBaseId": null,
       "prevBaseId": null,
-      "flagInconsistencies": [
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG10C"
-      ],
+      "flagInconsistencies": [],
       "counts": {
         "bases": 1,
         "amendments": 0,
@@ -19640,10 +19694,7 @@
       "latestActiveBaseId": "SMPTE.AG12",
       "latestSupersededBaseId": "SMPTE.AG12.2021",
       "prevBaseId": "SMPTE.AG12.2021",
-      "flagInconsistencies": [
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG12.2017",
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG12.2021"
-      ],
+      "flagInconsistencies": [],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -19689,9 +19740,7 @@
       "latestActiveBaseId": "SMPTE.AG14",
       "latestSupersededBaseId": "SMPTE.AG14.2014",
       "prevBaseId": "SMPTE.AG14.2014",
-      "flagInconsistencies": [
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG14.2014"
-      ],
+      "flagInconsistencies": [],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -19737,9 +19786,7 @@
       "latestActiveBaseId": "SMPTE.AG15",
       "latestSupersededBaseId": "SMPTE.AG15.2015",
       "prevBaseId": "SMPTE.AG15.2015",
-      "flagInconsistencies": [
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG15.2015"
-      ],
+      "flagInconsistencies": [],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -19796,10 +19843,7 @@
       "latestActiveBaseId": "SMPTE.AG16",
       "latestSupersededBaseId": "SMPTE.AG16.2020-08",
       "prevBaseId": "SMPTE.AG16.2020-08",
-      "flagInconsistencies": [
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG16.2020",
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG16.2020-08"
-      ],
+      "flagInconsistencies": [],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -19845,9 +19889,7 @@
       "latestActiveBaseId": "SMPTE.AG18",
       "latestSupersededBaseId": "SMPTE.AG18.2017",
       "prevBaseId": "SMPTE.AG18.2017",
-      "flagInconsistencies": [
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG18.2017"
-      ],
+      "flagInconsistencies": [],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -19893,9 +19935,7 @@
       "latestActiveBaseId": "SMPTE.AG19",
       "latestSupersededBaseId": "SMPTE.AG19.2019",
       "prevBaseId": "SMPTE.AG19.2019",
-      "flagInconsistencies": [
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG19.2019"
-      ],
+      "flagInconsistencies": [],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -19941,9 +19981,7 @@
       "latestActiveBaseId": "SMPTE.AG20",
       "latestSupersededBaseId": "SMPTE.AG20.2019",
       "prevBaseId": "SMPTE.AG20.2019",
-      "flagInconsistencies": [
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG20.2019"
-      ],
+      "flagInconsistencies": [],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -20035,10 +20073,7 @@
       "latestActiveBaseId": "SMPTE.AG22",
       "latestSupersededBaseId": "SMPTE.AG22.2020",
       "prevBaseId": "SMPTE.AG22.2020",
-      "flagInconsistencies": [
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG22.2018",
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG22.2020"
-      ],
+      "flagInconsistencies": [],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -20084,9 +20119,7 @@
       "latestActiveBaseId": "SMPTE.AG24",
       "latestSupersededBaseId": "SMPTE.AG24.2019",
       "prevBaseId": "SMPTE.AG24.2019",
-      "flagInconsistencies": [
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG24.2019"
-      ],
+      "flagInconsistencies": [],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -22651,9 +22684,7 @@
       "latestActiveBaseId": "SMPTE.OM.BL.2010",
       "latestSupersededBaseId": null,
       "prevBaseId": null,
-      "flagInconsistencies": [
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.OM.BL.2010"
-      ],
+      "flagInconsistencies": [],
       "counts": {
         "bases": 1,
         "amendments": 0,
@@ -22688,9 +22719,7 @@
       "latestActiveBaseId": "SMPTE.OM.Mem.2018",
       "latestSupersededBaseId": null,
       "prevBaseId": null,
-      "flagInconsistencies": [
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.OM.Mem.2018"
-      ],
+      "flagInconsistencies": [],
       "counts": {
         "bases": 1,
         "amendments": 0,
@@ -22736,9 +22765,7 @@
       "latestActiveBaseId": "SMPTE.OM.Std",
       "latestSupersededBaseId": "SMPTE.OM.Std.2015",
       "prevBaseId": "SMPTE.OM.Std.2015",
-      "flagInconsistencies": [
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.OM.Std.2015"
-      ],
+      "flagInconsistencies": [],
       "counts": {
         "bases": 2,
         "amendments": 0,
