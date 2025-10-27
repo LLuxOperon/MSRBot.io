@@ -15,6 +15,7 @@ This document consolidates the MSR worklog into a single, category‑organized t
 - Added explicit detection for **missing `index.html`** cases — now treated as likely PDF-only releases.  
   Metadata is inferred and merged with any existing record without overwriting richer data.  
 - **Amendment DOI/href inference** fully corrected — `docId`, `doi`, and `href` now derive from the final identifier including amendment suffixes (e.g., `.2011Am1.2013`).
+- Amendment promotion logic corrected: when an **amendment** is the latest, the amendment is `active: true, latestVersion: true`; the **base** remains `active: false, superseded: true`. Prevents incorrect base flips when an amendment becomes latest.
 
 
 ### 1.2 Status Wiring & Normalization
@@ -50,6 +51,8 @@ This document consolidates the MSR worklog into a single, category‑organized t
 - Documents now explicitly annotated with lineage keys:  
   `msiLatestBase`, `msiLatestAny`, `latestDoc`, `docBase`, and `docBaseLabel` for stable linkage between MSI and MSR datasets.  
   These fields are injected with `$meta` provenance during index build.
+- Added SMPTE-only sanity flag **`SMPTE_MISSING_RELEASE_TAG:<docId>`**; surfaces missing `releaseTag` on SMPTE documents during MSI build.
+
 
 ### 1.6 Reference Mapping, MSI Integration, and MRI Foundations
 - `src/main/lib/keying.js` centralizes keying logic; MSI loaded once to build `latestByLineage` and `baseIndex` maps used across extraction and site build.
@@ -67,6 +70,9 @@ This document consolidates the MSR worklog into a single, category‑organized t
 - Inferred vs. parsed provenance tracked. Default `confidence: "medium"` applied to inferred fields; `source` annotated per field path.
 - Namespace metadata extended: `xmlNamespace` objects include `deprecated: boolean` (foundation for structured namespace tracking with `uri`, `targetNamespace`, `imported`, `sourceDocId`, `schemaLocation`).
 - **`$meta.note` definition mapping:** centralized through `metaConfig` for provenance consistency; future extensions may enrich note templates with field-specific context.
+- Introduced **`$meta.excludeChanges: true`** as a field-level lock (applies to any field, including nested like `status.active`, `status.latestVersion`, `status.superseded`). Extraction respects locks via `setFieldIfAllowed(doc, fieldPath, newValue)` and `isFieldExcluded()`.
+- Nested awareness: `isFieldExcluded()` handles one-level nested paths (e.g., `status.active`) with extension headroom for deeper hierarchies.
+- Behavior: locked fields are skipped cleanly during extraction/inference (console log only, no PR entry); `$meta.overridden` and PR diffs update **only** when a change is allowed and actually occurs.
 
 
 ## 3 Validation & URL Resolution
@@ -89,6 +95,11 @@ This document consolidates the MSR worklog into a single, category‑organized t
 - `documents.validate.js` checks duplicate `docId`, registry sort order, and performs soft URL reachability checks.
 - Modular `resolveUrlAndInject()` shared across extraction and validation; injects `resolvedHref` when missing or changed.
 - All URL‑related reports written under `src/main/reports/` with consistent JSON headers.
+
+### 3.5 Overrides Audit
+- Added **`src/main/scripts/audit.overrides.js`** to scan for `$meta.overridden === true`.
+- Outputs **`src/main/reports/overrides-audit.json`** (JSON-only; CSV export dropped). No PR creation and no MSI dependency.
+- Skips trivial/null/empty `originalValue` entries; groups results alphabetically by field with per-field totals.
 
 ## 4 Workflow & CI/CD
 
@@ -171,6 +182,9 @@ This document consolidates the MSR worklog into a single, category‑organized t
 - Project emits core JSON reports under `src/main/reports/` with uniform headers.
 - Clean metadata‑only commit flow (no empty PRs); auto‑closing issues for missing references.
 - Cite‑first resolution logic with `refMap` overrides; undated references upgraded via lineage when appropriate.
+- Extractor honors `$meta` locks; normal flows unaffected for unlocked fields.
+- MSI checks extended with SMPTE `releaseTag` audit.
+- Provenance corrections verified in practice (examples: docLabel normalization 2086→2085, publicationDate normalized to HTML `pubDateTime`, amendment promotion behaves as specified).
 
 ## Appendix A: Implementation Notes (selected specifics retained)
 - MSI lineage logic refined across publishers; draft and versionless handling normalized; ICC errata regex fixed; console logs simplified (Found vs Added vs Skipped) with reduced UNKNOWN noise via early publisher normalization.
