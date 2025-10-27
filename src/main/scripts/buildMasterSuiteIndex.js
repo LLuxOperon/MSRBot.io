@@ -487,6 +487,15 @@ function buildIndex(allDocs) {
           }
         }
       }
+
+      // SMPTE-only: flag documents missing a releaseTag (helps surface gaps in latest/active logic)
+      if (entry.key.publisher === 'SMPTE') {
+        const rt = (x.releaseTag == null) ? '' : String(x.releaseTag).trim();
+        if (!rt) {
+          flags.push(`SMPTE_MISSING_RELEASE_TAG:${x.docId}`);
+        }
+      }
+
     }
 
     // Emit lean docs (drop private fields, but include helpful status fields)

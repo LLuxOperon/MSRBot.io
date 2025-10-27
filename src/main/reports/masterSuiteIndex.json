@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2025-10-27T03:39:32.474Z",
+  "generatedAt": "2025-10-27T16:17:48.817Z",
   "sourcePath": "src/main/data/documents.json",
-  "sourceHash": "sha256:2a3d88ec43b6abb1bdda2ea717ec7c524db66d6902d302632c0eb66b60475ba6",
+  "sourceHash": "sha256:88e1f40377c959b7717dbf213a8e8802338daa55f236eee71c44aa2801fb9d08",
   "publisherCounts": {
     "total": 2219,
     "counts": {
@@ -2073,7 +2073,7 @@
     }
   },
   "flagSummary": {
-    "totalFlags": 183,
+    "totalFlags": 338,
     "byType": {
       "DOCID_PUBDATE_MISMATCH": {
         "count": 29,
@@ -2591,6 +2591,411 @@
           {
             "lineage": "IEC||60268|3",
             "flag": "CONTRADICTORY_STATUS_FLAGS:IEC.60268-3.2000:ACTIVE_AND_SUPERSEDED"
+          }
+        ]
+      },
+      "SMPTE_MISSING_RELEASE_TAG": {
+        "count": 155,
+        "examples": [
+          {
+            "lineage": "SMPTE|AG|01|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG01.2020"
+          },
+          {
+            "lineage": "SMPTE|AG|01|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG01.2014"
+          },
+          {
+            "lineage": "SMPTE|AG|02|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG02.2014"
+          },
+          {
+            "lineage": "SMPTE|AG|02|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG02.2015"
+          },
+          {
+            "lineage": "SMPTE|AG|03|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG03.2014"
+          },
+          {
+            "lineage": "SMPTE|AG|04|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG04.2016"
+          },
+          {
+            "lineage": "SMPTE|AG|04|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG04.EG.2020"
+          },
+          {
+            "lineage": "SMPTE|AG|04|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG04.RP.2020"
+          },
+          {
+            "lineage": "SMPTE|AG|04|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG04.ST.2020"
+          },
+          {
+            "lineage": "SMPTE|AG|05|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG05.2018"
+          },
+          {
+            "lineage": "SMPTE|AG|06|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG06.2016"
+          },
+          {
+            "lineage": "SMPTE|AG|06|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG06.2020"
+          },
+          {
+            "lineage": "SMPTE|AG|06|01",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG06-01.2020"
+          },
+          {
+            "lineage": "SMPTE|AG|06|02",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG06-02.2021"
+          },
+          {
+            "lineage": "SMPTE|AG|07|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG07.2016"
+          },
+          {
+            "lineage": "SMPTE|AG|08|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG08.2014"
+          },
+          {
+            "lineage": "SMPTE|AG|10|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG10.2020"
+          },
+          {
+            "lineage": "SMPTE|AG|10B|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG10B.2020"
+          },
+          {
+            "lineage": "SMPTE|AG|10C|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG10C"
+          },
+          {
+            "lineage": "SMPTE|AG|12|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG12.2017"
+          },
+          {
+            "lineage": "SMPTE|AG|12|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG12.2021"
+          },
+          {
+            "lineage": "SMPTE|AG|14|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG14.2014"
+          },
+          {
+            "lineage": "SMPTE|AG|15|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG15.2015"
+          },
+          {
+            "lineage": "SMPTE|AG|16|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG16.2020"
+          },
+          {
+            "lineage": "SMPTE|AG|16|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG16.2020-08"
+          },
+          {
+            "lineage": "SMPTE|AG|18|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG18.2017"
+          },
+          {
+            "lineage": "SMPTE|AG|19|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG19.2019"
+          },
+          {
+            "lineage": "SMPTE|AG|20|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG20.2019"
+          },
+          {
+            "lineage": "SMPTE|AG|22|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG22.2018"
+          },
+          {
+            "lineage": "SMPTE|AG|22|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG22.2020"
+          },
+          {
+            "lineage": "SMPTE|AG|24|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG24.2019"
+          },
+          {
+            "lineage": "SMPTE|EG|9|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.EG9.1995"
+          },
+          {
+            "lineage": "SMPTE|ER|0989|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ER0989.2014"
+          },
+          {
+            "lineage": "SMPTE|ER|0994|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ER0994.2014"
+          },
+          {
+            "lineage": "SMPTE|ER|1006|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ER1006.2021"
+          },
+          {
+            "lineage": "SMPTE|ER|1008|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ER1008.2022"
+          },
+          {
+            "lineage": "SMPTE|OM|BL|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.OM.BL.2010"
+          },
+          {
+            "lineage": "SMPTE|OM|Mem|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.OM.Mem.2018"
+          },
+          {
+            "lineage": "SMPTE|OM|Std|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.OM.Std.2015"
+          },
+          {
+            "lineage": "SMPTE|RDD|44|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.RDD44.2017-11"
+          },
+          {
+            "lineage": "SMPTE|RP|27|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP27.3.1989"
+          },
+          {
+            "lineage": "SMPTE|RP|27|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP27.4.1994"
+          },
+          {
+            "lineage": "SMPTE|RP|48|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP48.1995"
+          },
+          {
+            "lineage": "SMPTE|RP|59|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP59.1986"
+          },
+          {
+            "lineage": "SMPTE|RP|59|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP59.1995"
+          },
+          {
+            "lineage": "SMPTE|RP|67|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP67.1993"
+          },
+          {
+            "lineage": "SMPTE|RP|82|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP82.1990"
+          },
+          {
+            "lineage": "SMPTE|RP|82|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP82.1995"
+          },
+          {
+            "lineage": "SMPTE|RP|82|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP82.2004"
+          },
+          {
+            "lineage": "SMPTE|RP|95|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP95.1994"
+          },
+          {
+            "lineage": "SMPTE|RP|105|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP105.1994"
+          },
+          {
+            "lineage": "SMPTE|RP|105|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP105.1995"
+          },
+          {
+            "lineage": "SMPTE|RP|141|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP141.1990"
+          },
+          {
+            "lineage": "SMPTE|RP|141|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP141.1995"
+          },
+          {
+            "lineage": "SMPTE|RP|194|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP194.1998"
+          },
+          {
+            "lineage": "SMPTE|RP|195|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP195.1998"
+          },
+          {
+            "lineage": "SMPTE|RP|205|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP205.2000"
+          },
+          {
+            "lineage": "SMPTE|RP|431|2",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP431-2.2007"
+          },
+          {
+            "lineage": "SMPTE|ST|7|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST7.1994"
+          },
+          {
+            "lineage": "SMPTE|ST|7|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST7.1999"
+          },
+          {
+            "lineage": "SMPTE|ST|12|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST12.1999"
+          },
+          {
+            "lineage": "SMPTE|ST|40|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST40.1997"
+          },
+          {
+            "lineage": "SMPTE|ST|41|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST41.1994"
+          },
+          {
+            "lineage": "SMPTE|ST|41|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST41.1999"
+          },
+          {
+            "lineage": "SMPTE|ST|55|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST55.1992"
+          },
+          {
+            "lineage": "SMPTE|ST|59|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST59.1991"
+          },
+          {
+            "lineage": "SMPTE|ST|59|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST59.1997"
+          },
+          {
+            "lineage": "SMPTE|ST|86|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST86.1996"
+          },
+          {
+            "lineage": "SMPTE|ST|93|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST93.1998"
+          },
+          {
+            "lineage": "SMPTE|ST|96|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST96.1992"
+          },
+          {
+            "lineage": "SMPTE|ST|96|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST96.1999"
+          },
+          {
+            "lineage": "SMPTE|ST|102|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST102.1997"
+          },
+          {
+            "lineage": "SMPTE|ST|109|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST109.1992"
+          },
+          {
+            "lineage": "SMPTE|ST|109|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST109.1998"
+          },
+          {
+            "lineage": "SMPTE|ST|111|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST111.1996"
+          },
+          {
+            "lineage": "SMPTE|ST|112|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST112.1994"
+          },
+          {
+            "lineage": "SMPTE|ST|112|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST112.1999"
+          },
+          {
+            "lineage": "SMPTE|ST|119|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST119.1999"
+          },
+          {
+            "lineage": "SMPTE|ST|123|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST123.XXXX"
+          },
+          {
+            "lineage": "SMPTE|ST|137|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST137.1994"
+          },
+          {
+            "lineage": "SMPTE|ST|139|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST139.1986"
+          },
+          {
+            "lineage": "SMPTE|ST|139|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST139.1996"
+          },
+          {
+            "lineage": "SMPTE|ST|145|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST145.1999"
+          },
+          {
+            "lineage": "SMPTE|ST|149|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST149.1994"
+          },
+          {
+            "lineage": "SMPTE|ST|149|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST149.1999"
+          },
+          {
+            "lineage": "SMPTE|ST|152|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST152.1994"
+          },
+          {
+            "lineage": "SMPTE|ST|154|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST154.1993"
+          },
+          {
+            "lineage": "SMPTE|ST|154|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST154.1998"
+          },
+          {
+            "lineage": "SMPTE|ST|157|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST157.1994"
+          },
+          {
+            "lineage": "SMPTE|ST|160|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST160.1990"
+          },
+          {
+            "lineage": "SMPTE|ST|164|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST164.1993"
+          },
+          {
+            "lineage": "SMPTE|ST|166|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST166.1999"
+          },
+          {
+            "lineage": "SMPTE|ST|168|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST168.1991"
+          },
+          {
+            "lineage": "SMPTE|ST|168|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST168.1996"
+          },
+          {
+            "lineage": "SMPTE|ST|185|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST185.1993"
+          },
+          {
+            "lineage": "SMPTE|ST|192|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST192.1991"
+          },
+          {
+            "lineage": "SMPTE|ST|194|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST194.1991"
+          },
+          {
+            "lineage": "SMPTE|ST|194|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST194.1997"
+          },
+          {
+            "lineage": "SMPTE|ST|195|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST195.1984"
+          },
+          {
+            "lineage": "SMPTE|ST|195|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST195.1993"
           }
         ]
       },
@@ -18565,7 +18970,9 @@
       "prevBaseId": "SMPTE.AG01.2014",
       "flagInconsistencies": [
         "DOCID_PUBDATE_MISMATCH:SMPTE.AG01.2020:docIdYear=2020,pubYear=2014",
-        "DOCID_PUBDATE_MISMATCH:SMPTE.AG01.2014:docIdYear=2014,pubYear=2020"
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG01.2020",
+        "DOCID_PUBDATE_MISMATCH:SMPTE.AG01.2014:docIdYear=2014,pubYear=2020",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG01.2014"
       ],
       "counts": {
         "bases": 3,
@@ -18624,7 +19031,9 @@
       "latestSupersededBaseId": "SMPTE.AG02.2015",
       "prevBaseId": "SMPTE.AG02.2015",
       "flagInconsistencies": [
-        "DOCID_PUBDATE_MISMATCH:SMPTE.AG02.2014:docIdYear=2014,pubYear=2015"
+        "DOCID_PUBDATE_MISMATCH:SMPTE.AG02.2014:docIdYear=2014,pubYear=2015",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG02.2014",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG02.2015"
       ],
       "counts": {
         "bases": 3,
@@ -18671,7 +19080,9 @@
       "latestActiveBaseId": "SMPTE.AG03",
       "latestSupersededBaseId": "SMPTE.AG03.2014",
       "prevBaseId": "SMPTE.AG03.2014",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG03.2014"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -18750,7 +19161,12 @@
       "latestActiveBaseId": "SMPTE.AG04",
       "latestSupersededBaseId": "SMPTE.AG04.ST.2020",
       "prevBaseId": "SMPTE.AG04.ST.2020",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG04.2016",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG04.EG.2020",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG04.RP.2020",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG04.ST.2020"
+      ],
       "counts": {
         "bases": 5,
         "amendments": 0,
@@ -18797,7 +19213,8 @@
       "latestSupersededBaseId": "SMPTE.AG05.2018",
       "prevBaseId": "SMPTE.AG05.2018",
       "flagInconsistencies": [
-        "DOCID_PUBDATE_MISMATCH:SMPTE.AG05.2018:docIdYear=2018,pubYear=2016"
+        "DOCID_PUBDATE_MISMATCH:SMPTE.AG05.2018:docIdYear=2018,pubYear=2016",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG05.2018"
       ],
       "counts": {
         "bases": 2,
@@ -18857,7 +19274,9 @@
       "prevBaseId": "SMPTE.AG06.2020",
       "flagInconsistencies": [
         "SUPERSEDED_BY_OUT_OF_LINEAGE:SMPTE.AG06.2020->SMPTE.AG06-01.2020",
-        "SUPERSEDED_BY_OUT_OF_LINEAGE:SMPTE.AG06.2020->SMPTE.AG06-02.2021"
+        "SUPERSEDED_BY_OUT_OF_LINEAGE:SMPTE.AG06.2020->SMPTE.AG06-02.2021",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG06.2016",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG06.2020"
       ],
       "counts": {
         "bases": 3,
@@ -18895,7 +19314,8 @@
       "prevBaseId": null,
       "flagInconsistencies": [
         "SUPERSEDED_BY_OUT_OF_LINEAGE:SMPTE.AG06-01.2020->SMPTE.AG06",
-        "DOCID_PUBDATE_MISMATCH:SMPTE.AG06-01.2020:docIdYear=2020,pubYear=2021"
+        "DOCID_PUBDATE_MISMATCH:SMPTE.AG06-01.2020:docIdYear=2020,pubYear=2021",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG06-01.2020"
       ],
       "counts": {
         "bases": 1,
@@ -18932,7 +19352,8 @@
       "latestSupersededBaseId": "SMPTE.AG06-02.2021",
       "prevBaseId": null,
       "flagInconsistencies": [
-        "SUPERSEDED_BY_OUT_OF_LINEAGE:SMPTE.AG06-02.2021->SMPTE.AG06"
+        "SUPERSEDED_BY_OUT_OF_LINEAGE:SMPTE.AG06-02.2021->SMPTE.AG06",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG06-02.2021"
       ],
       "counts": {
         "bases": 1,
@@ -18979,7 +19400,9 @@
       "latestActiveBaseId": "SMPTE.AG07",
       "latestSupersededBaseId": "SMPTE.AG07.2016",
       "prevBaseId": "SMPTE.AG07.2016",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG07.2016"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -19025,7 +19448,9 @@
       "latestActiveBaseId": "SMPTE.AG08",
       "latestSupersededBaseId": "SMPTE.AG08.2014",
       "prevBaseId": "SMPTE.AG08.2014",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG08.2014"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -19071,7 +19496,9 @@
       "latestActiveBaseId": "SMPTE.AG10",
       "latestSupersededBaseId": null,
       "prevBaseId": "SMPTE.AG10.2020",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG10.2020"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -19117,7 +19544,9 @@
       "latestActiveBaseId": "SMPTE.AG10B",
       "latestSupersededBaseId": "SMPTE.AG10B.2020",
       "prevBaseId": "SMPTE.AG10B.2020",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG10B.2020"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -19152,7 +19581,9 @@
       "latestActiveBaseId": "SMPTE.AG10C",
       "latestSupersededBaseId": null,
       "prevBaseId": null,
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG10C"
+      ],
       "counts": {
         "bases": 1,
         "amendments": 0,
@@ -19209,7 +19640,10 @@
       "latestActiveBaseId": "SMPTE.AG12",
       "latestSupersededBaseId": "SMPTE.AG12.2021",
       "prevBaseId": "SMPTE.AG12.2021",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG12.2017",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG12.2021"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -19255,7 +19689,9 @@
       "latestActiveBaseId": "SMPTE.AG14",
       "latestSupersededBaseId": "SMPTE.AG14.2014",
       "prevBaseId": "SMPTE.AG14.2014",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG14.2014"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -19301,7 +19737,9 @@
       "latestActiveBaseId": "SMPTE.AG15",
       "latestSupersededBaseId": "SMPTE.AG15.2015",
       "prevBaseId": "SMPTE.AG15.2015",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG15.2015"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -19358,7 +19796,10 @@
       "latestActiveBaseId": "SMPTE.AG16",
       "latestSupersededBaseId": "SMPTE.AG16.2020-08",
       "prevBaseId": "SMPTE.AG16.2020-08",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG16.2020",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG16.2020-08"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -19404,7 +19845,9 @@
       "latestActiveBaseId": "SMPTE.AG18",
       "latestSupersededBaseId": "SMPTE.AG18.2017",
       "prevBaseId": "SMPTE.AG18.2017",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG18.2017"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -19450,7 +19893,9 @@
       "latestActiveBaseId": "SMPTE.AG19",
       "latestSupersededBaseId": "SMPTE.AG19.2019",
       "prevBaseId": "SMPTE.AG19.2019",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG19.2019"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -19496,7 +19941,9 @@
       "latestActiveBaseId": "SMPTE.AG20",
       "latestSupersededBaseId": "SMPTE.AG20.2019",
       "prevBaseId": "SMPTE.AG20.2019",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG20.2019"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -19588,7 +20035,10 @@
       "latestActiveBaseId": "SMPTE.AG22",
       "latestSupersededBaseId": "SMPTE.AG22.2020",
       "prevBaseId": "SMPTE.AG22.2020",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG22.2018",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG22.2020"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -19634,7 +20084,9 @@
       "latestActiveBaseId": "SMPTE.AG24",
       "latestSupersededBaseId": "SMPTE.AG24.2019",
       "prevBaseId": "SMPTE.AG24.2019",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.AG24.2019"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -19996,7 +20448,8 @@
       "latestSupersededBaseId": "SMPTE.EG9.1995",
       "prevBaseId": null,
       "flagInconsistencies": [
-        "SUPERSEDED_BY_OUT_OF_LINEAGE:SMPTE.EG9.2005->SMPTE.RP155.2014"
+        "SUPERSEDED_BY_OUT_OF_LINEAGE:SMPTE.EG9.2005->SMPTE.RP155.2014",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.EG9.1995"
       ],
       "counts": {
         "bases": 2,
@@ -22050,7 +22503,9 @@
       "latestActiveBaseId": "SMPTE.ER0989.2014",
       "latestSupersededBaseId": null,
       "prevBaseId": null,
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ER0989.2014"
+      ],
       "counts": {
         "bases": 1,
         "amendments": 0,
@@ -22085,7 +22540,9 @@
       "latestActiveBaseId": "SMPTE.ER0994.2014",
       "latestSupersededBaseId": null,
       "prevBaseId": null,
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ER0994.2014"
+      ],
       "counts": {
         "bases": 1,
         "amendments": 0,
@@ -22120,7 +22577,9 @@
       "latestActiveBaseId": "SMPTE.ER1006.2021",
       "latestSupersededBaseId": null,
       "prevBaseId": null,
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ER1006.2021"
+      ],
       "counts": {
         "bases": 1,
         "amendments": 0,
@@ -22155,7 +22614,9 @@
       "latestActiveBaseId": "SMPTE.ER1008.2022",
       "latestSupersededBaseId": null,
       "prevBaseId": null,
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ER1008.2022"
+      ],
       "counts": {
         "bases": 1,
         "amendments": 0,
@@ -22190,7 +22651,9 @@
       "latestActiveBaseId": "SMPTE.OM.BL.2010",
       "latestSupersededBaseId": null,
       "prevBaseId": null,
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.OM.BL.2010"
+      ],
       "counts": {
         "bases": 1,
         "amendments": 0,
@@ -22225,7 +22688,9 @@
       "latestActiveBaseId": "SMPTE.OM.Mem.2018",
       "latestSupersededBaseId": null,
       "prevBaseId": null,
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.OM.Mem.2018"
+      ],
       "counts": {
         "bases": 1,
         "amendments": 0,
@@ -22271,7 +22736,9 @@
       "latestActiveBaseId": "SMPTE.OM.Std",
       "latestSupersededBaseId": "SMPTE.OM.Std.2015",
       "prevBaseId": "SMPTE.OM.Std.2015",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.OM.Std.2015"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -24485,8 +24952,8 @@
       "docs": [
         {
           "docId": "SMPTE.RDD44.2017",
-          "publicationDate": "2017-11-23",
-          "releaseTag": "20171123-pub",
+          "publicationDate": "2017-04-04",
+          "releaseTag": "20170404-pub",
           "statusActive": false,
           "statusSuperseded": true,
           "statusWithdrawn": false,
@@ -24526,7 +24993,9 @@
       "latestActiveBaseId": "SMPTE.RDD44.2022",
       "latestSupersededBaseId": "SMPTE.RDD44.2017-11",
       "prevBaseId": "SMPTE.RDD44.2017-11",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.RDD44.2017-11"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -25669,7 +26138,10 @@
       "latestActiveBaseId": "SMPTE.RP27.4.1994",
       "latestSupersededBaseId": null,
       "prevBaseId": "SMPTE.RP27.3.1989",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP27.3.1989",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP27.4.1994"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -26170,7 +26642,9 @@
       "latestActiveBaseId": "SMPTE.RP48.1999",
       "latestSupersededBaseId": "SMPTE.RP48.1995",
       "prevBaseId": "SMPTE.RP48.1995",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP48.1995"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -26507,7 +26981,10 @@
       "latestActiveBaseId": "SMPTE.RP59.1999",
       "latestSupersededBaseId": "SMPTE.RP59.1995",
       "prevBaseId": "SMPTE.RP59.1995",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP59.1986",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP59.1995"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -26658,7 +27135,9 @@
       "latestActiveBaseId": "SMPTE.RP67.2002",
       "latestSupersededBaseId": "SMPTE.RP67.1993",
       "prevBaseId": "SMPTE.RP67.1993",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP67.1993"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -27111,7 +27590,11 @@
       "latestActiveBaseId": "SMPTE.RP82.2005",
       "latestSupersededBaseId": "SMPTE.RP82.1995",
       "prevBaseId": "SMPTE.RP82.2004",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP82.1990",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP82.1995",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP82.2004"
+      ],
       "counts": {
         "bases": 4,
         "amendments": 0,
@@ -27518,7 +28001,9 @@
       "latestActiveBaseId": "SMPTE.RP95.2003",
       "latestSupersededBaseId": "SMPTE.RP95.1994",
       "prevBaseId": "SMPTE.RP95.1994",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP95.1994"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -27750,7 +28235,10 @@
       "latestActiveBaseId": "SMPTE.RP105.2003",
       "latestSupersededBaseId": "SMPTE.RP105.1995",
       "prevBaseId": "SMPTE.RP105.1995",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP105.1994",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP105.1995"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -28763,7 +29251,10 @@
       "latestActiveBaseId": "SMPTE.RP141.2020",
       "latestSupersededBaseId": "SMPTE.RP141.2005",
       "prevBaseId": "SMPTE.RP141.2005",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP141.1990",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP141.1995"
+      ],
       "counts": {
         "bases": 4,
         "amendments": 0,
@@ -30428,7 +30919,9 @@
       "latestActiveBaseId": "SMPTE.RP194.2004",
       "latestSupersededBaseId": "SMPTE.RP194.1998",
       "prevBaseId": "SMPTE.RP194.1998",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP194.1998"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -30474,7 +30967,9 @@
       "latestActiveBaseId": "SMPTE.RP195.2004",
       "latestSupersededBaseId": "SMPTE.RP195.1998",
       "prevBaseId": "SMPTE.RP195.1998",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP195.1998"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -30822,7 +31317,9 @@
       "latestActiveBaseId": "SMPTE.RP205.2014",
       "latestSupersededBaseId": "SMPTE.RP205.2009",
       "prevBaseId": "SMPTE.RP205.2009",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP205.2000"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -31986,7 +32483,9 @@
       "latestActiveBaseId": "SMPTE.RP431-2.2011",
       "latestSupersededBaseId": "SMPTE.RP431-2.2007",
       "prevBaseId": "SMPTE.RP431-2.2007",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.RP431-2.2007"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -34085,7 +34584,10 @@
       "latestActiveBaseId": "SMPTE.ST7.2004",
       "latestSupersededBaseId": "SMPTE.ST7.1999",
       "prevBaseId": "SMPTE.ST7.1999",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST7.1994",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST7.1999"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -34191,7 +34693,8 @@
       "latestSupersededBaseId": "SMPTE.ST12.1999",
       "prevBaseId": null,
       "flagInconsistencies": [
-        "SUPERSEDED_BY_OUT_OF_LINEAGE:SMPTE.ST12.1999->SMPTE.ST12-1.2008"
+        "SUPERSEDED_BY_OUT_OF_LINEAGE:SMPTE.ST12.1999->SMPTE.ST12-1.2008",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST12.1999"
       ],
       "counts": {
         "bases": 1,
@@ -34982,7 +35485,9 @@
       "latestActiveBaseId": "SMPTE.ST40.2002",
       "latestSupersededBaseId": "SMPTE.ST40.1997",
       "prevBaseId": "SMPTE.ST40.1997",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST40.1997"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -35039,7 +35544,10 @@
       "latestActiveBaseId": "SMPTE.ST41.2004",
       "latestSupersededBaseId": "SMPTE.ST41.1999",
       "prevBaseId": "SMPTE.ST41.1999",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST41.1994",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST41.1999"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -35131,7 +35639,9 @@
       "latestActiveBaseId": "SMPTE.ST55.2010",
       "latestSupersededBaseId": "SMPTE.ST55.2000",
       "prevBaseId": "SMPTE.ST55.2000",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST55.1992"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -35223,7 +35733,10 @@
       "latestActiveBaseId": "SMPTE.ST59.1998",
       "latestSupersededBaseId": "SMPTE.ST59.1997",
       "prevBaseId": "SMPTE.ST59.1997",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST59.1991",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST59.1997"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -35444,7 +35957,9 @@
       "latestActiveBaseId": "SMPTE.ST86.2005",
       "latestSupersededBaseId": "SMPTE.ST86.1996",
       "prevBaseId": "SMPTE.ST86.1996",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST86.1996"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -35525,7 +36040,9 @@
       "latestActiveBaseId": "SMPTE.ST93.2005",
       "latestSupersededBaseId": "SMPTE.ST93.1998",
       "prevBaseId": "SMPTE.ST93.1998",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST93.1998"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -35582,7 +36099,10 @@
       "latestActiveBaseId": "SMPTE.ST96.2004",
       "latestSupersededBaseId": "SMPTE.ST96.1999",
       "prevBaseId": "SMPTE.ST96.1999",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST96.1992",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST96.1999"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -35698,7 +36218,9 @@
       "latestActiveBaseId": "SMPTE.ST102.2002",
       "latestSupersededBaseId": "SMPTE.ST102.1997",
       "prevBaseId": "SMPTE.ST102.1997",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST102.1997"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -35755,7 +36277,10 @@
       "latestActiveBaseId": "SMPTE.ST109.2003",
       "latestSupersededBaseId": "SMPTE.ST109.1998",
       "prevBaseId": "SMPTE.ST109.1998",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST109.1992",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST109.1998"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -35801,7 +36326,9 @@
       "latestActiveBaseId": "SMPTE.ST111.2001",
       "latestSupersededBaseId": "SMPTE.ST111.1996",
       "prevBaseId": "SMPTE.ST111.1996",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST111.1996"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -35858,7 +36385,10 @@
       "latestActiveBaseId": "SMPTE.ST112.2004",
       "latestSupersededBaseId": "SMPTE.ST112.1999",
       "prevBaseId": "SMPTE.ST112.1999",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST112.1994",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST112.1999"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -35950,7 +36480,9 @@
       "latestActiveBaseId": "SMPTE.ST119.2011",
       "latestSupersededBaseId": "SMPTE.ST119.2004",
       "prevBaseId": "SMPTE.ST119.2004",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST119.1999"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -35985,7 +36517,9 @@
       "latestActiveBaseId": "SMPTE.ST123.XXXX",
       "latestSupersededBaseId": null,
       "prevBaseId": null,
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST123.XXXX"
+      ],
       "counts": {
         "bases": 1,
         "amendments": 0,
@@ -36112,7 +36646,9 @@
       "latestActiveBaseId": "SMPTE.ST137.2000",
       "latestSupersededBaseId": "SMPTE.ST137.1994",
       "prevBaseId": "SMPTE.ST137.1994",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST137.1994"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -36169,7 +36705,10 @@
       "latestActiveBaseId": "SMPTE.ST139.2003",
       "latestSupersededBaseId": "SMPTE.ST139.1996",
       "prevBaseId": "SMPTE.ST139.1996",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST139.1986",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST139.1996"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -36251,7 +36790,8 @@
       "latestSupersededBaseId": "SMPTE.ST145.1999",
       "prevBaseId": "SMPTE.ST145.1999",
       "flagInconsistencies": [
-        "DOCID_PUBDATE_MISMATCH:SMPTE.ST145.1999:docIdYear=1999,pubYear=2004"
+        "DOCID_PUBDATE_MISMATCH:SMPTE.ST145.1999:docIdYear=1999,pubYear=2004",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST145.1999"
       ],
       "counts": {
         "bases": 2,
@@ -36379,7 +36919,10 @@
       "latestActiveBaseId": "SMPTE.ST149.2004",
       "latestSupersededBaseId": "SMPTE.ST149.1999",
       "prevBaseId": "SMPTE.ST149.1999",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST149.1994",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST149.1999"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -36460,7 +37003,9 @@
       "latestActiveBaseId": "SMPTE.ST152.2003",
       "latestSupersededBaseId": "SMPTE.ST152.1994",
       "prevBaseId": "SMPTE.ST152.1994",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST152.1994"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -36552,7 +37097,10 @@
       "latestActiveBaseId": "SMPTE.ST154.2003",
       "latestSupersededBaseId": "SMPTE.ST154.1998",
       "prevBaseId": "SMPTE.ST154.1998",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST154.1993",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST154.1998"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -36598,7 +37146,9 @@
       "latestActiveBaseId": "SMPTE.ST157.1999",
       "latestSupersededBaseId": "SMPTE.ST157.1994",
       "prevBaseId": "SMPTE.ST157.1994",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST157.1994"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -36714,7 +37264,9 @@
       "latestActiveBaseId": "SMPTE.ST160.1995",
       "latestSupersededBaseId": "SMPTE.ST160.1990",
       "prevBaseId": "SMPTE.ST160.1990",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST160.1990"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -36865,7 +37417,9 @@
       "latestActiveBaseId": "SMPTE.ST164.2002",
       "latestSupersededBaseId": "SMPTE.ST164.1993",
       "prevBaseId": "SMPTE.ST164.1993",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST164.1993"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -36946,7 +37500,9 @@
       "latestActiveBaseId": "SMPTE.ST166.2004",
       "latestSupersededBaseId": "SMPTE.ST166.1999",
       "prevBaseId": "SMPTE.ST166.1999",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST166.1999"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -37003,7 +37559,10 @@
       "latestActiveBaseId": "SMPTE.ST168.2001",
       "latestSupersededBaseId": "SMPTE.ST168.1996",
       "prevBaseId": "SMPTE.ST168.1996",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST168.1991",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST168.1996"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -37445,7 +38004,9 @@
       "latestActiveBaseId": "SMPTE.ST185.2011",
       "latestSupersededBaseId": "SMPTE.ST185.2003",
       "prevBaseId": "SMPTE.ST185.2003",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST185.1993"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -37491,7 +38052,9 @@
       "latestActiveBaseId": "SMPTE.ST192.1997",
       "latestSupersededBaseId": "SMPTE.ST192.1991",
       "prevBaseId": "SMPTE.ST192.1991",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST192.1991"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -37548,7 +38111,10 @@
       "latestActiveBaseId": "SMPTE.ST194.2002",
       "latestSupersededBaseId": "SMPTE.ST194.1997",
       "prevBaseId": "SMPTE.ST194.1997",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST194.1991",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST194.1997"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -37605,7 +38171,10 @@
       "latestActiveBaseId": "SMPTE.ST195.2000",
       "latestSupersededBaseId": "SMPTE.ST195.1993",
       "prevBaseId": "SMPTE.ST195.1993",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST195.1984",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST195.1993"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -37662,7 +38231,10 @@
       "latestActiveBaseId": "SMPTE.ST196.2003",
       "latestSupersededBaseId": "SMPTE.ST196.1995",
       "prevBaseId": "SMPTE.ST196.1995",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST196.1993",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST196.1995"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -37894,7 +38466,10 @@
       "latestActiveBaseId": "SMPTE.ST202.2010",
       "latestSupersededBaseId": "SMPTE.ST202.1998",
       "prevBaseId": "SMPTE.ST202.1998",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST202.1991",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST202.1998"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -38266,7 +38841,9 @@
       "latestActiveBaseId": "SMPTE.ST214.2007",
       "latestSupersededBaseId": "SMPTE.ST214.1999",
       "prevBaseId": "SMPTE.ST214.1999",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST214.1999"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -38569,7 +39146,8 @@
       "latestSupersededBaseId": "SMPTE.ST223.1996",
       "prevBaseId": "SMPTE.ST223.1996",
       "flagInconsistencies": [
-        "DOCID_PUBDATE_MISMATCH:SMPTE.ST223.1996:docIdYear=1996,pubYear=2001"
+        "DOCID_PUBDATE_MISMATCH:SMPTE.ST223.1996:docIdYear=1996,pubYear=2001",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST223.1996"
       ],
       "counts": {
         "bases": 2,
@@ -38872,7 +39450,10 @@
       "latestActiveBaseId": "SMPTE.ST231.2004",
       "latestSupersededBaseId": "SMPTE.ST231.1999",
       "prevBaseId": "SMPTE.ST231.1999",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST231.1995",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST231.1999"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -38929,7 +39510,10 @@
       "latestActiveBaseId": "SMPTE.ST233.2003",
       "latestSupersededBaseId": "SMPTE.ST233.1998",
       "prevBaseId": "SMPTE.ST233.1998",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST233.1992",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST233.1998"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -39080,7 +39664,9 @@
       "latestActiveBaseId": "SMPTE.ST237.2003",
       "latestSupersededBaseId": "SMPTE.ST237.1998",
       "prevBaseId": "SMPTE.ST237.1998",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST237.1998"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -39172,7 +39758,10 @@
       "latestActiveBaseId": "SMPTE.ST239.2004",
       "latestSupersededBaseId": "SMPTE.ST239.1999",
       "prevBaseId": "SMPTE.ST239.1999",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST239.1994",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST239.1999"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -39299,7 +39888,9 @@
       "latestActiveBaseId": "SMPTE.ST242.2003",
       "latestSupersededBaseId": "SMPTE.ST242.1993",
       "prevBaseId": "SMPTE.ST242.1993",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST242.1993"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -39730,7 +40321,9 @@
       "latestActiveBaseId": "SMPTE.ST254.2008",
       "latestSupersededBaseId": "SMPTE.ST254.2002",
       "prevBaseId": "SMPTE.ST254.2002",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST254.2002"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -39846,7 +40439,9 @@
       "latestActiveBaseId": "SMPTE.ST258.2004",
       "latestSupersededBaseId": "SMPTE.ST258.1993",
       "prevBaseId": "SMPTE.ST258.1993",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST258.1993"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -40380,7 +40975,10 @@
       "latestActiveBaseId": "SMPTE.ST270.2008",
       "latestSupersededBaseId": "SMPTE.ST270.2005",
       "prevBaseId": "SMPTE.ST270.2005",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST270.1994",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST270.2005"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -40426,7 +41024,9 @@
       "latestActiveBaseId": "SMPTE.ST271.2008",
       "latestSupersededBaseId": "SMPTE.ST271.2002",
       "prevBaseId": "SMPTE.ST271.2002",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST271.2002"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -40553,7 +41153,10 @@
       "latestActiveBaseId": "SMPTE.ST274.2008",
       "latestSupersededBaseId": "SMPTE.ST274.2005",
       "prevBaseId": "SMPTE.ST274.2005",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST274.2003",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST274.2005"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -40787,7 +41390,9 @@
       "prevBaseId": null,
       "flagInconsistencies": [
         "SUPERSEDED_BY_OUT_OF_LINEAGE:SMPTE.ST291.2006->SMPTE.ST291-1.2011",
-        "SUPERSEDED_BY_OUT_OF_LINEAGE:SMPTE.ST291.2011->SMPTE.ST291-1.2011"
+        "SUPERSEDED_BY_OUT_OF_LINEAGE:SMPTE.ST291.2011->SMPTE.ST291-1.2011",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST291.2010",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST291.2011"
       ],
       "counts": {
         "bases": 3,
@@ -40859,7 +41464,8 @@
       "latestSupersededBaseId": "SMPTE.ST292.2008",
       "prevBaseId": null,
       "flagInconsistencies": [
-        "SUPERSEDED_BY_OUT_OF_LINEAGE:SMPTE.ST292.2008->SMPTE.ST292-1.2011"
+        "SUPERSEDED_BY_OUT_OF_LINEAGE:SMPTE.ST292.2008->SMPTE.ST292-1.2011",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST292.2008"
       ],
       "counts": {
         "bases": 1,
@@ -41276,7 +41882,9 @@
       "latestActiveBaseId": "SMPTE.ST298.2009",
       "latestSupersededBaseId": "SMPTE.ST298.1997",
       "prevBaseId": "SMPTE.ST298.1997",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST298.1997"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -41427,7 +42035,9 @@
       "latestActiveBaseId": "SMPTE.ST301.2005",
       "latestSupersededBaseId": "SMPTE.ST301.1999",
       "prevBaseId": "SMPTE.ST301.1999",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST301.1999"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -41880,7 +42490,10 @@
       "latestActiveBaseId": "SMPTE.ST313.2008",
       "latestSupersededBaseId": "SMPTE.ST313.2005",
       "prevBaseId": "SMPTE.ST313.2005",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST313.1999",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST313.2005"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -42812,7 +43425,9 @@
       "latestActiveBaseId": "SMPTE.ST336.2017",
       "latestSupersededBaseId": "SMPTE.ST336.2007",
       "prevBaseId": "SMPTE.ST336.2007",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST336.2001"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -42939,7 +43554,8 @@
       "prevBaseId": "SMPTE.ST338.2015",
       "flagInconsistencies": [
         "MULTIPLE_LATEST_FLAGS",
-        "LATEST_FLAG_BEFORE_DATE"
+        "LATEST_FLAG_BEFORE_DATE",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST338.2008"
       ],
       "counts": {
         "bases": 4,
@@ -43461,7 +44077,10 @@
       "latestActiveBaseId": "SMPTE.ST352.2013",
       "latestSupersededBaseId": "SMPTE.ST352.2011",
       "prevBaseId": "SMPTE.ST352.2011",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST352.2002",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST352.2010"
+      ],
       "counts": {
         "bases": 4,
         "amendments": 1,
@@ -44216,7 +44835,10 @@
       "latestActiveBaseId": "SMPTE.ST372.2017",
       "latestSupersededBaseId": "SMPTE.ST372.2011",
       "prevBaseId": "SMPTE.ST372.2011",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST372.2002",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST372.2009"
+      ],
       "counts": {
         "bases": 4,
         "amendments": 0,
@@ -45414,7 +46036,9 @@
       "latestActiveBaseId": "SMPTE.ST390.2011",
       "latestSupersededBaseId": "SMPTE.ST390.2004",
       "prevBaseId": "SMPTE.ST390.2004",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST390.2004"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -46468,7 +47092,9 @@
       "latestSupersededBaseId": "SMPTE.ST425.2008",
       "prevBaseId": null,
       "flagInconsistencies": [
-        "SUPERSEDED_BY_OUT_OF_LINEAGE:SMPTE.ST425.2008->SMPTE.ST425-1.2011"
+        "SUPERSEDED_BY_OUT_OF_LINEAGE:SMPTE.ST425.2008->SMPTE.ST425-1.2011",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST425.2006",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST425.2008"
       ],
       "counts": {
         "bases": 2,
@@ -47365,7 +47991,9 @@
       "latestActiveBaseId": "SMPTE.ST429-2.2023-09",
       "latestSupersededBaseId": "SMPTE.ST429-2.2020",
       "prevBaseId": "SMPTE.ST429-2.2020",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST429-2.2019Am1.2019"
+      ],
       "counts": {
         "bases": 6,
         "amendments": 3,
@@ -47422,7 +48050,9 @@
       "latestActiveBaseId": "SMPTE.ST429-3.2023-09",
       "latestSupersededBaseId": "SMPTE.ST429-3.2007",
       "prevBaseId": "SMPTE.ST429-3.2007",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST429-3.2006"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 0,
@@ -48283,7 +48913,9 @@
       "latestActiveBaseId": "SMPTE.ST430-3.2012",
       "latestSupersededBaseId": "SMPTE.ST430-3.2008",
       "prevBaseId": "SMPTE.ST430-3.2008",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST430-3.2006"
+      ],
       "counts": {
         "bases": 3,
         "amendments": 1,
@@ -48435,7 +49067,9 @@
       "latestActiveBaseId": "SMPTE.ST430-6.2010",
       "latestSupersededBaseId": "SMPTE.ST430-6.2008",
       "prevBaseId": "SMPTE.ST430-6.2008",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST430-6.2008"
+      ],
       "counts": {
         "bases": 2,
         "amendments": 0,
@@ -50435,7 +51069,8 @@
       "flagInconsistencies": [
         "LATEST_FLAG_BEFORE_DATE",
         "LATEST_FLAG_CONFLICT_WITH_GRAPH:any:SMPTE.ST2029.2022<>SMPTE.ST2029.2023-10",
-        "LATEST_FLAG_CONFLICT_WITH_GRAPH:base:SMPTE.ST2029.2022<>SMPTE.ST2029.2023-10"
+        "LATEST_FLAG_CONFLICT_WITH_GRAPH:base:SMPTE.ST2029.2022<>SMPTE.ST2029.2023-10",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST2029.2023-10"
       ],
       "counts": {
         "bases": 3,
@@ -51845,7 +52480,8 @@
       "flagInconsistencies": [
         "LATEST_FLAG_BEFORE_DATE",
         "LATEST_FLAG_CONFLICT_WITH_GRAPH:any:SMPTE.ST2059-1.2020<>SMPTE.ST2059-1.2021",
-        "LATEST_FLAG_CONFLICT_WITH_GRAPH:base:SMPTE.ST2059-1.2020<>SMPTE.ST2059-1.2021"
+        "LATEST_FLAG_CONFLICT_WITH_GRAPH:base:SMPTE.ST2059-1.2020<>SMPTE.ST2059-1.2021",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST2059-1.2021"
       ],
       "counts": {
         "bases": 3,
@@ -52057,7 +52693,8 @@
       "flagInconsistencies": [
         "LATEST_FLAG_BEFORE_DATE",
         "LATEST_FLAG_CONFLICT_WITH_GRAPH:any:SMPTE.ST2065-1.2020<>SMPTE.ST2065-1.2021",
-        "LATEST_FLAG_CONFLICT_WITH_GRAPH:base:SMPTE.ST2065-1.2020<>SMPTE.ST2065-1.2021"
+        "LATEST_FLAG_CONFLICT_WITH_GRAPH:base:SMPTE.ST2065-1.2020<>SMPTE.ST2065-1.2021",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST2065-1.2021"
       ],
       "counts": {
         "bases": 3,
@@ -52210,7 +52847,8 @@
       "flagInconsistencies": [
         "LATEST_FLAG_BEFORE_DATE",
         "LATEST_FLAG_CONFLICT_WITH_GRAPH:any:SMPTE.ST2065-4.2022<>SMPTE.ST2065-4.2023-02",
-        "LATEST_FLAG_CONFLICT_WITH_GRAPH:base:SMPTE.ST2065-4.2022<>SMPTE.ST2065-4.2023-02"
+        "LATEST_FLAG_CONFLICT_WITH_GRAPH:base:SMPTE.ST2065-4.2022<>SMPTE.ST2065-4.2023-02",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST2065-4.2023-02"
       ],
       "counts": {
         "bases": 3,
@@ -52672,7 +53310,8 @@
       "flagInconsistencies": [
         "LATEST_FLAG_BEFORE_DATE",
         "LATEST_FLAG_CONFLICT_WITH_GRAPH:any:SMPTE.ST2067-21.2022<>SMPTE.ST2067-21.2023-02",
-        "LATEST_FLAG_CONFLICT_WITH_GRAPH:base:SMPTE.ST2067-21.2022<>SMPTE.ST2067-21.2023-02"
+        "LATEST_FLAG_CONFLICT_WITH_GRAPH:base:SMPTE.ST2067-21.2022<>SMPTE.ST2067-21.2023-02",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST2067-21.2023-02"
       ],
       "counts": {
         "bases": 5,
@@ -52849,7 +53488,8 @@
       "flagInconsistencies": [
         "LATEST_FLAG_BEFORE_DATE",
         "LATEST_FLAG_CONFLICT_WITH_GRAPH:any:SMPTE.ST2067-60.2022<>SMPTE.ST2067-60.2023",
-        "LATEST_FLAG_CONFLICT_WITH_GRAPH:base:SMPTE.ST2067-60.2022<>SMPTE.ST2067-60.2023"
+        "LATEST_FLAG_CONFLICT_WITH_GRAPH:base:SMPTE.ST2067-60.2022<>SMPTE.ST2067-60.2023",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST2067-60.2023"
       ],
       "counts": {
         "bases": 2,
@@ -53118,7 +53758,8 @@
       "flagInconsistencies": [
         "LATEST_FLAG_BEFORE_DATE",
         "LATEST_FLAG_CONFLICT_WITH_GRAPH:any:SMPTE.ST2067-103.2020<>SMPTE.ST2067-103.2021",
-        "LATEST_FLAG_CONFLICT_WITH_GRAPH:base:SMPTE.ST2067-103.2020<>SMPTE.ST2067-103.2021"
+        "LATEST_FLAG_CONFLICT_WITH_GRAPH:base:SMPTE.ST2067-103.2020<>SMPTE.ST2067-103.2021",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST2067-103.2021"
       ],
       "counts": {
         "bases": 3,
@@ -53214,7 +53855,8 @@
       "flagInconsistencies": [
         "LATEST_FLAG_BEFORE_DATE",
         "LATEST_FLAG_CONFLICT_WITH_GRAPH:any:SMPTE.ST2067-201.2020<>SMPTE.ST2067-201.2021",
-        "LATEST_FLAG_CONFLICT_WITH_GRAPH:base:SMPTE.ST2067-201.2020<>SMPTE.ST2067-201.2021"
+        "LATEST_FLAG_CONFLICT_WITH_GRAPH:base:SMPTE.ST2067-201.2020<>SMPTE.ST2067-201.2021",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST2067-201.2021"
       ],
       "counts": {
         "bases": 3,
@@ -53264,7 +53906,8 @@
       "flagInconsistencies": [
         "LATEST_FLAG_BEFORE_DATE",
         "LATEST_FLAG_CONFLICT_WITH_GRAPH:any:SMPTE.ST2067-202.2022<>SMPTE.ST2067-202.2023-07",
-        "LATEST_FLAG_CONFLICT_WITH_GRAPH:base:SMPTE.ST2067-202.2022<>SMPTE.ST2067-202.2023-07"
+        "LATEST_FLAG_CONFLICT_WITH_GRAPH:base:SMPTE.ST2067-202.2022<>SMPTE.ST2067-202.2023-07",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST2067-202.2023-07"
       ],
       "counts": {
         "bases": 2,
@@ -54772,7 +55415,8 @@
       "flagInconsistencies": [
         "LATEST_FLAG_BEFORE_DATE",
         "LATEST_FLAG_CONFLICT_WITH_GRAPH:any:SMPTE.ST2094-10.2020<>SMPTE.ST2094-10.2021",
-        "LATEST_FLAG_CONFLICT_WITH_GRAPH:base:SMPTE.ST2094-10.2020<>SMPTE.ST2094-10.2021"
+        "LATEST_FLAG_CONFLICT_WITH_GRAPH:base:SMPTE.ST2094-10.2020<>SMPTE.ST2094-10.2021",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST2094-10.2021"
       ],
       "counts": {
         "bases": 3,
@@ -56159,7 +56803,10 @@
       "latestActiveBaseId": "SMPTE.ST2123.2025-03",
       "latestSupersededBaseId": "SMPTE.ST2123.2024-03",
       "prevBaseId": "SMPTE.ST2123.2024-03",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST2123.2021-01",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST2123.2023-04"
+      ],
       "counts": {
         "bases": 7,
         "amendments": 0,
@@ -56405,7 +57052,8 @@
       "latestSupersededBaseId": "SMPTE.TSP2121-1.2018",
       "prevBaseId": null,
       "flagInconsistencies": [
-        "SUPERSEDED_BY_OUT_OF_LINEAGE:SMPTE.TSP2121-1.2018->SMPTE.RDD59-1.2022"
+        "SUPERSEDED_BY_OUT_OF_LINEAGE:SMPTE.TSP2121-1.2018->SMPTE.RDD59-1.2022",
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.TSP2121-1.2018"
       ],
       "counts": {
         "bases": 1,
@@ -56441,7 +57089,9 @@
       "latestActiveBaseId": null,
       "latestSupersededBaseId": null,
       "prevBaseId": null,
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "SMPTE_MISSING_RELEASE_TAG:SMPTE.TSP2121-4.2019"
+      ],
       "counts": {
         "bases": 1,
         "amendments": 0,
