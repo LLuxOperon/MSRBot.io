@@ -19,7 +19,7 @@ function arg(name, def) {
 }
 
 const IN  = arg('--in',  'src/main/data/documents.json');
-const OUT = arg('--out', 'src/main/reports/documents_override_audit.json');
+const OUT = arg('--out', 'src/main/reports/overrides_audit.json');
 const PRETTY = Number(arg('--pretty', '2')); // 0..n
 
 // Collect any --publisher filters (repeatable)

@@ -98,7 +98,7 @@ This document consolidates the MSR worklog into a single, category‑organized t
 
 ### 3.5 Overrides Audit
 - Added **`src/main/scripts/audit.overrides.js`** to scan for `$meta.overridden === true`.
-- Outputs **`src/main/reports/overrides-audit.json`** (JSON-only; CSV export dropped). No PR creation and no MSI dependency.
+- Outputs **`src/main/reports/overrides_audit.json`** (JSON-only; CSV export dropped). No PR creation and no MSI dependency.
 - Skips trivial/null/empty `originalValue` entries; groups results alphabetically by field with per-field totals.
 
 ## 4 Workflow & CI/CD
