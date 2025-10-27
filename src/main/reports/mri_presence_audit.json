@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2025-10-27T03:40:14.426Z",
+  "generatedAt": "2025-10-27T19:51:43.104Z",
   "sourcePath": "src/main/data/documents.json",
-  "processedDocs": 2219,
+  "processedDocs": 2210,
   "replayMode": "full-replay",
-  "seenRefs": 2855,
-  "seenSightings": 2855,
+  "seenRefs": 2852,
+  "seenSightings": 2852,
   "presentCount": 1024,
   "missingCount": 33,
   "missing": [
