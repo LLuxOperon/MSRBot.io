@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2025-10-27T16:17:48.817Z",
+  "generatedAt": "2025-10-27T16:23:44.045Z",
   "sourcePath": "src/main/data/documents.json",
-  "sourceHash": "sha256:88e1f40377c959b7717dbf213a8e8802338daa55f236eee71c44aa2801fb9d08",
+  "sourceHash": "sha256:7febf64d369471f785c54dc2d56b1e63ddbf185181e72b857edc3670364e0606",
   "publisherCounts": {
-    "total": 2219,
+    "total": 2218,
     "counts": {
-      "SMPTE": 1503,
+      "SMPTE": 1502,
       "IETF": 109,
       "ISO": 105,
       "ISO/IEC": 87,
@@ -2073,7 +2073,7 @@
     }
   },
   "flagSummary": {
-    "totalFlags": 338,
+    "totalFlags": 337,
     "byType": {
       "DOCID_PUBDATE_MISMATCH": {
         "count": 29,
@@ -2595,7 +2595,7 @@
         ]
       },
       "SMPTE_MISSING_RELEASE_TAG": {
-        "count": 155,
+        "count": 154,
         "examples": [
           {
             "lineage": "SMPTE|AG|01|",
@@ -2910,10 +2910,6 @@
             "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST119.1999"
           },
           {
-            "lineage": "SMPTE|ST|123|",
-            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST123.XXXX"
-          },
-          {
             "lineage": "SMPTE|ST|137|",
             "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST137.1994"
           },
@@ -2996,6 +2992,10 @@
           {
             "lineage": "SMPTE|ST|195|",
             "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST195.1993"
+          },
+          {
+            "lineage": "SMPTE|ST|196|",
+            "flag": "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST196.1993"
           }
         ]
       },
@@ -36485,43 +36485,6 @@
       ],
       "counts": {
         "bases": 3,
-        "amendments": 0,
-        "supplements": 0
-      }
-    },
-    {
-      "key": "SMPTE|ST|123|",
-      "publisher": "SMPTE",
-      "suite": "ST",
-      "number": "123",
-      "part": null,
-      "docs": [
-        {
-          "docId": "SMPTE.ST123.XXXX",
-          "publicationDate": "2023-01-01",
-          "releaseTag": null,
-          "statusActive": true,
-          "statusSuperseded": false,
-          "statusWithdrawn": false,
-          "statusStabilized": false,
-          "statusAmended": false,
-          "statusVersionless": false
-        }
-      ],
-      "latestBaseId": "SMPTE.ST123.XXXX",
-      "latestAnyId": "SMPTE.ST123.XXXX",
-      "latestDateKey": "20230101",
-      "hasActiveBase": true,
-      "hasWithdrawn": false,
-      "hasStabilized": false,
-      "latestActiveBaseId": "SMPTE.ST123.XXXX",
-      "latestSupersededBaseId": null,
-      "prevBaseId": null,
-      "flagInconsistencies": [
-        "SMPTE_MISSING_RELEASE_TAG:SMPTE.ST123.XXXX"
-      ],
-      "counts": {
-        "bases": 1,
         "amendments": 0,
         "supplements": 0
       }
