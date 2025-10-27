@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2025-10-27T00:53:33.690Z",
+  "generatedAt": "2025-10-27T03:37:29.665Z",
   "sourcePath": "src/main/data/documents.json",
-  "sourceHash": "sha256:7026f42e15b34a1ab11097890e67b96e73093665eb734e8edafe70953d75b36e",
+  "sourceHash": "sha256:2a3d88ec43b6abb1bdda2ea717ec7c524db66d6902d302632c0eb66b60475ba6",
   "publisherCounts": {
-    "total": 2218,
+    "total": 2219,
     "counts": {
-      "SMPTE": 1502,
+      "SMPTE": 1503,
       "IETF": 109,
       "ISO": 105,
       "ISO/IEC": 87,
@@ -43430,6 +43430,17 @@
           "statusVersionless": false
         },
         {
+          "docId": "SMPTE.ST352.2011Am1.2011",
+          "publicationDate": "2011-03-30",
+          "releaseTag": "20110330-am1-pub",
+          "statusActive": false,
+          "statusSuperseded": true,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        },
+        {
           "docId": "SMPTE.ST352.2013",
           "publicationDate": "2013-02-05",
           "releaseTag": "20130205-pub",
@@ -43453,7 +43464,7 @@
       "flagInconsistencies": [],
       "counts": {
         "bases": 4,
-        "amendments": 0,
+        "amendments": 1,
         "supplements": 0
       }
     },
