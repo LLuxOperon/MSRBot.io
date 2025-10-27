@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-10-27T00:46:19.783Z",
+  "generatedAt": "2025-10-27T19:51:43.088Z",
   "stats": {
     "uniqueRefIds": 1057
   },
@@ -19984,14 +19984,6 @@
           "href": "",
           "rawRef": "",
           "title": null
-        },
-        {
-          "docId": "SMPTE.RP428-22.20XX",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
         }
       ]
     },
@@ -36334,14 +36326,6 @@
           "title": null
         },
         {
-          "docId": "SMPTE.RP428-22.20XX",
-          "type": "normative",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
           "docId": "SMPTE.ST2067-40.2021",
           "type": "normative",
           "cite": "",
@@ -37485,14 +37469,6 @@
         ]
       },
       "rawVariants": [
-        {
-          "docId": "SMPTE.RP428-22.20XX",
-          "type": "normative",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
         {
           "docId": "SMPTE.ST377-42.2021",
           "type": "bibliographic",
