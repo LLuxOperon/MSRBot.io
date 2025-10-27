@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  
+    <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext'>
+    <link rel="stylesheet" type="text/css" href="../mobile.css">
+  
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.4/b-2.1.1/r-2.2.9/sp-1.4.0/sl-1.3.4/datatables.min.css"/>
+  
+    <title>Media Standards Registry | Groups</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../features.js"></script>
+  
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.4/b-2.1.1/r-2.2.9/sp-1.4.0/sl-1.3.4/datatables.min.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.11.4/features/deepLink/dataTables.deepLink.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-expand-md navbar-light fixed-top fh-fixedHeader bg-light d-flex">
+      <a class="navbar-brand clear-filter" href="#">Media Standards Registry |  Groups</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="../index.html">Documents</a>
+              <a class="dropdown-item" href="../dependancies/index.html">Document Dependancies</a>
+              <a class="dropdown-item" href="../projects/index.html">Projects</a>
+              <a class="dropdown-item" href="../groups/index.html">Groups</a>
+            </div>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav d-print-none ml-auto navbar-right">
+          <li class="nav-item">
+            <a id="json-feed" target="_blank" class="nav-link" href="https://raw.githubusercontent.com/SteveLLamb/mediastandards-registry/master/src/main/data/groups.json"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-code-slash" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0zm-.999-3.124a.5.5 0 0 1 .33.625l-4 13a.5.5 0 0 1-.955-.294l4-13a.5.5 0 0 1 .625-.33z"/></svg> Get the JSON</a>
+          </li>
+          <li class="nav-item">
+            <a id="full-page" target="_blank" class="nav-link" href="https://stevellamb.github.io/mediastandards-registry/groups/"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrows-fullscreen" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344 0a.5.5 0 0 1 .707 0l4.096 4.096V11.5a.5.5 0 1 1 1 0v3.975a.5.5 0 0 1-.5.5H11.5a.5.5 0 0 1 0-1h2.768l-4.096-4.096a.5.5 0 0 1 0-.707zm0-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707zm-4.344 0a.5.5 0 0 1-.707 0L1.025 1.732V4.5a.5.5 0 0 1-1 0V.525a.5.5 0 0 1 .5-.5H4.5a.5.5 0 0 1 0 1H1.732l4.096 4.096a.5.5 0 0 1 0 .707z"/></svg> Full Page</a>
+          </li>
+          <li class="nav-item">
+            <a href="javascript:void(0)" onclick="window.print();return false;" class="nav-link" title="Print Page"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer" viewBox="0 0 16 16"><path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/><path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/></svg> Print Page</a>
+          </li>
+          <li class="nav-item">
+            <a id="csv-download" target="_blank" class="nav-link" title="Download as CSV" href="../groups.csv"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-table" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 2h-4v3h4V4zm0 4h-4v3h4V8zm0 4h-4v3h3a1 1 0 0 0 1-1v-2zm-5 3v-3H6v3h4zm-5 0v-3H1v2a1 1 0 0 0 1 1h3zm-4-4h4V8H1v3zm0-4h4V4H1v3zm5-3v3h4V4H6zm4 4H6v3h4V8z"/></svg> Download CSV</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <a href="#" id="toTopBtn" class="cd-top text-replace js-cd-top cd-top--is-visible cd-top--fade-out" data-abc="true"></a>
+    <a class="anchor" id="top" href="#top"></a>    <!-- Main content starts - do not edit above this line -->
+    <table id="sorttableGroups" class="table table-small table-hover">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col" class="d-none"></th>
+          <th scope="col">Organization</th>
+          <th scope="col" class="col-2">Group</th>
+          <th scope="col" class="text-center text-nowrap">Group Type</th>
+          <th scope="col" class="d-none"></th>
+          <th scope="col">Status</th>
+          <th scope="col" class="col-3">Description</th>
+          <th scope="col" class="d-none"></th>
+          <th scope="col" class="col-2 text-nowrap">Parent Group</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody id="searchTable">
+      </tbody>
+    </table>
+    <!-- Main content ends - do not edit below this line -->
+    <footer class="page-footer font-small">
+    <div class="row d-flex align-items-center text-center p-3 border-top">
+      <div class="col text-center">
+        <small class="text-muted">
+          Site version: <code>4a8fa2064e0da78df924a9afbb699b94ac5a5449</code>
+          <br>Generated on: <code>Mon Oct 27 2025 19:52:24 GMT+0000 (Coordinated Universal Time)</code>
+        </small>
+      </div>
+    </div>
+    <div class="footer-copyright text-center py-2 bg-white">
+      <small class="text-muted">
+        ALL INFORMATION PRESENTED HERE IS TO BE USED AT YOUR OWN RISK,STRICTLY VOLUNTARY, 
+        <br>SHOULD NOT BE USED FOR IMPLEMENTING PRODUCTS,NO WARRANTY EXPRESSED OR IMPLIED. PROVIDED FOR CONVENIENCE ONLY.
+        <br>:: GO TO <a href="https://github.com/SteveLLamb/mediastandards-registry" target="_blank">https://github.com/SteveLLamb/mediastandards-registry</a> TO OFFER SUGGESTIONS/ CORRECTIONS. ::
+        <br>USE AT YOUR OWN RISK
+      </small>
+    </div>
+    <div class="footer-copyright text-center py-2 bg-white">
+      <small class="text-muted">
+        © 2021 Copyright: Steve LLamb
+      </small>
+    </div>
+  </footer> 
+</body>
+</html>
