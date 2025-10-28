@@ -53,7 +53,9 @@ $(document).ready(function() {
 
   var defaultOptions = {
     autoWidth: false,
-    paging: false,
+    paging: true,
+    pageLength: 25,
+    lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]], 
     responsive: true,
     buttons: [
       {
@@ -111,7 +113,8 @@ $(document).ready(function() {
     ],
     dom: 
       "<'row'<'col d-print-none d-flex align-items-center'B><'col d-flex justify-content-center align-items-center'i><'col d-print-none d-flex justify-content-end align-items-center'f>>" +
-      "<'row'<'col-sm-12't>>",
+      "<'row'<'col-sm-12't>>" +
+      "<'row'<'col-sm-12'lp>>",
     language: {
       processing: "Loading filtering options...",
       searchPanes: {
@@ -134,7 +137,9 @@ $(document).ready(function() {
 
   var defaultOptions = {
     autoWidth: false,
-    paging: false,
+    paging: true,
+    pageLength: 25,
+    lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]], 
     responsive: false,
     buttons: [
       {
@@ -171,7 +176,8 @@ $(document).ready(function() {
     ],
     dom: 
       "<'row'<'col d-print-none d-flex align-items-center'B><'col d-flex justify-content-center align-items-center'i><'col d-print-none d-flex justify-content-end align-items-center'f>>" +
-      "<'row'<'col-sm-12't>>",
+      "<'row'<'col-sm-12't>>" +
+      "<'row'<'col-sm-12'lp>>",
     language: {
       processing: "Loading filtering options...",
       searchPanes: {
@@ -210,7 +216,9 @@ $(document).ready(function() {
   var searchOptions = $.fn.dataTable.ext.deepLink( ['search.search' ] );
 
   var defaultOptions = {
-    paging: false,
+    paging: true,
+    pageLength: 10,
+    lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]], 
     processing: true,
     responsive: true,
     order: [[0, 'asc']],   
@@ -249,7 +257,8 @@ $(document).ready(function() {
     ],
     dom: 
       "<'row'<'col d-print-none d-flex align-items-center'B><'col d-flex justify-content-center align-items-center'i><'col d-print-none d-flex justify-content-end align-items-center'f>>" +
-      "<'row'<'col-sm-12't>>",
+      "<'row'<'col-sm-12't>>" +
+      "<'row'<'col-sm-12'lp>>",
     language: {
       processing: "Loading filtering options...",
       searchPanes: {
@@ -388,7 +397,9 @@ $(document).ready(function() {
   var searchOptions = $.fn.dataTable.ext.deepLink( ['search.search' ] );
 
   var defaultOptions = {
-    paging: false,
+    paging: true,
+    pageLength: 10,
+    lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]], 
     processing: true,
     responsive: true,
     order: [[0, 'asc']],   
@@ -413,7 +424,8 @@ $(document).ready(function() {
     ],
     dom: 
       "<'row'<'col d-print-none d-flex align-items-center'B><'col d-flex justify-content-center align-items-center'i><'col d-print-none d-flex justify-content-end align-items-center'f>>" +
-      "<'row'<'col-sm-12't>>",
+      "<'row'<'col-sm-12't>>" +
+      "<'row'<'col-sm-12'lp>>",
     language: {
       processing: "Loading filtering options...",
       searchPanes: {
