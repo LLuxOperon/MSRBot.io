@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2025-10-27T19:56:13.938Z",
+  "generatedAt": "2025-10-28T05:02:00.022Z",
   "documents": {
-    "total": 2210,
+    "total": 2207,
     "references": 2852,
     "publishers": 93,
-    "active": 1458,
+    "active": 1455,
     "docTypes": 39,
     "docsByType": {
       "Journal Article": 107,
       "Report": 4,
-      "Standard": 1242,
+      "Standard": 1240,
       "Technical Journal": 5,
       "Specification": 80,
       "Procedure": 2,
@@ -19,7 +19,7 @@
       "Technical Report": 5,
       "Registry": 11,
       "Memo": 4,
-      "Recommended Practice": 291,
+      "Recommended Practice": 290,
       "Statement": 1,
       "Recommendation": 85,
       "Best Practice": 17,

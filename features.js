@@ -147,9 +147,9 @@ $(document).ready(function() {
                 style: 'multi'
             }
           }, 
-          layout: 'columns-5',
+          layout: 'columns-3',
           viewTotal: true,
-          columns: [8, 2, 4, 6, 10]
+          columns: [6, 2, 4]
         }
       },
       {
@@ -179,202 +179,20 @@ $(document).ready(function() {
       }
     },
     columnDefs:[
+
       {
         visible: false,
         targets:[4],
-        searchPanes: {
-          header: "Approved"
-        }
-      },
-      {
-        visible: false,
-        targets:[6],
         searchPanes: {
           header: "Status"
         }
       },
       {
         visible: false,
-        targets:[8],
+        targets:[6],
         searchPanes: {
           header: "Group"
         }
-      },
-      {
-        visible: false,
-        searchPanes: {
-          header: "Current Milestone",
-          dtOpts: {
-            order: [[1, 'desc']]
-          },
-          options:[
-            {
-              label: 'Awaiting ST Objection Disposition Vote (5%)',
-              value: function(rowData, rowIdx){
-                return rowData[10].includes('Awaiting ST Objection Disposition Vote (5%)');
-              }
-            },
-            {
-              label: 'Waiting for Group Assignment (15%)',
-              value: function(rowData, rowIdx){
-                return rowData[10].includes('Waiting for Group Assignment (15%)');
-              }
-            },
-            {
-              label: 'WG/DG working on WD (20%)',
-              value: function(rowData, rowIdx){
-                return rowData[10].includes('WG/DG working on WD (20%)');
-              }
-            },
-            {
-              label: 'WD (22.5%)',
-              value: function(rowData, rowIdx){
-                return rowData[10].includes('WD (22.5%)');
-              }
-            },
-            {
-              label: 'CD (25%)',
-              value: function(rowData, rowIdx){
-                return rowData[10].includes('CD (25%)');
-              }
-            },
-            {
-              label: 'Pre-FCD Review (30%)',
-              value: function(rowData, rowIdx){
-                return rowData[10].includes('Pre-FCD Review (30%)');
-              }
-            },
-            {
-              label: 'Pre-RDD Review (30%)',
-              value: function(rowData, rowIdx){
-                return rowData[10].includes('Pre-RDD Review (30%)');
-              }
-            },
-            {
-              label: 'CD Waiting for FCD Ballot (40%)',
-              value: function(rowData, rowIdx){
-                return rowData[10].includes('CD Waiting for FCD Ballot (40%)');
-              }
-            },
-            {
-              label: 'CD Waiting for RDD Ballot (40%)',
-              value: function(rowData, rowIdx){
-                return rowData[10].includes('CD Waiting for RDD Ballot (40%)');
-              }
-            },
-            {
-              label: 'CD Waiting for Submission to SVP (40%)',
-              value: function(rowData, rowIdx){
-                return rowData[10].includes('CD Waiting for Submission to SVP (40%)');
-              }
-            },
-            {
-              label: 'PCD (45%)',
-              value: function(rowData, rowIdx){
-                return rowData[10].includes('PCD (45%)');
-              }
-            },
-            {
-              label: 'FCD Ballot (50%)',
-              value: function(rowData, rowIdx){
-                return rowData[10].includes('FCD Ballot (50%)');
-              }
-            },
-            {
-              label: 'RDD Ballot (50%)',
-              value: function(rowData, rowIdx){
-                return rowData[10].includes('RDD Ballot (50%)');
-              }
-            },
-            {
-              label: 'FCD Ballot Comment Resolution (60%)',
-              value: function(rowData, rowIdx){
-                return rowData[10].includes('FCD Ballot Comment Resolution (60%)');
-              }
-            },
-            {
-              label: 'RDD Ballot Comment Resolution (60%)',
-              value: function(rowData, rowIdx){
-                return rowData[10].includes('RDD Ballot Comment Resolution (60%)');
-              }
-            },
-            {
-              label: 'FCD (65%)',
-              value: function(rowData, rowIdx){
-                return rowData[10].includes('FCD (65%)');
-              }
-            },
-            {
-              label: 'Pre-DP Review (70%)',
-              value: function(rowData, rowIdx){
-                return rowData[10].includes('Pre-DP Review (70%)');
-              }
-            },
-            {
-              label: 'RDD (75%)',
-              value: function(rowData, rowIdx){
-                return rowData[10].includes('RDD (75%)');
-              }
-            },
-            {
-              label: 'DP Ballot (80%)',
-              value: function(rowData, rowIdx){
-                return rowData[10].includes('DP Ballot (80%)');
-              }
-            },
-            {
-              label: 'SVP Review',
-              value: function(rowData, rowIdx){
-                return rowData[10].includes('SVP Review');
-              }
-            },
-            {
-              label: 'DP (85%)',
-              value: function(rowData, rowIdx){
-                return rowData[10].includes('DP (85%)');
-              }
-            },
-            {
-              label: 'ST Audit (90%)',
-              value: function(rowData, rowIdx){
-                return rowData[10].includes('ST Audit (90%)');
-              }
-            },
-            {
-              label: 'Document in HQ (95%)',
-              value: function(rowData, rowIdx){
-                return rowData[10].includes('Document in HQ (95%)');
-              }
-            },
-            {
-              label: 'Published (100%)',
-              value: function(rowData, rowIdx){
-                return rowData[10].includes('Published (100%)');
-              }
-            },
-            {
-              label: 'Uploaded to TC Ref Docs',
-              value: function(rowData, rowIdx){
-                return rowData[10].includes('Uploaded to TC Ref Docs');
-              }
-            },
-            {
-              label: 'Archive',
-              value: function(rowData, rowIdx){
-                return rowData[10].includes('Archive');
-              }
-            }
-          ]
-        },
-        targets: [10]
-      },
-      {
-        width: '25%',
-        targets: [11]
-      },
-      {
-        width: '16.6%',
-        targets: [13]
       }
     ]
   }
