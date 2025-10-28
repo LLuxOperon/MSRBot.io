@@ -845,15 +845,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   hb.registerHelper('dotReplace', function(str) {
       return str.replace(/\./g, '-')
   });
-
-  /* is the registry sorted */
-    
-  //for(let i = 1; i < registryDocument.length; i++) {
-  //  if (registryDocument[i-1].docID >= registryDocument[i].docID) {
-  //    throw "Registry key " + registryDocument[i-1].docID + " is " +
-  //      ((registryDocument[i-1].docID === registryDocument[i].docID) ? "duplicated" : "not sorted");
-  //  }
-  //}
   
   /* get the version field */
   

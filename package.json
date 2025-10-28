@@ -7,7 +7,7 @@
     "build-stats": "node src/main/scripts/utils/buildStats.js",
     "build-msi": "node src/main/scripts/buildMasterSuiteIndex.js --in src/main/data/documents.json --out src/main/reports/masterSuiteIndex.json",
     "build-mri": "node src/main/scripts/buildMasterReferenceIndex.js",
-    "audit": "node src/main/scripts/audit.overrides.js",
+    "audit": "node src/main/scripts/audit.documents.js",
     "extract": "node src/main/scripts/extractDocs.js",
     "normalize-url": "node src/main/scripts/url.normalize.js --apply",
     "validate": "node src/main/scripts/validate.js",

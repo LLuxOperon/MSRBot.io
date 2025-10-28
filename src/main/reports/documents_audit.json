@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-10-27T18:53:35.073Z",
+  "generatedAt": "2025-10-28T03:39:45.116Z",
   "sourcePath": "src/main/data/documents.json",
   "total": 672,
   "grouped": {
@@ -4556,7 +4556,7 @@
         {
           "docId": "SMPTE.OM.Std",
           "publisher": "SMPTE",
-          "docLabel": "SMPTE OM",
+          "docLabel": "SMPTE OM Standards",
           "field": "publicationDate",
           "originalValue": "2025-06-26",
           "currentValue": "2025-10-12",
@@ -7402,7 +7402,7 @@
         {
           "docId": "SMPTE.OM.Std",
           "publisher": "SMPTE",
-          "docLabel": "SMPTE OM",
+          "docLabel": "SMPTE OM Standards",
           "field": "releaseTag",
           "originalValue": "20250626-pub",
           "currentValue": "20251012-pub",

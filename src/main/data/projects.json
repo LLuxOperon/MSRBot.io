@@ -272,7 +272,7 @@
       "SMPTE.ST429-6.2006",
       "SMPTE.ST429-6.2006Am1.2017"
     ],
-    "docId": "SMPTE.ST429-5.2023-05",
+    "docId": "SMPTE.ST429-5.2023-09",
     "projectId": "st429-6-2006-rev-001",
     "projectLink": "https://web.powerapps.com/apps/c8863a6c-f697-4d22-94e7-e9a03ba895a4?projId=2030",
     "projectStatus": "Complete",
@@ -325,7 +325,7 @@
   {
     "assignedGroup": "smpte-27c-tc",
     "docAffected": [
-      "SMPTE.ST430-1.2023-09"
+      "SMPTE.ST430-1.2023"
     ],
     "docId": "SMPTE.ST430-1",
     "projectId": "st430-1-2023-09-rev-001",
