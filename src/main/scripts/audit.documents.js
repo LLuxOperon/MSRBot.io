@@ -3,7 +3,7 @@
  * Scans documents.json for fields where `$meta.overridden === true` and emits a flat report.
  * Defaults:
  *   --in  src/main/data/documents.json
- *   --out src/main/reports/overrides-audit.json
+ *   --out src/main/reports/documents_audit.json
  * Options:
  *   --publisher SMPTE     restrict to publisher (exact match); repeatable
  *   --pretty 2            JSON spaces (0 for minified)
@@ -19,7 +19,7 @@ function arg(name, def) {
 }
 
 const IN  = arg('--in',  'src/main/data/documents.json');
-const OUT = arg('--out', 'src/main/reports/overrides_audit.json');
+const OUT = arg('--out', 'src/main/reports/documents_audit.json');
 const PRETTY = Number(arg('--pretty', '2')); // 0..n
 
 // Collect any --publisher filters (repeatable)
@@ -146,7 +146,7 @@ function main() {
   const body = JSON.stringify(payload, null, Number.isFinite(PRETTY) ? PRETTY : 2);
   fs.writeFileSync(OUT, body, 'utf8');
 
-  console.log(`📝 Overrides audit written: ${OUT} (fields=${sortedKeys.length}, rows=${items.length})`);
+  console.log(`📝 Documents audit written: ${OUT} (fields=${sortedKeys.length}, rows=${items.length})`);
 
   // Small console peek for sanity
   const byPublisher = new Map();

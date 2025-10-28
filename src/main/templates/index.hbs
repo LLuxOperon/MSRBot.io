@@ -20,7 +20,7 @@
         </tr>
       </thead>
       <tbody id="searchTable">
-        {{#dataDocuments}}
+        {{#data}}
         <tr id="{{../idType}}-{{docId}}">
           <td class="docid d-none">
             {{docId}}
@@ -102,13 +102,6 @@
             {{#status/stabilized}}
               <span class="label badge badge-primary">[ STABILIZED ]</span>  
             {{/status/stabilized}}   
-
-            {{#unless status/active}}
-            {{#currentWork}}
-            <span class="label badge badge-secondary text-uppercase">[ {{this}} ]</span>{{#unless @last}}<br>{{/unless}}
-            {{/currentWork}}
-            {{/unless}}
-
           </td>
           <td>
             <div class="container-fluid">
@@ -130,15 +123,18 @@
                     <span class="font-weight-bold small">Current Status:</span> {{currentStatus}} {{{getstatusButton docId "12"}}}
                     {{#if status/statusNote}}<br><span class="small"><em> *({{status/statusNote}})</em></span>{{/if}}
                     {{#if status/withdrawnNotice}}<br><span class="small"><em>[Withdrawl notice: <a href="{{status/withdrawnNotice}}">{{status/withdrawnNotice}}</a>]</em></span>{{/if}}
+                    
                     {{#with (docProjLookup ../docProjs docId)}}
                     {{#ifnoteq projectStatus "Complete"}}
                     <br>
-                    <span class="label badge badge-warning text-uppercase">{{workType}} {{projectStatus}}{{#ifnoteq projectStatus "Open"}}, Project {{#if projApproved}}Approved{{/if}}{{/ifnoteq}}{{#unless projApproved}}Pending{{/unless}}</span>
+                    <span class="label badge badge-warning text-uppercase">{{workType}} {{projectStatus}}</span>
+
                     {{#if newDoc}}
-                    <br><span class="small">Under Development: <a class="{{../idType}}-link clear-filter" href="#{{newDoc}}">{{getLabel newDoc}}</a> [{{getStatus newDoc}}]</span>
+                    <br><span class="small">Under Development: <a href="projects/{{../../htmlLink}}?search.search={{newDoc}}">{{getLabel newDoc}}</a><!-- [{{getStatus newDoc}}]--></span>
                     {{/if}}
                     {{/ifnoteq}}
                     {{/with}}
+                    
                   {{#if details}}
                     <div>
                       <span class="font-weight-bold small">Details:</span> <em>{{details}}</em>
@@ -188,137 +184,7 @@
                     <span class="small"><a href="dependancies/index.html#{{docId}}">View Document Dependancies</a></span>
                   </div>
                   {{/if}}
-                  {{#if workInfo}}
-                    <div class="mt-2 detaillink d-flex row border-top border-bottom justify-content-end">
-                      <div class="col">
-                        <a href="#details-{{dotReplace docId}}" data-target="#details-{{dotReplace docId}}" class="collapsed" data-toggle="collapse">
-                          <div class="p-2">
-                            <span class="small"><span class="if-collapsed">View</span><span class="if-not-collapsed">Hide</span> Work Info </span>
-                            <span class="float-right icon"><svg width="1em" height="1em" viewBox="0 0 16 16" class="float-right bi bi-chevron-double-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/><path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg></span>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="border-bottom border-left border-right collapse" id="details-{{dotReplace docId}}">
-                    {{#workInfo}}
-                      {{#if project}}
-                      <div>
-                        <div class="p-2 border-bottom bg-secondary">
-                          <span class="text-light"><b>Project(s)</b></span>
-                        </div>
-                        {{#project}}
-                        <div class="p-2{{#unless @last}} border-bottom{{/unless}}"> 
-                          {{#if projectId}}
-                          {{#with (projectIdLookup ../../../dataProjects projectId)}}
-                          <span class="font-weight-bold small">Work Type: </span><a class="project-link clear-filter" href="projects/{{../../../../htmlLink}}?search.search={{projectId}}">{{workType}}</a> {{#if projApproved}}<span class="label badge badge-success float-right">Project Approved</span>{{/if}}
-                          {{#if projectStatus}}
-                          <br>
-                          <span class="font-weight-bold small">Work Status: </span>
-                          {{projectStatus}}
-                          {{/if}}
-                          {{#if projApprovedDate}}
-                          <br>
-                          <span class="font-weight-bold small">Project Approved: </span>
-                          {{projApprovedDate}}
-                          {{/if}}
-                          {{#if assignedTC}}
-                          {{#with (groupIdLookup ../../../../dataGroups assignedTC)}}
-                          <br>
-                          <span class="font-weight-bold small">Assigned TC: </span><a href="groups/{{../../../../../htmlLink}}?search.search={{groupId}}">{{groupOrg}} {{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}}</a>
-                          {{/with}}
-                          {{/if}}
-                          {{#if assignedGroup}}
-                          {{#with (groupIdLookup ../../../../dataGroups assignedGroup)}}
-                          <br>
-                          <span class="font-weight-bold small">Assigned Group: </span><a href="groups/{{../../../../../htmlLink}}?search.search={{groupId}}">{{groupOrg}} {{#if parentgroupId}}{{#with (groupIdLookup ../../../../../dataGroups parentgroupId)}}{{groupName}}{{/with}} {{/if}}{{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}}</a>
-                          {{/with}}
-                          {{/if}}
-                          {{#if workNotes}}
-                          <div class="p-2">
-                            <span class="font-weight-bold small">Notes:</span> <em>{{workNotes}}</em>
-                          </div>
-                          {{/if}}
-                          {{#if docAffected}}
-                          <div class="p-2">
-                            <span class="font-weight-bold small">Document(s) affected by this work:</span>
-                            {{#docAffected}}
-                            <br><span class="small"><a class="{{../../../../../idType}}-link clear-filter" href="#{{this}}">{{getLabel this}}</a> [{{getStatus this}}]</span> {{{getstatusButton this "10"}}}
-                            {{/docAffected}}
-                          </div>
-                          {{/if}}
-                          {{#if updateDependency}}
-                          <div class="p-2">
-                            <span class="font-weight-bold small">Dependent on update(s) to:</span>
-                            {{#updateDependency}}
-                            <br><span class="small"><a class="{{../../../../../idType}}-link clear-filter" href="#{{this}}">{{getLabel this}}</a> [{{getStatus this}}]</span> {{{getstatusButton this "10"}}}
-                            {{/updateDependency}}
-                          </div>
-                          {{/if}}
-                          {{#if projectMilestone}}
-                          <br>
-                          <span class="font-weight-bold small">Milestone(s):</span>
-                          {{#projectMilestone}}
-                          <div class="p-2{{#if @first}} border-top{{/if}}{{#unless @last}} border-bottom{{/unless}}">
-                            {{milestoneAct}} {{#if current}}<span class="label badge badge-info float-right">Current</span>{{/if}}
-                            {{#if miledateStart}}
-                              <br>
-                              <span class="font-weight-bold small">Start Date:</span> {{miledateStart}}
-                            {{/if}}
-                            {{#if miledateEnd}}
-                              <br>
-                              <span class="font-weight-bold small">End Date:</span> {{miledateEnd}}
-                            {{/if}}
-                          </div>
-                          {{/projectMilestone}}
-                          {{/if}}
-                          {{/with}}
-                          {{/if}}
-                        </div>
-                        {{/project}}
-                      </div>
-                      {{/if}}
-                      {{#if review}}
-                      <div>
-                        <div class="p-2 border-bottom bg-secondary">
-                          <span class="text-light"><b>Review(s)</b></span>
-                        </div>
-                        {{#review}}
-                        <div class="p-2{{#unless @last}} border-bottom{{/unless}}">
-                          <span class="font-weight-bold small">Review Period: </span>{{reviewPeriod}}
-                          {{#if reviewNeeded}}
-                          <br>
-                          <span class="font-weight-bold small">Review Needed:</span> <span class="label badge badge-danger">Yes</span>
-                          {{/if}}
-                          {{#if assignedGroup}}
-                          {{#with (groupIdLookup ../../../dataGroups assignedGroup)}}
-                          <br>
-                          <span class="font-weight-bold small">Assigned Group: </span><a href="groups/{{../../../../htmlLink}}?search.search={{groupId}}">{{groupOrg}} {{#if parentgroupId}}{{#with (groupIdLookup ../../../../dataGroups parentgroupId)}}{{groupName}}{{/with}} {{/if}}{{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}}</a>
-                          {{/with}}
-                          {{/if}}
-                          {{#if reviewDate}}
-                          <br>
-                          <span class="font-weight-bold small">Review Date:</span> {{reviewDate}}
-                          {{/if}}
-                          {{#if reviewRec}}
-                          <br>
-                          <span class="font-weight-bold small">Review Recommendation:</span> {{reviewRec}}
-                          {{/if}}
-                          {{#if recApproved}}
-                          <br>
-                          <span class="font-weight-bold small">Recomendation Approved:</span> Yes
-                          {{/if}}
-                          {{#if reviewNotes}}
-                          <div class="p-2">
-                            <span class="font-weight-bold small">Notes:</span> <em>{{reviewNotes}}</em>
-                          </div>
-                          {{/if}}
-                        </div>
-                        {{/review}}
-                      </div>
-                      {{/if}}
-                    {{/workInfo}}
-                    </div>
-                  {{/if}}
+                  
                   {{#if xmlNamespace}}
                   <div class="p-2">
                     <span class="font-weight-bold small">XML Namespace(s) Defined:</span>
@@ -404,7 +270,7 @@
             {{/if}}
           </td>
         </tr>
-        {{/dataDocuments}}
+        {{/data}}
       </tbody>
     </table>
     <!-- Main content ends - do not edit below this line -->

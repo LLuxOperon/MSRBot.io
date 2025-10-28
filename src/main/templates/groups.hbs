@@ -20,11 +20,10 @@
           <th scope="col"></th>
           <th scope="col"></th>
           <th scope="col"></th>
-          <th scope="col"></th>
         </tr>
       </thead>
       <tbody id="searchTable">
-        {{#dataGroups}}
+        {{#data}}
         <tr id="{{../idType}}-{{groupId}}" {{#ifeq groupStatus/pending true}}class="pending"{{/ifeq}}>
           <td class="grouplabel d-none">
             <code>{{groupId}}</code>
@@ -33,7 +32,7 @@
             <a class="anchor" id="{{groupId}}" href="#{{groupId}}"></a>{{groupOrg}}
           </td>
           <td>
-            {{#if groupLink}}<a href="{{groupLink}}" target="_blank">{{/if}}{{#if parentgroupId}}{{#with (groupIdLookup ../dataGroups parentgroupId)}}{{#ifnoteq groupType "TC"}}{{#with (groupIdLookup ../../dataGroups parentgroupId)}}{{groupName}}{{/with}} {{/ifnoteq}}{{#ifeq groupType "TC"}}{{groupName}}{{/ifeq}} - {{/with}}{{/if}}{{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}}{{#if groupLink}}</a>{{/if}}
+            {{#if groupLink}}<a href="{{groupLink}}" target="_blank">{{/if}}{{#if parentgroupId}}{{#with (groupIdLookup ../data parentgroupId)}}{{#ifnoteq groupType "TC"}}{{#with (groupIdLookup ../../data parentgroupId)}}{{groupName}}{{/with}} {{/ifnoteq}}{{#ifeq groupType "TC"}}{{groupName}}{{/ifeq}} - {{/with}}{{/if}}{{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}}{{#if groupLink}}</a>{{/if}}
           </td>
           <td class="text-center">
             {{groupType}}
@@ -46,16 +45,21 @@
           </td>
           <td>
             {{groupSummary}}
-            {{#ifeq groupStatus/active false}}<span class="font-weight-bold small"><em>** NOTE: This group is no longer active{{#if groupStatus/assignedGroup}}; all work and documents (published, in draft, and repos) have been reassigned to: {{#groupStatus/assignedGroup}}{{#unless @first}}, {{/unless}}{{#with (groupIdLookup ../../dataGroups this)}}<a class="group-link clear-filter" href="#{{groupId}}">{{groupOrg}} {{#if parentgroupId}}{{#with (groupIdLookup ../../../dataGroups parentgroupId)}}{{#if parentgroupId}}{{#with (groupIdLookup ../../../../dataGroups parentgroupId)}}{{groupName}}{{/with}} {{/if}}{{groupName}}{{/with}} {{/if}}{{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}}{{#if groupLink}}{{/if}}</a>{{/with}}{{/groupStatus/assignedGroup}}{{/if}}. **</em></span>{{/ifeq}}
+            {{#ifeq groupStatus/active false}}<span class="font-weight-bold small"><em>** NOTE: This group is no longer active{{#if groupStatus/assignedGroup}}; all work and documents (published, in draft, and repos) have been reassigned to: {{#groupStatus/assignedGroup}}{{#unless @first}}, {{/unless}}{{#with (groupIdLookup ../../data this)}}<a class="group-link clear-filter" href="#{{groupId}}">{{groupOrg}} {{#if parentgroupId}}{{#with (groupIdLookup ../../../data parentgroupId)}}{{#if parentgroupId}}{{#with (groupIdLookup ../../../../data parentgroupId)}}{{groupName}}{{/with}} {{/if}}{{groupName}}{{/with}} {{/if}}{{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}}{{#if groupLink}}{{/if}}</a>{{/with}}{{/groupStatus/assignedGroup}}{{/if}}. **</em></span>{{/ifeq}}
           </td>
           <td class="d-none">
             {{#ifeq groupType "TC"}}{{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}}{{/ifeq}}
-            {{#if parentgroupId}}{{#with (groupIdLookup ../dataGroups parentgroupId)}}
+            {{#if parentgroupId}}{{#with (groupIdLookup ../data parentgroupId)}}
             {{#ifeq groupType "TC"}}{{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}}{{/ifeq}}
-            {{#ifnoteq groupType "TC"}}{{#with (groupIdLookup ../../dataGroups parentgroupId)}}{{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}}{{/with}}{{/ifnoteq}}{{/with}}{{/if}}
+            {{#ifnoteq groupType "TC"}}{{#with (groupIdLookup ../../data parentgroupId)}}{{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}}{{/with}}{{/ifnoteq}}{{/with}}{{/if}}
           </td>
           <td>
-            {{#if parentgroupId}}{{#with (groupIdLookup ../dataGroups parentgroupId)}}<a class="group-link clear-filter" href="#{{groupId}}">{{groupOrg}} {{#ifnoteq groupType "TC"}}{{#with (groupIdLookup ../../dataGroups parentgroupId)}}{{groupName}}{{/with}} - {{/ifnoteq}} {{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}} {{groupType}}</a>{{/with}}{{/if}}
+            {{#if parentgroupId}}{{#with (groupIdLookup ../data parentgroupId)}}<a class="group-link clear-filter" href="#{{groupId}}">{{groupOrg}} {{#ifnoteq groupType "TC"}}{{#with (groupIdLookup ../../data parentgroupId)}}{{groupName}}{{/with}} - {{/ifnoteq}} {{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}} {{groupType}}</a>{{/with}}{{/if}}
+          </td>
+          <td class="text-center">
+            {{#if groupRepo}}
+            <a href="{{groupRepo}}" target="_blank">Repo</a>
+            {{/if}}
           </td>
           <td>
             {{#ifeq groupType "TC"}}
@@ -82,18 +86,9 @@
             <a href="{{groupBallots}}" target="_blank">Ballots</a>
             {{/if}}
           </td>
-          <td class="text-center">
-            {{#if groupAIs}}
-            <a href="{{groupAIs}}" target="_blank">Action Items</a>
-            {{/if}}
-          </td>
-          <td class="text-center">
-            {{#if groupRepo}}
-            <a href="{{groupRepo}}" target="_blank">Repo</a>
-            {{/if}}
-          </td>
+          
         </tr>
-        {{/dataGroups}}
+        {{/data}}
       </tbody>
     </table>
     <!-- Main content ends - do not edit below this line -->

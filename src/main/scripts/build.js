@@ -322,6 +322,8 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   }
 
   /* load all references per doc */
+  // Emit reference warnings only for the main documents index (avoid dupes from \"dependancies\")
+  const __emitRefWarnings = (templateName === 'index');
 
   const docReferences = []
 
@@ -333,14 +335,17 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
       let normRefs = references.normative
       let bibRefs = references.bibliographic
 
+      // De-duplicate noisy warnings per docId
+      const __noKeyWarned = new Set();
+
       // Optional visibility: uncomment for diagnostics
-      //console.log(`\n++ Checking refs for ${docId} ++`)
+      //console.log(`++ Checking refs for ${docId} ++`)
 
       const normResolved = [];
       const bibResolved = [];
 
       // Always consult MSI; only *upgrade* when the ref is undated.
-      function getLatestRef(r) {
+      function getLatestRef(r, kind) {
         // Compute base form by stripping a date tail once; treat rest as the lineage base token
         const base = typeof r === 'string' ? r.replace(DATED_TAIL_RE, '') : r;
         const wasUndated = (base === r);
@@ -414,7 +419,13 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
                 //console.log('       MISS in MSI');
                 //}
             } else if (wasUndated) {
-              console.warn(`   [WARN] No lineage key derivable for ${r}`);
+              const warnKey = `${docId}::${r}`;
+              if (!__noKeyWarned.has(warnKey)) {
+                __noKeyWarned.add(warnKey);
+                if (__emitRefWarnings) {
+                  console.warn(`[WARN] No lineage key derivable: ref="${r}" (docId=${docId}, kind=${kind || 'unknown'})`);
+                }
+              }
             }
           }
         }
@@ -428,7 +439,7 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
         normRefs.sort();
         for (let i = 0; i < normRefs.length; i++) {
           const r = normRefs[i];
-          const obj = getLatestRef(r);
+          const obj = getLatestRef(r, 'normative');
           // do NOT overwrite normRefs[i]; leave the source data untouched
           normResolved.push(obj);
         }
@@ -438,7 +449,7 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
         bibRefs.sort();
         for (let i = 0; i < bibRefs.length; i++) {
           const r = bibRefs[i];
-          const obj = getLatestRef(r);
+          const obj = getLatestRef(r, 'bibliographic');
           // do NOT overwrite bibRefs[i]; leave the source data untouched
           bibResolved.push(obj);
         }
@@ -455,7 +466,10 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
       //console.log(`[Refs] for docId: ${docId}`)
       //console.log(refs)
 
-      docReferences[docId] = refs
+      docReferences[docId] = refs;
+      if (__emitRefWarnings && __noKeyWarned.size) {
+        console.log(`[Refs] ${docId}: missing-lineage refs (unique) = ${__noKeyWarned.size}`);
+      }
     }
   }
 
@@ -831,15 +845,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   hb.registerHelper('dotReplace', function(str) {
       return str.replace(/\./g, '-')
   });
-
-  /* is the registry sorted */
-    
-  //for(let i = 1; i < registryDocument.length; i++) {
-  //  if (registryDocument[i-1].docID >= registryDocument[i].docID) {
-  //    throw "Registry key " + registryDocument[i-1].docID + " is " +
-  //      ((registryDocument[i-1].docID === registryDocument[i].docID) ? "duplicated" : "not sorted");
-  //  }
-  //}
   
   /* get the version field */
   
@@ -869,7 +874,7 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   /* apply template */
   
   var html = template({
-    "dataDocuments" : registryDocument,
+    "data" : registryDocument,
     "dataGroups" : registryGroup,
     "dataProjects" : registryProject,
     "htmlLink": htmlLink,
@@ -931,6 +936,8 @@ module.exports = {
 
 void (async () => {
 
-  await Promise.all(registries.map(buildRegistry))
+  for (const cfg of registries) {
+    await buildRegistry(cfg);
+  }
 
 })().catch(console.error)
