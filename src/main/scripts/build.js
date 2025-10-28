@@ -23,6 +23,24 @@ const REGISTRIES_REPO_PATH = "src/main";
 const SITE_PATH = "src/site";
 const BUILD_PATH = "build";
 
+// Recursively copy directories/files (promises API)
+async function copyRecursive(src, dest) {
+  const stat = await fs.lstat(src);
+  if (stat.isDirectory()) {
+    await fs.mkdir(dest, { recursive: true });
+    const entries = await fs.readdir(src);
+    for (const name of entries) {
+      const from = path.join(src, name);
+      const to = path.join(dest, name);
+      await copyRecursive(from, to);
+    }
+  } else {
+    // ensure parent exists (defensive for nested files)
+    await fs.mkdir(path.dirname(dest), { recursive: true });
+    await fs.copyFile(src, dest);
+  }
+}
+
 // Warn once per process for empty MSI
 let __msiWarnedEmpty = false;
 
@@ -80,21 +98,37 @@ const registries = [
   }
 ]
 
+// Enable Inspector build only for dev runs
+const ENABLE_INSPECTOR = (argv && (argv.dev === true || argv.dev === '1')) || process.env.MSR_BUILD_DEV === '1';
+if (ENABLE_INSPECTOR) {
+  registries.push({
+    listType: 'documents',
+    templateType: 'documents',
+    templateName: 'index',       // reuse documents template
+    idType: 'document',
+    listTitle: 'Inspector',
+    subRegistry: ['groups','projects'],
+    output: 'inspector.html',
+    extras: { inspector: true }
+  });
+}
+
 /* load and build the templates */
 
-async function buildRegistry ({ listType, templateType, templateName, idType, listTitle, subRegistry }) {
+async function buildRegistry ({ listType, templateType, templateName, idType, listTitle, subRegistry, output, extras }) {
   console.log(`Building ${templateName} started`)
 
   var DATA_PATH = path.join(REGISTRIES_REPO_PATH, "data/" + listType + ".json");
   var DATA_SCHEMA_PATH = path.join(REGISTRIES_REPO_PATH, "schemas/" + listType + ".schema.json");
   var TEMPLATE_PATH = "src/main/templates/" + templateName + ".hbs";
   var PAGE_SITE_PATH
-  if (templateName == "index") {
-      PAGE_SITE_PATH = templateName + ".html";
-    }
-    else {
-      PAGE_SITE_PATH = templateName + "/index.html";
-    }
+  if (output) {
+    PAGE_SITE_PATH = output;
+  } else if (templateName == "index") {
+    PAGE_SITE_PATH = templateName + ".html";
+  } else {
+    PAGE_SITE_PATH = templateName + "/index.html";
+  }
 
   var CSV_SITE_PATH = templateType + ".csv";
   const inputFileName = DATA_PATH;
@@ -174,6 +208,43 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
       // If a sub-registry file is missing, warn and continue; templates will handle absent data
       console.warn(`[WARN] Could not load data for sub-registry "${sub}" at ${subDataPath}: ${err.message}`);
     }
+  }
+
+  // If this build target is the Inspector, decorate docs with joined fields
+  const __isInspector = !!(extras && extras.inspector);
+  if (__isInspector) {
+    // Build quick lookups: docId -> projects / groups
+    const byDocProjects = new Map();
+    (registryProject || []).forEach(p => {
+      const list = Array.isArray(p.docs) ? p.docs : (Array.isArray(p.documents) ? p.documents : []);
+      list.forEach(did => {
+        const arr = byDocProjects.get(did) || [];
+        arr.push(p);
+        byDocProjects.set(did, arr);
+      });
+    });
+
+    const byDocGroups = new Map();
+    (registryGroup || []).forEach(g => {
+      const list = Array.isArray(g.docs) ? g.docs : (Array.isArray(g.documents) ? g.documents : []);
+      list.forEach(did => {
+        const arr = byDocGroups.get(did) || [];
+        arr.push(g);
+        byDocGroups.set(did, arr);
+      });
+    });
+
+    (registryDocument || []).forEach(item => {
+      const did = item && item.docId;
+      if (!did) return;
+      const projects = (byDocProjects.get(did) || []).map(p => p.projectId || p.name || p.id).filter(Boolean);
+      const pubDate  = item.publicationDate || null;
+      const year     = pubDate && /^\d{4}/.test(pubDate) ? parseInt(pubDate.slice(0,4), 10) : null;
+
+      item.__projects = projects;
+      item.__year = year;
+
+    });
   }
 
   // --- Load MasterSuiteIndex (MSI) once and build a lineage → latest lookup
@@ -875,8 +946,10 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   
   var html = template({
     "data" : registryDocument,
+    "dataDocuments": registryDocument,
     "dataGroups" : registryGroup,
     "dataProjects" : registryProject,
+    "inspector": __isInspector,
     "htmlLink": htmlLink,
     "docProjs": docProjs,
     "date" :  new Date(),
@@ -893,10 +966,18 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   await fs.writeFile(path.join(BUILD_PATH, PAGE_SITE_PATH), html, 'utf8');
   
   /* copy in static resources */
+  await copyRecursive(SITE_PATH, BUILD_PATH);
   
-  await Promise.all((await fs.readdir(SITE_PATH)).map(
-    f => fs.copyFile(path.join(SITE_PATH, f), path.join(BUILD_PATH, f))
-  ))
+  // Build card search index (search-index.json + facets.json) once per run
+  // Only trigger from the main index page to avoid duplicate executions
+  if (templateName === 'index') {
+    try {
+      const { stdout } = await execFile('node', [path.join('src','main','scripts','build.search-index.js')]);
+      if (stdout && stdout.trim()) console.log(stdout.trim());
+    } catch (e) {
+      console.warn('[cards] Index build failed:', e && e.message ? e.message : e);
+    }
+  }
   
   
   /* set the CHROMEPATH environment variable to provide your own Chrome executable */
