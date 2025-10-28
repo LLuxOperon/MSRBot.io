@@ -1,15 +1,16 @@
 {
-  "generatedAt": "2025-10-27T20:14:29.476Z",
+  "generatedAt": "2025-10-28T05:15:32.652Z",
   "target": "documents.json",
-  "good": 1975,
+  "good": 1903,
   "skippedByDomain": 0,
   "skippedByPublisher": 0,
   "index": {
-    "error": 234,
+    "error": 304,
     "errorBreakdown": {
       "Unreachable (403)": 45,
       "Unreachable (404)": 164,
-      "Unreachable (ECONNABORTED)": 4,
+      "Unreachable (429)": 71,
+      "Unreachable (ECONNABORTED)": 3,
       "Unreachable (ENOTFOUND)": 2,
       "Unreachable (ERR_BAD_REQUEST)": 1,
       "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)": 1,
@@ -894,16 +895,6 @@
           "riskLevel": "High"
         },
         {
-          "docId": "ISO.26433.2009am1.20XX",
-          "publisher": "ISO",
-          "field": "href",
-          "url": "https://www.iso.org/standard/80072.html",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
           "docId": "LSI.WP-PSTA.200307",
           "publisher": "Live Sound International",
           "field": "href",
@@ -918,6 +909,16 @@
           "publisher": "NIST",
           "field": "href",
           "url": "https://doi.org/10.6028/NIST.FIPS.140-2",
+          "message": "Unreachable (404)",
+          "explanation": "The URL points to a resource that was not found (dead link).",
+          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
+          "riskLevel": "High"
+        },
+        {
+          "docId": "NIST.FIPS.180-1",
+          "publisher": "NIST",
+          "field": "href",
+          "url": "https://doi.org/10.6028/NIST.FIPS.180-1",
           "message": "Unreachable (404)",
           "explanation": "The URL points to a resource that was not found (dead link).",
           "recommendedAction": "Double-check the URL or remove it if no longer valid.",
@@ -944,10 +945,10 @@
           "riskLevel": "High"
         },
         {
-          "docId": "NIST.SP.800-57p2",
+          "docId": "NIST.SP.800-57p1r2007",
           "publisher": "NIST",
           "field": "href",
-          "url": "https://doi.org/10.6028/NIST.SP.800-57p2",
+          "url": "https://doi.org/10.6028/NIST.SP.800-57p1r2007",
           "message": "Unreachable (404)",
           "explanation": "The URL points to a resource that was not found (dead link).",
           "recommendedAction": "Double-check the URL or remove it if no longer valid.",
@@ -2124,6 +2125,718 @@
           "riskLevel": "High"
         }
       ],
+      "429": [
+        {
+          "docId": "ISO.26433.2009",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/52793.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.26433.2009am1.20XX",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/80072.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.2721.2013",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/62742.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.2906.2002",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/30126.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.2907.2002",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/25425.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.3166-1.1997",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/24591.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.3166-1.2006",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/39719.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.3166-1.2006cor1.2007",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/46123.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.3166-1.2013",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/63545.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.3166.1993",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/22748.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.3382-1.2009",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/40979.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.3382-3.2012",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/46520.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.3382-3.2022",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/77437.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.3741.2010",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/52053.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.3743-1.2010",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/52054.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.3743-2.1994",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/21753.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.3743-2.2018",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/69600.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.3744.2010",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/52055.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.3745.2003",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/cms/%20render/live/en/sites/isoorg/contents/data/standard/02/17/21750.html?browse=tc",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.3745.2012",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/cms/%20render/live/en/sites/isoorg/contents/data/standard/04/53/45362.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.3746.2010",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/52056.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.5-2.1991",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/20037.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.5-2.2001",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/28004.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.5-2.2009",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/52914.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.5-3.2009",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/52915.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.5768.1998",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/30125.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.5926.2023",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/81846.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.639-1.2002",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/22109.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.639-2.1998",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/4767.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.646.1991",
+          "publisher": "ISO/IEC",
+          "field": "href",
+          "url": "https://www.iso.org/standard/4777.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.7064.2003",
+          "publisher": "ISO/IEC",
+          "field": "href",
+          "url": "https://www.iso.org/standard/31531.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.7185.1990",
+          "publisher": "ISO/IEC",
+          "field": "href",
+          "url": "https://www.iso.org/standard/13802.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.7589.2002",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/33979.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.80000-1.2022",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/76921.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.80000-10.2019",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/64980.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.80000-11.2019",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/64982.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.80000-12.2019",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/63480.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.80000-13.2008",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/31898.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.80000-2.2019",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/64973.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.80000-3.2019",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/64974.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.80000-4.2019",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/64975.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.80000-5.2019",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/64976.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.80000-6.2022",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/77846.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.80000-7.2019",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/64977.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.80000-8.2020",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/64978.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.80000-9.2019",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/64979.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.8601-1.2019",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/70907.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.8601-2.2019",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/70908.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.8601.2004",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/40874.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.8824-1.2002",
+          "publisher": "ISO/IEC",
+          "field": "href",
+          "url": "https://www.iso.org/standard/35684.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.8824-1.2008",
+          "publisher": "ISO/IEC",
+          "field": "href",
+          "url": "https://www.iso.org/standard/54012.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.8824-1.2015",
+          "publisher": "ISO/IEC",
+          "field": "href",
+          "url": "https://www.iso.org/standard/68350.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.8824-1.2015amd1.2019",
+          "publisher": "ISO/IEC",
+          "field": "href",
+          "url": "https://www.iso.org/standard/76502.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.8824-1.2015cor1.2017",
+          "publisher": "ISO/IEC",
+          "field": "href",
+          "url": "https://www.iso.org/standard/73293.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.8824-1.2015cor2.2018",
+          "publisher": "ISO/IEC",
+          "field": "href",
+          "url": "https://www.iso.org/standard/76503.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.8824-1.2015cor3.2018",
+          "publisher": "ISO/IEC",
+          "field": "href",
+          "url": "https://www.iso.org/standard/76759.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.8825-1.1998",
+          "publisher": "ISO/IEC",
+          "field": "href",
+          "url": "https://www.iso.org/standard/32306.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.8825-1.2002",
+          "publisher": "ISO/IEC",
+          "field": "href",
+          "url": "https://www.iso.org/standard/35688.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.8825-1.2008",
+          "publisher": "ISO/IEC",
+          "field": "href",
+          "url": "https://www.iso.org/standard/54011.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.8825-1.2015",
+          "publisher": "ISO/IEC",
+          "field": "href",
+          "url": "https://www.iso.org/standard/68345.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.8859-1.1998",
+          "publisher": "ISO/IEC",
+          "field": "href",
+          "url": "https://www.iso.org/standard/28245.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.8860-1.1987",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/16348.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.8860-1.1987cor1.1990",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/16349.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.8860-2.1987",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/16350.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.8860-2.1987cor1.1990",
+          "publisher": "ISO",
+          "field": "href",
+          "url": "https://www.iso.org/standard/16351.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.9293.1987",
+          "publisher": "ISO/IEC",
+          "field": "href",
+          "url": "https://www.iso.org/standard/16948.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.9293.1994",
+          "publisher": "ISO/IEC",
+          "field": "href",
+          "url": "https://www.iso.org/standard/21273.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.9899.1999",
+          "publisher": "ISO/IEC",
+          "field": "href",
+          "url": "https://www.iso.org/standard/29237.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.9899.2011",
+          "publisher": "ISO/IEC",
+          "field": "href",
+          "url": "https://www.iso.org/standard/57853.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.9899.2018",
+          "publisher": "ISO/IEC",
+          "field": "href",
+          "url": "https://www.iso.org/standard/74528.html",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "ISO.Dir-P2.2021",
+          "publisher": "ISO/IEC",
+          "field": "href",
+          "url": "https://www.iso.org/sites/directives/current/part2/index.xhtml",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        }
+      ],
       "HPE_INVALID_CONSTANT": [
         {
           "docId": "AMPAS.P.2013-001",
@@ -2352,16 +3065,6 @@
           "explanation": "Connection timed out.",
           "recommendedAction": "Retry later or check the server’s responsiveness.",
           "riskLevel": "Medium-High"
-        },
-        {
-          "docId": "UNICODE.UTF.BOM",
-          "publisher": "Unicode Consortium",
-          "field": "href",
-          "url": "http://www.unicode.org/faq/utf_bom.html",
-          "message": "Unreachable (ECONNABORTED)",
-          "explanation": "Connection timed out.",
-          "recommendedAction": "Retry later or check the server’s responsiveness.",
-          "riskLevel": "Medium-High"
         }
       ],
       "ENOTFOUND": [
@@ -2395,7 +3098,7 @@
           "publisher": "Scientific Instruments",
           "field": "href",
           "url": "https://doi.org/10.1088/0950-7671/1/3/302",
-          "resolvedUrl": "https://validate.perfdrive.com/fb803c746e9148689b3984a31fccd902/?ssa=5b5f1343-1221-4c07-8753-1a0aab457fcd&ssb=24883220580&ssc=https%3A%2F%2Fiopscience.iop.org%2Farticle%2F10.1088%2F0950-7671%2F1%2F3%2F302&ssi=be6da6ca-cnvj-4834-82b0-0f76f0af7173&ssk=botmanager_support@radware.com&ssm=25490986618025318105264846490331&ssn=a0e5cd4c04be6198ec1d09082605d3a69b99da219158-b44a-4c60-b5ed45&sso=162f2c22-0bf19078ef573a1ffbe781f041bfe2f2273e3140f962d8c1&ssp=05330978531761543476176154433217787&ssq=66555859501011635639395010521552573650968&ssr=NjQuMjM2LjEzMS4yMTM=&sst=axios/1.12.0&ssu=&ssv=&ssw=&ssx=eyJ1em14IjoiN2Y5MDAwMTg0ZWY3YzEtNDAwYy00M2FhLTk1NzUtMjI2NDU3Nzg5ZDZhMS0xNzYxNTk1MDEwODYyMC00NzBhNGFlZjM1MmE1MzUxMTAiLCJfX3V6bWYiOiI3ZjkwMDBkYTIxOTE1OC1iNDRhLTRjNjAtYmMyMi0wYmYxOTA3OGVmNTcxLTE3NjE1OTUwMTA4NjIwLTAwMTA5MjZlZTU0OTg1Mzc0NjIxMCIsInJkIjoiaW9wLm9yZyJ9",
+          "resolvedUrl": "https://validate.perfdrive.com/fb803c746e9148689b3984a31fccd902/?ssa=6a4c7021-ff3c-4656-81bd-59ed6c3331e8&ssb=39048293612&ssc=https%3A%2F%2Fiopscience.iop.org%2Farticle%2F10.1088%2F0950-7671%2F1%2F3%2F302&ssi=d84b28ef-cnvj-490d-bce1-dffa8117a477&ssk=botmanager_support@radware.com&ssm=27340844704904045109099968830009&ssn=5538b479f001431fa5c98dbea8ff1a1a29537bbec7ee-fa12-4ee1-964358&sso=1242bfea-b629ee4723dede759e57d31bb9be23b8343369ca7bd8edcc&ssp=99464368671761666390176169150949856&ssq=71960222805025297536128050569348086715919&ssr=MTM1LjIzMi4yMTYuNTY=&sst=axios/1.12.0&ssu=&ssv=&ssw=&ssx=eyJfX3V6bWYiOiI3ZjkwMDA3YmJlYzdlZS1mYTEyLTRlZTEtOWZlYS1iNjI5ZWU0NzIzZGUxLTE3NjE2MjgwNTExMjEwLTAwMTU1NzhjMDc1YjM0M2FmODQxMCIsInV6bXgiOiI3ZjkwMDBjNTk3ZDg3ZC1jNTJkLTRhM2ItYTJjMy1hMjJkYTE3M2QxOWIxLTE3NjE2MjgwNTExMjEwLThkNGQ5M2NmMWQyNGNmNGExMCIsInJkIjoiaW9wLm9yZyJ9",
           "resolvedField": "resolvedHref",
           "expectedResolved": "https://iopscience.iop.org/article/10.1088/0950-7671/1/3/302",
           "message": "resolved url mismatch"
