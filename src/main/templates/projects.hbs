@@ -8,28 +8,28 @@
           <th scope="col">Project</th>
           <th scope="col">Document</th>
           <th scope="col" class="text-center text-nowrap">Work Type</th>
-          <th scope="col">Approved</th>
-          <th scope="col" class="d-none"></th>
+          <!-- th scope="col">Approved</th>
+          <th scope="col" class="d-none"></th -->
           <th scope="col">Status</th>
           <th scope="col" class="d-none"></th>
           <th scope="col">Group</th>
           <th scope="col" class="d-none"></th>
           <th scope="col">Affects</th>
-          <th scope="col" class="d-none"></th>
+          <!--th scope="col" class="d-none"></th>
           <th scope="col" class="col-3">Milestone</th>
-          <th scope="col">Dependency</th>
+          <th scope="col">Dependency</th -->
           <th scope="col" class="col-2">Notes</th>
         </tr>
       </thead>
       <tbody id="searchTable">
-        {{#dataProjects}}
+        {{#data}}
         <tr id="{{../idType}}-{{projectId}}" {{#ifeq projectStatus "Cancelled"}}class="cancelled"{{/ifeq}}{{#ifeq projectStatus "Pending"}}class="pending"{{/ifeq}}>
           <td class="projectlabel">
             <a class="anchor" id="{{projectId}}" href="#{{projectId}}"></a><code>{{projectId}}</code>
           </td>
           <td>
             {{#if docId}}
-            <a class="document-link clear-filter" href="../{{../htmlLink}}?search.search={{docId}}">{{getLabel docId}}</a>
+            {{docId}}
             <br>
             [{{getStatus docId}}] {{{getstatusButton docId "12"}}}
             {{/if}}
@@ -43,7 +43,7 @@
           <td>
             {{workType}}
           </td>
-          <td class="text-center">
+          <!--td class="text-center">
             {{#if projApproved}}<span class="label badge badge-success">Yes</span>{{/if}}
             {{#if projApprovedDate}}
             <br><span class="small">[Approved Date: {{projApprovedDate}}]</span>
@@ -53,7 +53,7 @@
           <td class="d-none">
             {{#if projApproved}}Yes{{/if}}
             {{#unless projApproved}}Pending{{/unless}}
-          </td>
+          </td -->
           <td class="text-center">
             {{#if projectLink}}<a href="{{projectLink}}" target="_blank">{{/if}}{{projectStatus}}{{#if projectLink}}</a>{{/if}}
           </td>
@@ -85,7 +85,7 @@
             </ul>
             {{/if}}
           </td>
-          <td class="d-none">
+          <!-- td class="d-none">
             {{#if projectMilestone}}
             {{#projectMilestone}}
             {{#if current}}
@@ -121,12 +121,12 @@
             {{/updateDependency}}
             </ul>
             {{/if}}
-          </td>
+          </td -->
           <td>
             {{workNotes}}
           </td>
         </tr>
-        {{/dataProjects}}
+        {{/data}}
       </tbody>
     </table>
     <!-- Main content ends - do not edit below this line -->

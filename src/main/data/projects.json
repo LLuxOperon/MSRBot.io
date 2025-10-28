@@ -1,758 +1,481 @@
 [
   {
     "assignedGroup": "smpte-27c-tc",
-    "assignedTC": "smpte-27c-tcdg-sub",
-    "docId": "SMPTE.EG428-23.20XX",
-    "projApproved": true,
-    "projectId": "eg428-23-20xx-id",
-    "projectLink": "https://web.powerapps.com/apps/c8863a6c-f697-4d22-94e7-e9a03ba895a4?projId=1974",
-    "projectMilestone": [
-      {
-        "current": true,
-        "milestoneAct": "WG/DG working on WD (20%)"
-      }
-    ],
-    "projectStatus": "Open",
-    "workType": "Intial Draft"
-  },
-  {
-    "assignedGroup": "smpte-35pm-tc",
-    "assignedTC": "smpte-35pm-tc",
-    "docAffected": [
-      "SMPTE.RDD45.2017"
-    ],
-    "docId": "SMPTE.RDD45.2022",
-    "projApproved": true,
-    "projectId": "rdd45-20XX-rev-001",
-    "projectStatus": "Complete",
-    "workType": "Revision"
-  },
-  {
-    "assignedGroup": "smpte-27c-tc",
-    "assignedTC": "smpte-27c-tc",
-    "docId": "SMPTE.RDD53.20XX",
-    "projApproved": true,
-    "projectId": "rdd53-20xx-id",
-    "projectLink": "https://web.powerapps.com/apps/c8863a6c-f697-4d22-94e7-e9a03ba895a4?projId=1965",
-    "projectMilestone": [
-      {
-        "current": true,
-        "milestoneAct": "WG/DG working on WD (20%)"
-      }
-    ],
-    "projectStatus": "Pending",
-    "workNotes": "On hold for proponent to continue",
-    "workType": "Intial Draft"
-  },
-  {
-    "assignedGroup": "smpte-35pm-tc",
-    "assignedTC": "smpte-35pm-tc",
-    "docAffected": [
-      "SMPTE.TSP2121.1.2018"
-    ],
-    "docId": "SMPTE.RDD59-1.2022",
-    "projApproved": true,
-    "projectId": "rdd59-1-20XX-rev-001",
-    "projectStatus": "Complete",
-    "workType": "Revision"
-  },
-  {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.RP200.2012"
     ],
-    "docId": "SMPTE.RP200.20XX",
-    "projApproved": true,
+    "docId": "SMPTE.RP200",
     "projectId": "rp200-2012-rev-001",
     "projectLink": "https://web.powerapps.com/apps/c8863a6c-f697-4d22-94e7-e9a03ba895a4?projId=2102",
     "projectStatus": "Open",
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-27c-tcdg-sub",
-    "assignedTC": "smpte-27c-tc",
-    "docId": "SMPTE.RP428-22.20XX",
-    "projApproved": true,
-    "projectId": "rp428-22-20XX-id",
-    "projectLink": "https://web.powerapps.com/apps/c8863a6c-f697-4d22-94e7-e9a03ba895a4?projId=2036",
-    "projectMilestone": [
-      {
-        "miledateEnd": "2021-08-13",
-        "miledateStart": "2021-07-31",
-        "milestoneAct": "Pre-FCD Review (30%)"
-      },
-      {
-        "current": true,
-        "miledateEnd": "2022-02-01",
-        "miledateStart": "2021-10-19",
-        "milestoneAct": "PCD (45%)"
-      }
-    ],
-    "projectStatus": "Open",
-    "workType": "Intial Draft"
-  },
-  {
     "assignedGroup": "smpte-35pm-tc",
-    "assignedTC": "smpte-35pm-tc",
     "docAffected": [
       "SMPTE.ST2067-101.2018"
     ],
-    "docId": "SMPTE.ST2067-101.20XX",
-    "projApproved": true,
+    "docId": "SMPTE.ST2067-101",
     "projectId": "st2067-101-2017-rev-001",
     "projectStatus": "Open",
     "workType": "Revision"
   },
   {
     "assignedGroup": "smpte-35pm-tc",
-    "assignedTC": "smpte-35pm-tc",
     "docAffected": [
       "SMPTE.ST2067-102.2017"
     ],
     "docId": "SMPTE.ST2067-102.2022",
-    "projApproved": true,
     "projectId": "st2067-102-2017-rev-001",
     "projectStatus": "Complete",
     "workType": "Revision"
   },
   {
     "assignedGroup": "smpte-35pm-tc",
-    "assignedTC": "smpte-35pm-tc",
-    "docId": "SMPTE.ST2067-104.20XX",
-    "projApproved": true,
-    "projectId": "st2067-104-201xx-id",
+    "docId": "SMPTE.ST2067-104",
+    "projectId": "st2067-104-id",
     "projectStatus": "Open",
-    "workType": "Revision"
+    "workType": "Intial Draft"
   },
   {
     "assignedGroup": "smpte-35pm-tc",
-    "assignedTC": "smpte-35pm-tc",
-    "docId": "SMPTE.ST2067-105.20XX",
-    "projApproved": true,
-    "projectId": "st2067-105-20xx-id",
+    "docId": "SMPTE.ST2067-105",
+    "projectId": "st2067-105-id",
     "projectStatus": "Open",
-    "workType": "Revision"
+    "workType": "Intial Draft"
   },
   {
     "assignedGroup": "smpte-35pm-tc",
-    "assignedTC": "smpte-35pm-tc",
-    "docId": "SMPTE.ST2067-106.20XX",
-    "projApproved": true,
-    "projectId": "st2067-106-20xx-id",
+    "docId": "SMPTE.ST2067-106",
+    "projectId": "st2067-106-id",
     "projectStatus": "Open",
-    "workType": "Revision"
+    "workType": "Intial Draft"
   },
   {
     "assignedGroup": "smpte-35pm-tc",
-    "assignedTC": "smpte-35pm-tc",
     "docAffected": [
       "SMPTE.RDD47.2018"
     ],
-    "docId": "SMPTE.ST2067-202.20XX",
-    "projApproved": true,
-    "projectId": "st2067-202-20xx-rev-001",
+    "docId": "SMPTE.ST2067-202.2022",
+    "projectId": "st2067-202-rev-001",
     "projectStatus": "Complete",
     "workType": "Revision"
   },
   {
     "assignedGroup": "smpte-35pm-tc",
-    "assignedTC": "smpte-35pm-tc",
     "docAffected": [
       "SMPTE.ST2067-21.2020",
       "SMPTE.ST2067-21.2020Am1.2020"
     ],
-    "docId": "SMPTE.ST2067-21.20XX",
-    "projApproved": true,
+    "docId": "SMPTE.ST2067-21.2022",
     "projectId": "st2067-21-2020-rev-001",
-    "projectStatus": "Open",
+    "projectStatus": "Complete",
     "workType": "Revision"
   },
   {
     "assignedGroup": "smpte-35pm-tc",
-    "assignedTC": "smpte-35pm-tc",
-    "docId": "SMPTE.ST2067-60.20XX",
-    "projApproved": true,
-    "projectId": "st2067-60-20xx-id",
-    "projectStatus": "Open",
+    "docId": "SMPTE.ST2067-60.2023",
+    "projectId": "st2067-60-id",
+    "projectStatus": "Complete",
     "workType": "Intial Draft"
   },
   {
     "assignedGroup": "smpte-35pm-tc",
-    "assignedTC": "smpte-35pm-tc",
-    "docId": "SMPTE.ST2067-70.20XX",
-    "projApproved": true,
+    "docId": "SMPTE.ST2067-70.2024-08",
     "projectId": "st2067-70-20xx-id",
-    "projectStatus": "Open",
+    "projectStatus": "Complete",
     "workType": "Intial Draft"
-  },
-  {
-    "assignedGroup": "smpte-27c-tcwg-dx-dg-2095-1-rev",
-    "assignedTC": "smpte-27c-tc",
-    "docAffected": [
-      "SMPTE.ST2095-1.2015"
-    ],
-    "docId": "SMPTE.ST2095-1.20XX",
-    "projApproved": true,
-    "projectId": "st2095-1-2015-rev-001",
-    "projectLink": "https://web.powerapps.com/apps/c8863a6c-f697-4d22-94e7-e9a03ba895a4?projId=2005",
-    "projectMilestone": [
-      {
-        "current": true,
-        "milestoneAct": "WG/DG working on WD (20%)"
-      }
-    ],
-    "projectStatus": "Open",
-    "workType": "Revision"
   },
   {
     "assignedGroup": "smpte-27c-tc",
-    "assignedTC": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST2098-2.2019"
     ],
     "docId": "SMPTE.ST2098-2.2022",
-    "projApproved": true,
     "projectId": "st2098-2-20xx-rev-001",
     "projectLink": "https://web.powerapps.com/apps/c8863a6c-f697-4d22-94e7-e9a03ba895a4?projId=2113",
     "projectStatus": "Complete",
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST428-1.2019"
     ],
-    "projApproved": false,
+    "docId": "SMPTE.ST428-1",
     "projectId": "st428-1-2019-rev-001",
     "projectStatus": "Pending",
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST428-10.2008"
     ],
-    "projApproved": false,
+    "docId": "SMPTE.ST428-10",
     "projectId": "st428-10-2008-rev-001",
     "projectStatus": "Pending",
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST428-11.2013"
     ],
-    "projApproved": false,
+    "docId": "SMPTE.ST428-11",
     "projectId": "st428-11-2013-rev-001",
     "projectStatus": "Pending",
     "workNotes": "Should be updated as per GH issue",
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST428-2.2006"
     ],
-    "projApproved": false,
+    "docId": "SMPTE.ST428-2",
     "projectId": "st428-2-2006-rev-001",
     "projectStatus": "Pending",
     "workNotes": "Revise at next review (2023) - See GitHub for ISO TC 36 comment responses",
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-21dc-tcdg-stsub",
-    "assignedTC": "smpte-21dc-tc",
-    "projApproved": true,
-    "projectId": "st428-7-2014-rev-001",
-    "projectStatus": "Cancelled",
-    "workType": "Revision"
-  },
-  {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST429-10.2008"
     ],
-    "projApproved": true,
-    "projApprovedDate": "2021-04-08",
+    "docId": "SMPTE.ST429-10.2023-09",
     "projectId": "st429-10-2008-rev-001",
     "projectLink": "https://web.powerapps.com/apps/c8863a6c-f697-4d22-94e7-e9a03ba895a4?projId=2029",
-    "projectStatus": "Open",
-    "updateDependency": [
-      "SMPTE.ST429-7.2006"
-    ],
+    "projectStatus": "Complete",
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST429-12.2008"
     ],
-    "projApproved": false,
+    "docId": "SMPTE.ST429-12",
     "projectId": "st429-12-2008-rev-001",
     "projectStatus": "Pending",
-    "updateDependency": [
-      "SMPTE.ST429-7.2006"
-    ],
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST429-14.2014"
     ],
-    "projApproved": true,
-    "projApprovedDate": "2021-04-08",
+    "docId": "SMPTE.ST429-14:2023-09",
     "projectId": "st429-14-2014-rev-001",
     "projectLink": "https://web.powerapps.com/apps/c8863a6c-f697-4d22-94e7-e9a03ba895a4?projId=2028",
-    "projectStatus": "Open",
+    "projectStatus": "Complete",
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST429-16.2014"
     ],
-    "projApproved": true,
-    "projApprovedDate": "2021-04-08",
+    "docId": "SMPTE.ST429-14:2023-09",
     "projectId": "st429-16-2014-rev-001",
     "projectLink": "https://web.powerapps.com/apps/c8863a6c-f697-4d22-94e7-e9a03ba895a4?projId=2027",
-    "projectStatus": "Open",
+    "projectStatus": "Complete",
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST429-17.2017"
     ],
-    "projApproved": false,
+    "docId": "SMPTE.ST429-17",
     "projectId": "st429-17-2017-rev-001",
     "projectStatus": "Pending",
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST429-18.2019"
     ],
-    "projApproved": true,
-    "projApprovedDate": "2021-04-08",
+    "docId": "SMPTE.ST429-18.2023-09",
     "projectId": "st429-18-2019-rev-001",
     "projectLink": "https://web.powerapps.com/apps/c8863a6c-f697-4d22-94e7-e9a03ba895a4?projId=2026",
-    "projectStatus": "Open",
+    "projectStatus": "Complete",
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST429-19.2019"
     ],
-    "projApproved": true,
-    "projApprovedDate": "2021-04-08",
+    "docId": "SMPTE.ST429-19.2023-09",
     "projectId": "st429-19-2019-rev-001",
     "projectLink": "https://web.powerapps.com/apps/c8863a6c-f697-4d22-94e7-e9a03ba895a4?projId=2025",
-    "projectStatus": "Open",
+    "projectStatus": "Complete",
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST429-2.2020"
     ],
-    "projApproved": true,
-    "projApprovedDate": "2021-04-08",
+    "docId": "SMPTE.ST429-2.2023-09",
     "projectId": "st429-2-2020-rev-001",
     "projectLink": "https://web.powerapps.com/apps/c8863a6c-f697-4d22-94e7-e9a03ba895a4?projId=2034",
     "projectStatus": "Complete",
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
     "docId": "SMPTE.ST429-20.2023",
-    "projApproved": true,
     "projectId": "st429-20-20XX-id",
     "projectLink": "https://web.powerapps.com/apps/c8863a6c-f697-4d22-94e7-e9a03ba895a4?projId=2035",
-    "projectMilestone": [
-      {
-        "current": false,
-        "miledateEnd": "2022-02-01",
-        "miledateStart": "2021-07-23",
-        "milestoneAct": "PCD (45%)"
-      },
-      {
-        "current": false,
-        "milestoneAct": "DP (85%)"
-      },
-      {
-        "current": true,
-        "milestoneAct": "Published (100%)"
-      }
-    ],
     "projectStatus": "Complete",
     "workType": "Intial Draft"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST429-3.2007"
     ],
-    "projApproved": true,
-    "projApprovedDate": "2021-04-08",
+    "docId": "SMPTE.ST429-3.2023-09",
     "projectId": "st429-3-2007-rev-001",
     "projectLink": "https://web.powerapps.com/apps/c8863a6c-f697-4d22-94e7-e9a03ba895a4?projId=2033",
-    "projectMilestone": [
-      {
-        "current": true,
-        "milestoneAct": "WG/DG working on WD (20%)"
-      }
-    ],
-    "projectStatus": "Open",
+    "projectStatus": "Complete",
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST429-4.2020"
     ],
-    "projApproved": true,
-    "projApprovedDate": "2021-04-08",
+    "docId": "SMPTE.ST429-4.2023-05",
     "projectId": "st429-4-2020-rev-001",
     "projectLink": "https://web.powerapps.com/apps/c8863a6c-f697-4d22-94e7-e9a03ba895a4?projId=2032",
-    "projectStatus": "Open",
+    "projectStatus": "Complete",
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST429-5.2017"
     ],
-    "projApproved": true,
-    "projApprovedDate": "2021-04-08",
+    "docId": "SMPTE.ST429-5.2023-09",
     "projectId": "st429-5-2017-rev-001",
     "projectLink": "https://web.powerapps.com/apps/c8863a6c-f697-4d22-94e7-e9a03ba895a4?projId=2031",
-    "projectStatus": "Open",
+    "projectStatus": "Complete",
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST429-6.2006",
-      "SMPTE.ST429-6.2006Am1.2018"
+      "SMPTE.ST429-6.2006Am1.2017"
     ],
-    "projApproved": true,
-    "projApprovedDate": "2021-04-08",
+    "docId": "SMPTE.ST429-5.2023-05",
     "projectId": "st429-6-2006-rev-001",
     "projectLink": "https://web.powerapps.com/apps/c8863a6c-f697-4d22-94e7-e9a03ba895a4?projId=2030",
-    "projectStatus": "Open",
+    "projectStatus": "Complete",
     "workNotes": "Roll in ST 429-6:2006 Am1:2018",
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST429-7.2006"
     ],
-    "projApproved": false,
+    "docId": "SMPTE.ST429-5",
     "projectId": "st429-7-2006-rev-001",
     "projectStatus": "Pending",
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST429-8.2007"
     ],
-    "projApproved": false,
+    "docId": "SMPTE.ST429-8",
     "projectId": "st429-8-2007-rev-001",
     "projectStatus": "Pending",
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST429-9.2014"
     ],
-    "projApproved": false,
+    "docId": "SMPTE.ST429-9",
     "projectId": "st429-9-2014-rev-001",
     "projectStatus": "Pending",
-    "updateDependency": [
-      "SMPTE.ST429-8.2007"
-    ],
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST430-1.2017",
       "SMPTE.ST430-1.2017Am1.2019"
     ],
-    "projApproved": true,
-    "projApprovedDate": "2021-04-08",
+    "docId": "SMPTE.ST430-1.2023-09",
     "projectId": "st430-1-2017-rev-001",
     "projectLink": "https://web.powerapps.com/apps/c8863a6c-f697-4d22-94e7-e9a03ba895a4?projId=2024",
-    "projectMilestone": [
-      {
-        "current": true,
-        "milestoneAct": "WG/DG working on WD (20%)"
-      }
-    ],
-    "projectStatus": "Open",
+    "projectStatus": "Complete",
     "workNotes": "Roll in ST 430-1:2017 Am 1:2019 ",
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
+    "docAffected": [
+      "SMPTE.ST430-1.2023-09"
+    ],
+    "docId": "SMPTE.ST430-1",
+    "projectId": "st430-1-2023-09-rev-001",
+    "projectStatus": "Pending",
+    "workType": "Revision"
+  },
+  {
+    "assignedGroup": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST430-10.2010"
     ],
-    "projApproved": false,
+    "docId": "SMPTE.ST430-10",
     "projectId": "st430-10-2010-rev-001",
     "projectStatus": "Pending",
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST430-11.2010"
     ],
-    "projApproved": false,
+    "docId": "SMPTE.ST430-11",
     "projectId": "st430-11-2010-rev-001",
     "projectStatus": "Pending",
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST430-12.2014",
       "SMPTE.ST430-12.2014Am1.2019"
     ],
-    "projApproved": true,
-    "projApprovedDate": "2021-04-08",
+    "docId": "SMPTE.ST430-12:2023-9",
     "projectId": "st430-12-2014-rev-001",
     "projectLink": "https://web.powerapps.com/apps/c8863a6c-f697-4d22-94e7-e9a03ba895a4?projId=2023",
-    "projectStatus": "Open",
+    "projectStatus": "Complete",
     "workNotes": "Roll in ST 430-12:2014 Am1:2019",
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-21dc-tcdg-smsomb",
-    "assignedTC": "smpte-21dc-tc",
+    "assignedGroup": "smpte-21dc-tc",
     "docAffected": [
       "SMPTE.ST430-14.2015"
     ],
-    "docId": "SMPTE.ST430-14.2022",
-    "projApproved": true,
+    "docId": "SMPTE.ST430-14.2021",
     "projectId": "st430-14-2015-rev-001",
     "projectLink": "https://teams.microsoft.com/l/entity/com.microsoft.teamspace.tab.planner/_djb2_msteams_prefix_4016256768?webUrl=https%3a%2f%2ftasks.office.com%2fc6051a58-269b-4f08-835f-eedebf4596b3%2fHome%2fPlanViews%2fDXYjfEA-3UG8pNOGLf4A5WQAFrHT%3fType%3dPlanLink%26Channel%3dTeamsTab&docLabel=21DC+ST+430-14+Revision+-+Digital+Sync+Signal+and+Aux+Data+Transfer+Protocol+(ST)+(OLC+Legacy)+in+Projects+(ST%2c+RP%2c+EG)&context=%7b%0d%0a++%22subEntityId%22%3a+%22sfXBl-Ci8UWpVT_YbD8gqGQAMMIf%22%2c%0d%0a++%22channelId%22%3a+%2219%3a735c25b5260d47c09a2712650f590dd4%40thread.tacv2%22%0d%0a%7d&tenantId=c6051a58-269b-4f08-835f-eedebf4596b3",
-    "projectMilestone": [
-      {
-        "milestoneAct": "FCD Ballot Comment Resolution (60%)"
-      },
-      {
-        "miledateEnd": "2021-10-25",
-        "miledateStart": "2021-11-08",
-        "milestoneAct": "DP Ballot (80%)"
-      },
-      {
-        "miledateEnd": "2021-12-07",
-        "miledateStart": "2021-12-28",
-        "milestoneAct": "ST Audit (90%)"
-      },
-      {
-        "current": true,
-        "miledateStart": "2022-05-22",
-        "milestoneAct": "Published (100%)"
-      }
-    ],
     "projectStatus": "Complete",
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
-    "docAffected": [
-      "SMPTE.ST430-14.2022"
-    ],
-    "projApproved": true,
-    "projApprovedDate": "2021-04-08",
-    "projectId": "st430-14-2022-rev-001",
-    "projectLink": "https://web.powerapps.com/apps/c8863a6c-f697-4d22-94e7-e9a03ba895a4?projId=2021",
-    "projectStatus": "Open",
-    "workType": "Revision"
-  },
-  {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST430-15.2017"
     ],
-    "projApproved": false,
+    "docId": "SMPTE.ST430-15",
     "projectId": "st430-15-2017-rev-001",
     "projectStatus": "Pending",
-    "updateDependency": [
-      "SMPTE.ST430-16.2017"
-    ],
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST430-16.2017"
     ],
-    "projApproved": false,
+    "docId": "SMPTE.ST430-16",
     "projectId": "st430-16-2017-rev-001",
     "projectStatus": "Pending",
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
-    "docAffected": [
-      "SMPTE.ST430-17.2022"
-    ],
-    "projApproved": true,
-    "projApprovedDate": "2021-04-08",
-    "projectId": "st430-17-2022-rev-001",
-    "projectLink": "https://web.powerapps.com/apps/c8863a6c-f697-4d22-94e7-e9a03ba895a4?projId=2020",
-    "projectStatus": "Open",
-    "workType": "Revision"
-  },
-  {
-    "assignedGroup": "smpte-21dc-tcdg-smsomb",
-    "assignedTC": "smpte-21dc-tc",
-    "docId": "SMPTE.ST430-17.2022",
-    "projApproved": true,
+    "assignedGroup": "smpte-21dc-tc",
+    "docId": "SMPTE.ST430-17.2021",
     "projectId": "st430-17-20XX-id",
     "projectLink": "https://teams.microsoft.com/l/entity/com.microsoft.teamspace.tab.planner/_djb2_msteams_prefix_4016256768?webUrl=https%3a%2f%2ftasks.office.com%2fc6051a58-269b-4f08-835f-eedebf4596b3%2fHome%2fPlanViews%2fDXYjfEA-3UG8pNOGLf4A5WQAFrHT%3fType%3dPlanLink%26Channel%3dTeamsTab&label=21DC+SMS+OMB+Comm.+Protocol+(ST-430-17)+(OLC+Legacy)+in+Projects+(ST%2c+RP%2c+EG)&context=%7b%0d%0a++%22subEntityId%22%3a+%222hKfF4TnV0-Tn7MfhUGVHGQADMvY%22%2c%0d%0a++%22channelId%22%3a+%2219%3a735c25b5260d47c09a2712650f590dd4%40thread.tacv2%22%0d%0a%7d&tenantId=c6051a58-269b-4f08-835f-eedebf4596b3",
-    "projectMilestone": [
-      {
-        "miledateEnd": "2021-08-04",
-        "miledateStart": "2021-07-21",
-        "milestoneAct": "DP Ballot (80%)"
-      },
-      {
-        "miledateEnd": "2021-09-28",
-        "miledateStart": "2021-08-04",
-        "milestoneAct": "DP (85%)"
-      },
-      {
-        "miledateEnd": "2021-10-19",
-        "miledateStart": "2021-09-28",
-        "milestoneAct": "ST Audit (90%)"
-      },
-      {
-        "current": true,
-        "miledateStart": "2022-01-19",
-        "milestoneAct": "Published (100%)"
-      }
-    ],
     "projectStatus": "Complete",
     "workType": "Intial Draft"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST430-2.2017"
     ],
-    "projApproved": false,
+    "docId": "SMPTE.ST430-2",
     "projectId": "st430-2-2017-rev-001",
     "projectStatus": "Pending",
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST430-3.2012"
     ],
-    "projApproved": false,
+    "docId": "SMPTE.ST430-3",
     "projectId": "st430-3-2012-rev-001",
     "projectStatus": "Pending",
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST430-4.2008",
       "SMPTE.ST430-4.2008Am1.2011"
     ],
-    "projApproved": false,
+    "docId": "SMPTE.ST430-4",
     "projectId": "st430-4-2008-rev-001",
     "projectStatus": "Pending",
     "workNotes": "Roll in ST 430-4:2008 Am1:2011",
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST430-5.2011"
     ],
-    "projApproved": true,
+    "docId": "SMPTE.ST430-5.2023-09",
     "projApprovedDate": "2021-04-08",
     "projectId": "st430-5-2011-rev-002",
     "projectLink": "https://web.powerapps.com/apps/c8863a6c-f697-4d22-94e7-e9a03ba895a4?projId=2022",
-    "projectStatus": "Open",
+    "projectStatus": "Complete",
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST430-6.2010"
     ],
-    "projApproved": false,
+    "docId": "SMPTE.ST430-6",
     "projectId": "st430-6-2010-rev-001",
     "projectStatus": "Pending",
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST430-9.2008",
       "SMPTE.ST430-9.2008Am1.2011"
     ],
-    "projApproved": false,
+    "docId": "SMPTE.ST430-9",
     "projectId": "st430-9-2008-rev-001",
     "projectStatus": "Pending",
     "workNotes": "Roll in ST 430-9:2008 Am1:2011",
     "workType": "Revision"
   },
   {
-    "assignedGroup": "smpte-27c-tcwg-dx",
-    "assignedTC": "smpte-27c-tc",
+    "assignedGroup": "smpte-27c-tc",
     "docAffected": [
       "SMPTE.ST431-1.2006"
     ],
-    "projApproved": false,
+    "docId": "SMPTE.ST431-1",
     "projectId": "st431-1-2006-rev-001",
     "projectStatus": "Pending",
     "workNotes": "See GitHub for ISO TC 36 comment responses",
