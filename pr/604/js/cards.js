@@ -1,4 +1,3 @@
-// Cards view — Bootstrap grid + offcanvas
 (async function(){
   const $ = sel => document.querySelector(sel);
   const $$ = sel => Array.from(document.querySelectorAll(sel));
@@ -8,6 +7,22 @@
     box.className = 'alert alert-warning m-3';
     box.innerHTML = `<strong>Cards view couldn't load</strong><br>${msg}`;
     document.body.prepend(box);
+  }
+
+  // --- Ensure Handlebars runtime is present (async loader)
+  async function ensureHandlebars(){
+    if (window.Handlebars) return true;
+    return new Promise((resolve) => {
+      const s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/handlebars@4.7.8/dist/handlebars.min.js';
+      s.async = true;
+      s.onload = () => resolve(!!window.Handlebars);
+      s.onerror = () => {
+        console.error('[cards] Failed to load Handlebars runtime.');
+        resolve(false);
+      };
+      document.head.appendChild(s);
+    });
   }
 
   async function loadJSON(url){
@@ -29,6 +44,72 @@
   } catch (e) {
     err(e.message);
     return;
+  }
+
+  // Optional client-side Handlebars card template
+  let hbCard = null;
+  let tplEl = document.getElementById('card-tpl');
+  if (!tplEl) {
+    const src = document.getElementById('card-tpl-src');
+    if (src) {
+      const scr = document.createElement('script');
+      scr.id = 'card-tpl';
+      scr.type = 'text/x-handlebars-template';
+      scr.innerHTML = src.innerHTML;
+      document.body.appendChild(scr);
+      tplEl = scr;
+    }
+  }
+  if (!tplEl) {
+    console.error('[cards] [TEMPLATE] Missing #card-tpl and #card-tpl-src. The page must include <template id="card-tpl-src">…</template>.');
+  } else if (!tplEl.innerHTML || tplEl.innerHTML.trim().length === 0) {
+    console.error('[cards] [TEMPLATE] card template node is empty. Check cards.hbs for the inline template content.');
+  }
+
+  if (!(await ensureHandlebars())) {
+    console.error('[cards] [RUNTIME] Handlebars not available; templates cannot render.');
+  }
+
+  if (tplEl && window.Handlebars) {
+    // minimal helpers
+    window.Handlebars.registerHelper('join', function(arr, sep){ return Array.isArray(arr) ? arr.join(sep||', ') : ''; });
+    window.Handlebars.registerHelper('len', function(x){ return (Array.isArray(x) || typeof x === 'string') ? x.length : 0; });
+    window.Handlebars.registerHelper('gt', function(a,b){ return Number(a) > Number(b); });
+    window.Handlebars.registerHelper('statusBadge', function(status){
+      const s = String(status || '').toLowerCase();
+      const cls = {
+        unknown:   'text-bg-danger',
+        withdrawn: 'text-bg-danger',
+        superseded:'text-bg-warning',
+        draft:     'text-bg-warning',
+        publiccd:  'text-bg-success',
+        active:    'text-bg-success',
+        versionless:'text-bg-info',
+        amended:   'text-bg-secondary',
+        reaffirmed:'text-bg-info',
+        stabilized:'text-bg-primary'
+      }[s] || 'text-bg-light';
+      const label = s ? `[ ${s.toUpperCase()} ]` : '[ UNKNOWN ]';
+      return new window.Handlebars.SafeString(`<span class="label badge ${cls}">${label}</span>`);
+    });
+    // coalesce helper: returns first non-empty arg (skipping options hash)
+    window.Handlebars.registerHelper('coalesce', function(){
+      const args = Array.prototype.slice.call(arguments, 0, -1); // drop options hash
+      for (let i = 0; i < args.length; i++) {
+        const v = args[i];
+        if (v !== undefined && v !== null && String(v).trim() !== '') return v;
+      }
+      return '';
+    });
+    // hasAny helper: checks if an array is non-empty
+    window.Handlebars.registerHelper('hasAny', function(arr){
+      return Array.isArray(arr) && arr.length > 0;
+    });
+    try {
+      hbCard = window.Handlebars.compile(tplEl.innerHTML);
+    } catch (e) {
+      console.error('[cards] [COMPILE] Handlebars failed to compile card template:', e);
+    }
   }
 
   // --- State
@@ -94,33 +175,30 @@
       return true;
     };
     let rows = idx.filter(pass);
-    if (state.sort === 'year:desc') rows.sort((a,b)=>(b.year||0)-(a.year||0));
+    if (state.sort === 'year:desc') {
+      rows.sort((a,b)=>{
+        const bt = (typeof b.pubTs === 'number') ? b.pubTs : (b.year? Date.UTC(b.year,0,1): 0);
+        const at = (typeof a.pubTs === 'number') ? a.pubTs : (a.year? Date.UTC(a.year,0,1): 0);
+        return bt - at;
+      });
+    }
     if (state.sort === 'title:asc') rows.sort((a,b)=>String(a.title).localeCompare(String(b.title)));
     return rows;
   }
 
-  function cardHTML(d){
-    return `
-<article class="card-reg">
-  <header class="d-flex align-items-center gap-2 mb-1">
-    <h3 class="h6 m-0 flex-grow-1"><a href="${d.href||'#'}" target="_blank" rel="noopener">${d.title}</a></h3>
-    <span class="badge text-bg-light">${d.status||'unknown'}</span>
-  </header>
-  <div class="meta mb-1">
-    <span class="badge-reg">${d.publisher||''}</span>
-    <span class="badge-reg">${d.docType||''}</span>
-    ${(!(state.f.group && state.f.group.length) && d.groupNames && d.groupNames.length)
-      ? `<span class="badge-reg">${d.groupNames.join(', ')}</span>` : ''}
-    ${(Array.isArray(d.currentWork) && d.currentWork.length)
-      ? `<span class="badge-reg badge-work">${d.currentWork.join(', ')}</span>` : ''}
-    ${d.year?`<span class="badge-reg">${d.year}</span>`:''}
-    ${d.hasReleaseTag?`<span class="badge-reg">releaseTag</span>`:''}
-  </div>
-  <details class="details"><summary>Details</summary>
-    ${d.doi?`<div>DOI: <code>${d.doi}</code></div>`:''}
-    ${d.href?`<div>Link: <a href="${d.href}" target="_blank" rel="noopener">${d.href}</a></div>`:''}
-  </details>
-</article>`;
+  function cardHTML(d, opts){
+    if (!hbCard) {
+      console.error('[cards] [RENDER] No compiled template. Causes: missing #card-tpl-src, Handlebars not loaded, or compile error.');
+      return `<div class="alert alert-danger">Cards cannot render: template missing or Handlebars runtime unavailable.</div>`;
+    }
+    try {
+      return hbCard(Object.assign({}, d, opts||{}, {
+        hideGroup: !!(state.f.group && state.f.group.length)
+      }));
+    } catch (err) {
+      console.error('[cards] Template render error:', err);
+      return `<div class="alert alert-danger">[cards] Template render error: ${err.message}</div>`;
+    }
   }
 
   function renderFacets(){
@@ -140,14 +218,16 @@
           </div>`;
       }).join('');
       const collapseId = `facet_${name}`;
+      // Mark docType and status as open by default
+      const isDefaultOpen = (name === 'docType' || name === 'status');
       return `
         <div class="accordion-item">
           <h2 class="accordion-header" id="hdr_${collapseId}">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#${collapseId}" aria-expanded="false" aria-controls="${collapseId}">
+            <button class="accordion-button${isDefaultOpen ? '' : ' collapsed'}" type="button" data-bs-toggle="collapse" data-bs-target="#${collapseId}" aria-expanded="${isDefaultOpen}" aria-controls="${collapseId}">
               ${name}
             </button>
           </h2>
-          <div id="${collapseId}" class="accordion-collapse collapse" aria-labelledby="hdr_${collapseId}">
+          <div id="${collapseId}" class="accordion-collapse collapse${isDefaultOpen ? ' show' : ''}" aria-labelledby="hdr_${collapseId}">
             <div class="accordion-body p-2">
               <div class="facet-list">${items || '<div class="text-muted">none</div>'}</div>
             </div>
@@ -156,10 +236,10 @@
     };
 
     const sections = [
-      ['publisher', facets.publisher, null],
-      ['group', facets.group, facets.groupLabels],
       ['docType', facets.docType, null],
       ['status', facets.status, null],
+      ['publisher', facets.publisher, null],
+      ['group', facets.group, facets.groupLabels],
       ['hasCurrentWork', facets.hasCurrentWork, null],
       ['hasDoi', facets.hasDoi, null],
       ['hasReleaseTag', facets.hasReleaseTag, null]
@@ -205,7 +285,7 @@
     const start = (state.page-1)*state.size;
     const pageRows = rows.slice(start, start+state.size);
     const tgt = $('#cards'); if (!tgt) return;
-    tgt.innerHTML = pageRows.map(cardHTML).join('');
+    tgt.innerHTML = pageRows.map(d => cardHTML(d)).join('');
     if (!pageRows.length) {
       tgt.innerHTML = '<div class="text-muted p-3">No results. Adjust filters or search.</div>';
     }

@@ -115,14 +115,56 @@
   <div class="offcanvas-body" id="facetDrawerBody"><!-- Facets cloned here --></div>
 </div>
 
+
+<!-- Inline client-side card template source (inert) -->
+<template id="card-tpl-src">
+  <article class="card-reg">
+    <header class="d-flex align-items-top gap-2 mb-1">
+      <h3 class="h6 m-0 flex-grow-1">
+        <code>{{label}}</code> {{#if href}}<a href="{{href}}" target="_blank" rel="noopener">{{title}}</a>{{else}}{{title}}{{/if}}
+      </h3>
+      <div class="d-flex gap-1 flex-wrap ms-auto justify-content-end text-end">
+        {{#if (hasAny statuses)}}
+          {{#each statuses}}
+            {{{statusBadge this}}}
+          {{/each}}
+        {{else}}
+          {{{statusBadge statusPrimary}}}
+        {{/if}}
+      </div>
+    </header>
+    <div class="meta mb-1">
+      {{#if publisher}}<span class="badge-reg">{{publisher}}</span>{{/if}}
+      {{#if docType}}<span class="badge-reg">{{docType}}</span>{{/if}}
+      {{#if year}}<span class="badge-reg">{{year}}</span>{{/if}}
+      {{#if hasReleaseTag}}<span class="badge-reg">releaseTag</span>{{/if}}
+      {{#unless hideGroup}}
+        {{#if (hasAny groupNames)}}
+          <span class="badge-reg">{{join groupNames ", "}}</span>
+        {{/if}}
+      {{/unless}}
+      {{#if (hasAny currentWork)}}<span class="badge-reg badge-work">{{join currentWork ", "}}</span>{{/if}}
+    </div>
+    <details class="details"><summary>Details</summary>
+      {{#if doi}}<div>DOI: <code>{{doi}}</code></div>{{/if}}
+      {{#if href}}<div>Link: <a href="{{href}}" target="_blank" rel="noopener">{{href}}</a></div>{{/if}}
+      {{#unless doi}}
+        {{#unless href}}
+          <div class="text-muted">No DOI or link available.</div>
+        {{/unless}}
+      {{/unless}}
+    </details>
+  </article>
+</template>
+
 <script src="../js/cards.js"></script>
 
     <footer class="page-footer font-small">
     <div class="row d-flex align-items-center text-center p-3 border-top">
       <div class="col text-center">
         <small class="text-muted">
-          Site version: <code>3a040bb95bc36249fd67164cebf16db1c61e9307</code>
-          <br>Generated on: <code>2025-10-29T17:31:11.787Z</code>
+          Site version: <code>e6450a1c72a0bdaa81376f3004293ec10b696976</code>
+          <br>Generated on: <code>2025-10-29T21:28:53.788Z</code>
         </small>
       </div>
     </div>

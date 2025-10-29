@@ -151,9 +151,10 @@
   },
   "status": {
     "active": 542,
-    "superseded": 691,
-    "unknown": 34,
-    "withdrawn": 28,
+    "superseded": 615,
+    "draft": 9,
+    "unknown": 25,
+    "withdrawn": 104,
     "latest": 912
   },
   "year": {
