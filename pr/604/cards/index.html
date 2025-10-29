@@ -80,9 +80,7 @@
 <div id="cards-topbar" class="sticky-top bg-white border-bottom px-3 py-2">
   <div id="filterSummary" class="text-muted small mb-1"></div>
   <div id="toolbar" class="d-flex flex-wrap align-items-center gap-2">
-    <a href="index.html" class="btn btn-outline-primary d-none d-lg-inline-flex">
-      <i class="bi bi-table"></i>&nbsp;Advanced (Table)
-    </a>
+    
     <button class="btn btn-outline-secondary d-lg-none" type="button"
       data-bs-toggle="offcanvas" data-bs-target="#facetDrawer" aria-controls="facetDrawer">
       <i class="bi bi-funnel"></i> Filters
@@ -90,9 +88,18 @@
     <input id="q" type="search" class="form-control flex-grow-1" placeholder="Search…">
     <select id="sort" class="form-select w-auto">
       <option value="year:desc">Newest first</option>
+      <option value="label:asc">Label A→Z</option>
       <option value="title:asc">Title A→Z</option>
     </select>
-    <span class="text-muted small">Results: <strong id="resultCount">0</strong></span>
+    <div class="input-group input-group-sm w-auto" aria-label="Results per page">
+      <span class="input-group-text">Per page</span>
+      <select id="pageSize" class="form-select">
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="40" selected>40</option>
+        <option value="100">100</option>
+      </select>
+    </div>
     <div id="activeFilters" class="d-flex flex-wrap align-items-center gap-1"></div>
   </div>
 </div>
@@ -101,6 +108,15 @@
   <div class="row g-3">
     <aside id="facet" class="col-lg-3 d-none d-lg-block"><!-- Facets injected here --></aside>
     <section id="cards-main" class="col-lg-9">
+      <div id="resultsLine" class="text-muted small mb-2">Showing <strong id="resultCount">0</strong> documents</div>
+      <nav id="pager" class="d-flex justify-content-between align-items-center mb-2">
+        <div class="btn-group">
+          <button id="prevPage" type="button" class="btn btn-outline-secondary btn-sm">Prev</button>
+          <button id="nextPage" type="button" class="btn btn-outline-secondary btn-sm">Next</button>
+        </div>
+        <div id="pageNums" class="btn-group"></div>
+        <div id="pageMeta" class="small text-muted">Page 1 of 1</div>
+      </nav>
       <div id="cards" class="cards"></div>
     </section>
   </div>
@@ -121,7 +137,7 @@
   <article class="card-reg">
     <header class="d-flex align-items-top gap-2 mb-1">
       <h3 class="h6 m-0 flex-grow-1">
-        <code>{{label}}</code> {{#if href}}<a href="{{href}}" target="_blank" rel="noopener">{{title}}</a>{{else}}{{title}}{{/if}}
+        <code>{{label}}</code><br>{{#if href}}<a href="{{href}}" target="_blank" rel="noopener">{{title}}</a>{{else}}{{title}}{{/if}}
       </h3>
       <div class="d-flex gap-1 flex-wrap ms-auto justify-content-end text-end">
         {{#if (hasAny statuses)}}
@@ -163,8 +179,8 @@
     <div class="row d-flex align-items-center text-center p-3 border-top">
       <div class="col text-center">
         <small class="text-muted">
-          Site version: <code>e6450a1c72a0bdaa81376f3004293ec10b696976</code>
-          <br>Generated on: <code>2025-10-29T21:28:53.788Z</code>
+          Site version: <code>2a42e0559b8ac5780e1373a0ae9367ed4c835bb9</code>
+          <br>Generated on: <code>2025-10-29T23:42:30.012Z</code>
         </small>
       </div>
     </div>

@@ -228,12 +228,67 @@ pre {
 }
 
 /* Facet accordion cleanup */
-#facet .accordion-button { padding: .4rem .75rem; font-weight: 600; }
-#facet .accordion-body { padding: .5rem; }
-#facet .form-check { margin-bottom: .25rem; }
-#facet .form-check-label { width: 100%; }
-#facet .facet-list { max-height: 260px; overflow: auto; padding-right: .25rem; }
+#facet .accordion-button { 
+  padding: .4rem .75rem; 
+  font-weight: 600; 
+}
+
+#facet .accordion-body { 
+  padding: .5rem; 
+}
+
+#facet .form-check { 
+  margin-bottom: .25rem; 
+}
+
+#facet .form-check-label { 
+  width: 100%; 
+}
+
+#facet .facet-list { 
+  max-height: 260px; 
+  overflow: auto; 
+  padding-right: .25rem; 
+}
 
 /* Clone container (drawer) shares styles */
-#facetDrawerBody .accordion-button { padding: .6rem .75rem; }
-#facetDrawerBody .facet-list { max-height: 60vh; overflow: auto; }
+#facetDrawerBody .accordion-button { 
+  padding: .6rem .75rem; 
+}
+
+#facetDrawerBody .facet-list { 
+  max-height: 60vh; 
+  overflow: auto; 
+}
+
+/* Cards: header badge alignment & wrapping */
+
+.card-reg header {
+  display: flex;
+  align-items: flex-start; /* keeps badges aligned to top edge */
+}
+
+/* The badges container in header uses .ms-auto + .d-flex from the template */
+.card-reg header .ms-auto {
+  margin-left: auto !important;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem;
+  justify-content: flex-end;
+  text-align: right;
+  max-width: 50%; /* prevents badges from crushing the title on narrow widths */
+}
+
+/* Keep each status badge from line-breaking mid-label */
+.card-reg .badge.label { white-space: nowrap; }
+/* Ensure code label + title wrap nicely */
+
+.card-reg header .d-flex {
+  flex-shrink: 0; /* prevents badge group from wrapping below title */
+  align-self: flex-start; /* locks badges to the top */
+}
+
+.card-reg header h3 {
+  flex: 1 1 auto;
+  min-width: 0; /* allows wrapping without pushing badges down */
+}
