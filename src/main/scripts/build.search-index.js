@@ -87,6 +87,7 @@ function statusFacet(st) {
       ? d.docTitle : d.docLabel;
     const pubDate = d.publicationDate || '';
     const year = /^\d{4}/.test(pubDate) ? parseInt(pubDate.slice(0,4), 10) : null;
+    const pubTs = (() => { const t = Date.parse(pubDate); return Number.isNaN(t) ? null : t; })();
     const status = statusFacet(d.status);
 
     // groups for this doc — prefer group(s) stored on the document itself; fallback to groups.json lookup
@@ -119,6 +120,8 @@ function statusFacet(st) {
       publisher: d.publisher || 'Unknown',
       docType: d.docTypeAbr || d.docType || 'Unknown',
       status,
+      pubDate,
+      pubTs,
       year,
       hasDoi: Boolean(d.doi),
       hasReleaseTag: Boolean(d.releaseTag),

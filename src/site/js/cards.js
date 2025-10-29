@@ -1,4 +1,3 @@
-// Cards view — Bootstrap grid + offcanvas
 (async function(){
   const $ = sel => document.querySelector(sel);
   const $$ = sel => Array.from(document.querySelectorAll(sel));
@@ -29,6 +28,17 @@
   } catch (e) {
     err(e.message);
     return;
+  }
+
+  // Optional client-side Handlebars card template
+  let hbCard = null;
+  const tplEl = document.getElementById('card-tpl');
+  if (tplEl && window.Handlebars) {
+    // minimal helpers
+    window.Handlebars.registerHelper('join', function(arr, sep){ return Array.isArray(arr) ? arr.join(sep||', ') : ''; });
+    window.Handlebars.registerHelper('len', function(x){ return (Array.isArray(x) || typeof x === 'string') ? x.length : 0; });
+    window.Handlebars.registerHelper('gt', function(a,b){ return Number(a) > Number(b); });
+    hbCard = window.Handlebars.compile(tplEl.innerHTML);
   }
 
   // --- State
@@ -94,12 +104,18 @@
       return true;
     };
     let rows = idx.filter(pass);
-    if (state.sort === 'year:desc') rows.sort((a,b)=>(b.year||0)-(a.year||0));
+    if (state.sort === 'year:desc') {
+      rows.sort((a,b)=>{
+        const bt = (typeof b.pubTs === 'number') ? b.pubTs : (b.year? Date.UTC(b.year,0,1): 0);
+        const at = (typeof a.pubTs === 'number') ? a.pubTs : (a.year? Date.UTC(a.year,0,1): 0);
+        return bt - at;
+      });
+    }
     if (state.sort === 'title:asc') rows.sort((a,b)=>String(a.title).localeCompare(String(b.title)));
     return rows;
   }
 
-  function cardHTML(d){
+  function _fallbackCardHTML(d){
     return `
 <article class="card-reg">
   <header class="d-flex align-items-center gap-2 mb-1">
@@ -123,6 +139,13 @@
 </article>`;
   }
 
+  function cardHTML(d, opts){
+    if (hbCard) return hbCard(Object.assign({}, d, opts||{}, {
+      hideGroup: !!(state.f.group && state.f.group.length)
+    }));
+    return _fallbackCardHTML(d);
+  }
+
   function renderFacets(){
     const root = $('#facet'); if (!root) return;
     const makeList = (name, map, labels) => {
@@ -140,14 +163,16 @@
           </div>`;
       }).join('');
       const collapseId = `facet_${name}`;
+      // Mark docType and status as open by default
+      const isDefaultOpen = (name === 'docType' || name === 'status');
       return `
         <div class="accordion-item">
           <h2 class="accordion-header" id="hdr_${collapseId}">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#${collapseId}" aria-expanded="false" aria-controls="${collapseId}">
+            <button class="accordion-button${isDefaultOpen ? '' : ' collapsed'}" type="button" data-bs-toggle="collapse" data-bs-target="#${collapseId}" aria-expanded="${isDefaultOpen}" aria-controls="${collapseId}">
               ${name}
             </button>
           </h2>
-          <div id="${collapseId}" class="accordion-collapse collapse" aria-labelledby="hdr_${collapseId}">
+          <div id="${collapseId}" class="accordion-collapse collapse${isDefaultOpen ? ' show' : ''}" aria-labelledby="hdr_${collapseId}">
             <div class="accordion-body p-2">
               <div class="facet-list">${items || '<div class="text-muted">none</div>'}</div>
             </div>
@@ -156,10 +181,10 @@
     };
 
     const sections = [
-      ['publisher', facets.publisher, null],
-      ['group', facets.group, facets.groupLabels],
       ['docType', facets.docType, null],
       ['status', facets.status, null],
+      ['publisher', facets.publisher, null],
+      ['group', facets.group, facets.groupLabels],
       ['hasCurrentWork', facets.hasCurrentWork, null],
       ['hasDoi', facets.hasDoi, null],
       ['hasReleaseTag', facets.hasReleaseTag, null]
@@ -205,7 +230,7 @@
     const start = (state.page-1)*state.size;
     const pageRows = rows.slice(start, start+state.size);
     const tgt = $('#cards'); if (!tgt) return;
-    tgt.innerHTML = pageRows.map(cardHTML).join('');
+    tgt.innerHTML = pageRows.map(d => cardHTML(d)).join('');
     if (!pageRows.length) {
       tgt.innerHTML = '<div class="text-muted p-3">No results. Adjust filters or search.</div>';
     }
