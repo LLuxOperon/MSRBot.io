@@ -15,6 +15,10 @@ const execFile = promisify(require('child_process').execFile);
 
 
 const hb = require('handlebars');
+// Server-side helper to pass through raw blocks used to embed client-side templates
+hb.registerHelper('raw', function(options) {
+  return new hb.SafeString(options.fn(this));
+});
 // Minimal shared keying import for MSI lineage lookups
 const keying = require('../lib/keying');
 const { lineageKeyFromDoc, lineageKeyFromDocId } = keying;
@@ -1020,7 +1024,7 @@ void (async () => {
   for (const cfg of registries) {
     await buildRegistry(cfg);
   }
-
+  
   const tplCards = await fs.readFile(path.join('src','main','templates','cards.hbs'), 'utf8');
   const renderCards = hb.compile(tplCards);
 

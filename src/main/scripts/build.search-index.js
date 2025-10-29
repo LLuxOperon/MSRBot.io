@@ -122,6 +122,11 @@ const squash = s => compact(s).replace(/\s+/g, ' ');
       amended: !!st.amended,
       versionless: !!st.versionless
     };
+    // Compute statuses array and statusPrimary (legacy single value)
+    const statuses = Object.entries(statusFlags)
+      .filter(([k,v]) => v)
+      .map(([k]) => k);
+    const statusPrimary = status; // keep old single-value under a new name
 
     // Publication dating (full string + parsed timestamp + year)
     const pubDate = d.publicationDate || '';
@@ -157,7 +162,9 @@ const squash = s => compact(s).replace(/\s+/g, ' ');
       label,                 // canonical label (useful for details view)
       publisher: d.publisher || 'Unknown',
       docType: d.docTypeAbr || d.docType || 'Unknown',
-      status,                // facet bucket
+      status,                // legacy single-value bucket (back-compat)
+      statusPrimary,         // explicit primary bucket
+      statuses,              // all true flags
       statusFlags,           // canonical booleans
       pubDate,               // full canonical date
       pubTs,                 // parsed timestamp for sort
