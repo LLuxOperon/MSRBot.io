@@ -127,6 +127,19 @@
     return String(v);
   };
 
+  // --- Central sync: facet checkboxes <= state.f ---
+  function syncFacetCheckboxesFromState() {
+    const boxes = Array.from(document.querySelectorAll('input[type="checkbox"][name]'));
+    for (const cb of boxes) {
+      const k = cb.name;
+      const v = cb.value;
+      const arr = (state.f[k] || []);
+      const shouldCheck = arr.includes(String(v));
+      if (cb.checked !== shouldCheck) cb.checked = shouldCheck;
+    }
+  }
+  // --- End central sync ---
+
   function renderActiveFilters(){
     const root = $('#activeFilters'); if (!root) return;
     const chips = [];
@@ -145,10 +158,20 @@
       const k = p.getAttribute('data-k');
       const v = p.getAttribute('data-v');
       state.f[k] = (state.f[k] || []).filter(x => x !== v);
-      state.page = 1; render();
+      state.page = 1;
+      syncFacetCheckboxesFromState();
+      render();
     }));
     const ca = $('#clearFilters');
-    if (ca) ca.addEventListener('click', () => { state.f = {}; state.page = 1; render(); });
+    if (ca) ca.addEventListener('click', () => {
+      state.f = {};
+      state.q = '';
+      const qInput = document.querySelector('#q');
+      if (qInput) qInput.value = '';
+      syncFacetCheckboxesFromState();
+      state.page = 1;
+      render();
+    });
   }
 
   function renderFilterSummary(){
@@ -182,7 +205,15 @@
         return bt - at;
       });
     }
-    if (state.sort === 'title:asc') rows.sort((a,b)=>String(a.title).localeCompare(String(b.title)));
+    if (state.sort === 'title:asc') {
+      const normalizeTitle = t => (t ? String(t).trim().toLowerCase()
+        .replace(/^(the|a|an)\s+/i, '') : '');
+      rows.sort((a, b) =>
+        normalizeTitle(a.title).localeCompare(normalizeTitle(b.title), 'en', { sensitivity: 'base' })
+      );
+    }
+    if (state.sort === 'label:asc') rows.sort((a,b)=>String(a.label).localeCompare(String(b.label)));
+    return rows;
     return rows;
   }
 
@@ -277,23 +308,141 @@
     if (drawerBody) drawerBody.addEventListener('change', onFacetChange);
   }
 
+  // Render numbered page jumpers into #pageNums
+  function renderPageNumbers(totalPages){
+    const cont = document.querySelector('#pageNums');
+    if (!cont) return;
+    const p = state.page;
+    const max = totalPages;
+    const parts = [];
+    const makeBtn = (label, page, {active=false, disabled=false}={}) => (
+      `<button type="button" class="btn btn-outline-secondary btn-sm${active ? ' active' : ''}"`+
+      `${disabled ? ' disabled' : ''} data-page="${page}" aria-label="Page ${label}">${label}</button>`
+    );
+    const addRange = (from, to) => { for (let i = from; i <= to; i++) parts.push(makeBtn(String(i), i, {active: i === p})); };
+
+    if (max <= 7) {
+      addRange(1, max);
+    } else {
+      addRange(1, 2); // first two
+      const start = Math.max(3, p - 1);
+      const end   = Math.min(max - 2, p + 1);
+      if (start > 3) parts.push(makeBtn('…', p, {disabled:true}));
+      addRange(start, end);
+      if (end < max - 2) parts.push(makeBtn('…', p, {disabled:true}));
+      addRange(max - 1, max); // last two
+    }
+    cont.innerHTML = parts.join('');
+  }
+
   function render(){
     const rows = applyFilters();
-    const countEl = $('#resultCount'); if (countEl) countEl.textContent = rows.length;
+    const total = idx.length;
+    const filtered = rows.length;
+
+    // clamp page
+    const totalPages = Math.max(1, Math.ceil(filtered / state.size || 1));
+    if (state.page > totalPages) state.page = totalPages;
+    if (state.page < 1) state.page = 1;
+    renderPageNumbers(totalPages);
+
+    const startIdx = (state.page - 1) * state.size;      // 0-based
+    const endIdx   = Math.min(startIdx + state.size, filtered); // exclusive
+    const startHuman = filtered ? startIdx + 1 : 0;      // 1-based display
+    const endHuman   = endIdx;
+
+    // Results line
+    const resultsLine = $('#resultsLine');
+    if (resultsLine) {
+      if (filtered === 0) {
+        resultsLine.textContent = 'No documents found';
+      } else if (filtered < total) {
+        resultsLine.textContent = `Showing ${startHuman} to ${endHuman} of ${filtered} entries (filtered from ${total} total entries)`;
+      } else {
+        resultsLine.textContent = `Showing ${startHuman} to ${endHuman} of ${total} entries`;
+      }
+    }
+
+    // Page meta + button states
+    const pageMeta = $('#pageMeta');
+    if (pageMeta) pageMeta.textContent = `Page ${filtered ? state.page : 1} of ${filtered ? totalPages : 1}`;
+    const prevBtn = $('#prevPage'), nextBtn = $('#nextPage');
+    const atFirst = state.page <= 1;
+    const atLast  = state.page >= totalPages;
+    if (prevBtn) prevBtn.disabled = atFirst || filtered === 0;
+    if (nextBtn) nextBtn.disabled = atLast  || filtered === 0;
+
+    // Draw chips/summary
     renderActiveFilters();
     renderFilterSummary();
-    const start = (state.page-1)*state.size;
-    const pageRows = rows.slice(start, start+state.size);
+
+    // Slice page rows and render cards
+    const pageRows = rows.slice(startIdx, endIdx);
     const tgt = $('#cards'); if (!tgt) return;
-    tgt.innerHTML = pageRows.map(d => cardHTML(d)).join('');
-    if (!pageRows.length) {
-      tgt.innerHTML = '<div class="text-muted p-3">No results. Adjust filters or search.</div>';
-    }
+    tgt.innerHTML = pageRows.length
+      ? pageRows.map(d => cardHTML(d)).join('')
+      : '<div class="text-muted p-3">No results. Adjust filters or search.</div>';
   }
+  // Pager click handler for numbered page jumpers
+  const pager = document.querySelector('#pager');
+  if (pager) pager.addEventListener('click', (e) => {
+    const a = e.target.closest('[data-page]');
+    if (!a) return;
+    e.preventDefault();
+    const n = parseInt(a.getAttribute('data-page'), 10);
+    if (!Number.isFinite(n) || n < 1) return;
+    if (n === state.page) return;
+    state.page = n;
+    render();
+  });
+
+  // Keyboard navigation for pagination (ignored while typing in inputs)
+  document.addEventListener('keydown', (e) => {
+    const tag = (e.target && e.target.tagName || '').toLowerCase();
+    if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.isComposing) return;
+    if (e.key === 'ArrowLeft') {
+      state.page = Math.max(1, state.page - 1);
+      render();
+    } else if (e.key === 'ArrowRight') {
+      state.page = state.page + 1; // clamped in render()
+      render();
+    } else if (e.key === 'Home') {
+      state.page = 1;
+      render();
+    } else if (e.key === 'End') {
+      state.page = 1e9; // effectively "last", clamped in render()
+      render();
+    }
+  });
 
   // Wire basics
   const q = $('#q'); if (q) q.addEventListener('input', e => { state.q = e.target.value; state.page=1; render(); });
   const sort = $('#sort'); if (sort) sort.addEventListener('change', e => { state.sort = e.target.value; state.page=1; render(); });
+
+  // Page size selector
+  const pageSizeSel = $('#pageSize');
+  if (pageSizeSel) {
+    pageSizeSel.addEventListener('change', e => {
+      const n = parseInt(e.target.value, 10);
+      state.size = Number.isFinite(n) && n > 0 ? n : 40;
+      state.page = 1;
+      render();
+    });
+  }
+
+  // Prev/Next
+  const prevBtn = $('#prevPage');
+  const nextBtn = '#nextPage' && $('#nextPage');
+
+  if (prevBtn) prevBtn.addEventListener('click', () => {
+    state.page = Math.max(1, state.page - 1);
+    render();
+  });
+  if (nextBtn) nextBtn.addEventListener('click', () => {
+    // totalPages will be clamped in render(), so a quick render is fine
+    state.page = state.page + 1;
+    render();
+  });
 
   // Kickoff
   renderFacets();
