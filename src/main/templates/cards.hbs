@@ -1,0 +1,43 @@
+{{> header}}
+
+<div id="cards-topbar" class="sticky-top bg-white border-bottom px-3 py-2">
+  <div id="filterSummary" class="text-muted small mb-1"></div>
+  <div id="toolbar" class="d-flex flex-wrap align-items-center gap-2">
+    <a href="index.html" class="btn btn-outline-primary d-none d-lg-inline-flex">
+      <i class="bi bi-table"></i>&nbsp;Advanced (Table)
+    </a>
+    <button class="btn btn-outline-secondary d-lg-none" type="button"
+      data-bs-toggle="offcanvas" data-bs-target="#facetDrawer" aria-controls="facetDrawer">
+      <i class="bi bi-funnel"></i> Filters
+    </button>
+    <input id="q" type="search" class="form-control flex-grow-1" placeholder="Search…">
+    <select id="sort" class="form-select w-auto">
+      <option value="year:desc">Newest first</option>
+      <option value="title:asc">Title A→Z</option>
+    </select>
+    <span class="text-muted small">Results: <strong id="resultCount">0</strong></span>
+    <div id="activeFilters" class="d-flex flex-wrap align-items-center gap-1"></div>
+  </div>
+</div>
+
+<div class="container-fluid mt-3">
+  <div class="row g-3">
+    <aside id="facet" class="col-lg-3 d-none d-lg-block"><!-- Facets injected here --></aside>
+    <section id="cards-main" class="col-lg-9">
+      <div id="cards" class="cards"></div>
+    </section>
+  </div>
+</div>
+
+<!-- Offcanvas drawer for facets on small screens -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="facetDrawer" aria-labelledby="facetDrawerLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="facetDrawerLabel">Filters</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body" id="facetDrawerBody"><!-- Facets cloned here --></div>
+</div>
+
+<script src="{{#ifnoteq templateName "index"}}../{{/ifnoteq}}js/cards.js"></script>
+
+{{> footer}}
