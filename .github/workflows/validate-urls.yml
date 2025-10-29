@@ -199,6 +199,7 @@ jobs:
             const unr = (audit.report && audit.report.unreachable) || {};
             const list404 = Array.isArray(unr['404']) ? unr['404'] : [];
             const list400 = Array.isArray(unr['400']) ? unr['400'] : [];
+            const listENF = Array.isArray(unr['ENOTFOUND']) ? unr['ENOTFOUND'] : [];
 
             // Build current state: 404 by publisher, 400 by docId
             const byPub404 = new Map(); // pub -> array of entries
@@ -249,6 +250,28 @@ jobs:
                 `_Created automatically from URL validation audit on ${genAt} — ${runTag}_`
               ].join('\n');
               await upsertIssue({ title, body, labels: ['automated', 'url-404'] });
+            }
+
+            // Upsert ENOTFOUND-by-publisher issues
+            const byPubENF = new Map(); // pub -> array of entries
+            for (const item of listENF) {
+              const pub = (item.publisher || 'Unknown').trim();
+              if (!byPubENF.has(pub)) byPubENF.set(pub, []);
+              byPubENF.get(pub).push(item);
+            }
+            for (const [pub, arr] of byPubENF.entries()) {
+              const title = `URL ERROR (ENOTFOUND): ${pub}`;
+              const lines = arr
+                .sort((a,b) => (a.docId || '').localeCompare(b.docId || ''))
+                .map(i => `- docId: **${i.docId}**\n_${i.field}_: ${i.url}`);
+              const body = [
+                `**Count:** ${arr.length}`,
+                '',
+                ...lines,
+                '',
+                `_Created automatically from URL validation audit on ${genAt} — ${runTag}_`
+              ].join('\n');
+              await upsertIssue({ title, body, labels: ['automated', 'url-enotfound'] });
             }
 
             // Upsert 400-per-item issues
