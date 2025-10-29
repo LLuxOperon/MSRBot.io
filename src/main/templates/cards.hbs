@@ -39,12 +39,13 @@
 </div>
 
 <script id="card-tpl" type="text/x-handlebars-template">
+{{{{raw}}}}
   <article class="card-reg">
     <header class="d-flex align-items-center gap-2 mb-1">
       <h3 class="h6 m-0 flex-grow-1">
         {{#if href}}<a href="{{href}}" target="_blank" rel="noopener">{{title}}</a>{{else}}{{title}}{{/if}}
       </h3>
-      <span class="badge text-bg-light">{{status}}</span>
+      {{{statusBadge status}}}
     </header>
     <div class="meta mb-1">
       {{#if publisher}}<span class="badge-reg">{{publisher}}</span>{{/if}}
@@ -65,6 +66,7 @@
       {{#if href}}<div>Link: <a href="{{href}}" target="_blank" rel="noopener">{{href}}</a></div>{{/if}}
     </details>
   </article>
+{{{{/raw}}}}
 </script>
 
 <script src="{{#ifnoteq templateName "index"}}../{{/ifnoteq}}js/cards.js"></script>

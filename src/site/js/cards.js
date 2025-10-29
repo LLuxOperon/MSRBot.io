@@ -38,6 +38,23 @@
     window.Handlebars.registerHelper('join', function(arr, sep){ return Array.isArray(arr) ? arr.join(sep||', ') : ''; });
     window.Handlebars.registerHelper('len', function(x){ return (Array.isArray(x) || typeof x === 'string') ? x.length : 0; });
     window.Handlebars.registerHelper('gt', function(a,b){ return Number(a) > Number(b); });
+    window.Handlebars.registerHelper('statusBadge', function(status){
+      const s = String(status || '').toLowerCase();
+      const cls = {
+        unknown:   'text-bg-danger',
+        withdrawn: 'text-bg-danger',
+        superseded:'text-bg-warning',
+        draft:     'text-bg-warning',
+        publiccd:  'text-bg-success',
+        active:    'text-bg-success',
+        versionless:'text-bg-success',
+        amended:   'text-bg-secondary',
+        reaffirmed:'text-bg-info',
+        stabilized:'text-bg-primary'
+      }[s] || 'text-bg-light';
+      const label = s ? `[ ${s.toUpperCase()} ]` : '[ UNKNOWN ]';
+      return new window.Handlebars.SafeString(`<span class="label badge ${cls}">${label}</span>`);
+    });
     hbCard = window.Handlebars.compile(tplEl.innerHTML);
   }
 
