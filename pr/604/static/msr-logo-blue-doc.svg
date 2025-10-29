@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 128 128"
+   width="512"
+   height="512"
+   role="img"
+   aria-labelledby="title desc"
+   version="1.1"
+   id="svg946"
+   sodipodi:docname="msr-logo-blue-doc.svg"
+   inkscape:version="1.2-dev (9ee32be, 2021-06-19)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs950" />
+  <sodipodi:namedview
+     id="namedview948"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="0.8907888"
+     inkscape:cx="178.49349"
+     inkscape:cy="276.72104"
+     inkscape:window-width="1299"
+     inkscape:window-height="867"
+     inkscape:window-x="0"
+     inkscape:window-y="38"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg946" />
+  <title
+     id="title">MSR Logo — Blue Document Circle</title>
+  <desc
+     id="desc">Flat design logo: blue circle background with a white document icon.</desc>
+  <circle
+     cx="64"
+     cy="64"
+     r="56"
+     fill="#2563EB"
+     id="circle932"
+     style="fill:#1398b0;fill-opacity:1" />
+  <path
+     d="m 42.567837,25.268218 h 34.291461 c 1.714573,0 3.321984,0.722791 4.500754,2.168372 l 10.716081,12.046512 c 1.178769,1.325116 1.928895,3.132093 1.928895,5.059535 v 48.186048 c 0,5.300465 -3.857789,9.637205 -8.572865,9.637205 H 42.567837 c -4.715076,0 -8.572865,-4.33674 -8.572865,-9.637205 V 34.905427 c 0,-5.300465 3.857789,-9.637209 8.572865,-9.637209 z"
+     id="path934"
+     style="fill:#ffffff;stroke-width:1.13618" />
+  <path
+     d="m 73.895942,27.006112 v 13.623773 c 0,2.140878 1.781524,3.892506 3.958941,3.892506 h 13.856295 z"
+     fill="#2563eb"
+     id="path936"
+     style="fill:#1398b0;fill-opacity:1;stroke-width:0.981396" />
+  <rect
+     x="40.723888"
+     y="60.380592"
+     width="46.552223"
+     height="4.9558201"
+     rx="2.8481946"
+     ry="2.47791"
+     id="rect938"
+     style="fill:#1398b0;fill-opacity:1;stroke-width:0.885536" />
+  <rect
+     x="40.723888"
+     y="71.329506"
+     width="46.552223"
+     height="4.9558201"
+     rx="2.8481946"
+     ry="2.47791"
+     opacity="0.9"
+     id="rect940"
+     style="fill:#1398b0;fill-opacity:1;stroke-width:0.885536" />
+  <rect
+     x="40.723888"
+     y="82.278427"
+     width="26.626064"
+     height="4.9558201"
+     rx="1.6290567"
+     ry="2.47791"
+     opacity="0.9"
+     id="rect940-9"
+     style="fill:#1398b0;fill-opacity:1;stroke-width:0.669714"
+     inkscape:transform-center-x="-0.32104243"
+     inkscape:transform-center-y="-10.664705" />
+  <metadata
+     id="metadata952">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>MSR Logo — Blue Document Circle</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

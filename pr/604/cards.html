@@ -9,19 +9,10 @@
   <!-- Optional: Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link href="mobile.css" rel="stylesheet">
-  <style>
-    .cards { display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: .75rem; }
-    .card-reg { border:1px solid #eee; border-radius:8px; padding:.75rem; background:#fff; }
-    .badge-reg { display:inline-block; padding:.1rem .4rem; border-radius:999px; background:#f4f6ff; border:1px solid #dfe5ff; margin-right:.25rem; margin-bottom:.25rem; }
-    .badge-work { background:#f6fff4; border-color:#dff5d9; }
-    .chip { font-size:.85em; }
-    #activeFilters .chip { display:inline-flex; align-items:center; gap:.3rem; padding:.2rem .5rem; border-radius:999px; background:#eef; border:1px solid #cde; }
-    .sticky-topbar { z-index: 1030; } /* above offcanvas backdrop */
-  </style>
 </head>
 <body class="bg-light">
   <!-- Sticky topbar: filters button (mobile), search, sort, result count, chips, summary -->
-  <div id="cards-topbar" class="sticky-top bg-white border-bottom py-2 px-3 sticky-topbar">
+  <div id="cards-topbar" class="sticky-top bg-white border-bottom px-3 sticky-topbar">
     <div id="filterSummary" class="text-muted small mb-1"></div>
     <div id="toolbar" class="d-flex flex-wrap align-items-center gap-2">
       <a href="index.html" class="btn btn-outline-primary d-none d-lg-inline-flex"><i class="bi bi-table"></i>&nbsp;Advanced (Table)</a>
