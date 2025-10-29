@@ -3,9 +3,7 @@
 <div id="cards-topbar" class="sticky-top bg-white border-bottom px-3 py-2">
   <div id="filterSummary" class="text-muted small mb-1"></div>
   <div id="toolbar" class="d-flex flex-wrap align-items-center gap-2">
-    <a href="index.html" class="btn btn-outline-primary d-none d-lg-inline-flex">
-      <i class="bi bi-table"></i>&nbsp;Advanced (Table)
-    </a>
+    
     <button class="btn btn-outline-secondary d-lg-none" type="button"
       data-bs-toggle="offcanvas" data-bs-target="#facetDrawer" aria-controls="facetDrawer">
       <i class="bi bi-funnel"></i> Filters
@@ -45,7 +43,7 @@
   <article class="card-reg">
     <header class="d-flex align-items-top gap-2 mb-1">
       <h3 class="h6 m-0 flex-grow-1">
-        <code>{{label}}</code> {{#if href}}<a href="{{href}}" target="_blank" rel="noopener">{{title}}</a>{{else}}{{title}}{{/if}}
+        <code>{{label}}</code> ; {{#if href}}<a href="{{href}}" target="_blank" rel="noopener">{{title}}</a>{{else}}{{title}}{{/if}}
       </h3>
       <div class="d-flex gap-1 flex-wrap ms-auto justify-content-end text-end">
         {{#if (hasAny statuses)}}

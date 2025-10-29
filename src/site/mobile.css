@@ -237,3 +237,19 @@ pre {
 /* Clone container (drawer) shares styles */
 #facetDrawerBody .accordion-button { padding: .6rem .75rem; }
 #facetDrawerBody .facet-list { max-height: 60vh; overflow: auto; }
+# --- Cards: header badge alignment & wrapping ---
+.card-reg header { align-items: flex-start; }
+/* The badges container in header uses .ms-auto + .d-flex from the template */
+.card-reg header .ms-auto {
+  margin-left: auto !important;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem;
+  justify-content: flex-end;
+  text-align: right;
+  max-width: 50%; /* prevents badges from crushing the title on narrow widths */
+}
+/* Keep each status badge from line-breaking mid-label */
+.card-reg .badge.label { white-space: nowrap; }
+/* Ensure code label + title wrap nicely */
+.card-reg h3 { overflow-wrap: anywhere; }
