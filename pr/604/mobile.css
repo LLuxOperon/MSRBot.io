@@ -32,7 +32,6 @@ div.dtsp-panesContainer {
 }
 
 body {
-    margin-top: 75px;
     margin-right: 15px;
     margin-left: 15px;
     font-family: 'Lato', sans-serif !important;
@@ -216,11 +215,14 @@ pre {
     color: #fff;
 }
 
-.sticky-topbar {
-    position: sticky;
-    top: 0;
-    background-color: #fff;
-    z-index: 1030;
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd;
+/* Ensure navbar + cards toolbar stack correctly */
+.navbar.sticky-top {
+  z-index: 1030; /* Bootstrap default for sticky nav */
+}
+
+#cards-topbar.sticky-top {
+  position: sticky;
+  top: 57px; /* height of your navbar */
+  z-index: 1020; /* slightly below navbar so it stays under dropdowns */
+  background-color: #fff;
 }
