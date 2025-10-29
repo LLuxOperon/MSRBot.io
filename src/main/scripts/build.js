@@ -1023,15 +1023,20 @@ void (async () => {
 
   const tplCards = await fs.readFile(path.join('src','main','templates','cards.hbs'), 'utf8');
   const renderCards = hb.compile(tplCards);
-  await fs.writeFile(path.join('build','cards.html'), renderCards({ 
+
+  // Create subdirectory for cards page
+  await fs.mkdir(path.join('build','cards'), { recursive: true });
+
+  await fs.writeFile(path.join('build','cards','index.html'), renderCards({
     templateName: 'cards',
     listTitle: 'Cards',
-    htmlLink: 'index.html',
+    htmlLink: '', // same relative handling as other pages
     listType: 'documents',
     csv_path: 'documents.csv',
     site_version: (await execFile('git', ['rev-parse','HEAD'])).stdout.trim(),
     date: new Date().toISOString()
   }), 'utf8');
-  console.log('[build] Wrote build/cards.html');
+
+  console.log('[build] Wrote build/cards/index.html');
 
 })().catch(console.error)

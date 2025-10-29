@@ -5,7 +5,7 @@ const path = require('path');
 const REG = path.join('src','main','data','documents.json');
 const GROUPS = path.join('src','main','data','groups.json');
 const PROJECTS = path.join('src','main','data','projects.json');
-const OUT = 'build';
+const OUT = 'build/cards';
 const IDX = path.join(OUT, 'search-index.json');
 const FAC = path.join(OUT, 'facets.json');
 
