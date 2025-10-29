@@ -241,6 +241,7 @@ jobs:
               // Compact, deterministic body
               const lines = arr
                 .sort((a,b) => (a.docId || '').localeCompare(b.docId || ''))
+                .slice(0, 100)
                 .map(i => `- docId: **${i.docId}**\n_${i.field}_: ${i.url}`);
               const body = [
                 `**Count:** ${arr.length}`,
@@ -263,6 +264,7 @@ jobs:
               const title = `URL ERROR (ENOTFOUND): ${pub}`;
               const lines = arr
                 .sort((a,b) => (a.docId || '').localeCompare(b.docId || ''))
+                .slice(0, 100)
                 .map(i => `- docId: **${i.docId}**\n_${i.field}_: ${i.url}`);
               const body = [
                 `**Count:** ${arr.length}`,
