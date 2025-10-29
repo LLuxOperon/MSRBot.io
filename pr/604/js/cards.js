@@ -126,42 +126,75 @@
   function renderFacets(){
     const root = $('#facet'); if (!root) return;
     const makeList = (name, map, labels) => {
-      const keys = Object.keys(map||{}).sort((a,b)=>String(a).localeCompare(String(b)));
-      const items = keys.map(k=>{
+      const keys = Object.keys(map || {}).sort((a,b)=>String(a).localeCompare(String(b)));
+      const items = keys.map(k => {
         const id = `${name}_${String(k).replace(/[^\w-]+/g,'_')}`;
         const label = (labels && labels[k]) ? labels[k] : k;
-        return `<div class="form-check form-check-inline me-2">
-          <input class="form-check-input" id="${id}" type="checkbox" name="${name}" value="${k}">
-          <label class="form-check-label" for="${id}">${label} <span class="text-muted">(${map[k]})</span></label>
-        </div>`;
+        return `
+          <div class="form-check mb-1">
+            <input class="form-check-input" id="${id}" type="checkbox" name="${name}" value="${k}">
+            <label class="form-check-label d-flex justify-content-between" for="${id}">
+              <span>${label}</span>
+              <span class="text-muted small ms-2">${map[k]}</span>
+            </label>
+          </div>`;
       }).join('');
-      return `<fieldset class="mb-3"><legend class="fw-semibold">${name}</legend>${items||'<div class="text-muted">none</div>'}</fieldset>`;
+      const collapseId = `facet_${name}`;
+      return `
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="hdr_${collapseId}">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#${collapseId}" aria-expanded="false" aria-controls="${collapseId}">
+              ${name}
+            </button>
+          </h2>
+          <div id="${collapseId}" class="accordion-collapse collapse" aria-labelledby="hdr_${collapseId}">
+            <div class="accordion-body p-2">
+              <div class="facet-list">${items || '<div class="text-muted">none</div>'}</div>
+            </div>
+          </div>
+        </div>`;
     };
-    root.innerHTML = [
-      makeList('publisher', facets.publisher),
-      makeList('group', facets.group, facets.groupLabels),
-      makeList('docType', facets.docType),
-      makeList('status', facets.status),
-      makeList('hasCurrentWork', facets.hasCurrentWork),
-      makeList('hasDoi', facets.hasDoi),
-      makeList('hasReleaseTag', facets.hasReleaseTag)
-    ].join('');
+
+    const sections = [
+      ['publisher', facets.publisher, null],
+      ['group', facets.group, facets.groupLabels],
+      ['docType', facets.docType, null],
+      ['status', facets.status, null],
+      ['hasCurrentWork', facets.hasCurrentWork, null],
+      ['hasDoi', facets.hasDoi, null],
+      ['hasReleaseTag', facets.hasReleaseTag, null]
+    ];
+
+    const accHTML = `
+      <div class="accordion" id="facetAcc">
+        ${sections.map(([n,m,l]) => makeList(n,m,l)).join('')}
+      </div>`;
+
+    root.innerHTML = accHTML;
 
     // Mirror facets into the offcanvas body (one-time clone of HTML)
     const drawerBody = $('#facetDrawerBody');
-    if (drawerBody) drawerBody.innerHTML = root.innerHTML;
+    if (drawerBody) drawerBody.innerHTML = accHTML;
 
-    // Hook up listeners (both sidebar and drawer inputs)
-    const hook = (cb) => {
+    // Event delegation: handle checkbox changes from either container
+    function onFacetChange(e){
+      const cb = e.target;
+      if (!(cb && cb.matches('input[type=checkbox][name]'))) return;
       const k = cb.name, v = cb.value;
-      cb.addEventListener('change', e => {
-        state.f[k] = state.f[k] || [];
-        if (e.target.checked) { if (!state.f[k].includes(v)) state.f[k].push(v); }
-        else { state.f[k] = state.f[k].filter(x=>x!==v); }
-        state.page=1; render();
-      });
-    };
-    $$('#facet input[type=checkbox], #facetDrawerBody input[type=checkbox]').forEach(hook);
+      state.f[k] = state.f[k] || [];
+      if (cb.checked) { if (!state.f[k].includes(v)) state.f[k].push(v); }
+      else { state.f[k] = state.f[k].filter(x=>x!==v); }
+      state.page = 1; render();
+      // keep the mirrored checkbox in sync
+      const mirrorSel = `input[type=checkbox][name="${k}"][value="${CSS.escape(v)}"]`;
+      document.querySelectorAll(mirrorSel).forEach(el => { if (el !== cb) el.checked = cb.checked; });
+    }
+
+    // Remove old listeners to avoid duplicates, then add fresh ones
+    root.removeEventListener('change', onFacetChange);
+    document.removeEventListener('change', onFacetChange, true);
+    root.addEventListener('change', onFacetChange);
+    if (drawerBody) drawerBody.addEventListener('change', onFacetChange);
   }
 
   function render(){

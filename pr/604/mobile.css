@@ -226,3 +226,14 @@ pre {
   z-index: 1020; /* slightly below navbar so it stays under dropdowns */
   background-color: #fff;
 }
+
+/* Facet accordion cleanup */
+#facet .accordion-button { padding: .4rem .75rem; font-weight: 600; }
+#facet .accordion-body { padding: .5rem; }
+#facet .form-check { margin-bottom: .25rem; }
+#facet .form-check-label { width: 100%; }
+#facet .facet-list { max-height: 260px; overflow: auto; padding-right: .25rem; }
+
+/* Clone container (drawer) shares styles */
+#facetDrawerBody .accordion-button { padding: .6rem .75rem; }
+#facetDrawerBody .facet-list { max-height: 60vh; overflow: auto; }
