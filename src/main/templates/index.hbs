@@ -116,13 +116,13 @@
           </td>
           <td>
             {{#status/unknown}}
-              <span class="label badge badge-danger">[ UNKNOWN ]</span><br> 
+              <span class="label badge text-bg-danger">[ UNKNOWN ]</span><br> 
             {{/status/unknown}}
             {{#status/withdrawn}}
-              <span class="label badge badge-danger">[ WITHDRAWN ]</span><br> 
+              <span class="label badge text-bg-danger">[ WITHDRAWN ]</span><br> 
             {{/status/withdrawn}}
             {{#status/superseded}}
-              <span class="label badge badge-warning">[ SUPERSEDED ]</span><br>
+              <span class="label badge text-bg-warning">[ SUPERSEDED ]</span><br>
             {{/status/superseded}}
             {{#if status/supersededBy}}
               <div class="border-left p-1">
@@ -137,19 +137,19 @@
     
             {{/if}}
             {{#status/draft}}
-              <span class="label badge badge-warning">[ DRAFT ]</span><br> 
+              <span class="label badge text-bg-warning">[ DRAFT ]</span><br> 
             {{/status/draft}}
             {{#status/publicCd}}
-              <span class="label badge badge-success">[ PUBLIC CD ]</span><br>  
+              <span class="label badge text-bg-success">[ PUBLIC CD ]</span><br>  
             {{/status/publicCd}}
             {{#status/active}}
-              <span class="label badge badge-success">[ ACTIVE ]</span><br>  
+              <span class="label badge text-bg-success">[ ACTIVE ]</span><br>  
             {{/status/active}}
             {{#status/versionless}}
-              <span class="label badge badge-success">[ VERSIONLESS ]</span><br>
+              <span class="label badge text-bg-success">[ VERSIONLESS ]</span><br>
             {{/status/versionless}}
             {{#status/amended}}
-              <span class="label badge badge-secondary">[ AMENDED ]</span><br>
+              <span class="label badge text-bg-secondary">[ AMENDED ]</span><br>
             {{/status/amended}}
             {{#if status/amendedBy}}
               <div class="border-left p-1">
@@ -164,10 +164,10 @@
               </div>
             {{/if}}
             {{#status/reaffirmed}}
-              <span class="label badge badge-info">[ REAFFIRMED ]</span><br>
+              <span class="label badge text-bg-info">[ REAFFIRMED ]</span><br>
             {{/status/reaffirmed}}
             {{#status/stabilized}}
-              <span class="label badge badge-primary">[ STABILIZED ]</span>  
+              <span class="label badge text-bg-primary">[ STABILIZED ]</span>  
             {{/status/stabilized}}   
           </td>
           <td>
@@ -194,7 +194,7 @@
                     {{#with (docProjLookup ../docProjs docId)}}
                     {{#ifnoteq projectStatus "Complete"}}
                     <br>
-                    <span class="label badge badge-warning text-uppercase">{{workType}} {{projectStatus}}</span>
+                    <span class="label badge text-bg-warning text-uppercase">{{workType}} {{projectStatus}}</span>
 
                     {{#if newDoc}}
                     <br><span class="small">Under Development: <a href="projects/{{../../htmlLink}}?search.search={{newDoc}}">{{getLabel newDoc}}</a><!-- [{{getStatus newDoc}}]--></span>

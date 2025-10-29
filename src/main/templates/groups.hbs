@@ -41,7 +41,7 @@
             {{#ifeq groupStatus/active true}}Active{{/ifeq}}{{#ifeq groupStatus/active false}}Closed{{/ifeq}}{{#ifeq groupStatus/pending true}}Pending{{/ifeq}}
           </td>
           <td>
-            {{#ifeq groupStatus/active true}}<span class="label badge badge-success">Active</span>{{/ifeq}}{{#ifeq groupStatus/active false}}<span class="label badge badge-warning">Closed</span>{{/ifeq}}{{#ifeq groupStatus/pending true}}<span class="label badge badge-warning">Pending</span>{{/ifeq}}
+            {{#ifeq groupStatus/active true}}<span class="label badge text-bg-success">Active</span>{{/ifeq}}{{#ifeq groupStatus/active false}}<span class="label badge text-bg-warning">Closed</span>{{/ifeq}}{{#ifeq groupStatus/pending true}}<span class="label badge text-bg-warning">Pending</span>{{/ifeq}}
           </td>
           <td>
             {{groupSummary}}

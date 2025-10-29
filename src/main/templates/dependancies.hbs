@@ -27,7 +27,7 @@
               {{#with (docProjLookup ../docProjs docId)}}
               {{#ifnoteq projectStatus "Complete"}}
               <br>
-              <span class="label badge badge-warning text-uppercase">{{workType}} {{projectStatus}}{{#ifnoteq projectStatus "Open"}}, Project {{#if projApproved}}Approved{{/if}}{{/ifnoteq}}{{#unless projApproved}}Pending{{/unless}}</span>
+              <span class="label badge text-bg-warning text-uppercase">{{workType}} {{projectStatus}}{{#ifnoteq projectStatus "Open"}}, Project {{#if projApproved}}Approved{{/if}}{{/ifnoteq}}{{#unless projApproved}}Pending{{/unless}}</span>
               {{#if newDoc}}
               <br><span class="small">Under Development: <a class="{{../idType}}-link clear-filter" href="../index.html#{{newDoc}}">{{getLabel newDoc}}</a> [{{getStatus newDoc}}]</span>
               {{/if}}
