@@ -1,24 +1,24 @@
 {
-  "generatedAt": "2025-10-29T01:20:01.648Z",
+  "generatedAt": "2025-10-29T01:36:25.011Z",
   "target": "documents.json",
   "good": 859,
   "skippedByDomain": 0,
   "skippedByPublisher": 0,
   "index": {
-    "error": 1348,
+    "error": 1349,
     "errorBreakdown": {
       "Unreachable (403)": 45,
-      "Unreachable (404)": 164,
+      "Unreachable (404)": 165,
       "Unreachable (ENOTFOUND)": 1120,
       "Unreachable (ERR_BAD_REQUEST)": 1,
       "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)": 1,
       "Unreachable (HPE_INVALID_CONSTANT)": 16,
       "Unreachable (UNABLE_TO_VERIFY_LEAF_SIGNATURE)": 1
     },
-    "redirectMismatch": 2,
+    "redirectMismatch": 1,
     "redirectBreakdown": {
       "undefined": 0,
-      "other": 2
+      "other": 1
     },
     "expectationMismatch": 35,
     "expectationBreakdown": {
@@ -923,10 +923,30 @@
           "riskLevel": "High"
         },
         {
-          "docId": "NIST.FIPS.186-4",
+          "docId": "NIST.SP.800-38A-Add",
           "publisher": "NIST",
           "field": "href",
-          "url": "https://doi.org/10.6028/NIST.FIPS.186-4",
+          "url": "https://doi.org/10.6028/NIST.SP.800-38A-Add",
+          "message": "Unreachable (404)",
+          "explanation": "The URL points to a resource that was not found (dead link).",
+          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
+          "riskLevel": "High"
+        },
+        {
+          "docId": "NIST.SP.800-57p1r2007",
+          "publisher": "NIST",
+          "field": "href",
+          "url": "https://doi.org/10.6028/NIST.SP.800-57p1r2007",
+          "message": "Unreachable (404)",
+          "explanation": "The URL points to a resource that was not found (dead link).",
+          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
+          "riskLevel": "High"
+        },
+        {
+          "docId": "NIST.SP.800-57p2",
+          "publisher": "NIST",
+          "field": "href",
+          "url": "https://doi.org/10.6028/NIST.SP.800-57p2",
           "message": "Unreachable (404)",
           "explanation": "The URL points to a resource that was not found (dead link).",
           "recommendedAction": "Double-check the URL or remove it if no longer valid.",
@@ -937,16 +957,6 @@
           "publisher": "NIST",
           "field": "href",
           "url": "https://doi.org/10.6028/NIST.SP.800-57pt2r1",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "NIST.SP.800-57pt3r1",
-          "publisher": "NIST",
-          "field": "href",
-          "url": "https://doi.org/10.6028/NIST.SP.800-57pt3r1",
           "message": "Unreachable (404)",
           "explanation": "The URL points to a resource that was not found (dead link).",
           "recommendedAction": "Double-check the URL or remove it if no longer valid.",
@@ -13532,19 +13542,9 @@
           "publisher": "Scientific Instruments",
           "field": "href",
           "url": "https://doi.org/10.1088/0950-7671/1/3/302",
-          "resolvedUrl": "https://validate.perfdrive.com/fb803c746e9148689b3984a31fccd902/?ssa=17f4af11-931f-4ace-9822-7416b86d9de8&ssb=92088263072&ssc=https%3A%2F%2Fiopscience.iop.org%2Farticle%2F10.1088%2F0950-7671%2F1%2F3%2F302&ssi=06c74f36-cnvj-4ed3-8875-35c15316a8b2&ssk=botmanager_support@radware.com&ssm=07951788791498000108393137221865&ssn=e709e81c71a2821279a7382aae98af20bc24928d9813-cf68-4544-85e0e1&sso=60412e0a-5af377da56b87a5ade7f4ec8c71eb4dd6a837c593c8b06cb&ssp=60881041871761676606176168509498870&ssq=45722179987905693898399879398237649131514&ssr=MTMuODMuMTYwLjEzMQ==&sst=axios/1.12.0&ssu=&ssv=&ssw=&ssx=eyJyZCI6ImlvcC5vcmciLCJ1em14IjoiN2Y5MDAwNTNjY2QyOTAtZDAzYS00MWMxLWE5Y2YtYmFhZmYxN2Y5Njg0MS0xNzYxNjk5ODc5MjIxMC1mOTFiMzI2NGRjMjExYTNiMTAiLCJfX3V6bWYiOiI3ZjkwMDA5MjhkOTgxMy1jZjY4LTQ1NDQtOGUwYS01YWYzNzdkYTU2YjgxLTE3NjE2OTk4NzkyMjEwLTAwMTA3MWExNjA4OTlmMWEyZTIxMCJ9",
+          "resolvedUrl": "https://validate.perfdrive.com/fb803c746e9148689b3984a31fccd902/?ssa=c098a87d-6cff-4fc7-b56b-67f5f5af0dc6&ssb=87781224017&ssc=https%3A%2F%2Fiopscience.iop.org%2Farticle%2F10.1088%2F0950-7671%2F1%2F3%2F302&ssi=25b38e99-cnvj-4304-ab12-bf7d93c15c62&ssk=botmanager_support@radware.com&ssm=29194198732482216108959055920747&ssn=e9b1c2badeaf584d82fb892de99fbeadc4c257ef4eec-679d-4097-b60c9b&sso=cc427dc8-8f6f5eaad42dadb0a378369485dd88f4a0db9e2144cafe4b&ssp=62612012361761702071176179816313281&ssq=76453290122518868637801225279840531237672&ssr=MTMyLjE5Ni4xOS4xOQ==&sst=axios/1.12.0&ssu=&ssv=&ssw=&ssx=eyJyZCI6ImlvcC5vcmciLCJ1em14IjoiN2Y5MDAwOTJhMjFjYmEtOTFlZS00N2QyLTlmNDItNzUxOGIxODc1ZGIyMS0xNzYxNzAxMjI1MTU2MC05NTMyZmEzOWJkOGNjM2ZjMTAiLCJfX3V6bWYiOiI3ZjkwMDA1N2VmNGVlYy02NzlkLTQwOTctYmRjOC04ZjZmNWVhYWQ0MmQxLTE3NjE3MDEyMjUxNTYwLTAwMWY0NzIyNjZhZDAwNDZhYmExMCJ9",
           "resolvedField": "resolvedHref",
           "expectedResolved": "https://iopscience.iop.org/article/10.1088/0950-7671/1/3/302",
-          "message": "resolved url mismatch"
-        },
-        {
-          "docId": "ML3807.M56.1916",
-          "publisher": "MacMillan Co.",
-          "field": "href",
-          "url": "https://ia800204.us.archive.org/19/items/scienceofmusical00mill/scienceofmusical00mill.pdf",
-          "resolvedUrl": "https://ia801303.us.archive.org/1/items/scienceofmusical00mill/scienceofmusical00mill.pdf",
-          "resolvedField": "resolvedHref",
-          "expectedResolved": "https://ia601303.us.archive.org/1/items/scienceofmusical00mill/scienceofmusical00mill.pdf",
           "message": "resolved url mismatch"
         }
       ]
