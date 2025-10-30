@@ -1,0 +1,2045 @@
+### 🆕 Added 0 new document(s):
+
+### 🔁 Updated 790 existing document(s):
+#### SMPTE.EG1.1990 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NYm` → `https://pub.smpte.org/doc/eg1/19900328-pub/`
+#### SMPTE.RDD1.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXW` → `https://pub.smpte.org/doc/rdd1/20030728-pub/`
+#### SMPTE.ST1.1996 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nc4` → `https://pub.smpte.org/doc/st1/19960208-pub/`
+#### SMPTE.EG2.1999 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NYr` → `https://pub.smpte.org/doc/eg2/19991105-pub/`
+#### SMPTE.RDD2.2007 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXb` → `https://pub.smpte.org/doc/rdd2/20070118-pub/`
+#### SMPTE.EG3.1994 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZA` → `https://pub.smpte.org/doc/eg3/19940208-pub/`
+#### SMPTE.RDD3.2008 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZo` → `https://pub.smpte.org/doc/rdd3/20080711-pub/`
+#### SMPTE.ST3.1998 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbk` → `https://pub.smpte.org/doc/st3/19980603-pub/`
+#### SMPTE.RDD4.2005 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXf` → `https://pub.smpte.org/doc/rdd4/20050614-pub/`
+#### SMPTE.ST4.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcl` → `https://pub.smpte.org/doc/st4/19950103-pub/`
+#### SMPTE.EG5.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXP` → `https://pub.smpte.org/doc/eg5/20031020-pub/`
+#### SMPTE.RDD5.2006 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Na5` → `https://pub.smpte.org/doc/rdd5/20060306-pub/`
+#### SMPTE.ST5.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ngn` → `https://pub.smpte.org/doc/st5/19950103-pub/`
+#### SMPTE.RDD6.2008 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXk` → `https://pub.smpte.org/doc/rdd6/20080312-pub/`
+#### SMPTE.RP6.1994 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZC` → `https://pub.smpte.org/doc/rp6/19940228-pub/`
+#### SMPTE.ST6.1998 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kd4` → `https://pub.smpte.org/doc/st6/19980917-pub/`
+#### SMPTE.EG7.1994 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXQ` → `https://pub.smpte.org/doc/eg7/19940901-pub/`
+#### SMPTE.ST7.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ngq` → `https://pub.smpte.org/doc/st7/20041108-pub/`
+#### SMPTE.EG8.1993 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXR` → `https://pub.smpte.org/doc/eg8/19931117-pub/`
+#### SMPTE.RDD8.2008 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXl` → `https://pub.smpte.org/doc/rdd8/20080917-pub/`
+#### SMPTE.ST8.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kd5` → `https://pub.smpte.org/doc/st8/19950213-pub/`
+#### SMPTE.EG9.2005 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXS` → `https://pub.smpte.org/doc/eg9/20050504-pub/`
+#### SMPTE.RDD9.2013 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NaC` → `https://pub.smpte.org/doc/rdd9/20130206-pub/`
+#### SMPTE.RP9.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZV` → `https://pub.smpte.org/doc/rp9/19950706-pub/`
+#### SMPTE.EG10.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kX8` → `https://pub.smpte.org/doc/eg10/20030207-pub/`
+#### SMPTE.RDD10.2006 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXX` → `https://pub.smpte.org/doc/rdd10/20060906-pub/`
+#### SMPTE.RDD11.2007 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXY` → `https://pub.smpte.org/doc/rdd11/20070710-pub/`
+#### SMPTE.RP11.1994 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXq` → `https://pub.smpte.org/doc/rp11/19940228-pub/`
+#### SMPTE.ST12-1.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NcA` → `https://pub.smpte.org/doc/st12-1/20140220-pub/`
+#### SMPTE.ST12-2.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NcB` → `https://pub.smpte.org/doc/st12-2/20140220-pub/`
+#### SMPTE.ST12-3.2016 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZf2AI` → `https://pub.smpte.org/doc/st12-3/20160226-pub/`
+#### SMPTE.EG12.1994 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kX9` → `https://pub.smpte.org/doc/eg12/19940208-pub/`
+#### SMPTE.RP12.1997 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NaH` → `https://pub.smpte.org/doc/rp12/19970108-pub/`
+#### SMPTE.EG13.2012 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NYn` → `https://pub.smpte.org/doc/eg13/20120214-pub/`
+#### SMPTE.EG14.2005 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NYo` → `https://pub.smpte.org/doc/eg14/20051216-pub/`
+#### SMPTE.RDD14.2010 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZd` → `https://pub.smpte.org/doc/rdd14/20100710-pub/`
+#### SMPTE.RP14.1997 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kY6` → `https://pub.smpte.org/doc/rp14/19970122-pub/`
+#### SMPTE.EG15.2005 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NYp` → `https://pub.smpte.org/doc/eg15/20050404-pub/`
+#### SMPTE.RDD15.2007 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZe` → `https://pub.smpte.org/doc/rdd15/20070924-pub/`
+#### SMPTE.RP15.1997 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYB` → `https://pub.smpte.org/doc/rp15/19970122-pub/`
+#### SMPTE.ST15.1998 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZm` → `https://pub.smpte.org/doc/st15/19980901-pub/`
+#### SMPTE.RDD16.2008 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXZ` → `https://pub.smpte.org/doc/rdd16/20081125-pub/`
+#### SMPTE.RP16.1993 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYF` → `https://pub.smpte.org/doc/rp16/19930305-pub/`
+#### SMPTE.ST16.1998 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NcJ` → `https://pub.smpte.org/doc/st16/19980901-pub/`
+#### SMPTE.EG17.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXB` → `https://pub.smpte.org/doc/eg17/20020726-pub/`
+#### SMPTE.RDD17.2009 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZf` → `https://pub.smpte.org/doc/rdd17/20091022-pub/`
+#### SMPTE.RP17.1964 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYK` → `https://pub.smpte.org/doc/rp17/19640412-pub/`
+#### SMPTE.ST17.1998 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZv` → `https://pub.smpte.org/doc/st17/19980901-pub/`
+#### SMPTE.EG18.1994 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NYq` → `https://pub.smpte.org/doc/eg18/19940325-pub/`
+#### SMPTE.RDD18.2021 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZg` → `https://pub.smpte.org/doc/rdd18/20210701-pub/`
+#### SMPTE.RP18.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYR` → `https://pub.smpte.org/doc/rp18/19950810-pub/`
+#### SMPTE.ST18.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008ka2` → `https://pub.smpte.org/doc/st18/20030207-pub/`
+#### SMPTE.RDD19.2011 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXa` → `https://pub.smpte.org/doc/rdd19/20110204-pub/`
+#### SMPTE.RP19.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nan` → `https://pub.smpte.org/doc/rp19/20031020-pub/`
+#### SMPTE.ST19.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NcQ` → `https://pub.smpte.org/doc/st19/20030207-pub/`
+#### SMPTE.EG20.1997 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXC` → `https://pub.smpte.org/doc/eg20/19970918-pub/`
+#### SMPTE.RDD20.2010 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZh` → `https://pub.smpte.org/doc/rdd20/20100412-pub/`
+#### SMPTE.RP20.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nat` → `https://pub.smpte.org/doc/rp20/20031020-pub/`
+#### SMPTE.ST20.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kaC` → `https://pub.smpte.org/doc/st20/20030207-pub/`
+#### SMPTE.EG21.1997 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXE` → `https://pub.smpte.org/doc/eg21/19970918-pub/`
+#### SMPTE.RP21.2015 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NbQ` → `https://pub.smpte.org/doc/rp21/20150224-pub/`
+#### SMPTE.ST21.1997 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ne8` → `https://pub.smpte.org/doc/st21/19971002-pub/`
+#### SMPTE.EG22.1997 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXF` → `https://pub.smpte.org/doc/eg22/19970918-pub/`
+#### SMPTE.RDD22.2012 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZi` → `https://pub.smpte.org/doc/rdd22/20120312-pub/`
+#### SMPTE.ST22.1997 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NeO` → `https://pub.smpte.org/doc/st22/19971002-pub/`
+#### SMPTE.EG23.2005 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXG` → `https://pub.smpte.org/doc/eg23/20051216-pub/`
+#### SMPTE.EG24.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXH` → `https://pub.smpte.org/doc/eg24/19951007-pub/`
+#### SMPTE.RDD24.2013 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZj` → `https://pub.smpte.org/doc/rdd24/20131107-pub/`
+#### SMPTE.RP24.1997 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nbh` → `https://pub.smpte.org/doc/rp24/19970918-pub/`
+#### SMPTE.ST24.1996 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NeZ` → `https://pub.smpte.org/doc/st24/19960528-pub/`
+#### SMPTE.EG25.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZ7` → `https://pub.smpte.org/doc/eg25/20030717-pub/`
+#### SMPTE.RDD25.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZk` → `https://pub.smpte.org/doc/rdd25/20140401-pub/`
+#### SMPTE.RP25.2011 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYy` → `https://pub.smpte.org/doc/rp25/20111205-pub/`
+#### SMPTE.ST25.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nee` → `https://pub.smpte.org/doc/st25/19950213-pub/`
+#### SMPTE.EG26.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXJ` → `https://pub.smpte.org/doc/eg26/19950810-pub/`
+#### SMPTE.RDD26.2015 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZl` → `https://pub.smpte.org/doc/rdd26/20150506-pub/`
+#### SMPTE.ST26.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbP` → `https://pub.smpte.org/doc/st26/19950213-pub/`
+#### SMPTE.EG27.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXK` → `https://pub.smpte.org/doc/eg27/20041108-pub/`
+#### SMPTE.EG28.1993 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZ8` → `https://pub.smpte.org/doc/eg28/19930501-pub/`
+#### SMPTE.RDD28.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZm` → `https://pub.smpte.org/doc/rdd28/20140615-pub/`
+#### SMPTE.EG29.1993 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZ9` → `https://pub.smpte.org/doc/eg29/19930701-pub/`
+#### SMPTE.ST29.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbe` → `https://pub.smpte.org/doc/st29/19950213-pub/`
+#### SMPTE.EG30.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZB` → `https://pub.smpte.org/doc/eg30/19950101-pub/`
+#### SMPTE.RDD30.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXc` → `https://pub.smpte.org/doc/rdd30/20140816-pub/`
+#### SMPTE.ST30.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbl` → `https://pub.smpte.org/doc/st30/19950315-pub/`
+#### SMPTE.EG31.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZC` → `https://pub.smpte.org/doc/eg31/19950301-pub/`
+#### SMPTE.RDD31.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXd` → `https://pub.smpte.org/doc/rdd31/20140816-pub/`
+#### SMPTE.ST31.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nf4` → `https://pub.smpte.org/doc/st31/20030207-pub/`
+#### SMPTE.EG32.1996 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXL` → `https://pub.smpte.org/doc/eg32/19961001-pub/`
+#### SMPTE.RDD32.2017 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZp` → `https://pub.smpte.org/doc/rdd32/20170830-pub/`
+#### SMPTE.RP32.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZ3` → `https://pub.smpte.org/doc/rp32/19951107-pub/`
+#### SMPTE.ST32.1998 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nf7` → `https://pub.smpte.org/doc/st32/19980923-pub/`
+#### SMPTE.EG33.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZD` → `https://pub.smpte.org/doc/eg33/20041130-pub/`
+#### SMPTE.RDD33.2015 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZq` → `https://pub.smpte.org/doc/rdd33/20150327-pub/`
+#### SMPTE.EG34.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZE` → `https://pub.smpte.org/doc/eg34/20041008-pub/`
+#### SMPTE.RDD34.2015 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZr` → `https://pub.smpte.org/doc/rdd34/20150901-pub/`
+#### SMPTE.EG35.2012 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXM` → `https://pub.smpte.org/doc/eg35/20121031-pub/`
+#### SMPTE.RDD35.2016 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZs` → `https://pub.smpte.org/doc/rdd35/20160324-pub/`
+#### SMPTE.ST35.1997 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NfQ` → `https://pub.smpte.org/doc/st35/19971002-pub/`
+#### SMPTE.EG36.2000 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZF` → `https://pub.smpte.org/doc/eg36/20000323-pub/`
+#### SMPTE.RDD36.2022 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZt` → `https://pub.smpte.org/doc/rdd36/20220909-pub/`
+#### SMPTE.RP36.1999 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZ4` → `https://pub.smpte.org/doc/rp36/19990422-pub/`
+#### SMPTE.EG37.2001 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZG` → `https://pub.smpte.org/doc/eg37/20010918-pub/`
+#### SMPTE.RDD37.2016 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZu` → `https://pub.smpte.org/doc/rdd37/20160226-pub/`
+#### SMPTE.ST37.1994 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nfb` → `https://pub.smpte.org/doc/st37/19940512-pub/`
+#### SMPTE.EG38.2001 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZI` → `https://pub.smpte.org/doc/eg38/20010830-pub/`
+#### SMPTE.RDD38.2016 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXe` → `https://pub.smpte.org/doc/rdd38/20160630-pub/`
+#### SMPTE.EG39.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZJ` → `https://pub.smpte.org/doc/eg39/20030108-pub/`
+#### SMPTE.RDD39.2016 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZv` → `https://pub.smpte.org/doc/rdd39/20160706-pub/`
+#### SMPTE.RP39.1993 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZ5` → `https://pub.smpte.org/doc/rp39/19931103-pub/`
+#### SMPTE.EG40.2016 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXN` → `https://pub.smpte.org/doc/eg40/20160729-pub/`
+#### SMPTE.RDD40.2016 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZw` → `https://pub.smpte.org/doc/rdd40/20161011-pub/`
+#### SMPTE.RP40.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZ6` → `https://pub.smpte.org/doc/rp40/20031020-pub/`
+#### SMPTE.ST40.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcm` → `https://pub.smpte.org/doc/st40/20020726-pub/`
+#### SMPTE.EG41.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZK` → `https://pub.smpte.org/doc/eg41/20040922-pub/`
+#### SMPTE.RDD41.2016 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZx` → `https://pub.smpte.org/doc/rdd41/20160823-pub/`
+#### SMPTE.ST41.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcp` → `https://pub.smpte.org/doc/st41/20041108-pub/`
+#### SMPTE.EG42.2015 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZL` → `https://pub.smpte.org/doc/eg42/20150830-pub/`
+#### SMPTE.RDD42.2016 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZy` → `https://pub.smpte.org/doc/rdd42/20160823-pub/`
+#### SMPTE.EG43.2009 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZM` → `https://pub.smpte.org/doc/eg43/20091023-pub/`
+#### SMPTE.RDD43.2016 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZz` → `https://pub.smpte.org/doc/rdd43/20160823-pub/`
+#### SMPTE.EG44.2005 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXO` → `https://pub.smpte.org/doc/eg44/20051130-pub/`
+#### SMPTE.RDD44.2022 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Na0` → `https://pub.smpte.org/doc/rdd44/20220601-pub/`
+#### SMPTE.RDD45.2022 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Na1` → `https://pub.smpte.org/doc/rdd45/20220627-pub/`
+#### SMPTE.RP45.1972 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nbq` → `https://pub.smpte.org/doc/rp45/19720401-pub/`
+#### SMPTE.RDD46.2019 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Na2` → `https://pub.smpte.org/doc/rdd46/20190305-pub/`
+#### SMPTE.RDD47.2018 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXg` → `https://pub.smpte.org/doc/rdd47/20181012-pub/`
+#### SMPTE.RP47.1999 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nbr` → `https://pub.smpte.org/doc/rp47/19990422-pub/`
+#### SMPTE.RP48.1999 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nbs` → `https://pub.smpte.org/doc/rp48/19990422-pub/`
+#### SMPTE.ST48.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kd3` → `https://pub.smpte.org/doc/st48/19950510-pub/`
+#### SMPTE.RDD49.2019 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Na4` → `https://pub.smpte.org/doc/rdd49/20190125-pub/`
+#### SMPTE.RP49.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZ8` → `https://pub.smpte.org/doc/rp49/19950105-pub/`
+#### SMPTE.RDD50.2019 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXh` → `https://pub.smpte.org/doc/rdd50/20190730-pub/`
+#### SMPTE.RP50.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nbt` → `https://pub.smpte.org/doc/rp50/19950105-pub/`
+#### SMPTE.RDD51.2020 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Na6` → `https://pub.smpte.org/doc/rdd51/20200409-pub/`
+#### SMPTE.RP51.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nbu` → `https://pub.smpte.org/doc/rp51/19950105-pub/`
+#### SMPTE.RDD52.2020 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Na7` → `https://pub.smpte.org/doc/rdd52/20200518-pub/`
+#### SMPTE.RP53.1993 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZ9` → `https://pub.smpte.org/doc/rp53/19930524-pub/`
+#### SMPTE.RDD54.2022 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXi` → `https://pub.smpte.org/doc/rdd54/20220505-pub/`
+#### SMPTE.RP54.1999 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nbv` → `https://pub.smpte.org/doc/rp54/19990422-pub/`
+#### SMPTE.RDD55.2022 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Na8` → `https://pub.smpte.org/doc/rdd55/20220505-pub/`
+#### SMPTE.RP55.1997 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nbw` → `https://pub.smpte.org/doc/rp55/19970918-pub/`
+#### SMPTE.RP56.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nbx` → `https://pub.smpte.org/doc/rp56/20020726-pub/`
+#### SMPTE.ST56.2005 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR000000bJbZ2AU` → `https://pub.smpte.org/doc/st56/20051216-pub/`
+#### SMPTE.RDD57.2021 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXj` → `https://pub.smpte.org/doc/rdd57/20210225-pub/`
+#### SMPTE.RP58.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZA` → `https://pub.smpte.org/doc/rp58/19950105-pub/`
+#### SMPTE.RDD59-1.2022 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NaB` → `https://pub.smpte.org/doc/rdd59-1/20220916-pub/`
+#### SMPTE.RP59.1999 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZB` → `https://pub.smpte.org/doc/rp59/19991105-pub/`
+#### SMPTE.ST59.1998 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ngp` → `https://pub.smpte.org/doc/st59/19981001-pub/`
+#### SMPTE.RP63.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZD` → `https://pub.smpte.org/doc/rp63/20020726-pub/`
+#### SMPTE.RP64.1999 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZE` → `https://pub.smpte.org/doc/rp64/19990422-pub/`
+#### SMPTE.RP65.2000 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nby` → `https://pub.smpte.org/doc/rp65/20000406-pub/`
+#### SMPTE.RP67.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZF` → `https://pub.smpte.org/doc/rp67/20020726-pub/`
+#### SMPTE.RP68.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZG` → `https://pub.smpte.org/doc/rp68/20020726-pub/`
+#### SMPTE.RP69.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZH` → `https://pub.smpte.org/doc/rp69/20020726-pub/`
+#### SMPTE.RP70.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZI` → `https://pub.smpte.org/doc/rp70/20020726-pub/`
+#### SMPTE.RP73.1992 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nbz` → `https://pub.smpte.org/doc/rp73/19921106-pub/`
+#### SMPTE.ST73.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ngr` → `https://pub.smpte.org/doc/st73/20031112-pub/`
+#### SMPTE.RP74.1992 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nc0` → `https://pub.smpte.org/doc/rp74/19920918-pub/`
+#### SMPTE.ST74.1993 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ngs` → `https://pub.smpte.org/doc/st74/19930628-pub/`
+#### SMPTE.RP75.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZJ` → `https://pub.smpte.org/doc/rp75/20020726-pub/`
+#### SMPTE.ST75.1994 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ngt` → `https://pub.smpte.org/doc/st75/19940131-pub/`
+#### SMPTE.RP76.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZK` → `https://pub.smpte.org/doc/rp76/20020726-pub/`
+#### SMPTE.ST76.1996 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ngu` → `https://pub.smpte.org/doc/st76/19960528-pub/`
+#### SMPTE.RP77.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZL` → `https://pub.smpte.org/doc/rp77/20041108-pub/`
+#### SMPTE.RP78.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZM` → `https://pub.smpte.org/doc/rp78/20020726-pub/`
+#### SMPTE.RP79.1999 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZN` → `https://pub.smpte.org/doc/rp79/19990422-pub/`
+#### SMPTE.RP81.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZO` → `https://pub.smpte.org/doc/rp81/20041108-pub/`
+#### SMPTE.RP83.1996 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZQ` → `https://pub.smpte.org/doc/rp83/19961118-pub/`
+#### SMPTE.ST83.1996 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ngv` → `https://pub.smpte.org/doc/st83/19960208-pub/`
+#### SMPTE.RP84.1996 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZR` → `https://pub.smpte.org/doc/rp84/19961118-pub/`
+#### SMPTE.RP85.1999 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZS` → `https://pub.smpte.org/doc/rp85/19991105-pub/`
+#### SMPTE.ST86.2005 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kd6` → `https://pub.smpte.org/doc/st86/20050713-pub/`
+#### SMPTE.RP87.1999 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZU` → `https://pub.smpte.org/doc/rp87/19991105-pub/`
+#### SMPTE.ST87.1996 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ngw` → `https://pub.smpte.org/doc/st87/19960308-pub/`
+#### SMPTE.RP90.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZW` → `https://pub.smpte.org/doc/rp90/20041108-pub/`
+#### SMPTE.RP91.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZX` → `https://pub.smpte.org/doc/rp91/20141113-pub/`
+#### SMPTE.RP92.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZY` → `https://pub.smpte.org/doc/rp92/19950131-pub/`
+#### SMPTE.RP93.1999 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZZ` → `https://pub.smpte.org/doc/rp93/19990422-pub/`
+#### SMPTE.ST93.2005 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ngx` → `https://pub.smpte.org/doc/st93/20050713-pub/`
+#### SMPTE.RP94.2000 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nc1` → `https://pub.smpte.org/doc/rp94/20000609-pub/`
+#### SMPTE.RP95.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nc2` → `https://pub.smpte.org/doc/rp95/20031020-pub/`
+#### SMPTE.RP96.1993 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZa` → `https://pub.smpte.org/doc/rp96/19930305-pub/`
+#### SMPTE.ST96.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ngy` → `https://pub.smpte.org/doc/st96/20041130-pub/`
+#### SMPTE.RP97.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZb` → `https://pub.smpte.org/doc/rp97/20020726-pub/`
+#### SMPTE.ST97.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kd7` → `https://pub.smpte.org/doc/st97/20041108-pub/`
+#### SMPTE.RP98.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nc3` → `https://pub.smpte.org/doc/rp98/19950601-pub/`
+#### SMPTE.ST101.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nc5` → `https://pub.smpte.org/doc/st101/20031214-pub/`
+#### SMPTE.ST102.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nc6` → `https://pub.smpte.org/doc/st102/20020726-pub/`
+#### SMPTE.RP104.2005 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NaD` → `https://pub.smpte.org/doc/rp104/20051216-pub/`
+#### SMPTE.RP105.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXn` → `https://pub.smpte.org/doc/rp105/20031020-pub/`
+#### SMPTE.RP106.1994 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXo` → `https://pub.smpte.org/doc/rp106/19940208-pub/`
+#### SMPTE.RP109.1994 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXp` → `https://pub.smpte.org/doc/rp109/19940208-pub/`
+#### SMPTE.ST109.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nc7` → `https://pub.smpte.org/doc/st109/20031112-pub/`
+#### SMPTE.RP110.1992 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXr` → `https://pub.smpte.org/doc/rp110/19921106-pub/`
+#### SMPTE.RP111.1999 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NaF` → `https://pub.smpte.org/doc/rp111/19990422-pub/`
+#### SMPTE.ST111.2001 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZd` → `https://pub.smpte.org/doc/st111/20010606-pub/`
+#### SMPTE.ST112.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nc8` → `https://pub.smpte.org/doc/st112/20041108-pub/`
+#### SMPTE.RP113.1996 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NaG` → `https://pub.smpte.org/doc/rp113/19961210-pub/`
+#### SMPTE.RP114.1994 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXs` → `https://pub.smpte.org/doc/rp114/19940208-pub/`
+#### SMPTE.RP115.1997 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXt` → `https://pub.smpte.org/doc/rp115/19970122-pub/`
+#### SMPTE.RP116.2000 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXu` → `https://pub.smpte.org/doc/rp116/20000530-pub/`
+#### SMPTE.ST117.2001 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZe` → `https://pub.smpte.org/doc/st117/20010606-pub/`
+#### SMPTE.ST119.2011 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nc9` → `https://pub.smpte.org/doc/st119/20111003-pub/`
+#### SMPTE.RP120.2005 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXv` → `https://pub.smpte.org/doc/rp120/20050406-pub/`
+#### SMPTE.RP121.1997 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXw` → `https://pub.smpte.org/doc/rp121/19971207-pub/`
+#### SMPTE.RP122.1993 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXx` → `https://pub.smpte.org/doc/rp122/19930305-pub/`
+#### SMPTE.RP123.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXy` → `https://pub.smpte.org/doc/rp123/20040227-pub/`
+#### SMPTE.RP124.1998 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXz` → `https://pub.smpte.org/doc/rp124/19980601-pub/`
+#### SMPTE.ST125.2013 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZg` → `https://pub.smpte.org/doc/st125/20130925-pub/`
+#### SMPTE.RP127.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kY0` → `https://pub.smpte.org/doc/rp127/20041108-pub/`
+#### SMPTE.ST127.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZh` → `https://pub.smpte.org/doc/st127/20031214-pub/`
+#### SMPTE.RP128.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kY1` → `https://pub.smpte.org/doc/rp128/20020726-pub/`
+#### SMPTE.RP129.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kY2` → `https://pub.smpte.org/doc/rp129/19950801-pub/`
+#### SMPTE.RP130.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kY3` → `https://pub.smpte.org/doc/rp130/20041108-pub/`
+#### SMPTE.RP131.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NaI` → `https://pub.smpte.org/doc/rp131/20020715-pub/`
+#### SMPTE.RP132.1994 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NaJ` → `https://pub.smpte.org/doc/rp132/19940228-pub/`
+#### SMPTE.RP133.1991 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kY4` → `https://pub.smpte.org/doc/rp133/19910301-pub/`
+#### SMPTE.RP134.1994 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NaK` → `https://pub.smpte.org/doc/rp134/19940112-pub/`
+#### SMPTE.RP135.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NaL` → `https://pub.smpte.org/doc/rp135/20041108-pub/`
+#### SMPTE.RP136.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kY5` → `https://pub.smpte.org/doc/rp136/20041108-pub/`
+#### SMPTE.ST137.2000 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZi` → `https://pub.smpte.org/doc/st137/20000530-pub/`
+#### SMPTE.RP138.1996 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NaM` → `https://pub.smpte.org/doc/rp138/19961210-pub/`
+#### SMPTE.RP139.1997 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NaN` → `https://pub.smpte.org/doc/rp139/19970812-pub/`
+#### SMPTE.ST139.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NcC` → `https://pub.smpte.org/doc/st139/20031112-pub/`
+#### SMPTE.RP140.2005 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kY7` → `https://pub.smpte.org/doc/rp140/20051216-pub/`
+#### SMPTE.RP141.2020 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NaO` → `https://pub.smpte.org/doc/rp141/20200528-pub/`
+#### SMPTE.RP142.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kY8` → `https://pub.smpte.org/doc/rp142/20041130-pub/`
+#### SMPTE.RP143.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kY9` → `https://pub.smpte.org/doc/rp143/20041108-pub/`
+#### SMPTE.ST143.1994 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZj` → `https://pub.smpte.org/doc/st143/19941006-pub/`
+#### SMPTE.RP144.1999 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NaP` → `https://pub.smpte.org/doc/rp144/19991105-pub/`
+#### SMPTE.RP145.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NaQ` → `https://pub.smpte.org/doc/rp145/20041108-pub/`
+#### SMPTE.ST145.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NcD` → `https://pub.smpte.org/doc/st145/20041108-pub/`
+#### SMPTE.ST146.2001 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZk` → `https://pub.smpte.org/doc/st146/20010606-pub/`
+#### SMPTE.RP148.1987 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NaR` → `https://pub.smpte.org/doc/rp148/19870727-pub/`
+#### SMPTE.ST148.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZl` → `https://pub.smpte.org/doc/st148/20020726-pub/`
+#### SMPTE.RP149.1992 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYA` → `https://pub.smpte.org/doc/rp149/19920918-pub/`
+#### SMPTE.ST149.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NcE` → `https://pub.smpte.org/doc/st149/20041108-pub/`
+#### SMPTE.RP150.2000 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYC` → `https://pub.smpte.org/doc/rp150/20000330-pub/`
+#### SMPTE.RP151.1999 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NaS` → `https://pub.smpte.org/doc/rp151/19990423-pub/`
+#### SMPTE.ST151.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZn` → `https://pub.smpte.org/doc/st151/20041108-pub/`
+#### SMPTE.RP152.1994 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NaT` → `https://pub.smpte.org/doc/rp152/19940228-pub/`
+#### SMPTE.ST152.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NcF` → `https://pub.smpte.org/doc/st152/20031020-pub/`
+#### SMPTE.RP153.1999 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NaU` → `https://pub.smpte.org/doc/rp153/19991105-pub/`
+#### SMPTE.ST153.2001 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZo` → `https://pub.smpte.org/doc/st153/20010606-pub/`
+#### SMPTE.ST154.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZp` → `https://pub.smpte.org/doc/st154/20031020-pub/`
+#### SMPTE.RP155.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NaV` → `https://pub.smpte.org/doc/rp155/20141113-pub/`
+#### SMPTE.RP156.1999 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYD` → `https://pub.smpte.org/doc/rp156/19991105-pub/`
+#### SMPTE.RP157.2012 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NaW` → `https://pub.smpte.org/doc/rp157/20121101-pub/`
+#### SMPTE.ST157.1999 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NcG` → `https://pub.smpte.org/doc/st157/19990420-pub/`
+#### SMPTE.RP158.1999 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYE` → `https://pub.smpte.org/doc/rp158/19991105-pub/`
+#### SMPTE.ST159-1.2001 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NcH` → `https://pub.smpte.org/doc/st159-1/20010606-pub/`
+#### SMPTE.ST159-2.2001 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NcI` → `https://pub.smpte.org/doc/st159-2/20010606-pub/`
+#### SMPTE.RP160.1997 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NaX` → `https://pub.smpte.org/doc/rp160/19970601-pub/`
+#### SMPTE.ST160.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZq` → `https://pub.smpte.org/doc/st160/19950912-pub/`
+#### SMPTE.RP161.1999 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYG` → `https://pub.smpte.org/doc/rp161/19991105-pub/`
+#### SMPTE.ST161.1998 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NcK` → `https://pub.smpte.org/doc/st161/19980901-pub/`
+#### SMPTE.RP162.1993 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NaY` → `https://pub.smpte.org/doc/rp162/19930701-pub/`
+#### SMPTE.ST162.1998 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZr` → `https://pub.smpte.org/doc/st162/19980901-pub/`
+#### SMPTE.ST163.1998 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZs` → `https://pub.smpte.org/doc/st163/19980901-pub/`
+#### SMPTE.ST164.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZt` → `https://pub.smpte.org/doc/st164/20020726-pub/`
+#### SMPTE.RP165.1994 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYH` → `https://pub.smpte.org/doc/rp165/19940901-pub/`
+#### SMPTE.RP166.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Naa` → `https://pub.smpte.org/doc/rp166/19950511-pub/`
+#### SMPTE.ST166.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZu` → `https://pub.smpte.org/doc/st166/20041108-pub/`
+#### SMPTE.RP167.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nab` → `https://pub.smpte.org/doc/rp167/19950211-pub/`
+#### SMPTE.ST168.2001 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NcM` → `https://pub.smpte.org/doc/st168/20010606-pub/`
+#### SMPTE.RP169.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYJ` → `https://pub.smpte.org/doc/rp169/19950601-pub/`
+#### SMPTE.ST169.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NcN` → `https://pub.smpte.org/doc/st169/20020726-pub/`
+#### SMPTE.ST170.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZw` → `https://pub.smpte.org/doc/st170/20041130-pub/`
+#### SMPTE.ST171.2001 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NcO` → `https://pub.smpte.org/doc/st171/20010606-pub/`
+#### SMPTE.RP173.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYN` → `https://pub.smpte.org/doc/rp173/20020312-pub/`
+#### SMPTE.ST173.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZx` → `https://pub.smpte.org/doc/st173/20041108-pub/`
+#### SMPTE.RP174.1993 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYO` → `https://pub.smpte.org/doc/rp174/19930901-pub/`
+#### SMPTE.ST174.1994 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZy` → `https://pub.smpte.org/doc/st174/19940413-pub/`
+#### SMPTE.RP175.1997 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nad` → `https://pub.smpte.org/doc/rp175/19971205-pub/`
+#### SMPTE.RP176.1997 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nae` → `https://pub.smpte.org/doc/rp176/19971205-pub/`
+#### SMPTE.ST176.1999 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZz` → `https://pub.smpte.org/doc/st176/19990421-pub/`
+#### SMPTE.RP177.1993 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Naf` → `https://pub.smpte.org/doc/rp177/19931101-pub/`
+#### SMPTE.ST177.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008ka0` → `https://pub.smpte.org/doc/st177/19950912-pub/`
+#### SMPTE.RP178.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYP` → `https://pub.smpte.org/doc/rp178/20041130-pub/`
+#### SMPTE.RP179.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYQ` → `https://pub.smpte.org/doc/rp179/20020808-pub/`
+#### SMPTE.ST179.1996 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008ka1` → `https://pub.smpte.org/doc/st179/19960826-pub/`
+#### SMPTE.RP180.1999 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYS` → `https://pub.smpte.org/doc/rp180/19990423-pub/`
+#### SMPTE.RP181.1999 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYT` → `https://pub.smpte.org/doc/rp181/19990423-pub/`
+#### SMPTE.ST181.2001 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008ka3` → `https://pub.smpte.org/doc/st181/20010606-pub/`
+#### SMPTE.RP182.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nag` → `https://pub.smpte.org/doc/rp182/19950101-pub/`
+#### SMPTE.RP183.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nah` → `https://pub.smpte.org/doc/rp183/20041008-pub/`
+#### SMPTE.ST183.1996 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008ka4` → `https://pub.smpte.org/doc/st183/19960308-pub/`
+#### SMPTE.RP184.2015 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nai` → `https://pub.smpte.org/doc/rp184/20150901-pub/`
+#### SMPTE.ST184.1998 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NcP` → `https://pub.smpte.org/doc/st184/19980727-pub/`
+#### SMPTE.RP185.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Naj` → `https://pub.smpte.org/doc/rp185/20041108-pub/`
+#### SMPTE.ST185.2011 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008ka5` → `https://pub.smpte.org/doc/st185/20111205-pub/`
+#### SMPTE.RP186.2008 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nak` → `https://pub.smpte.org/doc/rp186/20080418-pub/`
+#### SMPTE.RP187.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nal` → `https://pub.smpte.org/doc/rp187/19951206-pub/`
+#### SMPTE.RP189.1996 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nam` → `https://pub.smpte.org/doc/rp189/19960401-pub/`
+#### SMPTE.RP190.1996 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nao` → `https://pub.smpte.org/doc/rp190/19960801-pub/`
+#### SMPTE.RP192.2015 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nap` → `https://pub.smpte.org/doc/rp192/20150901-pub/`
+#### SMPTE.ST192.1997 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NcR` → `https://pub.smpte.org/doc/st192/19971204-pub/`
+#### SMPTE.RP194.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Naq` → `https://pub.smpte.org/doc/rp194/20040406-pub/`
+#### SMPTE.ST194.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008ka6` → `https://pub.smpte.org/doc/st194/20020726-pub/`
+#### SMPTE.RP195.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYV` → `https://pub.smpte.org/doc/rp195/20040406-pub/`
+#### SMPTE.ST195.2000 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008ka7` → `https://pub.smpte.org/doc/st195/20000530-pub/`
+#### SMPTE.ST196.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008ka8` → `https://pub.smpte.org/doc/st196/20031020-pub/`
+#### SMPTE.RP197.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nar` → `https://pub.smpte.org/doc/rp197/20031020-pub/`
+#### SMPTE.ST197.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008ka9` → `https://pub.smpte.org/doc/st197/20031112-pub/`
+#### SMPTE.RP198.1998 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nas` → `https://pub.smpte.org/doc/rp198/19980101-pub/`
+#### SMPTE.ST198.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kaA` → `https://pub.smpte.org/doc/st198/20031112-pub/`
+#### SMPTE.RP199.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYW` → `https://pub.smpte.org/doc/rp199/20041108-pub/`
+#### SMPTE.ST199.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kaB` → `https://pub.smpte.org/doc/st199/20031112-pub/`
+#### SMPTE.RP200.2012 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYX` → `https://pub.smpte.org/doc/rp200/20120418-pub/`
+#### SMPTE.ST200.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kaD` → `https://pub.smpte.org/doc/st200/20031112-pub/`
+#### SMPTE.RP201.2008 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nay` → `https://pub.smpte.org/doc/rp201/20081126-pub/`
+#### SMPTE.ST201.1996 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NcV` → `https://pub.smpte.org/doc/st201/19960408-pub/`
+#### SMPTE.RP202.2008 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nb1` → `https://pub.smpte.org/doc/rp202/20080418-pub/`
+#### SMPTE.ST202.2010 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kaG` → `https://pub.smpte.org/doc/st202/20101020-pub/`
+#### SMPTE.RP203.2000 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYa` → `https://pub.smpte.org/doc/rp203/20000131-pub/`
+#### SMPTE.ST203.2011 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kaO` → `https://pub.smpte.org/doc/st203/20110322-pub/`
+#### SMPTE.RP204.2000 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nb6` → `https://pub.smpte.org/doc/rp204/20000131-pub/`
+#### SMPTE.RP205.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYf` → `https://pub.smpte.org/doc/rp205/20140815-pub/`
+#### SMPTE.ST205.1993 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kaU` → `https://pub.smpte.org/doc/st205/19931112-pub/`
+#### SMPTE.RP206.1999 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYh` → `https://pub.smpte.org/doc/rp206/19991203-pub/`
+#### SMPTE.ST206.1998 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kaY` → `https://pub.smpte.org/doc/st206/19980818-pub/`
+#### SMPTE.RP207.2005 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NbG` → `https://pub.smpte.org/doc/rp207/20050322-pub/`
+#### SMPTE.ST207.1997 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kaa` → `https://pub.smpte.org/doc/st207/19971202-pub/`
+#### SMPTE.RP208.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NbJ` → `https://pub.smpte.org/doc/rp208/20020808-pub/`
+#### SMPTE.ST208.1992 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kab` → `https://pub.smpte.org/doc/st208/19921112-pub/`
+#### SMPTE.RP209.2000 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYm` → `https://pub.smpte.org/doc/rp209/20000512-pub/`
+#### SMPTE.ST209.1996 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kam` → `https://pub.smpte.org/doc/st209/19960308-pub/`
+#### SMPTE.ST210.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kan` → `https://pub.smpte.org/doc/st210/20041108-pub/`
+#### SMPTE.RP211.2000 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYn` → `https://pub.smpte.org/doc/rp211/20000929-pub/`
+#### SMPTE.ST211.2001 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kaq` → `https://pub.smpte.org/doc/st211/20010606-pub/`
+#### SMPTE.RP212.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYq` → `https://pub.smpte.org/doc/rp212/20020422-pub/`
+#### SMPTE.ST212.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kaz` → `https://pub.smpte.org/doc/st212/19950912-pub/`
+#### SMPTE.RP213.2001 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NbX` → `https://pub.smpte.org/doc/rp213/20011015-pub/`
+#### SMPTE.RP214.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYr` → `https://pub.smpte.org/doc/rp214/20020501-pub/`
+#### SMPTE.ST214.2007 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kb3` → `https://pub.smpte.org/doc/st214/20071214-pub/`
+#### SMPTE.RP215.2009 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYs` → `https://pub.smpte.org/doc/rp215/20090420-pub/`
+#### SMPTE.ST215.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NeN` → `https://pub.smpte.org/doc/st215/19951201-pub/`
+#### SMPTE.RP216.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYt` → `https://pub.smpte.org/doc/rp216/20020814-pub/`
+#### SMPTE.ST216.1998 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kb4` → `https://pub.smpte.org/doc/st216/19980924-pub/`
+#### SMPTE.RP217.2001 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NbY` → `https://pub.smpte.org/doc/rp217/20010918-pub/`
+#### SMPTE.RP218.2009 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYu` → `https://pub.smpte.org/doc/rp218/20091218-pub/`
+#### SMPTE.ST218.1996 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kb6` → `https://pub.smpte.org/doc/st218/19960408-pub/`
+#### SMPTE.RP219-1.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nba` → `https://pub.smpte.org/doc/rp219-1/20140714-pub/`
+#### SMPTE.RP219-2.2016 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYv` → `https://pub.smpte.org/doc/rp219-2/20160916-pub/`
+#### SMPTE.RP219.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NbZ` → `https://pub.smpte.org/doc/rp219/20020619-pub/`
+#### SMPTE.RP220.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nbb` → `https://pub.smpte.org/doc/rp220/20040701-pub/`
+#### SMPTE.ST220.1996 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kb7` → `https://pub.smpte.org/doc/st220/19961028-pub/`
+#### SMPTE.RP221.2008 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYw` → `https://pub.smpte.org/doc/rp221/20080125-pub/`
+#### SMPTE.ST221.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kb8` → `https://pub.smpte.org/doc/st221/20031214-pub/`
+#### SMPTE.RP222.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nbc` → `https://pub.smpte.org/doc/rp222/20030312-pub/`
+#### SMPTE.ST222.1994 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kb9` → `https://pub.smpte.org/doc/st222/19941019-pub/`
+#### SMPTE.RP223.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYx` → `https://pub.smpte.org/doc/rp223/20030811-pub/`
+#### SMPTE.ST223.2001 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NeP` → `https://pub.smpte.org/doc/st223/20010606-pub/`
+#### SMPTE.ST224.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NeQ` → `https://pub.smpte.org/doc/st224/20030207-pub/`
+#### SMPTE.RP225.2005 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nbe` → `https://pub.smpte.org/doc/rp225/20050309-pub/`
+#### SMPTE.ST225.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NeR` → `https://pub.smpte.org/doc/st225/20030207-pub/`
+#### SMPTE.ST226.1996 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NeS` → `https://pub.smpte.org/doc/st226/19961003-pub/`
+#### SMPTE.RP227.2010 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nbf` → `https://pub.smpte.org/doc/rp227/20100812-pub/`
+#### SMPTE.ST227.1996 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbA` → `https://pub.smpte.org/doc/st227/19960814-pub/`
+#### SMPTE.RP228.2008 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nbg` → `https://pub.smpte.org/doc/rp228/20080710-pub/`
+#### SMPTE.ST228.1996 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbB` → `https://pub.smpte.org/doc/st228/19960814-pub/`
+#### SMPTE.ST229.1996 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NeT` → `https://pub.smpte.org/doc/st229/19961010-pub/`
+#### SMPTE.ST230.1996 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbC` → `https://pub.smpte.org/doc/st230/19961010-pub/`
+#### SMPTE.ST231.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NeU` → `https://pub.smpte.org/doc/st231/20041108-pub/`
+#### SMPTE.ST233.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbD` → `https://pub.smpte.org/doc/st233/20031020-pub/`
+#### SMPTE.ST234.1998 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR000000bJoT2AU` → `https://pub.smpte.org/doc/st234/19980818-pub/`
+#### SMPTE.ST235.1998 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbE` → `https://pub.smpte.org/doc/st235/19980303-pub/`
+#### SMPTE.ST236.1998 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NeV` → `https://pub.smpte.org/doc/st236/19981207-pub/`
+#### SMPTE.ST237.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NeW` → `https://pub.smpte.org/doc/st237/20031112-pub/`
+#### SMPTE.ST238.1998 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NeX` → `https://pub.smpte.org/doc/st238/19981207-pub/`
+#### SMPTE.ST239.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NeY` → `https://pub.smpte.org/doc/st239/20041108-pub/`
+#### SMPTE.ST240.1999 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbF` → `https://pub.smpte.org/doc/st240/19991111-pub/`
+#### SMPTE.ST241.2015 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nea` → `https://pub.smpte.org/doc/st241/20150224-pub/`
+#### SMPTE.ST242.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Neb` → `https://pub.smpte.org/doc/st242/20031020-pub/`
+#### SMPTE.ST243.1993 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nec` → `https://pub.smpte.org/doc/st243/19930322-pub/`
+#### SMPTE.ST244.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbG` → `https://pub.smpte.org/doc/st244/20030207-pub/`
+#### SMPTE.ST245.1993 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbH` → `https://pub.smpte.org/doc/st245/19930810-pub/`
+#### SMPTE.ST246.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbI` → `https://pub.smpte.org/doc/st246/20030207-pub/`
+#### SMPTE.ST247.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbJ` → `https://pub.smpte.org/doc/st247/20030207-pub/`
+#### SMPTE.ST248.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbK` → `https://pub.smpte.org/doc/st248/20030207-pub/`
+#### SMPTE.ST249.1996 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ned` → `https://pub.smpte.org/doc/st249/19961129-pub/`
+#### SMPTE.ST250.1996 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nef` → `https://pub.smpte.org/doc/st250/19961202-pub/`
+#### SMPTE.ST251.1996 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbL` → `https://pub.smpte.org/doc/st251/19961129-pub/`
+#### SMPTE.ST252.1996 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbM` → `https://pub.smpte.org/doc/st252/19961129-pub/`
+#### SMPTE.ST253.1998 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Neg` → `https://pub.smpte.org/doc/st253/19980303-pub/`
+#### SMPTE.ST254.2008 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbN` → `https://pub.smpte.org/doc/st254/20081010-pub/`
+#### SMPTE.ST256.1996 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Neh` → `https://pub.smpte.org/doc/st256/19961203-pub/`
+#### SMPTE.ST257.1998 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbO` → `https://pub.smpte.org/doc/st257/19980622-pub/`
+#### SMPTE.ST258.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nei` → `https://pub.smpte.org/doc/st258/20040406-pub/`
+#### SMPTE.ST259.2008 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nej` → `https://pub.smpte.org/doc/st259/20080129-pub/`
+#### SMPTE.ST260.1999 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbQ` → `https://pub.smpte.org/doc/st260/19990104-pub/`
+#### SMPTE.ST262.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbR` → `https://pub.smpte.org/doc/st262/19950912-pub/`
+#### SMPTE.ST263.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbS` → `https://pub.smpte.org/doc/st263/20040203-pub/`
+#### SMPTE.ST264.1998 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbT` → `https://pub.smpte.org/doc/st264/19981208-pub/`
+#### SMPTE.ST265.1998 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nek` → `https://pub.smpte.org/doc/st265/19981208-pub/`
+#### SMPTE.ST266.2012 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nel` → `https://pub.smpte.org/doc/st266/20120418-pub/`
+#### SMPTE.ST267.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbV` → `https://pub.smpte.org/doc/st267/19950606-pub/`
+#### SMPTE.ST268-1.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nen` → `https://pub.smpte.org/doc/st268-1/20141101-pub/`
+#### SMPTE.ST268.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nem` → `https://pub.smpte.org/doc/st268/20141101-pub/`
+#### SMPTE.ST269.1999 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nep` → `https://pub.smpte.org/doc/st269/19990421-pub/`
+#### SMPTE.ST270.2008 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbW` → `https://pub.smpte.org/doc/st270/20081010-pub/`
+#### SMPTE.ST271.2008 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbX` → `https://pub.smpte.org/doc/st271/20081010-pub/`
+#### SMPTE.ST272.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbY` → `https://pub.smpte.org/doc/st272/20040407-pub/`
+#### SMPTE.ST273.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Neq` → `https://pub.smpte.org/doc/st273/20031020-pub/`
+#### SMPTE.ST274.2008 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbZ` → `https://pub.smpte.org/doc/st274/20080129-pub/`
+#### SMPTE.ST275.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ner` → `https://pub.smpte.org/doc/st275/19950606-pub/`
+#### SMPTE.ST276.1995 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kba` → `https://pub.smpte.org/doc/st276/19951201-pub/`
+#### SMPTE.ST277.1996 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbb` → `https://pub.smpte.org/doc/st277/19960606-pub/`
+#### SMPTE.ST278.1996 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbc` → `https://pub.smpte.org/doc/st278/19960112-pub/`
+#### SMPTE.ST279.2001 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbd` → `https://pub.smpte.org/doc/st279/20011018-pub/`
+#### SMPTE.RP291-2.2013 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZ2` → `https://pub.smpte.org/doc/rp291-2/20130205-pub/`
+#### SMPTE.ST291-1.2011 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Net` → `https://pub.smpte.org/doc/st291-1/20110923-pub/`
+#### SMPTE.RP291.2009 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nbk` → `https://pub.smpte.org/doc/rp291/20090318-pub/`
+#### SMPTE.ST291.2006 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nes` → `https://pub.smpte.org/doc/st291/20060920-pub/`
+#### SMPTE.OV292-0.2018 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZY` → `https://pub.smpte.org/doc/ov292-0/20180516-pub/`
+#### SMPTE.ST292-1.2018 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Neu` → `https://pub.smpte.org/doc/st292-1/20180412-pub/`
+#### SMPTE.ST292-2.2011 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR000000bJlF2AU` → `https://pub.smpte.org/doc/st292-2/20110608-pub/`
+#### SMPTE.ST293.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbf` → `https://pub.smpte.org/doc/st293/20030207-pub/`
+#### SMPTE.ST294.2001 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nev` → `https://pub.smpte.org/doc/st294/20011205-pub/`
+#### SMPTE.ST295.1997 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbg` → `https://pub.smpte.org/doc/st295/19970206-pub/`
+#### SMPTE.ST296.2012 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbg2AA` → `https://pub.smpte.org/doc/st296/20120418-pub/`
+#### SMPTE.OV297-0.2017 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZZ` → `https://pub.smpte.org/doc/ov297-0/20170106-pub/`
+#### SMPTE.ST297-1.2015 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbi` → `https://pub.smpte.org/doc/st297-1/20150204-pub/`
+#### SMPTE.ST297-2.2017 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007New` → `https://pub.smpte.org/doc/st297-2/20170106-pub/`
+#### SMPTE.ST297.2015 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbh` → `https://pub.smpte.org/doc/st297/20150204-pub/`
+#### SMPTE.ST298.2009 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nex` → `https://pub.smpte.org/doc/st298/20090605-pub/`
+#### SMPTE.OV299-0.2010 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXV` → `https://pub.smpte.org/doc/ov299-0/20100721-pub/`
+#### SMPTE.ST299-1.2009 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ney` → `https://pub.smpte.org/doc/st299-1/20090529-pub/`
+#### SMPTE.ST299-2.2010 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbj` → `https://pub.smpte.org/doc/st299-2/20100721-pub/`
+#### SMPTE.ST300.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbm` → `https://pub.smpte.org/doc/st300/20021112-pub/`
+#### SMPTE.ST301.2005 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nez` → `https://pub.smpte.org/doc/st301/20051216-pub/`
+#### SMPTE.ST302.2007 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nf0` → `https://pub.smpte.org/doc/st302/20071025-pub/`
+#### SMPTE.ST303.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nf1` → `https://pub.smpte.org/doc/st303/20020807-pub/`
+#### SMPTE.ST304.2009 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbn` → `https://pub.smpte.org/doc/st304/20090604-pub/`
+#### SMPTE.ST305.2005 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nf2` → `https://pub.smpte.org/doc/st305/20050721-pub/`
+#### SMPTE.ST306.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbo` → `https://pub.smpte.org/doc/st306/20020315-pub/`
+#### SMPTE.ST307.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbp` → `https://pub.smpte.org/doc/st307/20020328-pub/`
+#### SMPTE.ST308.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nf3` → `https://pub.smpte.org/doc/st308/20041008-pub/`
+#### SMPTE.ST309.2012 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbq` → `https://pub.smpte.org/doc/st309/20121005-pub/`
+#### SMPTE.ST310.2010 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbr` → `https://pub.smpte.org/doc/st310/20101112-pub/`
+#### SMPTE.ST311.2009 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nf5` → `https://pub.smpte.org/doc/st311/20090604-pub/`
+#### SMPTE.ST312.2001 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nf6` → `https://pub.smpte.org/doc/st312/20010625-pub/`
+#### SMPTE.ST313.2008 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbs` → `https://pub.smpte.org/doc/st313/20081010-pub/`
+#### SMPTE.ST314.2005 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbt` → `https://pub.smpte.org/doc/st314/20050905-pub/`
+#### SMPTE.ST315.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbu` → `https://pub.smpte.org/doc/st315/20041008-pub/`
+#### SMPTE.ST316.2006 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbv` → `https://pub.smpte.org/doc/st316/20060623-pub/`
+#### SMPTE.ST317.1999 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbw` → `https://pub.smpte.org/doc/st317/19990801-pub/`
+#### SMPTE.ST318.2015 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbx` → `https://pub.smpte.org/doc/st318/20150605-pub/`
+#### SMPTE.ST319.2000 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kby` → `https://pub.smpte.org/doc/st319/20000120-pub/`
+#### SMPTE.ST321.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kbz` → `https://pub.smpte.org/doc/st321/20020328-pub/`
+#### SMPTE.ST322.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kc0` → `https://pub.smpte.org/doc/st322/20040510-pub/`
+#### SMPTE.ST323.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kc1` → `https://pub.smpte.org/doc/st323/20041108-pub/`
+#### SMPTE.ST324.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nf8` → `https://pub.smpte.org/doc/st324/20040510-pub/`
+#### SMPTE.ST325.1999 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nf9` → `https://pub.smpte.org/doc/st325/19990819-pub/`
+#### SMPTE.ST326.2000 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NfA` → `https://pub.smpte.org/doc/st326/20000131-pub/`
+#### SMPTE.ST327.2000 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NfB` → `https://pub.smpte.org/doc/st327/20000120-pub/`
+#### SMPTE.ST328.2000 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NfC` → `https://pub.smpte.org/doc/st328/20000120-pub/`
+#### SMPTE.ST329.2000 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NfD` → `https://pub.smpte.org/doc/st329/20000120-pub/`
+#### SMPTE.ST330.2022 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NfE` → `https://pub.smpte.org/doc/st330/20220228-pub/`
+#### SMPTE.ST332.2000 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NfG` → `https://pub.smpte.org/doc/st332/20000131-pub/`
+#### SMPTE.ST333.2008 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NfH` → `https://pub.smpte.org/doc/st333/20080425-pub/`
+#### SMPTE.ST334-1.2015 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NfI` → `https://pub.smpte.org/doc/st334-1/20150102-pub/`
+#### SMPTE.ST335.2012Am1.2019 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NfK` → `https://pub.smpte.org/doc/st335/20190101-am1-pub/`
+#### SMPTE.ST336.2017 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NfL` → `https://pub.smpte.org/doc/st336/20170721-pub/`
+#### SMPTE.ST337.2015 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kc2` → `https://pub.smpte.org/doc/st337/20150327-pub/`
+#### SMPTE.ST338.2016Am1.2019 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NfM` → `https://pub.smpte.org/doc/st338/20191018-am1-pub/`
+#### SMPTE.ST339.2015 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NfN` → `https://pub.smpte.org/doc/st339/20150327-pub/`
+#### SMPTE.ST340.2015 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kc3` → `https://pub.smpte.org/doc/st340/20150327-pub/`
+#### SMPTE.ST341.2000 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kc4` → `https://pub.smpte.org/doc/st341/20000406-pub/`
+#### SMPTE.ST342.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kc5` → `https://pub.smpte.org/doc/st342/20040203-pub/`
+#### SMPTE.ST343.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kc6` → `https://pub.smpte.org/doc/st343/20020103-pub/`
+#### SMPTE.ST344.2000 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NfO` → `https://pub.smpte.org/doc/st344/20000927-pub/`
+#### SMPTE.ST345.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kc7` → `https://pub.smpte.org/doc/st345/20020131-pub/`
+#### SMPTE.ST346.2000 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kc8` → `https://pub.smpte.org/doc/st346/20000927-pub/`
+#### SMPTE.ST347.2001 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kc9` → `https://pub.smpte.org/doc/st347/20010625-pub/`
+#### SMPTE.ST348.2005 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NfP` → `https://pub.smpte.org/doc/st348/20051209-pub/`
+#### SMPTE.ST349.2001 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcA` → `https://pub.smpte.org/doc/st349/20010625-pub/`
+#### SMPTE.ST351.2000 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcB` → `https://pub.smpte.org/doc/st351/20001023-pub/`
+#### SMPTE.ST352.2013 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NfR` → `https://pub.smpte.org/doc/st352/20130205-pub/`
+#### SMPTE.ST353.2000 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcC` → `https://pub.smpte.org/doc/st353/20001010-pub/`
+#### SMPTE.ST354.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcD` → `https://pub.smpte.org/doc/st354/20020131-pub/`
+#### SMPTE.ST355.2001 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NfS` → `https://pub.smpte.org/doc/st355/20010419-pub/`
+#### SMPTE.ST356.2001 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcE` → `https://pub.smpte.org/doc/st356/20010823-pub/`
+#### SMPTE.ST357.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcF` → `https://pub.smpte.org/doc/st357/20020103-pub/`
+#### SMPTE.ST358.2001 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NfT` → `https://pub.smpte.org/doc/st358/20010419-pub/`
+#### SMPTE.ST359.2001 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NfU` → `https://pub.smpte.org/doc/st359/20010402-pub/`
+#### SMPTE.ST360.2009 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NfV` → `https://pub.smpte.org/doc/st360/20090211-pub/`
+#### SMPTE.ST361.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NfW` → `https://pub.smpte.org/doc/st361/20020103-pub/`
+#### SMPTE.ST362.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcG` → `https://pub.smpte.org/doc/st362/20020131-pub/`
+#### SMPTE.ST363-2.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NfX` → `https://pub.smpte.org/doc/st363-2/20020822-pub/`
+#### SMPTE.ST364.2008 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcH` → `https://pub.smpte.org/doc/st364/20080703-pub/`
+#### SMPTE.ST365.2001 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcI` → `https://pub.smpte.org/doc/st365/20010823-pub/`
+#### SMPTE.ST366.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcJ` → `https://pub.smpte.org/doc/st366/20020103-pub/`
+#### SMPTE.ST367.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NfY` → `https://pub.smpte.org/doc/st367/20020328-pub/`
+#### SMPTE.ST368.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NfZ` → `https://pub.smpte.org/doc/st368/20020328-pub/`
+#### SMPTE.ST369.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nfa` → `https://pub.smpte.org/doc/st369/20020328-pub/`
+#### SMPTE.ST370.2013 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcK` → `https://pub.smpte.org/doc/st370/20130902-pub/`
+#### SMPTE.ST371.2002 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcL` → `https://pub.smpte.org/doc/st371/20020807-pub/`
+#### SMPTE.ST372.2017 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcM` → `https://pub.smpte.org/doc/st372/20171023-pub/`
+#### SMPTE.ST374.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcN` → `https://pub.smpte.org/doc/st374/20030317-pub/`
+#### SMPTE.ST375.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcO` → `https://pub.smpte.org/doc/st375/20030317-pub/`
+#### SMPTE.ST376.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcP` → `https://pub.smpte.org/doc/st376/20030317-pub/`
+#### SMPTE.EG377-3.2013 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZH` → `https://pub.smpte.org/doc/eg377-3/20130129-pub/`
+#### SMPTE.ST377-1.2019 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nfd` → `https://pub.smpte.org/doc/st377-1/20191128-pub/`
+#### SMPTE.ST377-2.2019 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nfe` → `https://pub.smpte.org/doc/st377-2/20190719-pub/`
+#### SMPTE.ST377-4.2021 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nff` → `https://pub.smpte.org/doc/st377-4/20210205-pub/`
+#### SMPTE.ST377.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nfc` → `https://pub.smpte.org/doc/st377/20040922-pub/`
+#### SMPTE.ST378.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcR` → `https://pub.smpte.org/doc/st378/20040922-pub/`
+#### SMPTE.OV379-0.2015 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZa` → `https://pub.smpte.org/doc/ov379-0/20151224-pub/`
+#### SMPTE.ST379-1.2009 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nfj` → `https://pub.smpte.org/doc/st379-1/20090721-pub/`
+#### SMPTE.ST379-2.2010 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nfk` → `https://pub.smpte.org/doc/st379-2/20100223-pub/`
+#### SMPTE.ST380.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcS` → `https://pub.smpte.org/doc/st380/20040922-pub/`
+#### SMPTE.ST381-1.2005 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nfl` → `https://pub.smpte.org/doc/st381-1/20050215-pub/`
+#### SMPTE.ST381-2.2018 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nfm` → `https://pub.smpte.org/doc/st381-2/20180102-pub/`
+#### SMPTE.ST381-4.2017 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nfn` → `https://pub.smpte.org/doc/st381-4/20170525-pub/`
+#### SMPTE.ST381.2005 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcT` → `https://pub.smpte.org/doc/st381/20050215-pub/`
+#### SMPTE.ST383.2008 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcW` → `https://pub.smpte.org/doc/st383/20080313-pub/`
+#### SMPTE.ST384.2005 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcX` → `https://pub.smpte.org/doc/st384/20050902-pub/`
+#### SMPTE.ST386.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcZ` → `https://pub.smpte.org/doc/st386/20040922-pub/`
+#### SMPTE.ST387.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kca` → `https://pub.smpte.org/doc/st387/20040922-pub/`
+#### SMPTE.ST388.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcb` → `https://pub.smpte.org/doc/st388/20040922-pub/`
+#### SMPTE.ST389.2005 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcc` → `https://pub.smpte.org/doc/st389/20050607-pub/`
+#### SMPTE.ST390.2011 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcd` → `https://pub.smpte.org/doc/st390/20110331-pub/`
+#### SMPTE.ST391.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kce` → `https://pub.smpte.org/doc/st391/20040922-pub/`
+#### SMPTE.ST392.2013 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcf` → `https://pub.smpte.org/doc/st392/20130205-pub/`
+#### SMPTE.ST393.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcg` → `https://pub.smpte.org/doc/st393/20040922-pub/`
+#### SMPTE.ST394.2006 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kch` → `https://pub.smpte.org/doc/st394/20060707-pub/`
+#### SMPTE.ST395.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nfp` → `https://pub.smpte.org/doc/st395/20140523-pub/`
+#### SMPTE.ST396.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kci` → `https://pub.smpte.org/doc/st396/20030715-pub/`
+#### SMPTE.ST397.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nfq` → `https://pub.smpte.org/doc/st397/20030709-pub/`
+#### SMPTE.ST398.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcj` → `https://pub.smpte.org/doc/st398/20040203-pub/`
+#### SMPTE.ST399.2004 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kck` → `https://pub.smpte.org/doc/st399/20040203-pub/`
+#### SMPTE.ST400.2012 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nfr` → `https://pub.smpte.org/doc/st400/20120827-pub/`
+#### SMPTE.ST401.2005 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nfs` → `https://pub.smpte.org/doc/st401/20050223-pub/`
+#### SMPTE.ST402.2003 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcn` → `https://pub.smpte.org/doc/st402/20030924-pub/`
+#### SMPTE.ST405.2006 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kco` → `https://pub.smpte.org/doc/st405/20060707-pub/`
+#### SMPTE.ST407.2006 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nft` → `https://pub.smpte.org/doc/st407/20060405-pub/`
+#### SMPTE.ST408.2006 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nfu` → `https://pub.smpte.org/doc/st408/20060405-pub/`
+#### SMPTE.ST409.2005 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nfv` → `https://pub.smpte.org/doc/st409/20050215-pub/`
+#### SMPTE.ST410.2008 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nfw` → `https://pub.smpte.org/doc/st410/20080731-pub/`
+#### SMPTE.ST411.2006 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcq` → `https://pub.smpte.org/doc/st411/20060627-pub/`
+#### SMPTE.ST417.2005 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcr` → `https://pub.smpte.org/doc/st417/20051018-pub/`
+#### SMPTE.ST418.2005 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcs` → `https://pub.smpte.org/doc/st418/20051018-pub/`
+#### SMPTE.ST419.2005 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nfx` → `https://pub.smpte.org/doc/st419/20051018-pub/`
+#### SMPTE.ST420.2005 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nfy` → `https://pub.smpte.org/doc/st420/20051018-pub/`
+#### SMPTE.ST421.2013 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nfz` → `https://pub.smpte.org/doc/st421/20131008-pub/`
+#### SMPTE.ST422.2022 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kct` → `https://pub.smpte.org/doc/st422/20220328-pub/`
+#### SMPTE.ST424.2012 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ng0` → `https://pub.smpte.org/doc/st424/20121008-pub/`
+#### SMPTE.OV425-0.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZb` → `https://pub.smpte.org/doc/ov425-0/20140220-pub/`
+#### SMPTE.ST425-2.2012 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcv` → `https://pub.smpte.org/doc/st425-2/20120203-pub/`
+#### SMPTE.ST425-3.2019 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcw` → `https://pub.smpte.org/doc/st425-3/20190304-pub/`
+#### SMPTE.ST425-4.2012 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ng1` → `https://pub.smpte.org/doc/st425-4/20120703-pub/`
+#### SMPTE.ST425-5.2019 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcx` → `https://pub.smpte.org/doc/st425-5/20190304-pub/`
+#### SMPTE.ST425-6.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ng2` → `https://pub.smpte.org/doc/st425-6/20140220-pub/`
+#### SMPTE.ST427.2009 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ng3` → `https://pub.smpte.org/doc/st427/20090311-pub/`
+#### SMPTE.RP428-22.2025-06 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR000003VZB42AO` → `https://pub.smpte.org/doc/rp428-22/20250627-pub/`
+#### SMPTE.RP428-4.2010 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kZ7` → `https://pub.smpte.org/doc/rp428-4/20100331-pub/`
+#### SMPTE.RP428-5.2010 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nbn` → `https://pub.smpte.org/doc/rp428-5/20100624-pub/`
+#### SMPTE.RP428-6.2009 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nbo` → `https://pub.smpte.org/doc/rp428-6/20090603-pub/`
+#### SMPTE.ST428-1.2019 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ng4` → `https://pub.smpte.org/doc/st428-1/20190212-pub/`
+#### SMPTE.ST428-10.2008 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ng5` → `https://pub.smpte.org/doc/st428-10/20081203-pub/`
+#### SMPTE.ST428-11.2013 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ng6` → `https://pub.smpte.org/doc/st428-11/20130827-pub/`
+#### SMPTE.ST428-12.2013 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcy` → `https://pub.smpte.org/doc/st428-12/20130226-pub/`
+#### SMPTE.ST428-19.2010 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kcz` → `https://pub.smpte.org/doc/st428-19/20100809-pub/`
+#### SMPTE.ST428-2.2006 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ng7` → `https://pub.smpte.org/doc/st428-2/20060816-pub/`
+#### SMPTE.ST428-21.2011 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ng8` → `https://pub.smpte.org/doc/st428-21/20110222-pub/`
+#### SMPTE.ST428-24.2024-11 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR000002UeZx2AK` → `https://pub.smpte.org/doc/st428-24/20241101-pub/`
+#### SMPTE.ST428-3.2006 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kd0` → `https://pub.smpte.org/doc/st428-3/20060929-pub/`
+#### SMPTE.ST428-7.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ng9` → `https://pub.smpte.org/doc/st428-7/20140211-pub/`
+#### SMPTE.ST428-9.2008 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NgA` → `https://pub.smpte.org/doc/st428-9/20080214-pub/`
+#### SMPTE.ST429-10.2023-09 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NgB` → `https://pub.smpte.org/doc/st429-10/20230912-pub/`
+#### SMPTE.ST429-12.2008 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NgC` → `https://pub.smpte.org/doc/st429-12/20081203-pub/`
+#### SMPTE.ST429-13.2009 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kd1` → `https://pub.smpte.org/doc/st429-13/20091119-pub/`
+#### SMPTE.ST429-16.2023-09 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NgE2AU` → `https://pub.smpte.org/doc/st429-16/20230912-pub/`
+#### SMPTE.ST429-17.2017 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NgF` → `https://pub.smpte.org/doc/st429-17/20171227-pub/`
+#### SMPTE.ST429-19.2023-09 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NgH2AU` → `https://pub.smpte.org/doc/st429-19/20230912-pub/`
+#### SMPTE.ST429-7.2006 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NgO` → `https://pub.smpte.org/doc/st429-7/20061003-pub/`
+#### SMPTE.ST429-8.2007 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NgP` → `https://pub.smpte.org/doc/st429-8/20070625-pub/`
+#### SMPTE.ST429-9.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NgQ` → `https://pub.smpte.org/doc/st429-9/20141124-pub/`
+#### SMPTE.ST430-1.2023-09 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NgR2AU` → `https://pub.smpte.org/doc/st430-1/20230907-pub/`
+#### SMPTE.ST430-10.2010 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NgS` → `https://pub.smpte.org/doc/st430-10/20101102-pub/`
+#### SMPTE.ST430-11.2010 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NgT` → `https://pub.smpte.org/doc/st430-11/20101102-pub/`
+#### SMPTE.ST430-12.2023-09 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NgU2AU` → `https://pub.smpte.org/doc/st430-12/20230912-pub/`
+#### SMPTE.ST430-15.2017 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NgW` → `https://pub.smpte.org/doc/st430-15/20170714-pub/`
+#### SMPTE.ST430-16.2017 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NgX` → `https://pub.smpte.org/doc/st430-16/20170714-pub/`
+#### SMPTE.ST430-2.2017 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NgZ2AU` → `https://pub.smpte.org/doc/st430-2/20170112-pub/`
+#### SMPTE.ST430-4.2008Am1.2011 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ngb` → `https://pub.smpte.org/doc/st430-4/20111205-am1-pub/`
+#### SMPTE.ST430-6.2010 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ngd` → `https://pub.smpte.org/doc/st430-6/20100818-pub/`
+#### SMPTE.ST430-7.2008Am1.2011 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nge` → `https://pub.smpte.org/doc/st430-7/20111205-am1-pub/`
+#### SMPTE.ST430-9.2008Am1.2011 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ngf` → `https://pub.smpte.org/doc/st430-9/20111205-am1-pub/`
+#### SMPTE.RP431-2.2011 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nbp` → `https://pub.smpte.org/doc/rp431-2/20110406-pub/`
+#### SMPTE.ST431-1.2006 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ngg` → `https://pub.smpte.org/doc/st431-1/20060418-pub/`
+#### SMPTE.EG432-1.2010 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZN` → `https://pub.smpte.org/doc/eg432-1/20101110-pub/`
+#### SMPTE.EG432-2.2006 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZO` → `https://pub.smpte.org/doc/eg432-2/20061229-pub/`
+#### SMPTE.ST433.2008Am1.2011 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ngh` → `https://pub.smpte.org/doc/st433/20111205-am1-pub/`
+#### SMPTE.OV435-0.2012 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZc` → `https://pub.smpte.org/doc/ov435-0/20120927-pub/`
+#### SMPTE.ST435-1.2012 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ngi` → `https://pub.smpte.org/doc/st435-1/20120801-pub/`
+#### SMPTE.ST435-2.2012 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ngj` → `https://pub.smpte.org/doc/st435-2/20120801-pub/`
+#### SMPTE.ST435-3.2012 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ngk` → `https://pub.smpte.org/doc/st435-3/20120418-pub/`
+#### SMPTE.ST436-1.2013 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ngm` → `https://pub.smpte.org/doc/st436-1/20131106-pub/`
+#### SMPTE.ST436.2006 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ngl` → `https://pub.smpte.org/doc/st436/20060918-pub/`
+#### SMPTE.ST2001-1.2015 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NcS2AU` → `https://pub.smpte.org/doc/st2001-1/20150830-pub/`
+#### SMPTE.ST2001-2.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NcT` → `https://pub.smpte.org/doc/st2001-2/20140714-pub/`
+#### SMPTE.RP2002.2006 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nau` → `https://pub.smpte.org/doc/rp2002/20060915-pub/`
+#### SMPTE.ST2003.2012 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NcU` → `https://pub.smpte.org/doc/st2003/20120113-pub/`
+#### SMPTE.RP2005.2008 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nav` → `https://pub.smpte.org/doc/rp2005/20080421-pub/`
+#### SMPTE.RP2006.2006 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Naw` → `https://pub.smpte.org/doc/rp2006/20060915-pub/`
+#### SMPTE.RP2007.2007 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nax` → `https://pub.smpte.org/doc/rp2007/20070727-pub/`
+#### SMPTE.RP2008.2008 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYY` → `https://pub.smpte.org/doc/rp2008/20080213-pub/`
+#### SMPTE.ST2010.2008 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NcW` → `https://pub.smpte.org/doc/st2010/20080923-pub/`
+#### SMPTE.ST2016-1.2009 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NcX` → `https://pub.smpte.org/doc/st2016-1/20091223-pub/`
+#### SMPTE.ST2016-2.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NcY` → `https://pub.smpte.org/doc/st2016-2/20140816-pub/`
+#### SMPTE.ST2016-3.2009 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kaE` → `https://pub.smpte.org/doc/st2016-3/20091223-pub/`
+#### SMPTE.ST2016-4.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NcZ` → `https://pub.smpte.org/doc/st2016-4/20140816-pub/`
+#### SMPTE.ST2016-5.2009 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kaF` → `https://pub.smpte.org/doc/st2016-5/20090615-pub/`
+#### SMPTE.RP2019-2.2016 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nb0` → `https://pub.smpte.org/doc/rp2019-2/20160518-pub/`
+#### SMPTE.ST2019-3.2008 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ncb` → `https://pub.smpte.org/doc/st2019-3/20080115-pub/`
+#### SMPTE.ST2020-1.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kaH` → `https://pub.smpte.org/doc/st2020-1/20140816-pub/`
+#### SMPTE.ST2020-2.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ncd` → `https://pub.smpte.org/doc/st2020-2/20140816-pub/`
+#### SMPTE.ST2020-3.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nce` → `https://pub.smpte.org/doc/st2020-3/20140816-pub/`
+#### SMPTE.EG2021-3.2022 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NYs` → `https://pub.smpte.org/doc/eg2021-3/20220218-pub/`
+#### SMPTE.EG2021-4.2017 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NYt` → `https://pub.smpte.org/doc/eg2021-4/20170712-pub/`
+#### SMPTE.OV2021-0.2020 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZP` → `https://pub.smpte.org/doc/ov2021-0/20200608-pub/`
+#### SMPTE.RP2021-1.2020 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYZ` → `https://pub.smpte.org/doc/rp2021-1/20200107-pub/`
+#### SMPTE.RP2021-5.2013 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nb2` → `https://pub.smpte.org/doc/rp2021-5/20131011-pub/`
+#### SMPTE.RP2021-6.2017 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nb3` → `https://pub.smpte.org/doc/rp2021-6/20170712-pub/`
+#### SMPTE.RP2021-9.2017 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nb3` → `https://pub.smpte.org/doc/rp2021-9/20170627-pub/`
+#### SMPTE.ST2021-1.2017 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ncg` → `https://pub.smpte.org/doc/st2021-1/20170712-pub/`
+#### SMPTE.ST2021-2.2019 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nch` → `https://pub.smpte.org/doc/st2021-2/20190521-pub/`
+#### SMPTE.ST2022-1.2007 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kaI` → `https://pub.smpte.org/doc/st2022-1/20070524-pub/`
+#### SMPTE.ST2022-2.2007 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kaJ` → `https://pub.smpte.org/doc/st2022-2/20070524-pub/`
+#### SMPTE.ST2022-3.2019 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kaK` → `https://pub.smpte.org/doc/st2022-3/20190709-pub/`
+#### SMPTE.ST2022-4.2011 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kaL` → `https://pub.smpte.org/doc/st2022-4/20110608-pub/`
+#### SMPTE.ST2022-5.2013 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kaM` → `https://pub.smpte.org/doc/st2022-5/20130227-pub/`
+#### SMPTE.ST2022-6.2012 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ncj` → `https://pub.smpte.org/doc/st2022-6/20121009-pub/`
+#### SMPTE.ST2022-8.2019 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kaN` → `https://pub.smpte.org/doc/st2022-8/20190222-pub/`
+#### SMPTE.RP2025.2007 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nb4` → `https://pub.smpte.org/doc/rp2025/20070404-pub/`
+#### SMPTE.RP2027.2012 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nb5` → `https://pub.smpte.org/doc/rp2027/20120312-pub/`
+#### SMPTE.ST2031.2015 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ncm` → `https://pub.smpte.org/doc/st2031/20150102-pub/`
+#### SMPTE.ST2032-1.2007 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ncn` → `https://pub.smpte.org/doc/st2032-1/20071214-pub/`
+#### SMPTE.ST2032-2.2007 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nco` → `https://pub.smpte.org/doc/st2032-2/20071214-pub/`
+#### SMPTE.ST2032-3.2007 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ncp` → `https://pub.smpte.org/doc/st2032-3/20071214-pub/`
+#### SMPTE.ST2034-1.2017 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ncq` → `https://pub.smpte.org/doc/st2034-1/20170227-pub/`
+#### SMPTE.ST2035.2020 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ncr` → `https://pub.smpte.org/doc/st2035/20201015-pub/`
+#### SMPTE.OV2036-0.2015 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZQ` → `https://pub.smpte.org/doc/ov2036-0/20150327-pub/`
+#### SMPTE.ST2036-1.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ncs` → `https://pub.smpte.org/doc/st2036-1/20141013-pub/`
+#### SMPTE.ST2036-2.2008 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kaP2AQ` → `https://pub.smpte.org/doc/st2036-2/20080709-pub/`
+#### SMPTE.ST2036-3.2018 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kaQ` → `https://pub.smpte.org/doc/st2036-3/20180412-pub/`
+#### SMPTE.ST2036-4.2019 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nct` → `https://pub.smpte.org/doc/st2036-4/20190618-pub/`
+#### SMPTE.ST2037.2009 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ncu` → `https://pub.smpte.org/doc/st2037/20090504-pub/`
+#### SMPTE.EG2039.2008 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NYv` → `https://pub.smpte.org/doc/eg2039/20081030-pub/`
+#### SMPTE.ST2041-1.2010 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ncw` → `https://pub.smpte.org/doc/st2041-1/20100802-pub/`
+#### SMPTE.ST2041-2.2010 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ncx` → `https://pub.smpte.org/doc/st2041-2/20100802-pub/`
+#### SMPTE.ST2041-3.2010 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kaR` → `https://pub.smpte.org/doc/st2041-3/20100802-pub/`
+#### SMPTE.RP2042-3.2022 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nb7` → `https://pub.smpte.org/doc/rp2042-3/20220204-pub/`
+#### SMPTE.ST2042-1.2022 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ncy` → `https://pub.smpte.org/doc/st2042-1/20220415-pub/`
+#### SMPTE.ST2042-2.2017 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ncz` → `https://pub.smpte.org/doc/st2042-2/20171123-pub/`
+#### SMPTE.ST2042-4.2018 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nd0` → `https://pub.smpte.org/doc/st2042-4/20181120-pub/`
+#### SMPTE.ST2045.2010 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nd1` → `https://pub.smpte.org/doc/st2045/20100903-pub/`
+#### SMPTE.EG2046-3.2010 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NYw` → `https://pub.smpte.org/doc/eg2046-3/20100223-pub/`
+#### SMPTE.RP2046-2.2009 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nb8` → `https://pub.smpte.org/doc/rp2046-2/20091123-pub/`
+#### SMPTE.ST2046-1.2009 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nd2` → `https://pub.smpte.org/doc/st2046-1/20091123-pub/`
+#### SMPTE.RP2047-5.2022 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYe` → `https://pub.smpte.org/doc/rp2047-5/20220223-pub/`
+#### SMPTE.ST2047-2.2010 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nd3` → `https://pub.smpte.org/doc/st2047-2/20100112-pub/`
+#### SMPTE.ST2047-4.2011 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nd4` → `https://pub.smpte.org/doc/st2047-4/20110630-pub/`
+#### SMPTE.OV2048-0.2012 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZR` → `https://pub.smpte.org/doc/ov2048-0/20120929-pub/`
+#### SMPTE.ST2049.2012 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nd6` → `https://pub.smpte.org/doc/st2049/20120424-pub/`
+#### SMPTE.EG2050-2.2012 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NYx` → `https://pub.smpte.org/doc/eg2050-2/20120131-pub/`
+#### SMPTE.RP2050-1.2012 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nb9` → `https://pub.smpte.org/doc/rp2050-1/20120130-pub/`
+#### SMPTE.ST2051.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kaV` → `https://pub.smpte.org/doc/st2051/20140220-pub/`
+#### SMPTE.RP2052-10.2013 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NbA` → `https://pub.smpte.org/doc/rp2052-10/20130605-pub/`
+#### SMPTE.RP2052-11.2013 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NbB` → `https://pub.smpte.org/doc/rp2052-11/20130605-pub/`
+#### SMPTE.ST2052-1.2013 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nd7` → `https://pub.smpte.org/doc/st2052-1/20130605-pub/`
+#### SMPTE.ST2053.2011 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kaW` → `https://pub.smpte.org/doc/st2053/20110713-pub/`
+#### SMPTE.RP2054.2010 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYg` → `https://pub.smpte.org/doc/rp2054/20100423-pub/`
+#### SMPTE.ST2056.2011 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nd8` → `https://pub.smpte.org/doc/st2056/20110629-pub/`
+#### SMPTE.RP2057.2011Am1.2013 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NbC` → `https://pub.smpte.org/doc/rp2057/20130128-am1-pub/`
+#### SMPTE.RP2058-2.2011 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NbD` → `https://pub.smpte.org/doc/rp2058-2/20111003-pub/`
+#### SMPTE.RP2058-3.2011 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NbE` → `https://pub.smpte.org/doc/rp2058-3/20111003-pub/`
+#### SMPTE.RP2058-4.2011 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NbF` → `https://pub.smpte.org/doc/rp2058-4/20111003-pub/`
+#### SMPTE.ST2058-1.2011 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nd9` → `https://pub.smpte.org/doc/st2058-1/20110307-pub/`
+#### SMPTE.EG2061.2016 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NYz` → `https://pub.smpte.org/doc/eg2061/20160729-pub/`
+#### SMPTE.ST2063.2012 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NdB` → `https://pub.smpte.org/doc/st2063/20120112-pub/`
+#### SMPTE.ST2064-1.2015 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NdC` → `https://pub.smpte.org/doc/st2064-1/20151009-pub/`
+#### SMPTE.ST2064-2.2015 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NdD` → `https://pub.smpte.org/doc/st2064-2/20151009-pub/`
+#### SMPTE.ST2065-2.2020 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kaZ` → `https://pub.smpte.org/doc/st2065-2/20200527-pub/`
+#### SMPTE.ST2065-3.2020 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NdF` → `https://pub.smpte.org/doc/st2065-3/20200909-pub/`
+#### SMPTE.ST2066.2012 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NdI` → `https://pub.smpte.org/doc/st2066/20120802-pub/`
+#### SMPTE.ST2067-100.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NdJ` → `https://pub.smpte.org/doc/st2067-100/20141212-pub/`
+#### SMPTE.ST2067-101.2014 (updated fields: repo)
+  - repo: `undefined` → `https://github.com/SMPTE/st2067-101/`
+#### SMPTE.ST2067-101.2018 (updated fields: repo, resolvedHref)
+  - repo: `undefined` → `https://github.com/SMPTE/st2067-101/`
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NdK` → `https://pub.smpte.org/doc/st2067-101/20180222-pub/`
+#### SMPTE.ST2067-102.2022 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NdL` → `https://pub.smpte.org/doc/st2067-102/20220404-pub/`
+#### SMPTE.ST2067-2.2020 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NdN` → `https://pub.smpte.org/doc/st2067-2/20200407-pub/`
+#### SMPTE.ST2067-20.2016 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NdO` → `https://pub.smpte.org/doc/st2067-20/20160518-pub/`
+#### SMPTE.ST2067-200.2018 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NdP` → `https://pub.smpte.org/doc/st2067-200/20180609-pub/`
+#### SMPTE.ST2067-3.2020 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NdT` → `https://pub.smpte.org/doc/st2067-3/20200407-pub/`
+#### SMPTE.ST2067-30.2013 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NdU` → `https://pub.smpte.org/doc/st2067-30/20130829-pub/`
+#### SMPTE.ST2067-40.2021 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NdV` → `https://pub.smpte.org/doc/st2067-40/20210701-pub/`
+#### SMPTE.ST2067-5.2020 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NdW` → `https://pub.smpte.org/doc/st2067-5/20200407-pub/`
+#### SMPTE.ST2067-50.2018 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NdX` → `https://pub.smpte.org/doc/st2067-50/20180212-pub/`
+#### SMPTE.ST2067-8.2013 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NdZ` → `https://pub.smpte.org/doc/st2067-8/20130829-pub/`
+#### SMPTE.ST2067-9.2018 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nda` → `https://pub.smpte.org/doc/st2067-9/20180522-pub/`
+#### SMPTE.ST2068.2013 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ndb` → `https://pub.smpte.org/doc/st2068/20130709-pub/`
+#### SMPTE.EG2069.2012 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZ0` → `https://pub.smpte.org/doc/eg2069/20120801-pub/`
+#### SMPTE.ST2070-1.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ndc` → `https://pub.smpte.org/doc/st2070-1/20140513-pub/`
+#### SMPTE.ST2070-2.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ndd` → `https://pub.smpte.org/doc/st2070-2/20140513-pub/`
+#### SMPTE.ST2070-3.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Nde` → `https://pub.smpte.org/doc/st2070-3/20140513-pub/`
+#### SMPTE.ST2071-1.2016 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ndf` → `https://pub.smpte.org/doc/st2071-1/20160519-pub/`
+#### SMPTE.ST2071-2.2016 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ndg` → `https://pub.smpte.org/doc/st2071-2/20160519-pub/`
+#### SMPTE.ST2071-3.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ndh` → `https://pub.smpte.org/doc/st2071-3/20140513-pub/`
+#### SMPTE.RP2072.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYi` → `https://pub.smpte.org/doc/rp2072/20140114-pub/`
+#### SMPTE.RP2073-2.2022 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NbH2AU` → `https://pub.smpte.org/doc/rp2073-2/20220208-pub/`
+#### SMPTE.ST2073-1.2017 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ndi` → `https://pub.smpte.org/doc/st2073-1/20170405-pub/`
+#### SMPTE.ST2073-10.2017 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ndj` → `https://pub.smpte.org/doc/st2073-10/20170217-pub/`
+#### SMPTE.ST2073-3.2015 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ndk` → `https://pub.smpte.org/doc/st2073-3/20150102-pub/`
+#### SMPTE.ST2073-4.2015 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ndl` → `https://pub.smpte.org/doc/st2073-4/20150102-pub/`
+#### SMPTE.ST2073-5.2015 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ndm` → `https://pub.smpte.org/doc/st2073-5/20151023-pub/`
+#### SMPTE.ST2073-6.2015 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ndn` → `https://pub.smpte.org/doc/st2073-6/20151023-pub/`
+#### SMPTE.ST2073-7.2022 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ndo` → `https://pub.smpte.org/doc/st2073-7/20220208-pub/`
+#### SMPTE.EG2074.2013 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZ1` → `https://pub.smpte.org/doc/eg2074/20130510-pub/`
+#### SMPTE.ST2075.2013 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ndp` → `https://pub.smpte.org/doc/st2075/20130606-pub/`
+#### SMPTE.EG2076-2.2016 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXD` → `https://pub.smpte.org/doc/eg2076-2/20160824-pub/`
+#### SMPTE.RP2076-1.2016 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYj` → `https://pub.smpte.org/doc/rp2076-1/20160915-pub/`
+#### SMPTE.RP2077.2013 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NbI` → `https://pub.smpte.org/doc/rp2077/20131107-pub/`
+#### SMPTE.RP2079.2018 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYk` → `https://pub.smpte.org/doc/rp2079/20180822-pub/`
+#### SMPTE.RP2080-2.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kYl` → `https://pub.smpte.org/doc/rp2080-2/20141212-pub/`
+#### SMPTE.ST2080-1.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ndq` → `https://pub.smpte.org/doc/st2080-1/20141124-pub/`
+#### SMPTE.ST2080-3.2017 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ndr` → `https://pub.smpte.org/doc/st2080-3/20170413-pub/`
+#### SMPTE.OV2081-0.2018 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXT` → `https://pub.smpte.org/doc/ov2081-0/20180502-pub/`
+#### SMPTE.ST2081-10.2018 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kac` → `https://pub.smpte.org/doc/st2081-10/20180102-pub/`
+#### SMPTE.ST2081-11.2019 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kad` → `https://pub.smpte.org/doc/st2081-11/20190624-pub/`
+#### SMPTE.ST2081-12.2019 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kae` → `https://pub.smpte.org/doc/st2081-12/20190624-pub/`
+#### SMPTE.ST2081-30.2017 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ndt` → `https://pub.smpte.org/doc/st2081-30/20170809-pub/`
+#### SMPTE.OV2082-0.2018 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZV` → `https://pub.smpte.org/doc/ov2082-0/20180502-pub/`
+#### SMPTE.ST2082-10.2018 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kaf` → `https://pub.smpte.org/doc/st2082-10/20180102-pub/`
+#### SMPTE.ST2082-11.2019 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kag` → `https://pub.smpte.org/doc/st2082-11/20190624-pub/`
+#### SMPTE.ST2082-12.2019 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kah` → `https://pub.smpte.org/doc/st2082-12/20190624-pub/`
+#### SMPTE.ST2082-30.2017 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kai` → `https://pub.smpte.org/doc/st2082-30/20170809-pub/`
+#### SMPTE.ST2084.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kaj` → `https://pub.smpte.org/doc/st2084/20140816-pub/`
+#### SMPTE.ST2085.2015 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kak` → `https://pub.smpte.org/doc/st2085/20150326-pub/`
+#### SMPTE.ST2086.2018 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kal` → `https://pub.smpte.org/doc/st2086/20180409-pub/`
+#### SMPTE.ST2087.2016 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ndv` → `https://pub.smpte.org/doc/st2087/20160729-pub/`
+#### SMPTE.ST2088.2019 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ndw` → `https://pub.smpte.org/doc/st2088/20190709-pub/`
+#### SMPTE.RP2089.2014 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NbK` → `https://pub.smpte.org/doc/rp2089/20140916-pub/`
+#### SMPTE.RP2091-2.2018 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NbL` → `https://pub.smpte.org/doc/rp2091-2/20180412-pub/`
+#### SMPTE.ST2091-1.2017 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ndx` → `https://pub.smpte.org/doc/st2091-1/20170106-pub/`
+#### SMPTE.RP2092-1.2015Am1.2017 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NbM` → `https://pub.smpte.org/doc/rp2092-1/20170110-am1-pub/`
+#### SMPTE.RP2093.2020 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NbN` → `https://pub.smpte.org/doc/rp2093/20200409-pub/`
+#### SMPTE.OV2094-0.2017 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZW` → `https://pub.smpte.org/doc/ov2094-0/20170106-pub/`
+#### SMPTE.ST2094-1.2016 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ndy` → `https://pub.smpte.org/doc/st2094-1/20160518-pub/`
+#### SMPTE.ST2094-20.2016 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ne1` → `https://pub.smpte.org/doc/st2094-20/20160706-pub/`
+#### SMPTE.ST2094-30.2016 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ne2` → `https://pub.smpte.org/doc/st2094-30/20160706-pub/`
+#### SMPTE.ST2094-40.2020 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ne3` → `https://pub.smpte.org/doc/st2094-40/20200409-pub/`
+#### SMPTE.RP2096-1.2017 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NbO` → `https://pub.smpte.org/doc/rp2096-1/20170715-pub/`
+#### SMPTE.RP2096-2.2017 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NbP2AU` → `https://pub.smpte.org/doc/rp2096-2/20170712-pub/`
+#### SMPTE.EG2098-3.2020 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZ2` → `https://pub.smpte.org/doc/eg2098-3/20200706-pub/`
+#### SMPTE.ST2098-1.2018 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ne5` → `https://pub.smpte.org/doc/st2098-1/20180618-pub/`
+#### SMPTE.ST2098-2.2022 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ne6` → `https://pub.smpte.org/doc/st2098-2/20220525-pub/`
+#### SMPTE.ST2098-5.2018 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ne7` → `https://pub.smpte.org/doc/st2098-5/20180215-pub/`
+#### SMPTE.ST2100-1.2017 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kao` → `https://pub.smpte.org/doc/st2100-1/20170627-pub/`
+#### SMPTE.ST2101.2015 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007Ne9` → `https://pub.smpte.org/doc/st2101/20151106-pub/`
+#### SMPTE.ST2102.2017 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NeA` → `https://pub.smpte.org/doc/st2102/20171023-pub/`
+#### SMPTE.ST2106.2016 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NeB` → `https://pub.smpte.org/doc/st2106/20160715-pub/`
+#### SMPTE.ST2108-1.2018 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kap` → `https://pub.smpte.org/doc/st2108-1/20180830-pub/`
+#### SMPTE.ST2108-2.2019 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NeC` → `https://pub.smpte.org/doc/st2108-2/20190528-pub/`
+#### SMPTE.ST2109.2019 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NeD` → `https://pub.smpte.org/doc/st2109/20190709-pub/`
+#### SMPTE.OV2110-0.2018 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kXU` → `https://pub.smpte.org/doc/ov2110-0/20181204-pub/`
+#### SMPTE.RP2110-23.2019 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NbS` → `https://pub.smpte.org/doc/rp2110-23/20191213-pub/`
+#### SMPTE.ST2110-10.2022 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kar` → `https://pub.smpte.org/doc/st2110-10/20220328-pub/`
+#### SMPTE.ST2110-20.2022 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kas` → `https://pub.smpte.org/doc/st2110-20/20221214-pub/`
+#### SMPTE.ST2110-21.2022 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kat` → `https://pub.smpte.org/doc/st2110-21/20221214-pub/`
+#### SMPTE.ST2110-22.2022 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kau` → `https://pub.smpte.org/doc/st2110-22/20220331-pub/`
+#### SMPTE.ST2110-31.2022 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kav` → `https://pub.smpte.org/doc/st2110-31/20220624-pub/`
+#### SMPTE.EG2112-2.2020 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZ6` → `https://pub.smpte.org/doc/eg2112-2/20200424-pub/`
+#### SMPTE.OV2112-0.2018 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NZX` → `https://pub.smpte.org/doc/ov2112-0/20180925-pub/`
+#### SMPTE.RP2112-1.2020 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NbU` → `https://pub.smpte.org/doc/rp2112-1/20200909-pub/`
+#### SMPTE.RP2112-11.2020 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NbV` → `https://pub.smpte.org/doc/rp2112-11/20200506-pub/`
+#### SMPTE.RP2112-21.2020 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NbW` → `https://pub.smpte.org/doc/rp2112-21/20200506-pub/`
+#### SMPTE.ST2112-10.2020 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NeF` → `https://pub.smpte.org/doc/st2112-10/20200726-pub/`
+#### SMPTE.ST2112-20.2020 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NeG` → `https://pub.smpte.org/doc/st2112-20/20200302-pub/`
+#### SMPTE.ST2113.2018 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NeH` → `https://pub.smpte.org/doc/st2113/20181210-pub/`
+#### SMPTE.ST2114.2017 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NeI` → `https://pub.smpte.org/doc/st2114/20170721-pub/`
+#### SMPTE.ST2115.2020 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NeJ` → `https://pub.smpte.org/doc/st2115/20200601-pub/`
+#### SMPTE.ST2116.2019 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kay` → `https://pub.smpte.org/doc/st2116/20191018-pub/`
+#### SMPTE.ST2122.2020 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NeL` → `https://pub.smpte.org/doc/st2122/20200608-pub/`
+#### SMPTE.ST2123.2025-03 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000007NeM2AU` → `https://pub.smpte.org/doc/st2123/20250313-pub/`
+#### SMPTE.ST2124.2020 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kb0` → `https://pub.smpte.org/doc/st2124/20200929-pub/`
+#### SMPTE.ST2127-1.2022 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kb1` → `https://pub.smpte.org/doc/st2127-1/20220309-pub/`
+#### SMPTE.ST2127-10.2022 (updated fields: resolvedHref)
+  - resolvedHref: `https://my.smpte.org/s/product-details?id=a1BVR0000008kb2` → `https://pub.smpte.org/doc/st2127-10/20220309-pub/`
+
+### ⚠️ Skipped 457 duplicate(s)
+- SMPTE.RDD9.2006
+- SMPTE.RDD9.2009
+- SMPTE.ST11.1995
+- SMPTE.ST12-1.2008
+- SMPTE.ST12-1.2008Am1.2013
+- SMPTE.ST12-2.2008
+- SMPTE.ST12-2.2008Am1.2013
+- SMPTE.EG13.1986
+- SMPTE.EG16.2002
+- SMPTE.EG16.2014
+- SMPTE.RDD18.2010
+- SMPTE.RDD18.2012
+- SMPTE.RP21.2004
+- SMPTE.RP25.1995
+- SMPTE.RDD26.2014
+- SMPTE.RP27-1.1989
+- SMPTE.RP27-2.1989
+- SMPTE.RP27-3.1989
+- SMPTE.RP27-4.1994
+- SMPTE.RP27-5.1989
+- SMPTE.RDD29.2014
+- SMPTE.RDD29.2018
+- SMPTE.RDD32.2014
+- SMPTE.RP34.1997
+- SMPTE.EG35.1999
+- SMPTE.RDD36.2015
+- SMPTE.RP38.1989
+- SMPTE.EG40.2002
+- SMPTE.EG40.2012
+- SMPTE.EG42.2004
+- SMPTE.RDD44.2017
+- SMPTE.RDD44.2017
+- SMPTE.RDD45.2017
+- SMPTE.RDD48.2018
+- SMPTE.RDD48.2018Am1.2022
+- SMPTE.ST55.2000
+- SMPTE.ST55.2010
+- SMPTE.RDD56.2021
+- SMPTE.RDD58.2021
+- SMPTE.RDD60.2025-05
+- SMPTE.RDD61.2025-05
+- SMPTE.RP82.2005
+- SMPTE.RP86.1990
+- SMPTE.RP91.2002
+- SMPTE.RP103.1994
+- SMPTE.RP107.1993
+- SMPTE.ST119.2004
+- SMPTE.ST125.1995
+- SMPTE.RP141.2005
+- SMPTE.RP155.2004
+- SMPTE.RP157.1995
+- SMPTE.RP163.1992
+- SMPTE.ST165.1994
+- SMPTE.RP168.2009
+- SMPTE.RP170.1993
+- SMPTE.RP171.1993
+- SMPTE.RP172.1993
+- SMPTE.RP184.2004
+- SMPTE.ST185.2003
+- SMPTE.RP191.1996
+- SMPTE.RP192.2003
+- SMPTE.RP200.2002
+- SMPTE.ST203.2003
+- SMPTE.RP205.2009
+- SMPTE.RP210.2007
+- SMPTE.RP210.2012
+- SMPTE.RP215.2001
+- SMPTE.ST217.1998
+- SMPTE.ST217.2015
+- SMPTE.RP224.2011
+- SMPTE.RP224.2012
+- SMPTE.ST241.1995
+- SMPTE.ST266.2002
+- SMPTE.RP268-3.2023-08
+- SMPTE.ST268-2.2018
+- SMPTE.ST268-2.2018Am1.2022
+- SMPTE.ST268-2.2023-06
+- SMPTE.ST268.2003
+- SMPTE.ST268.2003Am1.2012
+- SMPTE.OV292-0.2011
+- SMPTE.ST292-1.2011
+- SMPTE.ST292-1.2012
+- SMPTE.ST296.2001
+- SMPTE.ST296.2011
+- SMPTE.ST297.2006
+- SMPTE.ST309.1999
+- SMPTE.ST318.1999
+- SMPTE.ST330.2004
+- SMPTE.ST330.2011
+- SMPTE.ST331.2004
+- SMPTE.ST331.2011
+- SMPTE.ST331.2011Am1.2023
+- SMPTE.ST334-1.2007
+- SMPTE.ST334-2.2007
+- SMPTE.ST334-2.2015
+- SMPTE.ST335.2001
+- SMPTE.ST335.2012
+- SMPTE.ST336.2007
+- SMPTE.ST337.2008
+- SMPTE.ST338.2010
+- SMPTE.ST338.2015
+- SMPTE.ST338.2016
+- SMPTE.ST339.2008
+- SMPTE.ST340.2008
+- SMPTE.ST352.2011
+- SMPTE.ST352.2011
+- SMPTE.ST370.2006
+- SMPTE.ST370.2006Am1.2009
+- SMPTE.ST372.2011
+- SMPTE.ST377-1.2009
+- SMPTE.ST377-1.2011
+- SMPTE.ST377-1.2011Am1.2012
+- SMPTE.ST377-1.2011Am2.2012
+- SMPTE.ST377-4.2012
+- SMPTE.ST377-41.2021
+- SMPTE.ST377-41.2023-04
+- SMPTE.ST377-42.2021
+- SMPTE.ST379.2004
+- SMPTE.ST381-2.2011
+- SMPTE.ST381-3.2013
+- SMPTE.ST381-3.2017
+- SMPTE.ST381-3.2025-01
+- SMPTE.ST381-5.2020
+- SMPTE.ST381-5.2023-02
+- SMPTE.ST382.2007
+- SMPTE.ST382.2007Am1.2012
+- SMPTE.ST382.2007Am2.2013
+- SMPTE.ST382.2022
+- SMPTE.ST385.2004
+- SMPTE.ST385.2012
+- SMPTE.ST385.2012Am1.2022
+- SMPTE.ST392.2004
+- SMPTE.ST395.2003
+- SMPTE.ST400.2004
+- SMPTE.ST421.2006
+- SMPTE.ST421.2006Am1.2007
+- SMPTE.ST421.2006Am2.2011
+- SMPTE.ST422.2006
+- SMPTE.ST422.2013
+- SMPTE.ST422.2013Am1.2014
+- SMPTE.ST422.2014
+- SMPTE.ST422.2019
+- SMPTE.ST424.2006
+- SMPTE.OV425-0.2011
+- SMPTE.OV425-0.2012
+- SMPTE.ST425-1.2011
+- SMPTE.ST425-1.2011Am1.2014
+- SMPTE.ST425-1.2014
+- SMPTE.ST425-1.2017
+- SMPTE.ST425-3.2014
+- SMPTE.ST425-3.2014Am1.2015
+- SMPTE.ST425-3.2015
+- SMPTE.ST425-5.2014
+- SMPTE.ST425-5.2014Am1.2015
+- SMPTE.ST425-5.2015
+- SMPTE.ST428-1.2006
+- SMPTE.ST428-11.2009
+- SMPTE.ST428-7.2007
+- SMPTE.ST428-7.2010
+- SMPTE.ST429-10.2008
+- SMPTE.ST429-14.2014
+- SMPTE.ST429-14.2023-09
+- SMPTE.ST429-16.2014
+- SMPTE.ST429-18.2019
+- SMPTE.ST429-18.2023-09
+- SMPTE.ST429-19.2019
+- SMPTE.ST429-2.2009
+- SMPTE.ST429-2.2011
+- SMPTE.ST429-2.2011Am1.2013
+- SMPTE.ST429-2.2013
+- SMPTE.ST429-2.2013Am1.2018
+- SMPTE.ST429-2.2019
+- SMPTE.ST429-2.2020
+- SMPTE.ST429-2.2023-09
+- SMPTE.ST429-20.2022
+- SMPTE.ST429-3.2007
+- SMPTE.ST429-3.2023-09
+- SMPTE.ST429-4.2006
+- SMPTE.ST429-4.2020
+- SMPTE.ST429-4.2023-05
+- SMPTE.ST429-5.2009
+- SMPTE.ST429-5.2017
+- SMPTE.ST429-5.2023-09
+- SMPTE.ST429-6.2006
+- SMPTE.ST429-6.2006Am1.2017
+- SMPTE.ST429-6.2023-05
+- SMPTE.ST429-9.2007
+- SMPTE.ST429-9.2007Am1.2010
+- SMPTE.ST430-1.2006
+- SMPTE.ST430-1.2006Am1.2009
+- SMPTE.ST430-1.2017
+- SMPTE.ST430-1.2017Am1.2019
+- SMPTE.ST430-12.2014
+- SMPTE.ST430-12.2014Am1.2019
+- SMPTE.ST430-14.2015
+- SMPTE.ST430-14.2021
+- SMPTE.ST430-17.2021
+- SMPTE.ST430-2.2006
+- SMPTE.ST430-3.2008
+- SMPTE.ST430-3.2008Am2.2012
+- SMPTE.ST430-3.2012
+- SMPTE.ST430-4.2008
+- SMPTE.ST430-5.2008
+- SMPTE.ST430-5.2011
+- SMPTE.ST430-5.2023-09
+- SMPTE.ST430-7.2008
+- SMPTE.ST430-9.2008
+- SMPTE.ST433.2008
+- SMPTE.ST434.2006
+- SMPTE.ST434.2015
+- SMPTE.ST435-1.2009
+- SMPTE.ST435-2.2008
+- SMPTE.ST435-3.2009
+- SMPTE.ST2001-1.2013
+- SMPTE.ST2016-2.2007
+- SMPTE.ST2016-4.2007
+- SMPTE.RP2019-2.2008
+- SMPTE.RP2019-2.2014
+- SMPTE.ST2019-1.2008
+- SMPTE.ST2019-1.2014
+- SMPTE.ST2019-1.2016
+- SMPTE.ST2019-1.2016Am1.2022
+- SMPTE.ST2019-4.2009
+- SMPTE.ST2019-4.2014
+- SMPTE.ST2019-4.2016
+- SMPTE.ST2019-4.2016Am1.2024
+- SMPTE.ST2020-1.2008
+- SMPTE.ST2020-2.2008
+- SMPTE.ST2020-3.2008
+- SMPTE.EG2021-3.2009
+- SMPTE.EG2021-3.2012
+- SMPTE.EG2021-3.2013
+- SMPTE.EG2021-3.2015
+- SMPTE.EG2021-3.2017
+- SMPTE.EG2021-3.2019
+- SMPTE.EG2021-4.2009
+- SMPTE.EG2021-4.2012
+- SMPTE.EG2021-4.2013
+- SMPTE.EG2021-4.2015
+- SMPTE.OV2021-0.2009
+- SMPTE.OV2021-0.2012
+- SMPTE.OV2021-0.2013
+- SMPTE.OV2021-0.2017
+- SMPTE.OV2021-0.2019
+- SMPTE.RP2021-1.2019
+- SMPTE.RP2021-9.2009
+- SMPTE.RP2021-9.2012
+- SMPTE.RP2021-9.2015
+- SMPTE.ST2021-1.2009
+- SMPTE.ST2021-1.2012
+- SMPTE.ST2021-1.2015
+- SMPTE.ST2021-2.2009
+- SMPTE.ST2021-2.2012
+- SMPTE.ST2021-2.2015
+- SMPTE.ST2021-2.2017
+- SMPTE.ST2021-4.2018
+- SMPTE.ST2021-4.2020
+- SMPTE.ST2021-4.2022
+- SMPTE.ST2021-4.2023-09
+- SMPTE.ST2021.2008
+- SMPTE.ST2022-3.2010
+- SMPTE.ST2022-5.2012
+- SMPTE.ST2022-7.2013
+- SMPTE.ST2022-7.2018
+- SMPTE.RP2027.2007
+- SMPTE.ST2029.2009
+- SMPTE.ST2029.2022
+- SMPTE.ST2031.2007
+- SMPTE.EG2032-4.2014
+- SMPTE.ST2034-1.2014
+- SMPTE.ST2035.2009
+- SMPTE.ST2035.2009Am1.2012
+- SMPTE.OV2036-0.2012
+- SMPTE.OV2036-0.2013
+- SMPTE.ST2036-1.2009
+- SMPTE.ST2036-1.2013
+- SMPTE.ST2036-3.2010
+- SMPTE.ST2036-3.2012
+- SMPTE.ST2036-3.2012Am1.2015
+- SMPTE.ST2036-3.2015
+- SMPTE.ST2036-4.2015
+- SMPTE.ST2038.2008
+- SMPTE.ST2038.2020
+- SMPTE.RP2042-3.2010
+- SMPTE.ST2042-1.2009
+- SMPTE.ST2042-1.2012
+- SMPTE.ST2042-1.2017
+- SMPTE.ST2042-2.2009
+- SMPTE.ST2042-4.2016
+- SMPTE.RP2047-1.2009
+- SMPTE.RP2047-1.2022
+- SMPTE.RP2047-3.2011
+- SMPTE.RP2047-3.2016
+- SMPTE.RP2047-3.2022
+- SMPTE.RP2047-5.2017
+- SMPTE.RP2047-5.2017Am1.2018
+- SMPTE.OV2048-0.2011
+- SMPTE.ST2048-1.2011
+- SMPTE.ST2048-1.2011Am1.2016
+- SMPTE.ST2048-1.2024-08
+- SMPTE.ST2048-2.2011
+- SMPTE.ST2048-2.2024-08
+- SMPTE.ST2048-3.2012
+- SMPTE.ST2048-3.2024-08
+- SMPTE.ST2051.2010
+- SMPTE.ST2051.2010Am1.2013
+- SMPTE.OV2052-0.2010
+- SMPTE.OV2052-0.2014
+- SMPTE.RP2052-10.2010
+- SMPTE.RP2052-10.2010Am1.2012
+- SMPTE.RP2052-10.2012
+- SMPTE.ST2052-1.2010
+- SMPTE.RP2057.2011
+- SMPTE.EG2059-10.2016
+- SMPTE.EG2059-10.2022
+- SMPTE.RP2059-15.2022
+- SMPTE.ST2059-1.2015
+- SMPTE.ST2059-1.2020
+- SMPTE.ST2059-2.2015
+- SMPTE.ST2059-2.2020
+- SMPTE.ST2065-1.2012
+- SMPTE.ST2065-1.2020
+- SMPTE.ST2065-2.2012
+- SMPTE.ST2065-3.2012
+- SMPTE.ST2065-4.2013
+- SMPTE.ST2065-4.2022
+- SMPTE.ST2065-5.2016
+- SMPTE.ST2065-5.2023-02
+- SMPTE.OV2067-0.2017
+- SMPTE.OV2067-0.2018
+- SMPTE.OV2067-0.2021
+- SMPTE.ST2067-102.2014
+- SMPTE.ST2067-102.2017
+- SMPTE.ST2067-103.2014
+- SMPTE.ST2067-103.2020
+- SMPTE.ST2067-2.2013
+- SMPTE.ST2067-2.2016
+- SMPTE.ST2067-20.2013
+- SMPTE.ST2067-201.2019
+- SMPTE.ST2067-201.2020
+- SMPTE.ST2067-202.2022
+- SMPTE.ST2067-203.2023-09
+- SMPTE.ST2067-21.2014
+- SMPTE.ST2067-21.2016
+- SMPTE.ST2067-21.2020
+- SMPTE.ST2067-21.2020Am1.2020
+- SMPTE.ST2067-21.2022
+- SMPTE.ST2067-3.2013
+- SMPTE.ST2067-3.2016
+- SMPTE.ST2067-40.2016
+- SMPTE.ST2067-40.2016Am1.2017
+- SMPTE.ST2067-5.2013
+- SMPTE.ST2067-5.2013Am1.2016
+- SMPTE.ST2067-60.2022
+- SMPTE.ST2067-70.2024-08
+- SMPTE.ST2067-71.2024-07
+- SMPTE.ST2071-1.2012
+- SMPTE.ST2071-1.2014
+- SMPTE.ST2071-2.2013
+- SMPTE.ST2071-2.2014
+- SMPTE.OV2073-0.2016
+- SMPTE.OV2073-0.2018
+- SMPTE.OV2073-0.2023-02
+- SMPTE.RP2073-2.2014
+- SMPTE.RP2073-2.2015
+- SMPTE.RP2073-2.2017
+- SMPTE.ST2073-1.2014
+- SMPTE.RP2079.2013
+- SMPTE.RP2079.2017
+- SMPTE.OV2081-0.2015
+- SMPTE.OV2081-0.2016
+- SMPTE.ST2081-1.2015
+- SMPTE.ST2081-1.2015Am1.2016
+- SMPTE.ST2081-1.2023-10
+- SMPTE.ST2081-10.2015
+- SMPTE.ST2081-11.2016
+- SMPTE.ST2081-12.2016
+- SMPTE.OV2082-0.2015
+- SMPTE.OV2082-0.2016
+- SMPTE.ST2082-1.2015
+- SMPTE.ST2082-1.2015Am1.2016
+- SMPTE.ST2082-1.2023-11
+- SMPTE.ST2082-10.2015
+- SMPTE.ST2082-11.2016
+- SMPTE.ST2082-12.2016
+- SMPTE.ST2086.2014
+- SMPTE.RP2092-1.2015
+- SMPTE.ST2094-10.2016
+- SMPTE.ST2094-10.2020
+- SMPTE.ST2094-2.2017
+- SMPTE.ST2094-2.2023-04
+- SMPTE.ST2094-40.2016
+- SMPTE.ST2095-1.2015
+- SMPTE.ST2095-1.2023-09
+- SMPTE.ST2098-2.2018
+- SMPTE.ST2098-2.2019
+- SMPTE.RP2110-24.2022
+- SMPTE.RP2110-25.2023-04
+- SMPTE.ST2110-10.2017
+- SMPTE.ST2110-20.2017
+- SMPTE.ST2110-21.2017
+- SMPTE.ST2110-22.2019
+- SMPTE.ST2110-30.2017
+- SMPTE.ST2110-30.2025-10
+- SMPTE.ST2110-31.2018
+- SMPTE.ST2110-40.2018
+- SMPTE.ST2110-40.2023-12
+- SMPTE.ST2110-41.2024-03
+- SMPTE.ST2110-43.2021
+- SMPTE.EG2111-1.2020
+- SMPTE.EG2111-2.2018
+- SMPTE.EG2111-3.2020
+- SMPTE.EG2112-2.2018
+- SMPTE.RP2112-1.2018
+- SMPTE.RP2112-11.2018
+- SMPTE.RP2112-21.2018
+- SMPTE.ST2112-10.2018
+- SMPTE.ST2112-20.2018
+- SMPTE.ST2115.2019
+- SMPTE.ST2117-1.2020
+- SMPTE.ST2117-1.2022
+- SMPTE.ST2117-10.2024-07
+- SMPTE.ST2123.2020
+- SMPTE.ST2123.2021
+- SMPTE.ST2123.2022
+- SMPTE.ST2123.2024-03
+- SMPTE.ST2126.2025-08
+- SMPTE.ST2127-2.2024-03
+- SMPTE.RP2129.2023-08
+- SMPTE.ST2134.2025-01
+- SMPTE.AG01
+- SMPTE.AG02
+- SMPTE.AG03
+- SMPTE.AG04
+- SMPTE.AG05
+- SMPTE.AG06
+- SMPTE.AG07
+- SMPTE.AG08
+- SMPTE.AG10
+- SMPTE.AG10B
+- SMPTE.AG12
+- SMPTE.AG14
+- SMPTE.AG15
+- SMPTE.AG16
+- SMPTE.AG18
+- SMPTE.AG19
+- SMPTE.AG20
+- SMPTE.AG21
+- SMPTE.AG22
+- SMPTE.AG24
+- SMPTE.AG25
+- SMPTE.AG26
+- SMPTE.AG28
+- SMPTE.AG29
+- SMPTE.AG30
+- SMPTE.AG31
+- SMPTE.OM.Std
+
+### 🧠 MRI skipped write (beforeExit) — only generatedAt would have changed
