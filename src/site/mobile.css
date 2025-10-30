@@ -4,11 +4,16 @@ html {
 
 @media print{@page {size: landscape}}
 
+/* Anchor targets: no negative offsets; use scroll-margin via CSS var */
 a.anchor {
     display: block;
-    position: relative;
-    top: -80px;
+    position: static;
+    height: 0;
     visibility: hidden;
+}
+/* When navigating to a card via #hash, keep it below sticky headers */
+.card-reg {
+    scroll-margin-top: var(--sticky-offset, 10px);
 }
 
 .dataTables_info {

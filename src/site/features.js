@@ -451,10 +451,10 @@ $('#toTopBtn').fadeOut();
 }
 });
 
-$('#toTopBtn').click(function() {
-$("html, body").animate({
-scrollTop: 0
-}, 1000);
-return false;
+// Native smooth scroll (starts immediately, avoids jQuery animation queue)
+$(document).on('click', '#toTopBtn', function(e){
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  return false;
 });
 });

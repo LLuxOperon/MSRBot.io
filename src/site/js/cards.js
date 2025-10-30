@@ -114,6 +114,99 @@
 
   // --- State
   const state = { q:'', f:{}, sort:'year:desc', page:1, size:40 };
+  // Compute combined sticky offset (navbar + cards-topbar) and expose as CSS var
+  function computeStickyOffset(){
+    const sels = ['.navbar.sticky-top', '#cards-topbar'];
+    let h = 0;
+    for (const sel of sels) {
+      const el = document.querySelector(sel);
+      if (!el) continue;
+      const r = el.getBoundingClientRect();
+      const cs = getComputedStyle(el);
+      const topPx = parseFloat(cs.top) || 0;
+      const isAffixed = (cs.position === 'sticky' || cs.position === 'fixed');
+      const isAtTop = isAffixed && (r.top <= topPx + 2); // element is pinned at its top offset
+      if (isAtTop) h += r.height; // only the height blocks content; top offset just positions it
+    }
+    h = Math.max(0, Math.floor(h + 8)); // + small padding
+    document.documentElement.style.setProperty('--sticky-offset', h + 'px');
+  }
+  computeStickyOffset();
+  window.addEventListener('resize', computeStickyOffset);
+  window.addEventListener('scroll', computeStickyOffset, { passive: true });
+  let _initialDeepLinked = false; // prevents double-render overriding initial hash navigation
+
+  // --- URL sync (page,size) ---
+  function initPageSizeFromURL(){
+    try {
+      const sp = new URLSearchParams(window.location.search);
+      const p = parseInt(sp.get('page'), 10);
+      const s = parseInt(sp.get('size'), 10);
+      if (Number.isFinite(p) && p >= 1) state.page = p;
+      if (Number.isFinite(s) && s > 0) state.size = s;
+    } catch {}
+  }
+  function updateURLPageSize(push){
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.set('page', String(state.page));
+      url.searchParams.set('size', String(state.size));
+      if (push) window.history.pushState({}, '', url);
+      else window.history.replaceState({}, '', url);
+    } catch {}
+  }
+
+  // --- URL sync (filters) ---
+  function initFiltersFromURL(){
+    try {
+      const sp = new URLSearchParams(window.location.search);
+      const newF = {};
+      sp.forEach((val, key) => {
+        if (!key.startsWith('f.')) return;
+        const facet = key.slice(2);
+        const arr = String(val).split(',').map(s => s.trim()).filter(Boolean);
+        if (arr.length) newF[facet] = arr;
+      });
+      state.f = newF;
+      syncFacetCheckboxesFromState();
+    } catch {}
+  }
+  function updateURLAll(push){
+    try {
+      const url = new URL(window.location.href);
+      // page + size
+      url.searchParams.set('page', String(state.page));
+      url.searchParams.set('size', String(state.size));
+      // sync search query
+      if (state.q && String(state.q).trim() !== '') url.searchParams.set('q', String(state.q).trim());
+      else url.searchParams.delete('q');
+      // wipe old f.* params
+      const toDelete = [];
+      url.searchParams.forEach((_, key) => { if (key.startsWith('f.')) toDelete.push(key); });
+      toDelete.forEach(k => url.searchParams.delete(k));
+      // add current filters
+      Object.entries(state.f).forEach(([k, arr]) => {
+        if (Array.isArray(arr) && arr.length) url.searchParams.set(`f.${k}`, arr.map(String).join(','));
+      });
+      if (push) window.history.pushState({}, '', url);
+      else window.history.replaceState({}, '', url);
+    } catch {}
+  }
+  // --- End URL sync (filters) ---
+  // --- URL sync (search) ---
+  function initSearchFromURL(){
+    try {
+      const sp = new URLSearchParams(window.location.search);
+      const q = sp.get('q');
+      if (typeof q === 'string') {
+        state.q = q;
+        const qInput = document.querySelector('#q');
+        if (qInput) qInput.value = q;
+      }
+    } catch {}
+  }
+  // --- End URL sync (search) ---
+  // --- End URL sync ---
 
   // --- Helpers
   const facetLabel = (k, v) => {
@@ -140,6 +233,66 @@
   }
   // --- End central sync ---
 
+  // --- Deep-link to a card by #id (supports pagination + filters reset if needed) ---
+  function findIndexById(rows, id){
+    if (!id) return -1;
+    return rows.findIndex(d => String(d.id) === String(id));
+  }
+  function highlightAndScrollTo(id){
+    const anchor = document.getElementById(id);
+    if (!anchor) return;
+    // Prefer the card element for visual highlight
+    const card = anchor.closest('.card-reg') || anchor;
+
+    // Use native scrollIntoView; offset handled by CSS scroll-margin-top on .card-reg
+    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // Transient highlight for orientation
+    const prevOutline = card.style.outline;
+    const prevShadow = card.style.boxShadow;
+    card.style.outline = '2px solid #1398b0';
+    card.style.boxShadow = '0 0 0 4px rgba(19,152,176,0.15)';
+    setTimeout(()=>{
+      card.style.outline = prevOutline || '';
+      card.style.boxShadow = prevShadow || '';
+    }, 1600);
+  }
+  function navigateToCardById(id){
+    if (!id) return;
+    // try within current filtered rows first
+    let rows = applyFilters();
+    let pos = findIndexById(rows, id);
+    if (pos === -1) {
+      // not present under current filters; clear filters/search and try full index
+      state.f = {};
+      state.q = '';
+      const qInput = document.querySelector('#q');
+      if (qInput) qInput.value = '';
+      syncFacetCheckboxesFromState();
+      rows = applyFilters(); // reuses current sort with empty filters
+      pos = findIndexById(rows, id);
+      if (pos === -1) return; // not found at all
+    }
+    const targetPage = Math.floor(pos / state.size) + 1;
+    state.page = targetPage;
+    updateURLAll(true);
+    render();
+    // Defer scroll until after render paints (next animation frame ensures layout is flushed)
+    requestAnimationFrame(() => requestAnimationFrame(() => highlightAndScrollTo(id)));
+  }
+  // Handle initial hash and changes
+  function initHashDeepLink(){
+    let did = false;
+    const h = (window.location.hash || '').replace(/^#/, '').trim();
+    if (h) { navigateToCardById(h); did = true; }
+    window.addEventListener('hashchange', () => {
+      const hh = (window.location.hash || '').replace(/^#/, '').trim();
+      if (hh) navigateToCardById(hh);
+    });
+    return did;
+  }
+  // --- End deep-link helpers ---
+
   function renderActiveFilters(){
     const root = $('#activeFilters'); if (!root) return;
     const chips = [];
@@ -159,6 +312,7 @@
       const v = p.getAttribute('data-v');
       state.f[k] = (state.f[k] || []).filter(x => x !== v);
       state.page = 1;
+      updateURLAll(true);
       syncFacetCheckboxesFromState();
       render();
     }));
@@ -170,6 +324,7 @@
       if (qInput) qInput.value = '';
       syncFacetCheckboxesFromState();
       state.page = 1;
+      updateURLAll(true);
       render();
     });
   }
@@ -295,7 +450,7 @@
       state.f[k] = state.f[k] || [];
       if (cb.checked) { if (!state.f[k].includes(v)) state.f[k].push(v); }
       else { state.f[k] = state.f[k].filter(x=>x!==v); }
-      state.page = 1; render();
+      state.page = 1; updateURLAll(true); render();
       // keep the mirrored checkbox in sync
       const mirrorSel = `input[type=checkbox][name="${k}"][value="${CSS.escape(v)}"]`;
       document.querySelectorAll(mirrorSel).forEach(el => { if (el !== cb) el.checked = cb.checked; });
@@ -430,6 +585,7 @@
     if (!Number.isFinite(n) || n < 1) return;
     if (n === state.page) return;
     state.page = n;
+    updateURLAll(true);
     render();
   });
 
@@ -443,6 +599,7 @@
     if (!Number.isFinite(n) || n < 1) return;
     if (n === state.page) return;
     state.page = n;
+    updateURLAll(true);
     render();
   });
 
@@ -452,58 +609,92 @@
     if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.isComposing) return;
     if (e.key === 'ArrowLeft') {
       state.page = Math.max(1, state.page - 1);
+      updateURLAll(true);
       render();
     } else if (e.key === 'ArrowRight') {
       state.page = state.page + 1; // clamped in render()
+      updateURLAll(true);
       render();
     } else if (e.key === 'Home') {
       state.page = 1;
+      updateURLAll(true);
       render();
     } else if (e.key === 'End') {
       state.page = 1e9; // effectively "last", clamped in render()
+      updateURLAll(true);
       render();
     }
   });
 
-  // Auto-hide bottom pager when the top pager is visible in the viewport
+  // Auto-hide bottom pager when the top pager is actually visible (not covered by sticky headers)
   (function(){
     const topPagerEl = document.querySelector('#pager');
     const bottomWrap = document.querySelector('#cards-main .sticky-bottom') || document.querySelector('.sticky-bottom');
     if (!bottomWrap) return; // nothing to control
 
+    const headerSelectors = ['.navbar.sticky-top', '#cards-topbar'];
+    function headerOffsetPx(){
+      return headerSelectors.reduce((sum, sel) => {
+        const el = document.querySelector(sel);
+        if (!el) return sum;
+        const r = el.getBoundingClientRect();
+        const cs = getComputedStyle(el);
+        const topPx = parseFloat(cs.top) || 0;
+        const isAffixed = (cs.position === 'sticky' || cs.position === 'fixed');
+        const isAtTop = isAffixed && (r.top <= topPx + 2);
+        return sum + (isAtTop ? r.height : 0);
+      }, 0);
+    }
+
     function setHidden(hide){
-      // use display to avoid occupying space when hidden
       bottomWrap.style.display = hide ? 'none' : '';
     }
 
-    function isTopVisible(){
-      if (!topPagerEl) return false; // if no top pager, always show bottom
+    function fallbackToggle(){
+      if (!topPagerEl) { setHidden(false); return; }
       const r = topPagerEl.getBoundingClientRect();
-      return r.top < window.innerHeight && r.bottom > 0;
+      const offset = headerOffsetPx();
+      const visible = (r.bottom > offset) && (r.top < window.innerHeight);
+      setHidden(!!visible);
     }
 
-    function toggleBottomPager(){
-      setHidden(isTopVisible());
-    }
-
-    // Prefer IntersectionObserver for accuracy; fall back to scroll/resize
-    if (topPagerEl && 'IntersectionObserver' in window) {
-      const io = new IntersectionObserver((entries)=>{
+    let io = null;
+    function initObserver(){
+      if (!topPagerEl || !('IntersectionObserver' in window)) return;
+      const offset = headerOffsetPx();
+      if (io) { io.disconnect(); io = null; }
+      io = new IntersectionObserver((entries) => {
         for (const e of entries) setHidden(e.isIntersecting);
-      }, { root: null, threshold: 0 });
+      }, { root: null, threshold: 0, rootMargin: `-${Math.max(0, Math.floor(offset))}px 0px 0px 0px` });
       io.observe(topPagerEl);
-      // initial state
-      setHidden(isTopVisible());
+      // initial state using precise geometry
+      fallbackToggle();
+    }
+
+    // init + listeners
+    initObserver();
+    if (!io) {
+      window.addEventListener('scroll', fallbackToggle, { passive: true });
+      window.addEventListener('resize', fallbackToggle);
+      fallbackToggle();
     } else {
-      window.addEventListener('scroll', toggleBottomPager, { passive: true });
-      window.addEventListener('resize', toggleBottomPager);
-      // initial state
-      toggleBottomPager();
+      window.addEventListener('resize', initObserver);
     }
   })();
 
   // Wire basics
-  const q = $('#q'); if (q) q.addEventListener('input', e => { state.q = e.target.value; state.page=1; render(); });
+  const q = $('#q');
+  if (q) {
+    const onSearchInput = (e) => {
+      state.q = e.target.value;
+      state.page = 1;
+      updateURLAll(false); // replaceState while typing/clearing
+      render();
+    };
+    q.addEventListener('input', onSearchInput);
+    q.addEventListener('search', onSearchInput); // Safari/Chrome clear (Ⓧ) emits 'search'
+    q.addEventListener('change', onSearchInput); // commit on blur/enter
+  }
   const sort = $('#sort'); if (sort) sort.addEventListener('change', e => { state.sort = e.target.value; state.page=1; render(); });
 
   // Page size selector
@@ -513,6 +704,7 @@
       const n = parseInt(e.target.value, 10);
       state.size = Number.isFinite(n) && n > 0 ? n : 40;
       state.page = 1;
+      updateURLAll(true);
       render();
     });
   }
@@ -523,11 +715,13 @@
 
   if (prevBtn) prevBtn.addEventListener('click', () => {
     state.page = Math.max(1, state.page - 1);
+    updateURLAll(true);
     render();
   });
   if (nextBtn) nextBtn.addEventListener('click', () => {
     // totalPages will be clamped in render(), so a quick render is fine
     state.page = state.page + 1;
+    updateURLAll(true);
     render();
   });
 
@@ -536,14 +730,34 @@
   const nextBtnBottom = $('#nextPageBottom');
   if (prevBtnBottom) prevBtnBottom.addEventListener('click', () => {
     state.page = Math.max(1, state.page - 1);
+    updateURLAll(true);
     render();
   });
   if (nextBtnBottom) nextBtnBottom.addEventListener('click', () => {
     state.page = state.page + 1; // clamp in render()
+    updateURLAll(true);
+    render();
+  });
+
+  // Initialize page/size from URL, then normalize URL once
+  initPageSizeFromURL();
+  initFiltersFromURL();
+  initSearchFromURL();
+  updateURLAll(false);
+  // Initialize deep-linking via #id (returns true if it rendered due to hash)
+  _initialDeepLinked = initHashDeepLink();
+
+  // Back/forward navigation sync
+  window.addEventListener('popstate', () => {
+    initPageSizeFromURL();
+    initFiltersFromURL();
+    initSearchFromURL();
     render();
   });
 
   // Kickoff
   renderFacets();
-  render();
+  if (!_initialDeepLinked) {
+    render();
+  }
 })();

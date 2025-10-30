@@ -43,7 +43,6 @@
           <div id="pageMeta" class="small text-muted">Page 1 of 1</div>
         </nav>
       </div>
-      
       <div id="cards" class="cards"></div>
       <div class="sticky-bottom bg-white py-2">
         <nav id="pager-bottom" class="d-flex justify-content-between align-items-center">
@@ -68,14 +67,14 @@
   <div class="offcanvas-body" id="facetDrawerBody"><!-- Facets cloned here --></div>
 </div>
 
-
 <!-- Inline client-side card template source (inert) -->
 {{{{raw}}}}
 <template id="card-tpl-src">
   <article class="card-reg">
     <header class="d-flex align-items-top gap-2 mb-1">
+      
       <h3 class="h6 m-0 flex-grow-1">
-        <code>{{label}}</code><br>{{#if href}}<a href="{{href}}" target="_blank" rel="noopener">{{title}}</a>{{else}}{{title}}{{/if}}
+        <a class="anchor" id="{{id}}" href="#{{id}}"></a><code>{{label}}</code><br>{{#if href}}<a href="{{href}}" target="_blank" rel="noopener">{{title}}</a>{{else}}{{title}}{{/if}}
       </h3>
       <div class="d-flex gap-1 flex-wrap ms-auto justify-content-end text-end">
         {{#if (hasAny statuses)}}
