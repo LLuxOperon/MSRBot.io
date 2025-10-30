@@ -301,6 +301,9 @@
                   },
                   "excludeChanges": {
                     "type": "boolean"
+                  },
+                  "version": {
+                    "type": "string"
                   }
                 },
                 "additionalProperties": false
@@ -468,6 +471,9 @@
                   },
                   "excludeChanges": {
                     "type": "boolean"
+                  },
+                  "version": {
+                    "type": "string"
                   }
                 },
                 "additionalProperties": false
@@ -527,6 +533,9 @@
                     },
                     "excludeChanges": {
                       "type": "boolean"
+                    },
+                    "version": {
+                      "type": "string"
                     }
                   },
                   "additionalProperties": false
@@ -625,6 +634,9 @@
                         },
                         "excludeChanges": {
                           "type": "boolean"
+                        },
+                        "version": {
+                          "type": "string"
                         }
                       },
                       "additionalProperties": false
@@ -686,6 +698,9 @@
                         },
                         "excludeChanges": {
                           "type": "boolean"
+                        },
+                        "version": {
+                          "type": "string"
                         }
                       },
                       "additionalProperties": false
@@ -792,6 +807,9 @@
               },
               "excludeChanges": {
                 "type": "boolean"
+              },
+              "version": {
+                "type": "string"
               }
             },
             "additionalProperties": false

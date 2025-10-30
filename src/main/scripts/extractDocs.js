@@ -6,6 +6,8 @@ This work is licensed under the Creative Commons Attribution 4.0 International L
 You should have received a copy of the license along with this work.  If not, see <https://creativecommons.org/licenses/by/4.0/>.
 */
 
+// testing versioning
+
 const axios = require('axios');
 const { resolveUrlAndInject, urlReachable } = require('./url.resolve.js');
 const { getPrLogPath } = require('./utils/prLogPath');
@@ -14,6 +16,35 @@ const prLogPath = getPrLogPath();
 const cheerio = require('cheerio');
 const dayjs = require('dayjs');
 const fs = require('fs');
+const { execSync } = require('child_process');
+
+// --- Hashing for extractor script versioning ---
+const crypto = require('crypto');
+// Fingerprint this extractor build by commit; stamped into $meta.version on create/change only.
+const SCRIPT_VERSION = (() => {
+  // 1) Prefer CI-provided SHA (e.g., GitHub Actions)
+  const envSha = (process.env.GITHUB_SHA || process.env.CI_COMMIT_SHA || '').trim();
+  if (envSha) return `extractDocs.js@commit:${envSha.slice(0, 12)}`;
+  try {
+    // 2) Try local git (works in dev and most runners with .git present)
+    const gitHash = execSync('git rev-parse --short=12 HEAD', { stdio: ['ignore', 'pipe', 'ignore'] })
+      .toString()
+      .trim();
+    if (gitHash) return `extractDocs.js@commit:${gitHash}`;
+  } catch (_) {
+    // ignore and fall through
+  }
+  try {
+    // 3) Last-resort fallback to file-content fingerprint
+    const fileHash = crypto.createHash('sha256')
+      .update(fs.readFileSync(__filename))
+      .digest('hex')
+      .slice(0, 12);
+    return `extractDocs.js@script:${fileHash}`;
+  } catch {
+    return 'extractDocs.js@commit:unknown';
+  }
+})();
 
 // Generate timestamp string in format YYYYMMDD-HHmmss
 const timestamp = dayjs().format('YYYYMMDD-HHmmss');
@@ -388,7 +419,8 @@ function injectMeta(doc, field, source, mode, oldValue) {
     note: defaults.note,
     updated: new Date().toISOString(),
     originalValue: oldValue === undefined ? null : oldValue,
-    sourceUrl: doc.__sourceUrl
+    sourceUrl: doc.__sourceUrl,
+    version: SCRIPT_VERSION
   };
   if (mode === 'update' && oldValue !== undefined && oldValue !== doc[field]) {
     meta.overridden = true;
@@ -460,6 +492,8 @@ function updateFieldGuarded(doc, path, newValue, {
   if (meta && typeof meta === 'object') {
     if (meta.source !== incomingSource) meta.source = incomingSource;
     try { meta.updated = new Date().toISOString(); } catch (_) {}
+    // Stamp extractor version only on successful value change (no per-run churn)
+    meta.version = SCRIPT_VERSION;
   }
 
   return { updated: true, oldValue, newValue };
