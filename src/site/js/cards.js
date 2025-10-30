@@ -465,6 +465,43 @@
     }
   });
 
+  // Auto-hide bottom pager when the top pager is visible in the viewport
+  (function(){
+    const topPagerEl = document.querySelector('#pager');
+    const bottomWrap = document.querySelector('#cards-main .sticky-bottom') || document.querySelector('.sticky-bottom');
+    if (!bottomWrap) return; // nothing to control
+
+    function setHidden(hide){
+      // use display to avoid occupying space when hidden
+      bottomWrap.style.display = hide ? 'none' : '';
+    }
+
+    function isTopVisible(){
+      if (!topPagerEl) return false; // if no top pager, always show bottom
+      const r = topPagerEl.getBoundingClientRect();
+      return r.top < window.innerHeight && r.bottom > 0;
+    }
+
+    function toggleBottomPager(){
+      setHidden(isTopVisible());
+    }
+
+    // Prefer IntersectionObserver for accuracy; fall back to scroll/resize
+    if (topPagerEl && 'IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries)=>{
+        for (const e of entries) setHidden(e.isIntersecting);
+      }, { root: null, threshold: 0 });
+      io.observe(topPagerEl);
+      // initial state
+      setHidden(isTopVisible());
+    } else {
+      window.addEventListener('scroll', toggleBottomPager, { passive: true });
+      window.addEventListener('resize', toggleBottomPager);
+      // initial state
+      toggleBottomPager();
+    }
+  })();
+
   // Wire basics
   const q = $('#q'); if (q) q.addEventListener('input', e => { state.q = e.target.value; state.page=1; render(); });
   const sort = $('#sort'); if (sort) sort.addEventListener('change', e => { state.sort = e.target.value; state.page=1; render(); });
