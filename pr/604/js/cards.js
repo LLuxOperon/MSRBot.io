@@ -335,6 +335,33 @@
     cont.innerHTML = parts.join('');
   }
 
+  // Render numbered page jumpers into an arbitrary container (e.g., bottom pager)
+  function renderPageNumbersInto(selector, totalPages){
+    const cont = document.querySelector(selector);
+    if (!cont) return;
+    const p = state.page;
+    const max = totalPages;
+    const parts = [];
+    const makeBtn = (label, page, {active=false, disabled=false}={}) => (
+      `<button type="button" class="btn btn-outline-secondary btn-sm${active ? ' active' : ''}"`+
+      `${disabled ? ' disabled' : ''} data-page="${page}" aria-label="Page ${label}">${label}</button>`
+    );
+    const addRange = (from, to) => { for (let i = from; i <= to; i++) parts.push(makeBtn(String(i), i, {active: i === p})); };
+
+    if (max <= 7) {
+      addRange(1, max);
+    } else {
+      addRange(1, 2); // first two
+      const start = Math.max(3, p - 1);
+      const end   = Math.min(max - 2, p + 1);
+      if (start > 3) parts.push(makeBtn('…', p, {disabled:true}));
+      addRange(start, end);
+      if (end < max - 2) parts.push(makeBtn('…', p, {disabled:true}));
+      addRange(max - 1, max); // last two
+    }
+    cont.innerHTML = parts.join('');
+  }
+
   function render(){
     const rows = applyFilters();
     const total = idx.length;
@@ -345,6 +372,7 @@
     if (state.page > totalPages) state.page = totalPages;
     if (state.page < 1) state.page = 1;
     renderPageNumbers(totalPages);
+    renderPageNumbersInto('#pageNumsBottom', totalPages);
 
     const startIdx = (state.page - 1) * state.size;      // 0-based
     const endIdx   = Math.min(startIdx + state.size, filtered); // exclusive
@@ -372,6 +400,15 @@
     if (prevBtn) prevBtn.disabled = atFirst || filtered === 0;
     if (nextBtn) nextBtn.disabled = atLast  || filtered === 0;
 
+    // Bottom pager button states and meta
+    const prevBtnB = $('#prevPageBottom');
+    const nextBtnB = $('#nextPageBottom');
+    if (prevBtnB) prevBtnB.disabled = atFirst || filtered === 0;
+    if (nextBtnB) nextBtnB.disabled = atLast  || filtered === 0;
+
+    const pageMetaB = $('#pageMetaBottom');
+    if (pageMetaB) pageMetaB.textContent = `Page ${filtered ? state.page : 1} of ${filtered ? totalPages : 1}`;
+
     // Draw chips/summary
     renderActiveFilters();
     renderFilterSummary();
@@ -386,6 +423,19 @@
   // Pager click handler for numbered page jumpers
   const pager = document.querySelector('#pager');
   if (pager) pager.addEventListener('click', (e) => {
+    const a = e.target.closest('[data-page]');
+    if (!a) return;
+    e.preventDefault();
+    const n = parseInt(a.getAttribute('data-page'), 10);
+    if (!Number.isFinite(n) || n < 1) return;
+    if (n === state.page) return;
+    state.page = n;
+    render();
+  });
+
+  // Bottom pager click handler
+  const pagerBottom = document.querySelector('#pager-bottom');
+  if (pagerBottom) pagerBottom.addEventListener('click', (e) => {
     const a = e.target.closest('[data-page]');
     if (!a) return;
     e.preventDefault();
@@ -441,6 +491,18 @@
   if (nextBtn) nextBtn.addEventListener('click', () => {
     // totalPages will be clamped in render(), so a quick render is fine
     state.page = state.page + 1;
+    render();
+  });
+
+  // Bottom Prev/Next
+  const prevBtnBottom = $('#prevPageBottom');
+  const nextBtnBottom = $('#nextPageBottom');
+  if (prevBtnBottom) prevBtnBottom.addEventListener('click', () => {
+    state.page = Math.max(1, state.page - 1);
+    render();
+  });
+  if (nextBtnBottom) nextBtnBottom.addEventListener('click', () => {
+    state.page = state.page + 1; // clamp in render()
     render();
   });
 
