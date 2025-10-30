@@ -17,6 +17,7 @@
     <div class="input-group input-group-sm w-auto" aria-label="Results per page">
       <span class="input-group-text">Per page</span>
       <select id="pageSize" class="form-select">
+        <option value="5">5</option>
         <option value="10">10</option>
         <option value="20">20</option>
         <option value="40" selected>40</option>
@@ -32,15 +33,28 @@
     <aside id="facet" class="col-lg-3 d-none d-lg-block"><!-- Facets injected here --></aside>
     <section id="cards-main" class="col-lg-9">
       <div id="resultsLine" class="text-muted small mb-2">Showing <strong id="resultCount">0</strong> documents</div>
-      <nav id="pager" class="d-flex justify-content-between align-items-center mb-2">
-        <div class="btn-group">
-          <button id="prevPage" type="button" class="btn btn-outline-secondary btn-sm">Prev</button>
-          <button id="nextPage" type="button" class="btn btn-outline-secondary btn-sm">Next</button>
-        </div>
-        <div id="pageNums" class="btn-group"></div>
-        <div id="pageMeta" class="small text-muted">Page 1 of 1</div>
-      </nav>
+      <div class="sticky bg-white pt-2">
+        <nav id="pager" class="d-flex justify-content-between align-items-center mb-2">
+          <div class="btn-group">
+            <button id="prevPage" type="button" class="btn btn-outline-secondary btn-sm">Prev</button>
+            <button id="nextPage" type="button" class="btn btn-outline-secondary btn-sm">Next</button>
+          </div>
+          <div id="pageNums" class="btn-group"></div>
+          <div id="pageMeta" class="small text-muted">Page 1 of 1</div>
+        </nav>
+      </div>
+      
       <div id="cards" class="cards"></div>
+      <div class="sticky-bottom bg-white py-2">
+        <nav id="pager-bottom" class="d-flex justify-content-between align-items-center">
+          <div class="btn-group">
+            <button id="prevPageBottom" type="button" class="btn btn-outline-secondary btn-sm">Prev</button>
+            <button id="nextPageBottom" type="button" class="btn btn-outline-secondary btn-sm">Next</button>
+          </div>
+          <div id="pageNumsBottom" class="btn-group"></div>
+          <div id="pageMetaBottom" class="small text-muted">Page 1 of 1</div>
+        </nav>
+      </div>
     </section>
   </div>
 </div>
