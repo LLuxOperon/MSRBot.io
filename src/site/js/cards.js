@@ -209,6 +209,19 @@
   // --- End URL sync ---
 
   // --- Helpers
+  function syncPageSizeSelectFromState(){
+    const sel = document.querySelector('#pageSize');
+    if (!sel) return;
+    const val = String(state.size);
+    // Ensure an option exists matching the current size; if not, add it
+    if (![...sel.options].some(o => o.value === val)) {
+      const opt = document.createElement('option');
+      opt.value = val;
+      opt.textContent = val;
+      sel.appendChild(opt);
+    }
+    sel.value = val;
+  }
   const facetLabel = (k, v) => {
     if (k === 'group' && facets.groupLabels && facets.groupLabels[v]) return facets.groupLabels[v];
     if ((k === 'hasCurrentWork' || k === 'hasDoi' || k === 'hasReleaseTag') && (v === 'true' || v === true)) return ({
@@ -744,6 +757,7 @@
   initFiltersFromURL();
   initSearchFromURL();
   updateURLAll(false);
+  syncPageSizeSelectFromState();
   // Initialize deep-linking via #id (returns true if it rendered due to hash)
   _initialDeepLinked = initHashDeepLink();
 
@@ -752,6 +766,7 @@
     initPageSizeFromURL();
     initFiltersFromURL();
     initSearchFromURL();
+    syncPageSizeSelectFromState();
     render();
   });
 
