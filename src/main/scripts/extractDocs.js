@@ -15,10 +15,6 @@ const cheerio = require('cheerio');
 const dayjs = require('dayjs');
 const fs = require('fs');
 
-const path = require('path');
-const crypto = require('crypto');
-const { execSync } = require('child_process');
-
 // Generate timestamp string in format YYYYMMDD-HHmmss
 const timestamp = dayjs().format('YYYYMMDD-HHmmss');
 const fullDetailsPath = `src/main/logs/extract-runs/pr-log-full-${timestamp}.log`;
@@ -385,8 +381,6 @@ function getMetaDefaults(source, field) {
 }
 
 function injectMeta(doc, field, source, mode, oldValue) {
-  // Never create meta for the top-level $meta object itself.
-  if (field === '$meta') return;
   const defaults = getMetaDefaults(source, field);
   const meta = {
     source,
@@ -433,7 +427,6 @@ function updateFieldGuarded(doc, path, newValue, {
   allowOverride = false,
   log = true
 } = {}) {
-  let wrote = false;
   // Resolve parent + key
   const parts = String(path).split('.');
   let parent = doc;
@@ -462,34 +455,12 @@ function updateFieldGuarded(doc, path, newValue, {
 
   // Apply
   parent[key] = newValue;
-  wrote = true;
-
-  // If this is the first real write on this doc during this run, stamp top-level $meta now.
-  try {
-    if (!doc.__mutated) {
-      const pending = doc.__pendingMeta || {};
-      upsertTopLevelMeta(doc, { ...(pending || {}), didMutateDoc: true });
-      // Prevent reuse in later calls
-      if (doc.__pendingMeta) {
-        try { delete doc.__pendingMeta; } catch (_) {}
-      }
-    }
-  } catch (_) {}
 
   // Refresh descriptive meta only when base field changed and meta exists
   if (meta && typeof meta === 'object') {
     if (meta.source !== incomingSource) meta.source = incomingSource;
     try { meta.updated = new Date().toISOString(); } catch (_) {}
   }
-
-  // Mark this document as mutated and allow version re-stamp if extractor changed
-  try {
-    if (wrote) {
-      Object.defineProperty(doc, '__mutated', { value: true, configurable: true, enumerable: false });
-      // This will no-op unless extractor changed; prevents fetched churn
-      upsertTopLevelMeta(doc, { didMutateDoc: true });
-    }
-  } catch (_) {}
 
   return { updated: true, oldValue, newValue };
 }
@@ -513,15 +484,6 @@ function mdEscape(val) {
 }
 
 function injectMetaForDoc(doc, source, mode, changedFieldsMap = {}) {
-  // Ensure top-level $meta exists on first insert. We defer stamping until here
-  // so existing docs don't churn; new docs get a proper provenance block.
-  try {
-    if (!doc.$meta) {
-      const pending = doc.__pendingMeta || {};
-      upsertTopLevelMeta(doc, { ...(pending || {}), didMutateDoc: true });
-      if (doc.__pendingMeta) { try { delete doc.__pendingMeta; } catch (_) {} }
-    }
-  } catch (_) {}
   const resolvedFields = ['docId', 'docLabel', 'doi', 'href', 'resolvedHref', 'repo'];
   const resolvedStatusFields = ['active', 'latestVersion', 'superseded'];
 
@@ -544,118 +506,6 @@ function injectMetaForDoc(doc, source, mode, changedFieldsMap = {}) {
       const fieldSource = resolvedStatusFields.includes(sField) ? 'resolved' : source;
       injectMeta(doc.status, sField, fieldSource, mode, changedFieldsMap[`status.${sField}`]);
     }
-  }
-}
-
-// --- Top-level $meta upsert (document-level provenance) ---
-// --- Top-level $meta upsert (document-level provenance) ---
-let _EXTRACTOR_VERSION_CACHE;
-function getExtractorVersion() {
-  if (_EXTRACTOR_VERSION_CACHE) return _EXTRACTOR_VERSION_CACHE;
-
-  // 1) CI/env override
-  try {
-    const envVal = process?.env?.EXTRACTOR_VERSION;
-    if (envVal && String(envVal).trim()) {
-      _EXTRACTOR_VERSION_CACHE = String(envVal).trim();
-      return _EXTRACTOR_VERSION_CACHE;
-    }
-  } catch (_) {}
-
-  // 2) global override
-  try {
-    if (typeof globalThis !== 'undefined' && typeof globalThis.EXTRACTOR_VERSION !== 'undefined') {
-      const gv = String(globalThis.EXTRACTOR_VERSION || '').trim();
-      if (gv) {
-        _EXTRACTOR_VERSION_CACHE = gv;
-        return _EXTRACTOR_VERSION_CACHE;
-      }
-    }
-  } catch (_) {}
-
-  // 3) Compose from package.json + git + file hash
-  let pkgVersion = '';
-  try {
-    const pkgPath = path.resolve(__dirname, '../../package.json');
-    const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
-    pkgVersion = pkg?.version ? String(pkg.version) : '';
-  } catch (_) {}
-
-  let gitShort = '';
-  try {
-    gitShort = execSync('git rev-parse --short=12 HEAD', { stdio: ['ignore', 'pipe', 'ignore'] })
-      .toString().trim();
-  } catch (_) {}
-
-  let fileHash8 = '';
-  try {
-    const data = fs.readFileSync(__filename);
-    fileHash8 = crypto.createHash('sha256').update(data).digest('hex').slice(0, 8);
-  } catch (_) {}
-
-  const parts = [];
-  if (pkgVersion) parts.push(pkgVersion);
-  if (gitShort) parts.push(gitShort);
-  if (fileHash8) parts.push(fileHash8);
-  if (!parts.length) parts.push('unknown');
-
-  _EXTRACTOR_VERSION_CACHE = `extractDocs.js@${parts.join('+')}`;
-  return _EXTRACTOR_VERSION_CACHE;
-}
-
-function upsertTopLevelMeta(doc, { sourceUrl, method, confidence, didMutateDoc } = {}) {
-  try {
-    if (!doc || typeof doc !== 'object') return false;
-    const prev = doc.$meta || {};
-    const currentVersion = getExtractorVersion();
-
-    // If caller passed no provenance args AND didn't signal a real mutation, do nothing for existing docs.
-    if (doc.$meta && sourceUrl === undefined && method === undefined && confidence === undefined && !didMutateDoc) {
-      return false;
-    }
-
-    const nextSourceUrl = (sourceUrl !== undefined) ? sourceUrl : (prev.sourceUrl ?? null);
-    const nextMethod    = (method    !== undefined) ? method    : (prev.method    ?? null);
-    const nextConfidence= (confidence!== undefined) ? confidence: (prev.confidence?? (method === 'pdf-infer' ? 'medium' : (method ? 'high' : prev.confidence)));
-
-    // Only treat provenance as changed if the key exists on both sides and the value differs
-    const provenanceChanged =
-      ((prev.sourceUrl !== undefined && nextSourceUrl !== undefined) && prev.sourceUrl !== nextSourceUrl) ||
-      ((prev.method    !== undefined && nextMethod    !== undefined) && prev.method    !== nextMethod)    ||
-      ((prev.confidence!== undefined && nextConfidence!== undefined) && prev.confidence!== nextConfidence);
-
-    const extractorChanged = prev.version !== currentVersion;
-    const allowVersionOnlyWrite = !!didMutateDoc && extractorChanged;
-
-    // If we already have $meta and neither provenance nor (real mutation & extractor bump) apply, bail out.
-    if (doc.$meta && !provenanceChanged && !allowVersionOnlyWrite) {
-      return false;
-    }
-
-    // Build next meta by cloning to preserve key order as much as possible
-    const next = doc.$meta ? { ...prev } : {};
-    if (nextSourceUrl !== null) next.sourceUrl = nextSourceUrl;
-    if (nextMethod    !== null) next.method    = nextMethod;
-    if (nextConfidence!== null) next.confidence= nextConfidence;
-
-    // Only stamp fetched/version when we actually decided to write
-    next.fetched = new Date().toISOString();
-    next.version = currentVersion;
-
-    doc.$meta = next;
-
-    try {
-      const line = `\n- docId=${doc.docId || '(unknown)'}: $meta ${provenanceChanged ? 'updated' : 're-stamped'} (sourceUrl=${next.sourceUrl || '-'}, method=${next.method || '-'})`;
-      fs.appendFileSync(prLogPath, line, 'utf8');
-      fs.appendFileSync(fullDetailsPath, line + '\n', 'utf8');
-    } catch (e) {
-      console.warn(`⚠️ Failed to append top-level $meta update to PR log: ${e.message}`);
-    }
-
-    return true;
-  } catch (e) {
-    console.warn(`⚠️ upsertTopLevelMeta failed: ${e.message}`);
-    return false;
   }
 }
 
@@ -851,16 +701,10 @@ const extractFromSeedDoc = async (seedRootUrl) => {
       ...(revisionOf && { revisionOf })
     };
 
-    // Capture intended source URL for $meta (no trailing index.html)
-    const __seedSourceUrl = rootUrl;
-
     Object.defineProperty(doc, '__sourceUrl', {
       value: rootUrl,
       enumerable: false
     });
-
-    // Defer top-level $meta stamping until we know this doc actually mutates or is newly inserted.
-    Object.defineProperty(doc, '__pendingMeta', { value: { sourceUrl: __seedSourceUrl, method: 'html-parse', confidence: 'high' }, enumerable: false, configurable: true });
 
     return [doc];
   } catch (err) {
@@ -1008,8 +852,6 @@ const extractFromUrl = async (rootUrl) => {
         }
 
         Object.defineProperty(doc, '__sourceUrl', { value: `${sourceUrl}/`, enumerable: false });
-        // Defer $meta stamping to avoid fetched/version churn when no real field changes occur.
-        Object.defineProperty(doc, '__pendingMeta', { value: { sourceUrl: `${sourceUrl}/`, method: 'pdf-infer', confidence: 'medium' }, enumerable: false, configurable: true });
         docs.push(doc);
         continue; // PDF-only handled; go to next releaseTag
       } catch (e) {
@@ -1018,13 +860,6 @@ const extractFromUrl = async (rootUrl) => {
     }
 
     const indexUrl = `${sourceUrl}/${iframeSrc && !/\.pdf$/i.test(iframeSrc) ? iframeSrc : 'index.html'}`;
-
-    // Mark this doc with top-level meta for HTML parse, right after __sourceUrl definition (if not already)
-    try {
-      Object.defineProperty = Object.defineProperty; // no-op, just for context
-    } catch (_) {}
-    // We only seed top-level $meta at creation time; later passes avoid churn
-    // Note: actual doc object is created after parsing; this guard prevents eager writes.
 
     try {
       const indexRes = await axios.get(indexUrl);
@@ -1115,7 +950,7 @@ const extractFromUrl = async (rootUrl) => {
         value: `${sourceUrl}/`,
         enumerable: false
       });
-      upsertTopLevelMeta(doc, { sourceUrl: `${sourceUrl}/`, method: 'html-parse', confidence: 'high' });
+
       docs.push(doc);
 
     } catch (err) {
@@ -1127,7 +962,6 @@ const extractFromUrl = async (rootUrl) => {
           value: `${sourceUrl}/`,
           enumerable: false
         });
-        upsertTopLevelMeta(inferred, { sourceUrl: `${sourceUrl}/`, method: 'pdf-infer', confidence: 'medium' });
         const existingIndex = docs.findIndex(d => d.docId === inferred.docId);
         if (existingIndex !== -1) {
           mergeInferredInto(docs[existingIndex], inferred);
