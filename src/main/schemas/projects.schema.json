@@ -1,8 +1,8 @@
 {
     "$schema": "http://json-schema.org/schema#",
-    "$id": "https://github.com/SteveLLamb/mediastandards-projects/0.9.0",
-    "$comment": "Copyright, Steve LLamb <steve.llamb@gmail.com>",
-    "docTitle": "Schema for the Media Standards Registry - Projects",
+    "$id": "https://github.com/LLuxOperon/MSRBot.io/projects/1.0.0",
+    "$comment": "Copyright (c) 2025 [Steve LLamb](https://github.com/SteveLLamb) and [LLux Operon](https://github.com/LLuxOperon)",
+    "docTitle": "Schema for MSRBot.io - Projects",
     "items": {
         "anyOf": [
             {

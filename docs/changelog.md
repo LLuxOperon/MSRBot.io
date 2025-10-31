@@ -1,9 +1,9 @@
-# Media Standards Registry (MSR) — Consolidated Technical Chronicle
+# MSRBot.io — Consolidated Technical Chronicle
 
 **Status:** Gold-copy consolidation  
 **Consolidation Date:** 2025-10-27
 
-This document consolidates the MSR worklog into a single, category‑organized technical chronicle. Dates are de‑emphasized in favor of system architecture and implementation detail. All filenames, scripts, fields, and JSON keys are shown in monospace.
+This document consolidates the MSRBot.io worklog into a single, category‑organized technical chronicle. Dates are de‑emphasized in favor of system architecture and implementation detail. All filenames, scripts, fields, and JSON keys are shown in monospace.
 
 ## 1 Extraction & Automation Pipeline
 
@@ -108,7 +108,7 @@ This document consolidates the MSR worklog into a single, category‑organized t
 - Concurrency protections:
   - MSI: `mastersuite-index`
   - MRI: `masterreference-index`
-  - MSR Site: `msr-site-${{ github.ref_name }}` with cancel‑in‑progress enabled
+  - MSR Site ([MSRBot.io](https://msrbot.io/)): `msr-site-${{ github.ref_name }}` with cancel‑in‑progress enabled
 - Permissions set per workflow: `contents: write`, `pull-requests: write`, `issues: write`.
 
 ### 4.2 MRI Workflow (`build-master-reference-index.yml`)
@@ -196,7 +196,7 @@ This document consolidates the MSR worklog into a single, category‑organized t
 **Gold‑Copy Guidance**
 This file is the current gold‑copy consolidation. If corruption or lock‑up occurs in downstream artifacts, restore from this document and only re‑apply changes made after the consolidation date above.
 
-> _Maintained by [Steve LLamb](https://github.com/SteveLLamb) — Media Standards Registry (MSR)_ 
+> _Maintained by [Steve LLamb](https://github.com/SteveLLamb) — MSRBot.io_ 
 
 ## Appendix B: Daily Done List Protocol
 

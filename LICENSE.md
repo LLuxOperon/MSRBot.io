@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2025 Steve LLamb
+Copyright (c) 2025 [Steve LLamb](https://github.com/SteveLLamb) and [LLux Operon](https://github.com/LLuxOperon)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the “Software”), to deal
@@ -23,8 +23,8 @@ THE SOFTWARE.
 ---
 
 ### Data Disclaimer
-The Media Standards Registry (MSR) aggregates factual metadata and references
-about publicly released standards documents (e.g., SMPTE, ISO, ITU, AES).
+[MSRBot.io](https://msrbot.io) aggregates factual metadata and references
+via [https://github.com/LLuxOperon/MSRBot.io/](https://github.com/LLuxOperon/MSRBot.io/) about publicly released standards, best practices, and other documents (e.g., [SMPTE](https://www.smpte.org/), [ISO](https://www.iso.org/home.html), [ITU](https://www.itu.int/), [AES](https://aes2.org/), and many others).
+
 All metadata is derived from publicly available information and is provided
-for research and interoperability purposes only. Original standards remain
-the intellectual property of their respective publishers.
+for research and interoperability purposes only. Original standards and other documents remain the intellectual property and copyright of their respective publishers, as applicable.

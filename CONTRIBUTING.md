@@ -1,14 +1,14 @@
-# Contributing to the Media Standards Registry (MSR)
+# Contributing to MSRBot.io
 
-Thanks for your interest in helping improve the Media Standards Registry!  
+Thanks for your interest in helping improve the MSRBot.io!  
 
-MSR is a living, automated dataset that maps relationships across standards documents from SMPTE, ISO, ITU, AES, and others.
+MSRBot.io is a living, automated dataset that maps relationships across standards documents from SMPTE, ISO, ITU, AES, and others.
 
 ## How the System Works
-MSR runs a fully automated pipeline of GitHub Actions that:
+MSRBot.io runs a fully automated pipeline of GitHub Actions that:
 1. Extracts and validates structured document metadata (`extract-docs.yml`)
 2. Builds indices for suites (MSI) and references (MRI)
-3. Publishes to the live site ([mediastandardsregistry.org](https://mediastandardsregistry.org))
+3. Publishes to the live site ([MSRBot.io](https://msrbot.io))
 4. Validates URLs weekly
 
 > Changes to data or logic will typically trigger part of this chain automatically.
@@ -25,8 +25,8 @@ MSR runs a fully automated pipeline of GitHub Actions that:
 1. Install **Node.js 20+** and npm.
 2. Clone the repository:
    ```bash
-   git clone https://github.com/SteveLLamb/mediastandards-registry.git
-   cd mediastandards-registry
+   git clone https://github.com/LLuxOperon/MSRBot.io.git
+   cd MSRBot.io
 3. Install dependencies:
     ```bash
     npm install
@@ -66,4 +66,4 @@ Extracted document metadata remains subject to the original publishers’ rights
 ## Contact
 Questions, feedback, or ideas?
 
-Open an [ISSUE](https://github.com/SteveLLamb/mediastandards-registry/issues) or reach out to [Steve LLamb](https://github.com/SteveLLamb).
+Open an [ISSUE](https://github.com/LLuxOperon/MSRBot.io/issues) or reach out to [Steve LLamb](https://github.com/SteveLLamb).
