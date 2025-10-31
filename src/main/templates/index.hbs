@@ -2,6 +2,73 @@
 <html lang="en">
   {{>header}}
     <!-- Main content starts - do not edit above this line -->
+    {{#if inspector}}
+<script>
+  (function(){
+    try {
+      var p = new URLSearchParams(window.location.search);
+      var ok = (p.get('dev') === '1');
+      if (ok && document.head) {
+        document.head.insertAdjacentHTML('beforeend','<meta name="robots" content="noindex, nofollow">');
+      }
+      window.addEventListener('DOMContentLoaded', function(){
+        var mount = document.getElementById('inspectorMount');
+        if (!mount) return;
+        if (!ok) {
+          // Gate message only; DO NOT render the template
+          var msg = document.createElement('div');
+          msg.style.padding = '2rem';
+          msg.innerHTML = '<h3>Inspector disabled</h3><p>This diagnostic view is dev-only. Append <code>?dev=1</code> to the URL to view it during a dev build.</p>';
+          mount.appendChild(msg);
+          return;
+        }
+        // OK: stamp out the template now
+        var tpl = document.getElementById('inspectorTpl');
+        if (tpl && 'content' in tpl) {
+          mount.appendChild(tpl.content.cloneNode(true));
+        }
+      });
+    } catch(e) { /* swallow */ }
+  })();
+</script>
+<div id="inspectorMount"></div>
+<template id="inspectorTpl">
+    <table id="inspectorTable" class="display compact" style="width:100%">
+      <thead>
+        <tr>
+          <th scope="col" class="col-1">docId</th>
+          <th scope="col" class="col-3">Label/Title</th>
+          <th scope="col" class="col-1">Publisher</th>
+          <th>Group</th>
+          <th>Doc Type</th>
+          <th>Keywords</th>
+          <th>Year</th>
+          <th>ReleaseTag</th>
+          <th>Status</th>
+          <th>Current Work</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#dataDocuments}}
+        <tr>
+          <td>{{docId}}</td>
+          <td>{{getLabel docId}}: {{docTitle}}</td>
+          <td>{{publisher}}</td>
+          <td>{{#if group}}{{#with (groupIdLookup ../dataGroups group)}}{{groupOrg}} {{groupName}} {{groupDesc}}{{/with}}{{/if}}</td>
+          <td>{{docType}}</td>
+          <td>{{#keywords}}
+            {{this}}{{#unless @last}},{{/unless}}
+            {{/keywords}}</td>
+          <td>{{__year}}</td>
+          <td>{{releaseTag}}</td>
+          <td>{{currentStatus}}</td>
+          <td>{{currentWork}}</td>
+        </tr>
+        {{/dataDocuments}}
+      </tbody>
+    </table>
+</template>
+    {{else}}
     <table id="sorttableDocs" class="table table-small table-hover">
       <thead class="thead-light">
         <tr>
@@ -49,13 +116,13 @@
           </td>
           <td>
             {{#status/unknown}}
-              <span class="label badge badge-danger">[ UNKNOWN ]</span><br> 
+              <span class="label badge text-bg-danger">[ UNKNOWN ]</span><br> 
             {{/status/unknown}}
             {{#status/withdrawn}}
-              <span class="label badge badge-danger">[ WITHDRAWN ]</span><br> 
+              <span class="label badge text-bg-danger">[ WITHDRAWN ]</span><br> 
             {{/status/withdrawn}}
             {{#status/superseded}}
-              <span class="label badge badge-warning">[ SUPERSEDED ]</span><br>
+              <span class="label badge text-bg-warning">[ SUPERSEDED ]</span><br>
             {{/status/superseded}}
             {{#if status/supersededBy}}
               <div class="border-left p-1">
@@ -67,22 +134,22 @@
                   </li> 
               {{/status/supersededBy}}
                 </ul>
-              </div>
+    
             {{/if}}
             {{#status/draft}}
-              <span class="label badge badge-warning">[ DRAFT ]</span><br> 
+              <span class="label badge text-bg-warning">[ DRAFT ]</span><br> 
             {{/status/draft}}
             {{#status/publicCd}}
-              <span class="label badge badge-success">[ PUBLIC CD ]</span><br>  
+              <span class="label badge text-bg-success">[ PUBLIC CD ]</span><br>  
             {{/status/publicCd}}
             {{#status/active}}
-              <span class="label badge badge-success">[ ACTIVE ]</span><br>  
+              <span class="label badge text-bg-success">[ ACTIVE ]</span><br>  
             {{/status/active}}
             {{#status/versionless}}
-              <span class="label badge badge-success">[ VERSIONLESS ]</span><br>
+              <span class="label badge text-bg-success">[ VERSIONLESS ]</span><br>
             {{/status/versionless}}
             {{#status/amended}}
-              <span class="label badge badge-secondary">[ AMENDED ]</span><br>
+              <span class="label badge text-bg-secondary">[ AMENDED ]</span><br>
             {{/status/amended}}
             {{#if status/amendedBy}}
               <div class="border-left p-1">
@@ -97,10 +164,10 @@
               </div>
             {{/if}}
             {{#status/reaffirmed}}
-              <span class="label badge badge-info">[ REAFFIRMED ]</span><br>
+              <span class="label badge text-bg-info">[ REAFFIRMED ]</span><br>
             {{/status/reaffirmed}}
             {{#status/stabilized}}
-              <span class="label badge badge-primary">[ STABILIZED ]</span>  
+              <span class="label badge text-bg-primary">[ STABILIZED ]</span>  
             {{/status/stabilized}}   
           </td>
           <td>
@@ -127,7 +194,7 @@
                     {{#with (docProjLookup ../docProjs docId)}}
                     {{#ifnoteq projectStatus "Complete"}}
                     <br>
-                    <span class="label badge badge-warning text-uppercase">{{workType}} {{projectStatus}}</span>
+                    <span class="label badge text-bg-warning text-uppercase">{{workType}} {{projectStatus}}</span>
 
                     {{#if newDoc}}
                     <br><span class="small">Under Development: <a href="projects/{{../../htmlLink}}?search.search={{newDoc}}">{{getLabel newDoc}}</a><!-- [{{getStatus newDoc}}]--></span>
@@ -273,6 +340,7 @@
         {{/data}}
       </tbody>
     </table>
+    {{/if}}
     <!-- Main content ends - do not edit below this line -->
 {{>footer}}
 
