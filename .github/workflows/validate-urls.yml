@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: "15 04 * * 3"   # 21:15 PT, Wed (cron in UTC)
   workflow_run:
-    workflows: ["Build MSR Site and Test"]
+    workflows: ["Build MSRBot.io Site and Test"]
     types: [completed]
   workflow_dispatch:
 
