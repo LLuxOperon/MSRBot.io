@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="250mm"
-   height="50mm"
-   viewBox="0 0 250 50"
+   width="1260"
+   height="200"
+   viewBox="0 0 333.375 52.916666"
    version="1.1"
    id="svg5"
    inkscape:version="1.2-dev (9ee32be, 2021-06-19)"
-   sodipodi:docname="msr-logo-blue.svg"
+   sodipodi:docname="MSRBot-Logo-blue.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -24,14 +24,15 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="0.57370932"
-     inkscape:cx="502.8679"
-     inkscape:cy="163.84604"
+     inkscape:cx="373.88272"
+     inkscape:cy="128.98518"
      inkscape:window-width="1316"
      inkscape:window-height="866"
      inkscape:window-x="0"
      inkscape:window-y="38"
      inkscape:window-maximized="0"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="layer1"
+     units="px" />
   <defs
      id="defs2" />
   <g
@@ -40,7 +41,7 @@
      id="layer1">
     <g
        aria-label="MSRBot.io"
-       transform="scale(1.0223254,0.97816213)"
+       transform="matrix(1.4739227,0,0,1.4113488,-13.302363,-9.6566207)"
        id="text3378"
        style="font-size:48.8199px;line-height:1.25;font-family:'Heiti TC';-inkscape-font-specification:'Heiti TC, Normal';fill:#1398b0;stroke-width:1.22049">
       <path
