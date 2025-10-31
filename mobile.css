@@ -4,11 +4,16 @@ html {
 
 @media print{@page {size: landscape}}
 
+/* Anchor targets: no negative offsets; use scroll-margin via CSS var */
 a.anchor {
     display: block;
-    position: relative;
-    top: -52px;
+    position: static;
+    height: 0;
     visibility: hidden;
+}
+/* When navigating to a card via #hash, keep it below sticky headers */
+.card-reg {
+    scroll-margin-top: var(--sticky-offset, 10px);
 }
 
 .dataTables_info {
@@ -32,7 +37,6 @@ div.dtsp-panesContainer {
 }
 
 body {
-    margin-top: 42px;
     margin-right: 15px;
     margin-left: 15px;
     font-family: 'Lato', sans-serif !important;
@@ -74,7 +78,7 @@ pre {
 
 #toTopBtn {
     position: fixed;
-    bottom: 26px;
+    bottom: 36px;
     right: 39px;
     z-index: 98;
     padding: 21px;
@@ -163,4 +167,133 @@ pre {
 
 .height {
     height: 3000px
+}
+
+.cards {
+    font-family: 'Lato', sans-serif !important;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.card-reg {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.badge-reg {
+    background-color: #1398b0;
+    color: #fff;
+    font-size: 0.8em;
+    padding: 3px 6px;
+    border-radius: 3px;
+    margin-right: 5px;
+    font-family: 'Lato', sans-serif !important;
+}
+
+.badge-work {
+    background-color: #f39c12;
+    color: #fff;
+    font-size: 0.8em;
+    padding: 3px 6px;
+    border-radius: 3px;
+    margin-right: 5px;
+    font-family: 'Lato', sans-serif !important;
+}
+
+.chip {
+    display: inline-block;
+    padding: 0 10px;
+    height: 24px;
+    font-size: 14px;
+    line-height: 24px;
+    border-radius: 25px;
+    background-color: #e0e0e0;
+    margin: 2px;
+    font-family: 'Lato', sans-serif !important;
+}
+
+#activeFilters .chip {
+    background-color: #1398b0;
+    color: #fff;
+}
+
+/* Ensure navbar + cards toolbar stack correctly */
+.navbar.sticky-top {
+  z-index: 1030; /* Bootstrap default for sticky nav */
+}
+
+#cards-topbar.sticky-top {
+  position: sticky;
+  top: 57px; /* height of your navbar */
+  z-index: 1020; /* slightly below navbar so it stays under dropdowns */
+  background-color: #fff;
+}
+
+/* Facet accordion cleanup */
+#facet .accordion-button { 
+  padding: .4rem .75rem; 
+  font-weight: 600; 
+}
+
+#facet .accordion-body { 
+  padding: .5rem; 
+}
+
+#facet .form-check { 
+  margin-bottom: .25rem; 
+}
+
+#facet .form-check-label { 
+  width: 100%; 
+}
+
+#facet .facet-list { 
+  max-height: 260px; 
+  overflow: auto; 
+  padding-right: .25rem; 
+}
+
+/* Clone container (drawer) shares styles */
+#facetDrawerBody .accordion-button { 
+  padding: .6rem .75rem; 
+}
+
+#facetDrawerBody .facet-list { 
+  max-height: 60vh; 
+  overflow: auto; 
+}
+
+/* Cards: header badge alignment & wrapping */
+
+.card-reg header {
+  display: flex;
+  align-items: flex-start; /* keeps badges aligned to top edge */
+}
+
+/* The badges container in header uses .ms-auto + .d-flex from the template */
+.card-reg header .ms-auto {
+  margin-left: auto !important;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem;
+  justify-content: flex-end;
+  text-align: right;
+  max-width: 50%; /* prevents badges from crushing the title on narrow widths */
+}
+
+/* Keep each status badge from line-breaking mid-label */
+.card-reg .badge.label { white-space: nowrap; }
+/* Ensure code label + title wrap nicely */
+
+.card-reg header .d-flex {
+  flex-shrink: 0; /* prevents badge group from wrapping below title */
+  align-self: flex-start; /* locks badges to the top */
+}
+
+.card-reg header h3 {
+  flex: 1 1 auto;
+  min-width: 0; /* allows wrapping without pushing badges down */
 }
