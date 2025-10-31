@@ -1,4 +1,4 @@
-name: PR Build Preview (MSR site)
+name: PR Build Preview (MSRBot.io site)
 
 on:
   pull_request:
@@ -155,7 +155,7 @@ jobs:
               name: 'PR Build Preview',
               head_sha: headSha,
               status: 'in_progress',
-              output: { title: 'MSR Preview', summary: 'Building preview…' }
+              output: { title: 'MSRBot.io Preview', summary: 'Building preview…' }
             });
             core.setOutput('check_id', String(res.data.id));
 
@@ -214,7 +214,7 @@ jobs:
           number: ${{ github.event_name == 'pull_request' && github.event.pull_request.number || steps.findpr.outputs.number }}
           message: |
             # Review link
-            [MSR Build Preview](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/pr/${{ github.event_name == 'pull_request' && github.event.pull_request.number || steps.findpr.outputs.number }}/)
+            [MSRBot.io Build Preview](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/pr/${{ github.event_name == 'pull_request' && github.event.pull_request.number || steps.findpr.outputs.number }}/)
             _This link updates on new commits to this PR._ 
 
       - name: Publish PR Check (Preview link)
@@ -244,7 +244,7 @@ jobs:
                 conclusion: 'success',
                 details_url: url,
                 output: {
-                  title: 'MSR Preview',
+                  title: 'MSRBot.io Preview',
                   summary: `Preview deployed for PR #${prNumber}.`,
                   text: `Open the preview: ${url}`
                 }
@@ -259,7 +259,7 @@ jobs:
                 conclusion: 'success',
                 details_url: url,
                 output: {
-                  title: 'MSR Preview',
+                  title: 'MSRBot.io Preview',
                   summary: `Preview deployed for PR #${prNumber}.`,
                   text: `Open the preview: ${url}`
                 }
@@ -273,7 +273,7 @@ jobs:
                 sha: headSha,
                 state: 'success',
                 target_url: url,
-                context: 'MSR Preview',
+                context: 'MSRBot.io Preview',
                 description: `Deployed preview for PR #${prNumber}`
               });
             } catch (e) {

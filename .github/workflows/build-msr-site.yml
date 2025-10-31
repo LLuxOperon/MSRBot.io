@@ -1,4 +1,4 @@
-name: Build MSR Site and Test
+name: Build MSRBot.io Site and Test
 
 on:
   workflow_run:
