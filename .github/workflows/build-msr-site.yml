@@ -144,7 +144,7 @@ jobs:
 
       - name: Add CNAME for custom domain
         if: steps.guard.outputs.skip != 'true'
-        run: echo 'mediastandardsregistry.org' > ./build/CNAME
+        run: echo 'msrbot.io' > ./build/CNAME
 
       - name: Publish to gh-pages
         if: steps.guard.outputs.skip != 'true'
