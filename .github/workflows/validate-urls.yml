@@ -288,7 +288,7 @@ jobs:
               await upsertIssue({ title, body, labels: ['automated', 'url-400'] });
             }
 
-            // Autoclose resolved issues
+            // Autoclose resolved issues (404, ENOTFOUND, 400)
             // 404s: close any publisher issue not in current set
             const open404 = await listOpenWithLabel('url-404');
             const livePubs = new Set([...byPub404.keys()]);
@@ -299,6 +299,21 @@ jobs:
                 await github.rest.issues.createComment({
                   owner, repo, issue_number: iss.number,
                   body: `Resolved: no outstanding 404s for this publisher. ${runTag}. Closing.`
+                });
+                await github.rest.issues.update({ owner, repo, issue_number: iss.number, state: 'closed' });
+              }
+            }
+
+            // ENOTFOUNDs: close any publisher issue not in current set
+            const openENF = await listOpenWithLabel('url-enotfound');
+            const liveENFPubs = new Set([...byPubENF.keys()]);
+            for (const iss of openENF) {
+              const m = /^URL ERROR \(ENOTFOUND\): (.+)$/.exec(iss.title || '');
+              const pub = m && m[1] ? m[1].trim() : null;
+              if (!pub || !liveENFPubs.has(pub)) {
+                await github.rest.issues.createComment({
+                  owner, repo, issue_number: iss.number,
+                  body: `Resolved: no outstanding ENOTFOUNDs for this publisher. ${runTag}. Closing.`
                 });
                 await github.rest.issues.update({ owner, repo, issue_number: iss.number, state: 'closed' });
               }
