@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2025 [Steve LLamb](https://github.com/SteveLLamb) and [PrZ3r](https://github.com/PrZ3r)
+Copyright (c) 2025 [Steve LLamb](https://github.com/SteveLLamb) and [PrZ3](https://github.com/PrZ3r)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the “Software”), to deal
