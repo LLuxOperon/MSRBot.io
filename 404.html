@@ -23,8 +23,8 @@
       <meta name="application-name" content="MSRBot.io">
       <meta name="theme-color" content="#1398b0">
     
-      <link type="image/svg" rel="icon" href="/static/MSRBot-Penguin-blue.svg">
-      <link rel="icon" type="image/svg+xml" href="/static/MSRBot-Penguin-blue.svg">
+      <link type="image/svg" rel="icon" href="/static/MSRBot-PrZ3-blue.svg">
+      <link rel="icon" type="image/svg+xml" href="/static/MSRBot-PrZ3-blue.svg">
       <link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32.png">
       <link rel="icon" type="image/png" sizes="192x192" href="/static/icons/favicon-192.png">
       <link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon-180.png">
@@ -64,7 +64,7 @@
     </head>
     <body>
       <nav class="navbar navbar-expand-md sticky-top bg-light d-flex px-3 border-bottom">
-        <div class="navbar-brand"><a class="clear-filter" href="#"><img src="/static/MSRBot-Penguin-blue.svg" alt="MSR" width="35" height="35" class="me-2"><img src="/static/MSRBot-Logo-blue.svg" alt="MSR" height="35"></a></div>
+        <div class="navbar-brand"><a class="clear-filter" href="#"><img src="/static/MSRBot-PrZ3-blue.svg" alt="MSR" width="35" height="35" class="me-2"><img src="/static/MSRBot-Logo-blue.svg" alt="MSR" height="35"></a></div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -84,13 +84,13 @@
               <a class="nav-link d-flex flex-column text-center" aria-current="page" href="/projects/"><i class="bi bi-kanban-fill" style="font-size: 1.5rem;"></i><span class="small">PROJECTS</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex flex-column text-center" aria-current="page" href="https://github.com/LLuxOperon/MSRBot.io" target="_blank" ><i class="bi bi-github" style="font-size: 1.5rem;"></i><span class="small">CONTRIBUTE</span></a>
+              <a class="nav-link d-flex flex-column text-center" aria-current="page" href="https://github.com/PrZ3r/MSRBot.io" target="_blank" ><i class="bi bi-github" style="font-size: 1.5rem;"></i><span class="small">CONTRIBUTE</span></a>
             </li>
           </ul>
     
           <ul class="navbar-nav d-print-none ms-auto">
             <li class="nav-item text-nowrap">
-              <a id="json-feed" target="_blank" class="nav-link" href="https://raw.githubusercontent.com/LLuxOperon/MSRBot.io/master/src/main/data/.json">API <i class="bi bi-code-slash" width="1em" height="1em" viewBox="0 0 16 16"></i></a>
+              <a id="json-feed" target="_blank" class="nav-link" href="https://raw.githubusercontent.com/PrZ3r/MSRBot.io/master/src/main/data/.json">API <i class="bi bi-code-slash" width="1em" height="1em" viewBox="0 0 16 16"></i></a>
             </li>
             <li class="nav-item text-nowrap">
               <a href="javascript:void(0)" onclick="window.print();return false;" class="nav-link" title="Print Page">Print <i class="bi bi-printer" width="1em" height="1em" viewBox="0 0 16 16"></i></a>
@@ -112,19 +112,35 @@
               <br>Try the <a href="/">main documents index</a>.
             </p>
             <p>
-              <img src="/static/MSRBot-Penguin-blue.svg" alt="MSR" width="250" height="250" class="m-2">
+              <img src="/static/MSRBot-PrZ3-blue.svg" alt="MSR" width="250" height="250" class="m-2">
             </p>
             <small class="text-muted">
               <p>
-                Feeling helpful, and might have found a bad link? File an issue at <i class="bi bi-github"></i> <a href="https://github.com/LLuxOperon/MSRBot.io/issues" target="_blank">https://github.com/LLuxOperon/MSRBot.io/issues</a> <i class="bi bi-github"></i>
+                Feeling helpful, and might have found a bad link? File an issue at <i class="bi bi-github"></i> <a href="https://github.com/PrZ3r/MSRBot.io/issues" target="_blank">https://github.com/PrZ3r/MSRBot.io/issues</a> <i class="bi bi-github"></i>
               </p>
             </small> 
+            <!-- Store penguin messages JSON in a hidden <code> element for safer injection -->
+            <code id="penguin-messages-json" style="display: none;">[&quot;404 — Look at yourself, you’ve disappointed Parsey.&quot;,&quot;404 — Parsey has looked everywhere. No dice. No ice.&quot;,&quot;404 — The archive is cold and empty. Parsey has the sads.&quot;,&quot;404 — Parsey has flapped into the void and found nothing.&quot;,&quot;404 — Parsey has waddled off to file a missing-page report.&quot;]</code>
             <script>
-              (function() {
-                var penguinMessages = ["404 — Look at yourself, you’ve disappointed the penguin.","404 — Penguin has looked everywhere. No dice. No ice.","404 — The archive is cold and empty. Penguin has the sads.","404 — Penguin has flapped into the void and found nothing.","404 — Penguin has waddled off to file a missing-page report."];
+              (function () {
+                var codeEl = document.getElementById('penguin-messages-json');
+                var penguinMessages = [];
+                if (codeEl) {
+                  try {
+                    penguinMessages = JSON.parse(codeEl.textContent || '[]');
+                  } catch (e) {
+                    penguinMessages = [];
+                  }
+                }
                 var el = document.getElementById('penguin404');
                 if (el && Array.isArray(penguinMessages) && penguinMessages.length) {
-                  el.textContent = penguinMessages[Math.floor(Math.random() * penguinMessages.length)];
+                  var msg = penguinMessages[Math.floor(Math.random() * penguinMessages.length)];
+                  // Clear any existing text and append a <code> wrapper for on-screen display
+                  el.textContent = '';
+                  var codeMsg = document.createElement('code');
+                  codeMsg.className = 'penguin-quip';
+                  codeMsg.textContent = msg;
+                  el.appendChild(codeMsg);
                 }
               })();
             </script>
@@ -137,8 +153,8 @@
           <div class="row justify-content-md-center border-bottom d-flex">
             <div class="col text-center p-3">
             <small class="text-muted">
-                Site version: <code>cacac5f43e3946d9c4e82fbc91c22b8a8da3ab9f</code>
-                <br>Generated on: <code>2025-11-01T07:29:43.860Z</code>
+                Site version: <code>90985fb526378041363621eedaa80ae0013f8323</code>
+                <br>Generated on: <code>2025-11-01T17:10:12.049Z</code>
               </small>
             </div>
           </div>
@@ -149,12 +165,12 @@
                   ALL INFORMATION PRESENTED HERE IS STRICTLY VOLUNTARY, SHOULD NOT BE USED FOR IMPLEMENTING PRODUCTS, NO WARRANTY EXPRESSED OR IMPLIED. PROVIDED FOR CONVENIENCE ONLY, USE AT YOUR OWN RISK. 
                 </p>
                 <p>
-                  MIT License: Copyright © 2025 <a href="https://github.com/SteveLLamb/" target="_blank">Steve LLamb</a> and <a href="https://github.com/LLuxOperon/" target="_blank">LLux Operon</a>
+                  MIT License: Copyright © 2025 <a href="https://github.com/SteveLLamb/" target="_blank">Steve LLamb</a> and <a href="https://github.com/PrZ3r/" target="_blank">PrZ3r</a>
                   <br><span class="fst-italic">
-                  See <a href="https://github.com/LLuxOperon/MSRBot.io/blob/main/LICENSE.md" target="_blank">LICENCE</a> for Data Disclaimer.</span>
+                  See <a href="https://github.com/PrZ3r/MSRBot.io/blob/main/LICENSE.md" target="_blank">LICENCE</a> for Data Disclaimer.</span>
                 </p>
                 <p>
-                  :: GO TO <i class="bi bi-github"></i> <a href="https://github.com/LLuxOperon/MSRBot.io" target="_blank">https://github.com/LLuxOperon/MSRBot.io</a> <i class="bi bi-github"></i> TO CONTRIBUTE ::
+                  :: GO TO <i class="bi bi-github"></i> <a href="https://github.com/PrZ3r/MSRBot.io" target="_blank">https://github.com/PrZ3r/MSRBot.io</a> <i class="bi bi-github"></i> TO CONTRIBUTE ::
                 </p>
               </small> 
             </div>

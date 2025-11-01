@@ -2,31 +2,31 @@
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
       <loc>https://msrbot.io/</loc>
-      <lastmod>2025-11-01T07:29:43.855Z</lastmod>
+      <lastmod>2025-11-01T17:10:12.045Z</lastmod>
       <changefreq>daily</changefreq>
       <priority>1.0</priority>
     </url>
   <url>
       <loc>https://msrbot.io/dependancies/</loc>
-      <lastmod>2025-11-01T07:29:43.855Z</lastmod>
+      <lastmod>2025-11-01T17:10:12.045Z</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.8</priority>
     </url>
   <url>
       <loc>https://msrbot.io/groups/</loc>
-      <lastmod>2025-11-01T07:29:43.855Z</lastmod>
+      <lastmod>2025-11-01T17:10:12.045Z</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.8</priority>
     </url>
   <url>
       <loc>https://msrbot.io/projects/</loc>
-      <lastmod>2025-11-01T07:29:43.855Z</lastmod>
+      <lastmod>2025-11-01T17:10:12.045Z</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.8</priority>
     </url>
   <url>
       <loc>https://msrbot.io/cards/</loc>
-      <lastmod>2025-11-01T07:29:43.855Z</lastmod>
+      <lastmod>2025-11-01T17:10:12.045Z</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.8</priority>
     </url>
