@@ -1,0 +1,12 @@
+{
+  "siteName": "MSRBot.io",
+  "siteDescription": "MSRBot.io is a live, automated (and hand curated) Media Standards Registry (MSR) of media technology documents — extracting, validating, and linking documents across SMPTE, ISO, ITU, AES and many other publishers, SDOs, and industry groups.",
+  "canonicalBase": "https://msrbot.io",
+  "penguin404Messages": [
+    "404 — Look at yourself, you’ve disappointed the penguin.",
+    "404 — Penguin has looked everywhere. No dice. No ice.",
+    "404 — The archive is cold and empty. Penguin has the sads.",
+    "404 — Penguin has flapped into the void and found nothing.",
+    "404 — Penguin has waddled off to file a missing-page report."
+  ]
+}

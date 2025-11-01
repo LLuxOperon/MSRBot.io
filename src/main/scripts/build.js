@@ -23,9 +23,28 @@ hb.registerHelper('raw', function(options) {
 const keying = require('../lib/keying');
 const { lineageKeyFromDoc, lineageKeyFromDocId } = keying;
 
+
 const REGISTRIES_REPO_PATH = "src/main";
 const SITE_PATH = "src/site";
 const BUILD_PATH = "build";
+
+// --- Site config used for meta and structured data (single source of truth: src/main/config/site.json)
+let siteConfig = null;
+async function loadSiteConfig() {
+  try {
+    const cfgRaw = await fs.readFile(path.join('src','main','config','site.json'), 'utf8');
+    const cfg = JSON.parse(cfgRaw);
+    siteConfig = cfg;
+  } catch (e) {
+    console.error('[build] FATAL: site config missing or invalid at src/main/config/site.json');
+    console.error('[build] Create the file with keys: { "siteName", "siteDescription", "canonicalBase" }');
+    throw e;
+  }
+  // Allow environment overrides (e.g., staging)
+  if (process.env.SITE_CANONICAL_BASE) siteConfig.canonicalBase = process.env.SITE_CANONICAL_BASE;
+  if (process.env.SITE_NAME) siteConfig.siteName = process.env.SITE_NAME;
+  if (process.env.SITE_DESCRIPTION) siteConfig.siteDescription = process.env.SITE_DESCRIPTION;
+}
 
 // Recursively copy directories/files (promises API)
 async function copyRecursive(src, dest) {
@@ -53,6 +72,7 @@ const { readFile, writeFile } = require('fs').promises;
 const { json2csvAsync } = require('json-2-csv');
 
 /* list the available registries type (lower case), id (single, for links), titles (Upper Case), and schema builds */
+
 
 const registries = [
   {
@@ -133,6 +153,15 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   } else {
     PAGE_SITE_PATH = templateName + "/index.html";
   }
+
+  // Build canonical URL for this page
+  // "index.html" should canonicalize to root "/"
+  const pagePathForCanonical = (PAGE_SITE_PATH === 'index.html') ? '/' : `/${PAGE_SITE_PATH}`;
+  const canonicalUrl = new URL(pagePathForCanonical, siteConfig.canonicalBase).href;
+  // OG defaults (fallbacks) for pages that don't set them explicitly
+  const ogTitle = (listTitle ? `${listTitle} — ${siteConfig.siteName}` : siteConfig.siteName);
+  const ogDescription = siteConfig.siteDescription;
+  const ogImage = new URL('/static/og/msrbot-og.png', siteConfig.canonicalBase).href;
 
   var CSV_SITE_PATH = templateType + ".csv";
   const inputFileName = DATA_PATH;
@@ -962,7 +991,15 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     "listType": listType,
     "idType": idType,
     "listTitle": listTitle,
-    "templateName": templateName
+    "templateName": templateName,
+    // meta
+    "siteName": siteConfig.siteName,
+    "siteDescription": siteConfig.siteDescription,
+    "siteTitle": (listTitle ? `${listTitle} — ${siteConfig.siteName}` : siteConfig.siteName),
+    "canonicalUrl": canonicalUrl,
+    "ogTitle": ogTitle,
+    "ogDescription": ogDescription,
+    "ogImage": ogImage
   });
   
   /* write HTML file */
@@ -1020,6 +1057,7 @@ module.exports = {
 }
 
 void (async () => {
+  await loadSiteConfig();
 
   for (const cfg of registries) {
     await buildRegistry(cfg);
@@ -1031,6 +1069,11 @@ void (async () => {
   // Create subdirectory for cards page
   await fs.mkdir(path.join('build','cards'), { recursive: true });
 
+  const cardsCanonical = new URL('/cards/', siteConfig.canonicalBase).href;
+  const cardsOgDescription = siteConfig.siteDescription;
+  const cardsOgTitle = `Cards — ${siteConfig.siteName}`;
+  const cardsOgImage = new URL('/static/og/msrbot-og.png', siteConfig.canonicalBase).href;
+
   await fs.writeFile(path.join('build','cards','index.html'), renderCards({
     templateName: 'cards',
     listTitle: 'Cards',
@@ -1038,9 +1081,105 @@ void (async () => {
     listType: 'documents',
     csv_path: 'documents.csv',
     site_version: (await execFile('git', ['rev-parse','HEAD'])).stdout.trim(),
-    date: new Date().toISOString()
+    date: new Date().toISOString(),
+    // meta
+    siteName: siteConfig.siteName,
+    siteDescription: siteConfig.siteDescription,
+    siteTitle: `Cards — ${siteConfig.siteName}`,
+    canonicalUrl: cardsCanonical,
+    ogTitle: cardsOgTitle,
+    ogDescription: cardsOgDescription,
+    ogImage: cardsOgImage
   }), 'utf8');
 
   console.log('[build] Wrote build/cards/index.html');
+
+  // --- Emit robots.txt and sitemap.xml
+  const robotsTxt = [
+    'User-agent: *',
+    'Allow: /',
+    '',
+    `Sitemap: ${new URL('/sitemap.xml', siteConfig.canonicalBase).href}`
+  ].join('\n');
+  await fs.writeFile(path.join(BUILD_PATH, 'robots.txt'), robotsTxt, 'utf8');
+  console.log('[build] Wrote build/robots.txt');
+
+  // Build a simple sitemap of core routes
+  const nowISO = new Date().toISOString();
+  const urls = [
+    '/',
+    '/dependancies/',
+    '/groups/',
+    '/projects/',
+    '/cards/'
+  ];
+  const urlset = urls.map(u => {
+    const loc = new URL(u, siteConfig.canonicalBase).href;
+    return `  <url>
+      <loc>${loc}</loc>
+      <lastmod>${nowISO}</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>${u === '/' ? '1.0' : '0.8'}</priority>
+    </url>`;
+  }).join('\n');
+
+  const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  ${urlset}
+  </urlset>
+  `;
+  await fs.writeFile(path.join(BUILD_PATH, 'sitemap.xml'), sitemapXml, 'utf8');
+  console.log('[build] Wrote build/sitemap.xml');
+
+  // --- Emit OpenSearch descriptor
+  const openSearchXml = `<?xml version="1.0" encoding="UTF-8"?>
+  <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+    <ShortName>MSRBot</ShortName>
+    <Description>Search MSRBot.io</Description>
+    <Url type="text/html" template="${new URL('/search', siteConfig.canonicalBase).href}?q={searchTerms}"/>
+  </OpenSearchDescription>
+  `;
+  await fs.writeFile(path.join(BUILD_PATH, 'opensearch.xml'), openSearchXml, 'utf8');
+  console.log('[build] Wrote build/opensearch.xml');
+
+  // --- Emit 404.html for GitHub Pages (rendered with header/footer)
+  const headerTpl = await fs.readFile(path.join('src','main','templates','partials','header.hbs'), 'utf8');
+  const footerTpl = await fs.readFile(path.join('src','main','templates','partials','footer.hbs'), 'utf8');
+  hb.registerPartial('header', headerTpl);
+  hb.registerPartial('footer', footerTpl);
+  const tpl404 = hb.compile(`<!DOCTYPE html>
+  <html lang="en">
+    {{> header}}
+    <main class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card p-4 border-0 shadow-sm">
+            <h1 class="h3 mb-3">404 — Page Not Found</h1>
+            <p class="mb-4">The document you requested isn’t here. Try the main documents index or jump to Cards.</p>
+            <p class="mb-0">
+              <a href="/">Home</a> ·
+              <a href="/cards/">Cards</a> ·
+              <a href="/dependancies/">Reference Tree</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+    {{> footer}}
+  </html>`);
+  const fourOhFourHtml = tpl404({
+    templateName: 'index',                 // root paths for assets
+    listTitle: 'Not Found',
+    siteName: siteConfig.siteName,
+    siteDescription: siteConfig.siteDescription,
+    siteTitle: `Not Found — ${siteConfig.siteName}`,
+    canonicalUrl: new URL('/404.html', siteConfig.canonicalBase).href,
+    ogTitle: `Not Found — ${siteConfig.siteName}`,
+    ogDescription: siteConfig.siteDescription,
+    ogImage: new URL('/static/og/msrbot-og.png', siteConfig.canonicalBase).href,
+    robotsMeta: 'noindex,follow'
+  });
+  await fs.writeFile(path.join(BUILD_PATH, '404.html'), fourOhFourHtml, 'utf8');
+  console.log('[build] Wrote build/404.html');
 
 })().catch(console.error)
