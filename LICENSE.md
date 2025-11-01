@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2025 [Steve LLamb](https://github.com/SteveLLamb) and [PrZ3](https://github.com/PrZ3)
+Copyright (c) 2025 [Steve LLamb](https://github.com/SteveLLamb) and [PrZ3r](https://github.com/PrZ3r)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the “Software”), to deal
@@ -24,7 +24,7 @@ THE SOFTWARE.
 
 ### Data Disclaimer
 [MSRBot.io](https://msrbot.io) aggregates factual metadata and references
-via [https://github.com/PrZ3/MSRBot.io/](https://github.com/PrZ3/MSRBot.io/) about publicly released standards, best practices, and other documents (e.g., [SMPTE](https://www.smpte.org/), [ISO](https://www.iso.org/home.html), [ITU](https://www.itu.int/), [AES](https://aes2.org/), and many others).
+via [https://github.com/PrZ3r/MSRBot.io/](https://github.com/PrZ3r/MSRBot.io/) about publicly released standards, best practices, and other documents (e.g., [SMPTE](https://www.smpte.org/), [ISO](https://www.iso.org/home.html), [ITU](https://www.itu.int/), [AES](https://aes2.org/), and many others).
 
 All metadata is derived from publicly available information and is provided
 for research and interoperability purposes only. Original standards and other documents remain the intellectual property and copyright of their respective publishers, as applicable.

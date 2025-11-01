@@ -1173,7 +1173,7 @@ void (async () => {
             </p>
             <small class="text-muted">
               <p>
-                Feeling helpful, and might have found a bad link? File an issue at <i class="bi bi-github"></i> <a href="https://github.com/PrZ3/MSRBot.io/issues" target="_blank">https://github.com/PrZ3/MSRBot.io/issues</a> <i class="bi bi-github"></i>
+                Feeling helpful, and might have found a bad link? File an issue at <i class="bi bi-github"></i> <a href="https://github.com/PrZ3r/MSRBot.io/issues" target="_blank">https://github.com/PrZ3r/MSRBot.io/issues</a> <i class="bi bi-github"></i>
               </p>
             </small> 
             <!-- Store penguin messages JSON in a hidden <code> element for safer injection -->

@@ -25,7 +25,7 @@ MSRBot.io runs a fully automated pipeline of GitHub Actions that:
 1. Install **Node.js 20+** and npm.
 2. Clone the repository:
    ```bash
-   git clone https://github.com/PrZ3/MSRBot.io.git
+   git clone https://github.com/PrZ3r/MSRBot.io.git
    cd MSRBot.io
 3. Install dependencies:
     ```bash
@@ -66,4 +66,4 @@ Extracted document metadata remains subject to the original publishers’ rights
 ## Contact
 Questions, feedback, or ideas?
 
-Open an [ISSUE](https://github.com/PrZ3/MSRBot.io/issues) or reach out to [Steve LLamb](https://github.com/SteveLLamb).
+Open an [ISSUE](https://github.com/PrZ3r/MSRBot.io/issues) or reach out to [Steve LLamb](https://github.com/SteveLLamb).
