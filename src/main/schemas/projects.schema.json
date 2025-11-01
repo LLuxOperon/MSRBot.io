@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/schema#",
-    "$id": "https://github.com/LLuxOperon/MSRBot.io/projects/1.0.0",
-    "$comment": "Copyright (c) 2025 [Steve LLamb](https://github.com/SteveLLamb) and [LLux Operon](https://github.com/LLuxOperon)",
+    "$id": "https://github.com/PrZ3/MSRBot.io/projects/1.0.0",
+    "$comment": "Copyright (c) 2025 [Steve LLamb](https://github.com/SteveLLamb) and [PrZ3](https://github.com/PrZ3)",
     "docTitle": "Schema for MSRBot.io - Projects",
     "items": {
         "anyOf": [

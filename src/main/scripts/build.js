@@ -1169,19 +1169,35 @@ void (async () => {
               <br>Try the <a href="{{assetPrefix}}{{htmlLink}}">main documents index</a>.
             </p>
             <p>
-              <img src="{{assetPrefix}}static/MSRBot-Penguin-blue.svg" alt="MSR" width="250" height="250" class="m-2">
+              <img src="{{assetPrefix}}static/MSRBot-PrZ3-blue.svg" alt="MSR" width="250" height="250" class="m-2">
             </p>
             <small class="text-muted">
               <p>
-                Feeling helpful, and might have found a bad link? File an issue at <i class="bi bi-github"></i> <a href="https://github.com/LLuxOperon/MSRBot.io/issues" target="_blank">https://github.com/LLuxOperon/MSRBot.io/issues</a> <i class="bi bi-github"></i>
+                Feeling helpful, and might have found a bad link? File an issue at <i class="bi bi-github"></i> <a href="https://github.com/PrZ3/MSRBot.io/issues" target="_blank">https://github.com/PrZ3/MSRBot.io/issues</a> <i class="bi bi-github"></i>
               </p>
             </small> 
+            <!-- Store penguin messages JSON in a hidden <code> element for safer injection -->
+            <code id="penguin-messages-json" style="display: none;">{{penguinMessagesJson}}</code>
             <script>
-              (function() {
-                var penguinMessages = {{{penguinMessagesJson}}};
+              (function () {
+                var codeEl = document.getElementById('penguin-messages-json');
+                var penguinMessages = [];
+                if (codeEl) {
+                  try {
+                    penguinMessages = JSON.parse(codeEl.textContent || '[]');
+                  } catch (e) {
+                    penguinMessages = [];
+                  }
+                }
                 var el = document.getElementById('penguin404');
                 if (el && Array.isArray(penguinMessages) && penguinMessages.length) {
-                  el.textContent = penguinMessages[Math.floor(Math.random() * penguinMessages.length)];
+                  var msg = penguinMessages[Math.floor(Math.random() * penguinMessages.length)];
+                  // Clear any existing text and append a <code> wrapper for on-screen display
+                  el.textContent = '';
+                  var codeMsg = document.createElement('code');
+                  codeMsg.className = 'penguin-quip';
+                  codeMsg.textContent = msg;
+                  el.appendChild(codeMsg);
                 }
               })();
             </script>
