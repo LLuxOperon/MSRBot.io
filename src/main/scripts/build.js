@@ -1171,6 +1171,11 @@ void (async () => {
             <p>
               <img src="{{assetPrefix}}static/MSRBot-Penguin-blue.svg" alt="MSR" width="250" height="250" class="m-2">
             </p>
+            <small class="text-muted">
+              <p>
+                Feeling helpful, and might have found a bad link? File an issue at <i class="bi bi-github"></i> <a href="https://github.com/LLuxOperon/MSRBot.io/issues" target="_blank">https://github.com/LLuxOperon/MSRBot.io/issues</a> <i class="bi bi-github"></i>
+              </p>
+            </small> 
             <script>
               (function() {
                 var penguinMessages = {{{penguinMessagesJson}}};
