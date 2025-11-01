@@ -162,6 +162,8 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   const ogTitle = (listTitle ? `${listTitle} — ${siteConfig.siteName}` : siteConfig.siteName);
   const ogDescription = siteConfig.siteDescription;
   const ogImage = new URL('/static/og/msrbot-og.png', siteConfig.canonicalBase).href;
+  // Asset prefix for relative local assets in header/footer
+  const assetPrefix = (templateName === 'index') ? '' : '../';
 
   var CSV_SITE_PATH = templateType + ".csv";
   const inputFileName = DATA_PATH;
@@ -999,7 +1001,8 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     "canonicalUrl": canonicalUrl,
     "ogTitle": ogTitle,
     "ogDescription": ogDescription,
-    "ogImage": ogImage
+    "ogImage": ogImage,
+    "assetPrefix": assetPrefix,
   });
   
   /* write HTML file */
@@ -1074,6 +1077,7 @@ void (async () => {
   const cardsOgTitle = `Cards — ${siteConfig.siteName}`;
   const cardsOgImage = new URL('/static/og/msrbot-og.png', siteConfig.canonicalBase).href;
 
+  const cardsAssetPrefix = '../';
   await fs.writeFile(path.join('build','cards','index.html'), renderCards({
     templateName: 'cards',
     listTitle: 'Cards',
@@ -1089,7 +1093,8 @@ void (async () => {
     canonicalUrl: cardsCanonical,
     ogTitle: cardsOgTitle,
     ogDescription: cardsOgDescription,
-    ogImage: cardsOgImage
+    ogImage: cardsOgImage,
+    assetPrefix: cardsAssetPrefix,
   }), 'utf8');
 
   console.log('[build] Wrote build/cards/index.html');
@@ -1147,20 +1152,34 @@ void (async () => {
   const footerTpl = await fs.readFile(path.join('src','main','templates','partials','footer.hbs'), 'utf8');
   hb.registerPartial('header', headerTpl);
   hb.registerPartial('footer', footerTpl);
+
+  // Prepare penguin 404 messages from config
+  const penguinMessagesJson = JSON.stringify(siteConfig.penguin404Messages);
+  
   const tpl404 = hb.compile(`<!DOCTYPE html>
   <html lang="en">
     {{> header}}
     <main class="container py-5">
-      <div class="row justify-content-center">
-        <div class="col-md-8">
-          <div class="card p-4 border-0 shadow-sm">
-            <h1 class="h3 mb-3">404 — Page Not Found</h1>
-            <p class="mb-4">The document you requested isn’t here. Try the main documents index or jump to Cards.</p>
-            <p class="mb-0">
-              <a href="/">Home</a> ·
-              <a href="/cards/">Cards</a> ·
-              <a href="/dependancies/">Reference Tree</a>
+      <div class="row justify-content-md-center">
+        <div class="col-md-8 text-center">
+          <div class="card p-4 border-1 shadow-sm">
+            <h3 class="h3 mb-3" id="penguin404" aria-live="polite"></h1>
+            <p class="mb-4">
+              The document you requested isn’t here. 
+              <br>Try the <a href="{{assetPrefix}}{{htmlLink}}">main documents index</a>.
             </p>
+            <p>
+              <img src="{{assetPrefix}}static/MSRBot-Penguin-blue.svg" alt="MSR" width="250" height="250" class="m-2">
+            </p>
+            <script>
+              (function() {
+                var penguinMessages = {{{penguinMessagesJson}}};
+                var el = document.getElementById('penguin404');
+                if (el && Array.isArray(penguinMessages) && penguinMessages.length) {
+                  el.textContent = penguinMessages[Math.floor(Math.random() * penguinMessages.length)];
+                }
+              })();
+            </script>
           </div>
         </div>
       </div>
@@ -1170,6 +1189,9 @@ void (async () => {
   const fourOhFourHtml = tpl404({
     templateName: 'index',                 // root paths for assets
     listTitle: 'Not Found',
+    site_version: (await execFile('git', ['rev-parse','HEAD'])).stdout.trim(),
+    date: new Date().toISOString(),
+    // meta
     siteName: siteConfig.siteName,
     siteDescription: siteConfig.siteDescription,
     siteTitle: `Not Found — ${siteConfig.siteName}`,
@@ -1177,7 +1199,9 @@ void (async () => {
     ogTitle: `Not Found — ${siteConfig.siteName}`,
     ogDescription: siteConfig.siteDescription,
     ogImage: new URL('/static/og/msrbot-og.png', siteConfig.canonicalBase).href,
-    robotsMeta: 'noindex,follow'
+    robotsMeta: 'noindex,follow',
+    assetPrefix: '/',
+    penguinMessagesJson: penguinMessagesJson,
   });
   await fs.writeFile(path.join(BUILD_PATH, '404.html'), fourOhFourHtml, 'utf8');
   console.log('[build] Wrote build/404.html');
