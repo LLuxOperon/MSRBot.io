@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://msrbot.io/sitemap.xml
