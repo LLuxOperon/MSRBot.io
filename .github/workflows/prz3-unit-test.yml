@@ -1,7 +1,12 @@
 name: PrZ3 Unit App Test
 
 on:
-  workflow_dispatch:        # manual run
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: 'PR number to comment on (optional for manual runs)'
+        required: false
+        type: string
   pull_request:
     types: [opened, synchronize, reopened]
 
@@ -19,8 +24,6 @@ jobs:
         with:
           app-id: ${{ secrets.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
-          owner: PrZ3r                
-          repositories: MSRBot.io     
 
       - uses: actions/checkout@v4
         with:
@@ -32,10 +35,18 @@ jobs:
           echo "Actor: $GITHUB_ACTOR"
           echo "Repo: $GITHUB_REPOSITORY"
 
-      - name: Comment as PrZ3 Unit
+      - name: Comment as PrZ3 Unit (PR event)
         if: github.event_name == 'pull_request'
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
-          gh pr comment "$GITHUB_REF_NAME" \
-            --body "👋 Greetings, human. This is **PrZ3 Unit** running under the Penguin Parsing Protocol v3-Gen. All systems nominal."
+          gh pr comment ${{ github.event.pull_request.number }} \
+            --body "👋 Greetings, human. This is **PrZ3 Unit** (GitHub App). All systems nominal."
+
+      - name: Comment as PrZ3 Unit (manual)
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.pr_number != ''
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          gh pr comment ${{ github.event.inputs.pr_number }} \
+            --body "👋 Greetings, human. This is **PrZ3 Unit** (GitHub App). Manual ping successful."
