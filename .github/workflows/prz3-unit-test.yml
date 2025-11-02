@@ -41,7 +41,7 @@ jobs:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
           gh pr comment ${{ github.event.pull_request.number }} \
-            --body "👋 Greetings, human. This is **PrZ3 Unit** (GitHub App). All systems nominal."
+            --body "👋 Greetings, human. This is **PrZ3 Unit**. All systems nominal."
 
       - name: Comment as PrZ3 Unit (manual)
         if: github.event_name == 'workflow_dispatch' && github.event.inputs.pr_number != ''
@@ -49,4 +49,4 @@ jobs:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
           gh pr comment ${{ github.event.inputs.pr_number }} \
-            --body "👋 Greetings, human. This is **PrZ3 Unit** (GitHub App). Manual ping successful."
+            --body "👋 Greetings, human. This is **PrZ3 Unit**. Manual ping successful."
