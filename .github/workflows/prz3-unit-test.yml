@@ -1,0 +1,41 @@
+name: PrZ3 Unit App Test
+
+on:
+  workflow_dispatch:        # manual run
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  hello-parsey:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mint PrZ3 Unit token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+          owner: PrZ3                
+          repositories: MSRBot.io     
+
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+
+      - name: Identify actor
+        run: |
+          echo "✅ Running as GitHub App token"
+          echo "Actor: $GITHUB_ACTOR"
+          echo "Repo: $GITHUB_REPOSITORY"
+
+      - name: Comment as PrZ3 Unit
+        if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          gh pr comment "$GITHUB_REF_NAME" \
+            --body "👋 Greetings, human. This is **PrZ3 Unit** running under the Penguin Parsing Protocol v3-Gen. All systems nominal."
