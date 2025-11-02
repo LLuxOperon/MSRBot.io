@@ -19,7 +19,7 @@ jobs:
         with:
           app-id: ${{ secrets.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
-          owner: PrZ3                
+          owner: PrZ3r                
           repositories: MSRBot.io     
 
       - uses: actions/checkout@v4
