@@ -1,8 +1,10 @@
 name: PrZ3 token
-on: workflow_call
-outputs:
-  token:
-    value: ${{ jobs.mint.outputs.token }}
+on:
+  workflow_call:
+    outputs:
+      token:
+        description: 'GitHub App installation token for PrZ3 Unit'
+        value: ${{ jobs.mint.outputs.token }}
 jobs:
   mint:
     runs-on: ubuntu-latest
