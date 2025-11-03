@@ -161,7 +161,8 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   // OG defaults (fallbacks) for pages that don't set them explicitly
   const ogTitle = (listTitle ? `${listTitle} — ${siteConfig.siteName}` : siteConfig.siteName);
   const ogDescription = siteConfig.siteDescription;
-  const ogImage = new URL('/static/og/msrbot-og.png', siteConfig.canonicalBase).href;
+  const ogImage = new URL(siteConfig.ogImage, siteConfig.canonicalBase).href;
+  const ogImageAlt = siteConfig.ogImageAlt;
   // Asset prefix for relative local assets in header/footer
   const assetPrefix = (templateName === 'index') ? '' : '../';
 
@@ -1002,6 +1003,7 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     "ogTitle": ogTitle,
     "ogDescription": ogDescription,
     "ogImage": ogImage,
+    "ogImageAlt": ogImageAlt,
     "assetPrefix": assetPrefix,
   });
   
@@ -1075,7 +1077,8 @@ void (async () => {
   const cardsCanonical = new URL('/cards/', siteConfig.canonicalBase).href;
   const cardsOgDescription = siteConfig.siteDescription;
   const cardsOgTitle = `Cards — ${siteConfig.siteName}`;
-  const cardsOgImage = new URL('/static/og/msrbot-og.png', siteConfig.canonicalBase).href;
+  const cardsOgImage = new URL(siteConfig.ogImage, siteConfig.canonicalBase).href;
+  const cardsOgImageAlt = siteConfig.ogImageAlt;
 
   const cardsAssetPrefix = '../';
   await fs.writeFile(path.join('build','cards','index.html'), renderCards({
@@ -1094,6 +1097,7 @@ void (async () => {
     ogTitle: cardsOgTitle,
     ogDescription: cardsOgDescription,
     ogImage: cardsOgImage,
+    ogImageAlt: cardsOgImageAlt,
     assetPrefix: cardsAssetPrefix,
   }), 'utf8');
 
@@ -1219,7 +1223,8 @@ void (async () => {
     canonicalUrl: new URL('/404.html', siteConfig.canonicalBase).href,
     ogTitle: `Not Found — ${siteConfig.siteName}`,
     ogDescription: siteConfig.siteDescription,
-    ogImage: new URL('/static/og/msrbot-og.png', siteConfig.canonicalBase).href,
+    ogImage: new URL(siteConfig.ogImage, siteConfig.canonicalBase).href,
+    ogImageAlt: siteConfig.ogImageAlt, 
     robotsMeta: 'noindex,follow',
     assetPrefix: '/',
     penguinMessagesJson: penguinMessagesJson,
