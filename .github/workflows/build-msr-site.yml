@@ -97,7 +97,7 @@ jobs:
           path: .emit/skip-site-build.txt
           retention-days: 3
 
-      - name: Guard: confirm App token is present
+      - name: 'Guard: confirm App token is present'
         if: steps.guard.outputs.skip != 'true'
         run: |
           echo "Checking App token presence..."
