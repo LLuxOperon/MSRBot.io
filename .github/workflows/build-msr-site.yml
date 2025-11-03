@@ -99,17 +99,6 @@ jobs:
           app-id: ${{ secrets.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
 
-      - name: 'Guard: confirm App token is present'
-        if: steps.guard.outputs.skip != 'true'
-        run: |
-          echo "Checking App token presence..."
-          if [ -z "${{ steps.app-token.outputs.token }}" ]; then
-            echo "❌ App token missing from steps.app-token.outputs.token"
-            exit 1
-          else
-            echo "✅ App token is present (value hidden)"
-          fi
-
       - uses: actions/checkout@v4
         if: steps.guard.outputs.skip != 'true'
         with:

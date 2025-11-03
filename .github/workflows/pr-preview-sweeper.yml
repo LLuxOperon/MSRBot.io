@@ -11,14 +11,22 @@ jobs:
   sweep:
     runs-on: ubuntu-latest
     steps:
+      - name: Mint PrZ3 Unit token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+
       - uses: actions/checkout@v4
         with:
           ref: gh-pages
+          token: ${{ steps.app-token.outputs.token }}
 
       - name: Remove previews for closed PRs
         env:
           REPO: ${{ github.repository }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
           set -e
           # list pr directories
@@ -31,8 +39,8 @@ jobs:
               git rm -r "$d"
             fi
           done
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "PrZ3 Unit"
+          git config user.email "prz3-unit[bot]@users.noreply.github.com"
           if ! git diff --cached --quiet; then
             git commit -m "Sweep: remove previews for closed PRs"
             git push origin gh-pages

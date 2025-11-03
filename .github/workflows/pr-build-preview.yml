@@ -45,6 +45,13 @@ jobs:
       )
     runs-on: ubuntu-latest
     steps:
+      - name: Mint PrZ3 Unit token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+
       - name: Resolve PR for workflow_run (extract/MSI/MRI)
         if: ${{ github.event_name == 'workflow_run' }}
         id: findpr
@@ -139,6 +146,7 @@ jobs:
         id: start_check
         uses: actions/github-script@v7
         with:
+          github-token: ${{ steps.app-token.outputs.token }}
           script: |
             const isPR = context.eventName === 'pull_request';
             const prNumber = isPR ? context.payload.pull_request.number : Number('${{ steps.findpr.outputs.number }}');
@@ -163,6 +171,7 @@ jobs:
         if: ${{ github.event_name == 'pull_request' || steps.findpr.outputs.number != '' }}
         with:
           ref: ${{ github.event_name == 'pull_request' && github.head_ref || steps.findpr.outputs.branch || 'main' }}
+          token: ${{ steps.app-token.outputs.token }}
 
       - uses: actions/setup-node@v4
         if: ${{ github.event_name == 'pull_request' || steps.findpr.outputs.number != '' }}
@@ -200,16 +209,19 @@ jobs:
         if: ${{ github.event_name == 'pull_request' || steps.findpr.outputs.number != '' }}
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ steps.app-token.outputs.token }}
           publish_dir: ./build
           destination_dir: pr/${{ github.event_name == 'pull_request' && github.event.pull_request.number || steps.findpr.outputs.number }}
           keep_files: true
+          user_name: 'PrZ3 Unit'
+          user_email: 'prz3-unit[bot]@users.noreply.github.com'
+          commit_message: "deploy preview for PR #${{ github.event_name == 'pull_request' && github.event.pull_request.number || steps.findpr.outputs.number }} (PrZ3 Unit)"
 
       - name: Comment preview URL on PR
         if: ${{ github.event_name == 'pull_request' || steps.findpr.outputs.number != '' }}
         uses: marocchino/sticky-pull-request-comment@v2
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
           header: msr-preview
           number: ${{ github.event_name == 'pull_request' && github.event.pull_request.number || steps.findpr.outputs.number }}
           message: |
@@ -221,6 +233,7 @@ jobs:
         if: ${{ github.event_name == 'pull_request' || steps.findpr.outputs.number != '' }}
         uses: actions/github-script@v7
         with:
+          github-token: ${{ steps.app-token.outputs.token }}
           script: |
             const isPR = context.eventName === 'pull_request';
             const prNumber = isPR ? context.payload.pull_request.number : Number('${{ steps.findpr.outputs.number }}');
