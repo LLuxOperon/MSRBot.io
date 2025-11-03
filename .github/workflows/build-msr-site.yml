@@ -157,10 +157,6 @@ jobs:
           node src/main/scripts/utils/buildStats.js
           cp tools/apiViewer.html build/api/viewer.html
 
-      - name: Add CNAME for custom domain
-        if: steps.guard.outputs.skip != 'true'
-        run: echo 'msrbot.io' > ./build/CNAME
-
       - name: Publish to gh-pages
         if: steps.guard.outputs.skip != 'true'
         uses: peaceiris/actions-gh-pages@v3
@@ -168,6 +164,10 @@ jobs:
           github_token: ${{ steps.app-token.outputs.token }}
           publish_dir: ./build
           keep_files: true
+          user_name: 'PrZ3 Unit'
+          user_email: 'prz3-unit[bot]@users.noreply.github.com'
+          commit_message: "deploy: ${{ github.sha }} (PrZ3 Unit)"
+          cname: msrbot.io
           # optional hardening:
           # publish_branch: gh-pages
           # force_orphan: true
