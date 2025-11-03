@@ -97,11 +97,22 @@ jobs:
           path: .emit/skip-site-build.txt
           retention-days: 3
 
+      - name: Guard: confirm App token is present
+        if: steps.guard.outputs.skip != 'true'
+        run: |
+          echo "Checking App token presence..."
+          if [ -z "${{ needs['prz3-token'].outputs.token }}" ]; then
+            echo "❌ App token missing from needs.prz3-token.outputs.token"
+            exit 1
+          else
+            echo "✅ App token is present (value hidden)"
+          fi
+
       - uses: actions/checkout@v4
         if: steps.guard.outputs.skip != 'true'
         with:
           fetch-depth: 0
-          token: ${{ needs.prz3-token.outputs.token }}
+          token: ${{ needs['prz3-token'].outputs.token }}
 
       - uses: actions/setup-node@v4
         if: steps.guard.outputs.skip != 'true'
@@ -152,7 +163,7 @@ jobs:
         if: steps.guard.outputs.skip != 'true'
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ needs.prz3-token.outputs.token }}
+          github_token: ${{ needs['prz3-token'].outputs.token }}
           publish_dir: ./build
           keep_files: true
           # optional hardening:
