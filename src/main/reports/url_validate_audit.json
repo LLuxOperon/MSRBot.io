@@ -1,19 +1,20 @@
 {
-  "generatedAt": "2025-11-03T03:52:43.616Z",
+  "generatedAt": "2025-11-03T05:06:56.842Z",
   "target": "documents.json",
-  "good": 1577,
+  "good": 1579,
   "skippedByDomain": 0,
   "skippedByPublisher": 0,
   "index": {
-    "error": 621,
+    "error": 619,
     "errorBreakdown": {
       "Unreachable (403)": 45,
-      "Unreachable (404)": 166,
-      "Unreachable (429)": 71,
+      "Unreachable (404)": 161,
+      "Unreachable (429)": 122,
+      "Unreachable (ECONNABORTED)": 17,
       "Unreachable (ENOTFOUND)": 2,
       "Unreachable (ERR_BAD_REQUEST)": 1,
-      "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)": 319,
-      "Unreachable (HPE_INVALID_CONSTANT)": 16,
+      "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)": 268,
+      "Unreachable (HPE_INVALID_CONSTANT)": 2,
       "Unreachable (UNABLE_TO_VERIFY_LEAF_SIGNATURE)": 1
     },
     "redirectMismatch": 13,
@@ -915,16 +916,6 @@
           "riskLevel": "High"
         },
         {
-          "docId": "NIST.FIPS.180-1",
-          "publisher": "NIST",
-          "field": "href",
-          "url": "https://doi.org/10.6028/NIST.FIPS.180-1",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
           "docId": "NIST.FIPS.186-4",
           "publisher": "NIST",
           "field": "href",
@@ -935,50 +926,10 @@
           "riskLevel": "High"
         },
         {
-          "docId": "NIST.SP.800-38A-Add",
-          "publisher": "NIST",
-          "field": "href",
-          "url": "https://doi.org/10.6028/NIST.SP.800-38A-Add",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "NIST.SP.800-57p1r2007",
-          "publisher": "NIST",
-          "field": "href",
-          "url": "https://doi.org/10.6028/NIST.SP.800-57p1r2007",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "NIST.SP.800-57p2",
-          "publisher": "NIST",
-          "field": "href",
-          "url": "https://doi.org/10.6028/NIST.SP.800-57p2",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
           "docId": "NIST.SP.800-57pt2r1",
           "publisher": "NIST",
           "field": "href",
           "url": "https://doi.org/10.6028/NIST.SP.800-57pt2r1",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "NIST.SP.800-57pt3r1",
-          "publisher": "NIST",
-          "field": "href",
-          "url": "https://doi.org/10.6028/NIST.SP.800-57pt3r1",
           "message": "Unreachable (404)",
           "explanation": "The URL points to a resource that was not found (dead link).",
           "recommendedAction": "Double-check the URL or remove it if no longer valid.",
@@ -2855,149 +2806,691 @@
           "explanation": "Unknown error during URL resolution.",
           "recommendedAction": "Manual investigation required.",
           "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST428-1.2006",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST428-1.2006",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST428-11.2009",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST428-11.2009",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST428-7.2007",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST428-7.2007",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST428-7.2010",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST428-7.2010",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST429-10.2008",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST429-10.2008",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST429-14.2014",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST429-14.2014",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST429-14.2023-09",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST429-14.2023",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST429-16.2014",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST429-16.2014",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST429-18.2019",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST429-18.2019",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST429-18.2023-09",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST429-18.2023",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST429-19.2019",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST429-19.2019",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST429-2.2009",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST429-2.2009",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST429-2.2011",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST429-2.2011",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST429-2.2011Am1.2013",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST429-2.2011Am1.2013",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST429-2.2013",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST429-2.2013",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST429-2.2013Am1.2018",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST429-2.2013Am1.2018",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST429-2.2019",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST429-2.2019",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST429-2.2020",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST429-2.2020",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST429-2.2023-09",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST429-2.2023",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST429-3.2007",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST429-3.2007",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST429-3.2023-09",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST429-3.2023",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST429-4.2006",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST429-4.2006",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST429-4.2020",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST429-4.2020",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST429-4.2023-05",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST429-4.2023",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST429-5.2009",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST429-5.2009",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST429-5.2017",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST429-5.2017",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST429-5.2023-09",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST429-5.2023",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST429-6.2006",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST429-6.2006",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST429-6.2023-05",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST429-6.2023",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST429-9.2007",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST429-9.2007",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST430-1.2006",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST430-1.2006",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST430-1.2006Am1.2009",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST430-1.2006Am1.2009",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST430-1.2017",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST430-1.2017",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST430-1.2017Am1.2019",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST430-1.2017Am1.2019",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST430-12.2014",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST430-12.2014",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST430-12.2014Am1.2019",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST430-12.2014Am1.2019",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST430-14.2015",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST430-14.2015",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST430-2.2006",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST430-2.2006",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST430-3.2008",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST430-3.2008",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST430-3.2012",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST430-3.2012",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST430-4.2008",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST430-4.2008",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST430-5.2008",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST430-5.2008",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST430-5.2011",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST430-5.2011",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST430-5.2023-09",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST430-5.2023",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST430-7.2008",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST430-7.2008",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST430-9.2008",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST430-9.2008",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST433.2008",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST433.2008",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST434.2006",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST434.2006",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST435-1.2009",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST435-1.2009",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST435-3.2009",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST435-3.2009",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
+        },
+        {
+          "docId": "SMPTE.ST55.2000",
+          "publisher": "SMPTE",
+          "field": "href",
+          "url": "https://doi.org/10.5594/SMPTE.ST55.2000",
+          "message": "Unreachable (429)",
+          "explanation": "Unknown error during URL resolution.",
+          "recommendedAction": "Manual investigation required.",
+          "riskLevel": "Unknown"
         }
       ],
-      "HPE_INVALID_CONSTANT": [
+      "ECONNABORTED": [
         {
           "docId": "AMPAS.P.2013-001",
           "publisher": "AMPAS",
           "field": "href",
           "url": "http://j.mp/P-2013-001",
-          "message": "Unreachable (HPE_INVALID_CONSTANT)",
-          "explanation": "Malformed response or unexpected protocol from server.",
-          "recommendedAction": "Verify the URL manually. It may be non-HTTP content.",
-          "riskLevel": "Medium"
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
+        },
+        {
+          "docId": "AMPAS.P.2019-001",
+          "publisher": "AMPAS",
+          "field": "href",
+          "url": "https://aces.mp/P_2019-001",
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
         },
         {
           "docId": "AMPAS.S.2013-001",
           "publisher": "AMPAS",
           "field": "href",
           "url": "http://j.mp/S-2013-001",
-          "message": "Unreachable (HPE_INVALID_CONSTANT)",
-          "explanation": "Malformed response or unexpected protocol from server.",
-          "recommendedAction": "Verify the URL manually. It may be non-HTTP content.",
-          "riskLevel": "Medium"
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
         },
         {
           "docId": "AMPAS.S.2014-002",
           "publisher": "AMPAS",
           "field": "href",
           "url": "http://j.mp/S-2014-002",
-          "message": "Unreachable (HPE_INVALID_CONSTANT)",
-          "explanation": "Malformed response or unexpected protocol from server.",
-          "recommendedAction": "Verify the URL manually. It may be non-HTTP content.",
-          "riskLevel": "Medium"
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
         },
         {
           "docId": "AMPAS.S.2014-003",
           "publisher": "AMPAS",
           "field": "href",
           "url": "http://j.mp/S-2014-003",
-          "message": "Unreachable (HPE_INVALID_CONSTANT)",
-          "explanation": "Malformed response or unexpected protocol from server.",
-          "recommendedAction": "Verify the URL manually. It may be non-HTTP content.",
-          "riskLevel": "Medium"
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
         },
         {
           "docId": "AMPAS.S.2014-004",
           "publisher": "AMPAS",
           "field": "href",
           "url": "http://j.mp/S-2014-004",
-          "message": "Unreachable (HPE_INVALID_CONSTANT)",
-          "explanation": "Malformed response or unexpected protocol from server.",
-          "recommendedAction": "Verify the URL manually. It may be non-HTTP content.",
-          "riskLevel": "Medium"
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
         },
         {
           "docId": "AMPAS.S.2014-006",
           "publisher": "AMPAS",
           "field": "href",
           "url": "http://j.mp/S-2014-006",
-          "message": "Unreachable (HPE_INVALID_CONSTANT)",
-          "explanation": "Malformed response or unexpected protocol from server.",
-          "recommendedAction": "Verify the URL manually. It may be non-HTTP content.",
-          "riskLevel": "Medium"
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
+        },
+        {
+          "docId": "AMPAS.S.2016-001",
+          "publisher": "AMPAS",
+          "field": "href",
+          "url": "http://j.mp/S-2016-001",
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
+        },
+        {
+          "docId": "AMPAS.S.2019-001",
+          "publisher": "AMPAS",
+          "field": "href",
+          "url": "https://aces.mp/S-2019-001",
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
         },
         {
           "docId": "AMPAS.TB.2014-001",
           "publisher": "AMPAS",
           "field": "href",
           "url": "http://j.mp/TB-2014-001",
-          "message": "Unreachable (HPE_INVALID_CONSTANT)",
-          "explanation": "Malformed response or unexpected protocol from server.",
-          "recommendedAction": "Verify the URL manually. It may be non-HTTP content.",
-          "riskLevel": "Medium"
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
         },
         {
           "docId": "AMPAS.TB.2014-002",
           "publisher": "AMPAS",
           "field": "href",
           "url": "http://j.mp/TB-2014-002",
-          "message": "Unreachable (HPE_INVALID_CONSTANT)",
-          "explanation": "Malformed response or unexpected protocol from server.",
-          "recommendedAction": "Verify the URL manually. It may be non-HTTP content.",
-          "riskLevel": "Medium"
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
         },
         {
           "docId": "AMPAS.TB.2014-004",
           "publisher": "AMPAS",
           "field": "href",
           "url": "http://j.mp/TB-2014-004",
-          "message": "Unreachable (HPE_INVALID_CONSTANT)",
-          "explanation": "Malformed response or unexpected protocol from server.",
-          "recommendedAction": "Verify the URL manually. It may be non-HTTP content.",
-          "riskLevel": "Medium"
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
         },
         {
           "docId": "AMPAS.TB.2014-005",
           "publisher": "AMPAS",
           "field": "href",
           "url": "http://j.mp/TB-2014-005",
-          "message": "Unreachable (HPE_INVALID_CONSTANT)",
-          "explanation": "Malformed response or unexpected protocol from server.",
-          "recommendedAction": "Verify the URL manually. It may be non-HTTP content.",
-          "riskLevel": "Medium"
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
         },
         {
           "docId": "AMPAS.TB.2014-006",
           "publisher": "AMPAS",
           "field": "href",
           "url": "http://j.mp/TB-2014-006",
-          "message": "Unreachable (HPE_INVALID_CONSTANT)",
-          "explanation": "Malformed response or unexpected protocol from server.",
-          "recommendedAction": "Verify the URL manually. It may be non-HTTP content.",
-          "riskLevel": "Medium"
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
         },
         {
           "docId": "AMPAS.TB.2014-007",
           "publisher": "AMPAS",
           "field": "href",
           "url": "http://j.mp/TB-2014-007",
-          "message": "Unreachable (HPE_INVALID_CONSTANT)",
-          "explanation": "Malformed response or unexpected protocol from server.",
-          "recommendedAction": "Verify the URL manually. It may be non-HTTP content.",
-          "riskLevel": "Medium"
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
         },
         {
           "docId": "AMPAS.TB.2014-010",
           "publisher": "AMPAS",
           "field": "href",
           "url": "http://j.mp/TB-2014-010",
-          "message": "Unreachable (HPE_INVALID_CONSTANT)",
-          "explanation": "Malformed response or unexpected protocol from server.",
-          "recommendedAction": "Verify the URL manually. It may be non-HTTP content.",
-          "riskLevel": "Medium"
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
         },
         {
           "docId": "AMPAS.TB.2014-012",
           "publisher": "AMPAS",
           "field": "href",
           "url": "http://j.mp/TB-2014-012",
-          "message": "Unreachable (HPE_INVALID_CONSTANT)",
-          "explanation": "Malformed response or unexpected protocol from server.",
-          "recommendedAction": "Verify the URL manually. It may be non-HTTP content.",
-          "riskLevel": "Medium"
-        },
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
+        }
+      ],
+      "HPE_INVALID_CONSTANT": [
         {
           "docId": "AMPAS.TB.2014-013",
           "publisher": "AMPAS",
@@ -5723,516 +6216,6 @@
           "explanation": "The URL is stuck in a redirect loop.",
           "recommendedAction": "Check the server config or redirect chain.",
           "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST428-1.2006",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST428-1.2006",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST428-11.2009",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST428-11.2009",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST428-7.2007",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST428-7.2007",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST428-7.2010",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST428-7.2010",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST429-10.2008",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST429-10.2008",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST429-14.2014",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST429-14.2014",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST429-14.2023-09",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST429-14.2023",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST429-16.2014",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST429-16.2014",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST429-18.2019",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST429-18.2019",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST429-18.2023-09",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST429-18.2023",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST429-19.2019",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST429-19.2019",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST429-2.2009",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST429-2.2009",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST429-2.2011",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST429-2.2011",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST429-2.2011Am1.2013",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST429-2.2011Am1.2013",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST429-2.2013",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST429-2.2013",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST429-2.2013Am1.2018",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST429-2.2013Am1.2018",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST429-2.2019",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST429-2.2019",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST429-2.2020",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST429-2.2020",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST429-2.2023-09",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST429-2.2023",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST429-3.2007",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST429-3.2007",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST429-3.2023-09",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST429-3.2023",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST429-4.2006",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST429-4.2006",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST429-4.2020",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST429-4.2020",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST429-4.2023-05",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST429-4.2023",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST429-5.2009",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST429-5.2009",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST429-5.2017",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST429-5.2017",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST429-5.2023-09",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST429-5.2023",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST429-6.2006",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST429-6.2006",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST429-6.2023-05",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST429-6.2023",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST429-9.2007",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST429-9.2007",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST430-1.2006",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST430-1.2006",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST430-1.2006Am1.2009",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST430-1.2006Am1.2009",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST430-1.2017",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST430-1.2017",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST430-1.2017Am1.2019",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST430-1.2017Am1.2019",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST430-12.2014",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST430-12.2014",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST430-12.2014Am1.2019",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST430-12.2014Am1.2019",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST430-14.2015",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST430-14.2015",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST430-2.2006",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST430-2.2006",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST430-3.2008",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST430-3.2008",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST430-3.2012",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST430-3.2012",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST430-4.2008",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST430-4.2008",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST430-5.2008",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST430-5.2008",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST430-5.2011",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST430-5.2011",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST430-5.2023-09",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST430-5.2023",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST430-7.2008",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST430-7.2008",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST430-9.2008",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST430-9.2008",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST433.2008",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST433.2008",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST434.2006",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST434.2006",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST435-1.2009",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST435-1.2009",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST435-3.2009",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST435-3.2009",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "SMPTE.ST55.2000",
-          "publisher": "SMPTE",
-          "field": "href",
-          "url": "https://doi.org/10.5594/SMPTE.ST55.2000",
-          "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
-          "explanation": "The URL is stuck in a redirect loop.",
-          "recommendedAction": "Check the server config or redirect chain.",
-          "riskLevel": "Medium"
         }
       ],
       "ENOTFOUND": [
@@ -6266,7 +6249,7 @@
           "publisher": "Scientific Instruments",
           "field": "href",
           "url": "https://doi.org/10.1088/0950-7671/1/3/302",
-          "resolvedUrl": "https://validate.perfdrive.com/fb803c746e9148689b3984a31fccd902/?ssa=dc541fae-2d70-43cf-bf83-96788bc202f8&ssb=99728238280&ssc=https%3A%2F%2Fiopscience.iop.org%2Farticle%2F10.1088%2F0950-7671%2F1%2F3%2F302&ssi=4fa0eee9-cnvj-406e-a963-fb04ad2ba7c8&ssk=botmanager_support@radware.com&ssm=60121727389688092105645993684439&ssn=9644e07764fd1ff45c97eae0370c9a4145565d6d7cc0-4587-4713-a70066&sso=a0e65c9b-95442ecbaf36285f070fc751d7626d4cb24c9968a7a95d4e&ssp=35885987781762180206176216537321479&ssq=95865544108010305904341080744168456374796&ssr=NTIuMTYxLjUwLjM4&sst=axios/1.12.0&ssu=&ssv=&ssw=&ssx=eyJfX3V6bWYiOiI3ZjkwMDA1ZDZkN2NjMC00NTg3LTQ3MTMtYWM5Yi05NTQ0MmVjYmFmMzYxLTE3NjIxNDEwODEzMjMwLTAwMTMyZGEyZjI1NmRiZGYyNjYxMCIsInJkIjoiaW9wLm9yZyIsInV6bXgiOiI3ZjkwMDBkMjZlMzEyNy00ZTkzLTRlYzMtYjFlZC0zODFhNjYyOWNhN2IxLTE3NjIxNDEwODEzMjMwLTUwN2MxNjUxY2U1ZjI1YjQxMCJ9",
+          "resolvedUrl": "https://validate.perfdrive.com/fb803c746e9148689b3984a31fccd902/?ssa=98055f0d-f5e6-45c0-92ad-972c0d23af76&ssb=22891274125&ssc=https%3A%2F%2Fiopscience.iop.org%2Farticle%2F10.1088%2F0950-7671%2F1%2F3%2F302&ssi=73deb1ca-cnvj-4b6c-ad1a-2e1a10633ca1&ssk=botmanager_support@radware.com&ssm=29381903192910537107622726826849&ssn=44977d606241b97be0b1a5e2c93aa47d7c87f2e15bdb-afe1-4cfc-becfbb&sso=422c24db-494b0dadbefabdd7c7d236597e18ceee7f9c04861ffeb8a2&ssp=41724615401762154507176212843499621&ssq=26607054579369504534745793330946395602241&ssr=MjAuNTcuNzcuMTkz&sst=axios/1.12.0&ssu=&ssv=&ssw=&ssx=eyJyZCI6ImlvcC5vcmciLCJ1em14IjoiN2Y5MDAwYzY1ZmQxMzgtZGUwNy00ODgzLWFkZDktOGJmZTM4NzcxZWE0MS0xNzYyMTQ1NzkzNTIwMC03ZDliODE5OTZlMWRjNjFjMTAiLCJfX3V6bWYiOiI3ZjkwMDBmMmUxNWJkYi1hZmUxLTRjZmMtYjRkYi00OTRiMGRhZGJlZmExLTE3NjIxNDU3OTM1MjAwLTAwMTIyZjQ3ZDhkNDJlOWYzMWExMCJ9",
           "resolvedField": "resolvedHref",
           "expectedResolved": "https://iopscience.iop.org/article/10.1088/0950-7671/1/3/302",
           "message": "resolved url mismatch"
