@@ -12,6 +12,7 @@ permissions:
 jobs:
   prz3-token:
     uses: ./.github/workflows/_prz3-token.yml
+    secrets: inherit
 
   build:
     needs: prz3-token
