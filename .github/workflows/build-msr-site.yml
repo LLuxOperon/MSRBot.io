@@ -10,12 +10,7 @@ permissions:
   contents: write 
 
 jobs:
-  prz3-token:
-    uses: ./.github/workflows/_prz3-token.yml
-    secrets: inherit
-
   build:
-    needs: prz3-token
     if: >
       github.event_name != 'workflow_run' || 
       github.event.workflow_run.conclusion == 'success'
@@ -97,12 +92,19 @@ jobs:
           path: .emit/skip-site-build.txt
           retention-days: 3
 
+      - name: Mint PrZ3 Unit token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+
       - name: 'Guard: confirm App token is present'
         if: steps.guard.outputs.skip != 'true'
         run: |
           echo "Checking App token presence..."
-          if [ -z "${{ needs['prz3-token'].outputs.token }}" ]; then
-            echo "❌ App token missing from needs.prz3-token.outputs.token"
+          if [ -z "${{ steps.app-token.outputs.token }}" ]; then
+            echo "❌ App token missing from steps.app-token.outputs.token"
             exit 1
           else
             echo "✅ App token is present (value hidden)"
@@ -112,7 +114,7 @@ jobs:
         if: steps.guard.outputs.skip != 'true'
         with:
           fetch-depth: 0
-          token: ${{ needs['prz3-token'].outputs.token }}
+          token: ${{ steps.app-token.outputs.token }}
 
       - uses: actions/setup-node@v4
         if: steps.guard.outputs.skip != 'true'
@@ -163,7 +165,7 @@ jobs:
         if: steps.guard.outputs.skip != 'true'
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ needs['prz3-token'].outputs.token }}
+          github_token: ${{ steps.app-token.outputs.token }}
           publish_dir: ./build
           keep_files: true
           # optional hardening:
