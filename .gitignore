@@ -1,6 +1,7 @@
 .\#*
 *~
 .DS_Store
+secrets
 node_modules
 build
 /src/main/logs/local
