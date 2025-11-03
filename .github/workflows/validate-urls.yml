@@ -31,6 +31,7 @@ jobs:
         if: github.event_name == 'workflow_run'
         uses: actions/github-script@v7
         with:
+          github-token: ${{ steps.app-token.outputs.token }}
           script: |
             const run = context.payload.workflow_run;
             if (!run) { core.setOutput('skip', 'false'); return; }
@@ -45,6 +46,25 @@ jobs:
             core.setOutput('skip', marker ? 'true' : 'false');
             core.setOutput('pr', prNum);
 
+      - name: Mint PrZ3 Unit token
+        if: steps.guard.outputs.skip != 'true'
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+
+      - name: 'Guard: confirm App token is present'
+        if: steps.guard.outputs.skip != 'true'
+        run: |
+          echo "Checking App token presence..."
+          if [ -z "${{ steps.app-token.outputs.token }}" ]; then
+            echo "❌ App token missing from steps.app-token.outputs.token"
+            exit 1
+          else
+            echo "✅ App token is present (value hidden)"
+          fi
+
       - name: Skipping Validate URLs (upstream PR open)
         if: steps.guard.outputs.skip == 'true'
         run: |
@@ -54,6 +74,9 @@ jobs:
       - name: Checkout repo
         if: steps.guard.outputs.skip != 'true'
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ steps.app-token.outputs.token }}
 
       - name: Set up Node.js
         if: steps.guard.outputs.skip != 'true'
@@ -93,11 +116,13 @@ jobs:
 
       - name: Auto-commit audit back to main (if changed)
         if: (success() || failure()) && steps.guard.outputs.skip != 'true'
+        env:
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
           set -e
           BR="${{ github.event.repository.default_branch }}"
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "PrZ3 Unit"
+          git config user.email "prz3-unit[bot]@users.noreply.github.com"
           git add src/main/reports/url_validate_audit.json || true
           if git diff --cached --quiet; then
             echo "No audit changes to commit.";
@@ -109,6 +134,8 @@ jobs:
 
       - name: Sync to latest base after audit push
         if: steps.guard.outputs.skip != 'true'
+        env:
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
           git fetch origin
           git checkout ${{ github.event.repository.default_branch }}
@@ -145,8 +172,8 @@ jobs:
       - name: Commit canonicalized documents.json
         if: steps.guard.outputs.skip != 'true' && steps.norm.outputs.applied != '0'
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "PrZ3 Unit"
+          git config user.email "prz3-unit[bot]@users.noreply.github.com"
           git add src/main/data/documents.json
           if git diff --cached --quiet; then
             echo "No canonicalized changes to commit."
@@ -158,7 +185,7 @@ jobs:
         if: steps.guard.outputs.skip != 'true' && steps.norm.outputs.applied != '0' && github.ref != 'refs/heads/chore/url-normalize'
         uses: peter-evans/create-pull-request@v6
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ steps.app-token.outputs.token }}
           commit-message: 'fix: backfill resolved* from URL validation (missing resolved)'
           title: "URL Backfill resolved* for ${{ steps.audit.outputs.redirect_undefined }} entries"
           body: |
@@ -179,6 +206,7 @@ jobs:
         if: (success() || failure()) && steps.guard.outputs.skip != 'true'
         uses: actions/github-script@v7
         with:
+          github-token: ${{ steps.app-token.outputs.token }}
           script: |
             const fs = require('fs');
             const path = require('path');
