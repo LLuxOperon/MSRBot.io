@@ -1,0 +1,16 @@
+name: PrZ3 token
+on: workflow_call
+outputs:
+  token:
+    value: ${{ jobs.mint.outputs.token }}
+jobs:
+  mint:
+    runs-on: ubuntu-latest
+    outputs:
+      token: ${{ steps.app-token.outputs.token }}
+    steps:
+      - id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}

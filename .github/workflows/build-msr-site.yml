@@ -9,12 +9,12 @@ on:
 permissions:
   contents: write 
 
-concurrency:
-  group: msr-site-${{ github.ref_name }}
-  cancel-in-progress: true
-
 jobs:
+  prz3-token:
+    uses: ./.github/workflows/_prz3-token.yml
+
   build:
+    needs: prz3-token
     if: >
       github.event_name != 'workflow_run' || 
       github.event.workflow_run.conclusion == 'success'
@@ -100,6 +100,7 @@ jobs:
         if: steps.guard.outputs.skip != 'true'
         with:
           fetch-depth: 0
+          token: ${{ needs.prz3-token.outputs.token }}
 
       - uses: actions/setup-node@v4
         if: steps.guard.outputs.skip != 'true'
@@ -123,8 +124,8 @@ jobs:
           if git diff --cached --quiet; then
             echo "No canonicalization changes."
           else
-            git config user.name 'github-actions[bot]'
-            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git config user.name 'PrZ3 Unit'
+            git config user.email 'prz3-unit[bot]@users.noreply.github.com'
             git commit -m "chore: canonicalize registries"
             git push
           fi
@@ -150,7 +151,7 @@ jobs:
         if: steps.guard.outputs.skip != 'true'
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ needs.prz3-token.outputs.token }}
           publish_dir: ./build
           keep_files: true
           # optional hardening:
