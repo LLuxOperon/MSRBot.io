@@ -11,7 +11,14 @@ jobs:
     outputs:
       token: ${{ steps.app-token.outputs.token }}
     steps:
-      - id: app-token
+
+      - name: Guard: verify App secrets exist
+        run: |
+          test -n "${{ secrets.APP_ID }}" || (echo "Missing APP_ID secret" && exit 1)
+          test -n "${{ secrets.APP_PRIVATE_KEY }}" || (echo "Missing APP_PRIVATE_KEY secret" && exit 1)
+
+      - name: Mint PrZ3 Unit token
+        id: app-token
         uses: actions/create-github-app-token@v1
         with:
           app-id: ${{ secrets.APP_ID }}
