@@ -1,7 +1,7 @@
 # MSRBot.io — Consolidated Technical Chronicle
 
 **Status:** Gold-copy consolidation  
-**Consolidation Date:** 2025-10-27
+**Consolidation Date:** 2025-10-31
 
 This document consolidates the MSRBot.io worklog into a single, category‑organized technical chronicle. Dates are de‑emphasized in favor of system architecture and implementation detail. All filenames, scripts, fields, and JSON keys are shown in monospace.
 
@@ -153,8 +153,35 @@ This document consolidates the MSRBot.io worklog into a single, category‑organ
 
 ## 6 Frontend & Site Publishing
 - PR previews deployed for each open PR with a durable URL. Checks include write permission and attach to the PR’s head SHA.
-- Links are stable under both `github.io` and the CNAME (`mediastandardsregistry.org`).
-- Plan: staging subdomain (e.g., `test.mediastandardsregistry.org`) for broader pre‑prod validation.
+- Links are stable under both `github.io` and the CNAME (`msrbot.io`).
+- Plan: staging subdomain (e.g., `test.msrbot.io`) for broader pre‑prod validation.
+
+### 6.1 Frontend Refresh I — Card-Based Registry View
+- Refactored registry interface to a responsive **card-based view** using Handlebars templates with synchronized filters and facets.
+- Implemented **`src/site/js/cards.js`** to load `search-index.json` and `facets.json`, render cards via Handlebars, and manage live filtering.
+- Added helper functions: `join`, `len`, `gt`, `statusBadge`, `coalesce`, and `hasAny` for inline template logic.
+- Introduced fallback diagnostics for missing templates (`#card-tpl` / `#card-tpl-src`) to prevent silent render failures.
+- Corrected **publiccd** mapping within `statusBadge` to ensure proper badge display across document types.
+- Added **`syncFacetCheckboxes()`** to maintain state parity between filter chips and facet checkboxes, including the **“Clear All”** action.
+- Updated **`mobile.css`** for badge right-alignment and text wrapping on small screens.
+- Updated **`cards.hbs`** to integrate existing Bootstrap header/footer, sticky topbar, and unified card render block.
+- Verified automatic facet expansion for **status** and **docType**; confirmed live synchronization between chip removal and facet checkboxes.
+- Result: responsive, visually consistent registry cards with fully synchronized filters and improved mobile usability.
+
+### 6.2 Frontend Refresh II — Branding, SEO & 404 Overhaul
+- **Project rebrand and repository migration:** moved to `PrZ3/MSRBot.io`; redirects active for previous repo and domain.
+- **Domain alignment:** `msrbot.io` established as canonical host; `mediastandardsregistry.org` configured to redirect via DNS.
+- **Single-source configuration:** introduced `src/main/config/site.json` as canonical metadata store; removed duplicate inline defaults from `build.js`.
+- **Environment variable overrides:** supports `SITE_CANONICAL_BASE`, `SITE_NAME`, and `SITE_DESCRIPTION` for staging.
+- **Meta & SEO injection:** build now applies `siteName`, `siteDescription`, `canonicalUrl`, `ogTitle`, `ogDescription`, and `ogImage` across all pages.
+- **Header partial overhaul (`header.hbs`):** canonical URL, Open Graph, and JSON-LD schema (WebSite + searchAction); robots meta (index/noindex) applied dynamically.
+- Added comprehensive favicon and language metadata; optimized preconnects and HTTPS-only links.
+- **Generated build assets:** `robots.txt`, `sitemap.xml`, `opensearch.xml`, and `404.html` all rendered with header/footer and OG context.
+- **Dynamic 404 page (“Disappointed Penguin Edition”):** Handlebars-driven layout with randomized, config-based message list; robots meta = noindex,follow.
+- **Asset and link cleanup:** introduced `assetPrefix` for consistent partial reuse; navbar links now root-absolute; redundant defaults removed.
+- **OG image generation:** 1200×630 PNG featuring new penguin + logo branding on teal/circuit background.
+- **Identity & icon:** replaced legacy MSR icon with minimalist “PrZ3” SVG favicon; scalable and consistent across all resolutions.
+- Result: complete brand, SEO, and metadata integration; clean 404 UX; site now fully single-config, portable, and identity-consistent.
 
 ## 7 Logging, Diffing, and PR Output
 - `logSmart.js` centralizes logging with a console budget (~3.5 MiB). Excess console chatter is tripwired while full logs are persisted to file.
