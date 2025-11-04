@@ -6,7 +6,10 @@ on:
     paths:
       # Manual PRs that touch site or templates
       - "src/site/**"
+      - "src/main/config/**"
+      - "src/main/lib/**"
       - "src/main/templates/**"
+      - "tools/**" 
       - "package.json"
       - "package-lock.json"
       # Extract PRs (bot): include because they change the dataset used by the site
