@@ -1,7 +1,7 @@
 # MSRBot.io — Consolidated Technical Chronicle
 
 **Status:** Gold-copy consolidation  
-**Consolidation Date:** 2025-10-31
+**Consolidation Date:** 2025-11-03
 
 This document consolidates the MSRBot.io worklog into a single, category‑organized technical chronicle. Dates are de‑emphasized in favor of system architecture and implementation detail. All filenames, scripts, fields, and JSON keys are shown in monospace.
 
@@ -140,6 +140,30 @@ This document consolidates the MSRBot.io worklog into a single, category‑organ
 - Node cache for faster CI startup. Conditional normalization + PR creation gated on real change signals (`redirectUndefinedCount > 0`, `applied > 0`).
 - Post‑audit sync‑to‑main prevents base/head conflicts. Normalization PRs use a rolling branch `chore/url-normalize` and auto‑delete on merge; guards prevent self‑trigger.
 - README documentation expanded with an “Automated Workflow Chain (with Samples)” section: triggers, datasets, expected outputs, and sample links to runs, reports, PRs, and issues.
+
+### 4.7 PrZ3 Unit Integration — Phase 1 (GitHub App Identity)
+- Adopted **PrZ3 Unit** (GitHub App) as the unified automation identity across all workflows; replaces `github-actions[bot]`.
+- App connection established to the `PrZ3r` organization and `MSRBot.io` repository.
+
+**Core Setup**
+- Secrets added: `APP_ID`, `APP_PRIVATE_KEY`.
+
+**Behavior & Identity**
+- Commits authored as: `PrZ3 Unit <prz3-unit[bot]@users.noreply.github.com>`.
+- PRs and comments show actor: `prz3-unit[bot]`.
+- Issue automation (resolve/close) confirmed (“Resolved: no outstanding 404s…”, etc.).
+- Preview builds post comments and deploy commits as the bot.
+- Validation and extract PRs open with bot authorship; auto-closing logic intact.
+
+**Operational Notes**
+- Actions audit trail displays consistent bot identity across runs.
+
+**Verification**
+- App token issuance and usage validated end-to-end.
+- Commit history, PRs, and Pages deploy/cleanup all operate correctly under PrZ3 Unit.
+
+**Result**
+- All automation now runs under a single, auditable identity with minimal token sprawl and App-based security hardening.
 
 ## 5 Registry Architecture & Data Model Evolution
 - Consolidated `metaConfig` governs notes for `status.stabilized`, `status.withdrawn`, and `status.withdrawnNotice`.
