@@ -186,7 +186,7 @@ const expSMPTE_RESOLVED_STANDARDS = {
     hasDocType(entry, 'Standard', 'Recommended Practice', 'Engineering Guideline', 'Registered Disclosure Document', 'Overview Document')
   ),
   check: ({ url, field }) => {
-    const expectedPrefix = 'https://my.smpte.org/s/';
+    const expectedPrefix = 'https://pub.smpte.org/doc/';
     const ok = startsWithPrefix(url, expectedPrefix);
     return { ok, expectedPrefix, actual: url, field };
   }
