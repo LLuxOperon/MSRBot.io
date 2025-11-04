@@ -217,13 +217,16 @@ jobs:
             const auditUrl = `https://github.com/${owner}/${repo}/blob/${defaultBranch}/src/main/reports/url_validate_audit.json`;
 
             // Helper: post large lists in chunked comments to avoid issue body limits
-            async function postChunks(issue_number, lines, chunkSize = 200, header = 'Additional items') {
+            // `startAt` is the 1-based index of the first item in `lines` relative to the full list
+            async function postChunks(issue_number, lines, chunkSize = 200, header = 'Continued list', startAt = 1) {
               for (let i = 0; i < lines.length; i += chunkSize) {
+                const from = startAt + i;
+                const to = startAt + Math.min(i + chunkSize, lines.length) - 1;
                 const part = lines.slice(i, i + chunkSize).join('\n');
                 await github.rest.issues.createComment({
                   owner, repo, issue_number,
                   body: [
-                    `**${header}** (items ${i + 1}–${Math.min(i + chunkSize, lines.length)})`,
+                    `**${header}** (items ${from}–${to})`,
                     '',
                     part
                   ].join('\n')
@@ -291,6 +294,7 @@ jobs:
                 '',
                 `**Count:** ${arr.length}`,
                 `[Full audit JSON](${auditUrl})`,
+                `Shown below: first 100. Remaining ${Math.max(0, arr.length - 100)} in comments.`,
                 '',
                 ...lines,
                 '',
@@ -302,7 +306,7 @@ jobs:
                   .sort((a,b) => (a.docId || '').localeCompare(b.docId || ''))
                   .slice(100)
                   .map(i => `- docId: **${i.docId}**\n_${i.field}_: ${i.url}`);
-                await postChunks(num, rest, 200, 'Continued list');
+                await postChunks(num, rest, 200, 'Continued list', 101);
               }
             }
 
@@ -324,6 +328,7 @@ jobs:
                 '',
                 `**Count:** ${arr.length}`,
                 `[Full audit JSON](${auditUrl})`,
+                `Shown below: first 100. Remaining ${Math.max(0, arr.length - 100)} in comments.`,
                 '',
                 ...lines,
                 '',
@@ -335,7 +340,7 @@ jobs:
                   .sort((a,b) => (a.docId || '').localeCompare(b.docId || ''))
                   .slice(100)
                   .map(i => `- docId: **${i.docId}**\n_${i.field}_: ${i.url}`);
-                await postChunks(num, rest, 200, 'Continued list');
+                await postChunks(num, rest, 200, 'Continued list', 101);
               }
             }
 
@@ -357,6 +362,7 @@ jobs:
                 '',
                 `**Count:** ${arr.length}`,
                 `[Full audit JSON](${auditUrl})`,
+                `Shown below: first 100. Remaining ${Math.max(0, arr.length - 100)} in comments.`,
                 '',
                 ...lines,
                 '',
@@ -368,7 +374,7 @@ jobs:
                   .sort((a,b) => (a.docId || '').localeCompare(b.docId || ''))
                   .slice(100)
                   .map(i => `- docId: **${i.docId}**\n_${i.field}_: ${i.url}`);
-                await postChunks(num, rest, 200, 'Continued list');
+                await postChunks(num, rest, 200, 'Continued list', 101);
               }
             }
 
@@ -390,6 +396,7 @@ jobs:
                 '',
                 `**Count:** ${arr.length}`,
                 `[Full audit JSON](${auditUrl})`,
+                `Shown below: first 100. Remaining ${Math.max(0, arr.length - 100)} in comments.`,
                 '',
                 ...lines,
                 '',
@@ -401,7 +408,7 @@ jobs:
                   .sort((a,b) => (a.docId || '').localeCompare(b.docId || ''))
                   .slice(100)
                   .map(i => `- docId: **${i.docId}**\n_${i.field}_: ${i.url}`);
-                await postChunks(num, rest, 200, 'Continued list');
+                await postChunks(num, rest, 200, 'Continued list', 101);
               }
             }
 
@@ -423,6 +430,7 @@ jobs:
                 '',
                 `**Count:** ${arr.length}`,
                 `[Full audit JSON](${auditUrl})`,
+                `Shown below: first 100. Remaining ${Math.max(0, arr.length - 100)} in comments.`,
                 '',
                 ...lines,
                 '',
@@ -434,7 +442,7 @@ jobs:
                   .sort((a,b) => (a.docId || '').localeCompare(b.docId || ''))
                   .slice(100)
                   .map(i => `- docId: **${i.docId}**\n_${i.field}_: ${i.url}`);
-                await postChunks(num, rest, 200, 'Continued list');
+                await postChunks(num, rest, 200, 'Continued list', 101);
               }
             }
 
@@ -456,6 +464,7 @@ jobs:
                 '',
                 `**Count:** ${arr.length}`,
                 `[Full audit JSON](${auditUrl})`,
+                `Shown below: first 100. Remaining ${Math.max(0, arr.length - 100)} in comments.`,
                 '',
                 ...lines,
                 '',
@@ -467,7 +476,7 @@ jobs:
                   .sort((a,b) => (a.docId || '').localeCompare(b.docId || ''))
                   .slice(100)
                   .map(i => `- docId: **${i.docId}**\n_${i.field}_: ${i.actual}`);
-                await postChunks(num, rest, 200, 'Continued list');
+                await postChunks(num, rest, 200, 'Continued list', 101);
               }
             }
 
