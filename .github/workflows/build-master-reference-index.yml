@@ -24,8 +24,17 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - name: Mint PrZ3 Unit token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+
       - uses: actions/checkout@v4
-        with: { fetch-depth: 0 }
+        with:
+          fetch-depth: 0
+          token: ${{ steps.app-token.outputs.token }}
 
       - uses: actions/setup-node@v4
         with: { node-version: 'lts/*', cache: 'npm' }
@@ -74,11 +83,13 @@ jobs:
 
       - name: Commit MRI metadata-only change
         if: steps.decide_mri.outputs.onlyMeta == 'true'
+        env:
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
           set -e
           BR="${{ github.event.repository.default_branch }}"
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "PrZ3 Unit"
+          git config user.email "prz3-unit[bot]@users.noreply.github.com"
           # Stage both MRI and audit if present
           [ -f src/main/reports/masterReferenceIndex.json ] && git add src/main/reports/masterReferenceIndex.json || true
           [ -f src/main/reports/mri_presence_audit.json ] && git add src/main/reports/mri_presence_audit.json || true
@@ -86,9 +97,7 @@ jobs:
             echo "No metadata-only changes to commit.";
             exit 0;
           fi
-          # Commit on the current checkout and push to the default branch ref
           git commit -m "chore: refresh MasterReferenceIndex metadata timestamp"
-          # Fast-forward push from detached HEAD to the branch ref
           git push origin HEAD:"$BR"
           echo "✅ Metadata-only MasterReferenceIndex refresh committed to $BR"
 
@@ -119,6 +128,7 @@ jobs:
           labels: automated, reports, mri
           delete-branch: true
           base: ${{ github.event.repository.default_branch }}
+          token: ${{ steps.app-token.outputs.token }}
 
       - name: Emit skip-site-build marker (MRI PR)
         if: steps.decide_mri.outputs.onlyMeta != 'true'
@@ -138,6 +148,7 @@ jobs:
       - name: Ensure issues for missing refs (idempotent)
         uses: actions/github-script@v7
         with:
+          github-token: ${{ steps.app-token.outputs.token }}
           script: |
             const fs = require('fs');
             const path = 'src/main/reports/mri_presence_audit.json';
