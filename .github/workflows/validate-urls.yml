@@ -216,6 +216,9 @@ jobs:
             const list404 = Array.isArray(unr['404']) ? unr['404'] : [];
             const list400 = Array.isArray(unr['400']) ? unr['400'] : [];
             const listENF = Array.isArray(unr['ENOTFOUND']) ? unr['ENOTFOUND'] : [];
+            const listREDIR = Array.isArray(unr['ERR_FR_TOO_MANY_REDIRECTS']) ? unr['ERR_FR_TOO_MANY_REDIRECTS'] : [];
+            const exp = (audit.report && audit.report.expectation) || {};
+            const listSMPTEStdPrefix = Array.isArray(exp['SMPTE.resolvedHref.standards-prefix']) ? exp['SMPTE.resolvedHref.standards-prefix'] : [];
 
             // Build current state: 404 by publisher, 400 by docId
             const byPub404 = new Map(); // pub -> array of entries
@@ -226,10 +229,11 @@ jobs:
             }
             const current400 = new Set(list400.map(i => i.docId));
 
-            // Helper: list all open issues with label
-            async function listOpenWithLabel(label) {
+            // Helper: list all open issues with all labels (all must match)
+            async function listOpenWithLabel(...labels) {
+              const labelStr = labels.filter(Boolean).join(',');
               const issues = await github.paginate(github.rest.issues.listForRepo, {
-                owner, repo, state: 'open', labels: label, per_page: 100
+                owner, repo, state: 'open', labels: labelStr, per_page: 100
               });
               // Exclude PRs (listForRepo returns both)
               return issues.filter(i => !i.pull_request);
@@ -266,7 +270,7 @@ jobs:
                 '',
                 `_Created automatically from URL validation audit on ${genAt} — ${runTag}_`
               ].join('\n');
-              await upsertIssue({ title, body, labels: ['automated', 'url-404'] });
+              await upsertIssue({ title, body, labels: ['automated', 'url', '404'] });
             }
 
             // Upsert ENOTFOUND-by-publisher issues
@@ -289,7 +293,53 @@ jobs:
                 '',
                 `_Created automatically from URL validation audit on ${genAt} — ${runTag}_`
               ].join('\n');
-              await upsertIssue({ title, body, labels: ['automated', 'url-enotfound'] });
+              await upsertIssue({ title, body, labels: ['automated', 'url', 'enotfound'] });
+            }
+
+            // Upsert ERR_FR_TOO_MANY_REDIRECTS-by-publisher issues
+            const byPubREDIR = new Map(); // pub -> array of entries
+            for (const item of listREDIR) {
+              const pub = (item.publisher || 'Unknown').trim();
+              if (!byPubREDIR.has(pub)) byPubREDIR.set(pub, []);
+              byPubREDIR.get(pub).push(item);
+            }
+            for (const [pub, arr] of byPubREDIR.entries()) {
+              const title = `URL ERROR (ERR_FR_TOO_MANY_REDIRECTS): ${pub}`;
+              const lines = arr
+                .sort((a,b) => (a.docId || '').localeCompare(b.docId || ''))
+                .slice(0, 100)
+                .map(i => `- docId: **${i.docId}**\n_${i.field}_: ${i.url}`);
+              const body = [
+                `**Count:** ${arr.length}`,
+                '',
+                ...lines,
+                '',
+                `_Created automatically from URL validation audit on ${genAt} — ${runTag}_`
+              ].join('\n');
+              await upsertIssue({ title, body, labels: ['automated', 'url', 'too-many-redirects'] });
+            }
+
+            // Upsert SMPTE.resolvedHref.standards-prefix expectation mismatches by publisher
+            const byPubSMPTEStd = new Map(); // pub -> array of entries
+            for (const item of listSMPTEStdPrefix) {
+              const pub = (item.publisher || 'Unknown').trim();
+              if (!byPubSMPTEStd.has(pub)) byPubSMPTEStd.set(pub, []);
+              byPubSMPTEStd.get(pub).push(item);
+            }
+            for (const [pub, arr] of byPubSMPTEStd.entries()) {
+              const title = `EXPECTATION MISMATCH (SMPTE.resolvedHref.standards-prefix): ${pub}`;
+              const lines = arr
+                .sort((a,b) => (a.docId || '').localeCompare(b.docId || ''))
+                .slice(0, 100)
+                .map(i => `- docId: **${i.docId}**\n_${i.field}_: ${i.url}`);
+              const body = [
+                `**Count:** ${arr.length}`,
+                '',
+                ...lines,
+                '',
+                `_Created automatically from URL validation audit on ${genAt} — ${runTag}_`
+              ].join('\n');
+              await upsertIssue({ title, body, labels: ['automated', 'url', 'standards-prefix'] });
             }
 
             // Upsert 400-per-item issues
@@ -301,12 +351,17 @@ jobs:
                 '',
                 `_Created automatically from URL validation audit on ${genAt} — ${runTag}_`
               ].join('\n');
-              await upsertIssue({ title, body, labels: ['automated', 'url-400'] });
+              await upsertIssue({ title, body, labels: ['automated', 'url', '400'] });
             }
 
-            // Autoclose resolved issues (404, ENOTFOUND, 400)
+            // Autoclose resolved issues (404, ENOTFOUND, ERR_FR_TOO_MANY_REDIRECTS, SMPTE.resolvedHref.standards-prefix, 400)
+            const open404 = await listOpenWithLabel('url', '404');
+            const openENF = await listOpenWithLabel('url', 'enotfound');
+            const openREDIR = await listOpenWithLabel('url', 'too-many-redirects');
+            const openSMPTEStd = await listOpenWithLabel('url', 'standards-prefix');
+            const open400 = await listOpenWithLabel('url', '400');
+
             // 404s: close any publisher issue not in current set
-            const open404 = await listOpenWithLabel('url-404');
             const livePubs = new Set([...byPub404.keys()]);
             for (const iss of open404) {
               const m = /^URL ERROR \(404\): (.+)$/.exec(iss.title || '');
@@ -321,7 +376,6 @@ jobs:
             }
 
             // ENOTFOUNDs: close any publisher issue not in current set
-            const openENF = await listOpenWithLabel('url-enotfound');
             const liveENFPubs = new Set([...byPubENF.keys()]);
             for (const iss of openENF) {
               const m = /^URL ERROR \(ENOTFOUND\): (.+)$/.exec(iss.title || '');
@@ -335,8 +389,35 @@ jobs:
               }
             }
 
+            // ERR_FR_TOO_MANY_REDIRECTS: close any publisher issue not in current set
+            const liveREDIRPubs = new Set([...byPubREDIR.keys()]);
+            for (const iss of openREDIR) {
+              const m = /^URL ERROR \(ERR_FR_TOO_MANY_REDIRECTS\): (.+)$/.exec(iss.title || '');
+              const pub = m && m[1] ? m[1].trim() : null;
+              if (!pub || !liveREDIRPubs.has(pub)) {
+                await github.rest.issues.createComment({
+                  owner, repo, issue_number: iss.number,
+                  body: `Resolved: no outstanding ERR_FR_TOO_MANY_REDIRECTS for this publisher. ${runTag}. Closing.`
+                });
+                await github.rest.issues.update({ owner, repo, issue_number: iss.number, state: 'closed' });
+              }
+            }
+
+            // SMPTE.resolvedHref.standards-prefix: close any publisher issue not in current set
+            const liveSMPTEStdPubs = new Set([...byPubSMPTEStd.keys()]);
+            for (const iss of openSMPTEStd) {
+              const m = /^EXPECTATION MISMATCH \(SMPTE\.resolvedHref\.standards-prefix\): (.+)$/.exec(iss.title || '');
+              const pub = m && m[1] ? m[1].trim() : null;
+              if (!pub || !liveSMPTEStdPubs.has(pub)) {
+                await github.rest.issues.createComment({
+                  owner, repo, issue_number: iss.number,
+                  body: `Resolved: no outstanding SMPTE.resolvedHref.standards-prefix mismatches for this publisher. ${runTag}. Closing.`
+                });
+                await github.rest.issues.update({ owner, repo, issue_number: iss.number, state: 'closed' });
+              }
+            }
+
             // 400s: close any docId issue not in current set
-            const open400 = await listOpenWithLabel('url-400');
             for (const iss of open400) {
               const m = /^URL ERROR \(400\): (.+)$/.exec(iss.title || '');
               const docId = m && m[1] ? m[1].trim() : null;
