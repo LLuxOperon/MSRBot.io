@@ -219,6 +219,11 @@ jobs:
             const listREDIR = Array.isArray(unr['ERR_FR_TOO_MANY_REDIRECTS']) ? unr['ERR_FR_TOO_MANY_REDIRECTS'] : [];
             const exp = (audit.report && audit.report.expectation) || {};
             const listSMPTEStdPrefix = Array.isArray(exp['SMPTE.resolvedHref.standards-prefix']) ? exp['SMPTE.resolvedHref.standards-prefix'] : [];
+            // --- Additional error types ---
+            const list403 = Array.isArray(unr['403']) ? unr['403'] : [];
+            const listHPE = Array.isArray(unr['HPE_INVALID_CONSTANT']) ? unr['HPE_INVALID_CONSTANT'] : [];
+            const listBR  = Array.isArray(unr['ERR_BAD_REQUEST']) ? unr['ERR_BAD_REQUEST'] : [];
+            const listLEAF = Array.isArray(unr['UNABLE_TO_VERIFY_LEAF_SIGNATURE']) ? unr['UNABLE_TO_VERIFY_LEAF_SIGNATURE'] : [];
 
             // Build current state: 404 by publisher, 400 by docId
             const byPub404 = new Map(); // pub -> array of entries
@@ -273,6 +278,29 @@ jobs:
               await upsertIssue({ title, body, labels: ['automated', 'url', '404'] });
             }
 
+            // Upsert 403-by-publisher issues
+            const byPub403 = new Map(); // pub -> array of entries
+            for (const item of list403) {
+              const pub = (item.publisher || 'Unknown').trim();
+              if (!byPub403.has(pub)) byPub403.set(pub, []);
+              byPub403.get(pub).push(item);
+            }
+            for (const [pub, arr] of byPub403.entries()) {
+              const title = `URL ERROR (403): ${pub}`;
+              const lines = arr
+                .sort((a,b) => (a.docId || '').localeCompare(b.docId || ''))
+                .slice(0, 100)
+                .map(i => `- docId: **${i.docId}**\n_${i.field}_: ${i.url}`);
+              const body = [
+                `**Count:** ${arr.length}`,
+                '',
+                ...lines,
+                '',
+                `_Created automatically from URL validation audit on ${genAt} — ${runTag}_`
+              ].join('\n');
+              await upsertIssue({ title, body, labels: ['automated', 'url', '403'] });
+            }
+
             // Upsert ENOTFOUND-by-publisher issues
             const byPubENF = new Map(); // pub -> array of entries
             for (const item of listENF) {
@@ -294,6 +322,29 @@ jobs:
                 `_Created automatically from URL validation audit on ${genAt} — ${runTag}_`
               ].join('\n');
               await upsertIssue({ title, body, labels: ['automated', 'url', 'enotfound'] });
+            }
+
+            // Upsert HPE_INVALID_CONSTANT-by-publisher issues
+            const byPubHPE = new Map(); // pub -> array of entries
+            for (const item of listHPE) {
+              const pub = (item.publisher || 'Unknown').trim();
+              if (!byPubHPE.has(pub)) byPubHPE.set(pub, []);
+              byPubHPE.get(pub).push(item);
+            }
+            for (const [pub, arr] of byPubHPE.entries()) {
+              const title = `URL ERROR (HPE_INVALID_CONSTANT): ${pub}`;
+              const lines = arr
+                .sort((a,b) => (a.docId || '').localeCompare(b.docId || ''))
+                .slice(0, 100)
+                .map(i => `- docId: **${i.docId}**\n_${i.field}_: ${i.url}`);
+              const body = [
+                `**Count:** ${arr.length}`,
+                '',
+                ...lines,
+                '',
+                `_Created automatically from URL validation audit on ${genAt} — ${runTag}_`
+              ].join('\n');
+              await upsertIssue({ title, body, labels: ['automated', 'url', 'hpe-invalid-constant'] });
             }
 
             // Upsert ERR_FR_TOO_MANY_REDIRECTS-by-publisher issues
@@ -331,7 +382,7 @@ jobs:
               const lines = arr
                 .sort((a,b) => (a.docId || '').localeCompare(b.docId || ''))
                 .slice(0, 100)
-                .map(i => `- docId: **${i.docId}**\n_${i.field}_: ${i.url}`);
+                .map(i => `- docId: **${i.docId}**\n_${i.field}_: ${i.actual}`);
               const body = [
                 `**Count:** ${arr.length}`,
                 '',
@@ -354,12 +405,41 @@ jobs:
               await upsertIssue({ title, body, labels: ['automated', 'url', '400'] });
             }
 
-            // Autoclose resolved issues (404, ENOTFOUND, ERR_FR_TOO_MANY_REDIRECTS, SMPTE.resolvedHref.standards-prefix, 400)
+            // Upsert ERR_BAD_REQUEST-per-item issues
+            for (const i of listBR) {
+              const title = `URL ERROR (ERR_BAD_REQUEST): ${i.docId}`;
+              const body = [
+                `docId: **${i.docId}**`,
+                `- _${i.field}_: ${i.url}`,
+                '',
+                `_Created automatically from URL validation audit on ${genAt} — ${runTag}_`
+              ].join('\n');
+              await upsertIssue({ title, body, labels: ['automated', 'url', 'bad-request'] });
+            }
+
+            // Upsert UNABLE_TO_VERIFY_LEAF_SIGNATURE-per-item issues
+            for (const i of listLEAF) {
+              const title = `URL ERROR (UNABLE_TO_VERIFY_LEAF_SIGNATURE): ${i.docId}`;
+              const body = [
+                `docId: **${i.docId}**`,
+                `- _${i.field}_: ${i.url}`,
+                '',
+                `_Created automatically from URL validation audit on ${genAt} — ${runTag}_`
+              ].join('\n');
+              await upsertIssue({ title, body, labels: ['automated', 'url', 'leaf-signature'] });
+            }
+
+            // Autoclose resolved issues (404, 403, ENOTFOUND, HPE_INVALID_CONSTANT,
+            //  ERR_FR_TOO_MANY_REDIRECTS, SMPTE.resolvedHref.standards-prefix, 400, ERR_BAD_REQUEST, UNABLE_TO_VERIFY_LEAF_SIGNATURE)
             const open404 = await listOpenWithLabel('url', '404');
+            const open403 = await listOpenWithLabel('url', '403');
             const openENF = await listOpenWithLabel('url', 'enotfound');
+            const openHPE = await listOpenWithLabel('url', 'hpe-invalid-constant');
             const openREDIR = await listOpenWithLabel('url', 'too-many-redirects');
             const openSMPTEStd = await listOpenWithLabel('url', 'standards-prefix');
             const open400 = await listOpenWithLabel('url', '400');
+            const openBR = await listOpenWithLabel('url', 'bad-request');
+            const openLEAF = await listOpenWithLabel('url', 'leaf-signature');
 
             // 404s: close any publisher issue not in current set
             const livePubs = new Set([...byPub404.keys()]);
@@ -375,6 +455,20 @@ jobs:
               }
             }
 
+            // 403s: close any publisher issue not in current set
+            const livePubs403 = new Set([...byPub403.keys()]);
+            for (const iss of open403) {
+              const m = /^URL ERROR \(403\): (.+)$/.exec(iss.title || '');
+              const pub = m && m[1] ? m[1].trim() : null;
+              if (!pub || !livePubs403.has(pub)) {
+                await github.rest.issues.createComment({
+                  owner, repo, issue_number: iss.number,
+                  body: `Resolved: no outstanding 403s for this publisher. ${runTag}. Closing.`
+                });
+                await github.rest.issues.update({ owner, repo, issue_number: iss.number, state: 'closed' });
+              }
+            }
+
             // ENOTFOUNDs: close any publisher issue not in current set
             const liveENFPubs = new Set([...byPubENF.keys()]);
             for (const iss of openENF) {
@@ -384,6 +478,20 @@ jobs:
                 await github.rest.issues.createComment({
                   owner, repo, issue_number: iss.number,
                   body: `Resolved: no outstanding ENOTFOUNDs for this publisher. ${runTag}. Closing.`
+                });
+                await github.rest.issues.update({ owner, repo, issue_number: iss.number, state: 'closed' });
+              }
+            }
+
+            // HPE_INVALID_CONSTANT: close any publisher issue not in current set
+            const liveHPEPubs = new Set([...byPubHPE.keys()]);
+            for (const iss of openHPE) {
+              const m = /^URL ERROR \(HPE_INVALID_CONSTANT\): (.+)$/.exec(iss.title || '');
+              const pub = m && m[1] ? m[1].trim() : null;
+              if (!pub || !liveHPEPubs.has(pub)) {
+                await github.rest.issues.createComment({
+                  owner, repo, issue_number: iss.number,
+                  body: `Resolved: no outstanding HPE_INVALID_CONSTANT for this publisher. ${runTag}. Closing.`
                 });
                 await github.rest.issues.update({ owner, repo, issue_number: iss.number, state: 'closed' });
               }
@@ -425,6 +533,34 @@ jobs:
                 await github.rest.issues.createComment({
                   owner, repo, issue_number: iss.number,
                   body: `Resolved: no longer present as 400. ${runTag}. Closing.`
+                });
+                await github.rest.issues.update({ owner, repo, issue_number: iss.number, state: 'closed' });
+              }
+            }
+
+            // ERR_BAD_REQUEST: close any docId issue not in current set
+            const currentBR = new Set(listBR.map(i => i.docId));
+            for (const iss of openBR) {
+              const m = /^URL ERROR \(ERR_BAD_REQUEST\): (.+)$/.exec(iss.title || '');
+              const docId = m && m[1] ? m[1].trim() : null;
+              if (!docId || !currentBR.has(docId)) {
+                await github.rest.issues.createComment({
+                  owner, repo, issue_number: iss.number,
+                  body: `Resolved: no longer present as ERR_BAD_REQUEST. ${runTag}. Closing.`
+                });
+                await github.rest.issues.update({ owner, repo, issue_number: iss.number, state: 'closed' });
+              }
+            }
+
+            // UNABLE_TO_VERIFY_LEAF_SIGNATURE: close any docId issue not in current set
+            const currentLEAF = new Set(listLEAF.map(i => i.docId));
+            for (const iss of openLEAF) {
+              const m = /^URL ERROR \(UNABLE_TO_VERIFY_LEAF_SIGNATURE\): (.+)$/.exec(iss.title || '');
+              const docId = m && m[1] ? m[1].trim() : null;
+              if (!docId || !currentLEAF.has(docId)) {
+                await github.rest.issues.createComment({
+                  owner, repo, issue_number: iss.number,
+                  body: `Resolved: no longer present as UNABLE_TO_VERIFY_LEAF_SIGNATURE. ${runTag}. Closing.`
                 });
                 await github.rest.issues.update({ owner, repo, issue_number: iss.number, state: 'closed' });
               }
