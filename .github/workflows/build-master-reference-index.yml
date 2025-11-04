@@ -97,7 +97,7 @@ jobs:
             echo "No metadata-only changes to commit.";
             exit 0;
           fi
-          git commit -m "chore: refresh MasterReferenceIndex metadata timestamp"
+          git commit -m "chore: MasterReferenceIndex metadata refresh"
           git push origin HEAD:"$BR"
           echo "✅ Metadata-only MasterReferenceIndex refresh committed to $BR"
 
