@@ -165,6 +165,29 @@ This document consolidates the MSRBot.io worklog into a single, category‑organ
 **Result**
 - All automation now runs under a single, auditable identity with minimal token sprawl and App-based security hardening.
 
+### 4.8 URL Validation Workflow Enhancements (Publisher & Item-Level Issue Expansion)
+- Scope: `.github/workflows/validate-urls.yml`
+
+**Additions**
+- New error categories with full upsert + autoclose behavior:
+  - **403** — per publisher (labels: `automated`, `url`, `403`)
+  - **HPE_INVALID_CONSTANT** — per publisher (labels: `automated`, `url`, `hpe-invalid-constant`)
+  - **ERR_BAD_REQUEST** — per item (labels: `automated`, `url`, `bad-request`)
+  - **UNABLE_TO_VERIFY_LEAF_SIGNATURE** — per item (labels: `automated`, `url`, `leaf-signature`)
+- Integrated into audit parsing, issue creation, and autoclose passes.
+- Issue bodies use a deterministic summary (Count, docIds, URLs, run tag), matching existing ENOTFOUND/404/400 conventions.
+
+**Refinements**
+- Label scheme cleaned:
+  - Removed legacy single-labels (e.g., `url-404`, `url-enotfound`).
+  - All issues now use canonical multi-label sets: `automated`, `url`, `<category>`.
+- Autoclose logic validated across new and existing issue types.
+- Body formatting aligned to established deterministic Markdown style.
+
+**Outcome**
+- Workflow now covers **9 error/mismatch categories** with consistent publisher vs. item separation, self-updating issue bodies, and full autoclose hygiene.
+- Old label compatibility removed; unified label taxonomy is authoritative going forward.
+
 ## 5 Registry Architecture & Data Model Evolution
 - Consolidated `metaConfig` governs notes for `status.stabilized`, `status.withdrawn`, and `status.withdrawnNotice`.
 - Withdrawn notice handling:
