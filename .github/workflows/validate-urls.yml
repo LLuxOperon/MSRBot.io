@@ -212,6 +212,25 @@ jobs:
             const genAt = audit.generatedAt || new Date().toISOString();
             const runTag = `Run #${context.runId}`;
 
+            // Resolve default branch for a stable link to the audit JSON
+            const defaultBranch = (context.payload && context.payload.repository && context.payload.repository.default_branch) || 'main';
+            const auditUrl = `https://github.com/${owner}/${repo}/blob/${defaultBranch}/src/main/reports/url_validate_audit.json`;
+
+            // Helper: post large lists in chunked comments to avoid issue body limits
+            async function postChunks(issue_number, lines, chunkSize = 200, header = 'Additional items') {
+              for (let i = 0; i < lines.length; i += chunkSize) {
+                const part = lines.slice(i, i + chunkSize).join('\n');
+                await github.rest.issues.createComment({
+                  owner, repo, issue_number,
+                  body: [
+                    `**${header}** (items ${i + 1}–${Math.min(i + chunkSize, lines.length)})`,
+                    '',
+                    part
+                  ].join('\n')
+                });
+              }
+            }
+
             const unr = (audit.report && audit.report.unreachable) || {};
             const list404 = Array.isArray(unr['404']) ? unr['404'] : [];
             const list400 = Array.isArray(unr['400']) ? unr['400'] : [];
@@ -263,7 +282,6 @@ jobs:
             // Upsert 404-by-publisher issues
             for (const [pub, arr] of byPub404.entries()) {
               const title = `URL ERROR (404): ${pub}`;
-              // Compact, deterministic body
               const lines = arr
                 .sort((a,b) => (a.docId || '').localeCompare(b.docId || ''))
                 .slice(0, 100)
@@ -272,12 +290,20 @@ jobs:
                 '**Recommended action:** Double-check the URL or remove it if no longer valid.',
                 '',
                 `**Count:** ${arr.length}`,
+                `[Full audit JSON](${auditUrl})`,
                 '',
                 ...lines,
                 '',
                 `_Created automatically from URL validation audit on ${genAt} — ${runTag}_`
               ].join('\n');
-              await upsertIssue({ title, body, labels: ['automated', 'url', '404'] });
+              const num = await upsertIssue({ title, body, labels: ['automated', 'url', '404'] });
+              if (arr.length > 100) {
+                const rest = arr
+                  .sort((a,b) => (a.docId || '').localeCompare(b.docId || ''))
+                  .slice(100)
+                  .map(i => `- docId: **${i.docId}**\n_${i.field}_: ${i.url}`);
+                await postChunks(num, rest, 200, 'Continued list');
+              }
             }
 
             // Upsert 403-by-publisher issues
@@ -297,12 +323,20 @@ jobs:
                 '**Recommended action:** Check if the resource requires authentication or is private.',
                 '',
                 `**Count:** ${arr.length}`,
+                `[Full audit JSON](${auditUrl})`,
                 '',
                 ...lines,
                 '',
                 `_Created automatically from URL validation audit on ${genAt} — ${runTag}_`
               ].join('\n');
-              await upsertIssue({ title, body, labels: ['automated', 'url', '403'] });
+              const num = await upsertIssue({ title, body, labels: ['automated', 'url', '403'] });
+              if (arr.length > 100) {
+                const rest = arr
+                  .sort((a,b) => (a.docId || '').localeCompare(b.docId || ''))
+                  .slice(100)
+                  .map(i => `- docId: **${i.docId}**\n_${i.field}_: ${i.url}`);
+                await postChunks(num, rest, 200, 'Continued list');
+              }
             }
 
             // Upsert ENOTFOUND-by-publisher issues
@@ -322,12 +356,20 @@ jobs:
                 '**Recommended action:** Check for typos or outdated domain.',
                 '',
                 `**Count:** ${arr.length}`,
+                `[Full audit JSON](${auditUrl})`,
                 '',
                 ...lines,
                 '',
                 `_Created automatically from URL validation audit on ${genAt} — ${runTag}_`
               ].join('\n');
-              await upsertIssue({ title, body, labels: ['automated', 'url', 'enotfound'] });
+              const num = await upsertIssue({ title, body, labels: ['automated', 'url', 'enotfound'] });
+              if (arr.length > 100) {
+                const rest = arr
+                  .sort((a,b) => (a.docId || '').localeCompare(b.docId || ''))
+                  .slice(100)
+                  .map(i => `- docId: **${i.docId}**\n_${i.field}_: ${i.url}`);
+                await postChunks(num, rest, 200, 'Continued list');
+              }
             }
 
             // Upsert HPE_INVALID_CONSTANT-by-publisher issues
@@ -347,12 +389,20 @@ jobs:
                 '**Recommended action:** Verify the URL manually. It may be non-HTTP content.',
                 '',
                 `**Count:** ${arr.length}`,
+                `[Full audit JSON](${auditUrl})`,
                 '',
                 ...lines,
                 '',
                 `_Created automatically from URL validation audit on ${genAt} — ${runTag}_`
               ].join('\n');
-              await upsertIssue({ title, body, labels: ['automated', 'url', 'hpe-invalid-constant'] });
+              const num = await upsertIssue({ title, body, labels: ['automated', 'url', 'hpe-invalid-constant'] });
+              if (arr.length > 100) {
+                const rest = arr
+                  .sort((a,b) => (a.docId || '').localeCompare(b.docId || ''))
+                  .slice(100)
+                  .map(i => `- docId: **${i.docId}**\n_${i.field}_: ${i.url}`);
+                await postChunks(num, rest, 200, 'Continued list');
+              }
             }
 
             // Upsert ERR_FR_TOO_MANY_REDIRECTS-by-publisher issues
@@ -372,12 +422,20 @@ jobs:
                 '**Recommended action:** Check the server config or redirect chain.',
                 '',
                 `**Count:** ${arr.length}`,
+                `[Full audit JSON](${auditUrl})`,
                 '',
                 ...lines,
                 '',
                 `_Created automatically from URL validation audit on ${genAt} — ${runTag}_`
               ].join('\n');
-              await upsertIssue({ title, body, labels: ['automated', 'url', 'too-many-redirects'] });
+              const num = await upsertIssue({ title, body, labels: ['automated', 'url', 'too-many-redirects'] });
+              if (arr.length > 100) {
+                const rest = arr
+                  .sort((a,b) => (a.docId || '').localeCompare(b.docId || ''))
+                  .slice(100)
+                  .map(i => `- docId: **${i.docId}**\n_${i.field}_: ${i.url}`);
+                await postChunks(num, rest, 200, 'Continued list');
+              }
             }
 
             // Upsert SMPTE.resolvedHref.standards-prefix expectation mismatches by publisher
@@ -397,12 +455,20 @@ jobs:
                 '**Recommended action:** End point has likely changed, check the url.rules',
                 '',
                 `**Count:** ${arr.length}`,
+                `[Full audit JSON](${auditUrl})`,
                 '',
                 ...lines,
                 '',
                 `_Created automatically from URL validation audit on ${genAt} — ${runTag}_`
               ].join('\n');
-              await upsertIssue({ title, body, labels: ['automated', 'url', 'standards-prefix'] });
+              const num = await upsertIssue({ title, body, labels: ['automated', 'url', 'standards-prefix'] });
+              if (arr.length > 100) {
+                const rest = arr
+                  .sort((a,b) => (a.docId || '').localeCompare(b.docId || ''))
+                  .slice(100)
+                  .map(i => `- docId: **${i.docId}**\n_${i.field}_: ${i.actual}`);
+                await postChunks(num, rest, 200, 'Continued list');
+              }
             }
 
             // Upsert 400-per-item issues
@@ -413,6 +479,7 @@ jobs:
                 '',
                 `docId: **${i.docId}**`,
                 `- _${i.field}_: ${i.url}`,
+                `[Full audit JSON](${auditUrl})`,
                 '',
                 `_Created automatically from URL validation audit on ${genAt} — ${runTag}_`
               ].join('\n');
@@ -427,6 +494,7 @@ jobs:
                 '',
                 `docId: **${i.docId}**`,
                 `- _${i.field}_: ${i.url}`,
+                `[Full audit JSON](${auditUrl})`,
                 '',
                 `_Created automatically from URL validation audit on ${genAt} — ${runTag}_`
               ].join('\n');
@@ -441,6 +509,7 @@ jobs:
                 '',
                 `docId: **${i.docId}**`,
                 `- _${i.field}_: ${i.url}`,
+                `[Full audit JSON](${auditUrl})`,
                 '',
                 `_Created automatically from URL validation audit on ${genAt} — ${runTag}_`
               ].join('\n');
