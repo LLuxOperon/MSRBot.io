@@ -270,6 +270,7 @@ jobs:
                 .map(i => `- docId: **${i.docId}**\n_${i.field}_: ${i.url}`);
               const body = [
                 '**Recommended action:** Double-check the URL or remove it if no longer valid.',
+                '',
                 `**Count:** ${arr.length}`,
                 '',
                 ...lines,
@@ -294,6 +295,7 @@ jobs:
                 .map(i => `- docId: **${i.docId}**\n_${i.field}_: ${i.url}`);
               const body = [
                 '**Recommended action:** Check if the resource requires authentication or is private.',
+                '',
                 `**Count:** ${arr.length}`,
                 '',
                 ...lines,
@@ -318,6 +320,7 @@ jobs:
                 .map(i => `- docId: **${i.docId}**\n_${i.field}_: ${i.url}`);
               const body = [
                 '**Recommended action:** Check for typos or outdated domain.',
+                '',
                 `**Count:** ${arr.length}`,
                 '',
                 ...lines,
@@ -342,6 +345,7 @@ jobs:
                 .map(i => `- docId: **${i.docId}**\n_${i.field}_: ${i.url}`);
               const body = [
                 '**Recommended action:** Verify the URL manually. It may be non-HTTP content.',
+                '',
                 `**Count:** ${arr.length}`,
                 '',
                 ...lines,
@@ -366,6 +370,7 @@ jobs:
                 .map(i => `- docId: **${i.docId}**\n_${i.field}_: ${i.url}`);
               const body = [
                 '**Recommended action:** Check the server config or redirect chain.',
+                '',
                 `**Count:** ${arr.length}`,
                 '',
                 ...lines,
@@ -390,6 +395,7 @@ jobs:
                 .map(i => `- docId: **${i.docId}**\n_${i.field}_: ${i.actual}`);
               const body = [
                 '**Recommended action:** End point has likely changed, check the url.rules',
+                '',
                 `**Count:** ${arr.length}`,
                 '',
                 ...lines,
@@ -404,6 +410,7 @@ jobs:
               const title = `URL ERROR (400): ${i.docId}`;
               const body = [
                 '**Recommended action:** Inspect for typos or formatting issues.',
+                '',
                 `docId: **${i.docId}**`,
                 `- _${i.field}_: ${i.url}`,
                 '',
@@ -417,6 +424,7 @@ jobs:
               const title = `URL ERROR (ERR_BAD_REQUEST): ${i.docId}`;
               const body = [
                 '**Recommended action:** Validate the URL format or encoding.',
+                '',
                 `docId: **${i.docId}**`,
                 `- _${i.field}_: ${i.url}`,
                 '',
@@ -430,6 +438,7 @@ jobs:
               const title = `URL ERROR (UNABLE_TO_VERIFY_LEAF_SIGNATURE): ${i.docId}`;
               const body = [
                 '**Recommended action:** Avoid or investigate SSL issues before trusting the source.',
+                '',
                 `docId: **${i.docId}**`,
                 `- _${i.field}_: ${i.url}`,
                 '',
