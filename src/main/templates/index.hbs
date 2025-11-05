@@ -33,34 +33,34 @@
 </script>
 <div id="inspectorMount"></div>
 <template id="inspectorTpl">
-    <table id="inspectorTable" class="display compact" style="width:100%">
+    <table id="inspectorTable" class="table display compact table-striped table-hover" style="width:100%">
       <thead>
         <tr>
           <th scope="col" class="col-1">docId</th>
-          <th scope="col" class="col-3">Label/Title</th>
+          <th scope="col" class="col-2">Label/Title</th>
           <th scope="col" class="col-1">Publisher</th>
-          <th>Group</th>
-          <th>Doc Type</th>
-          <th>Keywords</th>
+          <th scope="col" class="col-1">Group</th>
+          <th class="text-nowrap">Doc Type</th>
+          <th class="text-nowrap">Pub Date</th>
           <th>Year</th>
-          <th>ReleaseTag</th>
+          <th>Keywords</th>
           <th>Status</th>
-          <th>Current Work</th>
+          <th class="text-nowrap">Current Work</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="table-group-divider">
         {{#dataDocuments}}
-        <tr>
+        <tr class="align-top">
           <td>{{docId}}</td>
-          <td>{{getLabel docId}}: {{docTitle}}</td>
+          <td><code>{{getLabel docId}}</code><br>{{docTitle}}</td>
           <td>{{publisher}}</td>
           <td>{{#if group}}{{#with (groupIdLookup ../dataGroups group)}}{{groupOrg}} {{groupName}} {{groupDesc}}{{/with}}{{/if}}</td>
           <td>{{docType}}</td>
+          <td class="text-nowrap">{{publicationDate}}</td>
+          <td>{{#if __year}}[{{__year}}]{{/if}}</td>
           <td>{{#keywords}}
             {{this}}{{#unless @last}},{{/unless}}
             {{/keywords}}</td>
-          <td>{{__year}}</td>
-          <td>{{releaseTag}}</td>
           <td>{{currentStatus}}</td>
           <td>{{currentWork}}</td>
         </tr>

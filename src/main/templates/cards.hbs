@@ -17,6 +17,13 @@
       <option value="title:asc">Title A→Z</option>
       <option value="title:desc">Title Z→A</option>
     </select>
+    <div class="input-group input-group-sm w-auto" aria-label="Filter by year">
+      <span class="input-group-text">Year</span>
+      <select id="yearSelect" class="form-select">
+        <option value="">All years</option>
+        <!-- years will be populated dynamically -->
+      </select>
+    </div>
     <div class="input-group input-group-sm w-auto" aria-label="Results per page">
       <span class="input-group-text">Per page</span>
       <select id="pageSize" class="form-select">
@@ -102,7 +109,7 @@
       {{#if (hasAny currentWork)}}<span class="badge-reg badge-work">{{join currentWork ", "}}</span>{{/if}}
     </div>
     <details class="details"><summary>Details</summary>
-      {{#if pubDate}}<div>Publication Date: <i>{{pubDate}}</i></div>{{/if}}
+      {{#if pubDate}}<div>Publication Date: <span class="fst-italic">{{pubDate}}</span></div>{{/if}}
       {{#if doi}}<div>DOI: <code>{{doi}}</code></div>{{/if}}
       {{#if href}}<div>Link: <a href="{{href}}" target="_blank" rel="noopener">{{href}}</a></div>{{/if}}
       {{#unless doi}}

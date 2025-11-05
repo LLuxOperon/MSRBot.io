@@ -18,6 +18,7 @@ const PROJECTS = path.join('src','main','data','projects.json');
 const OUT = 'build/cards';
 const IDX = path.join(OUT, 'search-index.json');
 const FAC = path.join(OUT, 'facets.json');
+const SYN = path.join('src','main','lib','synonyms.json'); // optional
 
 /** Normalize status to a facet bucket, but keep raw flags for 1‑1 use */
 function statusFacet(st) {
@@ -152,8 +153,17 @@ const squash = s => compact(s).replace(/\s+/g, ' ');
     }
     const hasCurrentWork = currentWork.length > 0;
 
-    // Keywords: keep simple, dedup
-    const kw = Array.from(new Set([d.docId, title, d.docTitle, d.docLabel].filter(Boolean)));
+    // Keywords:
+    // - facetKeywords: from canonical d.keywords array (for filtering)
+    // - searchKeywords: assembled terms for free-text search
+    const facetKeywords = Array.isArray(d.keywords) ? d.keywords.map(squash).filter(Boolean) : [];
+    const searchKeywords = Array.from(new Set([
+      d.docId,
+      title,
+      d.docTitle,
+      d.docLabel,
+      ...(Array.isArray(currentWork) ? currentWork : [])
+    ].filter(Boolean).map(squash)));
 
     // Minimal row — 1‑to‑1 with canonical where applicable
     idx.push({
@@ -175,7 +185,8 @@ const squash = s => compact(s).replace(/\s+/g, ' ');
       groupNames,
       currentWork,
       hasCurrentWork,
-      keywords: kw,
+      keywords: facetKeywords,        // facet values (from documents.json)
+      keywordsSearch: searchKeywords, // assembled search tokens
       href: d.href || null,
       doi: d.doi || null
     });
@@ -188,7 +199,8 @@ const squash = s => compact(s).replace(/\s+/g, ' ');
     docType: {},
     status: {},
     year: {},
-    hasCurrentWork: { true: 0, false: 0 },
+    currentWork: {},
+    keywords: {},
     hasDoi: { true: 0, false: 0 },
     hasReleaseTag: { true: 0, false: 0 },
     groupLabels: Object.fromEntries(Array.from(groupNameById.entries()))
@@ -205,9 +217,82 @@ const squash = s => compact(s).replace(/\s+/g, ' ');
     facets.docType[r.docType] = (facets.docType[r.docType] || 0) + 1;
     facets.status[r.status] = (facets.status[r.status] || 0) + 1;
     if (r.year != null) facets.year[r.year] = (facets.year[r.year] || 0) + 1;
-    facets.hasCurrentWork[String(r.hasCurrentWork)]++;
+    if (Array.isArray(r.currentWork)) {
+      for (const w of r.currentWork) {
+        const key = String(w).trim();
+        if (!key) continue;
+        facets.currentWork[key] = (facets.currentWork[key] || 0) + 1;
+      }
+    }
+    if (Array.isArray(r.keywords)) {
+      for (const k of r.keywords) {
+        const key = String(k).trim();
+        if (!key) continue;
+        facets.keywords[key] = (facets.keywords[key] || 0) + 1;
+      }
+    }
     facets.hasDoi[String(r.hasDoi)]++;
     facets.hasReleaseTag[String(r.hasReleaseTag)]++;
+  }
+
+  /** Optional assets: synonyms + MiniSearch UMD for client */
+  try {
+    // Copy synonyms.json if present
+    const synRaw = await fs.readFile(SYN, 'utf8').catch(() => null);
+    if (synRaw) {
+      await fs.writeFile(path.join(OUT, 'synonyms.json'), synRaw, 'utf8');
+    }
+  } catch (e) {
+    console.warn('[cards] No synonyms.json found (optional):', e && e.message ? e.message : e);
+  }
+  // --- MiniSearch UMD: ensure a browser-usable bundle is available under build/cards/minisearch/umd/index.min.js ---
+  try {
+    const https = require('https');
+    const destDir = path.join(OUT, 'minisearch', 'umd');
+    const destUmd = path.join(destDir, 'index.min.js');
+    await fs.mkdir(destDir, { recursive: true });
+
+    async function pathExists(p){
+      try { await fs.stat(p); return true; } catch { return false; }
+    }
+    async function fetchToFile(url, outFile){
+      await fs.mkdir(path.dirname(outFile), { recursive: true });
+      await new Promise((resolve, reject) => {
+        https.get(url, (res) => {
+          if (res.statusCode && res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+            // follow redirects
+            return fetchToFile(res.headers.location, outFile).then(resolve, reject);
+          }
+          if (res.statusCode !== 200) return reject(new Error(`GET ${url} -> ${res.statusCode}`));
+          const chunks = [];
+          res.on('data', c => chunks.push(c));
+          res.on('end', async () => {
+            try {
+              const buf = Buffer.concat(chunks);
+              await fs.writeFile(outFile, buf);
+              resolve();
+            } catch (e) { reject(e); }
+          });
+        }).on('error', reject);
+      });
+    }
+
+    // Prefer a locally installed UMD if present
+    const localUmd = path.join('node_modules', 'minisearch', 'dist', 'umd', 'index.min.js');
+    if (await pathExists(localUmd)) {
+      const data = await fs.readFile(localUmd);
+      await fs.writeFile(destUmd, data);
+    } else {
+      // Fallback to CDN
+      try {
+        await fetchToFile('https://cdn.jsdelivr.net/npm/minisearch/dist/umd/index.min.js', destUmd);
+      } catch {
+        await fetchToFile('https://unpkg.com/minisearch/dist/umd/index.min.js', destUmd);
+      }
+    }
+  } catch (e) {
+    console.warn('[cards] Could not acquire MiniSearch UMD (local or CDN):', e && e.message ? e.message : e);
+    console.warn('[cards] Search will fall back to plain includes() if MiniSearch cannot be loaded.');
   }
 
   /** Write outputs */
