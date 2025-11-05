@@ -186,10 +186,19 @@ This document consolidates the MSRBot.io worklog into a single, category‑organ
   - All issues now use canonical multi-label sets: `automated`, `url`, `<category>`.
 - Autoclose logic validated across new and existing issue types.
 - Body formatting aligned to established deterministic Markdown style.
+- Removed the `postChunks()` helper and all call sites across grouped/publisher sections.
+- Applied a **unified issue body structure** to all **publisher-level** categories:
+  - **404**, **403**, **ENOTFOUND**, **HPE_INVALID_CONSTANT**, **ERR_FR_TOO_MANY_REDIRECTS**, **SMPTE.resolvedHref.standards-prefix**
+- Left **per-item** categories unchanged (bodies link directly to the audit JSON):
+  - **400**, **ERR_BAD_REQUEST**, **UNABLE_TO_VERIFY_LEAF_SIGNATURE**
+- Verified **autoclose** and **label** handling remain unaffected.
 
 **Outcome**
 - Workflow now covers **9 error/mismatch categories** with consistent publisher vs. item separation, self-updating issue bodies, and full autoclose hygiene.
 - Old label compatibility removed; unified label taxonomy is authoritative going forward.
+- Issue bodies are clean, consistent, and readable at a glance.
+- Full datasets remain accessible via a single stable link: `src/main/reports/url_validate_audit.json`.
+- Large audits avoid comment spam; runs stay fast and quiet.
 
 ## 5 Registry Architecture & Data Model Evolution
 - Consolidated `metaConfig` governs notes for `status.stabilized`, `status.withdrawn`, and `status.withdrawnNotice`.
