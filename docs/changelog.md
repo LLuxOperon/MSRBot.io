@@ -1,7 +1,7 @@
 # MSRBot.io — Consolidated Technical Chronicle
 
 **Status:** Gold-copy consolidation  
-**Consolidation Date:** 2025-11-04
+**Consolidation Date:** 2025-11-05
 
 This document consolidates the MSRBot.io worklog into a single, category‑organized technical chronicle. Dates are de‑emphasized in favor of system architecture and implementation detail. All filenames, scripts, fields, and JSON keys are shown in monospace.
 
@@ -12,26 +12,20 @@ This document consolidates the MSRBot.io worklog into a single, category‑organ
 - `index.html` missing → treated as likely PDF‑only; `inferMetadataFromPath()` derives `docId`, `releaseTag`, `publicationDate`, `doi`, `href`, `docType`, `docNumber`, `docPart`, `publisher`. Inferred fields are merged without overwriting existing data.
 - Amendment suffix handling corrected end‑to‑end: `docId`, `doi`, and `href` are derived from the final ID including amendment suffixes (e.g., `.2011Am1.2013`).
 - Added `revisionOf` extraction from HTML via `<meta itemprop="pubRevisionOf">`; value stored as array.
-- Added explicit detection for **missing `index.html`** cases — now treated as likely PDF-only releases.  
-  Metadata is inferred and merged with any existing record without overwriting richer data.  
-- **Amendment DOI/href inference** fully corrected — `docId`, `doi`, and `href` now derive from the final identifier including amendment suffixes (e.g., `.2011Am1.2013`).
-- Amendment promotion logic corrected: when an **amendment** is the latest, the amendment is `active: true, latestVersion: true`; the **base** remains `active: false, superseded: true`. Prevents incorrect base flips when an amendment becomes latest.
-
 
 ### 1.2 Status Wiring & Normalization
 - Only one document per lineage can have `status.latestVersion: true`; that document is also `status.active: true` and `status.superseded: false`. All others: `latestVersion: false`, `active: false`, `superseded: true`.
 - Deterministic mapping for ambiguous cases: unknown → `superseded: false`.
 - Base releases without amendments receive explicit defaults: `status.amended = false`, `status.amendedBy = []`.
 - `status.supersededBy` wiring: each base points to the next base in sequence; amendments inherit the base’s pointer. `status.supersededDate` injected from the next base’s `releaseTag`. `$meta` injected for both fields on create/update.
-- **Publisher status derivation:** `status.active` and `status.superseded` automatically computed from `status.latestVersion`.  
-  Guarantees lineage consistency and prevents conflicting “active” flags.
+- **Publisher status derivation:** `status.active` and `status.superseded` automatically computed from `status.latestVersion`. Guarantees lineage consistency and prevents conflicting “active” flags.
+- Amendment promotion logic: when an **amendment** is the latest, the amendment is `active: true, latestVersion: true`; the **base** remains `active: false, superseded: true`.   
+_Prevents incorrect base flips when an amendment becomes latest._
 
 ### 1.3 Reference Parsing & Resilience
 - Reference arrays are always present and normalized: defaults for `references.normative` and `references.bibliographic`.
 - `$meta` injected consistently for new docs and updates; avoids emission for undefined or empty arrays.
 - Latest‑version determination aligned with wrapper `releaseTag` ordering.
-- Clarified that **latest-version logic** aligns `releaseTag` and lineage order to ensure reference arrays always resolve to the most recent valid publication.
-
 
 ### 1.4 Folder & Publisher Parsing
 - Version‑folder regex upgraded to handle amendments and publication stages; accepts `*-dp`.
@@ -113,11 +107,10 @@ This document consolidates the MSRBot.io worklog into a single, category‑organ
 
 ### 4.2 MRI Workflow (`build-master-reference-index.yml`)
 - Metadata‑only paths (`generatedAt` updates) commit directly to `main` (no empty PRs).
-- Real content changes open PRs. Branch management corrected with `base: ${{ github.event.repository.default_branch }}`.
 - Commits both `masterReferenceIndex.json` and `mri_presence_audit.json` directly to `main` when in metadata‑only mode; no hard reset to avoid file loss.
 - Issue creation rebuilt: proper Markdown newlines, readable bullets for `cite`, `title`, `href`, `rawRef`. Missing‑ref issues auto‑close when resolved. `onlyMeta=true` suppresses PR creation.
 - **PR base parameter fix:** all MRI workflow PRs now set `base: ${{ github.event.repository.default_branch }}` explicitly to ensure correct merge targeting.  
-  Prevents orphaned branches from detached workflows.
+_Prevents orphaned branches from detached workflows._
 
 ### 4.3 Weekly MSI Workflow Hardening
 - UNKEYED issues: one per `docKey`, idempotent, closed only from default‑branch runs.
@@ -228,7 +221,7 @@ This document consolidates the MSRBot.io worklog into a single, category‑organ
 - Result: responsive, visually consistent registry cards with fully synchronized filters and improved mobile usability.
 
 ### 6.2 Frontend Refresh II — Branding, SEO & 404 Overhaul
-- **Project rebrand and repository migration:** moved to `PrZ3/MSRBot.io`; redirects active for previous repo and domain.
+- **Project rebrand and repository migration:** moved to `PrZ3r/MSRBot.io`; redirects active for previous repo and domain.
 - **Domain alignment:** `msrbot.io` established as canonical host; `mediastandardsregistry.org` configured to redirect via DNS.
 - **Single-source configuration:** introduced `src/main/config/site.json` as canonical metadata store; removed duplicate inline defaults from `build.js`.
 - **Environment variable overrides:** supports `SITE_CANONICAL_BASE`, `SITE_NAME`, and `SITE_DESCRIPTION` for staging.
@@ -239,9 +232,7 @@ This document consolidates the MSRBot.io worklog into a single, category‑organ
 - **Dynamic 404 page (“Disappointed Penguin Edition”):** Handlebars-driven layout with randomized, config-based message list; robots meta = noindex,follow.
 - **Asset and link cleanup:** introduced `assetPrefix` for consistent partial reuse; navbar links now root-absolute; redundant defaults removed.
 - **OG image generation:** 1200×630 PNG featuring new penguin + logo branding on teal/circuit background.
-- **Identity & icon:** replaced legacy MSR icon with minimalist “PrZ3” SVG favicon; scalable and consistent across all resolutions.
-- Iterated on a clean, document-forward **MSRBot.io logo** — simple circular mark, legible at small sizes, non-derivative of GitHub.
-- Generated and optimized final **SVG** variant for favicon and identity use.
+- **Identity & icon:** finalized **MSRBot.io logo** and SVG favicon (clean circular mark, document-forward, non-derivative); scalable and consistent across all resolutions.
 - Result: complete brand, SEO, and metadata integration; clean 404 UX; site now fully single-config, portable, and identity-consistent.
 
 ### 6.3 Frontend Refresh III — Registry Cards & Search System
