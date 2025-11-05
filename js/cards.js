@@ -113,7 +113,7 @@
   }
 
   // --- State
-  const state = { q:'', f:{}, sort:'year:desc', page:1, size:40 };
+  const state = { q:'', f:{}, sort:'pubDate:desc', page:1, size:40 };
   // Compute combined sticky offset (navbar + cards-topbar) and expose as CSS var
   function computeStickyOffset(){
     const sels = ['.navbar.sticky-top', '#cards-topbar'];
@@ -174,9 +174,10 @@
   function updateURLAll(push){
     try {
       const url = new URL(window.location.href);
-      // page + size
+      // page + size + sort
       url.searchParams.set('page', String(state.page));
       url.searchParams.set('size', String(state.size));
+      url.searchParams.set('sort', String(state.sort));
       // sync search query
       if (state.q && String(state.q).trim() !== '') url.searchParams.set('q', String(state.q).trim());
       else url.searchParams.delete('q');
@@ -206,9 +207,39 @@
     } catch {}
   }
   // --- End URL sync (search) ---
+  // --- URL sync (sort) ---
+  function initSortFromURL(){
+    try {
+      const sp = new URLSearchParams(window.location.search);
+      const s = sp.get('sort');
+      const sel = document.querySelector('#sort');
+      const next = (typeof s === 'string' && s.trim() !== '') ? s : 'pubDate:desc';
+      state.sort = next;
+      if (sel) {
+        if (![...sel.options].some(o => o.value === next)) {
+          const opt = document.createElement('option');
+          opt.value = next; opt.textContent = next;
+          sel.appendChild(opt);
+        }
+        sel.value = next;
+      }
+    } catch {}
+  }
+  // --- End URL sync (sort) ---
   // --- End URL sync ---
 
   // --- Helpers
+
+  // Remove any #fragment from the URL without scrolling the page
+  function clearHashNoScroll(){
+    try {
+      const u = new URL(window.location.href);
+      if (!u.hash) return;
+      u.hash = '';
+      window.history.replaceState({}, '', u);
+    } catch {}
+  }
+  
   function syncPageSizeSelectFromState(){
     const sel = document.querySelector('#pageSize');
     if (!sel) return;
@@ -323,6 +354,7 @@
       const p = e.currentTarget.parentElement;
       const k = p.getAttribute('data-k');
       const v = p.getAttribute('data-v');
+      clearHashNoScroll();
       state.f[k] = (state.f[k] || []).filter(x => x !== v);
       state.page = 1;
       updateURLAll(true);
@@ -331,6 +363,7 @@
     }));
     const ca = $('#clearFilters');
     if (ca) ca.addEventListener('click', () => {
+      clearHashNoScroll();
       state.f = {};
       state.q = '';
       const qInput = document.querySelector('#q');
@@ -366,13 +399,21 @@
       return true;
     };
     let rows = idx.filter(pass);
-    if (state.sort === 'year:desc') {
+    if (state.sort === 'pubDate:desc') {
       rows.sort((a,b)=>{
-        const bt = (typeof b.pubTs === 'number') ? b.pubTs : (b.year? Date.UTC(b.year,0,1): 0);
-        const at = (typeof a.pubTs === 'number') ? a.pubTs : (a.year? Date.UTC(a.year,0,1): 0);
+        const bt = (typeof b.pubTs === 'number') ? b.pubTs : (b.pubDate? Date.UTC(b.pubDate,0,1): 0);
+        const at = (typeof a.pubTs === 'number') ? a.pubTs : (a.pubDate? Date.UTC(a.pubDate,0,1): 0);
         return bt - at;
       });
     }
+    if (state.sort === 'pubDate:asc') {
+      rows.sort((a,b)=>{
+        const at = (typeof a.pubTs === 'number') ? a.pubTs : (a.pubDate? Date.UTC(a.pubDate,0,1): 0);
+        const bt = (typeof b.pubTs === 'number') ? b.pubTs : (b.pubDate? Date.UTC(b.pubDate,0,1): 0);
+        return at - bt;
+      });
+    }
+    
     if (state.sort === 'title:asc') {
       const normalizeTitle = t => (t ? String(t).trim().toLowerCase()
         .replace(/^(the|a|an)\s+/i, '') : '');
@@ -380,8 +421,18 @@
         normalizeTitle(a.title).localeCompare(normalizeTitle(b.title), 'en', { sensitivity: 'base' })
       );
     }
+
+    if (state.sort === 'title:desc') {
+      const normalizeTitle = t => (t ? String(t).trim().toLowerCase()
+        .replace(/^(the|a|an)\s+/i, '') : '');
+      rows.sort((a, b) =>
+        normalizeTitle(b.title).localeCompare(normalizeTitle(a.title), 'en', { sensitivity: 'base' })
+      );
+    }
+
     if (state.sort === 'label:asc') rows.sort((a,b)=>String(a.label).localeCompare(String(b.label)));
-    return rows;
+
+    if (state.sort === 'label:desc') rows.sort((a,b)=>String(b.label).localeCompare(String(a.label)));
     return rows;
   }
 
@@ -460,6 +511,7 @@
       const cb = e.target;
       if (!(cb && cb.matches('input[type=checkbox][name]'))) return;
       const k = cb.name, v = cb.value;
+      clearHashNoScroll();
       state.f[k] = state.f[k] || [];
       if (cb.checked) { if (!state.f[k].includes(v)) state.f[k].push(v); }
       else { state.f[k] = state.f[k].filter(x=>x!==v); }
@@ -597,6 +649,7 @@
     const n = parseInt(a.getAttribute('data-page'), 10);
     if (!Number.isFinite(n) || n < 1) return;
     if (n === state.page) return;
+    clearHashNoScroll();
     state.page = n;
     updateURLAll(true);
     render();
@@ -611,6 +664,7 @@
     const n = parseInt(a.getAttribute('data-page'), 10);
     if (!Number.isFinite(n) || n < 1) return;
     if (n === state.page) return;
+    clearHashNoScroll();
     state.page = n;
     updateURLAll(true);
     render();
@@ -621,18 +675,22 @@
     const tag = (e.target && e.target.tagName || '').toLowerCase();
     if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.isComposing) return;
     if (e.key === 'ArrowLeft') {
+      clearHashNoScroll();
       state.page = Math.max(1, state.page - 1);
       updateURLAll(true);
       render();
     } else if (e.key === 'ArrowRight') {
+      clearHashNoScroll();
       state.page = state.page + 1; // clamped in render()
       updateURLAll(true);
       render();
     } else if (e.key === 'Home') {
+      clearHashNoScroll();
       state.page = 1;
       updateURLAll(true);
       render();
     } else if (e.key === 'End') {
+      clearHashNoScroll();
       state.page = 1e9; // effectively "last", clamped in render()
       updateURLAll(true);
       render();
@@ -699,6 +757,7 @@
   const q = $('#q');
   if (q) {
     const onSearchInput = (e) => {
+      clearHashNoScroll();
       state.q = e.target.value;
       state.page = 1;
       updateURLAll(false); // replaceState while typing/clearing
@@ -708,12 +767,20 @@
     q.addEventListener('search', onSearchInput); // Safari/Chrome clear (Ⓧ) emits 'search'
     q.addEventListener('change', onSearchInput); // commit on blur/enter
   }
-  const sort = $('#sort'); if (sort) sort.addEventListener('change', e => { state.sort = e.target.value; state.page=1; render(); });
+  const sort = $('#sort');
+  if (sort) sort.addEventListener('change', e => {
+    clearHashNoScroll();
+    state.sort = e.target.value;
+    state.page = 1;
+    updateURLAll(true);
+    render();
+  });
 
   // Page size selector
   const pageSizeSel = $('#pageSize');
   if (pageSizeSel) {
     pageSizeSel.addEventListener('change', e => {
+      clearHashNoScroll();
       const n = parseInt(e.target.value, 10);
       state.size = Number.isFinite(n) && n > 0 ? n : 40;
       state.page = 1;
@@ -727,12 +794,14 @@
   const nextBtn = '#nextPage' && $('#nextPage');
 
   if (prevBtn) prevBtn.addEventListener('click', () => {
+    clearHashNoScroll();
     state.page = Math.max(1, state.page - 1);
     updateURLAll(true);
     render();
   });
   if (nextBtn) nextBtn.addEventListener('click', () => {
     // totalPages will be clamped in render(), so a quick render is fine
+    clearHashNoScroll();
     state.page = state.page + 1;
     updateURLAll(true);
     render();
@@ -743,11 +812,13 @@
   const nextBtnBottom = $('#nextPageBottom');
   if (prevBtnBottom) prevBtnBottom.addEventListener('click', () => {
     state.page = Math.max(1, state.page - 1);
+    clearHashNoScroll();
     updateURLAll(true);
     render();
   });
   if (nextBtnBottom) nextBtnBottom.addEventListener('click', () => {
     state.page = state.page + 1; // clamp in render()
+    clearHashNoScroll();
     updateURLAll(true);
     render();
   });
@@ -756,6 +827,7 @@
   initPageSizeFromURL();
   initFiltersFromURL();
   initSearchFromURL();
+  initSortFromURL();
   updateURLAll(false);
   syncPageSizeSelectFromState();
   // Initialize deep-linking via #id (returns true if it rendered due to hash)
@@ -766,6 +838,7 @@
     initPageSizeFromURL();
     initFiltersFromURL();
     initSearchFromURL();
+    initSortFromURL();
     syncPageSizeSelectFromState();
     render();
   });

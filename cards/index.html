@@ -117,9 +117,12 @@
     </button>
     <input id="q" type="search" class="form-control flex-grow-1" placeholder="Search…">
     <select id="sort" class="form-select w-auto">
-      <option value="year:desc">Newest first</option>
+      <option value="pubDate:desc">Latest</option>
+      <option value="pubDate:asc">Oldest</option>
       <option value="label:asc">Label A→Z</option>
+      <option value="label:desc">Label Z→A</option>
       <option value="title:asc">Title A→Z</option>
+      <option value="title:desc">Title Z→A</option>
     </select>
     <div class="input-group input-group-sm w-auto" aria-label="Results per page">
       <span class="input-group-text">Per page</span>
@@ -205,6 +208,7 @@
       {{#if (hasAny currentWork)}}<span class="badge-reg badge-work">{{join currentWork ", "}}</span>{{/if}}
     </div>
     <details class="details"><summary>Details</summary>
+      {{#if pubDate}}<div>Publication Date: <i>{{pubDate}}</i></div>{{/if}}
       {{#if doi}}<div>DOI: <code>{{doi}}</code></div>{{/if}}
       {{#if href}}<div>Link: <a href="{{href}}" target="_blank" rel="noopener">{{href}}</a></div>{{/if}}
       {{#unless doi}}
@@ -223,8 +227,8 @@
       <div class="row justify-content-md-center border-bottom d-flex">
         <div class="col text-center p-3">
         <small class="text-muted">
-            Site version: <code>9d62a6fe52e021c1ec52cba118f990b1bce7baf0</code>
-            <br>Generated on: <code>2025-11-04T15:58:02.270Z</code>
+            Site version: <code>31006c4f6688a142d03bc8993be0a1f1a81be1f5</code>
+            <br>Generated on: <code>2025-11-05T04:25:07.257Z</code>
           </small>
         </div>
       </div>
