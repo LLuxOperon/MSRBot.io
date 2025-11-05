@@ -176,6 +176,9 @@ This document consolidates the MSRBot.io worklog into a single, category‑organ
   - **UNABLE_TO_VERIFY_LEAF_SIGNATURE** — per item (labels: `automated`, `url`, `leaf-signature`)
 - Integrated into audit parsing, issue creation, and autoclose passes.
 - Issue bodies use a deterministic summary (Count, docIds, URLs, run tag), matching existing ENOTFOUND/404/400 conventions.
+- Added **ENOTFOUND** handling (treated equivalently to 404) with deterministic issue body and canonical labels.
+- Capped per-issue body list to first 25 entries with a total count noted.
+- Mirrored behavior applied to 404 for consistency.
 
 **Refinements**
 - Label scheme cleaned:
@@ -228,7 +231,80 @@ This document consolidates the MSRBot.io worklog into a single, category‑organ
 - **Asset and link cleanup:** introduced `assetPrefix` for consistent partial reuse; navbar links now root-absolute; redundant defaults removed.
 - **OG image generation:** 1200×630 PNG featuring new penguin + logo branding on teal/circuit background.
 - **Identity & icon:** replaced legacy MSR icon with minimalist “PrZ3” SVG favicon; scalable and consistent across all resolutions.
+- Iterated on a clean, document-forward **MSRBot.io logo** — simple circular mark, legible at small sizes, non-derivative of GitHub.
+- Generated and optimized final **SVG** variant for favicon and identity use.
 - Result: complete brand, SEO, and metadata integration; clean 404 UX; site now fully single-config, portable, and identity-consistent.
+
+### 6.3 Frontend Refresh III — Registry Cards & Search System
+- Extended **card-based registry UI** with full search, filtering, and navigation logic.
+
+**Rendering & Layout**
+- Handlebars runtime loaded on demand for client-side rendering.
+- Status badge alignment/wrapping corrected; consistent badge classes and typo cleanup.
+- Introduced sticky bottom pager (later removed sticky top) with proper persistence.
+- Added results summary line: *“Showing X–Y of N (filtered from M)”*.
+- Page-size selector improved for clarity; auto-selects current value.
+
+**Filters & Chips**
+- Two-way synchronization between facet checkboxes and active chips.
+- “Clear All” now clears filters, chips, and search box.
+- Removing a chip unchecks the corresponding facet.
+- Replaced `hasCurrentWork` boolean with `currentWork` list facet; updated labels and search mapping.
+
+**Sorting**
+- `Newest`/`Oldest` now sort by `pubTs` with fallbacks.
+- Added `Title` and `Label` A↔Z sorts with article stripping (“the”, “a”, “an”).
+- Introduced reversible sort toggling for all modes.
+
+**Pagination & Navigation**
+- Numbered page jumpers with prev/next and keyboard navigation.
+- URL-synced pagination and page size for deep-linking and browser history.
+- Bottom pager hidden when top is visible to reduce clutter.
+- Year facet implemented as a compact dropdown (“All years” default) linked with chips and clear-all.
+
+**Deep Links & Anchors**
+- `#docId` anchors locate items across pages/filters; if filtered out, filters reset and jump performed.
+- Scroll offset accounts for sticky navbar and topbar with highlight flash.
+- On filter/sort/page/search change, hash stripped to prevent accidental jumps.
+- Offset tuned for consistent landing beneath both sticky elements.
+
+**URL State**
+- Query string now mirrors `page`, `size`, `sort`, `q`, and `f` (filters).
+- On load, state rehydrates search box, sort, page size, and filters from URL.
+- Year dropdown and page-size controls initialize from URL state.
+
+**Search Engine**
+
+*Index Build (Node)*
+- `build.search-index.js` generates:
+  - `build/cards/search-index.json` (flat rows from `documents.json` + group/project joins).
+  - `build/cards/facets.json` with counts and group-label map.
+- Optional `synonyms.json` copied into build.
+- MiniSearch UMD resolved from `node_modules` or CDN (redirect-follow supported).
+- Fixed `undefined.false` builder error; tightened status bucketing.
+
+*MiniSearch (Client)*
+- Loader prefers UMD; falls back to simple `includes()` if unavailable.
+- Field boosts: `title:6`, `id:5`, `label:4`, `keywords:3`, `keywordsSearch:2`, `currentWork:1`.
+- Token rules: prefix ≥ 3 chars; fuzzy 0.1 ≥ 4 chars (to curb over-broad hits).
+- Bi-directional synonyms and intra-group linking  
+  (`"isdcf" ↔ "inter-society digital cinema forum"` etc.).
+- Quoted phrases perform literal matches via precomputed haystack intersection.
+- Search syntax supports field scopes (`publisher:isdcf`, `title:"accessibility"`), exclusions (`-draft`), and facet combination.
+
+**Behavior Fixes & Polish**
+- Keywords now included in both faceting and weighted search.
+- Search bar updates URL state; “Clear All” resets it.
+- Guarded MiniSearch failure path logs error, falls back gracefully.
+- Fixed chip/checkbox desync edge cases.
+- Case-insensitive, article-stripped sorting for label/title.
+- Resolved “0 results” initialization bug from state-init order.
+- Page truncation at 40 fixed; page-size control honored via URL.
+- Year-facet chip removal resets dropdown correctly.
+- Deterministic facet-section order; `docType` and `status` expand by default.
+
+**Result**
+- Registry now offers full-fidelity search, deep-linkable state, and robust filter synchronization within a responsive, mobile-friendly card interface.
 
 ## 7 Logging, Diffing, and PR Output
 - `logSmart.js` centralizes logging with a console budget (~3.5 MiB). Excess console chatter is tripwired while full logs are persisted to file.
