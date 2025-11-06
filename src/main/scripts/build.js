@@ -122,20 +122,6 @@ const registries = [
   }
 ]
 
-// Enable Inspector build only for dev runs
-const ENABLE_INSPECTOR = (argv && (argv.dev === true || argv.dev === '1')) || process.env.MSR_BUILD_DEV === '1';
-if (ENABLE_INSPECTOR) {
-  registries.push({
-    listType: 'documents',
-    templateType: 'documents',
-    templateName: 'index',       // reuse documents template
-    idType: 'document',
-    listTitle: 'Inspector',
-    subRegistry: ['groups','projects'],
-    output: 'inspector.html',
-    extras: { inspector: true }
-  });
-}
 
 /* load and build the templates */
 
@@ -246,42 +232,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     }
   }
 
-  // If this build target is the Inspector, decorate docs with joined fields
-  const __isInspector = !!(extras && extras.inspector);
-  if (__isInspector) {
-    // Build quick lookups: docId -> projects / groups
-    const byDocProjects = new Map();
-    (registryProject || []).forEach(p => {
-      const list = Array.isArray(p.docs) ? p.docs : (Array.isArray(p.documents) ? p.documents : []);
-      list.forEach(did => {
-        const arr = byDocProjects.get(did) || [];
-        arr.push(p);
-        byDocProjects.set(did, arr);
-      });
-    });
-
-    const byDocGroups = new Map();
-    (registryGroup || []).forEach(g => {
-      const list = Array.isArray(g.docs) ? g.docs : (Array.isArray(g.documents) ? g.documents : []);
-      list.forEach(did => {
-        const arr = byDocGroups.get(did) || [];
-        arr.push(g);
-        byDocGroups.set(did, arr);
-      });
-    });
-
-    (registryDocument || []).forEach(item => {
-      const did = item && item.docId;
-      if (!did) return;
-      const projects = (byDocProjects.get(did) || []).map(p => p.projectId || p.name || p.id).filter(Boolean);
-      const pubDate  = item.publicationDate || null;
-      const year     = pubDate && /^\d{4}/.test(pubDate) ? parseInt(pubDate.slice(0,4), 10) : null;
-
-      item.__projects = projects;
-      item.__year = year;
-
-    });
-  }
 
   // --- Load MasterSuiteIndex (MSI) once and build a lineage → latest lookup
   const MSI_PATH = path.join(REGISTRIES_REPO_PATH, 'reports/masterSuiteIndex.json');
@@ -985,7 +935,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     "dataDocuments": registryDocument,
     "dataGroups" : registryGroup,
     "dataProjects" : registryProject,
-    "inspector": __isInspector,
     "htmlLink": htmlLink,
     "docProjs": docProjs,
     "date" :  new Date(),

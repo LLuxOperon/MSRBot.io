@@ -2,73 +2,6 @@
 <html lang="en">
   {{>header}}
     <!-- Main content starts - do not edit above this line -->
-    {{#if inspector}}
-<script>
-  (function(){
-    try {
-      var p = new URLSearchParams(window.location.search);
-      var ok = (p.get('dev') === '1');
-      if (ok && document.head) {
-        document.head.insertAdjacentHTML('beforeend','<meta name="robots" content="noindex, nofollow">');
-      }
-      window.addEventListener('DOMContentLoaded', function(){
-        var mount = document.getElementById('inspectorMount');
-        if (!mount) return;
-        if (!ok) {
-          // Gate message only; DO NOT render the template
-          var msg = document.createElement('div');
-          msg.style.padding = '2rem';
-          msg.innerHTML = '<h3>Inspector disabled</h3><p>This diagnostic view is dev-only. Append <code>?dev=1</code> to the URL to view it during a dev build.</p>';
-          mount.appendChild(msg);
-          return;
-        }
-        // OK: stamp out the template now
-        var tpl = document.getElementById('inspectorTpl');
-        if (tpl && 'content' in tpl) {
-          mount.appendChild(tpl.content.cloneNode(true));
-        }
-      });
-    } catch(e) { /* swallow */ }
-  })();
-</script>
-<div id="inspectorMount"></div>
-<template id="inspectorTpl">
-    <table id="inspectorTable" class="table display compact table-striped table-hover" style="width:100%">
-      <thead>
-        <tr>
-          <th scope="col" class="col-1">docId</th>
-          <th scope="col" class="col-2">Label/Title</th>
-          <th scope="col" class="col-1">Publisher</th>
-          <th scope="col" class="col-1">Group</th>
-          <th class="text-nowrap">Doc Type</th>
-          <th class="text-nowrap">Pub Date</th>
-          <th>Year</th>
-          <th>Keywords</th>
-          <th>Status</th>
-          <th class="text-nowrap">Current Work</th>
-        </tr>
-      </thead>
-      <tbody class="table-group-divider">
-        {{#dataDocuments}}
-        <tr class="align-top">
-          <td>{{docId}}</td>
-          <td><code>{{getLabel docId}}</code><br>{{docTitle}}</td>
-          <td>{{publisher}}</td>
-          <td>{{#if group}}{{#with (groupIdLookup ../dataGroups group)}}{{groupOrg}} {{groupName}} {{groupDesc}}{{/with}}{{/if}}</td>
-          <td>{{docType}}</td>
-          <td class="text-nowrap">{{publicationDate}}</td>
-          <td>{{#if __year}}[{{__year}}]{{/if}}</td>
-          <td>{{#keywords}}
-            {{this}}{{#unless @last}},{{/unless}}
-            {{/keywords}}</td>
-          <td>{{currentStatus}}</td>
-          <td>{{currentWork}}</td>
-        </tr>
-        {{/dataDocuments}}
-      </tbody>
-    </table>
-</template>
-    {{else}}
     <table id="sorttableDocs" class="table table-small table-hover">
       <thead class="thead-light">
         <tr>
@@ -94,8 +27,8 @@
           </td>
           <td class="doclabel">
             <a class="anchor" id="{{docId}}" href="#{{docId}}"></a><code>{{docLabel}}</code>
-              {{#if docBase}}{{#if status.latestVersion}}<br><span class="small">Latest Version of {{docBase}}</span>
-              {{else}}<br><span class="small">Newer version of {{docBase}} available</span>{{/if}}{{/if}}
+              {{#if docBase}}{{#if status.latestVersion}}<br><span class="small">Latest Version of {{docBaseLabel}}</span>
+              {{else}}<br><span class="small">Newer version of {{docBaseLabel}} available</span>{{/if}}{{/if}}
           </td>
           <td class="publisher">
             {{publisher}}
@@ -340,7 +273,6 @@
         {{/data}}
       </tbody>
     </table>
-    {{/if}}
     <!-- Main content ends - do not edit below this line -->
 {{>footer}}
 
