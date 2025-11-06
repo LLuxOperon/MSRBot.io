@@ -169,7 +169,7 @@ pre {
     height: 3000px
 }
 
-.docs {
+.cards {
     font-family: 'Lato', sans-serif !important;
     margin-top: 15px;
     margin-bottom: 15px;
@@ -239,12 +239,12 @@ pre {
     color: #fff;
 }
 
-/* Ensure navbar + docs toolbar stack correctly */
+/* Ensure navbar + cards toolbar stack correctly */
 .navbar.sticky-top {
   z-index: 1030; /* Bootstrap default for sticky nav */
 }
 
-#docs-topbar.sticky-top {
+#cards-topbar.sticky-top {
   position: sticky;
   top: 57px; /* height of your navbar */
   z-index: 1020; /* slightly below navbar so it stays under dropdowns */
@@ -285,7 +285,7 @@ pre {
   overflow: auto; 
 }
 
-/* Docs: header badge alignment & wrapping */
+/* Cards: header badge alignment & wrapping */
 
 .card-reg header {
   display: flex;
@@ -325,7 +325,7 @@ pre {
 
 /* Limit link width in info band, use ellipsis but keep full copyable URL */
 .card-reg .small.text-muted a[href^="http"] {
-  max-width: 32ch;           /* ~32 characters visible */
+  max-width: 32ch;           /* ~45 characters visible */
   display: inline-block;
   white-space: nowrap;       /* single line */
   overflow: hidden;

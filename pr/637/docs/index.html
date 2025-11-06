@@ -195,7 +195,7 @@
         <a class="anchor" id="{{id}}" href="#{{id}}"></a>
         <code class="me-1">{{label}}</code>
         <br>
-        <a href="/{{id}}/" class="text-decoration-none">{{title}}</a>
+        <a href="/docs/{{id}}/" class="text-decoration-none">{{title}}</a>
       </h3>
       <div class="d-flex gap-1 flex-wrap ms-auto justify-content-end text-end">
         {{#if (hasAny statusOrdered)}}
@@ -240,6 +240,9 @@
         {{/unless}}
       {{/if}}
     </div>
+    {{#if docBase}}
+      <div class="small text-muted mt-0">Doc Base: <span class="fst-italic">{{docBaseLabel}}</span></div>
+    {{/if}}
     {{#if (hasAny keywords)}}
       <div class="small text-muted mt-0">Keywords: <span class="fst-italic">{{join keywords ", "}}</span></div>
     {{else}}
@@ -257,8 +260,8 @@
       <div class="row justify-content-md-center border-bottom d-flex">
         <div class="col text-center p-3">
         <small class="text-muted">
-            Site version: <code>841438863f01cafde47d2c8270f517cedef339f3</code>
-            <br>Generated on: <code>2025-11-06T17:46:19.566Z</code>
+            Site version: <code>319ae8d0d0d41c3592cc09b375342928b569401e</code>
+            <br>Generated on: <code>2025-11-06T22:25:22.114Z</code>
           </small>
         </div>
       </div>

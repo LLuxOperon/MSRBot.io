@@ -39,7 +39,7 @@
     });
 
     // 1) Local UMD (built by build.search-index.js)
-    const localUmd = '/cards/minisearch/umd/index.min.js';
+    const localUmd = '/docs/minisearch/umd/index.min.js';
     if (await tryUmd(localUmd)) return true;
 
     // 2) CDN UMD fallbacks
@@ -53,12 +53,12 @@
 
     // 3) As a last resort, attempt common ESM entry points (in case a future release ships them)
     const esmCandidates = [
-      '/cards/minisearch/index.js',
-      '/cards/minisearch/index.mjs',
-      '/cards/minisearch/esm/index.js',
-      '/cards/minisearch/esm/index.mjs',
-      '/cards/minisearch/dist/index.js',
-      '/cards/minisearch/dist/index.mjs'
+      '/docs/minisearch/index.js',
+      '/docs/minisearch/index.mjs',
+      '/docs/minisearch/esm/index.js',
+      '/docs/minisearch/esm/index.mjs',
+      '/docs/minisearch/dist/index.js',
+      '/docs/minisearch/dist/index.mjs'
     ];
     for (const spec of esmCandidates) {
       try {
@@ -1089,7 +1089,23 @@
 
     // Mirror facets into the offcanvas body (one-time clone of HTML)
     const drawerBody = $('#facetDrawerBody');
-    if (drawerBody) drawerBody.innerHTML = accHTML;
+    if (drawerBody) {
+      const prefixIds = (html, pfx) => html
+        // element ids
+        .replace(/id="([^"]+)"/g, (m, id) => `id="${pfx}${id}"`)
+        // label "for" → associated control id
+        .replace(/for="([^"]+)"/g, (m, id) => `for="${pfx}${id}"`)
+        // aria relationships
+        .replace(/aria-controls="([^"]+)"/g, (m, id) => `aria-controls="${pfx}${id}"`)
+        .replace(/aria-labelledby="([^"]+)"/g, (m, id) => `aria-labelledby="${pfx}${id}"`)
+        // Bootstrap targets (accordion/collapse)
+        .replace(/data-bs-target="#([^"]+)"/g, (m, id) => `data-bs-target="#${pfx}${id}"`)
+        // Anchor hrefs that point to in-page ids
+        .replace(/href="#([^"]+)"/g, (m, id) => `href="#${pfx}${id}"`);
+
+      const accHTMLDrawer = prefixIds(accHTML, 'drawer_');
+      drawerBody.innerHTML = accHTMLDrawer;
+    }
 
     // Event delegation: handle checkbox changes from either container
     function onFacetChange(e){
