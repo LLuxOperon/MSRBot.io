@@ -1017,8 +1017,8 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   // Build card search index (search-index.json + facets.json) once per run
   // Only trigger from the main index page to avoid duplicate executions
   if (templateName === 'index') {
-    // Persist the in-memory documents state for downstream consumers (cards/search-index)
-    const EFFECTIVE_DOCS_PATH = path.join('build','cards','_data','documents.json');
+    // Persist the in-memory documents state for downstream consumers (docs/search-index)
+    const EFFECTIVE_DOCS_PATH = path.join('build','docs','_data','documents.json');
     try {
       await fs.mkdir(path.dirname(EFFECTIVE_DOCS_PATH), { recursive: true });
       await fs.writeFile(EFFECTIVE_DOCS_PATH, JSON.stringify(registryDocument, null, 2), 'utf8');
@@ -1080,19 +1080,19 @@ void (async () => {
   const tplCards = await fs.readFile(path.join('src','main','templates','cards.hbs'), 'utf8');
   const renderCards = hb.compile(tplCards);
 
-  // Create subdirectory for cards page
-  await fs.mkdir(path.join('build','cards'), { recursive: true });
+  // Create subdirectory for docs page
+  await fs.mkdir(path.join('build','docs'), { recursive: true });
 
-  const cardsCanonical = new URL('/cards/', siteConfig.canonicalBase).href;
-  const cardsOgDescription = siteConfig.siteDescription;
-  const cardsOgTitle = `Cards — ${siteConfig.siteName}`;
-  const cardsOgImage = new URL(siteConfig.ogImage, siteConfig.canonicalBase).href;
-  const cardsOgImageAlt = siteConfig.ogImageAlt;
+  const docsCanonical = new URL('/docs/', siteConfig.canonicalBase).href;
+  const docsOgDescription = siteConfig.siteDescription;
+  const docsOgTitle = `Docs — ${siteConfig.siteName}`;
+  const docsOgImage = new URL(siteConfig.ogImage, siteConfig.canonicalBase).href;
+  const docsOgImageAlt = siteConfig.ogImageAlt;
 
-  const cardsAssetPrefix = '../';
-  await fs.writeFile(path.join('build','cards','index.html'), renderCards({
+  const docsAssetPrefix = '../';
+  await fs.writeFile(path.join('build','docs','index.html'), renderCards({
     templateName: 'cards',
-    listTitle: 'Cards',
+    listTitle: 'Docs',
     htmlLink: '', // same relative handling as other pages
     listType: 'documents',
     csv_path: 'documents.csv',
@@ -1101,16 +1101,16 @@ void (async () => {
     // meta
     siteName: siteConfig.siteName,
     siteDescription: siteConfig.siteDescription,
-    siteTitle: `Cards — ${siteConfig.siteName}`,
-    canonicalUrl: cardsCanonical,
-    ogTitle: cardsOgTitle,
-    ogDescription: cardsOgDescription,
-    ogImage: cardsOgImage,
-    ogImageAlt: cardsOgImageAlt,
-    assetPrefix: cardsAssetPrefix,
+    siteTitle: `Docs — ${siteConfig.siteName}`,
+    canonicalUrl: docsCanonical,
+    ogTitle: docsOgTitle,
+    ogDescription: docsOgDescription,
+    ogImage: docsOgImage,
+    ogImageAlt: docsOgImageAlt,
+    assetPrefix: docsAssetPrefix,
   }), 'utf8');
 
-  console.log('[build] Wrote build/cards/index.html');
+  console.log('[build] Wrote build/docs/index.html');
 
   // --- Emit robots.txt and sitemap.xml
   const robotsTxt = [
@@ -1129,7 +1129,7 @@ void (async () => {
     '/dependancies/',
     '/groups/',
     '/projects/',
-    '/cards/'
+    '/docs/'
   ];
   const urlset = urls.map(u => {
     const loc = new URL(u, siteConfig.canonicalBase).href;

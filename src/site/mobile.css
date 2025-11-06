@@ -325,7 +325,7 @@ pre {
 
 /* Limit link width in info band, use ellipsis but keep full copyable URL */
 .card-reg .small.text-muted a[href^="http"] {
-  max-width: 45ch;           /* ~45 characters visible */
+  max-width: 32ch;           /* ~45 characters visible */
   display: inline-block;
   white-space: nowrap;       /* single line */
   overflow: hidden;

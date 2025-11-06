@@ -5,8 +5,8 @@
  * all display fields derive from canonical registry fields.
  *
  * Output:
- *   build/cards/search-index.json  — flat rows for cards + client search
- *   build/cards/facets.json        — precomputed facet counts + labels
+ *   build/docs/search-index.json  — flat rows for cards + client search
+ *   build/docs/facets.json        — precomputed facet counts + labels
  */
 
 const fs = require('fs').promises;
@@ -15,7 +15,7 @@ const path = require('path');
 const REG_DEFAULT = path.join('src','main','data','documents.json');
 const GROUPS = path.join('src','main','data','groups.json');
 const PROJECTS = path.join('src','main','data','projects.json');
-const OUT = 'build/cards';
+const OUT = 'build/docs';
 const DATA_OUT = path.join(OUT, '_data');
 const IDX = path.join(DATA_OUT, 'search-index.json');
 const FAC = path.join(DATA_OUT, 'facets.json');
@@ -268,7 +268,7 @@ const squash = s => compact(s).replace(/\s+/g, ' ');
   } catch (e) {
     console.warn('[cards] No synonyms.json found (optional):', e && e.message ? e.message : e);
   }
-  // --- MiniSearch UMD: ensure a browser-usable bundle is available under build/cards/minisearch/umd/index.min.js ---
+  // --- MiniSearch UMD: ensure a browser-usable bundle is available under build/docs/minisearch/umd/index.min.js ---
   try {
     const https = require('https');
     const destDir = path.join(OUT, 'minisearch', 'umd');
