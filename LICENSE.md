@@ -23,12 +23,3 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR 
 TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF 
 THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
----
-
-### Data Disclaimer
-[MSRBot.io](https://msrbot.io) aggregates factual metadata and references
-via [https://github.com/PrZ3r/MSRBot.io/](https://github.com/PrZ3r/MSRBot.io/) about publicly released standards, best practices, and other documents (e.g., [SMPTE](https://www.smpte.org/), [ISO](https://www.iso.org/home.html), [ITU](https://www.itu.int/), [AES](https://aes2.org/), and many others).
-
-All metadata is derived from publicly available information and is provided
-for research and interoperability purposes only. Original standards and other documents remain the intellectual property and copyright of their respective publishers, as applicable.
