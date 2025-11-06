@@ -90,3 +90,12 @@ npm run build
 ### Contributing
 Issues and pull requests are welcome.  
 For questions or collaboration inquiries, contact [Steve LLamb](https://github.com/SteveLLamb).
+
+---
+
+### Data Disclaimer
+[MSRBot.io](https://msrbot.io) aggregates factual metadata and references
+via [https://github.com/PrZ3r/MSRBot.io/](https://github.com/PrZ3r/MSRBot.io/) about publicly released standards, best practices, and other documents (e.g., [SMPTE](https://www.smpte.org/), [ISO](https://www.iso.org/home.html), [ITU](https://www.itu.int/), [AES](https://aes2.org/), and many others).
+
+All metadata is derived from publicly available information and is provided
+for research and interoperability purposes only. Original standards and other documents remain the intellectual property and copyright of their respective publishers, as applicable.
