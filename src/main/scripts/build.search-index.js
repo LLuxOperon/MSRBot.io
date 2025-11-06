@@ -12,24 +12,18 @@
 const fs = require('fs').promises;
 const path = require('path');
 
-const REG = path.join('src','main','data','documents.json');
+const REG_DEFAULT = path.join('src','main','data','documents.json');
 const GROUPS = path.join('src','main','data','groups.json');
 const PROJECTS = path.join('src','main','data','projects.json');
 const OUT = 'build/cards';
-const IDX = path.join(OUT, 'search-index.json');
-const FAC = path.join(OUT, 'facets.json');
+const DATA_OUT = path.join(OUT, '_data');
+const IDX = path.join(DATA_OUT, 'search-index.json');
+const FAC = path.join(DATA_OUT, 'facets.json');
 const SYN = path.join('src','main','lib','synonyms.json'); // optional
 
-/** Normalize status to a facet bucket, but keep raw flags for 1‑1 use */
-function statusFacet(st) {
-  if (!st || typeof st !== 'object') return 'unknown';
-  if (st.withdrawn) return 'withdrawn';
-  if (st.superseded) return 'superseded';
-  if (st.active && st.latestVersion) return 'latest';
-  if (st.active) return 'active';
-  if (st.draft) return 'draft';
-  return 'unknown';
-}
+/** Optional override: accept docs JSON path via argv[2] */
+const DOCS_PATH = (process.argv[2] && String(process.argv[2]).trim()) || REG_DEFAULT;
+
 
 /** Parse full ISO date → timestamp (or null) without throwing */
 function toTs(dateStr) {
@@ -45,7 +39,7 @@ const squash = s => compact(s).replace(/\s+/g, ' ');
 /** Build */
 (async () => {
   const [docsRaw, groupsRaw, projectsRaw] = await Promise.all([
-    fs.readFile(REG, 'utf8').catch(() => '[]'),
+    fs.readFile(DOCS_PATH, 'utf8').catch(() => '[]'),
     fs.readFile(GROUPS, 'utf8').catch(() => '[]'),
     fs.readFile(PROJECTS, 'utf8').catch(() => '[]'),
   ]);
@@ -56,6 +50,7 @@ const squash = s => compact(s).replace(/\s+/g, ' ');
   const projects = JSON.parse(projectsRaw);
 
   await fs.mkdir(OUT, { recursive: true });
+  await fs.mkdir(DATA_OUT, { recursive: true });
 
   /** Reverse-lookup: docId → [groupIds] (from groups.json) */
   const groupsByDoc = new Map();
@@ -109,9 +104,8 @@ const squash = s => compact(s).replace(/\s+/g, ' ');
     const label = d.docLabel;
     const title = d.docTitle;
 
-    // Status: keep canonical flags for UI; compute a facet bucket for filtering
+    // Status: derive canonical booleans, then emit an array of all true flags
     const st = (d.status && typeof d.status === 'object') ? d.status : {};
-    const status = statusFacet(st);
     const statusFlags = {
       active: !!st.active,
       latestVersion: !!st.latestVersion,
@@ -123,11 +117,22 @@ const squash = s => compact(s).replace(/\s+/g, ' ');
       amended: !!st.amended,
       versionless: !!st.versionless
     };
-    // Compute statuses array and statusPrimary (legacy single value)
-    const statuses = Object.entries(statusFlags)
-      .filter(([k,v]) => v)
+    // Guardrails: normalize implied relationships
+    if (statusFlags.latestVersion) {
+      statusFlags.active = true;
+      statusFlags.superseded = false;
+      statusFlags.withdrawn = false;
+    }
+    if (statusFlags.withdrawn) {
+      statusFlags.active = false;
+      statusFlags.latestVersion = false;
+      statusFlags.superseded = false;
+    }
+    // Emit "status" as an array of every true flag; no primary/singleton
+    const status = Object.entries(statusFlags)
+      .filter(([, v]) => v === true)
       .map(([k]) => k);
-    const statusPrimary = status; // keep old single-value under a new name
+    if (!status.length) status.push('unknown');
 
     // Publication dating (full string + parsed timestamp + year)
     const pubDate = d.publicationDate || '';
@@ -171,10 +176,9 @@ const squash = s => compact(s).replace(/\s+/g, ' ');
       title,                 // display title for cards
       label,                 // canonical label (useful for details view)
       publisher: d.publisher || 'Unknown',
-      docType: d.docTypeAbr || d.docType || 'Unknown',
-      status,                // legacy single-value bucket (back-compat)
-      statusPrimary,         // explicit primary bucket
-      statuses,              // all true flags
+      docType: d.docType,                  // required field
+      docTypeAbr: d.docTypeAbr || null,    // optional abbreviation (e.g., ST, RP)
+      status,                // array of all true flags (no primary)
       statusFlags,           // canonical booleans
       pubDate,               // full canonical date
       pubTs,                 // parsed timestamp for sort
@@ -198,6 +202,18 @@ const squash = s => compact(s).replace(/\s+/g, ' ');
     group: {},
     docType: {},
     status: {},
+    statusLabels: {
+      active: "Active",
+      latestVersion: "Latest Version",
+      superseded: "Superseded",
+      withdrawn: "Withdrawn",
+      draft: "Draft",
+      stabilized: "Stabilized",
+      reaffirmed: "Reaffirmed",
+      amended: "Amended",
+      versionless: "Versionless",
+      unknown: "Unknown"
+    },
     year: {},
     currentWork: {},
     keywords: {},
@@ -215,7 +231,14 @@ const squash = s => compact(s).replace(/\s+/g, ' ');
       }
     }
     facets.docType[r.docType] = (facets.docType[r.docType] || 0) + 1;
-    facets.status[r.status] = (facets.status[r.status] || 0) + 1;
+    if (Array.isArray(r.status) && r.status.length) {
+      for (const s of r.status) {
+        facets.status[s] = (facets.status[s] || 0) + 1;
+      }
+    } else {
+      const s = r.status || 'unknown';
+      facets.status[s] = (facets.status[s] || 0) + 1;
+    }
     if (r.year != null) facets.year[r.year] = (facets.year[r.year] || 0) + 1;
     if (Array.isArray(r.currentWork)) {
       for (const w of r.currentWork) {
@@ -240,7 +263,7 @@ const squash = s => compact(s).replace(/\s+/g, ' ');
     // Copy synonyms.json if present
     const synRaw = await fs.readFile(SYN, 'utf8').catch(() => null);
     if (synRaw) {
-      await fs.writeFile(path.join(OUT, 'synonyms.json'), synRaw, 'utf8');
+      await fs.writeFile(path.join(DATA_OUT, 'synonyms.json'), synRaw, 'utf8');
     }
   } catch (e) {
     console.warn('[cards] No synonyms.json found (optional):', e && e.message ? e.message : e);

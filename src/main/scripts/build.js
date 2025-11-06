@@ -364,13 +364,13 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
       doc.msiLatestBase = latestBaseId || null;
       doc.isLatestAny = latestAnyId ? (doc.docId === latestAnyId) : false;
       // Backwards compatibility flag for templates
-      if (doc.isLatestAny) {
-        doc.latestDoc = true;
-        doc.docBase = key
-        doc.docBaseLabel = labelFromLineageKey(key);
-      } else {
-        doc.newerDoc = true;
-      }
+      doc.docBase = key
+      doc.docBaseLabel = labelFromLineageKey(key);
+      // Ensure a status object exists
+      doc.status = doc.status && typeof doc.status === 'object' ? doc.status : {};
+
+      // Update nested status flag rather than top-level field
+      doc.status.latestVersion = !!doc.isLatestAny;
 
       doc.isLatestBase = latestBaseId ? (doc.docId === latestBaseId) : false;
     }
@@ -1017,8 +1017,17 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   // Build card search index (search-index.json + facets.json) once per run
   // Only trigger from the main index page to avoid duplicate executions
   if (templateName === 'index') {
+    // Persist the in-memory documents state for downstream consumers (cards/search-index)
+    const EFFECTIVE_DOCS_PATH = path.join('build','cards','_data','documents.json');
     try {
-      const { stdout } = await execFile('node', [path.join('src','main','scripts','build.search-index.js')]);
+      await fs.mkdir(path.dirname(EFFECTIVE_DOCS_PATH), { recursive: true });
+      await fs.writeFile(EFFECTIVE_DOCS_PATH, JSON.stringify(registryDocument, null, 2), 'utf8');
+      console.log(`[build] Wrote ${EFFECTIVE_DOCS_PATH}`);
+    } catch (e) {
+      console.warn('[build] Could not write documents snapshot:', e && e.message ? e.message : e);
+    }
+    try {
+      const { stdout } = await execFile('node', [path.join('src','main','scripts','build.search-index.js'), EFFECTIVE_DOCS_PATH]);
       if (stdout && stdout.trim()) console.log(stdout.trim());
     } catch (e) {
       console.warn('[cards] Index build failed:', e && e.message ? e.message : e);

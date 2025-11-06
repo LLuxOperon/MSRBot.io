@@ -87,12 +87,16 @@
         <a class="anchor" id="{{id}}" href="#{{id}}"></a><code>{{label}}</code><br>{{#if href}}<a href="{{href}}" target="_blank" rel="noopener">{{title}}</a>{{else}}{{title}}{{/if}}
       </h3>
       <div class="d-flex gap-1 flex-wrap ms-auto justify-content-end text-end">
-        {{#if (hasAny statuses)}}
-          {{#each statuses}}
+        {{#if (hasAny statusOrdered)}}
+          {{#each statusOrdered}}
             {{{statusBadge this}}}
           {{/each}}
         {{else}}
-          {{{statusBadge statusPrimary}}}
+          {{#if (hasAny status)}}
+            {{#each status}}
+              {{{statusBadge this}}}
+            {{/each}}
+          {{/if}}
         {{/if}}
       </div>
     </header>
