@@ -188,7 +188,7 @@
 <template id="card-tpl-src">
   <article class="card-reg">
     <header class="d-flex align-items-start gap-2 mb-1">
-      <h3 class="h6 m-0 flex-grow-1">
+      <h3 class="h6 mb-2 flex-grow-1">
         <a class="anchor" id="{{id}}" href="#{{id}}"></a>
         <code class="me-1">{{label}}</code>
         <br>
@@ -225,7 +225,7 @@
       {{/if}}
     </div>
 
-    <div class="small text-muted mt-1 d-flex flex-wrap align-items-center gap-2">
+    <div class="small text-muted mt-2 d-flex flex-wrap align-items-center gap-2">
       {{#if pubDate}}
         <span>Published: <span class="fst-italic">{{pubDate}}</span></span>
       {{/if}}
@@ -238,10 +238,10 @@
       {{/if}}
     </div>
     {{#if (hasAny keywords)}}
-      <div class="small text-muted mt-1">Keywords: <span class="fst-italic">{{join keywords ", "}}</span></div>
+      <div class="small text-muted mt-0">Keywords: <span class="fst-italic">{{join keywords ", "}}</span></div>
     {{else}}
       {{#if (hasAny keywordsSearch)}}
-        <div class="small text-muted mt-1">Keywords: <span class="fst-italic">{{join keywordsSearch ", "}}</span></div>
+        <div class="small text-muted mt-0">Keywords: <span class="fst-italic">{{join keywordsSearch ", "}}</span></div>
       {{/if}}
     {{/if}}
   </article>
@@ -254,8 +254,8 @@
       <div class="row justify-content-md-center border-bottom d-flex">
         <div class="col text-center p-3">
         <small class="text-muted">
-            Site version: <code>978a4f03987b05d3db7c723a58af79a378f9bdf3</code>
-            <br>Generated on: <code>2025-11-06T04:24:09.416Z</code>
+            Site version: <code>d0e230c0f88de84a7dff942e0bc03876019c9e6f</code>
+            <br>Generated on: <code>2025-11-06T04:42:07.945Z</code>
           </small>
         </div>
       </div>
