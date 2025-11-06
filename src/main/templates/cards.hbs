@@ -82,7 +82,7 @@
 <template id="card-tpl-src">
   <article class="card-reg">
     <header class="d-flex align-items-start gap-2 mb-1">
-      <h3 class="h6 m-0 flex-grow-1">
+      <h3 class="h6 mb-2 flex-grow-1">
         <a class="anchor" id="{{id}}" href="#{{id}}"></a>
         <code class="me-1">{{label}}</code>
         <br>
@@ -119,7 +119,7 @@
       {{/if}}
     </div>
 
-    <div class="small text-muted mt-1 d-flex flex-wrap align-items-center gap-2">
+    <div class="small text-muted mt-2 d-flex flex-wrap align-items-center gap-2">
       {{#if pubDate}}
         <span>Published: <span class="fst-italic">{{pubDate}}</span></span>
       {{/if}}
@@ -132,10 +132,10 @@
       {{/if}}
     </div>
     {{#if (hasAny keywords)}}
-      <div class="small text-muted mt-1">Keywords: <span class="fst-italic">{{join keywords ", "}}</span></div>
+      <div class="small text-muted mt-0">Keywords: <span class="fst-italic">{{join keywords ", "}}</span></div>
     {{else}}
       {{#if (hasAny keywordsSearch)}}
-        <div class="small text-muted mt-1">Keywords: <span class="fst-italic">{{join keywordsSearch ", "}}</span></div>
+        <div class="small text-muted mt-0">Keywords: <span class="fst-italic">{{join keywordsSearch ", "}}</span></div>
       {{/if}}
     {{/if}}
   </article>
