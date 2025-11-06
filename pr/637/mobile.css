@@ -183,6 +183,7 @@ pre {
     background-color: #fff;
 }
 
+/* Badge for card metadata (e.g., publisher, docType, year, DOI) */
 .badge-reg {
     background-color: #1398b0;
     color: #fff;
@@ -191,6 +192,24 @@ pre {
     border-radius: 3px;
     margin-right: 5px;
     font-family: 'Lato', sans-serif !important;
+}
+
+/* Improve readability of links inside badges (e.g., DOI links) */
+.badge-reg a,
+.badge-reg a:visited {
+  color: #fff;              /* force high contrast on blue badge */
+  text-decoration: none;    /* clean by default */
+}
+.badge-reg a:hover,
+.badge-reg a:focus {
+  color: #fff;
+  text-decoration: underline; /* visible affordance on interaction */
+}
+/* Keep inline code (e.g., DOI) legible inside badges */
+.badge-reg code {
+  color: inherit;            /* inherit white from badge */
+  background: transparent;   /* avoid gray code background inside badge */
+  padding: 0;                /* remove code padding for compact badge */
 }
 
 .badge-work {
@@ -296,4 +315,26 @@ pre {
 .card-reg header h3 {
   flex: 1 1 auto;
   min-width: 0; /* allows wrapping without pushing badges down */
+}
+
+/* Prevent long links in cards from breaking layout */
+.card-reg a {
+  word-break: break-all;      /* break long URLs when needed */
+  overflow-wrap: anywhere;    /* allow wrapping in flexible containers */
+}
+
+/* Limit link width in info band, use ellipsis but keep full copyable URL */
+.card-reg .small.text-muted a[href^="http"] {
+  max-width: 45ch;           /* ~45 characters visible */
+  display: inline-block;
+  white-space: nowrap;       /* single line */
+  overflow: hidden;
+  text-overflow: ellipsis;   /* adds … at end */
+  vertical-align: bottom;
+}
+
+/* Ensure small text-muted flex rows don’t expand horizontally */
+.card-reg .small.text-muted {
+  min-width: 0;
+  flex: 1 1 auto;
 }

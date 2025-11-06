@@ -187,10 +187,12 @@
 <!-- Inline client-side card template source (inert) -->
 <template id="card-tpl-src">
   <article class="card-reg">
-    <header class="d-flex align-items-top gap-2 mb-1">
-      
+    <header class="d-flex align-items-start gap-2 mb-1">
       <h3 class="h6 m-0 flex-grow-1">
-        <a class="anchor" id="{{id}}" href="#{{id}}"></a><code>{{label}}</code><br>{{#if href}}<a href="{{href}}" target="_blank" rel="noopener">{{title}}</a>{{else}}{{title}}{{/if}}
+        <a class="anchor" id="{{id}}" href="#{{id}}"></a>
+        <code class="me-1">{{label}}</code>
+        <br>
+        <a href="/docs/{{id}}/" class="text-decoration-none">{{title}}</a>
       </h3>
       <div class="d-flex gap-1 flex-wrap ms-auto justify-content-end text-end">
         {{#if (hasAny statusOrdered)}}
@@ -206,7 +208,8 @@
         {{/if}}
       </div>
     </header>
-    <div class="meta mb-1">
+
+    <div class="meta mb-1 small text-muted d-flex flex-wrap align-items-center gap-1">
       {{#if publisher}}<span class="badge-reg">{{publisher}}</span>{{/if}}
       {{#if docType}}<span class="badge-reg">{{docType}}</span>{{/if}}
       {{#if year}}<span class="badge-reg">{{year}}</span>{{/if}}
@@ -217,17 +220,30 @@
         {{/if}}
       {{/unless}}
       {{#if (hasAny currentWork)}}<span class="badge-reg badge-work">{{join currentWork ", "}}</span>{{/if}}
+      {{#if doi}}
+        <span class="badge-reg">DOI: {{{doiLink doi}}}</span>
+      {{/if}}
     </div>
-    <details class="details"><summary>Details</summary>
-      {{#if pubDate}}<div>Publication Date: <span class="fst-italic">{{pubDate}}</span></div>{{/if}}
-      {{#if doi}}<div>DOI: <code>{{doi}}</code></div>{{/if}}
-      {{#if href}}<div>Link: <a href="{{href}}" target="_blank" rel="noopener">{{href}}</a></div>{{/if}}
-      {{#unless doi}}
-        {{#unless href}}
-          <div class="text-muted">No DOI or link available.</div>
+
+    <div class="small text-muted mt-1 d-flex flex-wrap align-items-center gap-2">
+      {{#if pubDate}}
+        <span>Published: <span class="fst-italic">{{pubDate}}</span></span>
+      {{/if}}
+      {{#if href}}
+        <span class="ms-auto">Link: <a href="{{href}}" target="_blank" rel="noopener">{{href}}</a></span>
+      {{else}}
+        {{#unless doi}}
+          <span class="ms-auto text-muted">No DOI or link available.</span>
         {{/unless}}
-      {{/unless}}
-    </details>
+      {{/if}}
+    </div>
+    {{#if (hasAny keywords)}}
+      <div class="small text-muted mt-1">Keywords: <span class="fst-italic">{{join keywords ", "}}</span></div>
+    {{else}}
+      {{#if (hasAny keywordsSearch)}}
+        <div class="small text-muted mt-1">Keywords: <span class="fst-italic">{{join keywordsSearch ", "}}</span></div>
+      {{/if}}
+    {{/if}}
   </article>
 </template>
 
@@ -238,8 +254,8 @@
       <div class="row justify-content-md-center border-bottom d-flex">
         <div class="col text-center p-3">
         <small class="text-muted">
-            Site version: <code>8c4f829a4d536e402af2ad8cb9f96a1671c37c08</code>
-            <br>Generated on: <code>2025-11-06T03:09:42.305Z</code>
+            Site version: <code>978a4f03987b05d3db7c723a58af79a378f9bdf3</code>
+            <br>Generated on: <code>2025-11-06T04:24:09.416Z</code>
           </small>
         </div>
       </div>

@@ -209,6 +209,17 @@
     window.Handlebars.registerHelper('hasAny', function(arr){
       return Array.isArray(arr) && arr.length > 0;
     });
+    // exists helper: truthy check in templates
+    window.Handlebars.registerHelper('exists', function(v){
+      return (v !== undefined && v !== null && String(v).trim() !== '');
+    });
+    // doiLink helper: clickable DOI via doi.org
+    window.Handlebars.registerHelper('doiLink', function(doi){
+      const d = String(doi || '').trim();
+      if (!d) return '';
+      const url = 'https://doi.org/' + encodeURIComponent(d);
+      return new window.Handlebars.SafeString(`<a href="${url}" target="_blank" rel="noopener"><code>${d}</code></a>`);
+    });
     try {
       hbCard = window.Handlebars.compile(tplEl.innerHTML);
     } catch (e) {
