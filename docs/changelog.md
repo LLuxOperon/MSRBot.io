@@ -306,6 +306,45 @@ _Prevents orphaned branches from detached workflows._
 **Result**
 - Registry now offers full-fidelity search, deep-linkable state, and robust filter synchronization within a responsive, mobile-friendly card interface.
 
+### 6.4 Frontend Refresh IV — Search Index & UX Enhancements
+
+**Search Index & Schema**
+- Enriched search index rows with `publisher`, `doi`, `group`, and `publicationDate`; verified propagation to cards and facets.
+- `docType` now stores the full name (e.g., “Standard”); abbreviations (e.g., “ST”) moved to `docTypeAbr`.
+- Removed `Unknown` fallback — `docType` is mandatory.
+
+**Search Behavior**
+- MiniSearch tuning:
+  - Improved exact-phrase detection for quoted queries.
+  - Adjusted fuzzy and prefix thresholds to reduce over-broad matches.
+  - Enforced true **AND** semantics across multiple terms (eliminates OR overloads).
+  - Document-number normalization (e.g., `429-2:2020`) returns exact matches reliably.
+- Introduced mode toggle scaffolding for **simple** vs **smart** search (future-ready).
+
+**Facet & Status Logic**
+- Removed `statusPrimary`; facets and badges now derive from any `statusFlags` marked `true`.
+- Added `facets.statusLabels` for user-friendly names (e.g., “Active”, “Amended”); consistent badge order on cards.
+- Multi-flag **AND** logic for status filtering (e.g., “Active + Amended” requires both).
+
+**File Organization**
+- Build outputs reorganized: `documents.json` now emitted under `build/cards/_data/` for clearer separation.
+- Card views render exclusively from the **search index**; no dependency on the root `documents.json`.
+
+**UI Enhancements**
+- Added a Bootstrap **Search Tips** popover:
+  - Covers phrase matching, AND logic, field filters, doc-number normalization, fuzzy rules, and synonyms.
+  - Keyboard shortcut **`?`** opens tips from the search bar.
+  - Placement refined to sit just before the sort dropdown (discoverable and unobtrusive).
+
+**Resilience & Integration**
+- Tip-button installer guarded against duplicates (safe on `popstate` reloads).
+- Works with Bootstrap fallback (`alert()` version) if JS is unavailable.
+- `popstate` re-invokes `installSearchTips()` to maintain functionality on back/forward navigation.
+
+**Result**
+- Deterministic search/filtering with consistent `docType`, status, and metadata rendering.
+- Clear, discoverable search UX; build and data pipelines write to the correct directories.
+
 ## 7 Logging, Diffing, and PR Output
 - `logSmart.js` centralizes logging with a console budget (~3.5 MiB). Excess console chatter is tripwired while full logs are persisted to file.
 - Heartbeats and tripwires: periodic progress messages (`[HB pid:####] ... still processing — X/Y (Z%)`) with a start‑of‑run settings banner.
