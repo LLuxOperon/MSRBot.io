@@ -495,6 +495,86 @@
   window.addEventListener('scroll', computeStickyOffset, { passive: true });
   let _initialDeepLinked = false; // prevents double-render overriding initial hash navigation
 
+  function getSearchTipsHtml(){
+    return [
+      '<div class="small">',
+      '<strong>Search tips</strong>',
+      '<ul class="mb-0 ps-3">',
+      '<li><em>AND by default</em> — every word must match. Add words to narrow.</li>',
+      '<li><em>Exact phrase</em> — use quotes: "digital cinema"</li>',
+      '<li><em>Doc number/date</em> — type like <code>429-2:2020</code> (hyphens/colons normalized).</li>',
+      '<li><em>Field filters</em> — <code>publisher:SMPTE</code>, <code>label:"SMPTE ST 429-2"</code>, <code>id:429-2</code>, <code>doi:10.</code>, <code>group:isdcf</code>, <code>groupNames:"inter-society"</code>, <code>publicationDate:2020</code></li>',
+      '<li><em>Exclude</em> — prefix a minus: <code>-draft</code></li>',
+      '<li><em>Prefix</em> — 3+ letters match starts of words.</li>',
+      '<li><em>Fuzzy</em> — 4+ letters allow small typos (≈0.1).</li>',
+      '<li><em>Synonyms</em> — bi-directional (e.g., <code>isdcf</code> ↔ <code>inter-society digital cinema forum</code>).</li>',
+      '</ul>',
+      '</div>'
+    ].join('');
+  }
+
+  function installSearchTips(){
+    try {
+      const qEl = document.getElementById('q');
+      // Prefer placing the button inline with the search input; fallback to topbar
+      const container = (qEl && qEl.parentElement)
+        || document.querySelector('#cards-topbar .toolbar-right')
+        || document.querySelector('#cards-topbar')
+        || document.body;
+
+      if (!container || document.getElementById('searchTipsBtn')) return;
+
+      const btn = document.createElement('button');
+      btn.id = 'searchTipsBtn';
+      btn.type = 'button';
+      btn.className = 'btn btn-sm btn-outline-secondary ms-2';
+      btn.setAttribute('aria-label', 'Search tips');
+      btn.textContent = 'Search tips';
+
+      if (qEl && container === qEl.parentElement) {
+        // Insert directly after the search input so it reads as part of the control cluster
+        container.insertBefore(btn, qEl.nextSibling);
+      } else {
+        container.appendChild(btn);
+      }
+
+      const html = getSearchTipsHtml();
+      if (window.bootstrap && window.bootstrap.Popover) {
+        new window.bootstrap.Popover(btn, {
+          html: true,
+          content: html,
+          trigger: 'focus',
+          placement: 'bottom',
+          sanitize: false
+        });
+        btn.addEventListener('click', () => { btn.focus(); });
+      } else {
+        // Fallback if Bootstrap JS isn’t present
+        btn.addEventListener('click', () => {
+          const text = html
+            .replace(/<[^>]+>/g, '\n')
+            .replace(/\n\n+/g, '\n')
+            .replace(/\s+\n/g, '\n')
+            .trim();
+          alert(text);
+        });
+      }
+
+      // Keyboard shortcut inside the search box: press "?" (Shift + /)
+      if (qEl) {
+        qEl.addEventListener('keydown', (ev) => {
+          const key = ev.key || '';
+          if (key === '?' || (key === '/' && (ev.shiftKey || ev.metaKey || ev.ctrlKey))) {
+            ev.preventDefault();
+            btn.focus();
+          }
+        });
+      }
+    } catch (e) {
+      console.warn('[cards] search tips init failed:', e && e.message ? e.message : e);
+    }
+  }
+
   // --- URL sync (page,size) ---
   function initPageSizeFromURL(){
     try {
@@ -1339,6 +1419,7 @@
   initFiltersFromURL();
   initSearchFromURL();
   initSortFromURL();
+  installSearchTips();
   updateURLAll(false);
   syncPageSizeSelectFromState();
   populateYearSelect();
@@ -1355,6 +1436,7 @@
     syncPageSizeSelectFromState();
     syncYearSelectFromState();
     render();
+    installSearchTips();
   });
 
   // Kickoff
