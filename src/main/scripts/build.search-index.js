@@ -184,6 +184,7 @@ const squash = s => compact(s).replace(/\s+/g, ' ');
       pubTs,                 // parsed timestamp for sort
       year,
       hasDoi: Boolean(d.doi),
+      doi: d.doi || null,
       hasReleaseTag: Boolean(d.releaseTag),
       group,
       groupNames,
@@ -192,7 +193,8 @@ const squash = s => compact(s).replace(/\s+/g, ' ');
       keywords: facetKeywords,        // facet values (from documents.json)
       keywordsSearch: searchKeywords, // assembled search tokens
       href: d.href || null,
-      doi: d.doi || null
+      docBase: d.docBase || null,
+      docBaseLabel: d.docBaseLabel || null
     });
   }
 

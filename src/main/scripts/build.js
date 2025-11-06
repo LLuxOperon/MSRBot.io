@@ -129,7 +129,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   console.log(`Building ${templateName} started`)
 
   var DATA_PATH = path.join(REGISTRIES_REPO_PATH, "data/" + listType + ".json");
-  var DATA_SCHEMA_PATH = path.join(REGISTRIES_REPO_PATH, "schemas/" + listType + ".schema.json");
   var TEMPLATE_PATH = "src/main/templates/" + templateName + ".hbs";
   var PAGE_SITE_PATH
   if (output) {
