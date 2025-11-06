@@ -193,12 +193,16 @@
         <a class="anchor" id="{{id}}" href="#{{id}}"></a><code>{{label}}</code><br>{{#if href}}<a href="{{href}}" target="_blank" rel="noopener">{{title}}</a>{{else}}{{title}}{{/if}}
       </h3>
       <div class="d-flex gap-1 flex-wrap ms-auto justify-content-end text-end">
-        {{#if (hasAny statuses)}}
-          {{#each statuses}}
+        {{#if (hasAny statusOrdered)}}
+          {{#each statusOrdered}}
             {{{statusBadge this}}}
           {{/each}}
         {{else}}
-          {{{statusBadge statusPrimary}}}
+          {{#if (hasAny status)}}
+            {{#each status}}
+              {{{statusBadge this}}}
+            {{/each}}
+          {{/if}}
         {{/if}}
       </div>
     </header>
@@ -234,8 +238,8 @@
       <div class="row justify-content-md-center border-bottom d-flex">
         <div class="col text-center p-3">
         <small class="text-muted">
-            Site version: <code>5aff527ad8241820affe588f04d43183cf6295f6</code>
-            <br>Generated on: <code>2025-11-05T21:55:00.899Z</code>
+            Site version: <code>cb99305e62af675ce9f607ea04610e69f2b637b9</code>
+            <br>Generated on: <code>2025-11-06T03:01:42.916Z</code>
           </small>
         </div>
       </div>
