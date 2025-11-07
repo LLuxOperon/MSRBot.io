@@ -146,6 +146,44 @@ jobs:
           node src/main/scripts/utils/buildStats.js
           cp tools/apiViewer.html build/api/viewer.html
 
+      - name: Checkout gh-pages (for selective cleanup)
+        if: steps.guard.outputs.skip != 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: ghp
+          token: ${{ steps.app-token.outputs.token }}
+
+      - name: Clean gh-pages except /pr, CNAME, and .nojekyll
+        if: steps.guard.outputs.skip != 'true'
+        working-directory: ghp
+        run: |
+          set -euo pipefail
+          echo "Preparing selective cleanup in $(pwd)"
+          shopt -s dotglob
+          # Safety checks
+          test -d .git || (echo "Not a git repo; aborting" && exit 1)
+
+          # Remove everything except keepers
+          for entry in * .[^.]*; do
+            case "$entry" in
+              .|..|.git|.gitignore|.gitattributes|.github) continue ;;
+              pr|CNAME|.nojekyll) continue ;;
+              *) rm -rf "$entry" ;;
+            esac
+          done
+
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit on gh-pages (cleanup not needed)."
+          else
+            git config user.name "PrZ3 Unit"
+            git config user.email "prz3-unit[bot]@users.noreply.github.com"
+            git commit -m "chore: selective cleanup on gh-pages (preserve /pr, CNAME, .nojekyll)"
+            git push origin HEAD:gh-pages
+            echo "✅ Selective cleanup committed."
+          fi
+
       - name: Publish to gh-pages
         if: steps.guard.outputs.skip != 'true'
         uses: peaceiris/actions-gh-pages@v3
