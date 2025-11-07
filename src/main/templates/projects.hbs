@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
   {{>header}}
     <!-- Main content starts - do not edit above this line -->
     <table id="sorttableProjs" class="table table-small table-hover">
@@ -24,7 +22,7 @@
           </td>
           <td>
             {{#if docId}}
-            <a class="document-link clear-filter" href="../{{../htmlLink}}?search.search={{docId}}">{{docId}}</a>
+            <a class="document-link clear-filter" href="../documents/{{../htmlLink}}?search.search={{docId}}">{{docId}}</a>
             <!--<br>
             [{{getStatus this}}] {{{getstatusButton docId "12"}}}-->
             {{/if}}
@@ -72,5 +70,3 @@
     </table>
     <!-- Main content ends - do not edit below this line -->
 {{>footer}}
-
-</html>

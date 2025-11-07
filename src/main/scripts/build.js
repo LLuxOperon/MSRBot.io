@@ -96,7 +96,7 @@ const registries = [
   {
     "listType": "documents",
     "templateType": "documents",
-    "templateName": "index",
+    "templateName": "documents",
     "idType": "document",
     "listTitle": "Documents",
     "subRegistry": [
@@ -109,7 +109,7 @@ const registries = [
     "templateType": "documents",
     "templateName": "dependancies",
     "idType": "document",
-    "listTitle": "Document Dependancies",
+    "listTitle": "Ref Tree",
     "subRegistry": [
       "documents",
       "groups",
@@ -382,7 +382,7 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
 
   /* load all references per doc */
   // Emit reference warnings only for the main documents index (avoid dupes from \"dependancies\")
-  const __emitRefWarnings = (templateName === 'index');
+  const __emitRefWarnings = (templateName === 'documents');
   const docReferences = []
 
   for (let i in registryDocument) {
@@ -412,7 +412,7 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
         }
 
         if (__msiLatestByLineage) {
-          // 1) Base-index fast path: try the base token regardless of dated/undated;
+          // 1) Base-documents fast path: try the base token regardless of dated/undated;
           //    only *apply* upgrade when undated to avoid rewriting explicit dates.
           if (__msiBaseIndex) {
             const hit = __msiBaseIndex.get(base);
@@ -842,7 +842,7 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
 
   // Build card search index (search-index.json + facets.json) once per run
   // Only trigger from the main index page to avoid duplicate executions
-    if (templateName === 'index') {
+    if (templateName === 'documents') {
       // Persist the in-memory documents state for downstream consumers (docs/search-index)
       const EFFECTIVE_DOCS_PATH = path.join('build','docs','_data','documents.json');
       try {
@@ -961,6 +961,42 @@ void (async () => {
 
   console.log('[build] Wrote build/docs/index.html');
 
+  // --- Emit Home page from index.hbs at site root
+  const headerTplHome = await fs.readFile(path.join('src','main','templates','partials','header.hbs'), 'utf8');
+  const footerTplHome = await fs.readFile(path.join('src','main','templates','partials','footer.hbs'), 'utf8');
+  hb.registerPartial('header', headerTplHome);
+  hb.registerPartial('footer', footerTplHome);
+
+  const tplIndex = hb.compile(await fs.readFile(path.join('src','main','templates','index.hbs'), 'utf8'));
+  const homeCanonical = new URL('/', siteConfig.canonicalBase).href;
+  const homeHtml = tplIndex({
+    templateName: 'index',
+    listTitle: 'Home',
+    site_version: (await execFile('git', ['rev-parse','HEAD'])).stdout.trim(),
+    date: new Date().toISOString(),
+    // meta
+    siteName: siteConfig.siteName,
+    author: siteConfig.author,
+    authorUrl: siteConfig.authorUrl,
+    copyright: siteConfig.copyright,
+    copyrightHolder: siteConfig.copyrightHolder,
+    copyrightYear: siteConfig.copyrightYear,
+    license: siteConfig.license,
+    licenseUrl: siteConfig.licenseUrl,
+    locale: siteConfig.locale,
+    siteDescription: siteConfig.siteDescription,
+    siteTitle: `${siteConfig.siteName}`,
+    canonicalBase: siteConfig.canonicalBase,
+    canonicalUrl: homeCanonical,
+    ogTitle: `${siteConfig.siteName}`,
+    ogDescription: siteConfig.siteDescription,
+    ogImage: new URL(siteConfig.ogImage, siteConfig.canonicalBase).href,
+    ogImageAlt: siteConfig.ogImageAlt,
+    assetPrefix: '/',
+  });
+  await fs.writeFile(path.join(BUILD_PATH, 'index.html'), homeHtml, 'utf8');
+  console.log('[build] Wrote build/index.html');
+
   // --- Emit robots.txt and sitemap.xml
   const robotsTxt = [
     'User-agent: *',
@@ -1028,7 +1064,7 @@ void (async () => {
             <h3 class="h3 mb-3" id="penguin404" aria-live="polite"></h1>
             <p class="mb-4">
               The document you requested isn’t here. 
-              <br>Try the <a href="{{assetPrefix}}{{htmlLink}}">main documents index</a>.
+              <br>Try the <a href="{{assetPrefix}}documents/{{htmlLink}}">main documents index</a>.
             </p>
             <p>
               <img src="{{assetPrefix}}static/MSRBot-PrZ3-blue.svg" alt="MSR" width="250" height="250" class="m-2">
@@ -1070,7 +1106,7 @@ void (async () => {
     {{> footer}}
   </html>`);
   const fourOhFourHtml = tpl404({
-    templateName: 'index',                 // root paths for assets
+    templateName: 'documents',                 // root paths for assets
     listTitle: 'Not Found',
     site_version: (await execFile('git', ['rev-parse','HEAD'])).stdout.trim(),
     date: new Date().toISOString(),

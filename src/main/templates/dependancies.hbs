@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
   {{>header}}
     <!-- Main content starts - do not edit above this line -->
     <table id="sorttableDep" class="table table-small table-hover">
@@ -19,7 +17,7 @@
           </td>
           <td class="doclabel">
             <a class="anchor" id="{{docId}}" href="#{{docId}}"></a><code>{{docLabel}}</code>; 
-            <span class="title"><a class="{{../idType}}-link" href="../index.html#{{docId}}">{{docTitle}}</a></span>
+            <span class="title"><a class="{{../idType}}-link" href="../documents/index.html#{{docId}}">{{docTitle}}</a></span>
             <br>
             <div class="pb-2">
               <span class="font-weight-bold small">Current Status:</span> {{currentStatus}} {{{getstatusButton docId "12"}}}
@@ -29,7 +27,7 @@
               <br>
               <span class="label badge text-bg-warning text-uppercase">{{workType}} {{projectStatus}}{{#ifnoteq projectStatus "Open"}}, Project {{#if projApproved}}Approved{{/if}}{{/ifnoteq}}{{#unless projApproved}}Pending{{/unless}}</span>
               {{#if newDoc}}
-              <br><span class="small">Under Development: <a class="{{../idType}}-link clear-filter" href="../index.html#{{newDoc}}">{{getLabel newDoc}}</a> [{{getStatus newDoc}}]</span>
+              <br><span class="small">Under Development: <a class="{{../idType}}-link clear-filter" href="../documents/index.html#{{newDoc}}">{{getLabel newDoc}}</a> [{{getStatus newDoc}}]</span>
               {{/if}}
               {{/ifnoteq}}
               {{/with}}
@@ -60,7 +58,7 @@
                 <ul class="list-group list-group-flush">
                 {{#referencedBy}}
                   <li class="list-group-item">
-                    <span class="small"><a class="{{../../idType}}-link clear-filter" href="../index.html#{{this}}">{{getLabel this}}</a> [{{getStatus this}}]</span> {{{getstatusButton this "10"}}} {{#with (docProjLookup ../../docProjs this)}}{{#ifnoteq projectStatus "Complete"}}<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#F6BE00" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg>{{/ifnoteq}}{{/with}}
+                    <span class="small"><a class="{{../../idType}}-link clear-filter" href="../documents/index.html#{{this}}">{{getLabel this}}</a> [{{getStatus this}}]</span> {{{getstatusButton this "10"}}} {{#with (docProjLookup ../../docProjs this)}}{{#ifnoteq projectStatus "Complete"}}<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#F6BE00" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg>{{/ifnoteq}}{{/with}}
                   </li>
                 {{/referencedBy}}
                 </ul>
@@ -82,7 +80,7 @@
               <ul class="list-group list-group-flush">
               {{#referenceTree}}
                 <li class="list-group-item">
-                  <span class="small"><a class="{{../../idType}}-link" href="../index.html#{{this}}">{{getLabel this}} {{getTitle this}}</a> [{{getStatus this}}]</span> {{{getstatusButton this "10"}}} {{#with (docProjLookup ../../docProjs this)}}{{#ifnoteq projectStatus "Complete"}}<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#F6BE00" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg>{{/ifnoteq}}{{/with}}
+                  <span class="small"><a class="{{../../idType}}-link" href="../documents/index.html#{{this}}">{{getLabel this}} {{getTitle this}}</a> [{{getStatus this}}]</span> {{{getstatusButton this "10"}}} {{#with (docProjLookup ../../docProjs this)}}{{#ifnoteq projectStatus "Complete"}}<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#F6BE00" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg>{{/ifnoteq}}{{/with}}
                 </li>
               {{/referenceTree}}
               </ul>
@@ -94,7 +92,6 @@
         {{/data}}
       </tbody>
     </table>
-    <!-- Main content ends - do not edit below this line -->
+  <!-- Main content ends - do not edit below this line -->
 {{>footer}}
 
-</html>
