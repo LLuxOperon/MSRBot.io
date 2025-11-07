@@ -1,19 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
+  <!DOCTYPE html>
+  <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
+    
     <!-- SEO: core meta -->
     <meta name="description" content="MSRBot.io is a live, automated (and hand curated) Media Standards Registry (MSR) of media technology documents — extracting, validating, and linking documents across SMPTE, ISO, ITU, AES and many other publishers, SDOs, and industry groups.">
     <link rel="canonical" href="https://msrbot.io/groups/index.html">
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+    <meta name="author" content="Steve LLamb (PrZ3)">
+    <meta name="copyright" content="2025 © Steve LLamb https://github.com/SteveLLamb and PrZ3 https://github.com/PrZ3r, All rights reserved.">
+    <meta name="license" content="BSD-3-Clause">
+    <meta name="license:link" content="https://opensource.org/licenses/BSD-3-Clause">
   
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="MSRBot.io">
+    <meta property="og:locale" content="en-US">
     <meta property="og:title" content="Groups — MSRBot.io">
     <meta property="og:description" content="MSRBot.io is a live, automated (and hand curated) Media Standards Registry (MSR) of media technology documents — extracting, validating, and linking documents across SMPTE, ISO, ITU, AES and many other publishers, SDOs, and industry groups.">
+    <meta property="og:copyright" content="2025 © Steve LLamb https://github.com/SteveLLamb and PrZ3 https://github.com/PrZ3r, All rights reserved.">
+    <meta property="og:license" content="BSD-3-Clause"> 
     <meta property="og:url" content="https://msrbot.io/groups/index.html">
     <meta property="og:image" content="https://msrbot.io/static/og/msrbot-og.png">
     <meta property="og:image:secure_url" content="https://msrbot.io/static/og/msrbot-og.png">
@@ -29,44 +36,74 @@
     <meta name="application-name" content="MSRBot.io">
     <meta name="theme-color" content="#1398b0">
   
+    <!-- Icons -->
     <link type="image/svg" rel="icon" href="../static/MSRBot-PrZ3-blue.svg">
     <link rel="icon" type="image/svg+xml" href="../static/MSRBot-PrZ3-blue.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../static/icons/favicon-32.png">
     <link rel="icon" type="image/png" sizes="192x192" href="../static/icons/favicon-192.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../static/icons/apple-touch-icon-180.png">
+    
+    <!-- Styles -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato&amp;subset=latin,latin-ext">
-    <link rel="stylesheet" type="text/css" href="../mobile.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.4/b-2.1.1/r-2.2.9/sp-1.4.0/sl-1.3.4/datatables.min.css"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="search" type="application/opensearchdescription+xml" title="MSRBot" href="../opensearch.xml">
+    <link rel="stylesheet" type="text/css" href="../css/msrbot.css">
   
     <title>MSRBot.io | Groups</title>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="../features.js"></script>
+  
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.4/b-2.1.1/r-2.2.9/sp-1.4.0/sl-1.3.4/datatables.min.js"></script>
     <script src="https://cdn.datatables.net/plug-ins/1.11.4/features/deepLink/dataTables.deepLink.min.js"></script>
+    <script src="../js/features.js"></script>
   
     <!-- JSON-LD: basic WebSite schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "MSRBot.io",
+      "@type": "WebPage",
+      "name": "Groups - MSRBot.io",
       "url": "https://msrbot.io/groups/index.html",
+      "inLanguage": "en-US",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://msrbot.io/groups/index.html?q={query}",
+        "target": "https://msrbot.io/docs/?q={query}",
         "query-input": "required name=query"
+      },
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "MSRBot.io",
+        "url": "https://msrbot.io"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "PrZ3",
+        "url": "https://PrZ3.io"
+      },
+      "copyrightHolder": {
+        "@type": "Organization",
+        "name": "PrZ3"
+      },
+      "copyrightYear": "2025",
+      "license": "https://opensource.org/licenses/BSD-3-Clause",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://msrbot.io/static/og/msrbot-og.png",
+        "width": 1200,
+        "height": 630
       }
     }
     </script>
+  
+    <!-- Other -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="search" type="application/opensearchdescription+xml" title="MSRBot" href="../opensearch.xml">
+    <link rel="license" href="https://opensource.org/licenses/BSD-3-Clause">
+    
   </head>
   <body>
     <nav class="navbar navbar-expand-md sticky-top bg-light d-flex px-3 border-bottom">
@@ -77,19 +114,25 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         
         <ul class="navbar-nav ms-auto mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../"><i class="bi bi-file-richtext-fill" style="font-size: 1.5rem;"></i><span class="small">DOCS</span></a>
+          <li class="nav-item text-nowrap">
+            <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../"><i class="bi bi-house-fill" style="font-size: 1.5rem;"></i><span class="small">HOME</span></a>
           </li>
-          <li class="nav-item">
+          <!-- li class="nav-item text-nowrap">
+            <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../docs/"><i class="bi bi-file-richtext-fill" style="font-size: 1.5rem;"></i><span class="small">DOCS</span></a -->
+          </li>
+          <li class="nav-item text-nowrap">
+            <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../documents/"><i class="bi bi-file-richtext-fill" style="font-size: 1.5rem;"></i><span class="small">DOCUMENTS</span></a>
+          </li>
+          <li class="nav-item text-nowrap">
             <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../dependancies/"><i class="bi bi-diagram-3-fill" style="font-size: 1.5rem;"></i><span class="small">REF TREE</span></a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item text-nowrap">
             <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../groups/"><i class="bi bi-people-fill" style="font-size: 1.5rem;"></i><span class="small">GROUPS</span></a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item text-nowrap">
             <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../projects/"><i class="bi bi-kanban-fill" style="font-size: 1.5rem;"></i><span class="small">PROJECTS</span></a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item text-nowrap">
             <a class="nav-link d-flex flex-column text-center" aria-current="page" href="https://github.com/PrZ3r/MSRBot.io" target="_blank" ><i class="bi bi-github" style="font-size: 1.5rem;"></i><span class="small">CONTRIBUTE</span></a>
           </li>
         </ul>
@@ -164,7 +207,7 @@
             <a href="https://github.com/ampas/aces-docs" target="_blank">Repo</a>
           </td>
           <td>
-            <a href="../?search.search=AMPAS%20Science%20and%20Technology%20Council%20Academy%20Color%20Encoding%20System%20(ACES)%20Project%20Committee">Published</a>
+            <a href="../documents/?search.search=AMPAS%20Science%20and%20Technology%20Council%20Academy%20Color%20Encoding%20System%20(ACES)%20Project%20Committee">Published</a>
           </td>
           <td>
             <a href="../projects/?search.search=AMPAS%20Science%20and%20Technology%20Council%20Academy%20Color%20Encoding%20System%20(ACES)%20Project%20Committee">Projects</a>
@@ -210,7 +253,7 @@
           <td class="text-center">
           </td>
           <td>
-            <a href="../?search.search=ISO%20TC36%20Cinematography">Published</a>
+            <a href="../documents/?search.search=ISO%20TC36%20Cinematography">Published</a>
           </td>
           <td>
             <a href="../projects/?search.search=ISO%20TC36%20Cinematography">Projects</a>
@@ -586,7 +629,7 @@
             <a href="https://github.com/orgs/SMPTE/teams/standards-committee" target="_blank">Repo</a>
           </td>
           <td>
-            <a href="../?search.search=SMPTE%20ST%20Standards%20Committee">Published</a>
+            <a href="../documents/?search.search=SMPTE%20ST%20Standards%20Committee">Published</a>
           </td>
           <td>
             <a href="../projects/?search.search=SMPTE%20ST%20Standards%20Committee">Projects</a>
@@ -924,7 +967,7 @@
             <a href="https://github.com/orgs/SMPTE/teams/10e" target="_blank">Repo</a>
           </td>
           <td>
-            <a href="../?search.search=SMPTE%2010E%20Essence">Published</a>
+            <a href="../documents/?search.search=SMPTE%2010E%20Essence">Published</a>
           </td>
           <td>
             <a href="../projects/?search.search=SMPTE%2010E%20Essence">Projects</a>
@@ -973,7 +1016,7 @@
           <td class="text-center">
           </td>
           <td>
-            <a href="../?search.search=SMPTE%2020F%20Film">Published</a>
+            <a href="../documents/?search.search=SMPTE%2020F%20Film">Published</a>
           </td>
           <td>
             <a href="../projects/?search.search=SMPTE%2020F%20Film">Projects</a>
@@ -1020,7 +1063,7 @@
           <td class="text-center">
           </td>
           <td>
-            <a href="../?search.search=SMPTE%2021DC%20Digital%20Cinema">Published</a>
+            <a href="../documents/?search.search=SMPTE%2021DC%20Digital%20Cinema">Published</a>
           </td>
           <td>
             <a href="../projects/?search.search=SMPTE%2021DC%20Digital%20Cinema">Projects</a>
@@ -1257,7 +1300,7 @@
             <a href="https://github.com/orgs/SMPTE/teams/24tb" target="_blank">Repo</a>
           </td>
           <td>
-            <a href="../?search.search=SMPTE%2024TB%20Television%20and%20Broadband%20Media">Published</a>
+            <a href="../documents/?search.search=SMPTE%2024TB%20Television%20and%20Broadband%20Media">Published</a>
           </td>
           <td>
             <a href="../projects/?search.search=SMPTE%2024TB%20Television%20and%20Broadband%20Media">Projects</a>
@@ -1304,7 +1347,7 @@
           <td class="text-center">
           </td>
           <td>
-            <a href="../?search.search=SMPTE%2025CSS%20Cinema%20Sound%20Systems">Published</a>
+            <a href="../documents/?search.search=SMPTE%2025CSS%20Cinema%20Sound%20Systems">Published</a>
           </td>
           <td>
             <a href="../projects/?search.search=SMPTE%2025CSS%20Cinema%20Sound%20Systems">Projects</a>
@@ -1352,7 +1395,7 @@
             <a href="https://github.com/orgs/SMPTE/teams/27c" target="_blank">Repo</a>
           </td>
           <td>
-            <a href="../?search.search=SMPTE%2027C%20Cinema">Published</a>
+            <a href="../documents/?search.search=SMPTE%2027C%20Cinema">Published</a>
           </td>
           <td>
             <a href="../projects/?search.search=SMPTE%2027C%20Cinema">Projects</a>
@@ -1549,7 +1592,7 @@
             <a href="https://github.com/orgs/SMPTE/teams/30mr" target="_blank">Repo</a>
           </td>
           <td>
-            <a href="../?search.search=SMPTE%2030MR%20Metadata/Registries">Published</a>
+            <a href="../documents/?search.search=SMPTE%2030MR%20Metadata/Registries">Published</a>
           </td>
           <td>
             <a href="../projects/?search.search=SMPTE%2030MR%20Metadata/Registries">Projects</a>
@@ -1599,7 +1642,7 @@
             <a href="https://github.com/orgs/SMPTE/teams/31fs" target="_blank">Repo</a>
           </td>
           <td>
-            <a href="../?search.search=SMPTE%2031FS%20File%20Formats%20and%20Systems">Published</a>
+            <a href="../documents/?search.search=SMPTE%2031FS%20File%20Formats%20and%20Systems">Published</a>
           </td>
           <td>
             <a href="../projects/?search.search=SMPTE%2031FS%20File%20Formats%20and%20Systems">Projects</a>
@@ -1649,7 +1692,7 @@
             <a href="https://github.com/orgs/SMPTE/teams/32nf" target="_blank">Repo</a>
           </td>
           <td>
-            <a href="../?search.search=SMPTE%2032NF%20Network/Facilities%20Infrastructure">Published</a>
+            <a href="../documents/?search.search=SMPTE%2032NF%20Network/Facilities%20Infrastructure">Published</a>
           </td>
           <td>
             <a href="../projects/?search.search=SMPTE%2032NF%20Network/Facilities%20Infrastructure">Projects</a>
@@ -1699,7 +1742,7 @@
             <a href="https://github.com/orgs/SMPTE/teams/34cs" target="_blank">Repo</a>
           </td>
           <td>
-            <a href="../?search.search=SMPTE%2034CS%20Media%20Systems,%20Control%20and%20Services">Published</a>
+            <a href="../documents/?search.search=SMPTE%2034CS%20Media%20Systems,%20Control%20and%20Services">Published</a>
           </td>
           <td>
             <a href="../projects/?search.search=SMPTE%2034CS%20Media%20Systems,%20Control%20and%20Services">Projects</a>
@@ -1749,7 +1792,7 @@
             <a href="https://github.com/orgs/SMPTE/teams/35pm" target="_blank">Repo</a>
           </td>
           <td>
-            <a href="../?search.search=SMPTE%2035PM%20Media%20Packaging%20and%20Interchange">Published</a>
+            <a href="../documents/?search.search=SMPTE%2035PM%20Media%20Packaging%20and%20Interchange">Published</a>
           </td>
           <td>
             <a href="../projects/?search.search=SMPTE%2035PM%20Media%20Packaging%20and%20Interchange">Projects</a>
@@ -1822,8 +1865,8 @@
       <div class="row justify-content-md-center border-bottom d-flex">
         <div class="col text-center p-3">
         <small class="text-muted">
-            Site version: <code>31006c4f6688a142d03bc8993be0a1f1a81be1f5</code>
-            <br>Generated on: <code>Wed Nov 05 2025 04:25:07 GMT+0000 (Coordinated Universal Time)</code>
+            Site version: <code>499e6b170ea06a02efd9fef378626c73b366c95b</code>
+            <br>Generated on: <code>Fri Nov 07 2025 06:54:39 GMT+0000 (Coordinated Universal Time)</code>
           </small>
         </div>
       </div>

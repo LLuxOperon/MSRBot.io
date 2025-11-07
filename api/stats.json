@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2025-11-05T04:25:07.383Z",
+  "generatedAt": "2025-11-07T06:54:40.189Z",
   "documents": {
     "total": 2207,
     "references": 2852,
     "publishers": 93,
-    "active": 1455,
+    "active": 1454,
     "docTypes": 39,
     "docsByType": {
       "Journal Article": 107,
