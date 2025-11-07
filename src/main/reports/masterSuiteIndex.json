@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2025-11-05T04:23:15.338Z",
+  "generatedAt": "2025-11-07T06:47:57.568Z",
   "sourcePath": "src/main/data/documents.json",
-  "sourceHash": "sha256:2997735fdd15e6f5da25713f7e0c9157159283fc2a02b451e5f1ab269f996cfb",
+  "sourceHash": "sha256:ab9e91df458e3ab08249e4018497d2d86493ad74ffeec68f31200caabff1f46e",
   "publisherCounts": {
     "total": 2207,
     "counts": {
@@ -2001,7 +2001,7 @@
     }
   },
   "flagSummary": {
-    "totalFlags": 296,
+    "totalFlags": 294,
     "byType": {
       "DOCID_PUBDATE_MISMATCH": {
         "count": 29,
@@ -2510,19 +2510,6 @@
           {
             "lineage": "W3C|xpath||",
             "flag": "SUPERSEDED_BY_OUT_OF_LINEAGE:W3C.xpath.19991116->W3C.xpath3.1.20170321"
-          }
-        ]
-      },
-      "CONTRADICTORY_STATUS_FLAGS": {
-        "count": 2,
-        "examples": [
-          {
-            "lineage": "IEC||60268|3",
-            "flag": "CONTRADICTORY_STATUS_FLAGS:IEC.60268-3.2000:ACTIVE_AND_WITHDRAWN"
-          },
-          {
-            "lineage": "IEC||60268|3",
-            "flag": "CONTRADICTORY_STATUS_FLAGS:IEC.60268-3.2000:ACTIVE_AND_SUPERSEDED"
           }
         ]
       },
@@ -6368,7 +6355,7 @@
           "docId": "IEC.60268-3.2000",
           "publicationDate": "2000-08-30",
           "releaseTag": null,
-          "statusActive": true,
+          "statusActive": false,
           "statusSuperseded": true,
           "statusWithdrawn": true,
           "statusStabilized": false,
@@ -6397,8 +6384,6 @@
       "latestSupersededBaseId": "IEC.60268-3.2000",
       "prevBaseId": "IEC.60268-3.2000",
       "flagInconsistencies": [
-        "CONTRADICTORY_STATUS_FLAGS:IEC.60268-3.2000:ACTIVE_AND_WITHDRAWN",
-        "CONTRADICTORY_STATUS_FLAGS:IEC.60268-3.2000:ACTIVE_AND_SUPERSEDED",
         "DOCID_PUBDATE_MISMATCH:IEC.60268-3.2018:docIdYear=2018,pubYear=1991"
       ],
       "counts": {
