@@ -146,15 +146,13 @@ const squash = s => compact(s).replace(/\s+/g, ' ');
       versionless: !!st.versionless
     };
     // Guardrails: normalize implied relationships
-    if (statusFlags.latestVersion) {
-      statusFlags.active = true;
-      statusFlags.superseded = false;
-      statusFlags.withdrawn = false;
-    }
+    //if (statusFlags.latestVersion) {
+    //  statusFlags.active = true;
+    //  statusFlags.superseded = false;
+    //  statusFlags.withdrawn = false;
+    //}
     if (statusFlags.withdrawn) {
-      statusFlags.active = false;
       statusFlags.latestVersion = false;
-      statusFlags.superseded = false;
     }
     // Emit "status" as an array of every true flag; no primary/singleton
     const status = Object.entries(statusFlags)

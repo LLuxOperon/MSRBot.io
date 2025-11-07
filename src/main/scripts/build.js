@@ -86,13 +86,11 @@ async function copyRecursive(src, dest) {
 
 // Warn once per process for empty MSI
 let __msiWarnedEmpty = false;
-
 const argv = require('yargs').argv;
 const { readFile, writeFile } = require('fs').promises;
 const { json2csvAsync } = require('json-2-csv');
 
 /* list the available registries type (lower case), id (single, for links), titles (Upper Case), and schema builds */
-
 
 const registries = [
   {
@@ -142,7 +140,6 @@ const registries = [
   }
 ]
 
-
 /* load and build the templates */
 
 async function buildRegistry ({ listType, templateType, templateName, idType, listTitle, subRegistry, output, extras }) {
@@ -170,19 +167,15 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   const ogImageAlt = siteConfig.ogImageAlt;
   // Asset prefix for relative local assets in header/footer
   const assetPrefix = (templateName === 'index') ? '' : '../';
-
   var CSV_SITE_PATH = templateType + ".csv";
   const inputFileName = DATA_PATH;
   const outputFileName = BUILD_PATH + "/" + CSV_SITE_PATH;
 
-
   /* load header and footer for templates */
-
   hb.registerPartial('header', await fs.readFile("src/main/templates/partials/header.hbs", 'utf8'));
   hb.registerPartial('footer', await fs.readFile("src/main/templates/partials/footer.hbs", 'utf8'));
 
   /* instantiate template */
-  
   let template = hb.compile(
     await fs.readFile(
       TEMPLATE_PATH,
@@ -251,7 +244,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     }
   }
 
-
   // --- Load MasterSuiteIndex (MSI) once and build a lineage → latest lookup
   const MSI_PATH = path.join(REGISTRIES_REPO_PATH, 'reports/masterSuiteIndex.json');
   let __msiLatestByLineage = null;
@@ -277,7 +269,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   if (__msiLatestByLineage) {
     __msiBaseIndex = new Map();
     const TAIL_RE = /\.(?:\d{4}(?:-\d{2}){0,2}|\d{8})(?:[A-Za-z0-9].*)?$/;
-
     const safeBase = (id) => (typeof id === 'string') ? id.replace(TAIL_RE, '') : id;
 
     try {
@@ -300,8 +291,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
           if (latestAnyId)  __msiBaseIndex.set(safeBase(latestAnyId),  payload);
         }
       }
-      // Optional visibility: uncomment for diagnostics
-      // console.log(`[MSI] Built baseIndex entries: ${__msiBaseIndex.size}`);
     } catch (e) {
       if (!__msiWarnedEmpty) {
         console.warn(`[WARN] Could not rebuild MSI baseIndex: ${e.message}`);
@@ -332,15 +321,12 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
       doc.msiLatestAny = latestAnyId || null;
       doc.msiLatestBase = latestBaseId || null;
       doc.isLatestAny = latestAnyId ? (doc.docId === latestAnyId) : false;
-      // Backwards compatibility flag for templates
       doc.docBase = key
       doc.docBaseLabel = labelFromLineageKey(key);
       // Ensure a status object exists
       doc.status = doc.status && typeof doc.status === 'object' ? doc.status : {};
-
       // Update nested status flag rather than top-level field
       doc.status.latestVersion = !!doc.isLatestAny;
-
       doc.isLatestBase = latestBaseId ? (doc.docId === latestBaseId) : false;
     }
   }
@@ -348,12 +334,9 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   /* load the SMPTE abreviated docType */
 
   for (let i in registryDocument) {
-
     if (registryDocument[i]["publisher"] == "SMPTE"){
-
       let docType = registryDocument[i]["docType"];
       var dTA = ""
-
       if(docType == "Administrative Guideline"){
         dTA = "AG"
       }
@@ -400,7 +383,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   /* load all references per doc */
   // Emit reference warnings only for the main documents index (avoid dupes from \"dependancies\")
   const __emitRefWarnings = (templateName === 'index');
-
   const docReferences = []
 
   for (let i in registryDocument) {
@@ -413,10 +395,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
 
       // De-duplicate noisy warnings per docId
       const __noKeyWarned = new Set();
-
-      // Optional visibility: uncomment for diagnostics
-      //console.log(`++ Checking refs for ${docId} ++`)
-
       const normResolved = [];
       const bibResolved = [];
 
@@ -427,13 +405,8 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
         const wasUndated = (base === r);
         let resolved = r;
 
-        // Optional visibility: uncomment for diagnostics
-        //console.log(`... checking ${r}`);
-        //if (!wasUndated) console.log(`       (dated; base=${base})`);
-
         // If this reference is an exact docId present in our registry, skip MSI checks entirely
         if (__docIdSet && __docIdSet.has(r)) {
-          //console.log(`    skipping ${r} (exact docId present in registry)`);
           refs.push(resolved);
           return { id: resolved };
         }
@@ -448,14 +421,8 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
                 const next = hit.latestBaseId || hit.latestAnyId || r;
                 if (next !== r) {
                   resolved = next;
-                  // Optional visibility: uncomment for diagnostics
-                  //console.log(`   [Refs] Upgraded via baseIndex ${r} → ${resolved}`);
                 }
               } 
-                // Optional visibility: uncomment for diagnostics
-                //else {
-                //console.log(`[Refs] baseIndex hit for ${base} (dated ref, no upgrade)`);
-              //}
             }
           }
 
@@ -465,35 +432,17 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
             // Example: "ISO.15444-1" → matcher is anchored up to a dot before the date tail.
             const baseForKey = (typeof base === 'string' && !base.endsWith('.')) ? (base + '.') : base;
             const key = lineageKeyFromDocId(baseForKey);
-            // Optional visibility: uncomment for diagnostics
-            //if (wasUndated) {
-            //  console.log(`   [Refs] MSI probe undated: ${r}`);
-            //  console.log(`       probeBase: ${baseForKey}`);
-            //}
+
             if (key) {
-              // Optional visibility: uncomment for diagnostics
-              //if (wasUndated) {
-              //  console.log(`       key: ${key}`);
-              //}
               const li = __msiLatestByLineage.get(key);
               if (li) {
                 if (wasUndated) {
-                  // Optional visibility: uncomment for diagnostics
-                  //console.log(`       HIT in MSI (latestBaseId=${li.latestBaseId} latestAnyId=${li.latestAnyId})`);
                   const next = li.latestBaseId || li.latestAnyId || r;
                   if (next !== r) {
                     resolved = next;
-                    // Optional visibility: uncomment for diagnostics
-                    //console.log(`   [Refs] Upgraded via lineage ${r} → ${resolved}`);
                   }
-                } // Optional visibility: uncomment for diagnostics
-                  //else {
-                  //console.log('       MSI lineage hit (dated ref, no upgrade)');
-                //}
-              } // Optional visibility: uncomment for diagnostics
-                //else if (wasUndated) {
-                //console.log('       MISS in MSI');
-                //}
+                } 
+              } 
             } else if (wasUndated) {
               const warnKey = `${docId}::${r}`;
               if (!__noKeyWarned.has(warnKey)) {
@@ -538,9 +487,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
       if (Object.keys(resolvedOut).length) {
         registryDocument[i].referencesResolved = resolvedOut;
       }
-      // Optional visibility: uncomment for diagnostics
-      //console.log(`[Refs] for docId: ${docId}`)
-      //console.log(refs)
 
       docReferences[docId] = refs;
       if (__emitRefWarnings && __noKeyWarned.size) {
@@ -552,13 +498,9 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   /* load referenced by docs */
 
   for (let i in registryDocument) {
-
     let docId = registryDocument[i].docId
-
     function findReferenceBy(obj = docReferences, doc = docId) {
-      
       var referencedBy = []
-
       Object.keys(obj).forEach((key) => {
         if (
           typeof obj[key] === 'object' &&
@@ -569,60 +511,43 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
           referencedBy.push(key)
         }
       })
-
       if (!referencedBy.length) {
         return
       }
       registryDocument[i].referencedBy = referencedBy;
       referencedBy.sort();
       return referencedBy; 
-
     };
-
     findReferenceBy();
   }
 
   /* load reference tree */
 
   const referenceTree = []
-
   for (let i in docReferences) {
-
     let refs = docReferences[i]
     let allRefs = []
 
     function getAllDocs() {
-
       for (let docRefs in refs) {
-
         let docId = refs[docRefs]
-
         if (allRefs.includes(docId) !== true) {
           allRefs.push(docId)
         } 
-
         let nestedDocs = []
         let nestLevel = 1
 
         function docLookup() {
-        
           if (Object.keys(docReferences).includes(docId) === true)  {
-
             let docs = docReferences[docId]
             let arrayLength = docs.length
-
             for (var d = 0; d < arrayLength; d++) {
-
               nestedDocs.push(docs[d])
-
               if (allRefs.includes(docs[d]) !== true) {
                 allRefs.push(docs[d])              
               } 
-
             }
-
           } 
-
           if (nestedDocs.length) {
             nestLevel++
             while (nestLevel < 4) {
@@ -632,37 +557,28 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
               }
             }
           }
-
         }
         docLookup();
       }
-
     }
-
     getAllDocs();   
     allRefs.sort();
     referenceTree[i] = allRefs
-
   }
 
   for (let i in registryDocument) {
-
     let docId = registryDocument[i].docId
     if (Object.keys(referenceTree).includes(docId) === true) {
       registryDocument[i].referenceTree = referenceTree[docId]
     }
-
   }
 
   /* check if referenced by or reference tree exist (for rendering on page) */ 
 
   let docDependancy
-
   for (let i in registryDocument) {
-    
     let depCheck = true
     let depPresent
-  
     if (registryDocument[i].referencedBy && registryDocument[i].referenceTree) {
       docDependancy = true
     }
@@ -675,7 +591,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     else {
       docDependancy = false
     } 
-
     registryDocument[i].docDependancy = docDependancy
   }
 
@@ -684,7 +599,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   for (let i in registryDocument) {
     const d = registryDocument[i] || {};
     const status = (d.status && typeof d.status === 'object') ? d.status : {};
-
     let cS = "";
 
     if (status.active) {
@@ -706,13 +620,11 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     }
 
     if (status.statusNote) cS += "*";
-
     d.currentStatus = cS;
     registryDocument[i] = d;
   }
 
   const docStatuses = {}
-
   registryDocument.forEach(item => { docStatuses[item.docId] = item.currentStatus} );
 
   hb.registerHelper("getStatus", function(docId) {
@@ -728,7 +640,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   hb.registerHelper("getstatusButton", function(docId, btnSize) {
     
     var status = docStatuses[docId]
-
     if (status !== undefined) {
       if (status.includes("Active")) { 
         return '<svg xmlns="http://www.w3.org/2000/svg" width="' + btnSize + '" height="' + btnSize + '" fill="#0c9c16" class="bi bi-check-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>'; 
@@ -739,10 +650,7 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
       else {
         return "";
       }
-    } //else {
-      //console.error(`Cannot find the status for referenced document: ${docId}`);
-    //}
-
+    } 
     return docStatuses[docId];
   });
 
@@ -781,10 +689,8 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
 
   const docProjs = []
   for (let i in registryProject) {
-    
     let projs = registryProject[i]["docAffected"]
     for (let p in projs) {
-
       var docProj = {}
       docProj["docId"] = projs[p]
       docProj["workType"] = registryProject[i]["workType"]
@@ -792,16 +698,13 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
       docProj["newDoc"] = registryProject[i]["docId"]
       docProj["projApproved"] = registryProject[i]["projApproved"]
       docProjs.push(docProj)
-
     }
   }
 
   /* Load Current Work on Doc for filtering */
 
   for (let i in registryDocument) {
-
     const currentWork = []
-
     let works = registryDocument[i]["workInfo"]
     for (let w in works) {
 
@@ -816,7 +719,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
         }
       }
     }
-
     for (let p in registryProject) {
       let pD = registryProject[p]["docId"]
       let pW = registryProject[p]["workType"]
@@ -826,7 +728,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
         currentWork.push(pW + " - " + pS)
       }
     }
-
     for (let ps in docProjs) {
       let psD = docProjs[ps]["docId"]
       let psW = docProjs[ps]["workType"]
@@ -836,18 +737,15 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
         currentWork.push(psW + " - " + psS)
       }
     }
-
     if (currentWork.length !== 0) {
       registryDocument[i]["currentWork"] = currentWork
     }
-
   }
 
   /* lookup if Repo exists for any project */
 
   for (let i in registryProject) {
     var repo
-    
     let doc = registryProject[i]["docId"]
     if (typeof doc !== "undefined") {
       for (let d in registryDocument) {
@@ -859,7 +757,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
         }
       }
     }
-
     let docAff = registryProject[i]["docAffected"]
     for (let dA in docAff) {
       let doc = docAff[dA]
@@ -874,14 +771,12 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
         }
       }
     }  
-
   }
 
   /* external json lookup helpers */
 
   hb.registerHelper('docProjLookup', function(collection, id) {
       var collectionLength = collection.length;
-
       for (var i = 0; i < collectionLength; i++) {
           if (collection[i].docId === id) {
               return collection[i];
@@ -892,7 +787,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
 
   hb.registerHelper('groupIdLookup', function(collection, id) {
       var collectionLength = collection.length;
-
       for (var i = 0; i < collectionLength; i++) {
           if (collection[i].groupId === id) {
               return collection[i];
@@ -903,7 +797,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
 
   hb.registerHelper('projectIdLookup', function(collection, id) {
       var collectionLength = collection.length;
-
       for (var i = 0; i < collectionLength; i++) {
           if (collection[i].projectId === id) {
               return collection[i];
@@ -942,7 +835,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   /* determine if build on GH to remove "index.html" from internal link */
 
   let htmlLink = "index.html"
-
   if ('GH_PAGES_BUILD' in process.env) {
     htmlLink = ""
   }
@@ -984,12 +876,10 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   });
   
   /* write HTML file */
-  
   await fs.writeFile(path.join(BUILD_PATH, PAGE_SITE_PATH), html, 'utf8');
-  
   /* copy in static resources */
   await copyRecursive(SITE_PATH, BUILD_PATH);
-  
+
   // Build card search index (search-index.json + facets.json) once per run
   // Only trigger from the main index page to avoid duplicate executions
   if (templateName === 'index') {
@@ -1010,9 +900,7 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     }
   }
   
-  
   /* set the CHROMEPATH environment variable to provide your own Chrome executable */
-  
   var pptr_options = {};
   
   if (process.env.CHROMEPATH) {
@@ -1064,7 +952,6 @@ void (async () => {
   const docsOgTitle = `Docs — ${siteConfig.siteName}`;
   const docsOgImage = new URL(siteConfig.ogImage, siteConfig.canonicalBase).href;
   const docsOgImageAlt = siteConfig.ogImageAlt;
-
   const docsAssetPrefix = '../';
   await fs.writeFile(path.join('build','docs','index.html'), renderCards({
     templateName: 'cards',
