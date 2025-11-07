@@ -215,7 +215,7 @@ _Prevents orphaned branches from detached workflows._
 - Introduced fallback diagnostics for missing templates (`#card-tpl` / `#card-tpl-src`) to prevent silent render failures.
 - Corrected **publiccd** mapping within `statusBadge` to ensure proper badge display across document types.
 - Added **`syncFacetCheckboxes()`** to maintain state parity between filter chips and facet checkboxes, including the **“Clear All”** action.
-- Updated **`mobile.css`** for badge right-alignment and text wrapping on small screens.
+- Updated **`msrbot.css`** for badge right-alignment and text wrapping on small screens.
 - Updated **`cards.hbs`** to integrate existing Bootstrap header/footer, sticky topbar, and unified card render block.
 - Verified automatic facet expansion for **status** and **docType**; confirmed live synchronization between chip removal and facet checkboxes.
 - Result: responsive, visually consistent registry cards with fully synchronized filters and improved mobile usability.

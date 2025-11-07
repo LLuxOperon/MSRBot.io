@@ -46,7 +46,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato&amp;subset=latin,latin-ext">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.4/b-2.1.1/r-2.2.9/sp-1.4.0/sl-1.3.4/datatables.min.css"/>
-  <link rel="stylesheet" type="text/css" href="{{assetPrefix}}mobile.css">
+  <link rel="stylesheet" type="text/css" href="{{assetPrefix}}css/msrbot.css">
 
   <title>MSRBot.io | {{listTitle}}</title>
 
@@ -56,21 +56,26 @@
 
   <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.4/b-2.1.1/r-2.2.9/sp-1.4.0/sl-1.3.4/datatables.min.js"></script>
   <script src="https://cdn.datatables.net/plug-ins/1.11.4/features/deepLink/dataTables.deepLink.min.js"></script>
-  <script src="{{assetPrefix}}features.js"></script>
+  <script src="{{assetPrefix}}js/features.js"></script>
 
   <!-- JSON-LD: basic WebSite schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "{{listTitle}} - {{siteName}}",
+    "@type": "{{#ifeq templateName "index"}}WebSite{{/ifeq}}{{#ifnoteq templateName "index"}}WebPage{{/ifnoteq}}",
+    "name": "{{#ifnoteq templateName "index"}}{{listTitle}} - {{/ifnoteq}}{{siteName}}",
     "url": "{{canonicalUrl}}",
-    "inLanguage": "{{locale}}",
+    "inLanguage": "{{locale}}"{{#ifnoteq templateName "index"}},
     "potentialAction": {
       "@type": "SearchAction",
       "target": "{{canonicalUrl}}?q={query}",
       "query-input": "required name=query"
     },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "{{siteName}}",
+      "url": "{{canonicalBase}}"
+    }{{/ifnoteq}},
     "creator": {
       "@type": "Organization",
       "name": "{{copyrightHolder}}",
@@ -81,13 +86,13 @@
       "name": "{{copyrightHolder}}"
     },
     "copyrightYear": "{{copyrightYear}}",
-    "license": "{{licenseUrl}}",
+    "license": "{{licenseUrl}}"{{#ifnoteq templateName "index"}},
     "primaryImageOfPage": {
       "@type": "ImageObject",
       "url": "{{ogImage}}",
       "width": 1200,
       "height": 630
-    }
+    }{{/ifnoteq}}
   }
   </script>
 
