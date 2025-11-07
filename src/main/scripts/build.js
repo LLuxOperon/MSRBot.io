@@ -957,6 +957,7 @@ void (async () => {
     ogImage: docsOgImage,
     ogImageAlt: docsOgImageAlt,
     assetPrefix: docsAssetPrefix,
+    robotsMeta: 'noindex,nofollow'
   }), 'utf8');
 
   console.log('[build] Wrote build/docs/index.html');
@@ -999,8 +1000,12 @@ void (async () => {
 
   // --- Emit robots.txt and sitemap.xml
   const robotsTxt = [
+    '# MSRBot.io robots.txt',
+    '# Managed by PrZ3 Unit — Penguin Parsing Protocol v3-Gen',
     'User-agent: *',
     'Allow: /',
+    'Disallow: /docs/',
+    'Disallow: /tmp/',
     '',
     `Sitemap: ${new URL('/sitemap.xml', siteConfig.canonicalBase).href}`
   ].join('\n');
@@ -1054,9 +1059,7 @@ void (async () => {
   // Prepare penguin 404 messages from config
   const penguinMessagesJson = JSON.stringify(siteConfig.penguin404Messages);
   
-  const tpl404 = hb.compile(`<!DOCTYPE html>
-  <html lang="en">
-    {{> header}}
+  const tpl404 = hb.compile(`{{> header}}
     <main class="container py-5">
       <div class="row justify-content-md-center">
         <div class="col-md-8 text-center">
