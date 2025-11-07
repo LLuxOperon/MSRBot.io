@@ -12,7 +12,8 @@ are permitted provided that the following conditions are met:
    other materials provided with the distribution.
 
 4. Neither the name of the copyright holder nor the names of its contributors may
-   be used to endorse or promote products derived from this software without specific prior written permission.
+   be used to endorse or promote products derived from this software without specific 
+   prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND 
 ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
@@ -841,23 +842,30 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
 
   // Build card search index (search-index.json + facets.json) once per run
   // Only trigger from the main index page to avoid duplicate executions
-  if (templateName === 'index') {
-    // Persist the in-memory documents state for downstream consumers (docs/search-index)
-    const EFFECTIVE_DOCS_PATH = path.join('build','docs','_data','documents.json');
-    try {
-      await fs.mkdir(path.dirname(EFFECTIVE_DOCS_PATH), { recursive: true });
-      await fs.writeFile(EFFECTIVE_DOCS_PATH, JSON.stringify(registryDocument, null, 2), 'utf8');
-      console.log(`[build] Wrote ${EFFECTIVE_DOCS_PATH}`);
-    } catch (e) {
-      console.warn('[build] Could not write documents snapshot:', e && e.message ? e.message : e);
+    if (templateName === 'index') {
+      // Persist the in-memory documents state for downstream consumers (docs/search-index)
+      const EFFECTIVE_DOCS_PATH = path.join('build','docs','_data','documents.json');
+      try {
+        await fs.mkdir(path.dirname(EFFECTIVE_DOCS_PATH), { recursive: true });
+        // Remove all deep keys that contain "$meta" before writing effective docs snapshot
+        const cleanEffective = JSON.parse(
+          JSON.stringify(
+            registryDocument,
+            (key, val) => (typeof key === 'string' && key.includes('$meta') ? undefined : val)
+          )
+        );
+        await fs.writeFile(EFFECTIVE_DOCS_PATH, JSON.stringify(cleanEffective, null, 2), 'utf8');
+        console.log(`[build] Wrote ${EFFECTIVE_DOCS_PATH}`);
+      } catch (e) {
+        console.warn('[build] Could not write documents snapshot:', e && e.message ? e.message : e);
+      }
+      try {
+        const { stdout } = await execFile('node', [path.join('src','main','scripts','build.search-index.js'), EFFECTIVE_DOCS_PATH]);
+        if (stdout && stdout.trim()) console.log(stdout.trim());
+      } catch (e) {
+        console.warn('[cards] Index build failed:', e && e.message ? e.message : e);
+      }
     }
-    try {
-      const { stdout } = await execFile('node', [path.join('src','main','scripts','build.search-index.js'), EFFECTIVE_DOCS_PATH]);
-      if (stdout && stdout.trim()) console.log(stdout.trim());
-    } catch (e) {
-      console.warn('[cards] Index build failed:', e && e.message ? e.message : e);
-    }
-  }
   
   /* set the CHROMEPATH environment variable to provide your own Chrome executable */
   var pptr_options = {};
@@ -880,20 +888,18 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     await writeFile(fileName, data, 'utf8');
   }
 
-  if (templateName === 'index') {
-    (async () => {
-      const data = await parseJSONFile(inputFileName);
-      // Remove all fields where the key contains "$meta" before exporting to CSV
-      const stripped = JSON.parse(
-        JSON.stringify(
-          data,
-          (key, val) => (typeof key === 'string' && key.includes('$meta') ? undefined : val)
-        )
-      );
-      const csv = await json2csvAsync(stripped);
-      await writeCSV(outputFileName, csv);
-    })();
-  }
+  (async () => {
+    const data = await parseJSONFile(inputFileName);
+    // Remove all fields where the key contains "$meta" before exporting to CSV
+    const stripped = JSON.parse(
+      JSON.stringify(
+        data,
+        (key, val) => (typeof key === 'string' && key.includes('$meta') ? undefined : val)
+      )
+    );
+    const csv = await json2csvAsync(stripped);
+    await writeCSV(outputFileName, csv);
+  })();
 
   console.log(`Build of ${templateName} completed`)
 };
