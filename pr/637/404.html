@@ -1,5 +1,7 @@
 <!DOCTYPE html>
   <html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
     <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -48,7 +50,7 @@
       <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato&amp;subset=latin,latin-ext">
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.4/b-2.1.1/r-2.2.9/sp-1.4.0/sl-1.3.4/datatables.min.css"/>
-      <link rel="stylesheet" type="text/css" href="/mobile.css">
+      <link rel="stylesheet" type="text/css" href="/css/msrbot.css">
     
       <title>MSRBot.io | Not Found</title>
     
@@ -58,20 +60,25 @@
     
       <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.4/b-2.1.1/r-2.2.9/sp-1.4.0/sl-1.3.4/datatables.min.js"></script>
       <script src="https://cdn.datatables.net/plug-ins/1.11.4/features/deepLink/dataTables.deepLink.min.js"></script>
-      <script src="/features.js"></script>
+      <script src="/js/features.js"></script>
     
       <!-- JSON-LD: basic WebSite schema -->
       <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebSite",
+        "@type": "WebPage",
         "name": "Not Found - MSRBot.io",
         "url": "https://msrbot.io/404.html",
         "inLanguage": "en-US",
         "potentialAction": {
           "@type": "SearchAction",
-          "target": "https://msrbot.io/404.html?q={query}",
+          "target": "https://msrbot.io/docs/?q={query}",
           "query-input": "required name=query"
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "MSRBot.io",
+          "url": "https://msrbot.io"
         },
         "creator": {
           "@type": "Organization",
@@ -110,10 +117,13 @@
           
           <ul class="navbar-nav ms-auto mb-lg-0">
             <li class="nav-item text-nowrap">
-              <a class="nav-link d-flex flex-column text-center" aria-current="page" href="/"><i class="bi bi-file-richtext-fill" style="font-size: 1.5rem;"></i><span class="small">LEGACY</span></a>
+              <a class="nav-link d-flex flex-column text-center" aria-current="page" href="/"><i class="bi bi-house-fill" style="font-size: 1.5rem;"></i><span class="small">HOME</span></a>
             </li>
             <li class="nav-item text-nowrap">
               <a class="nav-link d-flex flex-column text-center" aria-current="page" href="/docs/"><i class="bi bi-file-richtext-fill" style="font-size: 1.5rem;"></i><span class="small">DOCS</span></a>
+            </li>
+            <li class="nav-item text-nowrap">
+              <a class="nav-link d-flex flex-column text-center" aria-current="page" href="/documents/"><i class="bi bi-file-richtext-fill" style="font-size: 1.5rem;"></i><span class="small">LEGACY</span></a>
             </li>
             <li class="nav-item text-nowrap">
               <a class="nav-link d-flex flex-column text-center" aria-current="page" href="/dependancies/"><i class="bi bi-diagram-3-fill" style="font-size: 1.5rem;"></i><span class="small">REF TREE</span></a>
@@ -150,7 +160,7 @@
             <h3 class="h3 mb-3" id="penguin404" aria-live="polite"></h1>
             <p class="mb-4">
               The document you requested isn’t here. 
-              <br>Try the <a href="/">main documents index</a>.
+              <br>Try the <a href="/documents/">main documents index</a>.
             </p>
             <p>
               <img src="/static/MSRBot-PrZ3-blue.svg" alt="MSR" width="250" height="250" class="m-2">
@@ -194,8 +204,8 @@
           <div class="row justify-content-md-center border-bottom d-flex">
             <div class="col text-center p-3">
             <small class="text-muted">
-                Site version: <code>ed865c065787d170535d47fb7c43e848892e3cf7</code>
-                <br>Generated on: <code>2025-11-06T23:49:03.274Z</code>
+                Site version: <code>896bb20b6c1d4b18c76b50ccff7bac1bdbbdb906</code>
+                <br>Generated on: <code>2025-11-07T05:13:08.551Z</code>
               </small>
             </div>
           </div>
@@ -218,4 +228,5 @@
           </div>
         </div>
       </footer> 
-    </body>  </html>
+    </body>
+    </html>  </html>

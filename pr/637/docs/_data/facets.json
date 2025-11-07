@@ -150,15 +150,15 @@
     "Style Guide": 1
   },
   "status": {
-    "active": 1572,
-    "latestVersion": 1353,
+    "active": 1454,
+    "latestVersion": 1309,
     "stabilized": 557,
-    "superseded": 551,
+    "superseded": 691,
     "amended": 85,
     "reaffirmed": 222,
     "draft": 9,
     "unknown": 15,
-    "withdrawn": 60,
+    "withdrawn": 104,
     "versionless": 30
   },
   "statusLabels": {

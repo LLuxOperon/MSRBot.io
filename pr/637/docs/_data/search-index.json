@@ -1334,13 +1334,13 @@
     "docType": "Specification",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -1376,13 +1376,13 @@
     "docType": "Specification",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -1512,13 +1512,13 @@
     "docType": "Specification",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -2497,14 +2497,14 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "superseded",
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
-      "superseded": false,
-      "withdrawn": false,
+      "active": false,
+      "latestVersion": false,
+      "superseded": true,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -2539,14 +2539,14 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "superseded",
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
-      "superseded": false,
-      "withdrawn": false,
+      "active": false,
+      "latestVersion": false,
+      "superseded": true,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -2664,13 +2664,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -4077,13 +4077,13 @@
     "docType": "Specification",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -4122,13 +4122,13 @@
     "docType": "Specification",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -6765,13 +6765,13 @@
     "docType": "Specification",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -6807,13 +6807,13 @@
     "docType": "Specification",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -6849,11 +6849,10 @@
     "docType": "Specification",
     "docTypeAbr": null,
     "status": [
-      "active",
       "latestVersion"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
       "superseded": false,
       "withdrawn": false,
@@ -7388,12 +7387,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -8014,12 +8014,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -8055,13 +8056,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -8097,14 +8098,14 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "superseded",
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
-      "superseded": false,
-      "withdrawn": false,
+      "active": false,
+      "latestVersion": false,
+      "superseded": true,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -8180,11 +8181,10 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
       "latestVersion"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
       "superseded": false,
       "withdrawn": false,
@@ -8222,14 +8222,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
+      "active": false,
+      "latestVersion": false,
       "superseded": false,
-      "withdrawn": false,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -8389,11 +8388,10 @@
     "docType": "Recommended Practice",
     "docTypeAbr": null,
     "status": [
-      "active",
       "latestVersion"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
       "superseded": false,
       "withdrawn": false,
@@ -9608,14 +9606,14 @@
     "docType": "Informational",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "superseded",
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
-      "superseded": false,
-      "withdrawn": false,
+      "active": false,
+      "latestVersion": false,
+      "superseded": true,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -9695,14 +9693,13 @@
     "docType": "Informational",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
+      "active": false,
+      "latestVersion": false,
       "superseded": false,
-      "withdrawn": false,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -10107,14 +10104,13 @@
     "docType": "Informational",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
+      "active": false,
+      "latestVersion": false,
       "superseded": false,
-      "withdrawn": false,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -10195,12 +10191,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -10236,13 +10233,14 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn",
       "amended"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -10278,14 +10276,14 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "superseded",
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
-      "superseded": false,
-      "withdrawn": false,
+      "active": false,
+      "latestVersion": false,
+      "superseded": true,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -10320,14 +10318,14 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "superseded",
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
-      "superseded": false,
-      "withdrawn": false,
+      "active": false,
+      "latestVersion": false,
+      "superseded": true,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -10362,12 +10360,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -10403,12 +10402,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -10444,12 +10444,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -10485,12 +10486,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -10651,12 +10653,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -10776,12 +10779,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -10859,12 +10863,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -11165,12 +11170,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -11206,13 +11212,14 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn",
       "amended"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -11248,12 +11255,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -11289,12 +11297,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -11372,12 +11381,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -11497,12 +11507,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -11538,13 +11549,14 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn",
       "amended"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -11580,12 +11592,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -11621,12 +11634,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -12157,12 +12171,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -12198,12 +12213,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -12281,13 +12297,14 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn",
       "amended"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -12323,12 +12340,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -12448,12 +12466,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -13991,12 +14010,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -14082,12 +14102,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -14166,12 +14187,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -15771,12 +15793,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -15812,13 +15835,14 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn",
       "amended"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -15854,12 +15878,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -15937,14 +15962,14 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "superseded",
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
-      "superseded": false,
-      "withdrawn": false,
+      "active": false,
+      "latestVersion": false,
+      "superseded": true,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -16021,12 +16046,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -16438,12 +16464,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -16479,12 +16506,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -17581,14 +17609,14 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "superseded",
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
-      "superseded": false,
-      "withdrawn": false,
+      "active": false,
+      "latestVersion": false,
+      "superseded": true,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -17623,12 +17651,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -17664,12 +17693,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -17912,12 +17942,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -17953,12 +17984,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -17994,12 +18026,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -18287,12 +18320,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -18371,12 +18405,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -18412,12 +18447,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -22883,11 +22919,10 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
       "latestVersion"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
       "superseded": false,
       "withdrawn": false,
@@ -22925,11 +22960,10 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
       "latestVersion"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
       "superseded": false,
       "withdrawn": false,
@@ -22967,14 +23001,14 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "superseded",
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
-      "superseded": false,
-      "withdrawn": false,
+      "active": false,
+      "latestVersion": false,
+      "superseded": true,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -23009,14 +23043,14 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "superseded",
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
-      "superseded": false,
-      "withdrawn": false,
+      "active": false,
+      "latestVersion": false,
+      "superseded": true,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -23051,14 +23085,14 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "superseded",
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
-      "superseded": false,
-      "withdrawn": false,
+      "active": false,
+      "latestVersion": false,
+      "superseded": true,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -23093,14 +23127,14 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "superseded",
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
-      "superseded": false,
-      "withdrawn": false,
+      "active": false,
+      "latestVersion": false,
+      "superseded": true,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -23135,14 +23169,14 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "superseded",
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
-      "superseded": false,
-      "withdrawn": false,
+      "active": false,
+      "latestVersion": false,
+      "superseded": true,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -23219,14 +23253,14 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "superseded",
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
-      "superseded": false,
-      "withdrawn": false,
+      "active": false,
+      "latestVersion": false,
+      "superseded": true,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -23261,11 +23295,10 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
       "latestVersion"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
       "superseded": false,
       "withdrawn": false,
@@ -23303,12 +23336,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -23344,14 +23378,14 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "superseded",
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
-      "superseded": false,
-      "withdrawn": false,
+      "active": false,
+      "latestVersion": false,
+      "superseded": true,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -23386,14 +23420,14 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "superseded",
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
-      "superseded": false,
-      "withdrawn": false,
+      "active": false,
+      "latestVersion": false,
+      "superseded": true,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -23924,12 +23958,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -23965,12 +24000,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -24006,12 +24042,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -24089,12 +24126,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -24130,12 +24168,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -24255,12 +24294,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -24338,14 +24378,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
+      "active": false,
+      "latestVersion": false,
       "superseded": false,
-      "withdrawn": false,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -24505,12 +24544,13 @@
     "docType": "Recommendation",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -24546,12 +24586,13 @@
     "docType": "Recommendation",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -24587,12 +24628,13 @@
     "docType": "Recommendation",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -24962,14 +25004,14 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "superseded",
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
-      "superseded": false,
-      "withdrawn": false,
+      "active": false,
+      "latestVersion": false,
+      "superseded": true,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -25004,11 +25046,10 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
       "latestVersion"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
       "superseded": false,
       "withdrawn": false,
@@ -25046,14 +25087,14 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "superseded",
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
-      "superseded": false,
-      "withdrawn": false,
+      "active": false,
+      "latestVersion": false,
+      "superseded": true,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -25088,12 +25129,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -25129,14 +25171,14 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "superseded",
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
-      "superseded": false,
-      "withdrawn": false,
+      "active": false,
+      "latestVersion": false,
+      "superseded": true,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -25335,13 +25377,13 @@
     "docType": "Recommendation",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -25377,14 +25419,13 @@
     "docType": "Recommendation",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
+      "active": false,
+      "latestVersion": false,
       "superseded": false,
-      "withdrawn": false,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -25419,13 +25460,13 @@
     "docType": "Recommendation",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -26002,13 +26043,13 @@
     "docType": "Recommendation",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -26044,13 +26085,13 @@
     "docType": "Recommendation",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -26251,11 +26292,10 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
       "latestVersion"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
       "superseded": false,
       "withdrawn": false,
@@ -26540,12 +26580,11 @@
     "docType": "Informational",
     "docTypeAbr": null,
     "status": [
-      "active",
       "latestVersion",
       "amended"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
       "superseded": false,
       "withdrawn": false,
@@ -26583,13 +26622,13 @@
     "docType": "Informational",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -26625,11 +26664,10 @@
     "docType": "Informational",
     "docTypeAbr": null,
     "status": [
-      "active",
       "latestVersion"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
       "superseded": false,
       "withdrawn": false,
@@ -26667,14 +26705,14 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
       "latestVersion",
+      "superseded",
       "amended"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -26710,13 +26748,13 @@
     "docType": "Informational",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -26794,13 +26832,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -27007,13 +27045,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -27049,13 +27087,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -27091,13 +27129,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -27133,13 +27171,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -27175,13 +27213,13 @@
     "docType": "Draft Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -27217,13 +27255,13 @@
     "docType": "Draft Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -27259,13 +27297,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -27301,13 +27339,13 @@
     "docType": "Informational",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -27343,13 +27381,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -27385,13 +27423,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -27427,13 +27465,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -27469,13 +27507,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -27511,13 +27549,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -27680,13 +27718,13 @@
     "docType": "Specification",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -27764,13 +27802,13 @@
     "docType": "Best Practice",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -27851,13 +27889,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -27935,13 +27973,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -28061,13 +28099,13 @@
     "docType": "Best Practice",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -28103,13 +28141,13 @@
     "docType": "Informational",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -28229,13 +28267,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -28314,13 +28352,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -28441,13 +28479,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -28525,13 +28563,13 @@
     "docType": "Best Practice",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -28610,13 +28648,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -28820,13 +28858,13 @@
     "docType": "Informational",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -28862,13 +28900,13 @@
     "docType": "Best Practice",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -28946,13 +28984,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -29115,13 +29153,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -29369,13 +29407,13 @@
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -30084,13 +30122,13 @@
     "docType": "Informational",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -30168,13 +30206,13 @@
     "docType": "Best Practice",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -31905,13 +31943,13 @@
     "docType": "Administrative Guideline",
     "docTypeAbr": "AG",
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -31951,13 +31989,13 @@
     "docType": "Administrative Guideline",
     "docTypeAbr": "AG",
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -34343,14 +34381,13 @@
     "docType": "Engineering Guideline",
     "docTypeAbr": "EG",
     "status": [
-      "active",
-      "latestVersion"
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
+      "active": false,
+      "latestVersion": false,
       "superseded": false,
-      "withdrawn": false,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -36462,14 +36499,13 @@
     "docType": "Engineering Guideline",
     "docTypeAbr": "EG",
     "status": [
-      "active",
-      "latestVersion"
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
+      "active": false,
+      "latestVersion": false,
       "superseded": false,
-      "withdrawn": false,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -36761,14 +36797,13 @@
     "docType": "Engineering Guideline",
     "docTypeAbr": "EG",
     "status": [
-      "active",
-      "latestVersion"
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
+      "active": false,
+      "latestVersion": false,
       "superseded": false,
-      "withdrawn": false,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -37341,14 +37376,13 @@
     "docType": "Engineering Guideline",
     "docTypeAbr": "EG",
     "status": [
-      "active",
-      "latestVersion"
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
+      "active": false,
+      "latestVersion": false,
       "superseded": false,
-      "withdrawn": false,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -41503,13 +41537,13 @@
     "docType": "Registered Disclosure Document",
     "docTypeAbr": "RDD",
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -45854,14 +45888,13 @@
     "docType": "Recommended Practice",
     "docTypeAbr": "RP",
     "status": [
-      "active",
-      "latestVersion"
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
+      "active": false,
+      "latestVersion": false,
       "superseded": false,
-      "withdrawn": false,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -45942,14 +45975,13 @@
     "docType": "Recommended Practice",
     "docTypeAbr": "RP",
     "status": [
-      "active",
-      "latestVersion"
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
+      "active": false,
+      "latestVersion": false,
       "superseded": false,
-      "withdrawn": false,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -46617,14 +46649,13 @@
     "docType": "Recommended Practice",
     "docTypeAbr": "RP",
     "status": [
-      "active",
-      "latestVersion"
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
+      "active": false,
+      "latestVersion": false,
       "superseded": false,
-      "withdrawn": false,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -50588,12 +50619,13 @@
     "docType": "Recommended Practice",
     "docTypeAbr": "RP",
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -50633,14 +50665,13 @@
     "docType": "Recommended Practice",
     "docTypeAbr": "RP",
     "status": [
-      "active",
-      "latestVersion"
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
+      "active": false,
+      "latestVersion": false,
       "superseded": false,
-      "withdrawn": false,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -51786,12 +51817,13 @@
     "docType": "Recommended Practice",
     "docTypeAbr": "RP",
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -51827,14 +51859,13 @@
     "docType": "Recommended Practice",
     "docTypeAbr": "RP",
     "status": [
-      "active",
-      "latestVersion"
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
+      "active": false,
+      "latestVersion": false,
       "superseded": false,
-      "withdrawn": false,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -52552,14 +52583,13 @@
     "docType": "Recommended Practice",
     "docTypeAbr": "RP",
     "status": [
-      "active",
-      "latestVersion"
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
+      "active": false,
+      "latestVersion": false,
       "superseded": false,
-      "withdrawn": false,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -57004,13 +57034,13 @@
     "docType": "Standard",
     "docTypeAbr": "ST",
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -61176,14 +61206,13 @@
     "docType": "Standard",
     "docTypeAbr": "ST",
     "status": [
-      "active",
-      "latestVersion"
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
+      "active": false,
+      "latestVersion": false,
       "superseded": false,
-      "withdrawn": false,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -64776,14 +64805,13 @@
     "docType": "Standard",
     "docTypeAbr": "ST",
     "status": [
-      "active",
-      "latestVersion"
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
+      "active": false,
+      "latestVersion": false,
       "superseded": false,
-      "withdrawn": false,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -67263,12 +67291,13 @@
     "docType": "Standard",
     "docTypeAbr": "ST",
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -67308,14 +67337,13 @@
     "docType": "Standard",
     "docTypeAbr": "ST",
     "status": [
-      "active",
-      "latestVersion"
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
+      "active": false,
+      "latestVersion": false,
       "superseded": false,
-      "withdrawn": false,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -77130,14 +77158,13 @@
     "docType": "Standard",
     "docTypeAbr": "ST",
     "status": [
-      "active",
-      "latestVersion"
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
+      "active": false,
+      "latestVersion": false,
       "superseded": false,
-      "withdrawn": false,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -78387,13 +78414,13 @@
     "docType": "Standard",
     "docTypeAbr": "ST",
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -78611,13 +78638,13 @@
     "docType": "Standard",
     "docTypeAbr": "ST",
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -82496,14 +82523,13 @@
     "docType": "Standard",
     "docTypeAbr": "ST",
     "status": [
-      "active",
-      "latestVersion"
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
+      "active": false,
+      "latestVersion": false,
       "superseded": false,
-      "withdrawn": false,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -84743,13 +84769,13 @@
     "docType": "Standard",
     "docTypeAbr": "ST",
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -84936,13 +84962,13 @@
     "docType": "Standard",
     "docTypeAbr": "ST",
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -88769,13 +88795,13 @@
     "docType": "Standard",
     "docTypeAbr": "ST",
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -89397,14 +89423,13 @@
     "docType": "Standard",
     "docTypeAbr": "ST",
     "status": [
-      "active",
-      "latestVersion"
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
+      "active": false,
+      "latestVersion": false,
       "superseded": false,
-      "withdrawn": false,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -89818,15 +89843,14 @@
     "docType": "Standard",
     "docTypeAbr": "ST",
     "status": [
-      "active",
-      "latestVersion",
+      "withdrawn",
       "reaffirmed"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
+      "active": false,
+      "latestVersion": false,
       "superseded": false,
-      "withdrawn": false,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": true,
@@ -93229,14 +93253,13 @@
     "docType": "Standard",
     "docTypeAbr": "ST",
     "status": [
-      "active",
-      "latestVersion"
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
+      "active": false,
+      "latestVersion": false,
       "superseded": false,
-      "withdrawn": false,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -93541,12 +93564,13 @@
     "docType": "Standard",
     "docTypeAbr": "ST",
     "status": [
+      "superseded",
       "withdrawn"
     ],
     "statusFlags": {
       "active": false,
       "latestVersion": false,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": true,
       "draft": false,
       "stabilized": false,
@@ -93586,14 +93610,13 @@
     "docType": "Standard",
     "docTypeAbr": "ST",
     "status": [
-      "active",
-      "latestVersion"
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
+      "active": false,
+      "latestVersion": false,
       "superseded": false,
-      "withdrawn": false,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -95299,13 +95322,13 @@
     "docType": "Specification",
     "docTypeAbr": "TSP",
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -95348,14 +95371,13 @@
     "docType": "Specification",
     "docTypeAbr": "TSP",
     "status": [
-      "active",
-      "latestVersion"
+      "withdrawn"
     ],
     "statusFlags": {
-      "active": true,
-      "latestVersion": true,
+      "active": false,
+      "latestVersion": false,
       "superseded": false,
-      "withdrawn": false,
+      "withdrawn": true,
       "draft": false,
       "stabilized": false,
       "reaffirmed": false,
@@ -96650,13 +96672,13 @@
     "docType": "Recommendation",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -96692,13 +96714,13 @@
     "docType": "Recommendation",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -97276,13 +97298,13 @@
     "docType": "Recommendation",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -97401,13 +97423,13 @@
     "docType": "Recommendation",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -97527,13 +97549,13 @@
     "docType": "Recommendation",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
@@ -97862,13 +97884,13 @@
     "docType": "Recommendation",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "latestVersion",
+      "superseded"
     ],
     "statusFlags": {
-      "active": true,
+      "active": false,
       "latestVersion": true,
-      "superseded": false,
+      "superseded": true,
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
