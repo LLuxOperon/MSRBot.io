@@ -196,6 +196,9 @@ jobs:
       - run: npm run build   # produces ./build
         if: ${{ github.event_name == 'pull_request' || steps.findpr.outputs.number != '' }}
 
+      - run: npm run build-stats  # produces stats
+        if: ${{ github.event_name == 'pull_request' || steps.findpr.outputs.number != '' }}
+
       - name: Verify build output exists
         if: ${{ github.event_name == 'pull_request' || steps.findpr.outputs.number != '' }}
         run: |
