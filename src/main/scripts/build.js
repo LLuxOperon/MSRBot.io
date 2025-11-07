@@ -214,6 +214,21 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     return options.inverse(this);
   });
 
+  // Returns the length of arrays/strings, or the number of keys for objects
+  hb.registerHelper('len', function (val) {
+    if (Array.isArray(val)) return val.length;
+    if (typeof val === 'string') return val.length;
+    if (val && typeof val === 'object') return Object.keys(val).length;
+    return 0;
+  });
+
+  // Helper to ensure a value is always an array
+  hb.registerHelper('asArray', function (val) {
+    if (Array.isArray(val)) return val;
+    if (val == null) return [];
+    return [val];
+  });
+
   // Render a human-friendly label from a lineage key like "ISO||15444|1" → "ISO 15444-1"
   hb.registerHelper('formatLineageKey', function(key) {
     if (!key || typeof key !== 'string') return '';
@@ -232,14 +247,17 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   let registryProject = [];
 
   // Load any declared sub-registries if their data files exist
+  // Keep separate arrays so templates can always access the full documents/groups/projects sets,
+  // regardless of what the primary listType is for this build.
+  let registryDocsAll = null;
   for (const sub of subRegistry) {
     const subDataPath = path.join(REGISTRIES_REPO_PATH, `data/${sub}.json`);
     try {
       const subData = JSON.parse(await fs.readFile(subDataPath, 'utf8'));
-      if (sub === 'groups') registryGroup = subData;
+      if (sub === 'groups')   registryGroup = subData;
       if (sub === 'projects') registryProject = subData;
+      if (sub === 'documents') registryDocsAll = subData;
     } catch (err) {
-      // If a sub-registry file is missing, warn and continue; templates will handle absent data
       console.warn(`[WARN] Could not load data for sub-registry "${sub}" at ${subDataPath}: ${err.message}`);
     }
   }
@@ -649,21 +667,55 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   });
 
   /* lookup if any projects exist for current document */
-
-  const docProjs = []
-  for (let i in registryProject) {
-    let projs = registryProject[i]["docAffected"]
-    for (let p in projs) {
-      var docProj = {}
-      docProj["docId"] = projs[p]
-      docProj["workType"] = registryProject[i]["workType"]
-      docProj["projectStatus"] = registryProject[i]["projectStatus"]
-      docProj["newDoc"] = registryProject[i]["docId"]
-      docProj["projApproved"] = registryProject[i]["projApproved"]
-      docProjs.push(docProj)
+  
+  // Build a docId → project summary index that includes BOTH:
+  //  - the project's primary docId (i.e., the new/replacing doc under development)
+  //  - every entry listed in docAffected (i.e., existing docs being updated)
+  //
+  // If multiple projects touch the same docId, prefer any non-"Complete" status.
+  const docProjsMap = new Map();
+  
+  function upsertDocProj(key, payload) {
+    if (!key) return;
+    const prev = docProjsMap.get(key);
+    if (!prev) {
+      docProjsMap.set(key, payload);
+      return;
+    }
+    // Prefer a project that is not "Complete" over one that is "Complete".
+    const prevDone = String(prev.projectStatus || '').toLowerCase() === 'complete';
+    const nextDone = String(payload.projectStatus || '').toLowerCase() === 'complete';
+    if (prevDone && !nextDone) {
+      docProjsMap.set(key, payload);
+    }
+    // Otherwise, keep the first seen; we don't attempt deep merges here.
+  }
+  
+  for (const proj of registryProject) {
+    if (!proj || (typeof proj !== 'object')) continue;
+    const payload = {
+      workType: proj.workType,
+      projectStatus: proj.projectStatus,
+      newDoc: proj.docId,             // the new/replacing doc being created
+      projApproved: proj.projApproved,
+      projectId: proj.projectId
+    };
+  
+    // 1) Index by the project's primary docId (new/replacing doc under development)
+    if (proj.docId) {
+      upsertDocProj(proj.docId, { docId: proj.docId, ...payload });
+    }
+    // 2) Index by each affected existing document
+    const affected = Array.isArray(proj.docAffected) ? proj.docAffected : (proj.docAffected ? [proj.docAffected] : []);
+    for (const a of affected) {
+      if (!a) continue;
+      upsertDocProj(a, { docId: a, ...payload });
     }
   }
-
+  
+  // Handlebars templates currently expect an array; provide both forms just in case.
+  const docProjs = Array.from(docProjsMap.values());
+  
   /* Load Current Work on Doc for filtering */
 
   for (let i in registryDocument) {
@@ -736,15 +788,26 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
 
   /* external json lookup helpers */
 
-  hb.registerHelper('docProjLookup', function(collection, id) {
-      var collectionLength = collection.length;
-      for (var i = 0; i < collectionLength; i++) {
-          if (collection[i].docId === id) {
-              return collection[i];
-          }
-      }
-      return null;
-  });
+hb.registerHelper('docProjLookup', function(collection, id) {
+  if (!id || !collection) return null;
+
+  // Map support
+  if (typeof collection.get === 'function') {
+    return collection.get(id) || null;
+  }
+  // Object/dictionary support
+  if (!Array.isArray(collection) && typeof collection === 'object') {
+    return collection[id] || null;
+  }
+  // Array (legacy) support
+  if (Array.isArray(collection)) {
+    for (let i = 0; i < collection.length; i++) {
+      const item = collection[i];
+      if (item && item.docId === id) return item;
+    }
+  }
+  return null;
+});
 
   hb.registerHelper('groupIdLookup', function(collection, id) {
       var collectionLength = collection.length;
@@ -802,40 +865,168 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   
   /* apply template */
   
-  var html = template({
-    "data" : registryDocument,
-    "dataDocuments": registryDocument,
-    "dataGroups" : registryGroup,
-    "dataProjects" : registryProject,
-    "htmlLink": htmlLink,
-    "docProjs": docProjs,
-    "date" :  new Date(),
-    "csv_path": CSV_SITE_PATH,
-    "site_version": site_version,
-    "listType": listType,
-    "idType": idType,
-    "listTitle": listTitle,
-    "templateName": templateName,
-    // meta
-    "siteName": siteConfig.siteName,
-    "author": siteConfig.author,
-    "authorUrl": siteConfig.authorUrl,
-    "copyright": siteConfig.copyright,
-    "copyrightHolder": siteConfig.copyrightHolder,
-    "copyrightYear": siteConfig.copyrightYear,
-    "license": siteConfig.license,
-    "licenseUrl": siteConfig.licenseUrl,
-    "locale": siteConfig.locale,
-    "siteDescription": siteConfig.siteDescription,
-    "siteTitle": (listTitle ? `${listTitle} — ${siteConfig.siteName}` : siteConfig.siteName),
-    "canonicalBase": siteConfig.canonicalBase,
-    "canonicalUrl": canonicalUrl,
-    "ogTitle": ogTitle,
-    "ogDescription": ogDescription,
-    "ogImage": ogImage,
-    "ogImageAlt": ogImageAlt,
-    "assetPrefix": assetPrefix,
-  });
+    var html = template({
+      "data": registryDocument,
+      // If this page's subRegistry included documents, prefer that complete dataset for cross-lookups.
+      // Otherwise, fall back to the primary dataset only when the primary listType is "documents".
+      "dataDocuments": (registryDocsAll && Array.isArray(registryDocsAll)) 
+                        ? registryDocsAll 
+                        : (listType === 'documents' ? registryDocument : []),
+      "dataGroups": registryGroup,
+      "dataProjects": registryProject,
+      "docProjs": docProjs,
+      "htmlLink": htmlLink,
+      "date" :  new Date(),
+      "csv_path": CSV_SITE_PATH,
+      "site_version": site_version,
+      "listType": listType,
+      "idType": idType,
+      "listTitle": listTitle,
+      "templateName": templateName,
+      // meta
+      "siteName": siteConfig.siteName,
+      "author": siteConfig.author,
+      "authorUrl": siteConfig.authorUrl,
+      "copyright": siteConfig.copyright,
+      "copyrightHolder": siteConfig.copyrightHolder,
+      "copyrightYear": siteConfig.copyrightYear,
+      "license": siteConfig.license,
+      "licenseUrl": siteConfig.licenseUrl,
+      "locale": siteConfig.locale,
+      "siteDescription": siteConfig.siteDescription,
+      "siteTitle": (listTitle ? `${listTitle} — ${siteConfig.siteName}` : siteConfig.siteName),
+      "canonicalBase": siteConfig.canonicalBase,
+      "canonicalUrl": canonicalUrl,
+      "ogTitle": ogTitle,
+      "ogDescription": ogDescription,
+      "ogImage": ogImage,
+      "ogImageAlt": ogImageAlt,
+      "assetPrefix": assetPrefix,
+    });
+
+  // --- Safe normalization for per‑doc rendering (prevents .length on undefined)
+  function __normArray(v) { return Array.isArray(v) ? v : []; }
+  function __normStr(v) { return (typeof v === 'string') ? v : ''; }
+  function __normObj(v) { return (v && typeof v === 'object') ? v : {}; }
+
+  function prepareDocForRender(d) {
+    const out = { ...d };
+
+    // Core strings
+    out.docId = __normStr(out.docId);
+    out.docLabel = __normStr(out.docLabel);
+    out.docTitle = __normStr(out.docTitle);
+    out.publisher = __normStr(out.publisher);
+    out.docType = __normStr(out.docType);
+    out.docTypeAbr = __normStr(out.docTypeAbr);
+    out.publicationDate = __normStr(out.publicationDate);
+    out.href = __normStr(out.href);
+    out.doi = __normStr(out.doi);
+
+    // Status object (and nested flags)
+    out.status = __normObj(out.status);
+
+    // References (raw + resolved)
+    out.references = __normObj(out.references);
+    out.references.normative = __normArray(out.references.normative);
+    out.references.bibliographic = __normArray(out.references.bibliographic);
+
+    out.referencesResolved = __normObj(out.referencesResolved);
+    out.referencesResolved.normative = __normArray(out.referencesResolved.normative);
+    out.referencesResolved.bibliographic = __normArray(out.referencesResolved.bibliographic);
+
+    // Dependency graph
+    out.referencedBy = __normArray(out.referencedBy);
+    out.referenceTree = __normArray(out.referenceTree);
+    out.relatedDocs = __normArray(out.relatedDocs);
+
+    // Work/state
+    out.currentWork = __normArray(out.currentWork);
+
+    // Namespaces (singular legacy or plural new)
+    if (Array.isArray(out.xmlNamespace)) {
+      // keep as-is
+    } else if (Array.isArray(out.xmlNamespaces)) {
+      out.xmlNamespace = out.xmlNamespaces;
+    } else {
+      out.xmlNamespace = [];
+    }
+
+    return out;
+  }
+  // --- Emit per-document static detail pages at /docs/{docId}/index.html
+  try {
+    const docTplSrc = await fs.readFile('src/main/templates/docId.hbs', 'utf8');
+    const docTpl = hb.compile(docTplSrc);
+    const docsOutRoot = path.join(BUILD_PATH, 'docs');
+    await fs.mkdir(docsOutRoot, { recursive: true });
+
+    let __ok = 0, __fail = 0;
+    for (const d of registryDocument) {
+      if (!d || !d.docId) continue;
+      const id = String(d.docId);
+      const docDir = path.join(docsOutRoot, id);
+      await fs.mkdir(docDir, { recursive: true });
+      try {
+        // Per‑doc canonical + social meta
+        const perDocCanonical = new URL(`/docs/${encodeURIComponent(id)}/`, siteConfig.canonicalBase).href;
+        const perDocTitle = (d.docLabel || d.docId) + ' — ' + siteConfig.siteName;
+        const perDocDesc = d.docTitle || siteConfig.siteDescription;
+
+        const safeDoc = prepareDocForRender(d);
+        const docHtml = docTpl({
+          // data for this document (flat access in template)
+          ...safeDoc,
+          // collections if template needs lookups
+          dataDocuments: registryDocument,
+          dataGroups: registryGroup,
+          dataProjects: registryProject,
+          docProjs: docProjs,
+          // site/meta
+          site_version: site_version,
+          siteName: siteConfig.siteName,
+          author: siteConfig.author,
+          authorUrl: siteConfig.authorUrl,
+          copyright: siteConfig.copyright,
+          copyrightHolder: siteConfig.copyrightHolder,
+          copyrightYear: siteConfig.copyrightYear,
+          license: siteConfig.license,
+          listTitle: (d.docLabel || d.docId),
+          licenseUrl: siteConfig.licenseUrl,
+          locale: siteConfig.locale,
+          siteDescription: perDocDesc,
+          siteTitle: perDocTitle,
+          ogTitle: perDocTitle,
+          canonicalBase: siteConfig.canonicalBase,
+          canonicalUrl: perDocCanonical,
+          ogImage: new URL(siteConfig.ogImage, siteConfig.canonicalBase).href,
+          ogImageAlt: siteConfig.ogImageAlt,
+          assetPrefix: '../../',
+          htmlLink: ('GH_PAGES_BUILD' in process.env) ? '' : 'index.html',
+          date: new Date()
+        });
+
+        const outFile = path.join(docDir, 'index.html');
+        await fs.writeFile(outFile, docHtml, 'utf8');
+        __ok++;
+      } catch (perDocErr) {
+        __fail++;
+        console.warn(
+          `[build] Per-doc emit failed for ${id} — pub:${d.publisher || 'unknown'}, type:${d.docType || 'unknown'}, refs:${Array.isArray(d.references?.normative) || Array.isArray(d.references?.bibliographic) ? 'yes' : 'no'}`,
+          '\nReason:',
+          perDocErr && perDocErr.stack ? perDocErr.stack : (perDocErr && perDocErr.message ? perDocErr.message : perDocErr)
+        );
+        continue;
+      }
+    }
+    if (__fail) {
+      console.warn(`[build] Per-doc pages emitted with warnings: ok=${__ok}, failed=${__fail}`);
+    } else {
+      // console.log(`[build] Per-doc pages emitted: ${__ok}`);
+    }
+  } catch (e) {
+    console.warn('[build] Could not emit per-doc pages:', e && e.message ? e.message : e);
+  }
   
   /* write HTML file */
   await fs.writeFile(path.join(BUILD_PATH, PAGE_SITE_PATH), html, 'utf8');
