@@ -12,7 +12,7 @@
         <!-- Live stats -->
         <section class="text-center mb-5">
           <div class="d-flex flex-wrap justify-content-center gap-2">
-            <span class="badge bg-primary text-decoration-none p-2">Documents: <span id="stat-documents-total">—</span></span>
+            <span class="badge bg-primary text-decoration-none p-2">Doc Count: <span id="stat-documents-total">—</span></span>
             <span class="badge bg-success p-2">Active: <span id="stat-documents-active">—</span></span>
             <span class="badge bg-info text-dark p-2">Doc Types: <span id="stat-documents-doctypes">—</span></span>
             <span class="badge bg-warning text-dark p-2">References: <span id="stat-documents-references">—</span></span>
@@ -23,7 +23,7 @@
         <!-- Main navigation links -->
         <section class="d-flex justify-content-center mb-5">
           <div class="list-group text-center col-md-5">
-            <a class="px-4 list-group-item list-group-item-action" href="{{assetPrefix}}documents/{{htmlLink}}"><i class="bi bi-file-richtext-fill" style="font-size: 1.5rem;"></i> Browse Documents</a>
+            <a class="px-4 list-group-item list-group-item-action" href="{{assetPrefix}}documents/{{htmlLink}}"><i class="bi bi-file-richtext-fill" style="font-size: 1.5rem;"></i> Browse Docs</a>
             <a class="px-4 list-group-item list-group-item-action" href="{{assetPrefix}}dependancies/{{htmlLink}}"><i class="bi bi-diagram-3-fill" style="font-size: 1.5rem;"></i> Reference Trees</a>
             <a class="px-4 list-group-item list-group-item-action" href="{{assetPrefix}}groups/{{htmlLink}}"><i class="bi bi-people-fill" style="font-size: 1.5rem;"></i> Browse Groups</a>
             <a class="px-4 list-group-item list-group-item-action" href="{{assetPrefix}}projects/{{htmlLink}}"><i class="bi bi-kanban-fill" style="font-size: 1.5rem;"></i> Browse Projects</a>
@@ -39,12 +39,20 @@
 
         <!-- Quick details -->
         <section class="text-muted small">
-          <ul class="list-unstyled mb-0">
+          <ul class="list-unstyled mb-4">
             <li><strong>Historical range:</strong> 1896 → present</li>
             <li><strong>Automation uptime:</strong> 100% since August 2025 (SMPTE)</li>
             <li><strong>Publishers covered:</strong> SMPTE, NIST, ISO, ITU, AES, and more</li>
           </ul>
         </section>
+
+        <!-- Disclaimer -->
+        <section class="text-muted small">
+        <h2 class="h5">Data Disclaimer</h2>
+          <p>MSRBot.io aggregates factual metadata and references via <a href="https://github.com/PrZ3r/MSRBot.io" target="_blank">GitHub</a> about publicly released standards, best practices, and other documents (e.g., <a href="https://www.smpte.org/" target="_blank">SMPTE</a>, <a href="https://www.iso.org/home.html" target="_blank">ISO, <a href="https://www.itu.int/" target="_blank">ITU</a>, <a href="https://aes2.org/" target="_blank">AES</a>, and many others).</p>
+          <p>All metadata is derived from publicly available information and is provided for research and interoperability purposes only. Original standards and other documents remain the intellectual property and copyright of their respective publishers, as applicable..</p>
+        </section>
+
       </div>
     </div>
   </main>
