@@ -1,3 +1,32 @@
+/*
+Copyright (c) 2025 Steve LLamb (https://github.com/SteveLLamb) and PrZ3(https://github.com/PrZ3r)
+
+Redistribution and use in source and binary forms, with or without modification, 
+are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.
+
+3. Redistributions in binary form must reproduce the above copyright notice, this
+   list of conditions and the following disclaimer in the documentation and/or
+   other materials provided with the distribution.
+
+4. Neither the name of the copyright holder nor the names of its contributors may
+   be used to endorse or promote products derived from this software without specific 
+   prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND 
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE 
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE 
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL 
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR 
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER 
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR 
+TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF 
+THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
+
 (async function(){
   const $ = sel => document.querySelector(sel);
   const $$ = sel => Array.from(document.querySelectorAll(sel));
@@ -25,6 +54,53 @@
     });
   }
 
+  async function ensureMiniSearch(){
+    if (window.MiniSearch) return true;
+
+    // Prefer UMD we ship in build (no ESM/CJS mismatch).
+    const tryUmd = (src) => new Promise((resolve) => {
+      const s = document.createElement('script');
+      s.src = src;
+      s.async = true;
+      s.onload = () => resolve(!!window.MiniSearch);
+      s.onerror = () => resolve(false);
+      document.head.appendChild(s);
+    });
+
+    // 1) Local UMD (built by build.search-index.js)
+    const localUmd = '/docs/minisearch/umd/index.min.js';
+    if (await tryUmd(localUmd)) return true;
+
+    // 2) CDN UMD fallbacks
+    const cdnUmd = [
+      'https://cdn.jsdelivr.net/npm/minisearch/dist/umd/index.min.js',
+      'https://unpkg.com/minisearch/dist/umd/index.min.js'
+    ];
+    for (const src of cdnUmd) {
+      if (await tryUmd(src)) return true;
+    }
+
+    // 3) As a last resort, attempt common ESM entry points (in case a future release ships them)
+    const esmCandidates = [
+      '/docs/minisearch/index.js',
+      '/docs/minisearch/index.mjs',
+      '/docs/minisearch/esm/index.js',
+      '/docs/minisearch/esm/index.mjs',
+      '/docs/minisearch/dist/index.js',
+      '/docs/minisearch/dist/index.mjs'
+    ];
+    for (const spec of esmCandidates) {
+      try {
+        const mod = await import(spec);
+        const MS = mod && (mod.default || mod.MiniSearch || mod);
+        if (MS) { window.MiniSearch = MS; return true; }
+      } catch {}
+    }
+
+    console.warn('[cards] MiniSearch not available (UMD/ESM). Falling back to plain includes() search.');
+    return false;
+  }
+
   async function loadJSON(url){
     try {
       const res = await fetch(url, { cache: 'no-store' });
@@ -35,15 +111,72 @@
     }
   }
 
-  let idx, facets;
+  let idx, facets, synonymsMap = {};
   try {
     [idx, facets] = await Promise.all([
-      loadJSON('search-index.json'),
-      loadJSON('facets.json')
+      loadJSON('_data/search-index.json'),
+      loadJSON('_data/facets.json')
     ]);
+    // load synonyms if available
+    try {
+      synonymsMap = await loadJSON('_data/synonyms.json');
+      if (!synonymsMap || typeof synonymsMap !== 'object') synonymsMap = {};
+    } catch {
+      synonymsMap = {};
+    }
   } catch (e) {
     err(e.message);
     return;
+  }
+
+  // Build bi-directional, lower-cased synonym map so phrases map back to acronyms and vice versa.
+  function buildBiSynonyms(map) {
+    const bi = {};
+    const add = (k, v) => {
+      const kk = String(k || '').toLowerCase().trim();
+      const vv = String(v || '').toLowerCase().trim();
+      if (!kk || !vv) return;
+      bi[kk] = Array.isArray(bi[kk]) ? bi[kk] : [];
+      if (!bi[kk].includes(vv)) bi[kk].push(vv);
+    };
+    const entries = Object.entries(map || {});
+    for (const [k, vals] of entries) {
+      const key = String(k || '').toLowerCase().trim();
+      const arr = Array.isArray(vals) ? vals : (vals ? [vals] : []);
+      for (const v of arr) {
+        const val = String(v || '').toLowerCase().trim();
+        if (!key || !val) continue;
+        add(key, val);      // key -> val
+        add(val, key);      // val -> key (reverse)
+        // Also connect synonyms to each other through the key
+        for (const v2 of arr) {
+          const val2 = String(v2 || '').toLowerCase().trim();
+          if (val2 && val2 !== val) add(val, val2);
+        }
+      }
+    }
+    return bi;
+  }
+  const synonymsBi = buildBiSynonyms(synonymsMap);
+
+  // Global preferred order for displaying status badges (also used by facets)
+  const STATUS_ORDER = [
+    'active',
+    'amended',
+    'reaffirmed',
+    'stabilized',
+    'superseded',
+    'withdrawn',
+    'draft',
+    'versionless',
+    'unknown',
+    'latestVersion'
+  ];
+  function orderStatuses(arr){
+    const list = Array.isArray(arr) ? arr.slice() : [];
+    const known = STATUS_ORDER.filter(s => list.includes(s));
+    const extras = list.filter(s => !STATUS_ORDER.includes(s)).sort((a,b)=>String(a).localeCompare(String(b)));
+    return known.concat(extras);
   }
 
   // Optional client-side Handlebars card template
@@ -105,10 +238,276 @@
     window.Handlebars.registerHelper('hasAny', function(arr){
       return Array.isArray(arr) && arr.length > 0;
     });
+    // exists helper: truthy check in templates
+    window.Handlebars.registerHelper('exists', function(v){
+      return (v !== undefined && v !== null && String(v).trim() !== '');
+    });
+    // doiLink helper: clickable DOI via doi.org
+    window.Handlebars.registerHelper('doiLink', function(doi){
+      const d = String(doi || '').trim();
+      if (!d) return '';
+      const url = 'https://doi.org/' + encodeURIComponent(d);
+      return new window.Handlebars.SafeString(`<a href="${url}" target="_blank" rel="noopener"><code>${d}</code></a>`);
+    });
     try {
       hbCard = window.Handlebars.compile(tplEl.innerHTML);
     } catch (e) {
       console.error('[cards] [COMPILE] Handlebars failed to compile card template:', e);
+    }
+  }
+
+  // --- MiniSearch integration
+  let mini = null;
+
+  function expandSynonyms(term){
+    const raw = String(term || '');
+    const t = raw.toLowerCase();
+    const extras = Array.isArray(synonymsBi[t]) ? synonymsBi[t] : [];
+    // Return original term first, then unique extras (preserve original casing for display neutrality)
+    const out = [raw];
+    for (const e of extras) {
+      if (!out.some(x => String(x).toLowerCase() === e)) out.push(e);
+    }
+    return out;
+  }
+
+  function parseQuery(qRaw){
+    const q = (qRaw || '').trim();
+    if (!q) return { includes: [], excludes: [], fields: [] };
+    const tokens = [];
+    const rx = /"([^"]+)"|(\S+)/g;
+    let m;
+    while ((m = rx.exec(q))) tokens.push(m[1] || m[2]);
+    const includes = [], excludes = [], fields = [];
+    for (const t of tokens) {
+      if (t.startsWith('-') && t.length > 1) excludes.push(t.slice(1));
+      else if (t.includes(':')) {
+        const [f, ...rest] = t.split(':');
+        const term = rest.join(':');
+        if (term) fields.push({ field: f, term });
+      } else includes.push(t);
+    }
+    return { includes, excludes, fields };
+  }
+
+  function buildHaystack(d){
+    return [
+      d.title || '',
+      d.label || '',
+      d.id || '',
+      d.publisher || '',
+      d.doi || '',
+      d.publicationDate || '',
+      ...(Array.isArray(d.groupNames) ? d.groupNames : []),
+      ...(Array.isArray(d.group) ? d.group : []),
+      ...(Array.isArray(d.keywords) ? d.keywords : []),
+      ...(Array.isArray(d.keywordsSearch) ? d.keywordsSearch : []),
+      ...(Array.isArray(d.currentWork) ? d.currentWork : [])
+    ].join(' ').toLowerCase();
+  }
+
+  // Per-term MiniSearch search options based on length
+  function optsForTerm(t){
+    const len = (t || '').length;
+    return {
+      combineWith: 'AND',
+      prefix: len >= 3,             // only allow prefix for length ≥ 3
+      fuzzy:  len >= 4 ? 0.1 : false // tiny fuzziness, only for length ≥ 4
+    };
+  }
+
+  function searchIdsWithMini(qRaw){
+    const { includes, excludes, fields, forceSimple } = parseQuery(qRaw);
+    let includeSet = null;
+    // helper: intersect includeSet with the given id set
+    const intersectWith = (ids) => {
+      const s = new Set(ids);
+      includeSet = (includeSet == null) ? new Set(s) : new Set([...includeSet].filter(id => s.has(id)));
+    };
+    const effectiveSimple = (state.searchMode === 'simple') || forceSimple;
+    if (includes.length) {
+      for (const t of includes) {
+        const terms = expandSynonyms(t);
+        const unionSet = new Set();
+        for (const tt of terms) {
+          const ttStr = String(tt || '');
+          const isPhrase = /\s/.test(ttStr); // multi-word term
+          if (isPhrase) {
+            // 1) intersection of per-word MiniSearch results to narrow candidates
+            const words = ttStr.split(/\s+/).filter(Boolean);
+            let cand = null;
+            for (const w of words) {
+              const res = mini.search(w, optsForTerm(w));
+              const s = new Set(res.map(r => r.id));
+              cand = cand ? new Set([...cand].filter(id => s.has(id))) : s;
+              if (!cand.size) break;
+            }
+            // 2) exact phrase check against lower-cased haystack
+            if (cand && cand.size) {
+              const needle = ttStr.toLowerCase();
+              for (const id of cand) {
+                const hay = hayById.get(id) || '';
+                if (hay.includes(needle)) unionSet.add(id);
+              }
+            }
+          } else {
+            // single token — normal MiniSearch search, but allow simple mode
+            const ttLc = ttStr.toLowerCase();
+            if (effectiveSimple) {
+              for (const [id, hay] of hayById.entries()) {
+                if (hay.includes(ttLc)) unionSet.add(id);
+              }
+            } else {
+              const res = mini.search(ttStr, optsForTerm(ttStr));
+              for (const r of res) unionSet.add(r.id);
+            }
+          }
+        }
+        intersectWith(unionSet);
+      }
+    }
+    for (const { field, term } of fields) {
+      // already intersection
+      if (effectiveSimple) {
+        const tLc = String(term || '').toLowerCase();
+        const s = new Set();
+        for (const d of idx) {
+          const val = d[field];
+          if (Array.isArray(val)) {
+            if (val.some(x => String(x).toLowerCase().includes(tLc))) s.add(d.id);
+          } else if (val != null && String(val).toLowerCase().includes(tLc)) {
+            s.add(d.id);
+          }
+        }
+        includeSet = includeSet ? new Set([...includeSet].filter(id => s.has(id))) : s;
+      } else {
+        const res = mini.search(term, Object.assign(optsForTerm(term), { fields: [field] }));
+        const s = new Set(res.map(r => r.id));
+        includeSet = includeSet ? new Set([...includeSet].filter(id => s.has(id))) : s;
+      }
+    }
+    if (!includeSet) includeSet = new Set(idx.map(r => r.id));
+    for (const t of excludes) {
+      const terms = expandSynonyms(t);
+      const ex = new Set();
+      for (const tt of terms) {
+        if (effectiveSimple) {
+          const ttLc = String(tt || '').toLowerCase();
+          for (const [id, hay] of hayById.entries()) {
+            if (hay.includes(ttLc)) ex.add(id);
+          }
+        } else {
+          for (const r of mini.search(tt, optsForTerm(tt))) ex.add(r.id);
+        }
+      }
+      for (const id of ex) includeSet.delete(id);
+    }
+    return includeSet;
+  }
+
+  // Initialize MiniSearch index (if UMD loaded)
+  const hasMini = await ensureMiniSearch();
+  var hayById = null;
+  if (hasMini) {
+    mini = new window.MiniSearch({
+      fields: ['title','label','id','keywords','keywordsSearch','currentWork','publisher','doi','group','groupNames','publicationDate'],
+      storeFields: ['id'],
+      searchOptions: {
+        // Stronger signal on human-facing identifiers; curated keywords beat assembled tokens
+        boost: {
+          title: 6,
+          id: 5,
+          label: 4,
+          keywords: 3,
+          keywordsSearch: 2,
+          publisher: 2,
+          groupNames: 2,
+          group: 1,
+          currentWork: 1,
+          doi: 1,
+          publicationDate: 2
+        },
+        combineWith: 'AND',
+        prefix: true,   // will be gated per-term below
+        fuzzy: 0.1      // will be gated per-term below
+      }
+    });
+    const toStr = v => Array.isArray(v) ? v.join(' ') : (v || '');
+    mini.addAll(idx.map(r => ({
+      id: r.id,
+      title: r.title || '',
+      label: r.label || '',
+      keywords: toStr(r.keywords),
+      keywordsSearch: toStr(r.keywordsSearch),
+      currentWork: toStr(r.currentWork),
+      publisher: r.publisher || '',
+      doi: r.doi || '',
+      publicationDate: r.pubDate || '',
+      group: toStr(r.group),
+      groupNames: toStr(r.groupNames)
+    })));
+    // Precompute haystacks for exact-phrase post-filtering
+    hayById = new Map();
+    for (const d of idx) {
+      hayById.set(d.id, buildHaystack(d));
+    }
+    // --- Exact-match indexes for query boosting (e.g., "429-2")
+    const idIndex = new Map();
+    const labelIndex = new Map();
+    const keyIndex = new Map(); // normalized key: lowercased, punctuation stripped
+    function normKey(s){ return String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, ''); }
+    for (const r of idx) {
+      const idL = String(r.id || '').toLowerCase();
+      if (idL) idIndex.set(idL, r.id);
+      const lblL = String(r.label || '').toLowerCase();
+      if (lblL) labelIndex.set(lblL, r.id);
+      const k1 = normKey(r.id);
+      if (k1) keyIndex.set(k1, r.id);
+      const k2 = normKey(r.label);
+      if (k2) keyIndex.set(k2, r.id);
+    }
+    function exactHitIdsForQuery(q){
+      const out = new Set();
+      const raw = String(q || '').trim();
+      if (!raw) return out;
+
+      const lower = raw.toLowerCase();
+      if (idIndex.has(lower)) out.add(idIndex.get(lower));
+      if (labelIndex.has(lower)) out.add(labelIndex.get(lower));
+
+      const nk = normKey(raw);
+      if (nk) {
+        // Exact normalized key equality via index
+        if (keyIndex.has(nk)) out.add(keyIndex.get(nk));
+        // Normalized substring scan: catch cases like "429-2:2020" within full labels like "SMPTEST42922020"
+        for (const r of idx) {
+          const idN = normKey(r.id);
+          const lblN = normKey(r.label);
+          if ((idN && (idN === nk || idN.includes(nk))) || (lblN && (lblN === nk || lblN.includes(nk)))) {
+            out.add(r.id);
+          }
+        }
+      }
+
+      // also try tokenized pieces (split on whitespace and common punctuation)
+      const parts = raw.split(/[\s,;:/]+/).filter(Boolean);
+      for (const p of parts) {
+        const pl = p.toLowerCase();
+        if (idIndex.has(pl)) out.add(idIndex.get(pl));
+        if (labelIndex.has(pl)) out.add(labelIndex.get(pl));
+        const np = normKey(p);
+        if (np) {
+          if (keyIndex.has(np)) out.add(keyIndex.get(np));
+          for (const r of idx) {
+            const idN = normKey(r.id);
+            const lblN = normKey(r.label);
+            if ((idN && (idN === np || idN.includes(np))) || (lblN && (lblN === np || lblN.includes(np)))) {
+              out.add(r.id);
+            }
+          }
+        }
+      }
+      return out;
     }
   }
 
@@ -135,6 +534,86 @@
   window.addEventListener('resize', computeStickyOffset);
   window.addEventListener('scroll', computeStickyOffset, { passive: true });
   let _initialDeepLinked = false; // prevents double-render overriding initial hash navigation
+
+  function getSearchTipsHtml(){
+    return [
+      '<div class="small">',
+      '<strong>Search tips</strong>',
+      '<ul class="mb-0 ps-3">',
+      '<li><em>AND by default</em> — every word must match. Add words to narrow.</li>',
+      '<li><em>Exact phrase</em> — use quotes: "digital cinema"</li>',
+      '<li><em>Doc number/date</em> — type like <code>429-2:2020</code> (hyphens/colons normalized).</li>',
+      '<li><em>Field filters</em> — <code>publisher:SMPTE</code>, <code>label:"SMPTE ST 429-2"</code>, <code>id:429-2</code>, <code>doi:10.</code>, <code>group:isdcf</code>, <code>groupNames:"inter-society"</code>, <code>publicationDate:2020</code></li>',
+      '<li><em>Exclude</em> — prefix a minus: <code>-draft</code></li>',
+      '<li><em>Prefix</em> — 3+ letters match starts of words.</li>',
+      '<li><em>Fuzzy</em> — 4+ letters allow small typos (≈0.1).</li>',
+      '<li><em>Synonyms</em> — bi-directional (e.g., <code>isdcf</code> ↔ <code>inter-society digital cinema forum</code>).</li>',
+      '</ul>',
+      '</div>'
+    ].join('');
+  }
+
+  function installSearchTips(){
+    try {
+      const qEl = document.getElementById('q');
+      // Prefer placing the button inline with the search input; fallback to topbar
+      const container = (qEl && qEl.parentElement)
+        || document.querySelector('#cards-topbar .toolbar-right')
+        || document.querySelector('#cards-topbar')
+        || document.body;
+
+      if (!container || document.getElementById('searchTipsBtn')) return;
+
+      const btn = document.createElement('button');
+      btn.id = 'searchTipsBtn';
+      btn.type = 'button';
+      btn.className = 'btn btn-sm btn-outline-secondary ms-2';
+      btn.setAttribute('aria-label', 'Search tips');
+      btn.textContent = 'Search tips';
+
+      if (qEl && container === qEl.parentElement) {
+        // Insert directly after the search input so it reads as part of the control cluster
+        container.insertBefore(btn, qEl.nextSibling);
+      } else {
+        container.appendChild(btn);
+      }
+
+      const html = getSearchTipsHtml();
+      if (window.bootstrap && window.bootstrap.Popover) {
+        new window.bootstrap.Popover(btn, {
+          html: true,
+          content: html,
+          trigger: 'focus',
+          placement: 'bottom',
+          sanitize: false
+        });
+        btn.addEventListener('click', () => { btn.focus(); });
+      } else {
+        // Fallback if Bootstrap JS isn’t present
+        btn.addEventListener('click', () => {
+          const text = html
+            .replace(/<[^>]+>/g, '\n')
+            .replace(/\n\n+/g, '\n')
+            .replace(/\s+\n/g, '\n')
+            .trim();
+          alert(text);
+        });
+      }
+
+      // Keyboard shortcut inside the search box: press "?" (Shift + /)
+      if (qEl) {
+        qEl.addEventListener('keydown', (ev) => {
+          const key = ev.key || '';
+          if (key === '?' || (key === '/' && (ev.shiftKey || ev.metaKey || ev.ctrlKey))) {
+            ev.preventDefault();
+            btn.focus();
+          }
+        });
+      }
+    } catch (e) {
+      console.warn('[cards] search tips init failed:', e && e.message ? e.message : e);
+    }
+  }
 
   // --- URL sync (page,size) ---
   function initPageSizeFromURL(){
@@ -165,7 +644,8 @@
         if (!key.startsWith('f.')) return;
         const facet = key.slice(2);
         const arr = String(val).split(',').map(s => s.trim()).filter(Boolean);
-        if (arr.length) newF[facet] = arr;
+        const normFacet = (facet === 'hasCurrentWork') ? 'currentWork' : facet;
+        if (arr.length) newF[normFacet] = arr;
       });
       state.f = newF;
       syncFacetCheckboxesFromState();
@@ -253,14 +733,41 @@
     }
     sel.value = val;
   }
+
+  function populateYearSelect(){
+    const sel = document.querySelector('#yearSelect');
+    if (!sel || !facets || !facets.year) return;
+    const existing = new Set(Array.from(sel.options).map(o => o.value));
+    const years = Object.keys(facets.year)
+      .map(y => parseInt(y, 10))
+      .filter(y => Number.isFinite(y))
+      .sort((a,b)=> b - a); // newest first
+    for (const y of years) {
+      const v = String(y);
+      if (existing.has(v)) continue;
+      const opt = document.createElement('option');
+      opt.value = v;
+      opt.textContent = v;
+      sel.appendChild(opt);
+    }
+  }
+
+  function syncYearSelectFromState(){
+    const sel = document.querySelector('#yearSelect');
+    if (!sel) return;
+    const vals = state.f.year || [];
+    sel.value = (Array.isArray(vals) && vals.length) ? String(vals[0]) : '';
+  }
+
   const facetLabel = (k, v) => {
     if (k === 'group' && facets.groupLabels && facets.groupLabels[v]) return facets.groupLabels[v];
-    if ((k === 'hasCurrentWork' || k === 'hasDoi' || k === 'hasReleaseTag') && (v === 'true' || v === true)) return ({
-      hasCurrentWork: 'Has current work', hasDoi: 'Has DOI', hasReleaseTag: 'Has releaseTag'
+    if ((k === 'hasDoi' || k === 'hasReleaseTag') && (v === 'true' || v === true)) return ({
+      hasDoi: 'Has DOI', hasReleaseTag: 'Has Release Tag'
     })[k];
-    if ((k === 'hasCurrentWork' || k === 'hasDoi' || k === 'hasReleaseTag') && (v === 'false' || v === false)) return ({
-      hasCurrentWork: 'No current work', hasDoi: 'No DOI', hasReleaseTag: 'No releaseTag'
+    if ((k === 'hasDoi' || k === 'hasReleaseTag') && (v === 'false' || v === false)) return ({
+      hasDoi: 'No DOI', hasReleaseTag: 'No Release Tag'
     })[k];
+    if (k === 'status' && facets.statusLabels && facets.statusLabels[v]) return facets.statusLabels[v];
     return String(v);
   };
 
@@ -356,9 +863,11 @@
       const v = p.getAttribute('data-v');
       clearHashNoScroll();
       state.f[k] = (state.f[k] || []).filter(x => x !== v);
+      if (!state.f[k] || state.f[k].length === 0) delete state.f[k];
       state.page = 1;
       updateURLAll(true);
       syncFacetCheckboxesFromState();
+      syncYearSelectFromState();
       render();
     }));
     const ca = $('#clearFilters');
@@ -369,6 +878,7 @@
       const qInput = document.querySelector('#q');
       if (qInput) qInput.value = '';
       syncFacetCheckboxesFromState();
+      syncYearSelectFromState();
       state.page = 1;
       updateURLAll(true);
       render();
@@ -387,18 +897,78 @@
   }
 
   function applyFilters(){
-    const q = state.q.trim().toLowerCase();
+    // MiniSearch integration for search
+    let allowedBySearch = null;
+    if (mini && state.q && state.q.trim() !== '') {
+      allowedBySearch = searchIdsWithMini(state.q);
+    }
+    // Legacy fallback when MiniSearch isn't available
+    let legacyQuery = null;
+    if (!mini && state.q && state.q.trim() !== '') {
+      legacyQuery = parseQuery(state.q);
+    }
     const pass = d => {
-      if (q && !(d.title?.toLowerCase().includes(q) || (d.keywords||[]).join(' ').toLowerCase().includes(q))) return false;
+      // MiniSearch gate (when active)
+      if (allowedBySearch && !allowedBySearch.has(d.id)) return false;
+
+      // Legacy substring search fallback — AND semantics across terms and fields
+      if (legacyQuery) {
+        const hay = [
+          d.title || '',
+          d.label || '',
+          d.id || '',
+          d.publisher || '',
+          d.doi || '',
+          d.publicationDate || '',
+          ...(Array.isArray(d.groupNames) ? d.groupNames : []),
+          ...(Array.isArray(d.group) ? d.group : []),
+          ...(Array.isArray(d.keywords) ? d.keywords : []),
+          ...(Array.isArray(d.keywordsSearch) ? d.keywordsSearch : []),
+          ...(Array.isArray(d.currentWork) ? d.currentWork : [])
+        ].join(' ').toLowerCase();
+        const needles = (legacyQuery.includes || []).map(s => String(s).toLowerCase());
+        if (needles.length && !needles.every(n => hay.includes(n))) return false;
+        // fielded terms: intersect
+        for (const { field, term } of (legacyQuery.fields || [])) {
+          const tLc = String(term || '').toLowerCase();
+          const val = d[field];
+          if (Array.isArray(val)) {
+            if (!val.some(x => String(x).toLowerCase().includes(tLc))) return false;
+          } else if (!(val != null && String(val).toLowerCase().includes(tLc))) {
+            return false;
+          }
+        }
+        // excludes: subtract
+        const ex = (legacyQuery.excludes || []).map(s => String(s).toLowerCase());
+        if (ex.some(n => hay.includes(n))) return false;
+      }
       for (const [k, vs] of Object.entries(state.f)) {
         if (!vs?.length) continue;
-        const val = d[k];
-        if (Array.isArray(val)) { if (!val.some(x=>vs.includes(String(x)))) return false; }
-        else if (!vs.includes(String(val))) return false;
+        const sourceKey = (k === 'hasCurrentWork') ? 'currentWork' : k; // legacy URL compatibility
+        const val = d[sourceKey];
+
+        if (k === 'status') {
+          // AND semantics: every selected status must be present on the doc
+          const arr = Array.isArray(val) ? val.map(String) : (val ? [String(val)] : []);
+          if (!vs.every(sel => arr.includes(String(sel)))) return false;
+        } else if (Array.isArray(val)) {
+          // OR semantics (existing behavior)
+          if (!val.some(x => vs.includes(String(x)))) return false;
+        } else {
+          if (!vs.includes(String(val))) return false;
+        }
       }
       return true;
     };
     let rows = idx.filter(pass);
+    // If query looks like a document number (e.g., "429-2", "428-7:2020", "ST 2110-20.2022"),
+    // and we have exact ID/label hits computed, restrict the result set to those exact matches.
+    const looksLikeDocNum = !!(state.q && /[0-9].*[-:.]/.test(state.q)) || !!(state.q && /[-:.].*[0-9]/.test(state.q));
+    const exactSet = (typeof exactHitIdsForQuery === 'function' && state.q && state.q.trim()) ? exactHitIdsForQuery(state.q) : null;
+    if (looksLikeDocNum && exactSet && exactSet.size) {
+      rows = rows.filter(r => exactSet.has(r.id));
+    }
+    // If searching, precompute exact-match IDs to float them to the top after sorting
     if (state.sort === 'pubDate:desc') {
       rows.sort((a,b)=>{
         const bt = (typeof b.pubTs === 'number') ? b.pubTs : (b.pubDate? Date.UTC(b.pubDate,0,1): 0);
@@ -433,6 +1003,15 @@
     if (state.sort === 'label:asc') rows.sort((a,b)=>String(a.label).localeCompare(String(b.label)));
 
     if (state.sort === 'label:desc') rows.sort((a,b)=>String(b.label).localeCompare(String(a.label)));
+    // Stable partition: move exact matches to the front while preserving sort order
+    if (exactSet && exactSet.size) {
+      const exact = [];
+      const rest = [];
+      for (const r of rows) {
+        (exactSet.has(r.id) ? exact : rest).push(r);
+      }
+      rows = exact.concat(rest);
+    }
     return rows;
   }
 
@@ -443,7 +1022,8 @@
     }
     try {
       return hbCard(Object.assign({}, d, opts||{}, {
-        hideGroup: !!(state.f.group && state.f.group.length)
+        hideGroup: !!(state.f.group && state.f.group.length),
+        statusOrdered: orderStatuses(d.status)
       }));
     } catch (err) {
       console.error('[cards] Template render error:', err);
@@ -453,8 +1033,41 @@
 
   function renderFacets(){
     const root = $('#facet'); if (!root) return;
+    const facetTitles = {
+      docType: 'Document Type',
+      status: 'Status',
+      publisher: 'Publisher',
+      group: 'Group',
+      currentWork: 'Current Work',
+      keywords: 'Keywords',
+      hasDoi: 'DOI',
+      hasReleaseTag: 'Release Tag'
+    };
+    // Preferred display order for the Status facet (non‑alpha)
+    const statusOrder = [
+      'active',
+      'latestVersion',
+      'amended',
+      'reaffirmed',
+      'stabilized',
+      'superseded',
+      'withdrawn',
+      'draft',
+      'versionless',
+      'unknown'
+    ];
     const makeList = (name, map, labels) => {
-      const keys = Object.keys(map || {}).sort((a,b)=>String(a).localeCompare(String(b)));
+      let keys = Object.keys(map || {});
+      if (name === 'status' && Array.isArray(statusOrder)) {
+        // Use explicit ordering and include only keys that exist in the map
+        const ordered = statusOrder.filter(k => Object.prototype.hasOwnProperty.call(map, k));
+        // Append any unexpected keys (e.g., future flags) alphabetically after the known order
+        const extras = keys.filter(k => !statusOrder.includes(k)).sort((a,b)=>String(a).localeCompare(String(b)));
+        keys = ordered.concat(extras);
+      } else {
+        // Default alphabetical for all other facets
+        keys.sort((a,b)=>String(a).localeCompare(String(b)));
+      }
       const items = keys.map(k => {
         const id = `${name}_${String(k).replace(/[^\w-]+/g,'_')}`;
         const label = (labels && labels[k]) ? labels[k] : k;
@@ -474,7 +1087,7 @@
         <div class="accordion-item">
           <h2 class="accordion-header" id="hdr_${collapseId}">
             <button class="accordion-button${isDefaultOpen ? '' : ' collapsed'}" type="button" data-bs-toggle="collapse" data-bs-target="#${collapseId}" aria-expanded="${isDefaultOpen}" aria-controls="${collapseId}">
-              ${name}
+              ${facetTitles[name] || name}
             </button>
           </h2>
           <div id="${collapseId}" class="accordion-collapse collapse${isDefaultOpen ? ' show' : ''}" aria-labelledby="hdr_${collapseId}">
@@ -486,11 +1099,12 @@
     };
 
     const sections = [
-      ['docType', facets.docType, null],
-      ['status', facets.status, null],
       ['publisher', facets.publisher, null],
       ['group', facets.group, facets.groupLabels],
-      ['hasCurrentWork', facets.hasCurrentWork, null],
+      ['docType', facets.docType, null],
+      ['status', facets.status, facets.statusLabels],
+      ['keywords', facets.keywords, null],
+      ['currentWork', facets.currentWork, null],
       ['hasDoi', facets.hasDoi, null],
       ['hasReleaseTag', facets.hasReleaseTag, null]
     ];
@@ -504,7 +1118,23 @@
 
     // Mirror facets into the offcanvas body (one-time clone of HTML)
     const drawerBody = $('#facetDrawerBody');
-    if (drawerBody) drawerBody.innerHTML = accHTML;
+    if (drawerBody) {
+      const prefixIds = (html, pfx) => html
+        // element ids
+        .replace(/id="([^"]+)"/g, (m, id) => `id="${pfx}${id}"`)
+        // label "for" → associated control id
+        .replace(/for="([^"]+)"/g, (m, id) => `for="${pfx}${id}"`)
+        // aria relationships
+        .replace(/aria-controls="([^"]+)"/g, (m, id) => `aria-controls="${pfx}${id}"`)
+        .replace(/aria-labelledby="([^"]+)"/g, (m, id) => `aria-labelledby="${pfx}${id}"`)
+        // Bootstrap targets (accordion/collapse)
+        .replace(/data-bs-target="#([^"]+)"/g, (m, id) => `data-bs-target="#${pfx}${id}"`)
+        // Anchor hrefs that point to in-page ids
+        .replace(/href="#([^"]+)"/g, (m, id) => `href="#${pfx}${id}"`);
+
+      const accHTMLDrawer = prefixIds(accHTML, 'drawer_');
+      drawerBody.innerHTML = accHTMLDrawer;
+    }
 
     // Event delegation: handle checkbox changes from either container
     function onFacetChange(e){
@@ -789,6 +1419,23 @@
     });
   }
 
+  // Year selector
+  const yearSel = document.querySelector('#yearSelect');
+  if (yearSel) {
+    yearSel.addEventListener('change', e => {
+      clearHashNoScroll();
+      const v = String(e.target.value || '');
+      if (!v) {
+        delete state.f.year;
+      } else {
+        state.f.year = [v];
+      }
+      state.page = 1;
+      updateURLAll(true);
+      render();
+    });
+  }
+
   // Prev/Next
   const prevBtn = $('#prevPage');
   const nextBtn = '#nextPage' && $('#nextPage');
@@ -828,8 +1475,11 @@
   initFiltersFromURL();
   initSearchFromURL();
   initSortFromURL();
+  installSearchTips();
   updateURLAll(false);
   syncPageSizeSelectFromState();
+  populateYearSelect();
+  syncYearSelectFromState();
   // Initialize deep-linking via #id (returns true if it rendered due to hash)
   _initialDeepLinked = initHashDeepLink();
 
@@ -840,7 +1490,9 @@
     initSearchFromURL();
     initSortFromURL();
     syncPageSizeSelectFromState();
+    syncYearSelectFromState();
     render();
+    installSearchTips();
   });
 
   // Kickoff

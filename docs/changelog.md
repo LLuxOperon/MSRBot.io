@@ -1,7 +1,7 @@
 # MSRBot.io — Consolidated Technical Chronicle
 
 **Status:** Gold-copy consolidation  
-**Consolidation Date:** 2025-11-04
+**Consolidation Date:** 2025-11-05
 
 This document consolidates the MSRBot.io worklog into a single, category‑organized technical chronicle. Dates are de‑emphasized in favor of system architecture and implementation detail. All filenames, scripts, fields, and JSON keys are shown in monospace.
 
@@ -12,26 +12,20 @@ This document consolidates the MSRBot.io worklog into a single, category‑organ
 - `index.html` missing → treated as likely PDF‑only; `inferMetadataFromPath()` derives `docId`, `releaseTag`, `publicationDate`, `doi`, `href`, `docType`, `docNumber`, `docPart`, `publisher`. Inferred fields are merged without overwriting existing data.
 - Amendment suffix handling corrected end‑to‑end: `docId`, `doi`, and `href` are derived from the final ID including amendment suffixes (e.g., `.2011Am1.2013`).
 - Added `revisionOf` extraction from HTML via `<meta itemprop="pubRevisionOf">`; value stored as array.
-- Added explicit detection for **missing `index.html`** cases — now treated as likely PDF-only releases.  
-  Metadata is inferred and merged with any existing record without overwriting richer data.  
-- **Amendment DOI/href inference** fully corrected — `docId`, `doi`, and `href` now derive from the final identifier including amendment suffixes (e.g., `.2011Am1.2013`).
-- Amendment promotion logic corrected: when an **amendment** is the latest, the amendment is `active: true, latestVersion: true`; the **base** remains `active: false, superseded: true`. Prevents incorrect base flips when an amendment becomes latest.
-
 
 ### 1.2 Status Wiring & Normalization
 - Only one document per lineage can have `status.latestVersion: true`; that document is also `status.active: true` and `status.superseded: false`. All others: `latestVersion: false`, `active: false`, `superseded: true`.
 - Deterministic mapping for ambiguous cases: unknown → `superseded: false`.
 - Base releases without amendments receive explicit defaults: `status.amended = false`, `status.amendedBy = []`.
 - `status.supersededBy` wiring: each base points to the next base in sequence; amendments inherit the base’s pointer. `status.supersededDate` injected from the next base’s `releaseTag`. `$meta` injected for both fields on create/update.
-- **Publisher status derivation:** `status.active` and `status.superseded` automatically computed from `status.latestVersion`.  
-  Guarantees lineage consistency and prevents conflicting “active” flags.
+- **Publisher status derivation:** `status.active` and `status.superseded` automatically computed from `status.latestVersion`. Guarantees lineage consistency and prevents conflicting “active” flags.
+- Amendment promotion logic: when an **amendment** is the latest, the amendment is `active: true, latestVersion: true`; the **base** remains `active: false, superseded: true`.   
+_Prevents incorrect base flips when an amendment becomes latest._
 
 ### 1.3 Reference Parsing & Resilience
 - Reference arrays are always present and normalized: defaults for `references.normative` and `references.bibliographic`.
 - `$meta` injected consistently for new docs and updates; avoids emission for undefined or empty arrays.
 - Latest‑version determination aligned with wrapper `releaseTag` ordering.
-- Clarified that **latest-version logic** aligns `releaseTag` and lineage order to ensure reference arrays always resolve to the most recent valid publication.
-
 
 ### 1.4 Folder & Publisher Parsing
 - Version‑folder regex upgraded to handle amendments and publication stages; accepts `*-dp`.
@@ -113,11 +107,10 @@ This document consolidates the MSRBot.io worklog into a single, category‑organ
 
 ### 4.2 MRI Workflow (`build-master-reference-index.yml`)
 - Metadata‑only paths (`generatedAt` updates) commit directly to `main` (no empty PRs).
-- Real content changes open PRs. Branch management corrected with `base: ${{ github.event.repository.default_branch }}`.
 - Commits both `masterReferenceIndex.json` and `mri_presence_audit.json` directly to `main` when in metadata‑only mode; no hard reset to avoid file loss.
 - Issue creation rebuilt: proper Markdown newlines, readable bullets for `cite`, `title`, `href`, `rawRef`. Missing‑ref issues auto‑close when resolved. `onlyMeta=true` suppresses PR creation.
 - **PR base parameter fix:** all MRI workflow PRs now set `base: ${{ github.event.repository.default_branch }}` explicitly to ensure correct merge targeting.  
-  Prevents orphaned branches from detached workflows.
+_Prevents orphaned branches from detached workflows._
 
 ### 4.3 Weekly MSI Workflow Hardening
 - UNKEYED issues: one per `docKey`, idempotent, closed only from default‑branch runs.
@@ -176,6 +169,9 @@ This document consolidates the MSRBot.io worklog into a single, category‑organ
   - **UNABLE_TO_VERIFY_LEAF_SIGNATURE** — per item (labels: `automated`, `url`, `leaf-signature`)
 - Integrated into audit parsing, issue creation, and autoclose passes.
 - Issue bodies use a deterministic summary (Count, docIds, URLs, run tag), matching existing ENOTFOUND/404/400 conventions.
+- Added **ENOTFOUND** handling (treated equivalently to 404) with deterministic issue body and canonical labels.
+- Capped per-issue body list to first 25 entries with a total count noted.
+- Mirrored behavior applied to 404 for consistency.
 
 **Refinements**
 - Label scheme cleaned:
@@ -183,10 +179,19 @@ This document consolidates the MSRBot.io worklog into a single, category‑organ
   - All issues now use canonical multi-label sets: `automated`, `url`, `<category>`.
 - Autoclose logic validated across new and existing issue types.
 - Body formatting aligned to established deterministic Markdown style.
+- Removed the `postChunks()` helper and all call sites across grouped/publisher sections.
+- Applied a **unified issue body structure** to all **publisher-level** categories:
+  - **404**, **403**, **ENOTFOUND**, **HPE_INVALID_CONSTANT**, **ERR_FR_TOO_MANY_REDIRECTS**, **SMPTE.resolvedHref.standards-prefix**
+- Left **per-item** categories unchanged (bodies link directly to the audit JSON):
+  - **400**, **ERR_BAD_REQUEST**, **UNABLE_TO_VERIFY_LEAF_SIGNATURE**
+- Verified **autoclose** and **label** handling remain unaffected.
 
 **Outcome**
 - Workflow now covers **9 error/mismatch categories** with consistent publisher vs. item separation, self-updating issue bodies, and full autoclose hygiene.
 - Old label compatibility removed; unified label taxonomy is authoritative going forward.
+- Issue bodies are clean, consistent, and readable at a glance.
+- Full datasets remain accessible via a single stable link: `src/main/reports/url_validate_audit.json`.
+- Large audits avoid comment spam; runs stay fast and quiet.
 
 ## 5 Registry Architecture & Data Model Evolution
 - Consolidated `metaConfig` governs notes for `status.stabilized`, `status.withdrawn`, and `status.withdrawnNotice`.
@@ -210,13 +215,13 @@ This document consolidates the MSRBot.io worklog into a single, category‑organ
 - Introduced fallback diagnostics for missing templates (`#card-tpl` / `#card-tpl-src`) to prevent silent render failures.
 - Corrected **publiccd** mapping within `statusBadge` to ensure proper badge display across document types.
 - Added **`syncFacetCheckboxes()`** to maintain state parity between filter chips and facet checkboxes, including the **“Clear All”** action.
-- Updated **`mobile.css`** for badge right-alignment and text wrapping on small screens.
+- Updated **`msrbot.css`** for badge right-alignment and text wrapping on small screens.
 - Updated **`cards.hbs`** to integrate existing Bootstrap header/footer, sticky topbar, and unified card render block.
 - Verified automatic facet expansion for **status** and **docType**; confirmed live synchronization between chip removal and facet checkboxes.
 - Result: responsive, visually consistent registry cards with fully synchronized filters and improved mobile usability.
 
 ### 6.2 Frontend Refresh II — Branding, SEO & 404 Overhaul
-- **Project rebrand and repository migration:** moved to `PrZ3/MSRBot.io`; redirects active for previous repo and domain.
+- **Project rebrand and repository migration:** moved to `PrZ3r/MSRBot.io`; redirects active for previous repo and domain.
 - **Domain alignment:** `msrbot.io` established as canonical host; `mediastandardsregistry.org` configured to redirect via DNS.
 - **Single-source configuration:** introduced `src/main/config/site.json` as canonical metadata store; removed duplicate inline defaults from `build.js`.
 - **Environment variable overrides:** supports `SITE_CANONICAL_BASE`, `SITE_NAME`, and `SITE_DESCRIPTION` for staging.
@@ -227,8 +232,118 @@ This document consolidates the MSRBot.io worklog into a single, category‑organ
 - **Dynamic 404 page (“Disappointed Penguin Edition”):** Handlebars-driven layout with randomized, config-based message list; robots meta = noindex,follow.
 - **Asset and link cleanup:** introduced `assetPrefix` for consistent partial reuse; navbar links now root-absolute; redundant defaults removed.
 - **OG image generation:** 1200×630 PNG featuring new penguin + logo branding on teal/circuit background.
-- **Identity & icon:** replaced legacy MSR icon with minimalist “PrZ3” SVG favicon; scalable and consistent across all resolutions.
+- **Identity & icon:** finalized **MSRBot.io logo** and SVG favicon (clean circular mark, document-forward, non-derivative); scalable and consistent across all resolutions.
 - Result: complete brand, SEO, and metadata integration; clean 404 UX; site now fully single-config, portable, and identity-consistent.
+
+### 6.3 Frontend Refresh III — Registry Cards & Search System
+- Extended **card-based registry UI** with full search, filtering, and navigation logic.
+
+**Rendering & Layout**
+- Handlebars runtime loaded on demand for client-side rendering.
+- Status badge alignment/wrapping corrected; consistent badge classes and typo cleanup.
+- Introduced sticky bottom pager (later removed sticky top) with proper persistence.
+- Added results summary line: *“Showing X–Y of N (filtered from M)”*.
+- Page-size selector improved for clarity; auto-selects current value.
+
+**Filters & Chips**
+- Two-way synchronization between facet checkboxes and active chips.
+- “Clear All” now clears filters, chips, and search box.
+- Removing a chip unchecks the corresponding facet.
+- Replaced `hasCurrentWork` boolean with `currentWork` list facet; updated labels and search mapping.
+
+**Sorting**
+- `Newest`/`Oldest` now sort by `pubTs` with fallbacks.
+- Added `Title` and `Label` A↔Z sorts with article stripping (“the”, “a”, “an”).
+- Introduced reversible sort toggling for all modes.
+
+**Pagination & Navigation**
+- Numbered page jumpers with prev/next and keyboard navigation.
+- URL-synced pagination and page size for deep-linking and browser history.
+- Bottom pager hidden when top is visible to reduce clutter.
+- Year facet implemented as a compact dropdown (“All years” default) linked with chips and clear-all.
+
+**Deep Links & Anchors**
+- `#docId` anchors locate items across pages/filters; if filtered out, filters reset and jump performed.
+- Scroll offset accounts for sticky navbar and topbar with highlight flash.
+- On filter/sort/page/search change, hash stripped to prevent accidental jumps.
+- Offset tuned for consistent landing beneath both sticky elements.
+
+**URL State**
+- Query string now mirrors `page`, `size`, `sort`, `q`, and `f` (filters).
+- On load, state rehydrates search box, sort, page size, and filters from URL.
+- Year dropdown and page-size controls initialize from URL state.
+
+**Search Engine**
+
+*Index Build (Node)*
+- `build.search-index.js` generates:
+  - `build/cards/search-index.json` (flat rows from `documents.json` + group/project joins).
+  - `build/cards/facets.json` with counts and group-label map.
+- Optional `synonyms.json` copied into build.
+- MiniSearch UMD resolved from `node_modules` or CDN (redirect-follow supported).
+- Fixed `undefined.false` builder error; tightened status bucketing.
+
+*MiniSearch (Client)*
+- Loader prefers UMD; falls back to simple `includes()` if unavailable.
+- Field boosts: `title:6`, `id:5`, `label:4`, `keywords:3`, `keywordsSearch:2`, `currentWork:1`.
+- Token rules: prefix ≥ 3 chars; fuzzy 0.1 ≥ 4 chars (to curb over-broad hits).
+- Bi-directional synonyms and intra-group linking  
+  (`"isdcf" ↔ "inter-society digital cinema forum"` etc.).
+- Quoted phrases perform literal matches via precomputed haystack intersection.
+- Search syntax supports field scopes (`publisher:isdcf`, `title:"accessibility"`), exclusions (`-draft`), and facet combination.
+
+**Behavior Fixes & Polish**
+- Keywords now included in both faceting and weighted search.
+- Search bar updates URL state; “Clear All” resets it.
+- Guarded MiniSearch failure path logs error, falls back gracefully.
+- Fixed chip/checkbox desync edge cases.
+- Case-insensitive, article-stripped sorting for label/title.
+- Resolved “0 results” initialization bug from state-init order.
+- Page truncation at 40 fixed; page-size control honored via URL.
+- Year-facet chip removal resets dropdown correctly.
+- Deterministic facet-section order; `docType` and `status` expand by default.
+
+**Result**
+- Registry now offers full-fidelity search, deep-linkable state, and robust filter synchronization within a responsive, mobile-friendly card interface.
+
+### 6.4 Frontend Refresh IV — Search Index & UX Enhancements
+
+**Search Index & Schema**
+- Enriched search index rows with `publisher`, `doi`, `group`, and `publicationDate`; verified propagation to cards and facets.
+- `docType` now stores the full name (e.g., “Standard”); abbreviations (e.g., “ST”) moved to `docTypeAbr`.
+- Removed `Unknown` fallback — `docType` is mandatory.
+
+**Search Behavior**
+- MiniSearch tuning:
+  - Improved exact-phrase detection for quoted queries.
+  - Adjusted fuzzy and prefix thresholds to reduce over-broad matches.
+  - Enforced true **AND** semantics across multiple terms (eliminates OR overloads).
+  - Document-number normalization (e.g., `429-2:2020`) returns exact matches reliably.
+- Introduced mode toggle scaffolding for **simple** vs **smart** search (future-ready).
+
+**Facet & Status Logic**
+- Removed `statusPrimary`; facets and badges now derive from any `statusFlags` marked `true`.
+- Added `facets.statusLabels` for user-friendly names (e.g., “Active”, “Amended”); consistent badge order on cards.
+- Multi-flag **AND** logic for status filtering (e.g., “Active + Amended” requires both).
+
+**File Organization**
+- Build outputs reorganized: `documents.json` now emitted under `build/cards/_data/` for clearer separation.
+- Card views render exclusively from the **search index**; no dependency on the root `documents.json`.
+
+**UI Enhancements**
+- Added a Bootstrap **Search Tips** popover:
+  - Covers phrase matching, AND logic, field filters, doc-number normalization, fuzzy rules, and synonyms.
+  - Keyboard shortcut **`?`** opens tips from the search bar.
+  - Placement refined to sit just before the sort dropdown (discoverable and unobtrusive).
+
+**Resilience & Integration**
+- Tip-button installer guarded against duplicates (safe on `popstate` reloads).
+- Works with Bootstrap fallback (`alert()` version) if JS is unavailable.
+- `popstate` re-invokes `installSearchTips()` to maintain functionality on back/forward navigation.
+
+**Result**
+- Deterministic search/filtering with consistent `docType`, status, and metadata rendering.
+- Clear, discoverable search UX; build and data pipelines write to the correct directories.
 
 ## 7 Logging, Diffing, and PR Output
 - `logSmart.js` centralizes logging with a console budget (~3.5 MiB). Excess console chatter is tripwired while full logs are persisted to file.

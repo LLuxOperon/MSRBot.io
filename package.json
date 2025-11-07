@@ -4,7 +4,6 @@
   "description": "Doc Registry",
   "scripts": {
     "build": "node src/main/scripts/build.js",
-    "build-dev": "node src/main/scripts/build.js --dev",
     "build-index": "node src/main/scripts/build.search-index.js",
     "build-stats": "node src/main/scripts/utils/buildStats.js",
     "build-msi": "node src/main/scripts/buildMasterSuiteIndex.js --in src/main/data/documents.json --out src/main/reports/masterSuiteIndex.json",
@@ -34,6 +33,7 @@
     "json-2-csv": "^3.17.1",
     "json-source-map": "^0.6.1",
     "json-stable-stringify": "^1.0.1",
+    "minisearch": "^7.2.0",
     "node": "^22.18.0",
     "stringify": "^5.2.0",
     "yargs": "^16.2.0"

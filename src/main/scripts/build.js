@@ -1,9 +1,30 @@
 /*
-Copyright (c), Steve LLamb
+Copyright (c) 2025 Steve LLamb (https://github.com/SteveLLamb) and PrZ3(https://github.com/PrZ3r)
 
-This work is licensed under the Creative Commons Attribution 4.0 International License.
+Redistribution and use in source and binary forms, with or without modification, 
+are permitted provided that the following conditions are met:
 
-You should have received a copy of the license along with this work.  If not, see <https://creativecommons.org/licenses/by/4.0/>.
+1. Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.
+
+3. Redistributions in binary form must reproduce the above copyright notice, this
+   list of conditions and the following disclaimer in the documentation and/or
+   other materials provided with the distribution.
+
+4. Neither the name of the copyright holder nor the names of its contributors may
+   be used to endorse or promote products derived from this software without specific 
+   prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND 
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE 
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE 
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL 
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR 
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER 
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR 
+TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF 
+THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 /* pass the option  */
@@ -66,19 +87,16 @@ async function copyRecursive(src, dest) {
 
 // Warn once per process for empty MSI
 let __msiWarnedEmpty = false;
-
-const argv = require('yargs').argv;
 const { readFile, writeFile } = require('fs').promises;
 const { json2csvAsync } = require('json-2-csv');
 
 /* list the available registries type (lower case), id (single, for links), titles (Upper Case), and schema builds */
 
-
 const registries = [
   {
     "listType": "documents",
     "templateType": "documents",
-    "templateName": "index",
+    "templateName": "documents",
     "idType": "document",
     "listTitle": "Documents",
     "subRegistry": [
@@ -91,7 +109,7 @@ const registries = [
     "templateType": "documents",
     "templateName": "dependancies",
     "idType": "document",
-    "listTitle": "Document Dependancies",
+    "listTitle": "Ref Tree",
     "subRegistry": [
       "documents",
       "groups",
@@ -122,28 +140,12 @@ const registries = [
   }
 ]
 
-// Enable Inspector build only for dev runs
-const ENABLE_INSPECTOR = (argv && (argv.dev === true || argv.dev === '1')) || process.env.MSR_BUILD_DEV === '1';
-if (ENABLE_INSPECTOR) {
-  registries.push({
-    listType: 'documents',
-    templateType: 'documents',
-    templateName: 'index',       // reuse documents template
-    idType: 'document',
-    listTitle: 'Inspector',
-    subRegistry: ['groups','projects'],
-    output: 'inspector.html',
-    extras: { inspector: true }
-  });
-}
-
 /* load and build the templates */
 
 async function buildRegistry ({ listType, templateType, templateName, idType, listTitle, subRegistry, output, extras }) {
   console.log(`Building ${templateName} started`)
 
   var DATA_PATH = path.join(REGISTRIES_REPO_PATH, "data/" + listType + ".json");
-  var DATA_SCHEMA_PATH = path.join(REGISTRIES_REPO_PATH, "schemas/" + listType + ".schema.json");
   var TEMPLATE_PATH = "src/main/templates/" + templateName + ".hbs";
   var PAGE_SITE_PATH
   if (output) {
@@ -164,20 +166,16 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   const ogImage = new URL(siteConfig.ogImage, siteConfig.canonicalBase).href;
   const ogImageAlt = siteConfig.ogImageAlt;
   // Asset prefix for relative local assets in header/footer
-  const assetPrefix = (templateName === 'index') ? '' : '../';
-
+  const assetPrefix = '../';
   var CSV_SITE_PATH = templateType + ".csv";
   const inputFileName = DATA_PATH;
   const outputFileName = BUILD_PATH + "/" + CSV_SITE_PATH;
 
-
   /* load header and footer for templates */
-
   hb.registerPartial('header', await fs.readFile("src/main/templates/partials/header.hbs", 'utf8'));
   hb.registerPartial('footer', await fs.readFile("src/main/templates/partials/footer.hbs", 'utf8'));
 
   /* instantiate template */
-  
   let template = hb.compile(
     await fs.readFile(
       TEMPLATE_PATH,
@@ -246,52 +244,16 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     }
   }
 
-  // If this build target is the Inspector, decorate docs with joined fields
-  const __isInspector = !!(extras && extras.inspector);
-  if (__isInspector) {
-    // Build quick lookups: docId -> projects / groups
-    const byDocProjects = new Map();
-    (registryProject || []).forEach(p => {
-      const list = Array.isArray(p.docs) ? p.docs : (Array.isArray(p.documents) ? p.documents : []);
-      list.forEach(did => {
-        const arr = byDocProjects.get(did) || [];
-        arr.push(p);
-        byDocProjects.set(did, arr);
-      });
-    });
-
-    const byDocGroups = new Map();
-    (registryGroup || []).forEach(g => {
-      const list = Array.isArray(g.docs) ? g.docs : (Array.isArray(g.documents) ? g.documents : []);
-      list.forEach(did => {
-        const arr = byDocGroups.get(did) || [];
-        arr.push(g);
-        byDocGroups.set(did, arr);
-      });
-    });
-
-    (registryDocument || []).forEach(item => {
-      const did = item && item.docId;
-      if (!did) return;
-      const projects = (byDocProjects.get(did) || []).map(p => p.projectId || p.name || p.id).filter(Boolean);
-      const pubDate  = item.publicationDate || null;
-      const year     = pubDate && /^\d{4}/.test(pubDate) ? parseInt(pubDate.slice(0,4), 10) : null;
-
-      item.__projects = projects;
-      item.__year = year;
-
-    });
-  }
-
   // --- Load MasterSuiteIndex (MSI) once and build a lineage → latest lookup
   const MSI_PATH = path.join(REGISTRIES_REPO_PATH, 'reports/masterSuiteIndex.json');
   let __msiLatestByLineage = null;
+  let __msiParsed = null; // cache to avoid re-reading the file
   try {
     const msiRaw = await fs.readFile(MSI_PATH, 'utf8');
-    const msi = JSON.parse(msiRaw);
-    if (msi && Array.isArray(msi.lineages)) {
+    __msiParsed = JSON.parse(msiRaw);
+    if (__msiParsed && Array.isArray(__msiParsed.lineages)) {
       __msiLatestByLineage = new Map(
-        msi.lineages
+        __msiParsed.lineages
           .filter(li => li && typeof li.key === 'string')
           .map(li => [li.key, { latestAnyId: li.latestAnyId || null, latestBaseId: li.latestBaseId || null }])
       );
@@ -308,12 +270,10 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   if (__msiLatestByLineage) {
     __msiBaseIndex = new Map();
     const TAIL_RE = /\.(?:\d{4}(?:-\d{2}){0,2}|\d{8})(?:[A-Za-z0-9].*)?$/;
-
     const safeBase = (id) => (typeof id === 'string') ? id.replace(TAIL_RE, '') : id;
 
     try {
-      const msiRaw = await fs.readFile(MSI_PATH, 'utf8');
-      const msi = JSON.parse(msiRaw);
+      const msi = __msiParsed;
       if (msi && Array.isArray(msi.lineages)) {
         for (const li of msi.lineages) {
           if (!li || !li.key || !Array.isArray(li.docs)) continue;
@@ -331,8 +291,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
           if (latestAnyId)  __msiBaseIndex.set(safeBase(latestAnyId),  payload);
         }
       }
-      // Optional visibility: uncomment for diagnostics
-      // console.log(`[MSI] Built baseIndex entries: ${__msiBaseIndex.size}`);
     } catch (e) {
       if (!__msiWarnedEmpty) {
         console.warn(`[WARN] Could not rebuild MSI baseIndex: ${e.message}`);
@@ -363,15 +321,12 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
       doc.msiLatestAny = latestAnyId || null;
       doc.msiLatestBase = latestBaseId || null;
       doc.isLatestAny = latestAnyId ? (doc.docId === latestAnyId) : false;
-      // Backwards compatibility flag for templates
-      if (doc.isLatestAny) {
-        doc.latestDoc = true;
-        doc.docBase = key
-        doc.docBaseLabel = labelFromLineageKey(key);
-      } else {
-        doc.newerDoc = true;
-      }
-
+      doc.docBase = key
+      doc.docBaseLabel = labelFromLineageKey(key);
+      // Ensure a status object exists
+      doc.status = doc.status && typeof doc.status === 'object' ? doc.status : {};
+      // Update nested status flag rather than top-level field
+      doc.status.latestVersion = !!doc.isLatestAny;
       doc.isLatestBase = latestBaseId ? (doc.docId === latestBaseId) : false;
     }
   }
@@ -379,12 +334,9 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   /* load the SMPTE abreviated docType */
 
   for (let i in registryDocument) {
-
     if (registryDocument[i]["publisher"] == "SMPTE"){
-
       let docType = registryDocument[i]["docType"];
       var dTA = ""
-
       if(docType == "Administrative Guideline"){
         dTA = "AG"
       }
@@ -430,8 +382,7 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
 
   /* load all references per doc */
   // Emit reference warnings only for the main documents index (avoid dupes from \"dependancies\")
-  const __emitRefWarnings = (templateName === 'index');
-
+  const __emitRefWarnings = (templateName === 'documents');
   const docReferences = []
 
   for (let i in registryDocument) {
@@ -444,10 +395,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
 
       // De-duplicate noisy warnings per docId
       const __noKeyWarned = new Set();
-
-      // Optional visibility: uncomment for diagnostics
-      //console.log(`++ Checking refs for ${docId} ++`)
-
       const normResolved = [];
       const bibResolved = [];
 
@@ -458,19 +405,14 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
         const wasUndated = (base === r);
         let resolved = r;
 
-        // Optional visibility: uncomment for diagnostics
-        //console.log(`... checking ${r}`);
-        //if (!wasUndated) console.log(`       (dated; base=${base})`);
-
         // If this reference is an exact docId present in our registry, skip MSI checks entirely
         if (__docIdSet && __docIdSet.has(r)) {
-          //console.log(`    skipping ${r} (exact docId present in registry)`);
           refs.push(resolved);
           return { id: resolved };
         }
 
         if (__msiLatestByLineage) {
-          // 1) Base-index fast path: try the base token regardless of dated/undated;
+          // 1) Base-documents fast path: try the base token regardless of dated/undated;
           //    only *apply* upgrade when undated to avoid rewriting explicit dates.
           if (__msiBaseIndex) {
             const hit = __msiBaseIndex.get(base);
@@ -479,14 +421,8 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
                 const next = hit.latestBaseId || hit.latestAnyId || r;
                 if (next !== r) {
                   resolved = next;
-                  // Optional visibility: uncomment for diagnostics
-                  //console.log(`   [Refs] Upgraded via baseIndex ${r} → ${resolved}`);
                 }
               } 
-                // Optional visibility: uncomment for diagnostics
-                //else {
-                //console.log(`[Refs] baseIndex hit for ${base} (dated ref, no upgrade)`);
-              //}
             }
           }
 
@@ -496,35 +432,17 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
             // Example: "ISO.15444-1" → matcher is anchored up to a dot before the date tail.
             const baseForKey = (typeof base === 'string' && !base.endsWith('.')) ? (base + '.') : base;
             const key = lineageKeyFromDocId(baseForKey);
-            // Optional visibility: uncomment for diagnostics
-            //if (wasUndated) {
-            //  console.log(`   [Refs] MSI probe undated: ${r}`);
-            //  console.log(`       probeBase: ${baseForKey}`);
-            //}
+
             if (key) {
-              // Optional visibility: uncomment for diagnostics
-              //if (wasUndated) {
-              //  console.log(`       key: ${key}`);
-              //}
               const li = __msiLatestByLineage.get(key);
               if (li) {
                 if (wasUndated) {
-                  // Optional visibility: uncomment for diagnostics
-                  //console.log(`       HIT in MSI (latestBaseId=${li.latestBaseId} latestAnyId=${li.latestAnyId})`);
                   const next = li.latestBaseId || li.latestAnyId || r;
                   if (next !== r) {
                     resolved = next;
-                    // Optional visibility: uncomment for diagnostics
-                    //console.log(`   [Refs] Upgraded via lineage ${r} → ${resolved}`);
                   }
-                } // Optional visibility: uncomment for diagnostics
-                  //else {
-                  //console.log('       MSI lineage hit (dated ref, no upgrade)');
-                //}
-              } // Optional visibility: uncomment for diagnostics
-                //else if (wasUndated) {
-                //console.log('       MISS in MSI');
-                //}
+                } 
+              } 
             } else if (wasUndated) {
               const warnKey = `${docId}::${r}`;
               if (!__noKeyWarned.has(warnKey)) {
@@ -569,9 +487,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
       if (Object.keys(resolvedOut).length) {
         registryDocument[i].referencesResolved = resolvedOut;
       }
-      // Optional visibility: uncomment for diagnostics
-      //console.log(`[Refs] for docId: ${docId}`)
-      //console.log(refs)
 
       docReferences[docId] = refs;
       if (__emitRefWarnings && __noKeyWarned.size) {
@@ -580,120 +495,53 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     }
   }
 
-  /* load referenced by docs */
-
+  /* load referenced by docs (one-pass, no bogus recursion) */
   for (let i in registryDocument) {
-
-    let docId = registryDocument[i].docId
-
-    function findReferenceBy(obj = docReferences, doc = docId) {
-      
-      var referencedBy = []
-
-      Object.keys(obj).forEach((key) => {
-        if (
-          typeof obj[key] === 'object' &&
-          obj[key] !== null &&
-          obj[key].map((k) => k).includes(doc)
-        ) {
-          findReferenceBy(obj[key])
-          referencedBy.push(key)
-        }
-      })
-
-      if (!referencedBy.length) {
-        return
-      }
-      registryDocument[i].referencedBy = referencedBy;
-      referencedBy.sort();
-      return referencedBy; 
-
-    };
-
-    findReferenceBy();
-  }
-
-  /* load reference tree */
-
-  const referenceTree = []
-
-  for (let i in docReferences) {
-
-    let refs = docReferences[i]
-    let allRefs = []
-
-    function getAllDocs() {
-
-      for (let docRefs in refs) {
-
-        let docId = refs[docRefs]
-
-        if (allRefs.includes(docId) !== true) {
-          allRefs.push(docId)
-        } 
-
-        let nestedDocs = []
-        let nestLevel = 1
-
-        function docLookup() {
-        
-          if (Object.keys(docReferences).includes(docId) === true)  {
-
-            let docs = docReferences[docId]
-            let arrayLength = docs.length
-
-            for (var d = 0; d < arrayLength; d++) {
-
-              nestedDocs.push(docs[d])
-
-              if (allRefs.includes(docs[d]) !== true) {
-                allRefs.push(docs[d])              
-              } 
-
-            }
-
-          } 
-
-          if (nestedDocs.length) {
-            nestLevel++
-            while (nestLevel < 4) {
-              for (let nD in nestedDocs) {
-                docId = nestedDocs[nD]
-                docLookup();
-              }
-            }
-          }
-
-        }
-        docLookup();
-      }
-
+    const docId = registryDocument[i].docId;
+    const referrers = Object.keys(docReferences).filter(k => {
+      const arr = docReferences[k];
+      return Array.isArray(arr) && arr.includes(docId);
+    });
+    if (referrers.length) {
+      referrers.sort();
+      registryDocument[i].referencedBy = referrers;
     }
+  }
 
-    getAllDocs();   
-    allRefs.sort();
-    referenceTree[i] = allRefs
-
+  /* load reference tree (bounded DFS up to depth 3 to prevent cycles) */
+  const referenceTree = {};
+  const MAX_DEPTH = 3;
+  for (const baseId of Object.keys(docReferences)) {
+    const all = new Set();
+    const stack = (Array.isArray(docReferences[baseId]) ? [...docReferences[baseId]] : []).map(id => ({ id, depth: 1 }));
+    const visited = new Set();
+    while (stack.length) {
+      const { id, depth } = stack.pop();
+      if (!id || visited.has(id)) continue;
+      visited.add(id);
+      all.add(id);
+      if (depth >= MAX_DEPTH) continue;
+      const children = docReferences[id];
+      if (Array.isArray(children)) {
+        for (const c of children) stack.push({ id: c, depth: depth + 1 });
+      }
+    }
+    referenceTree[baseId] = Array.from(all).sort();
   }
 
   for (let i in registryDocument) {
-
     let docId = registryDocument[i].docId
     if (Object.keys(referenceTree).includes(docId) === true) {
       registryDocument[i].referenceTree = referenceTree[docId]
     }
-
   }
 
   /* check if referenced by or reference tree exist (for rendering on page) */ 
 
   let docDependancy
-
   for (let i in registryDocument) {
-    
     let depCheck = true
     let depPresent
-  
     if (registryDocument[i].referencedBy && registryDocument[i].referenceTree) {
       docDependancy = true
     }
@@ -706,7 +554,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     else {
       docDependancy = false
     } 
-
     registryDocument[i].docDependancy = docDependancy
   }
 
@@ -715,7 +562,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   for (let i in registryDocument) {
     const d = registryDocument[i] || {};
     const status = (d.status && typeof d.status === 'object') ? d.status : {};
-
     let cS = "";
 
     if (status.active) {
@@ -737,13 +583,11 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     }
 
     if (status.statusNote) cS += "*";
-
     d.currentStatus = cS;
     registryDocument[i] = d;
   }
 
   const docStatuses = {}
-
   registryDocument.forEach(item => { docStatuses[item.docId] = item.currentStatus} );
 
   hb.registerHelper("getStatus", function(docId) {
@@ -759,7 +603,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   hb.registerHelper("getstatusButton", function(docId, btnSize) {
     
     var status = docStatuses[docId]
-
     if (status !== undefined) {
       if (status.includes("Active")) { 
         return '<svg xmlns="http://www.w3.org/2000/svg" width="' + btnSize + '" height="' + btnSize + '" fill="#0c9c16" class="bi bi-check-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>'; 
@@ -770,10 +613,7 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
       else {
         return "";
       }
-    } //else {
-      //console.error(`Cannot find the status for referenced document: ${docId}`);
-    //}
-
+    } 
     return docStatuses[docId];
   });
 
@@ -812,10 +652,8 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
 
   const docProjs = []
   for (let i in registryProject) {
-    
     let projs = registryProject[i]["docAffected"]
     for (let p in projs) {
-
       var docProj = {}
       docProj["docId"] = projs[p]
       docProj["workType"] = registryProject[i]["workType"]
@@ -823,16 +661,13 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
       docProj["newDoc"] = registryProject[i]["docId"]
       docProj["projApproved"] = registryProject[i]["projApproved"]
       docProjs.push(docProj)
-
     }
   }
 
   /* Load Current Work on Doc for filtering */
 
   for (let i in registryDocument) {
-
     const currentWork = []
-
     let works = registryDocument[i]["workInfo"]
     for (let w in works) {
 
@@ -847,7 +682,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
         }
       }
     }
-
     for (let p in registryProject) {
       let pD = registryProject[p]["docId"]
       let pW = registryProject[p]["workType"]
@@ -857,7 +691,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
         currentWork.push(pW + " - " + pS)
       }
     }
-
     for (let ps in docProjs) {
       let psD = docProjs[ps]["docId"]
       let psW = docProjs[ps]["workType"]
@@ -867,30 +700,25 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
         currentWork.push(psW + " - " + psS)
       }
     }
-
     if (currentWork.length !== 0) {
       registryDocument[i]["currentWork"] = currentWork
     }
-
   }
 
   /* lookup if Repo exists for any project */
 
   for (let i in registryProject) {
     var repo
-    
     let doc = registryProject[i]["docId"]
     if (typeof doc !== "undefined") {
       for (let d in registryDocument) {
         if (registryDocument[d]["docId"] === doc) {
           if (typeof registryDocument[d]["repo"] !== "undefined") {
-            r = registryDocument[d]["repo"]
-            registryProject[i].repo = r
+            registryProject[i].repo = registryDocument[d]["repo"]
           }
         }
       }
     }
-
     let docAff = registryProject[i]["docAffected"]
     for (let dA in docAff) {
       let doc = docAff[dA]
@@ -898,21 +726,18 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
         for (let d in registryDocument) {
           if (registryDocument[d]["docId"] === doc) {
             if (typeof registryDocument[d]["repo"] !== "undefined") {
-              r = registryDocument[d]["repo"]
-              registryProject[i].repo = r
+              registryProject[i].repo = registryDocument[d]["repo"]
             }
           }
         }
       }
     }  
-
   }
 
   /* external json lookup helpers */
 
   hb.registerHelper('docProjLookup', function(collection, id) {
       var collectionLength = collection.length;
-
       for (var i = 0; i < collectionLength; i++) {
           if (collection[i].docId === id) {
               return collection[i];
@@ -923,7 +748,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
 
   hb.registerHelper('groupIdLookup', function(collection, id) {
       var collectionLength = collection.length;
-
       for (var i = 0; i < collectionLength; i++) {
           if (collection[i].groupId === id) {
               return collection[i];
@@ -934,7 +758,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
 
   hb.registerHelper('projectIdLookup', function(collection, id) {
       var collectionLength = collection.length;
-
       for (var i = 0; i < collectionLength; i++) {
           if (collection[i].projectId === id) {
               return collection[i];
@@ -973,7 +796,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   /* determine if build on GH to remove "index.html" from internal link */
 
   let htmlLink = "index.html"
-
   if ('GH_PAGES_BUILD' in process.env) {
     htmlLink = ""
   }
@@ -985,7 +807,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     "dataDocuments": registryDocument,
     "dataGroups" : registryGroup,
     "dataProjects" : registryProject,
-    "inspector": __isInspector,
     "htmlLink": htmlLink,
     "docProjs": docProjs,
     "date" :  new Date(),
@@ -997,8 +818,17 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     "templateName": templateName,
     // meta
     "siteName": siteConfig.siteName,
+    "author": siteConfig.author,
+    "authorUrl": siteConfig.authorUrl,
+    "copyright": siteConfig.copyright,
+    "copyrightHolder": siteConfig.copyrightHolder,
+    "copyrightYear": siteConfig.copyrightYear,
+    "license": siteConfig.license,
+    "licenseUrl": siteConfig.licenseUrl,
+    "locale": siteConfig.locale,
     "siteDescription": siteConfig.siteDescription,
     "siteTitle": (listTitle ? `${listTitle} — ${siteConfig.siteName}` : siteConfig.siteName),
+    "canonicalBase": siteConfig.canonicalBase,
     "canonicalUrl": canonicalUrl,
     "ogTitle": ogTitle,
     "ogDescription": ogDescription,
@@ -1008,26 +838,36 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   });
   
   /* write HTML file */
-  
   await fs.writeFile(path.join(BUILD_PATH, PAGE_SITE_PATH), html, 'utf8');
-  
-  /* copy in static resources */
-  await copyRecursive(SITE_PATH, BUILD_PATH);
-  
+
   // Build card search index (search-index.json + facets.json) once per run
   // Only trigger from the main index page to avoid duplicate executions
-  if (templateName === 'index') {
-    try {
-      const { stdout } = await execFile('node', [path.join('src','main','scripts','build.search-index.js')]);
-      if (stdout && stdout.trim()) console.log(stdout.trim());
-    } catch (e) {
-      console.warn('[cards] Index build failed:', e && e.message ? e.message : e);
+    if (templateName === 'documents') {
+      // Persist the in-memory documents state for downstream consumers (docs/search-index)
+      const EFFECTIVE_DOCS_PATH = path.join('build','docs','_data','documents.json');
+      try {
+        await fs.mkdir(path.dirname(EFFECTIVE_DOCS_PATH), { recursive: true });
+        // Remove all deep keys that contain "$meta" before writing effective docs snapshot
+        const cleanEffective = JSON.parse(
+          JSON.stringify(
+            registryDocument,
+            (key, val) => (typeof key === 'string' && key.includes('$meta') ? undefined : val)
+          )
+        );
+        await fs.writeFile(EFFECTIVE_DOCS_PATH, JSON.stringify(cleanEffective, null, 2), 'utf8');
+        console.log(`[build] Wrote ${EFFECTIVE_DOCS_PATH}`);
+      } catch (e) {
+        console.warn('[build] Could not write documents snapshot:', e && e.message ? e.message : e);
+      }
+      try {
+        const { stdout } = await execFile('node', [path.join('src','main','scripts','build.search-index.js'), EFFECTIVE_DOCS_PATH]);
+        if (stdout && stdout.trim()) console.log(stdout.trim());
+      } catch (e) {
+        console.warn('[cards] Index build failed:', e && e.message ? e.message : e);
+      }
     }
-  }
-  
   
   /* set the CHROMEPATH environment variable to provide your own Chrome executable */
-  
   var pptr_options = {};
   
   if (process.env.CHROMEPATH) {
@@ -1050,7 +890,14 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
 
   (async () => {
     const data = await parseJSONFile(inputFileName);
-    const csv = await json2csvAsync(data);
+    // Remove all fields where the key contains "$meta" before exporting to CSV
+    const stripped = JSON.parse(
+      JSON.stringify(
+        data,
+        (key, val) => (typeof key === 'string' && key.includes('$meta') ? undefined : val)
+      )
+    );
+    const csv = await json2csvAsync(stripped);
     await writeCSV(outputFileName, csv);
   })();
 
@@ -1067,23 +914,25 @@ void (async () => {
   for (const cfg of registries) {
     await buildRegistry(cfg);
   }
-  
+  // Copy static site assets once per build
+  await copyRecursive(SITE_PATH, BUILD_PATH);
+  console.log('[build] Copied static assets to build/.');
+
   const tplCards = await fs.readFile(path.join('src','main','templates','cards.hbs'), 'utf8');
   const renderCards = hb.compile(tplCards);
 
-  // Create subdirectory for cards page
-  await fs.mkdir(path.join('build','cards'), { recursive: true });
+  // Create subdirectory for docs page
+  await fs.mkdir(path.join('build','docs'), { recursive: true });
 
-  const cardsCanonical = new URL('/cards/', siteConfig.canonicalBase).href;
-  const cardsOgDescription = siteConfig.siteDescription;
-  const cardsOgTitle = `Cards — ${siteConfig.siteName}`;
-  const cardsOgImage = new URL(siteConfig.ogImage, siteConfig.canonicalBase).href;
-  const cardsOgImageAlt = siteConfig.ogImageAlt;
-
-  const cardsAssetPrefix = '../';
-  await fs.writeFile(path.join('build','cards','index.html'), renderCards({
+  const docsCanonical = new URL('/docs/', siteConfig.canonicalBase).href;
+  const docsOgDescription = siteConfig.siteDescription;
+  const docsOgTitle = `Docs — ${siteConfig.siteName}`;
+  const docsOgImage = new URL(siteConfig.ogImage, siteConfig.canonicalBase).href;
+  const docsOgImageAlt = siteConfig.ogImageAlt;
+  const docsAssetPrefix = '../';
+  await fs.writeFile(path.join('build','docs','index.html'), renderCards({
     templateName: 'cards',
-    listTitle: 'Cards',
+    listTitle: 'Docs',
     htmlLink: '', // same relative handling as other pages
     listType: 'documents',
     csv_path: 'documents.csv',
@@ -1091,22 +940,72 @@ void (async () => {
     date: new Date().toISOString(),
     // meta
     siteName: siteConfig.siteName,
+    author: siteConfig.author,
+    authorUrl: siteConfig.authorUrl,
+    copyright: siteConfig.copyright,
+    copyrightHolder: siteConfig.copyrightHolder,
+    copyrightYear: siteConfig.copyrightYear,
+    license: siteConfig.license,
+    licenseUrl: siteConfig.licenseUrl,
+    locale: siteConfig.locale,
     siteDescription: siteConfig.siteDescription,
-    siteTitle: `Cards — ${siteConfig.siteName}`,
-    canonicalUrl: cardsCanonical,
-    ogTitle: cardsOgTitle,
-    ogDescription: cardsOgDescription,
-    ogImage: cardsOgImage,
-    ogImageAlt: cardsOgImageAlt,
-    assetPrefix: cardsAssetPrefix,
+    siteTitle: `Docs — ${siteConfig.siteName}`,
+    canonicalBase: siteConfig.canonicalBase,
+    canonicalUrl: docsCanonical,
+    ogTitle: docsOgTitle,
+    ogDescription: docsOgDescription,
+    ogImage: docsOgImage,
+    ogImageAlt: docsOgImageAlt,
+    assetPrefix: docsAssetPrefix,
+    robotsMeta: 'noindex,nofollow'
   }), 'utf8');
 
-  console.log('[build] Wrote build/cards/index.html');
+  console.log('[build] Wrote build/docs/index.html');
+
+  // --- Emit Home page from index.hbs at site root
+  const headerTplHome = await fs.readFile(path.join('src','main','templates','partials','header.hbs'), 'utf8');
+  const footerTplHome = await fs.readFile(path.join('src','main','templates','partials','footer.hbs'), 'utf8');
+  hb.registerPartial('header', headerTplHome);
+  hb.registerPartial('footer', footerTplHome);
+
+  const tplIndex = hb.compile(await fs.readFile(path.join('src','main','templates','index.hbs'), 'utf8'));
+  const homeCanonical = new URL('/', siteConfig.canonicalBase).href;
+  const homeHtml = tplIndex({
+    templateName: 'index',
+    listTitle: 'Home',
+    site_version: (await execFile('git', ['rev-parse','HEAD'])).stdout.trim(),
+    date: new Date().toISOString(),
+    // meta
+    siteName: siteConfig.siteName,
+    author: siteConfig.author,
+    authorUrl: siteConfig.authorUrl,
+    copyright: siteConfig.copyright,
+    copyrightHolder: siteConfig.copyrightHolder,
+    copyrightYear: siteConfig.copyrightYear,
+    license: siteConfig.license,
+    licenseUrl: siteConfig.licenseUrl,
+    locale: siteConfig.locale,
+    siteDescription: siteConfig.siteDescription,
+    siteTitle: `${siteConfig.siteName}`,
+    canonicalBase: siteConfig.canonicalBase,
+    canonicalUrl: homeCanonical,
+    ogTitle: `${siteConfig.siteName}`,
+    ogDescription: siteConfig.siteDescription,
+    ogImage: new URL(siteConfig.ogImage, siteConfig.canonicalBase).href,
+    ogImageAlt: siteConfig.ogImageAlt,
+    assetPrefix: '',
+  });
+  await fs.writeFile(path.join(BUILD_PATH, 'index.html'), homeHtml, 'utf8');
+  console.log('[build] Wrote build/index.html');
 
   // --- Emit robots.txt and sitemap.xml
   const robotsTxt = [
+    '# MSRBot.io robots.txt',
+    '# Managed by PrZ3 Unit — Penguin Parsing Protocol v3-Gen',
     'User-agent: *',
     'Allow: /',
+    'Disallow: /docs/',
+    'Disallow: /tmp/',
     '',
     `Sitemap: ${new URL('/sitemap.xml', siteConfig.canonicalBase).href}`
   ].join('\n');
@@ -1120,7 +1019,7 @@ void (async () => {
     '/dependancies/',
     '/groups/',
     '/projects/',
-    '/cards/'
+    '/docs/'
   ];
   const urlset = urls.map(u => {
     const loc = new URL(u, siteConfig.canonicalBase).href;
@@ -1160,9 +1059,7 @@ void (async () => {
   // Prepare penguin 404 messages from config
   const penguinMessagesJson = JSON.stringify(siteConfig.penguin404Messages);
   
-  const tpl404 = hb.compile(`<!DOCTYPE html>
-  <html lang="en">
-    {{> header}}
+  const tpl404 = hb.compile(`{{> header}}
     <main class="container py-5">
       <div class="row justify-content-md-center">
         <div class="col-md-8 text-center">
@@ -1170,7 +1067,7 @@ void (async () => {
             <h3 class="h3 mb-3" id="penguin404" aria-live="polite"></h1>
             <p class="mb-4">
               The document you requested isn’t here. 
-              <br>Try the <a href="{{assetPrefix}}{{htmlLink}}">main documents index</a>.
+              <br>Try the <a href="{{assetPrefix}}documents/{{htmlLink}}">main documents index</a>.
             </p>
             <p>
               <img src="{{assetPrefix}}static/MSRBot-PrZ3-blue.svg" alt="MSR" width="250" height="250" class="m-2">
@@ -1212,14 +1109,23 @@ void (async () => {
     {{> footer}}
   </html>`);
   const fourOhFourHtml = tpl404({
-    templateName: 'index',                 // root paths for assets
+    templateName: 'documents',                 // root paths for assets
     listTitle: 'Not Found',
     site_version: (await execFile('git', ['rev-parse','HEAD'])).stdout.trim(),
     date: new Date().toISOString(),
     // meta
     siteName: siteConfig.siteName,
+    author: siteConfig.author,
+    authorUrl: siteConfig.authorUrl,
+    copyright: siteConfig.copyright,
+    copyrightHolder: siteConfig.copyrightHolder,
+    copyrightYear: siteConfig.copyrightYear,
+    license: siteConfig.license,
+    licenseUrl: siteConfig.licenseUrl,
+    locale: siteConfig.locale,
     siteDescription: siteConfig.siteDescription,
     siteTitle: `Not Found — ${siteConfig.siteName}`,
+    canonicalBase: siteConfig.canonicalBase,
     canonicalUrl: new URL('/404.html', siteConfig.canonicalBase).href,
     ogTitle: `Not Found — ${siteConfig.siteName}`,
     ogDescription: siteConfig.siteDescription,

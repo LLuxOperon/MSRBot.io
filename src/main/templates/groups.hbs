@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
   {{>header}}
     <!-- Main content starts - do not edit above this line -->
     <table id="sorttableGroups" class="table table-small table-hover">
@@ -63,7 +61,7 @@
           </td>
           <td>
             {{#ifeq groupType "TC"}}
-            <a href="../{{../htmlLink}}?search.search={{spaceReplace groupOrg}}{{#if parentgroupId}}{{#with (groupIdLookup ../dataGroups parentgroupId)}}%20{{spaceReplace groupName}}{{/with}}{{/if}}%20{{spaceReplace groupName}}{{#if groupDesc}}%20{{spaceReplace groupDesc}}{{/if}}">Published</a>
+            <a href="../documents/{{../htmlLink}}?search.search={{spaceReplace groupOrg}}{{#if parentgroupId}}{{#with (groupIdLookup ../dataGroups parentgroupId)}}%20{{spaceReplace groupName}}{{/with}}{{/if}}%20{{spaceReplace groupName}}{{#if groupDesc}}%20{{spaceReplace groupDesc}}{{/if}}">Published</a>
             {{/ifeq}}
           </td>
           <td>
@@ -93,5 +91,3 @@
     </table>
     <!-- Main content ends - do not edit below this line -->
 {{>footer}}
-
-</html>

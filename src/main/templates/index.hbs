@@ -1,347 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
-  {{>header}}
-    <!-- Main content starts - do not edit above this line -->
-    {{#if inspector}}
-<script>
-  (function(){
-    try {
-      var p = new URLSearchParams(window.location.search);
-      var ok = (p.get('dev') === '1');
-      if (ok && document.head) {
-        document.head.insertAdjacentHTML('beforeend','<meta name="robots" content="noindex, nofollow">');
-      }
-      window.addEventListener('DOMContentLoaded', function(){
-        var mount = document.getElementById('inspectorMount');
-        if (!mount) return;
-        if (!ok) {
-          // Gate message only; DO NOT render the template
-          var msg = document.createElement('div');
-          msg.style.padding = '2rem';
-          msg.innerHTML = '<h3>Inspector disabled</h3><p>This diagnostic view is dev-only. Append <code>?dev=1</code> to the URL to view it during a dev build.</p>';
-          mount.appendChild(msg);
-          return;
-        }
-        // OK: stamp out the template now
-        var tpl = document.getElementById('inspectorTpl');
-        if (tpl && 'content' in tpl) {
-          mount.appendChild(tpl.content.cloneNode(true));
-        }
-      });
-    } catch(e) { /* swallow */ }
-  })();
-</script>
-<div id="inspectorMount"></div>
-<template id="inspectorTpl">
-    <table id="inspectorTable" class="display compact" style="width:100%">
-      <thead>
-        <tr>
-          <th scope="col" class="col-1">docId</th>
-          <th scope="col" class="col-3">Label/Title</th>
-          <th scope="col" class="col-1">Publisher</th>
-          <th>Group</th>
-          <th>Doc Type</th>
-          <th>Keywords</th>
-          <th>Year</th>
-          <th>ReleaseTag</th>
-          <th>Status</th>
-          <th>Current Work</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#dataDocuments}}
-        <tr>
-          <td>{{docId}}</td>
-          <td>{{getLabel docId}}: {{docTitle}}</td>
-          <td>{{publisher}}</td>
-          <td>{{#if group}}{{#with (groupIdLookup ../dataGroups group)}}{{groupOrg}} {{groupName}} {{groupDesc}}{{/with}}{{/if}}</td>
-          <td>{{docType}}</td>
-          <td>{{#keywords}}
-            {{this}}{{#unless @last}},{{/unless}}
-            {{/keywords}}</td>
-          <td>{{__year}}</td>
-          <td>{{releaseTag}}</td>
-          <td>{{currentStatus}}</td>
-          <td>{{currentWork}}</td>
-        </tr>
-        {{/dataDocuments}}
-      </tbody>
-    </table>
-</template>
-    {{else}}
-    <table id="sorttableDocs" class="table table-small table-hover">
-      <thead class="thead-light">
-        <tr>
-          <th scope="col" class="d-none">docId</th>
-          <th scope="col">Label</th>
-          <th scope="col">Publisher</th>
-          <th scope="col">Group</th>
-          <th scope="col" class="cleanFilter d-none"></th>
-          <th scope="col" class="text-nowrap">Doc Type</th>
-          <th scope="col">Keywords</th>
-          <th scope="col">Status</th>
-          <th scope="col" class="col-3">Title/Details</th>
-          <th scope="col" class="d-none"></th>
-          <th scope="col" class="text-nowrap">Normative Reference(s)</th>
-          <th scope="col" class="text-nowrap">Bibliographic Reference(s)</th>
-        </tr>
-      </thead>
-      <tbody id="searchTable">
-        {{#data}}
-        <tr id="{{../idType}}-{{docId}}">
-          <td class="docid d-none">
-            {{docId}}
-          </td>
-          <td class="doclabel">
-            <a class="anchor" id="{{docId}}" href="#{{docId}}"></a><code>{{docLabel}}</code>
-              {{#if latestDoc}}<br><span class="small">Latest Version of {{docBase}}</span>{{/if}}
-              {{#if newerDoc}}<br><span class="small">Newer version available</span>{{/if}}
-          </td>
-          <td class="publisher">
-            {{publisher}}
-          </td>
-          <td class="group">
-            {{#if group}}{{#with (groupIdLookup ../dataGroups group)}}{{#if groupId}}<a href="groups/{{../../htmlLink}}?search.search={{groupId}}">{{/if}}{{groupOrg}} {{groupName}} {{groupDesc}}{{#if groupId}}</a>{{/if}}{{/with}}{{/if}}
-          </td>
-          <td class="group d-none">
-            {{#if group}}{{#with (groupIdLookup ../dataGroups group)}}{{groupOrg}} {{groupName}} {{groupDesc}}{{/with}}{{/if}}
-          </td>
-          <td>
-            {{docType}}
-          </td>
-          <td>
-            {{#keywords}}
-            <span class="small text-nowrap"><code>{{this}}</code></span>{{#unless @last}}<br>{{/unless}}
-            {{/keywords}}
-          </td>
-          <td>
-            {{#status/unknown}}
-              <span class="label badge text-bg-danger">[ UNKNOWN ]</span><br> 
-            {{/status/unknown}}
-            {{#status/withdrawn}}
-              <span class="label badge text-bg-danger">[ WITHDRAWN ]</span><br> 
-            {{/status/withdrawn}}
-            {{#status/superseded}}
-              <span class="label badge text-bg-warning">[ SUPERSEDED ]</span><br>
-            {{/status/superseded}}
-            {{#if status/supersededBy}}
-              <div class="border-left p-1">
-                <span class="font-weight-bold small">Superseded by:</span>
-                <ul class="list-group list-group-flush">
-              {{#status/supersededBy}}
-                  <li class="list-group-item">
-                    <span class="small"><a class="{{../../idType}}-link clear-filter" href="#{{this}}">{{getLabel this}}</a> [{{getStatus this}}]</span> {{{getstatusButton this "10"}}} {{#with (docProjLookup ../../docProjs this)}}{{#ifnoteq projectStatus "Complete"}}<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#F6BE00" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg>{{/ifnoteq}}{{/with}}
-                  </li> 
-              {{/status/supersededBy}}
-                </ul>
-    
-            {{/if}}
-            {{#status/draft}}
-              <span class="label badge text-bg-warning">[ DRAFT ]</span><br> 
-            {{/status/draft}}
-            {{#status/publicCd}}
-              <span class="label badge text-bg-success">[ PUBLIC CD ]</span><br>  
-            {{/status/publicCd}}
-            {{#status/active}}
-              <span class="label badge text-bg-success">[ ACTIVE ]</span><br>  
-            {{/status/active}}
-            {{#status/versionless}}
-              <span class="label badge text-bg-success">[ VERSIONLESS ]</span><br>
-            {{/status/versionless}}
-            {{#status/amended}}
-              <span class="label badge text-bg-secondary">[ AMENDED ]</span><br>
-            {{/status/amended}}
-            {{#if status/amendedBy}}
-              <div class="border-left p-1">
-                <span class="font-weight-bold small">Amended by:</span>
-                <ul class="list-group list-group-flush">
-              {{#status/amendedBy}}
-                  <li class="list-group-item">
-                    <span class="small"><a class="{{../../idType}}-link clear-filter" href="#{{this}}">{{getLabel this}}</a> [{{getStatus this}}]</span> {{{getstatusButton this "10"}}} {{#with (docProjLookup ../../docProjs this)}}{{#ifnoteq projectStatus "Complete"}}<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#F6BE00" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg>{{/ifnoteq}}{{/with}}
-                  </li>
-              {{/status/amendedBy}}
-              </ul>
-              </div>
-            {{/if}}
-            {{#status/reaffirmed}}
-              <span class="label badge text-bg-info">[ REAFFIRMED ]</span><br>
-            {{/status/reaffirmed}}
-            {{#status/stabilized}}
-              <span class="label badge text-bg-primary">[ STABILIZED ]</span>  
-            {{/status/stabilized}}   
-          </td>
-          <td>
-            <div class="container-fluid">
-              <div class="row">
-                <span class="title">
-                {{#if href}}
-                  <a class="{{../idType}}-link" target="_blank" href="{{href}}">
-                {{/if}}
-                {{docTitle}}
-                {{#if href}}
-                  </a>
-                {{/if}}
-                </span>
-              </div>
-              </div>
-              <div class="row p-2">
-                <div class="col">
-                  <div class="pb-2">
-                    <span class="font-weight-bold small">Current Status:</span> {{currentStatus}} {{{getstatusButton docId "12"}}}
-                    {{#if status/statusNote}}<br><span class="small"><em> *({{status/statusNote}})</em></span>{{/if}}
-                    {{#if status/withdrawnNotice}}<br><span class="small"><em>[Withdrawl notice: <a href="{{status/withdrawnNotice}}">{{status/withdrawnNotice}}</a>]</em></span>{{/if}}
-                    
-                    {{#with (docProjLookup ../docProjs docId)}}
-                    {{#ifnoteq projectStatus "Complete"}}
-                    <br>
-                    <span class="label badge text-bg-warning text-uppercase">{{workType}} {{projectStatus}}</span>
+{{>header}}
+  <!-- Main content starts - do not edit above this line -->
+  <main class="container py-5">
+    <div class="row justify-content-md-center">
+      <div class="col-md-7">
+        <div class="text-center mb-4">
+          <img src="{{assetPrefix}}static/MSRBot-PrZ3-blue.svg" alt="MSRBot.io" width="96" height="96" class="mb-3">
+          <h1 class="h3 mb-2">MSRBot.io — Media Standards Registry</h1>
+          <p class="lead">A live, automated Media Standards Registry (MSR) mapping documents, references, and history across SMPTE, ISO, ITU, AES, and other publishers.</p>
+        </div>
 
-                    {{#if newDoc}}
-                    <br><span class="small">Under Development: <a href="projects/{{../../htmlLink}}?search.search={{newDoc}}">{{getLabel newDoc}}</a><!-- [{{getStatus newDoc}}]--></span>
-                    {{/if}}
-                    {{/ifnoteq}}
-                    {{/with}}
-                    
-                  {{#if details}}
-                    <div>
-                      <span class="font-weight-bold small">Details:</span> <em>{{details}}</em>
-                    </div>
-                  {{/if}}
-                  </div>
-                  <div>
-                    {{#if doi}}
-                    <span class="font-weight-bold small">DOI:</span> {{doi}}
-                    <br>
-                    {{/if}}
-                    {{#if authors}}
-                    <span class="font-weight-bold small">Author(s):</span> {{#authors}}{{this}}{{#unless @last}}, {{/unless}}{{/authors}}
-                    <br>
-                    {{/if}}
-                    {{#if status/withdrawnDate}}
-                    <span class="font-weight-bold small">Withdrawn Date:</span> {{status/withdrawnDate}}
-                    <br>
-                    {{/if}}
-                    {{#if status/stabilizedDate}}
-                    <span class="font-weight-bold small">Stabilized Date:</span> {{status/stabilizedDate}}
-                    <br>
-                    {{/if}}
-                    {{#if status/reaffirmDate}}
-                    <span class="font-weight-bold small">Reaffirmed Date:</span> {{status/reaffirmDate}}
-                    <br>
-                    {{/if}}
-                    {{#if status/supersededDate}}
-                    <span class="font-weight-bold small">Superseded Date:</span> {{status/supersededDate}}
-                    <br>
-                    {{/if}}
-                    {{#if status/amendedDate}}
-                    <span class="font-weight-bold small">Amended Date:</span> {{status/amendedDate}}
-                    <br>
-                    {{/if}}
-                    {{#if publicationDate}}
-                    <span class="font-weight-bold small">Publication Date:</span> {{publicationDate}}
-                    <br>
-                    {{/if}}
-                    {{#if repo}}
-                    <span class="font-weight-bold small">Repo:</span> <a class="{{../idType}}-link" target="_blank" href="{{repo}}">{{repo}}</a>
-                    <br>
-                    {{/if}}
-                  </div>
-                  {{#if docDependancy}}
-                  <div class="p-2">
-                    <span class="small"><a href="dependancies/index.html#{{docId}}">View Document Dependancies</a></span>
-                  </div>
-                  {{/if}}
-                  
-                  {{#if xmlNamespace}}
-                  <div class="p-2">
-                    <span class="font-weight-bold small">XML Namespace(s) Defined:</span>
-                    <ul class="list-group list-group-flush">
-                    {{#xmlNamespace}}
-                      <li class="list-group-item">
-                        <span class="small"><a target="_blank" href="{{this.uri}}">{{this.uri}}</a>{{#if this.supplemental}} [Supplemental]{{/if}}{{#if this.deprecated}} [Deprecated] <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#F6BE00" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg>{{/if}}</span>
-                      </li>
-                    {{/xmlNamespace}}
-                    </ul>
-                  </div>
-                  {{/if}}
-                  {{#if relatedDocs}}
-                  <div class="border-left p-2">
-                      <span class="font-weight-bold small">Related Document(s):</span>
-                      <ul class="list-group list-group-flush">
-                      {{#relatedDocs}}
-                        <li class="list-group-item">
-                          <span class="small"><a class="{{../idType}}-link clear-filter" href="#{{this}}">{{getLabel this}}</a> [{{getStatus this}}]</span> {{{getstatusButton this "10"}}} {{#with (docProjLookup ../../docProjs this)}}{{#ifnoteq projectStatus "Complete"}}<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#F6BE00" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg>{{/ifnoteq}}{{/with}}
-                        </li>
-                      {{/relatedDocs}}
-                      </ul>
-                  </div>
-                  {{/if}}
-                </div>
-              </div>
-          </td>
-          <td class="d-none">
-            {{#currentWork}}
-            <span class="text-nowrap">{{this}}</span>{{#unless @last}}<br>{{/unless}}
-            {{/currentWork}}
-          </td>
-          <td class="p-1">
-            {{#if referencesResolved/normative}}
-            <ul class="list-group list-group-flush">
-            {{#referencesResolved/normative}}
-              <li class="list-group-item">
-                <span class="small">
-                  <a class="{{../../idType}}-link clear-filter" href="#{{id}}" title="{{getLabel id}}">
-                    {{#if undated}}{{getUndatedLabel id}}{{else}}{{getLabel id}}{{/if}}
-                  </a>
-                  [{{getStatus id}}]
-                </span>
-                {{{getstatusButton id "10"}}}
-                {{#with (docProjLookup ../../docProjs id)}}{{#ifnoteq projectStatus "Complete"}}<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#F6BE00" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg>{{/ifnoteq}}{{/with}}
-              </li>
-            {{/referencesResolved/normative}}
-            </ul>
-            {{else if references/normative}}
-            <ul class="list-group list-group-flush">
-            {{#references/normative}}
-              <li class="list-group-item">
-                <span class="small"><a class="{{../../idType}}-link clear-filter" href="#{{this}}">{{getUndatedLabel this}}</a> [{{getStatus this}}]</span> {{{getstatusButton this "10"}}} {{#with (docProjLookup ../../docProjs this)}}{{#ifnoteq projectStatus "Complete"}}<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#F6BE00" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg>{{/ifnoteq}}{{/with}}
-              </li>
-            {{/references/normative}}
-            </ul>
-            {{/if}}
-          </td>
-          <td class="p-1">
-            {{#if referencesResolved/bibliographic}}
-            <ul class="list-group list-group-flush">
-            {{#referencesResolved/bibliographic}}
-              <li class="list-group-item">
-                <span class="small">
-                  <a class="{{../../idType}}-link clear-filter" href="#{{id}}" title="{{getLabel id}}">
-                    {{#if undated}}{{getUndatedLabel id}}{{else}}{{getLabel id}}{{/if}}
-                  </a>
-                  [{{getStatus id}}]
-                </span>
-                {{{getstatusButton id "10"}}}
-                {{#with (docProjLookup ../../docProjs id)}}{{#ifnoteq projectStatus "Complete"}}<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#F6BE00" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg>{{/ifnoteq}}{{/with}}
-              </li>
-            {{/referencesResolved/bibliographic}}
-            </ul>
-            {{else if references/bibliographic}}
-            <ul class="list-group list-group-flush">
-            {{#references/bibliographic}}
-              <li class="list-group-item">
-                <span class="small"><a class="{{../../idType}}-link clear-filter" href="#{{this}}">{{getUndatedLabel this}}</a> [{{getStatus this}}]</span> {{{getstatusButton this "10"}}} {{#with (docProjLookup ../../docProjs this)}}{{#ifnoteq projectStatus "Complete"}}<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#F6BE00" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg>{{/ifnoteq}}{{/with}}
-              </li>
-            {{/references/bibliographic}}
-            </ul>
-            {{/if}}
-          </td>
-        </tr>
-        {{/data}}
-      </tbody>
-    </table>
-    {{/if}}
-    <!-- Main content ends - do not edit below this line -->
+        <!-- Live stats -->
+        <section class="text-center mb-5">
+          <div class="d-flex flex-wrap justify-content-center gap-2">
+            <span class="badge bg-primary text-decoration-none p-2">Documents: <span id="stat-documents-total">—</span></span>
+            <span class="badge bg-success p-2">Active: <span id="stat-documents-active">—</span></span>
+            <span class="badge bg-info text-dark p-2">Doc Types: <span id="stat-documents-doctypes">—</span></span>
+            <span class="badge bg-warning text-dark p-2">References: <span id="stat-documents-references">—</span></span>
+            <span class="badge bg-secondary p-2">Publishers: <span id="stat-documents-publishers">—</span></span>
+          </div>
+        </section>
+
+        <!-- Main navigation links -->
+        <section class="d-flex justify-content-center mb-5">
+          <div class="list-group text-center col-md-5">
+            <a class="px-4 list-group-item list-group-item-action" href="{{assetPrefix}}documents/{{htmlLink}}"><i class="bi bi-file-richtext-fill" style="font-size: 1.5rem;"></i> Browse Documents</a>
+            <a class="px-4 list-group-item list-group-item-action" href="{{assetPrefix}}dependancies/{{htmlLink}}"><i class="bi bi-diagram-3-fill" style="font-size: 1.5rem;"></i> Reference Trees</a>
+            <a class="px-4 list-group-item list-group-item-action" href="{{assetPrefix}}groups/{{htmlLink}}"><i class="bi bi-people-fill" style="font-size: 1.5rem;"></i> Browse Groups</a>
+            <a class="px-4 list-group-item list-group-item-action" href="{{assetPrefix}}projects/{{htmlLink}}"><i class="bi bi-kanban-fill" style="font-size: 1.5rem;"></i> Browse Projects</a>
+          </div>
+        </section>
+
+        <!-- About section -->
+        <section class="mb-4">
+          <h2 class="h5">About MSRBot.io</h2>
+          <p>MSRBot.io is an open, automated registry that extracts and validates metadata from global media technology standards and publications. It connects documents across publishers such as SMPTE, ISO, ITU, AES, and others—preserving a living history of how standards evolve and reference one another.</p>
+          <p>Originally built to map the dependencies of SMPTE standards, it now aggregates and tracks document lineages, references, amendments, and withdrawals across multiple organizations. The goal: to make the standards ecosystem transparent, searchable, and interconnected.</p>
+        </section>
+
+        <!-- Quick details -->
+        <section class="text-muted small">
+          <ul class="list-unstyled mb-0">
+            <li><strong>Historical range:</strong> 1896 → present</li>
+            <li><strong>Automation uptime:</strong> 100% since August 2025 (SMPTE)</li>
+            <li><strong>Publishers covered:</strong> SMPTE, NIST, ISO, ITU, AES, and more</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Fetch live stats from the API and populate badges
+    fetch('{{assetPrefix}}api/stats.json')
+      .then(r => r.json())
+      .then(data => {
+        if (data && data.documents) {
+          document.getElementById('stat-documents-total').textContent = data.documents.total.toLocaleString();
+          document.getElementById('stat-documents-active').textContent = data.documents.active.toLocaleString();
+          document.getElementById('stat-documents-doctypes').textContent = data.documents.docTypes.toLocaleString();
+          document.getElementById('stat-documents-references').textContent = data.documents.references.toLocaleString();
+          document.getElementById('stat-documents-publishers').textContent = data.documents.publishers.toLocaleString();
+        }
+      })
+      .catch(() => console.warn('Could not load live stats.'));
+  </script>
+  <!-- Main content ends - do not edit below this line -->
 {{>footer}}
-
-</html>
