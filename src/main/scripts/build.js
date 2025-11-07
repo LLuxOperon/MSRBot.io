@@ -1006,6 +1006,7 @@ void (async () => {
     'Allow: /',
     'Disallow: /docs/',
     'Disallow: /tmp/',
+    'Disallow: /pr/',
     '',
     `Sitemap: ${new URL('/sitemap.xml', siteConfig.canonicalBase).href}`
   ].join('\n');
