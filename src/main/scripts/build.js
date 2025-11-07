@@ -86,7 +86,6 @@ async function copyRecursive(src, dest) {
 
 // Warn once per process for empty MSI
 let __msiWarnedEmpty = false;
-const argv = require('yargs').argv;
 const { readFile, writeFile } = require('fs').promises;
 const { json2csvAsync } = require('json-2-csv');
 
@@ -247,12 +246,13 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   // --- Load MasterSuiteIndex (MSI) once and build a lineage → latest lookup
   const MSI_PATH = path.join(REGISTRIES_REPO_PATH, 'reports/masterSuiteIndex.json');
   let __msiLatestByLineage = null;
+  let __msiParsed = null; // cache to avoid re-reading the file
   try {
     const msiRaw = await fs.readFile(MSI_PATH, 'utf8');
-    const msi = JSON.parse(msiRaw);
-    if (msi && Array.isArray(msi.lineages)) {
+    __msiParsed = JSON.parse(msiRaw);
+    if (__msiParsed && Array.isArray(__msiParsed.lineages)) {
       __msiLatestByLineage = new Map(
-        msi.lineages
+        __msiParsed.lineages
           .filter(li => li && typeof li.key === 'string')
           .map(li => [li.key, { latestAnyId: li.latestAnyId || null, latestBaseId: li.latestBaseId || null }])
       );
@@ -272,8 +272,7 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     const safeBase = (id) => (typeof id === 'string') ? id.replace(TAIL_RE, '') : id;
 
     try {
-      const msiRaw = await fs.readFile(MSI_PATH, 'utf8');
-      const msi = JSON.parse(msiRaw);
+      const msi = __msiParsed;
       if (msi && Array.isArray(msi.lineages)) {
         for (const li of msi.lineages) {
           if (!li || !li.key || !Array.isArray(li.docs)) continue;
@@ -495,75 +494,38 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     }
   }
 
-  /* load referenced by docs */
-
+  /* load referenced by docs (one-pass, no bogus recursion) */
   for (let i in registryDocument) {
-    let docId = registryDocument[i].docId
-    function findReferenceBy(obj = docReferences, doc = docId) {
-      var referencedBy = []
-      Object.keys(obj).forEach((key) => {
-        if (
-          typeof obj[key] === 'object' &&
-          obj[key] !== null &&
-          obj[key].map((k) => k).includes(doc)
-        ) {
-          findReferenceBy(obj[key])
-          referencedBy.push(key)
-        }
-      })
-      if (!referencedBy.length) {
-        return
-      }
-      registryDocument[i].referencedBy = referencedBy;
-      referencedBy.sort();
-      return referencedBy; 
-    };
-    findReferenceBy();
+    const docId = registryDocument[i].docId;
+    const referrers = Object.keys(docReferences).filter(k => {
+      const arr = docReferences[k];
+      return Array.isArray(arr) && arr.includes(docId);
+    });
+    if (referrers.length) {
+      referrers.sort();
+      registryDocument[i].referencedBy = referrers;
+    }
   }
 
-  /* load reference tree */
-
-  const referenceTree = []
-  for (let i in docReferences) {
-    let refs = docReferences[i]
-    let allRefs = []
-
-    function getAllDocs() {
-      for (let docRefs in refs) {
-        let docId = refs[docRefs]
-        if (allRefs.includes(docId) !== true) {
-          allRefs.push(docId)
-        } 
-        let nestedDocs = []
-        let nestLevel = 1
-
-        function docLookup() {
-          if (Object.keys(docReferences).includes(docId) === true)  {
-            let docs = docReferences[docId]
-            let arrayLength = docs.length
-            for (var d = 0; d < arrayLength; d++) {
-              nestedDocs.push(docs[d])
-              if (allRefs.includes(docs[d]) !== true) {
-                allRefs.push(docs[d])              
-              } 
-            }
-          } 
-          if (nestedDocs.length) {
-            nestLevel++
-            while (nestLevel < 4) {
-              for (let nD in nestedDocs) {
-                docId = nestedDocs[nD]
-                docLookup();
-              }
-            }
-          }
-        }
-        docLookup();
+  /* load reference tree (bounded DFS up to depth 3 to prevent cycles) */
+  const referenceTree = {};
+  const MAX_DEPTH = 3;
+  for (const baseId of Object.keys(docReferences)) {
+    const all = new Set();
+    const stack = (Array.isArray(docReferences[baseId]) ? [...docReferences[baseId]] : []).map(id => ({ id, depth: 1 }));
+    const visited = new Set();
+    while (stack.length) {
+      const { id, depth } = stack.pop();
+      if (!id || visited.has(id)) continue;
+      visited.add(id);
+      all.add(id);
+      if (depth >= MAX_DEPTH) continue;
+      const children = docReferences[id];
+      if (Array.isArray(children)) {
+        for (const c of children) stack.push({ id: c, depth: depth + 1 });
       }
     }
-    getAllDocs();   
-    allRefs.sort();
-    referenceTree[i] = allRefs
+    referenceTree[baseId] = Array.from(all).sort();
   }
 
   for (let i in registryDocument) {
@@ -751,8 +713,7 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
       for (let d in registryDocument) {
         if (registryDocument[d]["docId"] === doc) {
           if (typeof registryDocument[d]["repo"] !== "undefined") {
-            r = registryDocument[d]["repo"]
-            registryProject[i].repo = r
+            registryProject[i].repo = registryDocument[d]["repo"]
           }
         }
       }
@@ -764,8 +725,7 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
         for (let d in registryDocument) {
           if (registryDocument[d]["docId"] === doc) {
             if (typeof registryDocument[d]["repo"] !== "undefined") {
-              r = registryDocument[d]["repo"]
-              registryProject[i].repo = r
+              registryProject[i].repo = registryDocument[d]["repo"]
             }
           }
         }
@@ -877,8 +837,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   
   /* write HTML file */
   await fs.writeFile(path.join(BUILD_PATH, PAGE_SITE_PATH), html, 'utf8');
-  /* copy in static resources */
-  await copyRecursive(SITE_PATH, BUILD_PATH);
 
   // Build card search index (search-index.json + facets.json) once per run
   // Only trigger from the main index page to avoid duplicate executions
@@ -940,7 +898,10 @@ void (async () => {
   for (const cfg of registries) {
     await buildRegistry(cfg);
   }
-  
+  // Copy static site assets once per build
+  await copyRecursive(SITE_PATH, BUILD_PATH);
+  console.log('[build] Copied static assets to build/.');
+
   const tplCards = await fs.readFile(path.join('src','main','templates','cards.hbs'), 'utf8');
   const renderCards = hb.compile(tplCards);
 

@@ -82,7 +82,7 @@ $(document).ready(function() {
 
   var defaultOptions = {
     autoWidth: false,
-    paging: true,
+    paging: false,
     pageLength: 25,
     lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]], 
     responsive: true,
@@ -166,7 +166,7 @@ $(document).ready(function() {
 
   var defaultOptions = {
     autoWidth: false,
-    paging: true,
+    paging: false,
     pageLength: 25,
     lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]], 
     responsive: false,
@@ -245,7 +245,7 @@ $(document).ready(function() {
   var searchOptions = $.fn.dataTable.ext.deepLink( ['search.search' ] );
 
   var defaultOptions = {
-    paging: true,
+    paging: false,
     pageLength: 10,
     lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]], 
     processing: true,
@@ -426,7 +426,7 @@ $(document).ready(function() {
   var searchOptions = $.fn.dataTable.ext.deepLink( ['search.search' ] );
 
   var defaultOptions = {
-    paging: true,
+    paging: false,
     pageLength: 10,
     lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]], 
     processing: true,
