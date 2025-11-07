@@ -193,10 +193,12 @@ jobs:
         if: ${{ github.event_name == 'pull_request' || steps.findpr.outputs.number != '' }}
         run: npm run validate
 
-      - run: npm run build   # produces ./build
+      - name: Build site preview
+        run: npm run build   # produces ./build
         if: ${{ github.event_name == 'pull_request' || steps.findpr.outputs.number != '' }}
 
-      - run: npm run build-stats  # produces stats
+      - name: Generate API stats preview
+        run: npm run build-stats  # produces stats
         if: ${{ github.event_name == 'pull_request' || steps.findpr.outputs.number != '' }}
 
       - name: Verify build output exists
