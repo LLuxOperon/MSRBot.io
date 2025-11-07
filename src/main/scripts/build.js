@@ -166,7 +166,7 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   const ogImage = new URL(siteConfig.ogImage, siteConfig.canonicalBase).href;
   const ogImageAlt = siteConfig.ogImageAlt;
   // Asset prefix for relative local assets in header/footer
-  const assetPrefix = (templateName === 'index') ? '' : '../';
+  const assetPrefix = '../';
   var CSV_SITE_PATH = templateType + ".csv";
   const inputFileName = DATA_PATH;
   const outputFileName = BUILD_PATH + "/" + CSV_SITE_PATH;
@@ -992,7 +992,7 @@ void (async () => {
     ogDescription: siteConfig.siteDescription,
     ogImage: new URL(siteConfig.ogImage, siteConfig.canonicalBase).href,
     ogImageAlt: siteConfig.ogImageAlt,
-    assetPrefix: '/',
+    assetPrefix: '',
   });
   await fs.writeFile(path.join(BUILD_PATH, 'index.html'), homeHtml, 'utf8');
   console.log('[build] Wrote build/index.html');
