@@ -880,11 +880,20 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     await writeFile(fileName, data, 'utf8');
   }
 
-  (async () => {
-    const data = await parseJSONFile(inputFileName);
-    const csv = await json2csvAsync(data);
-    await writeCSV(outputFileName, csv);
-  })();
+  if (templateName === 'index') {
+    (async () => {
+      const data = await parseJSONFile(inputFileName);
+      // Remove all fields where the key contains "$meta" before exporting to CSV
+      const stripped = JSON.parse(
+        JSON.stringify(
+          data,
+          (key, val) => (typeof key === 'string' && key.includes('$meta') ? undefined : val)
+        )
+      );
+      const csv = await json2csvAsync(stripped);
+      await writeCSV(outputFileName, csv);
+    })();
+  }
 
   console.log(`Build of ${templateName} completed`)
 };
