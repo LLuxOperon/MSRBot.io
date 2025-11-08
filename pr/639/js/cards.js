@@ -225,7 +225,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     let __publisherLogoHeight = 18;
     let __publisherAliases = {};
     try {
-      const cfg = await loadJSONTry(['/_data/publisher-logos.json', '_data/publisher-logos.json', '../_data/publisher-logos.json']);
+      const cfg = await loadJSONTry(['../_data/publisher-logos.json']);
       if (cfg && typeof cfg === 'object') {
         __publisherLogos = cfg.logos || {};
         __publisherLogoHeight = Number(cfg.height) || 18;
