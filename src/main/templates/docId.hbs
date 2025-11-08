@@ -35,8 +35,12 @@
             {{#if publicationDate}}<dt class="col-sm-4">Publication Date</dt><dd class="col-sm-8">{{publicationDate}}</dd>{{/if}}
             {{#if doi}}<dt class="col-sm-4">DOI</dt><dd class="col-sm-8"><a href="https://doi.org/{{doi}}" target="_blank" rel="noopener"><code>{{doi}}</code></a></dd>{{/if}}
             {{#if href}}<dt class="col-sm-4">Link</dt><dd class="col-sm-8"><a href="{{href}}" target="_blank" rel="noopener" class="text-break d-inline-block" style="max-width:100%">{{href}}</a></dd>{{/if}}
-            {{#if group}}<dt class="col-sm-4">Group</dt><dd class="col-sm-8">{{#with (groupIdLookup dataGroups group)}}{{groupOrg}} {{groupName}} {{groupDesc}}{{/with}}</dd>{{/if}}
-            {{#if (len currentWork)}}<dt class="col-sm-4">Current Work</dt><dd class="col-sm-8">{{#each currentWork}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</dd>{{/if}}
+            {{#if group}}<dt class="col-sm-4">Group</dt><dd class="col-sm-8">{{#with (groupIdLookup dataGroups group)}}{{#if groupId}}<a href="/groups/{{../../htmlLink}}?search.search={{groupId}}">{{/if}}{{groupOrg}} {{groupName}} {{groupDesc}}{{#if groupId}}</a>{{/if}}{{/with}}</dd>{{/if}}
+            {{#with (docProjLookup @root.docProjs docId)}}{{#if projectId}}<dt class="col-sm-4">Current Work</dt>
+            <dd class="col-sm-8">
+              {{#ifnoteq projectStatus "Complete"}}<span class="label badge text-bg-warning text-uppercase">{{/ifnoteq}}{{#ifeq projectStatus "Complete"}}<span class="label badge text-bg-light text-uppercase">{{/ifeq}}{{workType}} - {{projectStatus}}</span>
+              <br>{{#ifnoteq projectStatus "Complete"}}<span class="small">Under Development: {{/ifnoteq}}<a href="/projects/{{../../htmlLink}}#{{projectId}}">Project - {{projectId}}</a> {{#if newDoc}} - New Doc: <a class="{{../../idType}}-link clear-filter" href="/docs/{{newDoc}}">{{getLabel newDoc}}</a> [{{getStatus newDoc}}]</span> {{{getstatusButton newDoc "10"}}} {{#with (docProjLookup @root.docProjs newDoc)}}{{#ifnoteq projectStatus "Complete"}}<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#F6BE00" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg>{{/ifnoteq}}{{/with}}{{/if}}</span>
+            </dd>{{/if}}{{/with}}
             {{#if status.statusNote}}<dt class="col-sm-4">Status Note</dt><dd class="col-sm-8"><em>{{status.statusNote}}</em></dd>{{/if}}
           </dl>
         </div>
@@ -45,7 +49,7 @@
 
       {{#if docBase}}
       <div class="p-2 text-muted small">
-        {{#if status.latestVersion}}<span class="label badge text-bg-success">[ LATEST VERSION ]</span> {{else}} <span class="fst-italic">Newer version </span>available{{/if}} of Lineage Suite (Doc Root): <span class="fst-italic">{{docBaseLabel}}</span>
+        <span class="fst-italic">{{#if status.latestVersion}}<span class="label badge text-bg-light">[ LATEST VERSION ]</span> {{else}}Newer version available{{/if}} of base {{docBaseLabel}}</span>
         {{#if status/supersededBy}}
         <br><span class="font-weight-bold small"> Superseded by:</span>
           <ul class="list-group list-group-flush">

@@ -4,7 +4,7 @@
       <thead class="thead-light">
         <tr>
           <th scope="col">Project</th>
-          <th scope="col">Document</th>
+          <th scope="col">New Document</th>
           <th scope="col" class="text-center text-nowrap">Work Type</th>
           <th scope="col">Status</th>
           <th scope="col" class="d-none"></th>
@@ -21,8 +21,8 @@
             <a class="anchor" id="{{projectId}}" href="#{{projectId}}"></a><code>{{projectId}}</code>
           </td>
           <td>
-            {{#if docId}}
-            <a class="document-link clear-filter" href="../documents/{{../htmlLink}}?search.search={{docId}}">{{docId}}</a>
+            {{#if newDoc}}
+            <a class="document-link clear-filter" href="../documents/{{../htmlLink}}#{{newDoc}}">{{newDoc}}</a>
             <!--<br>
             [{{getStatus this}}] {{{getstatusButton docId "12"}}}-->
             {{/if}}

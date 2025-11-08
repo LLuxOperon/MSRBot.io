@@ -215,9 +215,9 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         withdrawn: 'text-bg-danger',
         superseded:'text-bg-warning',
         draft:     'text-bg-warning',
-        publiccd:  'text-bg-success',
+        publiccd:  'text-bg-info',
         active:    'text-bg-success',
-        versionless:'text-bg-info',
+        versionless:'text-bg-light',
         amended:   'text-bg-secondary',
         reaffirmed:'text-bg-info',
         stabilized:'text-bg-primary'

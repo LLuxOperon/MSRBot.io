@@ -696,14 +696,14 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     const payload = {
       workType: proj.workType,
       projectStatus: proj.projectStatus,
-      newDoc: proj.docId,             // the new/replacing doc being created
+      newDoc: proj.newDoc,             // the new/replacing doc being created
       projApproved: proj.projApproved,
       projectId: proj.projectId
     };
   
     // 1) Index by the project's primary docId (new/replacing doc under development)
-    if (proj.docId) {
-      upsertDocProj(proj.docId, { docId: proj.docId, ...payload });
+    if (proj.newDoc) {
+      upsertDocProj(proj.newDoc, { newDoc: proj.newDoc, ...payload });
     }
     // 2) Index by each affected existing document
     const affected = Array.isArray(proj.docAffected) ? proj.docAffected : (proj.docAffected ? [proj.docAffected] : []);
@@ -739,19 +739,25 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
       let pW = registryProject[p]["workType"]
       let pS = registryProject[p]["projectStatus"]
 
-      if (pD === registryDocument[i]["docId"]) {
-        currentWork.push(pW + " - " + pS)
+      if (pS !== "Complete") {
+        if (pD === registryDocument[i]["docId"]) {
+          currentWork.push(pW + " - " + pS)
+        }
       }
+
     }
     for (let ps in docProjs) {
       let psD = docProjs[ps]["docId"]
       let psW = docProjs[ps]["workType"]
       let psS = docProjs[ps]["projectStatus"]
 
-      if (psD === registryDocument[i]["docId"]) {
-        currentWork.push(psW + " - " + psS)
+      if (psS !== "Complete") {
+        if (psD === registryDocument[i]["docId"]) {
+          currentWork.push(psW + " - " + psS)
+        }
       }
     }
+    
     if (currentWork.length !== 0) {
       registryDocument[i]["currentWork"] = currentWork
     }

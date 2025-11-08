@@ -118,10 +118,12 @@ const squash = s => compact(s).replace(/\s+/g, ' ');
   for (const p of Array.isArray(projects) ? projects : []) {
     const wt = p.workType;
     const ps = p.projectStatus;
-    const label = [wt, ps].filter(Boolean).join(' - ');
-    if (p.docId && label) pushWork(p.docId, label);
-    const affected = Array.isArray(p.docAffected) ? p.docAffected : [];
-    for (const did of affected) pushWork(did, label);
+    if (ps !== "Complete") {
+      const label = [wt, ps].filter(Boolean).join(' - ');
+      if (p.docId && label) pushWork(p.docId, label);
+      const affected = Array.isArray(p.docAffected) ? p.docAffected : [];
+      for (const did of affected) pushWork(did, label);
+    }
   }
 
   /** Build the flat, minimal index strictly from canonical doc fields */
