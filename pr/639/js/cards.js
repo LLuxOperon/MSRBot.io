@@ -277,9 +277,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       }
       const alt = `${pub} logo`;
       const h = __publisherLogoHeight;
-      const src = rel.startsWith('/') ? rel : `${assetPrefix}${rel}`;
       return new window.Handlebars.SafeString(
-        `<img src="${src}" alt="${alt}" height="${h}" class="align-text-bottom me-1" loading="lazy">`
+        `<img src="../${rel}" alt="${alt}" height="${h}" class="align-text-bottom me-1" loading="lazy">`
       );
     });
     // minimal helpers
