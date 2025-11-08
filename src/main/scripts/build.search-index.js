@@ -190,13 +190,38 @@ const squash = s => compact(s).replace(/\s+/g, ' ');
     // - facetKeywords: from canonical d.keywords array (for filtering)
     // - searchKeywords: assembled terms for free-text search
     const facetKeywords = Array.isArray(d.keywords) ? d.keywords.map(squash).filter(Boolean) : [];
-    const searchKeywords = Array.from(new Set([
-      d.docId,
-      title,
-      d.docTitle,
-      d.docLabel,
-      ...(Array.isArray(currentWork) ? currentWork : [])
-    ].filter(Boolean).map(squash)));
+
+    // Normalize authors to strings for search — supports ["Last, First"] or [{ givenName, familyName, name }]
+    const authorsList = Array.isArray(d.authors)
+      ? d.authors
+          .map(a => {
+            if (!a) return null;
+            if (typeof a === 'string') return a;
+            if (typeof a === 'object') {
+              const parts = [a.name, a.familyName || a.last || a.surname, a.givenName || a.first || a.forename];
+              const joined = parts.filter(Boolean).join(' ').trim();
+              return joined || null;
+            }
+            return null;
+          })
+          .filter(Boolean)
+          .map(squash)
+      : [];
+
+    const searchKeywords = Array.from(
+      new Set(
+        [
+          //d.docId,
+          title,
+          //d.docTitle,
+          d.docLabel,
+          ...authorsList,            
+          ...(Array.isArray(currentWork) ? currentWork : [])
+        ]
+          .filter(Boolean)
+          .map(squash)
+      )
+    );
 
     // Minimal row — 1‑to‑1 with canonical where applicable
     idx.push({
@@ -214,6 +239,7 @@ const squash = s => compact(s).replace(/\s+/g, ' ');
       hasDoi: Boolean(d.doi),
       doi: d.doi || null,
       hasReleaseTag: Boolean(d.releaseTag),
+      authors: d.authors,
       group,
       groupNames,
       currentWork,

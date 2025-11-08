@@ -3,38 +3,50 @@
 
 <main class="container my-4">
   <header class="mb-3">
-    <h1 class="h4 mb-1">
-      <code class="me-2">{{docLabel}}</code>
-      {{#if href}}<a class="text-decoration-none" href="{{href}}" target="_blank" rel="noopener">{{docTitle}}</a>{{else}}{{docTitle}}{{/if}}
-    </h1>
-    
-    <div class="mt-2 d-flex flex-wrap gap-1">
-      {{#if status.unknown}}   <span class="label badge text-bg-danger">[ UNKNOWN ]</span>{{/if}}
-      {{#if status.withdrawn}} <span class="label badge text-bg-danger">[ WITHDRAWN ]</span>{{/if}}
-      {{#if status.superseded}}<span class="label badge text-bg-warning">[ SUPERSEDED ]</span>{{/if}}
-      {{#if status.draft}}     <span class="label badge text-bg-warning">[ DRAFT ]</span>{{/if}}
-      {{#if status.publicCd}}  <span class="label badge text-bg-success">[ PUBLIC CD ]</span>{{/if}}
-      {{#if status.active}}    <span class="label badge text-bg-success">[ ACTIVE ]</span>{{/if}}
-      {{#if status.versionless}}<span class="label badge text-bg-info">[ VERSIONLESS ]</span>{{/if}}
-      {{#if status.amended}}   <span class="label badge text-bg-secondary">[ AMENDED ]</span>{{/if}}
-      {{#if status.reaffirmed}}<span class="label badge text-bg-info">[ REAFFIRMED ]</span>{{/if}}
-      {{#if status.stabilized}}<span class="label badge text-bg-primary">[ STABILIZED ]</span>{{/if}}
+    <div class="d-flex align-items-center flex-wrap gap-2 mb-1">
+      {{publisherLogo publisher}}
+      <code class="me-1 fs-5">{{docLabel}}</code>
+      <div class="d-inline-flex flex-wrap gap-1">
+        {{#if status.unknown}}   <span class="label badge text-bg-danger">[ UNKNOWN ]</span>{{/if}}
+        {{#if status.withdrawn}} <span class="label badge text-bg-danger">[ WITHDRAWN ]</span>{{/if}}
+        {{#if status.superseded}}<span class="label badge text-bg-warning">[ SUPERSEDED ]</span>{{/if}}
+        {{#if status.draft}}     <span class="label badge text-bg-warning">[ DRAFT ]</span>{{/if}}
+        {{#if status.publicCd}}  <span class="label badge text-bg-success">[ PUBLIC CD ]</span>{{/if}}
+        {{#if status.active}}    <span class="label badge text-bg-success">[ ACTIVE ]</span>{{/if}}
+        {{#if status.versionless}}<span class="label badge text-bg-info">[ VERSIONLESS ]</span>{{/if}}
+        {{#if status.amended}}   <span class="label badge text-bg-secondary">[ AMENDED ]</span>{{/if}}
+        {{#if status.reaffirmed}}<span class="label badge text-bg-info">[ REAFFIRMED ]</span>{{/if}}
+        {{#if status.stabilized}}<span class="label badge text-bg-primary">[ STABILIZED ]</span>{{/if}}
+      </div>
     </div>
-  </header>
 
-  
+    <h1 class="h4 mb-1">
+      {{#if href}}
+        <a class="text-decoration-none" href="{{href}}" target="_blank" rel="noopener">{{docTitle}}</a>
+      {{else}}
+        {{docTitle}}
+      {{/if}}
+    </h1>
+  </header>
 
   <section class="row g-3">
     <div class="col-lg-7">
       <div class="card">
+        <div class="card-header">
+          <h2 class="h6 ">Details</h2>
+        </div>
         <div class="card-body">
-          <h2 class="h6">Details</h2>
           <dl class="row small mb-0">
-            {{#if publisher}}<dt class="col-sm-4">Publisher</dt><dd class="col-sm-8">{{publisher}}</dd>{{/if}}
+            {{#if publisher}}<dt class="col-sm-4">Publisher</dt><dd class="col-sm-8">{{#if (lookup publisherUrls publisher)}}
+              <a href="{{lookup publisherUrls publisher}}" target="_blank" rel="noopener">{{publisher}}</a>
+            {{else}}
+              {{publisher}}
+            {{/if}}</dd>{{/if}}
             {{#if docType}}<dt class="col-sm-4">Doc Type</dt><dd class="col-sm-8">{{docType}}{{#if docTypeAbr}} ({{docTypeAbr}}){{/if}}</dd>{{/if}}
             {{#if publicationDate}}<dt class="col-sm-4">Publication Date</dt><dd class="col-sm-8">{{publicationDate}}</dd>{{/if}}
             {{#if doi}}<dt class="col-sm-4">DOI</dt><dd class="col-sm-8"><a href="https://doi.org/{{doi}}" target="_blank" rel="noopener"><code>{{doi}}</code></a></dd>{{/if}}
             {{#if href}}<dt class="col-sm-4">Link</dt><dd class="col-sm-8"><a href="{{href}}" target="_blank" rel="noopener" class="text-break d-inline-block" style="max-width:100%">{{href}}</a></dd>{{/if}}
+            {{#if authors}}<dt class="col-sm-4">Author(s)</dt><dd class="col-sm-8">{{#authors}}{{this}}{{#unless @last}}, {{/unless}}{{/authors}}</dd>{{/if}}
             {{#if group}}<dt class="col-sm-4">Group</dt><dd class="col-sm-8">{{#with (groupIdLookup dataGroups group)}}{{#if groupId}}<a href="/groups/{{../../htmlLink}}?search.search={{groupId}}">{{/if}}{{groupOrg}} {{groupName}} {{groupDesc}}{{#if groupId}}</a>{{/if}}{{/with}}</dd>{{/if}}
             {{#with (docProjLookup @root.docProjs docId)}}{{#if projectId}}<dt class="col-sm-4">Current Work</dt>
             <dd class="col-sm-8">
@@ -44,9 +56,13 @@
             {{#if status.statusNote}}<dt class="col-sm-4">Status Note</dt><dd class="col-sm-8"><em>{{status.statusNote}}</em></dd>{{/if}}
           </dl>
         </div>
-        
       </div>
-
+      
+      {{#if status/withdrawnNotice}}
+      <div class="row small m-2">
+        <span class="label px-3 text-bg-warning text-uppercase">Withdrawl notice: <a href="{{status/withdrawnNotice}}">{{status/withdrawnNotice}}</a></span>
+      </div>{{/if}}
+      
       {{#if docBase}}
       <div class="p-2 text-muted small">
         <span class="fst-italic">{{#if status.latestVersion}}<span class="label badge text-bg-light">[ LATEST VERSION ]</span> {{else}}Newer version available{{/if}} of base {{docBaseLabel}}</span>

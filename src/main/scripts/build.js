@@ -844,6 +844,38 @@ hb.registerHelper('docProjLookup', function(collection, id) {
   hb.registerHelper('dotReplace', function(str) {
       return str.replace(/\./g, '-')
   });
+
+  hb.registerHelper('publisherLogo', function (pub, opts) {
+    if (!pub || typeof pub !== 'string') return '';
+
+    // Resolve config maps
+    const logos = (siteConfig && siteConfig.publisherLogos && typeof siteConfig.publisherLogos === 'object')
+      ? siteConfig.publisherLogos
+      : null;
+    const rel = logos ? logos[pub] : null;
+    if (!rel) return '';
+
+    // Access render root for assetPrefix + default height
+    const root = (opts && opts.data && opts.data.root) ? opts.data.root : {};
+    const assetPrefix = (typeof root.assetPrefix === 'string') ? root.assetPrefix : '';
+
+    // Height precedence: explicit hash height > root.publisherLogoHeight > siteConfig.publisherLogoHeight > 25
+    let h = 25;
+    if (opts && opts.hash && opts.hash.height != null && !Number.isNaN(Number(opts.hash.height))) {
+      h = Number(opts.hash.height);
+    } else if (typeof root.publisherLogoHeight === 'number') {
+      h = root.publisherLogoHeight;
+    } else if (siteConfig && typeof siteConfig.publisherLogoHeight === 'number') {
+      h = siteConfig.publisherLogoHeight;
+    }
+
+    const alt = `${pub} logo`;
+    const src = rel.startsWith('/') ? rel : `${assetPrefix}${rel}`;
+
+    return new hb.SafeString(
+      `<img src="${src}" alt="${alt}" height="${h}" class="align-text-bottom me-1" loading="lazy">`
+    );
+  });
   
   /* get the version field */
   
@@ -860,6 +892,40 @@ hb.registerHelper('docProjLookup', function(collection, id) {
   await fs.mkdir(BUILD_PATH, { recursive: true });
     if (templateName != "index") { 
       await fs.mkdir(BUILD_PATH + "/" + templateName, { recursive: true });
+    }
+    // Ensure _data directory exists
+    await fs.mkdir(path.join(BUILD_PATH, '_data'), { recursive: true });
+    // Emit publisher logos + optional aliases for client-side cards.js
+    try {
+      const logosOut = {};
+      if (siteConfig && siteConfig.publisherLogos && typeof siteConfig.publisherLogos === 'object') {
+        for (const [k, v] of Object.entries(siteConfig.publisherLogos)) {
+          if (!v) continue;
+          const rel = String(v).trim();
+          // Normalize to root-absolute so client doesn't need per-page assetPrefix
+          logosOut[String(k).trim()] = rel.startsWith('/') ? rel : '/' + rel;
+        }
+      }
+      // Optional alias map: { "smpte": "SMPTE", "SMPTE – Society of Motion Picture…": "SMPTE" }
+      const aliasesOut = {};
+      if (siteConfig && siteConfig.publisherLogoAliases && typeof siteConfig.publisherLogoAliases === 'object') {
+        for (const [alias, canon] of Object.entries(siteConfig.publisherLogoAliases)) {
+          if (!alias || !canon) continue;
+          aliasesOut[String(alias).trim()] = String(canon).trim();
+        }
+      }
+      const logosPayload = {
+        logos: logosOut,
+        height: (typeof siteConfig.publisherLogoHeight === 'number' ? siteConfig.publisherLogoHeight : 25),
+        aliases: aliasesOut
+      };
+      await fs.writeFile(
+        path.join(BUILD_PATH, '_data', 'publisher-logos.json'),
+        JSON.stringify(logosPayload, null, 2),
+        'utf8'
+      );
+    } catch (e) {
+      console.warn('[build] Could not emit publisher-logos.json:', e && e.message ? e.message : e);
     }
 
   /* determine if build on GH to remove "index.html" from internal link */
@@ -908,6 +974,7 @@ hb.registerHelper('docProjLookup', function(collection, id) {
       "ogImage": ogImage,
       "ogImageAlt": ogImageAlt,
       "assetPrefix": assetPrefix,
+      "publisherUrls": siteConfig.publisherUrls,
     });
 
   // --- Safe normalization for per‑doc rendering (prevents .length on undefined)
@@ -1009,7 +1076,9 @@ hb.registerHelper('docProjLookup', function(collection, id) {
           ogImageAlt: siteConfig.ogImageAlt,
           assetPrefix: '../../',
           htmlLink: ('GH_PAGES_BUILD' in process.env) ? '' : 'index.html',
-          date: new Date()
+          date: new Date(),
+          publisherLogoHeight: 25,
+          publisherUrls: siteConfig.publisherUrls,
         });
 
         const outFile = path.join(docDir, 'index.html');
@@ -1154,6 +1223,10 @@ void (async () => {
     ogImage: docsOgImage,
     ogImageAlt: docsOgImageAlt,
     assetPrefix: docsAssetPrefix,
+    publisherLogos: siteConfig.publisherLogos,
+    publisherLogosJson: JSON.stringify(siteConfig.publisherLogos || {}),
+    publisherLogoHeight: 25,
+    publisherUrls: siteConfig.publisherUrls,
     robotsMeta: 'noindex,nofollow'
   }), 'utf8');
 
@@ -1191,6 +1264,7 @@ void (async () => {
     ogImage: new URL(siteConfig.ogImage, siteConfig.canonicalBase).href,
     ogImageAlt: siteConfig.ogImageAlt,
     assetPrefix: '',
+    publisherUrls: siteConfig.publisherUrls,
   });
   await fs.writeFile(path.join(BUILD_PATH, 'index.html'), homeHtml, 'utf8');
   console.log('[build] Wrote build/index.html');
@@ -1332,6 +1406,7 @@ void (async () => {
     robotsMeta: 'noindex,follow',
     assetPrefix: '/',
     penguinMessagesJson: penguinMessagesJson,
+    publisherUrls: siteConfig.publisherUrls,
   });
   await fs.writeFile(path.join(BUILD_PATH, '404.html'), fourOhFourHtml, 'utf8');
   console.log('[build] Wrote build/404.html');

@@ -81,14 +81,17 @@
 {{{{raw}}}}
 <template id="card-tpl-src">
   <article class="card-reg">
-    <header class="d-flex align-items-start gap-2 mb-1">
-      <h3 class="h6 mb-2 flex-grow-1">
+    <header class="d-flex align-items-start flex-wrap gap-2 mb-1">
+      <div class="publisher-logo-slot flex-shrink-0 order-0">
+        {{publisherLogo publisher}}
+      </div>
+      <h3 class="h6 mb-2 flex-grow-1 min-w-0 order-1">
         <a class="anchor" id="{{id}}" href="#{{id}}"></a>
         <code class="me-1">{{label}}</code>
         <br>
         <a href="/docs/{{id}}/" class="text-decoration-none">{{title}}</a>
       </h3>
-      <div class="d-flex gap-1 flex-wrap ms-auto justify-content-end text-end">
+      <div class="d-flex gap-1 flex-wrap ms-auto justify-content-end text-end order-2">
         {{#if (hasAny statusOrdered)}}
           {{#each statusOrdered}}
             {{{statusBadge this}}}
@@ -134,13 +137,8 @@
     {{#if docBase}}
       <div class="small text-muted mt-0">Doc Base: <span class="fst-italic">{{docBaseLabel}}</span></div>
     {{/if}}
-    {{#if (hasAny keywords)}}
-      <div class="small text-muted mt-0">Keywords: <span class="fst-italic">{{join keywords ", "}}</span></div>
-    {{else}}
-      {{#if (hasAny keywordsSearch)}}
-        <div class="small text-muted mt-0">Keywords: <span class="fst-italic">{{join keywordsSearch ", "}}</span></div>
-      {{/if}}
-    {{/if}}
+      <div class="small text-muted mt-0">Keywords: <span class="fst-italic">{{#if (hasAny keywords)}}{{join keywords ", "}}, {{/if}}
+      {{#if (hasAny keywordsSearch)}}{{join keywordsSearch ", "}}{{/if}}</span></div> 
   </article>
 </template>
 {{{{/raw}}}}

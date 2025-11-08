@@ -18,5 +18,26 @@
     "404 — The archive is cold and empty. Parsey has the sads.",
     "404 — Parsey has flapped into the void and found nothing.",
     "404 — Parsey has waddled off to file a missing-page report."
-  ]
+  ],
+  "publisherLogos": {
+    "SMPTE": "resources/logos/smpte-logo.png",
+    "ISO": "resources/logos/iso-logo-print.gif",
+    "ISO/IEC": "resources/logos/iso-logo-print.gif",
+    "AES": "resources/logos/AES-Shield-Only-R.png",
+    "ISDCF": "resources/logos/ISDCF_logo-square-nobg.png"
+  },
+  "publisherLogoAliases": {
+    "smpte": "SMPTE",
+    "SMPTE – Society of Motion Picture and Television Engineers": "SMPTE",
+    "ISO/IEC": "ISO"
+  },
+  "publisherLogoHeight": 25,
+  "publisherUrls": {
+    "SMPTE": "https://www.smpte.org/",
+    "ISO": "https://www.iso.org/",
+    "ISO/IEC": "https://www.iso.org/",
+    "AES": "https://aes2.org/",
+    "ISDCF": "https://www.isdcf.com/"
+  }
+
 }
