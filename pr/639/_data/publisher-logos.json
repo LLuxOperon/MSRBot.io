@@ -1,0 +1,15 @@
+{
+  "logos": {
+    "SMPTE": "/resources/logos/smpte-logo.png",
+    "ISO": "/resources/logos/iso-logo-print.gif",
+    "ISO/IEC": "/resources/logos/iso-logo-print.gif",
+    "AES": "/resources/logos/AES-Shield-Only-R.png",
+    "ISDCF": "/resources/logos/ISDCF_logo-square-nobg.png"
+  },
+  "height": 25,
+  "aliases": {
+    "smpte": "SMPTE",
+    "SMPTE – Society of Motion Picture and Television Engineers": "SMPTE",
+    "ISO/IEC": "ISO"
+  }
+}

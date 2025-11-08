@@ -111,15 +111,30 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     }
   }
 
+  // Try a list of candidate URLs in order until one loads
+  async function loadJSONTry(candidates){
+    const errs = [];
+    for (const url of candidates) {
+      try {
+        const res = await fetch(url, { cache: 'no-store' });
+        if (res.ok) return await res.json();
+        errs.push(`${url} → ${res.status}`);
+      } catch (e) {
+        errs.push(`${url} → ${e.message || e}`);
+      }
+    }
+    throw new Error(`Failed to fetch any candidate: ${errs.join(' | ')}`);
+  }
+
   let idx, facets, synonymsMap = {};
   try {
     [idx, facets] = await Promise.all([
-      loadJSON('_data/search-index.json'),
-      loadJSON('_data/facets.json')
+      loadJSONTry(['/docs/_data/search-index.json', 'docs/_data/search-index.json', '../docs/_data/search-index.json']),
+      loadJSONTry(['/docs/_data/facets.json', '/docs/_data/facets.json', 'docs/_data/facets.json', '../docs/_data/facets.json'])
     ]);
     // load synonyms if available
     try {
-      synonymsMap = await loadJSON('_data/synonyms.json');
+      synonymsMap = await loadJSONTry(['/docs/_data/synonyms.json', 'docs/_data/synonyms.json', '../docs/_data/synonyms.json']);
       if (!synonymsMap || typeof synonymsMap !== 'object') synonymsMap = {};
     } catch {
       synonymsMap = {};
@@ -204,6 +219,68 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   }
 
   if (tplEl && window.Handlebars) {
+    // --- Publisher logo helper (client-side; data fetched at runtime)
+    // Expects build/_data/publisher-logos.json with shape: { logos: { "SMPTE": "/static/logos/smpte.svg", ... }, height: 18 }
+    let __publisherLogos = {};
+    let __publisherLogoHeight = 18;
+    let __publisherAliases = {};
+    try {
+      const cfg = await loadJSONTry(['/_data/publisher-logos.json', '_data/publisher-logos.json', '../_data/publisher-logos.json']);
+      if (cfg && typeof cfg === 'object') {
+        __publisherLogos = cfg.logos || {};
+        __publisherLogoHeight = Number(cfg.height) || 18;
+        __publisherAliases = (cfg.aliases && typeof cfg.aliases === 'object') ? cfg.aliases : {};
+      }
+    } catch (e) {
+      console.warn('[cards] publisher logos config not available (tried multiple paths):', e && e.message ? e.message : e);
+    }
+    function resolvePublisherLogo(pubRaw){
+      const input = String(pubRaw || '').trim();
+      if (!input) return null;
+
+      // 1) Exact
+      if (__publisherLogos[input]) return __publisherLogos[input];
+
+      // 2) Alias (case-insensitive keys)
+      const lowerAliases = __publisherAliases.__lowerCache || ( __publisherAliases.__lowerCache = (() => {
+        const m = {};
+        for (const [a, c] of Object.entries(__publisherAliases)) {
+          m[String(a).toLowerCase()] = String(c);
+        }
+        return m;
+      })());
+      const canonFromAlias = lowerAliases[input.toLowerCase()];
+      if (canonFromAlias && __publisherLogos[canonFromAlias]) return __publisherLogos[canonFromAlias];
+
+      // 3) Simple tokenization: take first token before common separators (mdash/en dash, hyphen, comma, paren)
+      const firstToken = input.split(/[–—-]|,|\(|\)|:/)[0].trim();
+      if (firstToken && __publisherLogos[firstToken]) return __publisherLogos[firstToken];
+
+      // 4) Case-insensitive direct match on keys
+      const lowerKey = input.toLowerCase();
+      for (const [k, v] of Object.entries(__publisherLogos)) {
+        if (String(k).toLowerCase() === lowerKey) return v;
+      }
+
+      return null;
+    }
+    const __pubWarned = new Set();
+    window.Handlebars.registerHelper('publisherLogo', function(pub) {
+      const rel = resolvePublisherLogo(pub);
+      if (!rel) {
+        const key = String(pub || '');
+        if (key && !__pubWarned.has(key)) {
+          __pubWarned.add(key);
+          console.debug('[cards] publisherLogo: no logo for publisher "%s". Available keys: %o', key, Object.keys(__publisherLogos));
+        }
+        return '';
+      }
+      const alt = `${pub} logo`;
+      const h = __publisherLogoHeight;
+      return new window.Handlebars.SafeString(
+        `<img src="${rel}" alt="${alt}" height="${h}" class="align-text-bottom me-1" loading="lazy">`
+      );
+    });
     // minimal helpers
     window.Handlebars.registerHelper('join', function(arr, sep){ return Array.isArray(arr) ? arr.join(sep||', ') : ''; });
     window.Handlebars.registerHelper('len', function(x){ return (Array.isArray(x) || typeof x === 'string') ? x.length : 0; });
@@ -215,9 +292,9 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         withdrawn: 'text-bg-danger',
         superseded:'text-bg-warning',
         draft:     'text-bg-warning',
-        publiccd:  'text-bg-success',
+        publiccd:  'text-bg-info',
         active:    'text-bg-success',
-        versionless:'text-bg-info',
+        versionless:'text-bg-light',
         amended:   'text-bg-secondary',
         reaffirmed:'text-bg-info',
         stabilized:'text-bg-primary'

@@ -857,7 +857,8 @@
         "ISO.7589.2002",
         "SMPTE.RP177.1993",
         "SMPTE.ST2065-1.2012"
-      ]
+      ],
+      "bibliographic": []
     },
     "status": {
       "draft": true
@@ -876,7 +877,8 @@
         {
           "id": "SMPTE.ST2065-1.2012"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "AMPAS.TB.2014-002",
@@ -957,7 +959,8 @@
       "normative": [
         "SMPTE.RP177.1993",
         "SMPTE.ST2065-1.2012"
-      ]
+      ],
+      "bibliographic": []
     },
     "status": {
       "active": true,
@@ -977,7 +980,8 @@
         {
           "id": "SMPTE.ST2065-1.2012"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "AMPAS.S.2014-003",
@@ -1009,7 +1013,8 @@
         "AMPAS.TB.2014-002",
         "AMPAS.TB.2014-012",
         "SMPTE.ST2065-1.2012"
-      ]
+      ],
+      "bibliographic": []
     },
     "status": {
       "active": true,
@@ -1032,7 +1037,8 @@
         {
           "id": "SMPTE.ST2065-1.2012"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "AMPAS.S.2014-006",
@@ -1079,7 +1085,8 @@
         "AMPAS.S.2013-001",
         "SMPTE.RP177.1993",
         "SMPTE.ST2065-1.2012"
-      ]
+      ],
+      "bibliographic": []
     },
     "status": {
       "active": true,
@@ -1102,7 +1109,8 @@
         {
           "id": "SMPTE.ST2065-1.2012"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "AMPAS.S.2014-004",
@@ -1136,7 +1144,8 @@
         "AMPAS.S.2014-003",
         "SMPTE.RP177.1993",
         "SMPTE.ST2065-1.2012"
-      ]
+      ],
+      "bibliographic": []
     },
     "status": {
       "active": true,
@@ -1162,7 +1171,8 @@
         {
           "id": "SMPTE.ST2065-1.2012"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "AMPAS.TB.2014-012",
@@ -1195,7 +1205,8 @@
         "AMPAS.TB.2014-002",
         "ASC.CDL.R1-2.2009",
         "RFC3066"
-      ]
+      ],
+      "bibliographic": []
     },
     "status": {
       "active": true,
@@ -1221,7 +1232,8 @@
         {
           "id": "RFC3066"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "AMPAS.TB.2014-002",
@@ -1267,7 +1279,8 @@
       "normative": [
         "SMPTE.RP177.1993",
         "SMPTE.ST2065-1.2012"
-      ]
+      ],
+      "bibliographic": []
     },
     "resolvedHref": "https://www.dropbox.com/scl/fi/ashice0e57vn1plqf8uby/S-2016-001.pdf?rlkey=qrxz6sbaly0fp7o1m92m66w93&dl=0",
     "status": {
@@ -1288,7 +1301,8 @@
         {
           "id": "SMPTE.ST2065-1.2012"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "AMPAS.TB.2018-001"
@@ -1323,7 +1337,8 @@
         "SMPTE.ST2065-4.2013",
         "SMPTE.ST2067-50.2018",
         "SMPTE.ST2067-9.2018"
-      ]
+      ],
+      "bibliographic": []
     },
     "resolvedHref": "https://www.dropbox.com/scl/fi/vgciceewplbtedvpu38f3/S-2019-001.pdf?rlkey=0jgyf44jcycvpbm4zk3iaf0mf&dl=0",
     "status": {
@@ -1365,7 +1380,8 @@
         {
           "id": "SMPTE.ST2067-9.2018"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "AMPAS.P.2013-001",
@@ -1493,7 +1509,8 @@
         "SMPTE.ST2065-2.2012",
         "SMPTE.ST2065-3.2012",
         "SMPTE.ST2065-4.2013"
-      ]
+      ],
+      "bibliographic": []
     },
     "status": {
       "active": true
@@ -1527,7 +1544,8 @@
         {
           "id": "SMPTE.ST2065-4.2013"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "AMPAS.S.2014-002",
@@ -1572,7 +1590,8 @@
       "normative": [
         "AMPAS.S.2008-001",
         "SMPTE.ST2065-1.2012"
-      ]
+      ],
+      "bibliographic": []
     },
     "status": {
       "active": true
@@ -1585,7 +1604,8 @@
         {
           "id": "SMPTE.ST2065-1.2012"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "AMPAS.S.2008-001",
@@ -1610,7 +1630,8 @@
       "normative": [
         "SMPTE.ST2065-2.2012",
         "SMPTE.ST2065-3.2012"
-      ]
+      ],
+      "bibliographic": []
     },
     "status": {
       "active": true
@@ -1623,7 +1644,8 @@
         {
           "id": "SMPTE.ST2065-3.2012"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "SMPTE.ST2065-2.2012",
@@ -1647,7 +1669,8 @@
     "references": {
       "normative": [
         "SMPTE.ST2065-4.2013"
-      ]
+      ],
+      "bibliographic": []
     },
     "status": {
       "active": true
@@ -1657,7 +1680,8 @@
         {
           "id": "SMPTE.ST2065-4.2013"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "SMPTE.ST2065-4.2013"
@@ -1680,7 +1704,8 @@
     "references": {
       "normative": [
         "SMPTE.ST268.2014"
-      ]
+      ],
+      "bibliographic": []
     },
     "status": {
       "active": true
@@ -1690,7 +1715,8 @@
         {
           "id": "SMPTE.ST268.2014"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "SMPTE.ST268.2014"
@@ -1739,7 +1765,8 @@
         "AMPAS.TB.2014-009",
         "ASC.CDL.R1-2.2009",
         "SMPTE.ST2065-1.2012"
-      ]
+      ],
+      "bibliographic": []
     },
     "status": {
       "active": true
@@ -1764,7 +1791,8 @@
         {
           "id": "SMPTE.ST2065-1.2012"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "AMPAS.S.2019-001",
@@ -1817,7 +1845,8 @@
         "R-REC-BT.2020-2.201510",
         "SMPTE.ST2065-1.2012",
         "SMPTE.ST2065-4.2013"
-      ]
+      ],
+      "bibliographic": []
     },
     "status": {
       "active": true
@@ -1860,7 +1889,8 @@
         {
           "id": "SMPTE.ST2065-4.2013"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "AMPAS.S.2014-002",
@@ -1931,7 +1961,8 @@
         "J07544",
         "SMPTE.RP177.1993",
         "SMPTE.ST2065-1.2012"
-      ]
+      ],
+      "bibliographic": []
     },
     "status": {
       "active": true
@@ -1971,7 +2002,8 @@
         {
           "id": "SMPTE.ST2065-1.2012"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "AMPAS.P.2013-001",
@@ -9849,7 +9881,8 @@
       "normative": [
         "CIE.015.2004",
         "SMPTE.ST431-1.2006"
-      ]
+      ],
+      "bibliographic": []
     },
     "relatedDocs": [
       "SMPTE.ST428-1.2006"
@@ -9872,7 +9905,8 @@
         {
           "id": "SMPTE.ST431-1.2006"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "CIE.015.2004",
@@ -9977,7 +10011,8 @@
       "normative": [
         "SMPTE.ST428-1.2006",
         "SMPTE.ST428-11.2009"
-      ]
+      ],
+      "bibliographic": []
     },
     "relatedDocs": [
       "SMPTE.ST428-19.2010"
@@ -10002,7 +10037,8 @@
         {
           "id": "SMPTE.ST428-11.2009"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "CIE.015.2004",
@@ -10037,7 +10073,8 @@
     "references": {
       "normative": [
         "AES3.2003"
-      ]
+      ],
+      "bibliographic": []
     },
     "relatedDocs": [
       "SMPTE.ST428-2.2006"
@@ -10059,7 +10096,8 @@
         {
           "id": "AES3.2003"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "AES3.2003"
@@ -10088,7 +10126,8 @@
     "references": {
       "normative": [
         "AES3.2003"
-      ]
+      ],
+      "bibliographic": []
     },
     "relatedDocs": [
       "SMPTE.ST428-3.2006"
@@ -10110,7 +10149,8 @@
         {
           "id": "AES3.2003"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "AES3.2003"
@@ -10139,7 +10179,8 @@
       "normative": [
         "SMPTE.ST291.2006",
         "SMPTE.ST428-1.2006"
-      ]
+      ],
+      "bibliographic": []
     },
     "relatedDocs": [
       "SMPTE.ST428-9.2008"
@@ -10164,7 +10205,8 @@
         {
           "id": "SMPTE.ST428-1.2006"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "CIE.015.2004",
@@ -10208,7 +10250,8 @@
         "W3C.xml.20040204",
         "W3C.xmlschema-1.20041028",
         "W3C.xmlschema-2.20041028"
-      ]
+      ],
+      "bibliographic": []
     },
     "relatedDocs": [
       "SMPTE.ST429-10.2008"
@@ -10255,7 +10298,8 @@
         {
           "id": "W3C.xmlschema-2.20041028"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "AES3.2003",
@@ -10337,7 +10381,8 @@
         "SMPTE.ST330.2004",
         "SMPTE.ST377.2004",
         "SMPTE.ST390.2004"
-      ]
+      ],
+      "bibliographic": []
     },
     "relatedDocs": [
       "SMPTE.ST429-3.2007"
@@ -10371,7 +10416,8 @@
         {
           "id": "SMPTE.ST390.2004"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "AES3.2003",
@@ -10437,7 +10483,8 @@
         "SMPTE.ST422.2006",
         "SMPTE.ST428-1.2006",
         "SMPTE.ST429-3.2006"
-      ]
+      ],
+      "bibliographic": []
     },
     "relatedDocs": [
       "SMPTE.ST429-4.2006"
@@ -10474,7 +10521,8 @@
         {
           "id": "SMPTE.ST429-3.2006"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "AES3.2003",
@@ -10550,7 +10598,8 @@
         "SMPTE.ST336.2001",
         "SMPTE.ST377.2004",
         "SMPTE.ST429-3.2006"
-      ]
+      ],
+      "bibliographic": []
     },
     "relatedDocs": [
       "SMPTE.ST429-6.2006"
@@ -10593,7 +10642,8 @@
         {
           "id": "SMPTE.ST429-3.2006"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "AES3.2003",
@@ -10665,7 +10715,8 @@
         "W3C.xmldsig-core.20020212",
         "W3C.xmlschema-1.20041028",
         "W3C.xmlschema-2.20041028"
-      ]
+      ],
+      "bibliographic": []
     },
     "relatedDocs": [
       "SMPTE.ST429-7.2006"
@@ -10717,7 +10768,8 @@
         {
           "id": "W3C.xmlschema-2.20041028"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "RFC2045",
@@ -10763,7 +10815,8 @@
         "W3C.xmldsig-core.20020212",
         "W3C.xmlschema-1.20041028",
         "W3C.xmlschema-2.20041028"
-      ]
+      ],
+      "bibliographic": []
     },
     "relatedDocs": [
       "SMPTE.ST429-8.2007"
@@ -10812,7 +10865,8 @@
         {
           "id": "W3C.xmlschema-2.20041028"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "RFC2045",
@@ -10855,7 +10909,8 @@
         "W3C.xml.20040204",
         "W3C.xmlschema-1.20041028",
         "W3C.xmlschema-2.20041028"
-      ]
+      ],
+      "bibliographic": []
     },
     "relatedDocs": [
       "SMPTE.ST429-9.2007"
@@ -10893,7 +10948,8 @@
         {
           "id": "W3C.xmlschema-2.20041028"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "IANA.MT",
@@ -10945,7 +11001,8 @@
         "SMPTE.ST429-6.2006",
         "SMPTE.ST430-2.2006",
         "SMPTE.ST430-3.2006"
-      ]
+      ],
+      "bibliographic": []
     },
     "relatedDocs": [
       "SMPTE.ST430-1.2006"
@@ -10982,7 +11039,8 @@
         {
           "id": "SMPTE.ST430-3.2006"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "AES3.2003",
@@ -11063,7 +11121,8 @@
         "RFC3447",
         "RFC4055",
         "T-REC-X.509.199706"
-      ]
+      ],
+      "bibliographic": []
     },
     "relatedDocs": [
       "SMPTE.ST430-2.2006"
@@ -11106,7 +11165,8 @@
         {
           "id": "T-REC-X.509.199706"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "ISO.8824-1.2002",
@@ -11151,7 +11211,8 @@
         "W3C.xmldsig-core.20020212",
         "W3C.xmlenc.core.20021210",
         "W3C.xmlschema-1.20010502"
-      ]
+      ],
+      "bibliographic": []
     },
     "relatedDocs": [
       "SMPTE.ST430-3.2008"
@@ -11206,7 +11267,8 @@
         {
           "id": "W3C.xmlschema-1.20010502"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "NIST.FIPS.180-2",
@@ -11253,7 +11315,8 @@
         "W3C.xmldsig-core.20020212",
         "W3C.xmlschema-1.20041028",
         "W3C.xmlschema-2.20041028"
-      ]
+      ],
+      "bibliographic": []
     },
     "relatedDocs": [
       "SMPTE.ST430-4.2008"
@@ -11303,7 +11366,8 @@
         {
           "id": "W3C.xmlschema-2.20041028"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "ISO.15924.2004",
@@ -11359,7 +11423,8 @@
         "SMPTE.ST430-4.2008",
         "SMPTE.ST430-6.2008",
         "SMPTE.ST433.2008"
-      ]
+      ],
+      "bibliographic": []
     },
     "relatedDocs": [
       "SMPTE.ST430-5.2008"
@@ -11417,7 +11482,8 @@
         {
           "id": "SMPTE.ST433.2008"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "AES3.2003",
@@ -11527,7 +11593,8 @@
         "SMPTE.ST430-1.2006",
         "SMPTE.ST430-2.2006",
         "SMPTE.ST430-5.2008"
-      ]
+      ],
+      "bibliographic": []
     },
     "relatedDocs": [
       "SMPTE.ST430-6.2008"
@@ -11567,7 +11634,8 @@
         {
           "id": "SMPTE.ST430-5.2008"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "IANA.PN",
@@ -11610,7 +11678,8 @@
         "W3C.xml.20040204",
         "W3C.xmlschema-1.20041028",
         "W3C.xmlschema-2.20041028"
-      ]
+      ],
+      "bibliographic": []
     },
     "relatedDocs": [
       "SMPTE.ST430-9.2008"
@@ -11659,7 +11728,8 @@
         {
           "id": "W3C.xmlschema-2.20041028"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "IANA.MT",
@@ -11742,7 +11812,8 @@
     "references": {
       "normative": [
         "ISO.10527.2007"
-      ]
+      ],
+      "bibliographic": []
     },
     "relatedDocs": [
       "SMPTE.ST431-1.2006"
@@ -11764,7 +11835,8 @@
         {
           "id": "ISO.10527.2007"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "ISO.5926.2023"
@@ -11834,7 +11906,8 @@
         "SMPTE.ST430-2.2006",
         "W3C.xmlschema-1.20041028",
         "W3C.xmlschema-2.20041028"
-      ]
+      ],
+      "bibliographic": []
     },
     "relatedDocs": [
       "SMPTE.ST433.2008"
@@ -11877,7 +11950,8 @@
         {
           "id": "W3C.xmlschema-2.20041028"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "ISO.3166-1.1997",
@@ -12589,7 +12663,8 @@
       "normative": [
         "ISO.11664-1",
         "ISO.26431-1.2008"
-      ]
+      ],
+      "bibliographic": []
     },
     "status": {
       "active": true,
@@ -12610,7 +12685,8 @@
         {
           "id": "ISO.26431-1.2008"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "ISO.10527.2007",
@@ -14023,7 +14099,8 @@
       "bibliographic": [
         "J05389",
         "J05508"
-      ]
+      ],
+      "normative": []
     },
     "resolvedHref": "https://journal.smpte.org/periodicals/Journal%20of%20the%20Society%20of%20Motion%20Picture%20Engineers/27/3/10/",
     "status": {
@@ -14038,7 +14115,8 @@
         {
           "id": "J05508"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "J11990"
@@ -14299,7 +14377,8 @@
       "bibliographic": [
         "J07429",
         "J07431"
-      ]
+      ],
+      "normative": []
     },
     "resolvedHref": "https://journal.smpte.org/periodicals/Journal%20of%20the%20Society%20of%20Motion%20Picture%20Engineers/25/2/6/",
     "status": {
@@ -14314,7 +14393,8 @@
         {
           "id": "J07431"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "J11957"
@@ -14356,7 +14436,8 @@
       "bibliographic": [
         "J08011",
         "JOSA.4.000420"
-      ]
+      ],
+      "normative": []
     },
     "resolvedHref": "https://journal.smpte.org/periodicals/Journal%20of%20the%20Society%20of%20Motion%20Picture%20Engineers/25/2/11/",
     "status": {
@@ -14371,7 +14452,8 @@
         {
           "id": "JOSA.4.000420"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "J01273",
@@ -14419,7 +14501,8 @@
         "J13051",
         "J13134",
         "J14768"
-      ]
+      ],
+      "normative": []
     },
     "resolvedHref": "https://journal.smpte.org/periodicals/Journal%20of%20the%20Society%20of%20Motion%20Picture%20Engineers/25/2/13/",
     "status": {
@@ -14455,7 +14538,8 @@
         {
           "id": "J14768"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "J08632"
@@ -14509,7 +14593,8 @@
         "J07507",
         "J13051",
         "J14768"
-      ]
+      ],
+      "normative": []
     },
     "resolvedHref": "https://journal.smpte.org/periodicals/Journal%20of%20the%20Society%20of%20Motion%20Picture%20Engineers/24/1/12/",
     "status": {
@@ -14548,7 +14633,8 @@
         {
           "id": "J14768"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "J11957"
@@ -14618,7 +14704,8 @@
     "references": {
       "bibliographic": [
         "J05608"
-      ]
+      ],
+      "normative": []
     },
     "resolvedHref": "https://journal.smpte.org/periodicals/Journal%20of%20the%20Society%20of%20Motion%20Picture%20Engineers/19/5/4/",
     "status": {
@@ -14630,7 +14717,8 @@
         {
           "id": "J05608"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "J05391",
@@ -14663,7 +14751,8 @@
         "J13132",
         "J14793",
         "ML3807.M56.1916"
-      ]
+      ],
+      "normative": []
     },
     "resolvedHref": "https://journal.smpte.org/periodicals/Journal%20of%20the%20Society%20of%20Motion%20Picture%20Engineers/19/4/7/",
     "status": {
@@ -14687,7 +14776,8 @@
         {
           "id": "ML3807.M56.1916"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "J11990",
@@ -14727,7 +14817,8 @@
         "J13034",
         "J13132",
         "j.1538-7305.1925.tb00946.x"
-      ]
+      ],
+      "normative": []
     },
     "resolvedHref": "https://journal.smpte.org/periodicals/Journal%20of%20the%20Society%20of%20Motion%20Picture%20Engineers/18/6/4/",
     "status": {
@@ -14757,7 +14848,8 @@
         {
           "id": "j.1538-7305.1925.tb00946.x"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "J01273",
@@ -14822,7 +14914,8 @@
       "bibliographic": [
         "J08011",
         "j.1538-7305.1927.tb00216.x"
-      ]
+      ],
+      "normative": []
     },
     "resolvedHref": "https://journal.smpte.org/periodicals/Journal%20of%20the%20Society%20of%20Motion%20Picture%20Engineers/18/5/4/",
     "status": {
@@ -14837,7 +14930,8 @@
         {
           "id": "j.1538-7305.1927.tb00216.x"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "J05391",
@@ -14961,7 +15055,8 @@
         "PJv49n33p200.1909",
         "PJv56n40p49.1916",
         "S0016-0032.28.92060-8"
-      ]
+      ],
+      "normative": []
     },
     "resolvedHref": "https://journal.smpte.org/periodicals/Journal%20of%20the%20Society%20of%20Motion%20Picture%20Engineers/15/3/10/",
     "status": {
@@ -14997,7 +15092,8 @@
         {
           "id": "S0016-0032.28.92060-8"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "J08011"
@@ -15104,7 +15200,8 @@
     "references": {
       "bibliographic": [
         "J14768"
-      ]
+      ],
+      "normative": []
     },
     "resolvedHref": "https://journal.smpte.org/periodicals/Journal%20of%20the%20Society%20of%20Motion%20Picture%20Engineers/23/2/5/",
     "status": {
@@ -15116,7 +15213,8 @@
         {
           "id": "J14768"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "J05436"
@@ -15143,7 +15241,8 @@
       "bibliographic": [
         "J04161",
         "J18005"
-      ]
+      ],
+      "normative": []
     },
     "resolvedHref": "https://journal.smpte.org/periodicals/Journal%20of%20the%20Society%20of%20Motion%20Picture%20Engineers/23/2/6/",
     "status": {
@@ -15158,7 +15257,8 @@
         {
           "id": "J18005"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "J05384"
@@ -15186,7 +15286,8 @@
       "bibliographic": [
         "J05514",
         "J12978"
-      ]
+      ],
+      "normative": []
     },
     "resolvedHref": "https://journal.smpte.org/periodicals/Journal%20of%20the%20Society%20of%20Motion%20Picture%20Engineers/23/2/7/",
     "status": {
@@ -15201,7 +15302,8 @@
         {
           "id": "J12978"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "J05436",
@@ -15236,7 +15338,8 @@
         "J10150",
         "J12978",
         "J12979"
-      ]
+      ],
+      "normative": []
     },
     "resolvedHref": "https://journal.smpte.org/periodicals/Journal%20of%20the%20Society%20of%20Motion%20Picture%20Engineers/23/2/8/",
     "status": {
@@ -15260,7 +15363,8 @@
         {
           "id": "J12979"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "J05384",
@@ -15330,7 +15434,8 @@
     "references": {
       "bibliographic": [
         "J12978"
-      ]
+      ],
+      "normative": []
     },
     "resolvedHref": "https://journal.smpte.org/periodicals/Journal%20of%20the%20Society%20of%20Motion%20Picture%20Engineers/22/2/4/",
     "status": {
@@ -15342,7 +15447,8 @@
         {
           "id": "J12978"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "J12600"
@@ -15368,7 +15474,8 @@
     "references": {
       "bibliographic": [
         "J02042"
-      ]
+      ],
+      "normative": []
     },
     "resolvedHref": "https://journal.smpte.org/periodicals/Journal%20of%20the%20Society%20of%20Motion%20Picture%20Engineers/22/2/7/",
     "status": {
@@ -15380,7 +15487,8 @@
         {
           "id": "J02042"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "J05436",
@@ -15408,7 +15516,8 @@
       "bibliographic": [
         "J06591",
         "J13051"
-      ]
+      ],
+      "normative": []
     },
     "resolvedHref": "https://journal.smpte.org/periodicals/Journal%20of%20the%20Society%20of%20Motion%20Picture%20Engineers/17/5/5/",
     "status": {
@@ -15423,7 +15532,8 @@
         {
           "id": "J13051"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "J05391",
@@ -15451,7 +15561,8 @@
     "references": {
       "bibliographic": [
         "J13050"
-      ]
+      ],
+      "normative": []
     },
     "resolvedHref": "https://journal.smpte.org/periodicals/Journal%20of%20the%20Society%20of%20Motion%20Picture%20Engineers/17/5/6/",
     "status": {
@@ -15463,7 +15574,8 @@
         {
           "id": "J13050"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "J05436",
@@ -15516,7 +15628,8 @@
         "J12600",
         "J14711",
         "SMPTE.PH22-52.1960"
-      ]
+      ],
+      "normative": []
     },
     "resolvedHref": "https://journal.smpte.org/periodicals/SMPTE%20Journal/85/8/8/",
     "status": {
@@ -15534,7 +15647,8 @@
         {
           "id": "SMPTE.PH22-52.1960"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.RP104.2005"
@@ -15574,7 +15688,8 @@
         "JOSA.4.000420",
         "PJv53p127.1913",
         "S0016-0032.18.90991-9"
-      ]
+      ],
+      "normative": []
     },
     "resolvedHref": "https://journal.smpte.org/periodicals/Journal%20of%20the%20Society%20of%20Motion%20Picture%20Engineers/17/2/4/",
     "status": {
@@ -15595,7 +15710,8 @@
         {
           "id": "S0016-0032.18.90991-9"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "J05389",
@@ -15701,7 +15817,8 @@
       "bibliographic": [
         "J05391",
         "J07430"
-      ]
+      ],
+      "normative": []
     },
     "resolvedHref": "https://journal.smpte.org/periodicals/Journal%20of%20the%20Society%20of%20Motion%20Picture%20Engineers/27/2/8/",
     "status": {
@@ -15716,7 +15833,8 @@
         {
           "id": "J07430"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "J11957"
@@ -15811,7 +15929,8 @@
       "bibliographic": [
         "J07431",
         "J12979"
-      ]
+      ],
+      "normative": []
     },
     "resolvedHref": "https://journal.smpte.org/periodicals/Journal%20of%20the%20Society%20of%20Motion%20Picture%20Engineers/24/2/5/",
     "status": {
@@ -15826,7 +15945,8 @@
         {
           "id": "J12979"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "J10133",
@@ -15873,7 +15993,8 @@
         "J05467",
         "J05608",
         "J10122"
-      ]
+      ],
+      "normative": []
     },
     "resolvedHref": "https://journal.smpte.org/periodicals/Journal%20of%20the%20Society%20of%20Motion%20Picture%20Engineers/20/5/7/",
     "status": {
@@ -15891,7 +16012,8 @@
         {
           "id": "J10122"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "J05391"
@@ -15931,7 +16053,8 @@
       "bibliographic": [
         "J05467",
         "J05608"
-      ]
+      ],
+      "normative": []
     },
     "resolvedHref": "https://journal.smpte.org/periodicals/Journal%20of%20the%20Society%20of%20Motion%20Picture%20Engineers/20/3/7/",
     "status": {
@@ -15946,7 +16069,8 @@
         {
           "id": "J05608"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "J07431"
@@ -16003,7 +16127,8 @@
         "J08632",
         "J10122",
         "J14666"
-      ]
+      ],
+      "normative": []
     },
     "resolvedHref": "https://journal.smpte.org/periodicals/Journal%20of%20the%20Society%20of%20Motion%20Picture%20Engineers/33/9/10/",
     "status": {
@@ -16033,7 +16158,8 @@
         {
           "id": "J14666"
         }
-      ]
+      ],
+      "normative": []
     },
     "referenceTree": [
       "J01341",
@@ -16096,7 +16222,8 @@
         "J05508",
         "J08011",
         "J14711"
-      ]
+      ],
+      "normative": []
     },
     "resolvedHref": "https://journal.smpte.org/periodicals/Journal%20of%20the%20Society%20of%20Motion%20Picture%20Engineers/32/6/7/",
     "status": {
@@ -16123,7 +16250,8 @@
         {
           "id": "J14711"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "J12632",
@@ -16209,7 +16337,8 @@
         "J07431",
         "J07459",
         "J12978"
-      ]
+      ],
+      "normative": []
     },
     "resolvedHref": "https://journal.smpte.org/periodicals/Journal%20of%20the%20Society%20of%20Motion%20Picture%20Engineers/50/5/9/",
     "status": {
@@ -16233,7 +16362,8 @@
         {
           "id": "J12978"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "J07583"
@@ -16277,7 +16407,8 @@
         "J11990",
         "JRPROC.1941.233634",
         "JRPROC.1947.232603"
-      ]
+      ],
+      "normative": []
     },
     "resolvedHref": "https://journal.smpte.org/periodicals/Journal%20of%20the%20Society%20of%20Motion%20Picture%20Engineers/50/2/7/",
     "status": {
@@ -16295,7 +16426,8 @@
         {
           "id": "JRPROC.1947.232603"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.RP120.2005"
@@ -16389,7 +16521,8 @@
         "J07507",
         "J13050",
         "J13051"
-      ]
+      ],
+      "normative": []
     },
     "resolvedHref": "https://journal.smpte.org/periodicals/Journal%20of%20the%20Society%20of%20Motion%20Picture%20Engineers/21/4/8/",
     "status": {
@@ -16416,7 +16549,8 @@
         {
           "id": "J13051"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "J07431",
@@ -16454,7 +16588,8 @@
     "references": {
       "bibliographic": [
         "J13034"
-      ]
+      ],
+      "normative": []
     },
     "resolvedHref": "https://journal.smpte.org/periodicals/Journal%20of%20the%20Society%20of%20Motion%20Picture%20Engineers/17/3/3/",
     "status": {
@@ -16466,7 +16601,8 @@
         {
           "id": "J13034"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "J05482"
@@ -17209,7 +17345,8 @@
         "J11990",
         "JRPROC.1941.233634",
         "JRPROC.1943.229731"
-      ]
+      ],
+      "normative": []
     },
     "resolvedHref": "https://ieeexplore.ieee.org/document/1697218/",
     "status": {
@@ -17235,7 +17372,8 @@
         {
           "id": "JRPROC.1943.229731"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "J12632"
@@ -17311,7 +17449,8 @@
     "references": {
       "bibliographic": [
         "JRPROC.1941.233634"
-      ]
+      ],
+      "normative": []
     },
     "resolvedHref": "https://ieeexplore.ieee.org/document/4051555/",
     "status": {
@@ -17322,7 +17461,8 @@
         {
           "id": "JRPROC.1941.233634"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.RP120.2005"
@@ -19341,7 +19481,8 @@
         "SMPTE.ST2067.ALLPARTS",
         "SMPTE.ST377-1",
         "W3C.xml"
-      ]
+      ],
+      "bibliographic": []
     },
     "status": {
       "active": true,
@@ -19367,7 +19508,8 @@
           "id": "W3C.xml.20081126",
           "undated": true
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "SMPTE.ST2067.ALLPARTS",
@@ -22871,7 +23013,8 @@
     "references": {
       "normative": [
         "SMPTE.OM.Std"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20250429-pub",
     "status": {
@@ -22893,7 +23036,8 @@
         {
           "id": "SMPTE.OM.Std"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "SMPTE.OM.Std"
@@ -23179,7 +23323,8 @@
     "references": {
       "normative": [
         "SMPTE.OM.Std"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20240612-pub",
     "status": {
@@ -23201,7 +23346,8 @@
         {
           "id": "SMPTE.OM.Std"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.AG02",
@@ -23258,7 +23404,8 @@
         "SMPTE.AG26",
         "SMPTE.AG27",
         "SMPTE.OM.Std"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20250325-pub",
     "status": {
@@ -23289,7 +23436,8 @@
         {
           "id": "SMPTE.OM.Std"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.AG16",
@@ -23752,7 +23900,8 @@
     "references": {
       "normative": [
         "SMPTE.OM.Std"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20221220-pub",
     "status": {
@@ -23774,7 +23923,8 @@
         {
           "id": "SMPTE.OM.Std"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "SMPTE.OM.Std"
@@ -23822,7 +23972,8 @@
     "references": {
       "normative": [
         "SMPTE.OM.Std"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20230131-pub",
     "status": {
@@ -23844,7 +23995,8 @@
         {
           "id": "SMPTE.OM.Std"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "SMPTE.OM.Std"
@@ -23893,7 +24045,8 @@
       "bibliographic": [
         "SMPTE.AG10B",
         "SMPTE.AG10C"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20230829-pub",
     "status": {
@@ -23918,7 +24071,8 @@
         {
           "id": "SMPTE.AG10C"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.AG10B"
@@ -23967,7 +24121,8 @@
     "references": {
       "bibliographic": [
         "SMPTE.AG10"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20230131-pub",
     "status": {
@@ -23989,7 +24144,8 @@
         {
           "id": "SMPTE.AG10"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.AG10"
@@ -24068,7 +24224,8 @@
     "references": {
       "normative": [
         "SMPTE.OM.Std"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20230131-pub",
     "status": {
@@ -24090,7 +24247,8 @@
         {
           "id": "SMPTE.OM.Std"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "SMPTE.OM.Std"
@@ -24167,7 +24325,8 @@
       "normative": [
         "SMPTE.OM.BL",
         "SMPTE.OM.Std"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20230131-pub",
     "status": {
@@ -24193,7 +24352,8 @@
         {
           "id": "SMPTE.OM.Std"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "SMPTE.OM.BL.2010",
@@ -24243,7 +24403,8 @@
       "normative": [
         "SMPTE.OM.BL",
         "SMPTE.OM.Std"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20230321-pub",
     "status": {
@@ -24269,7 +24430,8 @@
         {
           "id": "SMPTE.OM.Std"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "SMPTE.OM.BL.2010",
@@ -24666,7 +24828,8 @@
       "normative": [
         "SMPTE.AG22",
         "SMPTE.OM.Std"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20230321-pub",
     "status": {
@@ -24691,7 +24854,8 @@
         {
           "id": "SMPTE.OM.Std"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "SMPTE.AG04",
@@ -24888,7 +25052,8 @@
         "SMPTE.AG26",
         "SMPTE.AG31",
         "SMPTE.OM.Std"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20250325-pub",
     "status": {
@@ -24916,7 +25081,8 @@
         {
           "id": "SMPTE.OM.Std"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.AG06",
@@ -25422,7 +25588,8 @@
         "ISO.2108",
         "ISO.26324",
         "ISO.ICS"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20250226-pub",
     "status": {
@@ -25447,7 +25614,8 @@
           "id": "ISO.ICS",
           "undated": true
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.AG02"
@@ -25475,7 +25643,8 @@
         "RFC3986",
         "RFC7405",
         "WHATWG.HTML"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20250226-pub",
     "status": {
@@ -25497,7 +25666,8 @@
         {
           "id": "WHATWG.HTML"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "RFC3986",
@@ -25685,7 +25855,8 @@
     "references": {
       "normative": [
         "SMPTE.RP134.1994"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "19940208-pub",
     "resolvedHref": "https://pub.smpte.org/doc/eg12/19940208-pub/",
@@ -25710,7 +25881,8 @@
         {
           "id": "SMPTE.RP134.1994"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.RP143.2004"
@@ -25825,7 +25997,8 @@
         "ASA.S1.11.2004",
         "ASA.S1.13.1995",
         "ASA.S1.4.1983"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20051216-pub",
     "resolvedHref": "https://pub.smpte.org/doc/eg14/20051216-pub/",
@@ -25857,7 +26030,8 @@
         {
           "id": "ASA.S1.4.1983"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "ASA.S1.11.2004",
@@ -25888,7 +26062,8 @@
     "references": {
       "bibliographic": [
         "TAPT-AM.1977-09"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20050404-pub",
     "resolvedHref": "https://pub.smpte.org/doc/eg15/20050404-pub/",
@@ -25912,7 +26087,8 @@
         {
           "id": "TAPT-AM.1977-09"
         }
-      ]
+      ],
+      "normative": []
     },
     "referenceTree": [
       "TAPT-AM.1977-09"
@@ -26065,7 +26241,8 @@
         "ASA.S1.13.1995",
         "SMPTE.ST202.1998",
         "SMPTE.ST214.1999"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20020726-pub",
     "resolvedHref": "https://pub.smpte.org/doc/eg17/20020726-pub/",
@@ -26099,7 +26276,8 @@
         {
           "id": "SMPTE.ST214.1999"
         }
-      ]
+      ],
+      "normative": []
     },
     "referenceTree": [
       "ASA.S1.11.1986",
@@ -26189,7 +26367,8 @@
     "references": {
       "normative": [
         "SMPTE.ST184.1998"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "19991105-pub",
     "resolvedHref": "https://pub.smpte.org/doc/eg2/19991105-pub/",
@@ -26214,7 +26393,8 @@
         {
           "id": "SMPTE.ST184.1998"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "SMPTE.ST184.1998",
@@ -26889,7 +27069,8 @@
         "ISBN.9780226103891",
         "ISBN.9780877798071",
         "SMPTE.ST336.2007"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20130510-pub",
     "resolvedHref": "https://pub.smpte.org/doc/eg2074/20130510-pub/",
@@ -26918,7 +27099,8 @@
         {
           "id": "SMPTE.ST336.2007"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.ST400.2012"
@@ -26986,7 +27168,8 @@
         "SMPTE.ST2098-2.2019",
         "SMPTE.ST377-4.2012",
         "SMPTE.ST428-12.2013"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20200706-pub",
     "repo": "https://github.com/SMPTE/eg2098-3/",
@@ -27026,7 +27209,8 @@
         {
           "id": "SMPTE.ST428-12.2013"
         }
-      ]
+      ],
+      "normative": []
     },
     "referenceTree": [
       "AES17.1998",
@@ -27321,7 +27505,8 @@
         "SMPTE.EG9.2005",
         "SMPTE.RP150.2000",
         "SMPTE.ST20.2003"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20051216-pub",
     "resolvedHref": "https://pub.smpte.org/doc/eg23/20051216-pub/",
@@ -27353,7 +27538,8 @@
         {
           "id": "SMPTE.ST20.2003"
         }
-      ]
+      ],
+      "normative": []
     },
     "referenceTree": [
       "IEC.60268-10.1991",
@@ -27435,7 +27621,8 @@
         "SMPTE.ST215.1995",
         "SMPTE.ST59.1998",
         "SMPTE.ST7.1999"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20030717-pub",
     "resolvedHref": "https://pub.smpte.org/doc/eg25/20030717-pub/",
@@ -27474,7 +27661,8 @@
         {
           "id": "SMPTE.ST7.1999"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.ST96.2004"
@@ -27628,7 +27816,8 @@
         "SMPTE.ST195.1993",
         "SMPTE.ST196.1993",
         "SMPTE.ST233.1992"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "19940208-pub",
     "resolvedHref": "https://pub.smpte.org/doc/eg3/19940208-pub/",
@@ -27663,7 +27852,8 @@
         {
           "id": "SMPTE.ST233.1992"
         }
-      ]
+      ],
+      "normative": []
     },
     "referenceTree": [
       "SMPTE.RP105.1994",
@@ -28463,7 +28653,8 @@
       "bibliographic": [
         "SMPTE.RP200.2002",
         "SMPTE.ST202.1998"
-      ]
+      ],
+      "normative": []
     },
     "relatedDocs": [
       "ISO.26432-2.2008"
@@ -28495,7 +28686,8 @@
         {
           "id": "SMPTE.ST202.1998"
         }
-      ]
+      ],
+      "normative": []
     },
     "referenceTree": [
       "IEC.60268-17.1990",
@@ -28661,7 +28853,8 @@
       "normative": [
         "NAB.STD.E-416.1965",
         "SMPTE.ST164.1993"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "19940901-pub",
     "resolvedHref": "https://pub.smpte.org/doc/eg7/19940901-pub/",
@@ -28688,7 +28881,8 @@
         {
           "id": "SMPTE.ST164.1993"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "NAB.STD.E-416.1965",
@@ -30927,7 +31121,8 @@
         "W3C.xml.20081126",
         "W3C.xmlschema1.1-1.20120405",
         "W3C.xmlschema1.1-2.20120405"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20140615-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rdd28/20140615-pub/",
@@ -30961,7 +31156,8 @@
         {
           "id": "W3C.xmlschema1.1-2.20120405"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "R-REC-BR.1352-2.2002",
@@ -31338,7 +31534,8 @@
         "SMPTE.ST2084.2014",
         "T-REC-H.264.202108",
         "T-REC-H.273.202107"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20220909-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rdd36/20220909-pub/",
@@ -31384,7 +31581,8 @@
         {
           "id": "T-REC-H.273.202107"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.RDD44.2022",
@@ -31565,7 +31763,8 @@
     "references": {
       "normative": [
         "SMPTE.ST428-12.2013"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20160823-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rdd41/20160823-pub/",
@@ -31587,7 +31786,8 @@
         {
           "id": "SMPTE.ST428-12.2013"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "ISBN.9780877798071",
@@ -31709,7 +31909,8 @@
         "RFC3629",
         "RFC3986",
         "SMPTE.RDD42.2016"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20160823-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rdd43/20160823-pub/",
@@ -31740,7 +31941,8 @@
         {
           "id": "SMPTE.RDD42.2016"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "ISO.Dir-P2.2011",
@@ -32318,7 +32520,8 @@
         "W3C.xml.20040204",
         "W3C.xmlschema-1.20041028",
         "W3C.xmlschema-2.20041028"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20181012-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rdd47/20181012-pub/",
@@ -32385,7 +32588,8 @@
         {
           "id": "W3C.xmlschema-2.20041028"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "AMPAS.S.2019-001"
@@ -32421,10 +32625,7 @@
       "W3C.xmlschema-2.20041028"
     ],
     "docDependancy": true,
-    "currentStatus": "Superseded",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Superseded"
   },
   {
     "docId": "SMPTE.RDD48.2018",
@@ -32633,7 +32834,8 @@
         "SMPTE.ST429-6.2006Am1.2017",
         "SMPTE.ST429-7.2006",
         "SMPTE.ST429-8.2007"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20200518-pub",
     "repo": "https://github.com/SMPTE/rdd52/",
@@ -32704,7 +32906,8 @@
         {
           "id": "SMPTE.ST429-8.2007"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.RDD57.2021",
@@ -32962,7 +33165,8 @@
         "SMPTE.ST422.2019",
         "SMPTE.ST429-17.2017",
         "W3C.xml.20040204"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20210225-pub",
     "resolvedHref": "https://my.smpte.org/s/product-details?id=a1BVR0000007Na9",
@@ -33008,7 +33212,8 @@
         {
           "id": "W3C.xml.20040204"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "AES3.2009",
@@ -33131,7 +33336,8 @@
         "SMPTE.ST429-18.2019",
         "SMPTE.ST429-19.2019",
         "SMPTE.ST429-7.2006"
-      ]
+      ],
+      "bibliographic": []
     },
     "relatedDocs": [
       "ISDCF.D15.2020"
@@ -33171,7 +33377,8 @@
         {
           "id": "SMPTE.ST429-7.2006"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "DCI.DCSS.v1.3.2018-0627",
@@ -33766,7 +33973,8 @@
         "J07182",
         "J07583",
         "J14711"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20051216-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp104/20051216-pub/",
@@ -33798,7 +34006,8 @@
         {
           "id": "J14711"
         }
-      ]
+      ],
+      "normative": []
     },
     "referenceTree": [
       "J05514",
@@ -33895,7 +34104,8 @@
         "SMPTE.RP40.2003",
         "SMPTE.RP82.1995",
         "SMPTE.RP91.2002"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20031020-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp105/20031020-pub/",
@@ -33926,7 +34136,8 @@
         {
           "id": "SMPTE.RP91.2002"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.EG5.2003",
@@ -34329,7 +34540,8 @@
     "references": {
       "bibliographic": [
         "SMPTE.ST59.1998"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20000530-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp116/20000530-pub/",
@@ -34355,7 +34567,8 @@
         {
           "id": "SMPTE.ST59.1998"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.RP136.2004"
@@ -34457,7 +34670,8 @@
         "JAES.v2-i4-215-218.1954",
         "JRPROC.1948.234599",
         "JRPROC.1954.274731"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20050406-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp120/20050406-pub/",
@@ -34501,7 +34715,8 @@
         {
           "id": "JRPROC.1954.274731"
         }
-      ]
+      ],
+      "normative": []
     },
     "referenceTree": [
       "1.1915951",
@@ -34715,7 +34930,8 @@
         "SMPTE.ST139.2003",
         "SMPTE.ST223.2001",
         "SMPTE.ST86.1996"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20041108-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp127/20041108-pub/",
@@ -34752,7 +34968,8 @@
         {
           "id": "SMPTE.ST86.1996"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "ANSI.S4.3.1982",
@@ -34793,7 +35010,8 @@
         "SMPTE.ST119.1999",
         "SMPTE.ST185.1993",
         "SMPTE.ST223.2001"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20020726-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp128/20020726-pub/",
@@ -34831,7 +35049,8 @@
         {
           "id": "SMPTE.ST223.2001"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "AES6.1982",
@@ -34907,7 +35126,8 @@
         "SMPTE.RP149.1992",
         "SMPTE.ST109.2003",
         "SMPTE.ST239.2004"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20041108-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp130/20041108-pub/",
@@ -34938,7 +35158,8 @@
         {
           "id": "SMPTE.ST239.2004"
         }
-      ]
+      ],
+      "normative": []
     },
     "referenceTree": [
       "ISO.18906.2000",
@@ -35557,7 +35778,8 @@
       "normative": [
         "SMPTE.ST301.1999",
         "SMPTE.ST55.2000"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20051216-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp140/20051216-pub/",
@@ -35585,7 +35807,8 @@
         {
           "id": "SMPTE.ST55.2000"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "SMPTE.RP27.3.1989",
@@ -36105,7 +36328,8 @@
       "normative": [
         "NAPM.IT2.18.1996",
         "NAPM.IT2.19.1994"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "19970122-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp15/19970122-pub/",
@@ -36133,7 +36357,8 @@
         {
           "id": "NAPM.IT2.19.1994"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "NAPM.IT2.18.1996",
@@ -36166,7 +36391,8 @@
         "SMPTE.EG9.1995",
         "SMPTE.ST208.1992",
         "SMPTE.ST86.1996"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20000330-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp150/20000330-pub/",
@@ -36200,7 +36426,8 @@
         {
           "id": "SMPTE.ST86.1996"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.EG23.2005"
@@ -36337,7 +36564,8 @@
     "references": {
       "normative": [
         "PIMA.IT7.231.1998"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "19991105-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp153/19991105-pub/",
@@ -36363,7 +36591,8 @@
         {
           "id": "PIMA.IT7.231.1998"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.ST196.2003"
@@ -36758,7 +36987,8 @@
         "ISO.8860-2.1987",
         "ISO.9293.1987",
         "SMPTE.ST258.1993"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "19930701-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp162/19930701-pub/",
@@ -36798,7 +37028,8 @@
         {
           "id": "SMPTE.ST258.1993"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.ST258.2004"
@@ -37013,7 +37244,8 @@
       "bibliographic": [
         "J08426",
         "J13858"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "19640412-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp17/19640412-pub/",
@@ -37040,7 +37272,8 @@
         {
           "id": "J13858"
         }
-      ]
+      ],
+      "normative": []
     },
     "referenceTree": [
       "J08426",
@@ -37375,7 +37608,8 @@
         "SMPTE.ST112.1994",
         "SMPTE.ST233.1992",
         "SMPTE.ST41.1994"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "19950810-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp18/19950810-pub/",
@@ -37412,7 +37646,8 @@
         {
           "id": "SMPTE.ST41.1994"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "SMPTE.RP67.1993",
@@ -37445,7 +37680,8 @@
         "1.3061757",
         "ISBN.9780470024270",
         "NAPM.IT2.18.1996"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "19990423-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp180/19990423-pub/",
@@ -37475,7 +37711,8 @@
         {
           "id": "NAPM.IT2.18.1996"
         }
-      ]
+      ],
+      "normative": []
     },
     "referenceTree": [
       "1.3061757",
@@ -37837,7 +38074,8 @@
         "SMPTE.ST231.1999",
         "SMPTE.ST234.1998",
         "SMPTE.ST239.1999"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20031020-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp19/20031020-pub/",
@@ -37868,7 +38106,8 @@
         {
           "id": "SMPTE.ST239.1999"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "SMPTE.ST231.1995",
@@ -37922,7 +38161,8 @@
         "TMAG.1982.1061957",
         "UL.900.1995",
         "mfir.17.5.270"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "19960801-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp190/19960801-pub/",
@@ -38005,7 +38245,8 @@
         {
           "id": "mfir.17.5.270"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "20.105066",
@@ -38173,7 +38414,8 @@
         "SMPTE.ST258.2004",
         "SMPTE.ST270.1994",
         "SMPTE.ST271.2002"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20040406-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp194/20040406-pub/",
@@ -38216,7 +38458,8 @@
         {
           "id": "SMPTE.ST271.2002"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "EBU.Tech3245s.1988",
@@ -38297,7 +38540,8 @@
         "SMPTE.ST258.2004",
         "SMPTE.ST270.1994",
         "SMPTE.ST313.1999"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20040406-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp195/20040406-pub/",
@@ -38340,7 +38584,8 @@
         {
           "id": "SMPTE.ST313.1999"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.RP194.2004",
@@ -38539,7 +38784,8 @@
         "SMPTE.ST109.1998",
         "SMPTE.ST233.2003",
         "SMPTE.ST7.1999"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20031020-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp20/20031020-pub/",
@@ -38570,7 +38816,8 @@
         {
           "id": "SMPTE.ST7.1999"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "SMPTE.RP27.3.1989",
@@ -38614,7 +38861,8 @@
       "normative": [
         "IEC.60268-17.1990",
         "SMPTE.ST202.1998"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20021107-pub",
     "repo": "https://github.com/SMPTE/rp200/",
@@ -38644,7 +38892,8 @@
         {
           "id": "SMPTE.ST202.1998"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.EG432-2.2006",
@@ -38681,7 +38930,8 @@
       "normative": [
         "IEC.60268-17.1990",
         "SMPTE.ST202.2010"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20120418-pub",
     "repo": "https://github.com/SMPTE/rp200/",
@@ -38707,7 +38957,8 @@
         {
           "id": "SMPTE.ST202.2010"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.RP2096-1.2017",
@@ -40971,7 +41222,8 @@
         "SMPTE.RP2079.2013",
         "SMPTE.ST377-1.2009",
         "SMPTE.ST377.2004"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20140916-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp2089/20140916-pub/",
@@ -41001,7 +41253,8 @@
         {
           "id": "SMPTE.ST377.2004"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "AES3.2003",
@@ -41356,7 +41609,8 @@
     "references": {
       "normative": [
         "SMPTE.RP2096-1.2017"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20170712-pub",
     "repo": "https://github.com/SMPTE/rp2096-2/",
@@ -41379,7 +41633,8 @@
         {
           "id": "SMPTE.RP2096-1.2017"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "AES17.1998",
@@ -41463,7 +41718,8 @@
         "SMPTE.ST192.1997",
         "SMPTE.ST235.1998",
         "SMPTE.ST241.2015"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20150224-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp21/20150224-pub/",
@@ -41495,7 +41751,8 @@
         {
           "id": "SMPTE.ST241.2015"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "AIIM.MS34.1990",
@@ -42088,7 +42345,8 @@
         "ISO.5-2.1991",
         "SMPTE.ST59.1998",
         "SMPTE.ST96.1999"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20020814-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp216/20020814-pub/",
@@ -42119,7 +42377,8 @@
         {
           "id": "SMPTE.ST96.1999"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "ISO.5-2.1991",
@@ -42584,7 +42843,8 @@
     "references": {
       "bibliographic": [
         "SMPTE.ST174.1994"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "19970918-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp24/19970918-pub/",
@@ -42609,7 +42869,8 @@
         {
           "id": "SMPTE.ST174.1994"
         }
-      ]
+      ],
+      "normative": []
     },
     "referenceTree": [
       "SMPTE.ST174.1994"
@@ -42635,7 +42896,8 @@
     "references": {
       "normative": [
         "SMPTE.ST55.1992"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "19950706-pub",
     "resolvedHref": "https://my.smpte.org/s/product-details?id=a1BVR0000008kYy",
@@ -42662,7 +42924,8 @@
         {
           "id": "SMPTE.ST55.1992"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.RP428-6.2009"
@@ -42692,7 +42955,8 @@
       "normative": [
         "SMPTE.ST301.2005",
         "SMPTE.ST55.2010"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20111205-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp25/20111205-pub/",
@@ -42721,7 +42985,8 @@
         {
           "id": "SMPTE.ST55.2010"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "SMPTE.RP27.3.1989",
@@ -42973,7 +43238,8 @@
         "SMPTE.ST59.1991",
         "SMPTE.ST7.1994",
         "SMPTE.ST96.1992"
-      ]
+      ],
+      "bibliographic": []
     },
     "resolvedHref": "https://my.smpte.org/s/product-details?id=a1BVR0000008kZ1",
     "status": {
@@ -43009,7 +43275,8 @@
         {
           "id": "SMPTE.ST96.1992"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.ST196.2003"
@@ -43107,7 +43374,8 @@
         "SMPTE.ST154.1993",
         "SMPTE.ST157.1994",
         "SMPTE.ST168.1991"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "19951107-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp32/19951107-pub/",
@@ -43138,7 +43406,8 @@
         {
           "id": "SMPTE.ST168.1991"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "SMPTE.ST154.1993",
@@ -43169,7 +43438,8 @@
     "references": {
       "normative": [
         "SMPTE.ST235.1998"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "19970918-pub",
     "status": {
@@ -43191,7 +43461,8 @@
         {
           "id": "SMPTE.ST235.1998"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "J13970",
@@ -43646,7 +43917,8 @@
         "SMPTE.ST428-3.2006",
         "SMPTE.ST429-2.2009",
         "SMPTE.ST429-7.2006"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20100331-pub",
     "repo": "https://github.com/SMPTE/rp428-4/",
@@ -43684,7 +43956,8 @@
         {
           "id": "SMPTE.ST429-7.2006"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.ST377-4.2012"
@@ -44027,7 +44300,8 @@
         "CIE.015.1986",
         "SMPTE.ST428-1.2006",
         "SMPTE.ST431-1.2006"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20110406-pub",
     "repo": "https://github.com/SMPTE/rp431-2/",
@@ -44059,7 +44333,8 @@
         {
           "id": "SMPTE.ST431-1.2006"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "DCI.DCSS.v1.4.2.2022-0615",
@@ -44110,7 +44385,8 @@
         "40290752",
         "J09039",
         "J13565"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "19720401-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp45/19720401-pub/",
@@ -44141,7 +44417,8 @@
         {
           "id": "J13565"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.RP143.2004"
@@ -44174,7 +44451,8 @@
       "bibliographic": [
         "SMPTE.RP11.1994",
         "SMPTE.RP6.1994"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "19990422-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp47/19990422-pub/",
@@ -44202,7 +44480,8 @@
         {
           "id": "SMPTE.RP6.1994"
         }
-      ]
+      ],
+      "normative": []
     },
     "referenceTree": [
       "SMPTE.RP11.1994",
@@ -44261,7 +44540,8 @@
     "references": {
       "bibliographic": [
         "NAPM.IT9.4.1994"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "19990422-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp48/19990422-pub/",
@@ -44286,7 +44566,8 @@
         {
           "id": "NAPM.IT9.4.1994"
         }
-      ]
+      ],
+      "normative": []
     },
     "referenceTree": [
       "NAPM.IT9.4.1994"
@@ -44315,7 +44596,8 @@
     "references": {
       "normative": [
         "SMPTE.ST55.1992"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "19950105-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp49/19950105-pub/",
@@ -44340,7 +44622,8 @@
         {
           "id": "SMPTE.ST55.1992"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "SMPTE.ST55.1992"
@@ -44368,7 +44651,8 @@
     "references": {
       "bibliographic": [
         "SMPTE.ST160.1990"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "19950105-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp50/19950105-pub/",
@@ -44393,7 +44677,8 @@
         {
           "id": "SMPTE.ST160.1990"
         }
-      ]
+      ],
+      "normative": []
     },
     "referenceTree": [
       "SMPTE.ST160.1990"
@@ -44421,7 +44706,8 @@
     "references": {
       "bibliographic": [
         "SMPTE.ST196.1993"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "19950105-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp51/19950105-pub/",
@@ -44446,7 +44732,8 @@
         {
           "id": "SMPTE.ST196.1993"
         }
-      ]
+      ],
+      "normative": []
     },
     "referenceTree": [
       "SMPTE.ST196.1993"
@@ -44475,7 +44762,8 @@
     "references": {
       "normative": [
         "SMPTE.ST83.1996"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "19930524-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp53/19930524-pub/",
@@ -44499,7 +44787,8 @@
         {
           "id": "SMPTE.ST83.1996"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "SMPTE.ST83.1996"
@@ -44568,7 +44857,8 @@
         "J01217",
         "J12893",
         "J17832"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "19970918-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp55/19970918-pub/",
@@ -44600,7 +44890,8 @@
         {
           "id": "J17832"
         }
-      ]
+      ],
+      "normative": []
     },
     "referenceTree": [
       "J01217",
@@ -44632,7 +44923,8 @@
         "SMPTE.ST157.1999",
         "SMPTE.ST231.1999",
         "SMPTE.ST234.1998"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20020726-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp56/20020726-pub/",
@@ -44666,7 +44958,8 @@
         {
           "id": "SMPTE.ST234.1998"
         }
-      ]
+      ],
+      "normative": []
     },
     "referenceTree": [
       "SMPTE.ST149.1999",
@@ -44795,7 +45088,8 @@
       "bibliographic": [
         "J13528",
         "SMPTE.ST196.1995"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "19991105-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp59/19991105-pub/",
@@ -44822,7 +45116,8 @@
         {
           "id": "SMPTE.ST196.1995"
         }
-      ]
+      ],
+      "normative": []
     },
     "referenceTree": [
       "J13528",
@@ -44892,7 +45187,8 @@
         "SMPTE.ST109.1998",
         "SMPTE.ST223.2001",
         "SMPTE.ST41.1999"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20020726-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp63/20020726-pub/",
@@ -44926,7 +45222,8 @@
         {
           "id": "SMPTE.ST41.1999"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "AES6.1982",
@@ -44965,7 +45262,8 @@
         "SMPTE.ST139.1996",
         "SMPTE.ST223.1996",
         "SMPTE.ST40.1997"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "19990422-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp64/19990422-pub/",
@@ -44999,7 +45297,8 @@
         {
           "id": "SMPTE.ST40.1997"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "ANSI.S4.3.1982",
@@ -45037,7 +45336,8 @@
         "SMPTE.ST233.1998",
         "SMPTE.ST59.1998",
         "SMPTE.ST7.1999"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20000406-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp65/20000406-pub/",
@@ -45077,7 +45377,8 @@
         {
           "id": "SMPTE.ST7.1999"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.ST233.2003",
@@ -45148,7 +45449,8 @@
       "normative": [
         "SMPTE.ST109.1998",
         "SMPTE.ST223.2001"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20020726-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp67/20020726-pub/",
@@ -45177,7 +45479,8 @@
         {
           "id": "SMPTE.ST223.2001"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "ISO.18906.2000",
@@ -45210,7 +45513,8 @@
       "normative": [
         "SMPTE.ST139.1996",
         "SMPTE.ST223.2001"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20020726-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp68/20020726-pub/",
@@ -45238,7 +45542,8 @@
         {
           "id": "SMPTE.ST223.2001"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "ISO.18906.2000",
@@ -45357,7 +45662,8 @@
         "SMPTE.ST109.1998",
         "SMPTE.ST223.2001",
         "SMPTE.ST41.1999"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20020726-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp70/20020726-pub/",
@@ -45395,7 +45701,8 @@
         {
           "id": "SMPTE.ST41.1999"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "AES6.1982",
@@ -46245,7 +46552,8 @@
       "bibliographic": [
         "SMPTE.RP95.1994",
         "SMPTE.ST196.1995"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20000609-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp94/20000609-pub/",
@@ -46273,7 +46581,8 @@
         {
           "id": "SMPTE.ST196.1995"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.RP95.2003",
@@ -46337,7 +46646,8 @@
       "bibliographic": [
         "SMPTE.RP94.2000",
         "SMPTE.ST196.2003"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20031020-pub",
     "resolvedHref": "https://pub.smpte.org/doc/rp95/20031020-pub/",
@@ -46365,7 +46675,8 @@
         {
           "id": "SMPTE.ST196.2003"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.ST196.2003"
@@ -46683,7 +46994,8 @@
         "SMPTE.ST237.1998",
         "SMPTE.ST242.1993",
         "SMPTE.ST93.1998"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20020726-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st102/20020726-pub/",
@@ -46720,7 +47032,8 @@
         {
           "id": "SMPTE.ST93.1998"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.RP143.2004",
@@ -46823,7 +47136,8 @@
     "references": {
       "normative": [
         "SMPTE.ST223.2001"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20031112-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st109/20031112-pub/",
@@ -46848,7 +47162,8 @@
         {
           "id": "SMPTE.ST223.2001"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.RP130.2004",
@@ -46946,7 +47261,8 @@
         "SMPTE.ST195.2000",
         "SMPTE.ST237.1998",
         "SMPTE.ST40.1997"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20010606-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st111/20010606-pub/",
@@ -46980,7 +47296,8 @@
         {
           "id": "SMPTE.ST40.1997"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.ST40.2002"
@@ -47081,7 +47398,8 @@
         "SMPTE.ST109.2003",
         "SMPTE.ST233.2003",
         "SMPTE.ST87.1996"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20041108-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st112/20041108-pub/",
@@ -47113,7 +47431,8 @@
         {
           "id": "SMPTE.ST87.1996"
         }
-      ]
+      ],
+      "normative": []
     },
     "referenceTree": [
       "ISO.18906.2000",
@@ -47225,7 +47544,8 @@
         "ISO.14546.2000",
         "SMPTE.ST145.1999",
         "SMPTE.ST223.2001"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20041108-pub",
     "resolvedHref": "https://my.smpte.org/s/product-details?id=a1BVR0000007Nc9",
@@ -47258,7 +47578,8 @@
         {
           "id": "SMPTE.ST223.2001"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.ST145.2004"
@@ -47295,7 +47616,8 @@
         "ISO.14546.2000",
         "SMPTE.ST145.2004",
         "SMPTE.ST223.2001"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20111003-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st119/20111003-pub/",
@@ -47324,7 +47646,8 @@
         {
           "id": "SMPTE.ST223.2001"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.RP91.2014"
@@ -47769,7 +48092,8 @@
         "SMPTE.ST102.1997",
         "SMPTE.ST177.1995",
         "SMPTE.ST194.1997"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20000530-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st137/20000530-pub/",
@@ -47800,7 +48124,8 @@
         {
           "id": "SMPTE.ST194.1997"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.RP143.2004",
@@ -47906,7 +48231,8 @@
     "references": {
       "normative": [
         "SMPTE.ST223.2001"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20031112-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st139/20031112-pub/",
@@ -47931,7 +48257,8 @@
         {
           "id": "SMPTE.ST223.2001"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.RP127.2004",
@@ -48025,7 +48352,8 @@
         "NAPM.1.10.1995",
         "SMPTE.ST119.2004",
         "SMPTE.ST223.2001"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20041108-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st145/20041108-pub/",
@@ -48056,7 +48384,8 @@
         {
           "id": "SMPTE.ST223.2001"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.ST119.2011",
@@ -48096,7 +48425,8 @@
       "bibliographic": [
         "ISO.2240.1994",
         "PIMA.IT3.301.1990"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20010606-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st146/20010606-pub/",
@@ -48125,7 +48455,8 @@
         {
           "id": "PIMA.IT3.301.1990"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.ST166.2004"
@@ -48246,7 +48577,8 @@
     "references": {
       "bibliographic": [
         "SMPTE.ST223.2001"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20041108-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st149/20041108-pub/",
@@ -48272,7 +48604,8 @@
         {
           "id": "SMPTE.ST223.2001"
         }
-      ]
+      ],
+      "normative": []
     },
     "referenceTree": [
       "ISO.18906.2000",
@@ -48391,7 +48724,8 @@
     "references": {
       "bibliographic": [
         "SMPTE.ST119.1999"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20031020-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st152/20031020-pub/",
@@ -48415,7 +48749,8 @@
         {
           "id": "SMPTE.ST119.1999"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.ST185.2003",
@@ -48450,7 +48785,8 @@
         "SMPTE.ST154.1998",
         "SMPTE.ST157.1999",
         "SMPTE.ST168.1996"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20010606-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st153/20010606-pub/",
@@ -48481,7 +48817,8 @@
         {
           "id": "SMPTE.ST168.1996"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.ST154.2003"
@@ -48578,7 +48915,8 @@
         "SMPTE.ST149.1999",
         "SMPTE.ST153.2001",
         "SMPTE.ST157.1999"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20031020-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st154/20031020-pub/",
@@ -48609,7 +48947,8 @@
         {
           "id": "SMPTE.ST157.1999"
         }
-      ]
+      ],
+      "normative": []
     },
     "referenceTree": [
       "SMPTE.ST149.1999",
@@ -48669,7 +49008,8 @@
     "references": {
       "bibliographic": [
         "SMPTE.ST149.1999"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "19990420-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st157/19990420-pub/",
@@ -48695,7 +49035,8 @@
         {
           "id": "SMPTE.ST149.1999"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.RP56.2002",
@@ -48976,7 +49317,8 @@
     "references": {
       "normative": [
         "SMPTE.ST149.1994"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "19980901-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st161/19980901-pub/",
@@ -49001,7 +49343,8 @@
         {
           "id": "SMPTE.ST149.1994"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.ST164.2002"
@@ -49123,7 +49466,8 @@
         "SMPTE.ST149.1999",
         "SMPTE.ST154.1998",
         "SMPTE.ST161.1998"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20020726-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st164/20020726-pub/",
@@ -49154,7 +49498,8 @@
         {
           "id": "SMPTE.ST161.1998"
         }
-      ]
+      ],
+      "normative": []
     },
     "referenceTree": [
       "SMPTE.ST149.1994",
@@ -49247,7 +49592,8 @@
         "SMPTE.ST146.2001",
         "SMPTE.ST159-1.2001",
         "SMPTE.ST197.2003"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20041108-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st166/20041108-pub/",
@@ -49279,7 +49625,8 @@
         {
           "id": "SMPTE.ST197.2003"
         }
-      ]
+      ],
+      "normative": []
     },
     "referenceTree": [
       "ISO.2240.1994",
@@ -49376,7 +49723,8 @@
       "bibliographic": [
         "SMPTE.ST223.2001",
         "SMPTE.ST75.1994"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20010606-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st168/20010606-pub/",
@@ -49405,7 +49753,8 @@
         {
           "id": "SMPTE.ST75.1994"
         }
-      ]
+      ],
+      "normative": []
     },
     "referenceTree": [
       "ISO.18906.2000",
@@ -49867,7 +50216,8 @@
     "references": {
       "normative": [
         "SMPTE.ST75.1994"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "19980727-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st184/19980727-pub/",
@@ -49892,7 +50242,8 @@
         {
           "id": "SMPTE.ST75.1994"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.EG2.1999"
@@ -49957,7 +50308,8 @@
         "SMPTE.ST119.1999",
         "SMPTE.ST152.2003",
         "SMPTE.ST221.2003"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20031214-pub",
     "resolvedHref": "https://my.smpte.org/s/product-details?id=a1BVR0000008ka5",
@@ -49990,7 +50342,8 @@
         {
           "id": "SMPTE.ST221.2003"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.ST221.2003"
@@ -50170,7 +50523,8 @@
     "references": {
       "bibliographic": [
         "SMPTE.ST241.1995"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "19971204-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st192/19971204-pub/",
@@ -50196,7 +50550,8 @@
         {
           "id": "SMPTE.ST241.1995"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.RP21.2015"
@@ -50287,7 +50642,8 @@
         "SMPTE.ST137.2000",
         "SMPTE.ST195.2000",
         "SMPTE.ST40.2002"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20020726-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st194/20020726-pub/",
@@ -50318,7 +50674,8 @@
         {
           "id": "SMPTE.ST40.2002"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.ST40.2002"
@@ -50418,7 +50775,8 @@
         "SMPTE.ST111.1996",
         "SMPTE.ST55.2000",
         "SMPTE.ST59.1998"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20000530-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st195/20000530-pub/",
@@ -50452,7 +50810,8 @@
         {
           "id": "SMPTE.ST59.1998"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.RP40.2003",
@@ -50748,7 +51107,8 @@
         "SMPTE.ST197.2003",
         "SMPTE.ST199.2003",
         "SMPTE.ST200.2003"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20031112-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st198/20031112-pub/",
@@ -50785,7 +51145,8 @@
         {
           "id": "SMPTE.ST200.2003"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.ST197.2003"
@@ -50978,7 +51339,8 @@
         "SMPTE.ST159-1.2001",
         "SMPTE.ST197.2003",
         "SMPTE.ST205.1993"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20031112-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st200/20031112-pub/",
@@ -51009,7 +51371,8 @@
         {
           "id": "SMPTE.ST205.1993"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.ST197.2003",
@@ -51095,7 +51458,8 @@
         "W3C.xmlschema-1.20041028",
         "W3C.xmlschema-2.20041028",
         "W3C.xpath.19991116"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20150830-pub",
     "repo": "https://github.com/SMPTE/st2001-1/",
@@ -51169,7 +51533,8 @@
         {
           "id": "W3C.xpath.19991116"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.RDD52.2020",
@@ -53431,7 +53796,8 @@
     "references": {
       "normative": [
         "SMPTE.ST40.2002"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20031214-pub",
     "resolvedHref": "https://my.smpte.org/s/product-details?id=a1BVR0000008kaO",
@@ -53458,7 +53824,8 @@
         {
           "id": "SMPTE.ST40.2002"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.EG9.2005"
@@ -53497,7 +53864,8 @@
     "references": {
       "normative": [
         "SMPTE.ST40.2002"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20110322-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st203/20110322-pub/",
@@ -53521,7 +53889,8 @@
         {
           "id": "SMPTE.ST40.2002"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.RP155.2014"
@@ -55296,7 +55665,8 @@
         "SMPTE.ST377-1.2011Am1.2012",
         "SMPTE.ST378.2004",
         "SMPTE.ST379-2.2010"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20120424-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st2049/20120424-pub/",
@@ -55329,7 +55699,8 @@
         {
           "id": "SMPTE.ST379-2.2010"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.RDD44.2022"
@@ -56487,7 +56858,8 @@
         "W3C.xmldsig-core.20020212",
         "W3C.xmlschema-1.20041028",
         "W3C.xmlschema-2.20041028"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20141212-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st2067-100/20141212-pub/",
@@ -56530,7 +56902,8 @@
         {
           "id": "W3C.xmlschema-2.20041028"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.ST2067-101.2018",
@@ -56626,7 +56999,8 @@
         "SMPTE.ST377-1.2011Am2.2012",
         "W3C.xmlschema-1.20041028",
         "W3C.xmlschema-2.20041028"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20180222-pub",
     "repo": "https://github.com/SMPTE/st2067-101/",
@@ -56673,7 +57047,8 @@
         {
           "id": "W3C.xmlschema-2.20041028"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.ST2067-102.2022",
@@ -56769,7 +57144,8 @@
         "SMPTE.ST2067-21.2016",
         "W3C.xmlschema-1.20041028",
         "W3C.xmlschema-2.20041028"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20170830-pub",
     "resolvedHref": "https://my.smpte.org/s/product-details?id=a1BVR0000007NdL",
@@ -56807,7 +57183,8 @@
         {
           "id": "W3C.xmlschema-2.20041028"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.ST2067-40.2021",
@@ -56821,10 +57198,7 @@
       "W3C.xmlschema-2.20041028"
     ],
     "docDependancy": true,
-    "currentStatus": "Superseded",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Superseded"
   },
   {
     "docId": "SMPTE.ST2067-102.2022",
@@ -56851,7 +57225,8 @@
         "SMPTE.ST2067-21.2020Am1.2020",
         "W3C.xmlschema-1.20041028",
         "W3C.xmlschema-2.20041028"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20220404-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st2067-102/20220404-pub/",
@@ -56885,7 +57260,8 @@
         {
           "id": "W3C.xmlschema-2.20041028"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.ST2067-60.2022"
@@ -56958,10 +57334,7 @@
       "W3C.xmlschema-2.20041028"
     ],
     "docDependancy": true,
-    "currentStatus": "Active",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Active"
   },
   {
     "docId": "SMPTE.ST2067-103.2014",
@@ -57019,7 +57392,8 @@
         "SMPTE.ST377-4.2012",
         "W3C.xmlschema-1.20041028",
         "W3C.xmlschema-2.20041028"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20201109-pub",
     "status": {
@@ -57049,7 +57423,8 @@
         {
           "id": "W3C.xmlschema-2.20041028"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "ISO.15924.2004",
@@ -57113,7 +57488,8 @@
         "SMPTE.ST377-4.2012",
         "W3C.xmlschema-1.20041028",
         "W3C.xmlschema-2.20041028"
-      ]
+      ],
+      "bibliographic": []
     },
     "resolvedHref": "https://my.smpte.org/s/product-details?id=a1BVR0000007NdM",
     "status": {
@@ -57141,7 +57517,8 @@
         {
           "id": "W3C.xmlschema-2.20041028"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "ISO.15924.2004",
@@ -57750,7 +58127,8 @@
         "W3C.xml.20040204",
         "W3C.xmlschema-1.20041028",
         "W3C.xmlschema-2.20041028"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20180609-pub",
     "repo": "https://github.com/SMPTE/st2067-200/",
@@ -57791,7 +58169,8 @@
         {
           "id": "W3C.xmlschema-2.20041028"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.TSP2121-1.2018",
@@ -57878,7 +58257,8 @@
         "SMPTE.ST377-1.2019",
         "SMPTE.ST377-4.2012",
         "SMPTE.ST429-18.2019"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20201109-pub",
     "status": {
@@ -57917,7 +58297,8 @@
         {
           "id": "SMPTE.ST429-18.2019"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "AES3.2009",
@@ -58122,7 +58503,8 @@
         "SMPTE.ST377-1.2019",
         "SMPTE.ST377-4.2012",
         "SMPTE.ST429-18.2019"
-      ]
+      ],
+      "bibliographic": []
     },
     "resolvedHref": "https://my.smpte.org/s/product-details?id=a1BVR0000007NdQ",
     "status": {
@@ -58159,7 +58541,8 @@
         {
           "id": "SMPTE.ST429-18.2019"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "AES3.2009",
@@ -58365,7 +58748,8 @@
         "W3C.xml.20040204",
         "W3C.xmlschema-1.20041028",
         "W3C.xmlschema-2.20041028"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20221124-pub",
     "repo": "https://github.com/SMPTE/st2067-202/",
@@ -58418,7 +58802,8 @@
         {
           "id": "W3C.xmlschema-2.20041028"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "AES3.2009",
@@ -58581,10 +58966,7 @@
       "x509-sg.2000"
     ],
     "docDependancy": true,
-    "currentStatus": "Active",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Active"
   },
   {
     "docId": "SMPTE.ST2067-203.2023-09",
@@ -58983,10 +59365,7 @@
       "x509-sg.2000"
     ],
     "docDependancy": true,
-    "currentStatus": "Superseded",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Superseded"
   },
   {
     "docId": "SMPTE.ST2067-21.2020Am1.2020",
@@ -59281,10 +59660,7 @@
       "x509-sg.2000"
     ],
     "docDependancy": true,
-    "currentStatus": "Superseded",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Superseded"
   },
   {
     "docId": "SMPTE.ST2067-21.2022",
@@ -59563,10 +59939,7 @@
       "x509-sg.2000"
     ],
     "docDependancy": true,
-    "currentStatus": "Active",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Active"
   },
   {
     "details": "Incorrectly published as 2022 and labeled as 2023",
@@ -60082,7 +60455,8 @@
         "SMPTE.ST381-2.2011",
         "SMPTE.ST428-1.2006",
         "SMPTE.ST428-11.2013"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20130829-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st2067-30/20130829-pub/",
@@ -60147,7 +60521,8 @@
         {
           "id": "SMPTE.ST428-11.2013"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "AES-r2.2004",
@@ -60868,7 +61243,8 @@
         "SMPTE.ST380.2004",
         "SMPTE.ST410.2008",
         "SMPTE.ST436-1.2013"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20200407-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st2067-5/20200407-pub/",
@@ -60911,7 +61287,8 @@
         {
           "id": "SMPTE.ST436-1.2013"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.RDD44.2022",
@@ -61199,7 +61576,8 @@
         "SMPTE.ST379-2.2010",
         "SMPTE.ST381-3.2017",
         "W3C.xmlschema-1.20041028"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20220525-pub",
     "repo": "https://github.com/SMPTE/st2067-60/",
@@ -61266,7 +61644,8 @@
         {
           "id": "W3C.xmlschema-1.20041028"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "CEA.608.2008",
@@ -61389,10 +61768,7 @@
     "isLatestBase": true,
     "docTypeAbr": "ST",
     "docDependancy": false,
-    "currentStatus": "Active",
-    "currentWork": [
-      "Intial Draft - Complete"
-    ]
+    "currentStatus": "Active"
   },
   {
     "docId": "SMPTE.ST2067-71.2024-07",
@@ -62297,7 +62673,8 @@
       "bibliographic": [
         "ISO.1188.1984",
         "ISO.1189.1986"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "19921112-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st208/19921112-pub/",
@@ -62326,7 +62703,8 @@
         {
           "id": "ISO.1189.1986"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.RP150.2000",
@@ -63210,7 +63588,8 @@
         "SMPTE.ST298.2009",
         "SMPTE.ST336.2007",
         "W3C.xml-names.20060816"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20190709-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st2088/20190709-pub/",
@@ -63242,7 +63621,8 @@
         {
           "id": "W3C.xml-names.20060816"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.AG18",
@@ -63900,7 +64280,8 @@
       "normative": [
         "AES17.1998",
         "SMPTE.RP200.2012"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20150901-pub",
     "repo": "https://github.com/SMPTE/st2095-1/",
@@ -63930,7 +64311,8 @@
         {
           "id": "SMPTE.RP200.2012"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.RP2096-1.2017"
@@ -64117,7 +64499,8 @@
         "SMPTE.ST2098-5.2018",
         "SMPTE.ST298.2009",
         "SMPTE.ST428-12.2013"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20180618-pub",
     "repo": "https://github.com/SMPTE/st2098-2/",
@@ -64156,7 +64539,8 @@
         {
           "id": "SMPTE.ST428-12.2013"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "ISBN.9780877798071",
@@ -64219,7 +64603,8 @@
         "SMPTE.ST2098-5.2018",
         "SMPTE.ST298.2009",
         "SMPTE.ST428-12.2013"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20190529-pub",
     "repo": "https://github.com/SMPTE/st2098-2/",
@@ -64261,7 +64646,8 @@
         {
           "id": "SMPTE.ST428-12.2013"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.EG2098-3.2020",
@@ -64302,10 +64688,7 @@
       "W3C.xml.20081126"
     ],
     "docDependancy": true,
-    "currentStatus": "Superseded",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Superseded"
   },
   {
     "docId": "SMPTE.ST2098-2.2022",
@@ -64336,7 +64719,8 @@
         "SMPTE.ST2098-5.2018",
         "SMPTE.ST298.2009",
         "SMPTE.ST428-12.2013"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20220525-pub",
     "repo": "https://github.com/SMPTE/st2098-2/",
@@ -64377,7 +64761,8 @@
         {
           "id": "SMPTE.ST428-12.2013"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "DCI.DCSS.v1.4.2.2022-0615",
@@ -64416,10 +64801,7 @@
       "W3C.xml.20081126"
     ],
     "docDependancy": true,
-    "currentStatus": "Active",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Active"
   },
   {
     "docId": "SMPTE.ST2098-5.2018",
@@ -65805,7 +66187,8 @@
         "SMPTE.ST335.2012",
         "SMPTE.ST395.2014",
         "SMPTE.ST400.2012"
-      ]
+      ],
+      "bibliographic": []
     },
     "resolvedHref": "https://my.smpte.org/s/product-details?id=a1BVR0000007NeM",
     "status": {
@@ -65837,7 +66220,8 @@
         {
           "id": "SMPTE.ST400.2012"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "ISBN.9780226103891",
@@ -65924,7 +66308,8 @@
         "SMPTE.ST335",
         "SMPTE.ST395",
         "SMPTE.ST400"
-      ]
+      ],
+      "bibliographic": []
     },
     "resolvedHref": "https://my.smpte.org/s/product-details?id=a1BVR0000007NeM2AU",
     "status": {
@@ -65960,7 +66345,8 @@
           "id": "SMPTE.ST400.2012",
           "undated": true
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "ISBN.9780226103891",
@@ -66359,7 +66745,8 @@
     "references": {
       "normative": [
         "SMPTE.ST202.1998"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20071214-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st214/20071214-pub/",
@@ -66384,7 +66771,8 @@
         {
           "id": "SMPTE.ST202.1998"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.ST202.2010"
@@ -66534,7 +66922,8 @@
     "references": {
       "normative": [
         "SMPTE.ST221.2003"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20150224-pub",
     "resolvedHref": "https://my.smpte.org/s/product-details?id=a1BVR0000008kb5",
@@ -66557,7 +66946,8 @@
         {
           "id": "SMPTE.ST221.2003"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "SMPTE.ST119.1999",
@@ -67151,7 +67541,8 @@
     "references": {
       "bibliographic": [
         "SMPTE.ST239.2004"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20041108-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st231/20041108-pub/",
@@ -67176,7 +67567,8 @@
         {
           "id": "SMPTE.ST239.2004"
         }
-      ]
+      ],
+      "normative": []
     },
     "referenceTree": [
       "ISO.18906.2000",
@@ -67442,7 +67834,8 @@
       "bibliographic": [
         "J13970",
         "J17833"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "19980303-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st235/19980303-pub/",
@@ -67470,7 +67863,8 @@
         {
           "id": "J17833"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.RP21.2015",
@@ -67564,7 +67958,8 @@
       "bibliographic": [
         "J08310",
         "SMPTE.ST223.2001"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20031112-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st237/20031112-pub/",
@@ -67592,7 +67987,8 @@
         {
           "id": "SMPTE.ST223.2001"
         }
-      ]
+      ],
+      "normative": []
     },
     "referenceTree": [
       "ISO.18906.2000",
@@ -67709,7 +68105,8 @@
     "references": {
       "bibliographic": [
         "SMPTE.ST223.2001"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20041108-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st239/20041108-pub/",
@@ -67734,7 +68131,8 @@
         {
           "id": "SMPTE.ST223.2001"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.RP130.2004",
@@ -67827,7 +68225,8 @@
     "references": {
       "bibliographic": [
         "SMPTE.ST192.1991"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "19950103-pub",
     "resolvedHref": "https://my.smpte.org/s/product-details?id=a1BVR0000007Nea",
@@ -67854,7 +68253,8 @@
         {
           "id": "SMPTE.ST192.1991"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.ST192.1997"
@@ -67886,7 +68286,8 @@
     "references": {
       "bibliographic": [
         "SMPTE.ST192.1991"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20150224-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st241/20150224-pub/",
@@ -67909,7 +68310,8 @@
         {
           "id": "SMPTE.ST192.1991"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.RP21.2015"
@@ -67972,7 +68374,8 @@
       "bibliographic": [
         "SMPTE.ST102.2002",
         "SMPTE.ST139.1996"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20031020-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st242/20031020-pub/",
@@ -68000,7 +68403,8 @@
         {
           "id": "SMPTE.ST139.1996"
         }
-      ]
+      ],
+      "normative": []
     },
     "referenceTree": [
       "ISO.18906.2000",
@@ -68411,7 +68815,8 @@
       "normative": [
         "AIM.BC4.1999",
         "SMPTE.ST93.2005"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20081010-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st254/20081010-pub/",
@@ -68439,7 +68844,8 @@
         {
           "id": "SMPTE.ST93.2005"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "AIM.BC4.1999",
@@ -68559,7 +68965,8 @@
         "INCITS.X3.4.1986",
         "SMPTE.RP162.1993",
         "SMPTE.ST12.1999"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20040406-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st258/20040406-pub/",
@@ -68589,7 +68996,8 @@
         {
           "id": "SMPTE.ST12.1999"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.RP194.2004",
@@ -69243,7 +69651,8 @@
       "normative": [
         "AIM.USS-128.1986",
         "SMPTE.ST145.2004"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20081010-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st270/20081010-pub/",
@@ -69271,7 +69680,8 @@
         {
           "id": "SMPTE.ST145.2004"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "AIM.USS-128.1986",
@@ -69336,7 +69746,8 @@
       "normative": [
         "AIM.USS-128.1986",
         "SMPTE.ST109.2003"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20081010-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st271/20081010-pub/",
@@ -69365,7 +69776,8 @@
         {
           "id": "SMPTE.ST109.2003"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "AIM.USS-128.1986",
@@ -70596,7 +71008,8 @@
     "references": {
       "normative": [
         "SMPTE.RP65.2000"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20051216-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st301/20051216-pub/",
@@ -70621,7 +71034,8 @@
         {
           "id": "SMPTE.RP65.2000"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.RP25.2011"
@@ -71104,7 +71518,8 @@
       "normative": [
         "AIM.BC4.1999",
         "SMPTE.ST145.2004"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20081010-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st313/20081010-pub/",
@@ -71132,7 +71547,8 @@
         {
           "id": "SMPTE.ST145.2004"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "AIM.BC4.1999",
@@ -73019,7 +73435,8 @@
         "SMPTE.ST339.2015",
         "SMPTE.ST340.2015",
         "SMPTE.ST341.2000"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20150327-pub",
     "resolvedHref": "https://my.smpte.org/s/product-details?id=a1BVR0000007NfM",
@@ -73070,7 +73487,8 @@
         {
           "id": "SMPTE.ST341.2000"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.ST339.2015"
@@ -73131,7 +73549,8 @@
         "SMPTE.ST339.2015",
         "SMPTE.ST340.2015",
         "SMPTE.ST341.2000"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20160715-pub",
     "resolvedHref": "https://my.smpte.org/s/product-details?id=a1BVR0000007NfM",
@@ -73187,7 +73606,8 @@
         {
           "id": "SMPTE.ST341.2000"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.ST382.2022"
@@ -73251,7 +73671,8 @@
         "SMPTE.ST339.2015",
         "SMPTE.ST340.2015",
         "SMPTE.ST341.2000"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20191018-am1-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st338/20191018-am1-pub/",
@@ -73306,7 +73727,8 @@
         {
           "id": "SMPTE.ST341.2000"
         }
-      ]
+      ],
+      "normative": []
     },
     "referenceTree": [
       "AES3-1.2009",
@@ -75317,7 +75739,8 @@
         "SMPTE.ST382.2007Am1.2012",
         "SMPTE.ST395.2003",
         "SMPTE.ST400.2004"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20120314-pub",
     "resolvedHref": "https://my.smpte.org/s/product-details?id=a1BVR0000007Nff",
@@ -75373,7 +75796,8 @@
         {
           "id": "SMPTE.ST400.2004"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.EG2098-3.2020",
@@ -75457,7 +75881,8 @@
         "SMPTE.ST336.2007",
         "SMPTE.ST377-1.2011",
         "SMPTE.ST377-1.2011Am1.2012"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20210205-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st377-4/20210205-pub/",
@@ -75488,7 +75913,8 @@
         {
           "id": "SMPTE.ST377-1.2011Am1.2012"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.ST377-41.2021",
@@ -75526,7 +75952,8 @@
       "normative": [
         "SMPTE.ST2067-8.2013",
         "SMPTE.ST377-4.2021"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20210623-pub",
     "resolvedHref": "https://my.smpte.org/s/product-details?id=a1BVR0000008kcQ2AQ",
@@ -75555,7 +75982,8 @@
         {
           "id": "SMPTE.ST377-4.2021"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.ST377-42.2021"
@@ -78228,7 +78656,8 @@
         "SMPTE.ST111.2001",
         "SMPTE.ST139.1996",
         "SMPTE.ST194.2002"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20020726-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st40/20020726-pub/",
@@ -78260,7 +78689,8 @@
         {
           "id": "SMPTE.ST194.2002"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.EG9.2005",
@@ -78721,7 +79151,8 @@
         "SMPTE.ST109.2003",
         "SMPTE.ST233.2003",
         "SMPTE.ST48.1995"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20041108-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st41/20041108-pub/",
@@ -78753,7 +79184,8 @@
         {
           "id": "SMPTE.ST48.1995"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.EG9.2005",
@@ -80152,7 +80584,8 @@
         "SMPTE.ST292.2008",
         "SMPTE.ST372.2009",
         "SMPTE.ST425.2008"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20090311-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st427/20090311-pub/",
@@ -80198,7 +80631,8 @@
         {
           "id": "SMPTE.ST425.2008"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "NIST.FIPS.180-1",
@@ -80236,7 +80670,8 @@
       "normative": [
         "CIE.015.2004",
         "SMPTE.ST431-1.2006"
-      ]
+      ],
+      "bibliographic": []
     },
     "relatedDocs": [
       "ISO.26428-1.2008"
@@ -80271,7 +80706,8 @@
         {
           "id": "SMPTE.ST431-1.2006"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "ISO.26428-19.2011",
@@ -80426,7 +80862,8 @@
         "W3C.xml.20040204",
         "W3C.xmlschema-1.20041028",
         "W3C.xmlschema-2.20041028"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20081203-pub",
     "repo": "https://github.com/SMPTE/st428-10/",
@@ -80461,7 +80898,8 @@
         {
           "id": "W3C.xmlschema-2.20041028"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.ST2067-40.2021",
@@ -80768,7 +81206,8 @@
     "references": {
       "normative": [
         "SMPTE.ST400.2012"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20130226-pub",
     "repo": "https://github.com/SMPTE/st428-12/",
@@ -80793,7 +81232,8 @@
         {
           "id": "SMPTE.ST400.2012"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.EG2098-3.2020",
@@ -81517,7 +81957,8 @@
         "W3C.xml.20040204",
         "W3C.xmlschema-1.20041028",
         "W3C.xmlschema-2.20041028"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20140211-pub",
     "repo": "https://github.com/SMPTE/st428-7/",
@@ -81605,7 +82046,8 @@
         {
           "id": "W3C.xmlschema-2.20041028"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.RDD52.2020",
@@ -81936,10 +82378,7 @@
       "W3C.xmlschema-2.20041028"
     ],
     "docDependancy": true,
-    "currentStatus": "Superseded",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Superseded"
   },
   {
     "docId": "SMPTE.ST429-10.2023-09",
@@ -82122,10 +82561,7 @@
       "W3C.xmlschema-2.20041028"
     ],
     "docDependancy": true,
-    "currentStatus": "Active",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Active"
   },
   {
     "docId": "SMPTE.ST429-12.2008",
@@ -82157,7 +82593,8 @@
         "W3C.xml.20040204",
         "W3C.xmlschema-1.20041028",
         "W3C.xmlschema-2.20041028"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20081203-pub",
     "repo": "https://github.com/SMPTE/st429-12/",
@@ -82225,7 +82662,8 @@
         {
           "id": "W3C.xmlschema-2.20041028"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.ST429-16.2014",
@@ -82287,7 +82725,8 @@
       "normative": [
         "SMPTE.ST428-11.2009",
         "SMPTE.ST429-2.2009"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20091119-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st429-13/20091119-pub/",
@@ -82317,7 +82756,8 @@
         {
           "id": "SMPTE.ST429-2.2009"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.ST428-11.2013",
@@ -82537,10 +82977,7 @@
       "W3C.xmlschema-2.20041028"
     ],
     "docDependancy": true,
-    "currentStatus": "Superseded",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Superseded"
   },
   {
     "docId": "SMPTE.ST429-14.2023-09",
@@ -82572,7 +83009,8 @@
         "W3C.xml",
         "W3C.xmlschema-1",
         "W3C.xmlschema-2"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20230912-pub",
     "repo": "https://github.com/SMPTE/st429-14/",
@@ -82659,7 +83097,8 @@
           "id": "W3C.xmlschema-2.20041028",
           "undated": true
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "DCI.DCSS.v1.4.2.2022-0615",
@@ -82944,10 +83383,7 @@
       "W3C.xpath.19991116"
     ],
     "docDependancy": true,
-    "currentStatus": "Superseded",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Superseded"
   },
   {
     "docId": "SMPTE.ST429-16.2023-09",
@@ -83171,7 +83607,8 @@
         "W3C.xml.20040204",
         "W3C.xmlschema-1.20041028",
         "W3C.xmlschema-2.20041028"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20171227-pub",
     "repo": "https://github.com/SMPTE/st429-17/",
@@ -83203,7 +83640,8 @@
         {
           "id": "W3C.xmlschema-2.20041028"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.RDD47.2018",
@@ -83258,7 +83696,8 @@
         "W3C.xml.20040204",
         "W3C.xmlschema-1.20041028",
         "W3C.xmlschema-2.20041028"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20190603-pub",
     "repo": "https://github.com/SMPTE/st429-18/",
@@ -83317,7 +83756,8 @@
         {
           "id": "W3C.xmlschema-2.20041028"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.RDD52.2020",
@@ -83405,10 +83845,7 @@
       "W3C.xmlschema-2.20041028"
     ],
     "docDependancy": true,
-    "currentStatus": "Superseded",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Superseded"
   },
   {
     "docId": "SMPTE.ST429-18.2023-09",
@@ -83435,7 +83872,8 @@
         "W3C.xml",
         "W3C.xmlschema-1",
         "W3C.xmlschema-2"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20230912-pub",
     "repo": "https://github.com/SMPTE/st429-18/",
@@ -83503,7 +83941,8 @@
           "id": "W3C.xmlschema-2.20041028",
           "undated": true
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "DCI.DCSS.v1.4.2.2022-0615",
@@ -83604,10 +84043,7 @@
       "W3C.xmlschema-2.20041028"
     ],
     "docDependancy": true,
-    "currentStatus": "Active",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Active"
   },
   {
     "docId": "SMPTE.ST429-19.2019",
@@ -83636,7 +84072,8 @@
         "SMPTE.ST429-2.2019",
         "SMPTE.ST429-7.2006",
         "SMPTE.ST430-12.2014Am1.2019"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20190603-pub",
     "repo": "https://github.com/SMPTE/st429-19/",
@@ -83678,7 +84115,8 @@
         {
           "id": "SMPTE.ST430-12.2014Am1.2019"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.RDD52.2020",
@@ -83797,10 +84235,7 @@
       "W3C.xpath.19991116"
     ],
     "docDependancy": true,
-    "currentStatus": "Superseded",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Superseded"
   },
   {
     "docId": "SMPTE.ST429-19.2023-09",
@@ -83823,7 +84258,8 @@
         "SMPTE.ST429-2",
         "SMPTE.ST429-7",
         "SMPTE.ST430-12"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20230912-pub",
     "repo": "https://github.com/SMPTE/st429-19/",
@@ -83876,7 +84312,8 @@
           "id": "SMPTE.ST430-12.2023-09",
           "undated": true
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "DCI.DCSS.v1.4.2.2022-0615"
@@ -84016,10 +84453,7 @@
       "W3C.xmlschema-2.20041028"
     ],
     "docDependancy": true,
-    "currentStatus": "Active",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Active"
   },
   {
     "docId": "SMPTE.ST429-2.2009",
@@ -85742,10 +86176,7 @@
       "x509-sg.2000"
     ],
     "docDependancy": true,
-    "currentStatus": "Superseded",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Superseded"
   },
   {
     "docId": "SMPTE.ST429-2.2023-09",
@@ -86199,10 +86630,7 @@
       "x509-sg.2000"
     ],
     "docDependancy": true,
-    "currentStatus": "Active",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Active"
   },
   {
     "docId": "SMPTE.ST429-20.2022",
@@ -86620,10 +87048,7 @@
       "SMPTE.ST390.2004"
     ],
     "docDependancy": true,
-    "currentStatus": "Superseded",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Superseded"
   },
   {
     "docId": "SMPTE.ST429-3.2023-09",
@@ -86806,10 +87231,7 @@
       "W3C.xml.20081126"
     ],
     "docDependancy": true,
-    "currentStatus": "Active",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Active"
   },
   {
     "docId": "SMPTE.ST429-4.2006",
@@ -86839,7 +87261,8 @@
         "SMPTE.ST422.2006",
         "SMPTE.ST428-1.2006",
         "SMPTE.ST429-3.2006"
-      ]
+      ],
+      "bibliographic": []
     },
     "relatedDocs": [
       "ISO.26429-4.2008"
@@ -86886,7 +87309,8 @@
         {
           "id": "SMPTE.ST429-3.2006"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.ST428-11.2013",
@@ -87109,10 +87533,7 @@
       "W3C.xmlschema-2.20041028"
     ],
     "docDependancy": true,
-    "currentStatus": "Superseded",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Superseded"
   },
   {
     "docId": "SMPTE.ST429-4.2023-05",
@@ -87257,10 +87678,7 @@
       "SMPTE.ST431-1.2006"
     ],
     "docDependancy": true,
-    "currentStatus": "Active",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Active"
   },
   {
     "docId": "SMPTE.ST429-5.2009",
@@ -87507,10 +87925,7 @@
       "W3C.xmlschema-2.20041028"
     ],
     "docDependancy": true,
-    "currentStatus": "Superseded",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Superseded"
   },
   {
     "docId": "SMPTE.ST429-5.2023-09",
@@ -87699,11 +88114,7 @@
       "W3C.xmlschema-2.20041028"
     ],
     "docDependancy": true,
-    "currentStatus": "Active",
-    "currentWork": [
-      "Revision - Complete",
-      "Revision - Complete"
-    ]
+    "currentStatus": "Active"
   },
   {
     "docId": "SMPTE.ST429-6.2006",
@@ -87889,10 +88300,7 @@
       "SMPTE.ST429-3.2006"
     ],
     "docDependancy": true,
-    "currentStatus": "Superseded",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Superseded"
   },
   {
     "docId": "SMPTE.ST429-6.2006Am1.2017",
@@ -88077,10 +88485,7 @@
       "SMPTE.ST390.2004"
     ],
     "docDependancy": true,
-    "currentStatus": "Superseded",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Superseded"
   },
   {
     "docId": "SMPTE.ST429-6.2023-05",
@@ -88809,7 +89214,8 @@
         "W3C.xml.20040204",
         "W3C.xmlschema-1.20041028",
         "W3C.xmlschema-2.20041028"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20141124-pub",
     "repo": "https://github.com/SMPTE/st429-9/",
@@ -88869,7 +89275,8 @@
         {
           "id": "W3C.xmlschema-2.20041028"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.ST2067-2.2020"
@@ -89268,10 +89675,7 @@
       "x509-sg.2000"
     ],
     "docDependancy": true,
-    "currentStatus": "Superseded",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Superseded"
   },
   {
     "docId": "SMPTE.ST430-1.2017Am1.2019",
@@ -89501,10 +89905,7 @@
       "x509-sg.2000"
     ],
     "docDependancy": true,
-    "currentStatus": "Superseded",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Superseded"
   },
   {
     "docId": "SMPTE.ST430-1.2023-09",
@@ -89748,10 +90149,7 @@
       "x509-sg.2000"
     ],
     "docDependancy": true,
-    "currentStatus": "Active",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Active"
   },
   {
     "docId": "SMPTE.ST430-10.2010",
@@ -89775,7 +90173,8 @@
         "SMPTE.ST336.2007",
         "SMPTE.ST429-7.2006",
         "SMPTE.ST430-11.2010"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20101102-pub",
     "repo": "https://github.com/SMPTE/st430-10/",
@@ -89807,7 +90206,8 @@
         {
           "id": "SMPTE.ST430-11.2010"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.ST430-11.2010",
@@ -89976,7 +90376,8 @@
     "references": {
       "normative": [
         "SMPTE.ST429-3.2007"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20140510-pub",
     "repo": "https://github.com/SMPTE/st430-12/",
@@ -90008,7 +90409,8 @@
         {
           "id": "SMPTE.ST429-3.2007"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.ST430-1.2017Am1.2019"
@@ -90051,10 +90453,7 @@
       "SMPTE.ST429-3.2007"
     ],
     "docDependancy": true,
-    "currentStatus": "Superseded",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Superseded"
   },
   {
     "docId": "SMPTE.ST430-12.2014Am1.2019",
@@ -90188,10 +90587,7 @@
       "W3C.xpath.19991116"
     ],
     "docDependancy": true,
-    "currentStatus": "Superseded",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Superseded"
   },
   {
     "docId": "SMPTE.ST430-12.2023-09",
@@ -90383,7 +90779,8 @@
         "SMPTE.ST429-2.2013",
         "SMPTE.ST429-6.2006",
         "SMPTE.ST430-10.2010"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20150801-pub",
     "repo": "https://github.com/SMPTE/st430-14/",
@@ -90455,7 +90852,8 @@
         {
           "id": "SMPTE.ST430-10.2010"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "AES3.2003",
@@ -90576,10 +90974,7 @@
       "W3C.xmlschema-2.20041028"
     ],
     "docDependancy": true,
-    "currentStatus": "Superseded",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Superseded"
   },
   {
     "docId": "SMPTE.ST430-14.2021",
@@ -90615,7 +91010,8 @@
         "SMPTE.ST429-2.2013",
         "SMPTE.ST429-6.2006Am1.2017",
         "SMPTE.ST430-10.2010"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20211228-pub",
     "repo": "https://github.com/SMPTE/st430-14/",
@@ -90685,7 +91081,8 @@
         {
           "id": "SMPTE.ST430-10.2010"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "DCI.DCSS.v1.4.2.2022-0615"
@@ -90817,10 +91214,7 @@
       "W3C.xmlschema-2.20041028"
     ],
     "docDependancy": true,
-    "currentStatus": "Active",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Active"
   },
   {
     "docId": "SMPTE.ST430-15.2017",
@@ -91265,7 +91659,8 @@
         "SMPTE.ST430-1.2017Am1.2019",
         "SMPTE.ST430-2.2017",
         "SMPTE.ST430-5.2011"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20211021-pub",
     "repo": "https://github.com/SMPTE/st430-17/",
@@ -91311,7 +91706,8 @@
         {
           "id": "SMPTE.ST430-5.2011"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "DCI.DCSS.v1.4.2.2022-0615"
@@ -91425,10 +91821,7 @@
       "x509-sg.2000"
     ],
     "docDependancy": true,
-    "currentStatus": "Active",
-    "currentWork": [
-      "Intial Draft - Complete"
-    ]
+    "currentStatus": "Active"
   },
   {
     "docId": "SMPTE.ST430-2.2006",
@@ -91880,7 +92273,8 @@
         "W3C.xmldsig-core.20020212",
         "W3C.xmlenc.core.20021210",
         "W3C.xmlschema-1.20010502"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20120822-pub",
     "repo": "https://github.com/SMPTE/st430-3/",
@@ -91973,7 +92367,8 @@
         {
           "id": "W3C.xmlschema-1.20010502"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "DCI.DCSS.v1.4.2.2022-0615",
@@ -92032,7 +92427,8 @@
         "W3C.xmldsig-core.20020212",
         "W3C.xmlschema-1.20041028",
         "W3C.xmlschema-2.20041028"
-      ]
+      ],
+      "bibliographic": []
     },
     "relatedDocs": [
       "ISO.26430-4.2009"
@@ -92127,7 +92523,8 @@
         {
           "id": "W3C.xmlschema-2.20041028"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "DCI.DCSS.v1.4.2.2022-0615",
@@ -92192,7 +92589,8 @@
         "W3C.xmldsig-core.20020212",
         "W3C.xmlschema-1.20041028",
         "W3C.xmlschema-2.20041028"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20111205-am1-pub",
     "repo": "https://github.com/SMPTE/st430-4/",
@@ -92281,7 +92679,8 @@
         {
           "id": "W3C.xmlschema-2.20041028"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referenceTree": [
       "ISO.15924.2004",
@@ -92389,7 +92788,8 @@
         "SMPTE.ST430-4.2008",
         "SMPTE.ST430-6.2010",
         "SMPTE.ST433.2008"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20110924-pub",
     "repo": "https://github.com/SMPTE/st430-5/",
@@ -92496,7 +92896,8 @@
         {
           "id": "SMPTE.ST433.2008"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.ST430-17.2021"
@@ -92593,10 +92994,7 @@
       "W3C.xmlschema-2.20041028"
     ],
     "docDependancy": true,
-    "currentStatus": "Superseded",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Superseded"
   },
   {
     "docId": "SMPTE.ST430-5.2023-09",
@@ -92630,7 +93028,8 @@
         "SMPTE.ST433",
         "W3C.xmldsig-core1",
         "W3C.xmlschema-1"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20230912-pub",
     "repo": "https://github.com/SMPTE/st430-5/",
@@ -92707,7 +93106,8 @@
           "id": "W3C.xmlschema-1.20041028",
           "undated": true
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "DCI.DCSS.v1.4.2.2022-0615"
@@ -92838,10 +93238,7 @@
       "x509-sg.2000"
     ],
     "docDependancy": true,
-    "currentStatus": "Active",
-    "currentWork": [
-      "Revision - Complete"
-    ]
+    "currentStatus": "Active"
   },
   {
     "docId": "SMPTE.ST430-6.2008",
@@ -94398,7 +94795,8 @@
     "references": {
       "bibliographic": [
         "SMPTE.ST93.1998"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "19981001-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st59/19981001-pub/",
@@ -94424,7 +94822,8 @@
         {
           "id": "SMPTE.ST93.1998"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.EG25.2003",
@@ -94550,7 +94949,8 @@
     "references": {
       "bibliographic": [
         "SMPTE.ST109.2003"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20041108-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st7/20041108-pub/",
@@ -94576,7 +94976,8 @@
         {
           "id": "SMPTE.ST109.2003"
         }
-      ]
+      ],
+      "normative": []
     },
     "referencedBy": [
       "SMPTE.RP82.2004",
@@ -94839,7 +95240,8 @@
     "references": {
       "bibliographic": [
         "SMPTE.ST139.2003"
-      ]
+      ],
+      "normative": []
     },
     "releaseTag": "20050713-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st86/20050713-pub/",
@@ -94865,7 +95267,8 @@
         {
           "id": "SMPTE.ST139.2003"
         }
-      ]
+      ],
+      "normative": []
     },
     "referenceTree": [
       "ISO.18906.2000",
@@ -94897,7 +95300,8 @@
     "references": {
       "normative": [
         "SMPTE.ST109.1992"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "19960308-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st87/19960308-pub/",
@@ -94922,7 +95326,8 @@
         {
           "id": "SMPTE.ST109.1992"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.ST112.2004"
@@ -94983,7 +95388,8 @@
     "references": {
       "normative": [
         "SMPTE.ST223.2001"
-      ]
+      ],
+      "bibliographic": []
     },
     "releaseTag": "20050713-pub",
     "resolvedHref": "https://pub.smpte.org/doc/st93/20050713-pub/",
@@ -95008,7 +95414,8 @@
         {
           "id": "SMPTE.ST223.2001"
         }
-      ]
+      ],
+      "bibliographic": []
     },
     "referencedBy": [
       "SMPTE.ST254.2008"

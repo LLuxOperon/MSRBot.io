@@ -232,14 +232,17 @@
 <!-- Inline client-side card template source (inert) -->
 <template id="card-tpl-src">
   <article class="card-reg">
-    <header class="d-flex align-items-start gap-2 mb-1">
-      <h3 class="h6 mb-2 flex-grow-1">
+    <header class="d-flex align-items-start flex-wrap gap-2 mb-1">
+      <div class="publisher-logo-slot flex-shrink-0 order-0">
+        {{publisherLogo publisher}}
+      </div>
+      <h3 class="h6 mb-2 flex-grow-1 min-w-0 order-1">
         <a class="anchor" id="{{id}}" href="#{{id}}"></a>
         <code class="me-1">{{label}}</code>
         <br>
         <a href="/docs/{{id}}/" class="text-decoration-none">{{title}}</a>
       </h3>
-      <div class="d-flex gap-1 flex-wrap ms-auto justify-content-end text-end">
+      <div class="d-flex gap-1 flex-wrap ms-auto justify-content-end text-end order-2">
         {{#if (hasAny statusOrdered)}}
           {{#each statusOrdered}}
             {{{statusBadge this}}}
@@ -285,13 +288,8 @@
     {{#if docBase}}
       <div class="small text-muted mt-0">Doc Base: <span class="fst-italic">{{docBaseLabel}}</span></div>
     {{/if}}
-    {{#if (hasAny keywords)}}
-      <div class="small text-muted mt-0">Keywords: <span class="fst-italic">{{join keywords ", "}}</span></div>
-    {{else}}
-      {{#if (hasAny keywordsSearch)}}
-        <div class="small text-muted mt-0">Keywords: <span class="fst-italic">{{join keywordsSearch ", "}}</span></div>
-      {{/if}}
-    {{/if}}
+      <div class="small text-muted mt-0">Keywords: <span class="fst-italic">{{#if (hasAny keywords)}}{{join keywords ", "}}, {{/if}}
+      {{#if (hasAny keywordsSearch)}}{{join keywordsSearch ", "}}{{/if}}</span></div> 
   </article>
 </template>
 
@@ -302,8 +300,8 @@
       <div class="row justify-content-md-center border-bottom d-flex">
         <div class="col text-center p-3">
         <small class="text-muted">
-            Site version: <code>95a83435e7133d4e4102a0e9a876736b2db0a644</code>
-            <br>Generated on: <code>2025-11-07T18:07:17.101Z</code>
+            Site version: <code>61ae7d68162496e01f5b7cadf4d4729c97586a4b</code>
+            <br>Generated on: <code>2025-11-08T08:45:27.041Z</code>
           </small>
         </div>
       </div>
