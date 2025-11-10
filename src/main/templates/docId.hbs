@@ -11,16 +11,16 @@
       {{/if}}
       <code class="me-1 fs-5">{{docLabel}}</code>
       <div class="d-inline-flex flex-wrap gap-1">
-        {{#if status.unknown}}   <span class="label badge text-bg-danger">[ UNKNOWN ]</span>{{/if}}
-        {{#if status.withdrawn}} <span class="label badge text-bg-danger">[ WITHDRAWN ]</span>{{/if}}
-        {{#if status.superseded}}<span class="label badge text-bg-warning">[ SUPERSEDED ]</span>{{/if}}
-        {{#if status.draft}}     <span class="label badge text-bg-warning">[ DRAFT ]</span>{{/if}}
-        {{#if status.publicCd}}  <span class="label badge text-bg-success">[ PUBLIC CD ]</span>{{/if}}
-        {{#if status.active}}    <span class="label badge text-bg-success">[ ACTIVE ]</span>{{/if}}
-        {{#if status.versionless}}<span class="label badge text-bg-info">[ VERSIONLESS ]</span>{{/if}}
-        {{#if status.amended}}   <span class="label badge text-bg-secondary">[ AMENDED ]</span>{{/if}}
-        {{#if status.reaffirmed}}<span class="label badge text-bg-info">[ REAFFIRMED ]</span>{{/if}}
-        {{#if status.stabilized}}<span class="label badge text-bg-primary">[ STABILIZED ]</span>{{/if}}
+        {{#if status.unknown}}   <span class="label badge text-bg-danger">[UNKNOWN]</span>{{/if}}
+        {{#if status.withdrawn}} <span class="label badge text-bg-danger">[WITHDRAWN]</span>{{/if}}
+        {{#if status.superseded}}<span class="label badge text-bg-warning">[SUPERSEDED]</span>{{/if}}
+        {{#if status.draft}}     <span class="label badge text-bg-warning">[DRAFT]</span>{{/if}}
+        {{#if status.publicCd}}  <span class="label badge text-bg-success">[PUBLIC CD]</span>{{/if}}
+        {{#if status.active}}    <span class="label badge text-bg-success">[ACTIVE]</span>{{/if}}
+        {{#if status.versionless}}<span class="label badge bg-success-subtle text-info-emphasis">[VERSIONLESS]</span>{{/if}}
+        {{#if status.amended}}   <span class="label badge text-bg-secondary">[AMENDED]</span>{{/if}}
+        {{#if status.reaffirmed}}<span class="label badge text-bg-info">[REAFFIRMED]</span>{{/if}}
+        {{#if status.stabilized}}<span class="label badge text-bg-primary">[STABILIZED]</span>{{/if}}
       </div>
     </div>
 
@@ -70,13 +70,51 @@
       {{#if status/withdrawnNotice}}
       <div class="row small m-2">
         <span class="label text-center px-3 label-warn text-bg-warning text-uppercase">Withdrawl notice: <a href="{{status/withdrawnNotice}}">{{status/withdrawnNotice}}</a></span>
-      </div>{{/if}}
-      
-      {{#if docBase}}
-      <div class="p-2 text-muted text-center small">
-        <span class="fst-italic">{{#if status.latestVersion}}<span class="label badge text-bg-light">[ LATEST VERSION ]</span> {{else}}Newer version available{{/if}} of base {{docBaseLabel}}</span>
       </div>
       {{/if}}
+      
+      
+    {{#if docBase}}
+    <div class="p-2 text-muted text-center">
+      <span class="fst-italic">
+        {{#if status.latestVersion}}{{#unless status/withdrawn}}Latest version of {{docBaseLabel}}{{/unless}}{{else}}Newer version available!{{/if}}
+      </span>
+    </div>
+
+    {{#if (len docSuite)}}
+    <div class="card mt-2">
+      <div class="card-body">
+        <h2 class="h6 mb-2">Document Suite — {{docBaseLabel}}</h2>
+        <ul class="list-group list-group-flush small">
+          {{#each docSuite}}
+          <li class="list-group-item d-flex align-items-center justify-content-between flex-wrap {{#ifeq ../docId docId}} bg-light{{/ifeq}}">
+            <div class="me-2">
+              {{#ifeq ../docId docId}}<strong>▶</strong>{{/ifeq}}
+              <a class="clear-filter" href="../{{docId}}/">{{docLabel}}</a>
+              {{#if publicationDate}} <span class="text-muted">({{publicationDate}})</span>{{/if}}
+            </div>
+            <div class="d-inline-flex flex-wrap gap-1">
+              {{#ifeq ../docId docId}}   <span class="badge badge-dsuite text-bg-info">THIS DOC</span>{{/ifeq}}
+              {{#if status.unknown}}     <span class="badge badge-dsuite text-bg-danger">[UNKNOWN]</span>{{/if}}
+              {{#if status.withdrawn}}   <span class="badge badge-dsuite text-bg-danger">[WITHDRAWN]</span>{{/if}}
+              {{#if status.superseded}}  <span class="badge badge-dsuite text-bg-warning">[SUPERSEDED]</span>{{/if}}
+              {{#if status.draft}}       <span class="badge badge-dsuite text-bg-warning">[DRAFT]</span>{{/if}}
+              {{#if status.publicCd}}    <span class="badge badge-dsuite text-bg-success">[PUBLIC CD]</span>{{/if}}
+              {{#if status.active}}      <span class="badge badge-dsuite text-bg-success">[ACTIVE]</span>{{/if}}
+              {{#if status.versionless}} <span class="badge badge-dsuite bg-success-subtle text-info-emphasis">[VERSIONLESS]</span>{{/if}}
+              {{#if status.amended}}     <span class="badge badge-dsuite text-bg-secondary">[AMENDED]</span>{{/if}}
+              {{#if status.reaffirmed}}  <span class="badge badge-dsuite text-bg-info">[REAFFIRMED]</span>{{/if}}
+              {{#if status.stabilized}}  <span class="badge badge-dsuite text-bg-primary">[STABILIZED]</span>{{/if}}
+              {{#if isLatestBase}}       <span class="badge badge-dsuite bg-info-subtle text-info-emphasis">[LATEST VERSION]</span>{{/if}}
+              <!--{{#if __isNewestInBase}}   <span class="badge badge-dsuite text-bg-dark">NEWEST BY DATE</span>{{/if}}-->
+            </div>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+    {{/if}}
+  {{/if}}
 
       {{#if (or status/supersededBy status/amendedBy)}}
       <div class="row text-muted mx-2">

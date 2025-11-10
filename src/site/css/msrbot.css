@@ -184,6 +184,15 @@ pre {
 }
 
 /* Badge for card metadata (e.g., publisher, docType, year, DOI) */
+.badge-dsuite {
+    font-size: 0.8em;
+    padding: 3px 6px;
+    border-radius: 3px;
+    margin-right: 5px;
+    font-family: 'Lato', sans-serif !important;
+}
+
+/* Badge for card metadata (e.g., publisher, docType, year, DOI) */
 .badge-reg {
     background-color: #1398b0;
     color: #fff;

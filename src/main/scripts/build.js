@@ -357,6 +357,46 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     }
   }
 
+  // --- Build per-base suites and attach minimal arrays to each doc
+  (function attachDocSuites() {
+    try {
+      const suites = new Map();
+      for (const d of registryDocument) {
+        if (!d || !d.docBase) continue;
+        const arr = suites.get(d.docBase) || [];
+        arr.push(d);
+        suites.set(d.docBase, arr);
+      }
+      const byDateThenId = (a, b) => {
+        const ad = a.publicationDate || '';
+        const bd = b.publicationDate || '';
+        if (ad && bd && ad !== bd) return ad.localeCompare(bd); // oldest → newest
+        if (!ad && bd) return 1;
+        if (ad && !bd) return -1;
+        return (a.docId || '').localeCompare(b.docId || '');
+      };
+      for (const [base, arr] of suites.entries()) {
+        arr.sort(byDateThenId);
+        if (arr.length) arr[arr.length - 1].__isNewestInBase = true; // convenience flag
+      }
+      for (const d of registryDocument) {
+        if (!d || !d.docBase) continue;
+        const arr = suites.get(d.docBase) || [];
+        d.docSuite = arr.map(x => ({
+          docId: x.docId,
+          docLabel: x.docLabel,
+          href: x.href,
+          publicationDate: x.publicationDate,
+          status: (x.status && typeof x.status === 'object') ? x.status : {},
+          isLatestBase: !!x.isLatestBase,
+          __isNewestInBase: !!x.__isNewestInBase
+        }));
+      }
+    } catch (e) {
+      console.warn(`[build] docSuite attach failed: ${e.message}`);
+    }
+  })();
+
   /* load the SMPTE abreviated docType */
 
   for (let i in registryDocument) {

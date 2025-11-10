@@ -332,7 +332,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     window.Handlebars.registerHelper('len', function(x){ return (Array.isArray(x) || typeof x === 'string') ? x.length : 0; });
     window.Handlebars.registerHelper('gt', function(a,b){ return Number(a) > Number(b); });
     window.Handlebars.registerHelper('statusBadge', function(status){
-      const s = String(status || '').toLowerCase();
+      const raw = String(status || '');
+      const s = raw.toLowerCase();
       const cls = {
         unknown:   'text-bg-danger',
         withdrawn: 'text-bg-danger',
@@ -340,12 +341,20 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         draft:     'text-bg-warning',
         publiccd:  'text-bg-info',
         active:    'text-bg-success',
-        versionless:'text-bg-light',
+        versionless:'bg-success-subtle text-info-emphasis',
         amended:   'text-bg-secondary',
         reaffirmed:'text-bg-info',
-        stabilized:'text-bg-primary'
+        stabilized:'text-bg-primary',
+        latestversion: 'bg-info-subtle text-info-emphasis'
       }[s] || 'text-bg-light';
-      const label = s ? `[ ${s.toUpperCase()} ]` : '[ UNKNOWN ]';
+
+      // Insert spaces between camelCase boundaries and underscores, then uppercase
+      const pretty = raw
+        .replace(/([a-z])([A-Z])/g, '$1 $2')
+        .replace(/_/g, ' ')
+        .trim();
+
+      const label = pretty ? `[${pretty.toUpperCase()}]` : '[UNKNOWN]';
       return new window.Handlebars.SafeString(`<span class="label badge ${cls}">${label}</span>`);
     });
     // coalesce helper: returns first non-empty arg (skipping options hash)
