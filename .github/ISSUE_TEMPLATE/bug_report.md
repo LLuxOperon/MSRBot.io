@@ -1,7 +1,7 @@
 ---
 name:  "Bug Report"
 about: Use this to report a problem with the site, data, or automation
-title: "[BUG] "
+title: "[BUG] {Insert your title here}"
 labels: ["bug"]
 assignees: ["SteveLLamb"]
 ---
