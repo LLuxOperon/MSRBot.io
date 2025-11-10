@@ -33,7 +33,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * all display fields derive from canonical registry fields.
  *
  * Output:
- *   build/docs/search-index.json  — flat rows for cards + client search
+ *   build/docs/search-index.json  — flat rows for docList + client search
  *   build/docs/facets.json        — precomputed facet counts + labels
  */
 
@@ -322,7 +322,7 @@ const squash = s => compact(s).replace(/\s+/g, ' ');
       await fs.writeFile(path.join(DATA_OUT, 'synonyms.json'), synRaw, 'utf8');
     }
   } catch (e) {
-    console.warn('[cards] No synonyms.json found (optional):', e && e.message ? e.message : e);
+    console.warn('[docList] No synonyms.json found (optional):', e && e.message ? e.message : e);
   }
   // --- MiniSearch UMD: ensure a browser-usable bundle is available under build/docs/minisearch/umd/index.min.js ---
   try {
@@ -370,15 +370,15 @@ const squash = s => compact(s).replace(/\s+/g, ' ');
       }
     }
   } catch (e) {
-    console.warn('[cards] Could not acquire MiniSearch UMD (local or CDN):', e && e.message ? e.message : e);
-    console.warn('[cards] Search will fall back to plain includes() if MiniSearch cannot be loaded.');
+    console.warn('[docList] Could not acquire MiniSearch UMD (local or CDN):', e && e.message ? e.message : e);
+    console.warn('[docList] Search will fall back to plain includes() if MiniSearch cannot be loaded.');
   }
 
   /** Write outputs */
   await fs.writeFile(IDX, JSON.stringify(idx, null, 2), 'utf8');
   await fs.writeFile(FAC, JSON.stringify(facets, null, 2), 'utf8');
-  console.log(`[cards] Wrote ${IDX} (${idx.length} docs), ${FAC}`);
+  console.log(`[docList] Wrote ${IDX} (${idx.length} docs), ${FAC}`);
 })().catch(err => {
-  console.error('[cards] Index build failed:', err && err.stack ? err.stack : err);
+  console.error('[docList] Index build failed:', err && err.stack ? err.stack : err);
   process.exitCode = 1;
 });

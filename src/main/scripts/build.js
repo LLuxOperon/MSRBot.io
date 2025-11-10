@@ -932,7 +932,7 @@ hb.registerHelper('docProjLookup', function(collection, id) {
     }
     // Ensure _data directory exists
     await fs.mkdir(path.join(BUILD_PATH, '_data'), { recursive: true });
-    // Emit publisher logos + optional aliases for client-side cards.js
+    // Emit publisher logos + optional aliases for client-side docList.js
     try {
       const logosOut = {};
       if (siteConfig && siteConfig.publisherLogos && typeof siteConfig.publisherLogos === 'object') {
@@ -1172,7 +1172,7 @@ hb.registerHelper('docProjLookup', function(collection, id) {
   /* write HTML file */
   await fs.writeFile(path.join(BUILD_PATH, PAGE_SITE_PATH), html, 'utf8');
 
-  // Build card search index (search-index.json + facets.json) once per run
+  // Build docList search index (search-index.json + facets.json) once per run
   // Only trigger from the main index page to avoid duplicate executions
     if (templateName === 'documents') {
       // Persist the in-memory documents state for downstream consumers (docs/search-index)
@@ -1195,7 +1195,7 @@ hb.registerHelper('docProjLookup', function(collection, id) {
         const { stdout } = await execFile('node', [path.join('src','main','scripts','build.search-index.js'), EFFECTIVE_DOCS_PATH]);
         if (stdout && stdout.trim()) console.log(stdout.trim());
       } catch (e) {
-        console.warn('[cards] Index build failed:', e && e.message ? e.message : e);
+        console.warn('[docList] Index build failed:', e && e.message ? e.message : e);
       }
     }
   
@@ -1250,7 +1250,7 @@ void (async () => {
   await copyRecursive(SITE_PATH, BUILD_PATH);
   console.log('[build] Copied static assets to build/.');
 
-  const tplCards = await fs.readFile(path.join('src','main','templates','cards.hbs'), 'utf8');
+  const tplCards = await fs.readFile(path.join('src','main','templates','docList.hbs'), 'utf8');
   const renderCards = hb.compile(tplCards);
 
   // Create subdirectory for docs page
@@ -1263,7 +1263,7 @@ void (async () => {
   const docsOgImageAlt = siteConfig.ogImageAlt;
   const docsAssetPrefix = '../';
   await fs.writeFile(path.join('build','docs','index.html'), renderCards({
-    templateName: 'cards',
+    templateName: 'docList',
     listTitle: 'Docs',
     htmlLink: '', // same relative handling as other pages
     listType: 'documents',

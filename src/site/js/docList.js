@@ -47,7 +47,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       s.async = true;
       s.onload = () => resolve(!!window.Handlebars);
       s.onerror = () => {
-        console.error('[cards] Failed to load Handlebars runtime.');
+        console.error('[docList] Failed to load Handlebars runtime.');
         resolve(false);
       };
       document.head.appendChild(s);
@@ -97,7 +97,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       } catch {}
     }
 
-    console.warn('[cards] MiniSearch not available (UMD/ESM). Falling back to plain includes() search.');
+    console.warn('[docList] MiniSearch not available (UMD/ESM). Falling back to plain includes() search.');
     return false;
   }
 
@@ -209,13 +209,13 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     }
   }
   if (!tplEl) {
-    console.error('[cards] [TEMPLATE] Missing #card-tpl and #card-tpl-src. The page must include <template id="card-tpl-src">…</template>.');
+    console.error('[docList] [TEMPLATE] Missing #card-tpl and #card-tpl-src. The page must include <template id="card-tpl-src">…</template>.');
   } else if (!tplEl.innerHTML || tplEl.innerHTML.trim().length === 0) {
-    console.error('[cards] [TEMPLATE] card template node is empty. Check cards.hbs for the inline template content.');
+    console.error('[docList] [TEMPLATE] card template node is empty. Check docList.hbs for the inline template content.');
   }
 
   if (!(await ensureHandlebars())) {
-    console.error('[cards] [RUNTIME] Handlebars not available; templates cannot render.');
+    console.error('[docList] [RUNTIME] Handlebars not available; templates cannot render.');
   }
 
   if (tplEl && window.Handlebars) {
@@ -232,7 +232,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         __publisherAliases = (cfg.aliases && typeof cfg.aliases === 'object') ? cfg.aliases : {};
       }
     } catch (e) {
-      console.warn('[cards] publisher logos config not available (tried multiple paths):', e && e.message ? e.message : e);
+      console.warn('[docList] publisher logos config not available (tried multiple paths):', e && e.message ? e.message : e);
     }
     // Publisher URLs config (link targets)
     let __publisherUrls = {};
@@ -244,7 +244,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         __publisherUrlAliases = (ucfg.aliases && typeof ucfg.aliases === 'object') ? ucfg.aliases : {};
       }
     } catch (e) {
-      console.warn('[cards] publisher urls config not available:', e && e.message ? e.message : e);
+      console.warn('[docList] publisher urls config not available:', e && e.message ? e.message : e);
     }
 
     function resolvePublisherLogo(pubRaw){
@@ -313,7 +313,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         const key = String(pub || '');
         if (key && !__pubWarned.has(key)) {
           __pubWarned.add(key);
-          console.debug('[cards] publisherLogo: no logo for publisher "%s". Available keys: %o', key, Object.keys(__publisherLogos));
+          console.debug('[docList] publisherLogo: no logo for publisher "%s". Available keys: %o', key, Object.keys(__publisherLogos));
         }
         return '';
       }
@@ -375,7 +375,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     try {
       hbCard = window.Handlebars.compile(tplEl.innerHTML);
     } catch (e) {
-      console.error('[cards] [COMPILE] Handlebars failed to compile card template:', e);
+      console.error('[docList] [COMPILE] Handlebars failed to compile docList template:', e);
     }
   }
 
@@ -734,7 +734,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         });
       }
     } catch (e) {
-      console.warn('[cards] search tips init failed:', e && e.message ? e.message : e);
+      console.warn('[docList] search tips init failed:', e && e.message ? e.message : e);
     }
   }
 
@@ -1140,7 +1140,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
   function cardHTML(d, opts){
     if (!hbCard) {
-      console.error('[cards] [RENDER] No compiled template. Causes: missing #card-tpl-src, Handlebars not loaded, or compile error.');
+      console.error('[docList] [RENDER] No compiled template. Causes: missing #card-tpl-src, Handlebars not loaded, or compile error.');
       return `<div class="alert alert-danger">Cards cannot render: template missing or Handlebars runtime unavailable.</div>`;
     }
     try {
@@ -1149,8 +1149,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         statusOrdered: orderStatuses(d.status)
       }));
     } catch (err) {
-      console.error('[cards] Template render error:', err);
-      return `<div class="alert alert-danger">[cards] Template render error: ${err.message}</div>`;
+      console.error('[docList] Template render error:', err);
+      return `<div class="alert alert-danger">[docList] Template render error: ${err.message}</div>`;
     }
   }
 
