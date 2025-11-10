@@ -105,8 +105,7 @@
               {{#if status.amended}}     <span class="badge badge-dsuite text-bg-secondary">[AMENDED]</span>{{/if}}
               {{#if status.reaffirmed}}  <span class="badge badge-dsuite text-bg-info">[REAFFIRMED]</span>{{/if}}
               {{#if status.stabilized}}  <span class="badge badge-dsuite text-bg-primary">[STABILIZED]</span>{{/if}}
-              {{#if isLatestBase}}       <span class="badge badge-dsuite bg-info-subtle text-info-emphasis">[LATEST VERSION]</span>{{/if}}
-              <!--{{#if __isNewestInBase}}   <span class="badge badge-dsuite text-bg-dark">NEWEST BY DATE</span>{{/if}}-->
+              {{#if stxatus.latestVersion}}       <span class="badge badge-dsuite bg-info-subtle text-info-emphasis">[LATEST VERSION]</span>{{/if}}
             </div>
           </li>
           {{/each}}
