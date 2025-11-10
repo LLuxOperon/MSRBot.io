@@ -83,7 +83,11 @@
   <article class="card-reg">
     <header class="d-flex align-items-start flex-wrap gap-2 mb-1">
       <div class="publisher-logo-slot flex-shrink-0 order-0">
-        {{publisherLogo publisher}}
+        {{#if (publisherLink publisher)}}
+          <a href="{{publisherLink publisher}}" target="_blank" rel="noopener">{{publisherLogo publisher}}</a>
+        {{else}}
+          {{publisherLogo publisher}}
+        {{/if}}
       </div>
       <h3 class="h6 mb-2 flex-grow-1 min-w-0 order-1">
         <a class="anchor" id="{{id}}" href="#{{id}}"></a>

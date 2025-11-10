@@ -4,7 +4,11 @@
 <main class="container my-4">
   <header class="mb-3">
     <div class="d-flex align-items-center flex-wrap gap-2 mb-1">
-      {{publisherLogo publisher}}
+      {{#if (publisherLink publisher)}}
+        <a href="{{publisherLink publisher}}" target="_blank" rel="noopener">{{publisherLogo publisher}}</a>
+      {{else}}
+        {{publisherLogo publisher}}
+      {{/if}}
       <code class="me-1 fs-5">{{docLabel}}</code>
       <div class="d-inline-flex flex-wrap gap-1">
         {{#if status.unknown}}   <span class="label badge text-bg-danger">[ UNKNOWN ]</span>{{/if}}

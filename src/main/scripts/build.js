@@ -877,6 +877,43 @@ hb.registerHelper('docProjLookup', function(collection, id) {
     );
   });
   
+  // Publisher link resolver: resolves publisher to URL using siteConfig.publisherUrls and optional aliases
+  hb.registerHelper('publisherLink', function (pub) {
+    if (!pub || typeof pub !== 'string') return '';
+    const urlMap = (siteConfig && siteConfig.publisherUrls && typeof siteConfig.publisherUrls === 'object')
+      ? siteConfig.publisherUrls
+      : null;
+    if (!urlMap) return '';
+
+    // Normalize basic alias mapping reusing publisherLogoAliases when present
+    const aliases = (siteConfig && siteConfig.publisherLogoAliases && typeof siteConfig.publisherLogoAliases === 'object')
+      ? siteConfig.publisherLogoAliases
+      : {};
+
+    const raw = String(pub).trim();
+    // 1) Exact
+    if (urlMap[raw]) return urlMap[raw];
+
+    // 2) Alias (case-insensitive)
+    const lowerAliases = {};
+    for (const [a, c] of Object.entries(aliases)) {
+      lowerAliases[String(a).toLowerCase()] = String(c);
+    }
+    const canon = lowerAliases[raw.toLowerCase()];
+    if (canon && urlMap[canon]) return urlMap[canon];
+
+    // 3) First-token fallback (before dash/comma/paren/colon)
+    const first = raw.split(/[–—-]|,|\(|\)|:/)[0].trim();
+    if (first && urlMap[first]) return urlMap[first];
+
+    // 4) Case-insensitive direct key match
+    const lower = raw.toLowerCase();
+    for (const [k, v] of Object.entries(urlMap)) {
+      if (String(k).toLowerCase() === lower) return v;
+    }
+    return '';
+  });
+  
   /* get the version field */
   
   let site_version = "Unknown version"
@@ -926,6 +963,35 @@ hb.registerHelper('docProjLookup', function(collection, id) {
       );
     } catch (e) {
       console.warn('[build] Could not emit publisher-logos.json:', e && e.message ? e.message : e);
+    }
+
+    // Emit publisher URLs (for client-side cards)
+    try {
+      const urlsOut = {};
+      if (siteConfig && siteConfig.publisherUrls && typeof siteConfig.publisherUrls === 'object') {
+        for (const [k, v] of Object.entries(siteConfig.publisherUrls)) {
+          if (!v) continue;
+          urlsOut[String(k).trim()] = String(v).trim();
+        }
+      }
+      const urlAliasesOut = {};
+      if (siteConfig && siteConfig.publisherLogoAliases && typeof siteConfig.publisherLogoAliases === 'object') {
+        for (const [alias, canon] of Object.entries(siteConfig.publisherLogoAliases)) {
+          if (!alias || !canon) continue;
+          urlAliasesOut[String(alias).trim()] = String(canon).trim();
+        }
+      }
+      const urlsPayload = {
+        urls: urlsOut,
+        aliases: urlAliasesOut
+      };
+      await fs.writeFile(
+        path.join(BUILD_PATH, '_data', 'publisher-urls.json'),
+        JSON.stringify(urlsPayload, null, 2),
+        'utf8'
+      );
+    } catch (e) {
+      console.warn('[build] Could not emit publisher-urls.json:', e && e.message ? e.message : e);
     }
 
   /* determine if build on GH to remove "index.html" from internal link */

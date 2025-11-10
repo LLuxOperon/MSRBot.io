@@ -234,6 +234,19 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     } catch (e) {
       console.warn('[cards] publisher logos config not available (tried multiple paths):', e && e.message ? e.message : e);
     }
+    // Publisher URLs config (link targets)
+    let __publisherUrls = {};
+    let __publisherUrlAliases = {};
+    try {
+      const ucfg = await loadJSONTry(['../_data/publisher-urls.json']);
+      if (ucfg && typeof ucfg === 'object') {
+        __publisherUrls = ucfg.urls || {};
+        __publisherUrlAliases = (ucfg.aliases && typeof ucfg.aliases === 'object') ? ucfg.aliases : {};
+      }
+    } catch (e) {
+      console.warn('[cards] publisher urls config not available:', e && e.message ? e.message : e);
+    }
+
     function resolvePublisherLogo(pubRaw){
       const input = String(pubRaw || '').trim();
       if (!input) return null;
@@ -264,6 +277,35 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
       return null;
     }
+    function resolvePublisherUrl(pubRaw){
+      const input = String(pubRaw || '').trim();
+      if (!input) return null;
+
+      // 1) Exact
+      if (__publisherUrls[input]) return __publisherUrls[input];
+
+      // 2) Alias (case-insensitive)
+      const lowerAliases = __publisherUrlAliases.__lowerCache || ( __publisherUrlAliases.__lowerCache = (() => {
+        const m = {};
+        for (const [a, c] of Object.entries(__publisherUrlAliases)) {
+          m[String(a).toLowerCase()] = String(c);
+        }
+        return m;
+      })());
+      const canonFromAlias = lowerAliases[input.toLowerCase()];
+      if (canonFromAlias && __publisherUrls[canonFromAlias]) return __publisherUrls[canonFromAlias];
+
+      // 3) First token
+      const firstToken = input.split(/[–—-]|,|\(|\)|:/)[0].trim();
+      if (firstToken && __publisherUrls[firstToken]) return __publisherUrls[firstToken];
+
+      // 4) Case-insensitive direct match
+      const lowerKey = input.toLowerCase();
+      for (const [k, v] of Object.entries(__publisherUrls)) {
+        if (String(k).toLowerCase() === lowerKey) return v;
+      }
+      return null;
+    }
     const __pubWarned = new Set();
     window.Handlebars.registerHelper('publisherLogo', function(pub) {
       const rel = resolvePublisherLogo(pub);
@@ -280,6 +322,10 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       return new window.Handlebars.SafeString(
         `<img src="../${rel}" alt="${alt}" height="${h}" class="align-text-bottom me-1" loading="lazy">`
       );
+    });
+    window.Handlebars.registerHelper('publisherLink', function(pub){
+      const url = resolvePublisherUrl(pub);
+      return url || '';
     });
     // minimal helpers
     window.Handlebars.registerHelper('join', function(arr, sep){ return Array.isArray(arr) ? arr.join(sep||', ') : ''; });

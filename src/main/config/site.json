@@ -24,12 +24,21 @@
     "ISO": "resources/logos/iso-logo-print.gif",
     "ISO/IEC": "resources/logos/iso-logo-print.gif",
     "AES": "resources/logos/AES-Shield-Only-R.png",
-    "ISDCF": "resources/logos/ISDCF_logo-square-nobg.png"
+    "ISDCF": "resources/logos/ISDCF_logo-square-nobg.png",
+    "W3C": "resources/logos/w3c.svg",
+    "ITU-R": "resources/logos/ITU-logo.svg",
+    "IETF": "resources/logos/ietf-logo.width-600.jpg",
+    "AMWA": "resources/logos/AMWA Logo 208x63.jpg",
+    "AMPAS": "resources/logos/AMPAS_logo2x.png",
+    "MacMillan Co.": "resources/logos/macmillan-logo-red-1.png",
+    "Franklin Institute": "resources/logos/tfir-logo.svg",
+    "Cambridge University Press": "resources/logos/cambridge-university-press-logo-1x.png"
   },
   "publisherLogoAliases": {
     "smpte": "SMPTE",
     "SMPTE – Society of Motion Picture and Television Engineers": "SMPTE",
-    "ISO/IEC": "ISO"
+    "ISO/IEC": "ISO",
+    "AMPAS": "Academy of Motion Picture Arts and Sciences"
   },
   "publisherLogoHeight": 25,
   "publisherUrls": {
@@ -37,7 +46,15 @@
     "ISO": "https://www.iso.org/",
     "ISO/IEC": "https://www.iso.org/",
     "AES": "https://aes2.org/",
-    "ISDCF": "https://www.isdcf.com/"
+    "ISDCF": "https://www.isdcf.com/",
+    "W3C": "https://www.w3.org/",
+    "ITU-R": "https://www.itu.int/en/ITU-R/",
+    "IETF": "https://www.ietf.org/",
+    "AMWA": "https://www.amwa.tv/",
+    "AMPAS": "https://www.oscars.org/",
+    "MacMillan Co.": "https://us.macmillan.com/",
+    "Franklin Institute": "https://fi.edu/",
+    "Cambridge University Press": "https://www.cambridge.org/us/universitypress"
   }
 
 }
