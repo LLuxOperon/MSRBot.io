@@ -36,20 +36,23 @@
   <section class="row g-3">
     <div class="col-lg-7">
       <div class="card">
-        <div class="card-header">
-          <h2 class="h6 ">Details</h2>
+        <div class="card-header pb-0">
+          <h2 class="h5 card-title">Metadata</h2>
         </div>
         <div class="card-body">
           <dl class="row small mb-0">
-            {{#if publisher}}<dt class="col-sm-4">Publisher</dt><dd class="col-sm-8">{{#if (lookup publisherUrls publisher)}}
-              <a href="{{lookup publisherUrls publisher}}" target="_blank" rel="noopener">{{publisher}}</a>
-            {{else}}
-              {{publisher}}
-            {{/if}}</dd>{{/if}}
+            {{#if status.statusNote}}<dt class="col-sm-4">Status Note</dt><dd class="col-sm-8"><em>{{status.statusNote}}</em></dd>{{/if}}
+            {{#if publisher}}<dt class="col-sm-4">Publisher</dt><dd class="col-sm-8"><a class="clear-filter" href="../?f.publisher={{publisher}}">{{publisher}}</a></dd>{{/if}}
             {{#if docType}}<dt class="col-sm-4">Doc Type</dt><dd class="col-sm-8">{{docType}}{{#if docTypeAbr}} ({{docTypeAbr}}){{/if}}</dd>{{/if}}
             {{#if publicationDate}}<dt class="col-sm-4">Publication Date</dt><dd class="col-sm-8">{{publicationDate}}</dd>{{/if}}
+            {{#if status.amendedDate}}<dt class="col-sm-4">Amended Date</dt><dd class="col-sm-8">{{status.amendedDate}}</dd>{{/if}}
+            {{#if status.reaffirmDate}}<dt class="col-sm-4">Reaffirm Date</dt><dd class="col-sm-8">{{status.reaffirmDate}}</dd>{{/if}}
+            {{#if status.stabilizedDate}}<dt class="col-sm-4">Stabilized Date</dt><dd class="col-sm-8">{{status.stabilizedDate}}</dd>{{/if}}
+            {{#if status.supersededDate}}<dt class="col-sm-4">Superseded Date</dt><dd class="col-sm-8">{{status.supersededDate}}</dd>{{/if}}
+            {{#if status.withdrawnDate}}<dt class="col-sm-4">Withdrawn Date</dt><dd class="col-sm-8">{{status.withdrawnDate}}</dd>{{/if}}
             {{#if doi}}<dt class="col-sm-4">DOI</dt><dd class="col-sm-8"><a href="https://doi.org/{{doi}}" target="_blank" rel="noopener"><code>{{doi}}</code></a></dd>{{/if}}
             {{#if href}}<dt class="col-sm-4">Link</dt><dd class="col-sm-8"><a href="{{href}}" target="_blank" rel="noopener" class="text-break d-inline-block" style="max-width:100%">{{href}}</a></dd>{{/if}}
+            {{#if repo}}<dt class="col-sm-4">Repo</dt><dd class="col-sm-8"><a href="{{repo}}" target="_blank" rel="noopener" class="text-break d-inline-block" style="max-width:100%">{{repo}}</a></dd>{{/if}}
             {{#if authors}}<dt class="col-sm-4">Author(s)</dt><dd class="col-sm-8">{{#authors}}{{this}}{{#unless @last}}, {{/unless}}{{/authors}}</dd>{{/if}}
             {{#if group}}<dt class="col-sm-4">Group</dt><dd class="col-sm-8">{{#with (groupIdLookup dataGroups group)}}{{#if groupId}}<a href="/groups/{{../../htmlLink}}?search.search={{groupId}}">{{/if}}{{groupOrg}} {{groupName}} {{groupDesc}}{{#if groupId}}</a>{{/if}}{{/with}}</dd>{{/if}}
             {{#with (docProjLookup @root.docProjs docId)}}{{#if projectId}}<dt class="col-sm-4">Current Work</dt>
@@ -57,19 +60,27 @@
               {{#ifnoteq projectStatus "Complete"}}<span class="label badge text-bg-warning text-uppercase">{{/ifnoteq}}{{#ifeq projectStatus "Complete"}}<span class="label badge text-bg-light text-uppercase">{{/ifeq}}{{workType}} - {{projectStatus}}</span>
               <br>{{#ifnoteq projectStatus "Complete"}}<span class="small">Under Development: {{/ifnoteq}}<a href="/projects/{{../../htmlLink}}#{{projectId}}">Project - {{projectId}}</a> {{#if newDoc}} - New Doc: <a class="{{../../idType}}-link clear-filter" href="../{{newDoc}}">{{getLabel newDoc}}</a> [{{getStatus newDoc}}]</span> {{{getstatusButton newDoc "10"}}} {{#with (docProjLookup @root.docProjs newDoc)}}{{#ifnoteq projectStatus "Complete"}}<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#F6BE00" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg>{{/ifnoteq}}{{/with}}{{/if}}</span>
             </dd>{{/if}}{{/with}}
-            {{#if status.statusNote}}<dt class="col-sm-4">Status Note</dt><dd class="col-sm-8"><em>{{status.statusNote}}</em></dd>{{/if}}
+            {{#if keywords}}<dt class="col-sm-4">Keywords(s)</dt><dd class="col-sm-8">{{#keywords}}<a class="clear-filter" href="../?f.keywords={{this}}">{{this}}</a>{{#unless @last}}, {{/unless}}{{/keywords}}</dd>{{/if}}
+            
+            {{#if details}}<dt class="col-sm-4">Details</dt><dd class="col-sm-8"><em>{{details}}</em></dd>{{/if}}
           </dl>
         </div>
       </div>
       
       {{#if status/withdrawnNotice}}
       <div class="row small m-2">
-        <span class="label px-3 text-bg-warning text-uppercase">Withdrawl notice: <a href="{{status/withdrawnNotice}}">{{status/withdrawnNotice}}</a></span>
+        <span class="label text-center px-3 label-warn text-bg-warning text-uppercase">Withdrawl notice: <a href="{{status/withdrawnNotice}}">{{status/withdrawnNotice}}</a></span>
       </div>{{/if}}
       
       {{#if docBase}}
-      <div class="p-2 text-muted small">
+      <div class="p-2 text-muted text-center small">
         <span class="fst-italic">{{#if status.latestVersion}}<span class="label badge text-bg-light">[ LATEST VERSION ]</span> {{else}}Newer version available{{/if}} of base {{docBaseLabel}}</span>
+      </div>
+      {{/if}}
+
+      {{#if (or status/supersededBy status/amendedBy)}}
+      <div class="row text-muted mx-2">
+        <div class="col col-sm-6">
         {{#if status/supersededBy}}
         <br><span class="font-weight-bold small"> Superseded by:</span>
           <ul class="list-group list-group-flush">
@@ -80,8 +91,19 @@
           {{/status/supersededBy}}
           </ul>
         {{/if}}
-        
-        
+        </div>
+        <div class="col col-sm-6">
+        {{#if status/amendedBy}}
+        <br><span class="font-weight-bold small"> Amended by:</span>
+          <ul class="list-group list-group-flush">
+          {{#status/amendedBy}}
+              <li class="list-group-item">
+                <span class="small"><a class="{{../../idType}}-link clear-filter" href="../{{this}}">{{getLabel this}}</a> [{{getStatus this}}]</span> {{{getstatusButton this "10"}}} {{#with (docProjLookup @root.docProjs this)}}{{#ifnoteq projectStatus "Complete"}}<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#F6BE00" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg>{{/ifnoteq}}{{/with}}
+              </li> 
+          {{/status/amendedBy}}
+          </ul>
+        {{/if}}
+        </div>
       </div>
       {{/if}}
 
@@ -114,6 +136,22 @@
         </div>
       </div>
       {{/if}}
+
+      <!-- {{#if (len referenceTree)}}
+      <div class="card mb-3">
+        <div class="card-body">
+          <h2 class="h6">Reference Tree</h2>
+          <ul class="list-group list-group-flush small">
+          {{#each (asArray referenceTree)}}
+            <li class="list-group-item">
+              <a href="../{{this}}/">{{getLabel this}}</a> [{{getStatus this}}] {{{getstatusButton this "10"}}} {{#with (docProjLookup @root.docProjs this)}}{{#ifnoteq projectStatus "Complete"}}<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#F6BE00" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg>{{/ifnoteq}}{{/with}}
+            </li>
+          {{/each}}
+          </ul>
+        </div>
+      </div>
+      {{/if}} -->
+
     </div>
 
     <div class="col-lg-5">

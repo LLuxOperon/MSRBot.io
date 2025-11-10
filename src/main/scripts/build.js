@@ -214,6 +214,14 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     return options.inverse(this);
   });
 
+  hb.registerHelper('or', function (a, b) {
+    return a || b;
+  });
+
+  hb.registerHelper('and', function (a, b) {
+    return a && b;
+  });
+
   // Returns the length of arrays/strings, or the number of keys for objects
   hb.registerHelper('len', function (val) {
     if (Array.isArray(val)) return val.length;
