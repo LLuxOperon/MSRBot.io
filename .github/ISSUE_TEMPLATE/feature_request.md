@@ -1,7 +1,7 @@
 ---
 name: "Feature Request"
 about: Suggest a new capability, enhancement, or improvement
-title: "[FEATURE] "
+title: "[FEATURE] {Insert your title here}"
 labels: ["enhancement"]
 assignees: ["SteveLLamb"]
 ---
