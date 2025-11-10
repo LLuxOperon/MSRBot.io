@@ -1,0 +1,25 @@
+{
+  "urls": {
+    "SMPTE": "https://www.smpte.org/",
+    "ISO": "https://www.iso.org/",
+    "ISO/IEC": "https://www.iso.org/",
+    "AES": "https://aes2.org/",
+    "ISDCF": "https://www.isdcf.com/",
+    "DCI": "https://www.dcimovies.com/",
+    "W3C": "https://www.w3.org/",
+    "IEEE": "https://www.ieee.org/",
+    "ITU-R": "https://www.itu.int/en/ITU-R/",
+    "IETF": "https://www.ietf.org/",
+    "AMWA": "https://www.amwa.tv/",
+    "AMPAS": "https://www.oscars.org/",
+    "MacMillan Co.": "https://us.macmillan.com/",
+    "Franklin Institute": "https://fi.edu/",
+    "Cambridge University Press": "https://www.cambridge.org/us/universitypress"
+  },
+  "aliases": {
+    "smpte": "SMPTE",
+    "SMPTE – Society of Motion Picture and Television Engineers": "SMPTE",
+    "ISO/IEC": "ISO",
+    "AMPAS": "Academy of Motion Picture Arts and Sciences"
+  }
+}

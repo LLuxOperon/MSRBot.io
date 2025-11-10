@@ -117,12 +117,12 @@
         <li class="nav-item text-nowrap">
           <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../"><i class="bi bi-house-fill" style="font-size: 1.5rem;"></i><span class="small">HOME</span></a>
         </li>
-        <!-- li class="nav-item text-nowrap">
-          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../docs/"><i class="bi bi-file-richtext-fill" style="font-size: 1.5rem;"></i><span class="small">DOCS</span></a -->
-        </li>
         <li class="nav-item text-nowrap">
-          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../documents/"><i class="bi bi-file-richtext-fill" style="font-size: 1.5rem;"></i><span class="small">DOCUMENTS</span></a>
+          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../docs/"><i class="bi bi-file-richtext-fill" style="font-size: 1.5rem;"></i><span class="small">DOCS</span></a>
         </li>
+        <!-- li class="nav-item text-nowrap">
+          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../documents/"><i class="bi bi-file-richtext-fill" style="font-size: 1.5rem;"></i><span class="small">LEGACY</span></a>
+        </li -->
         <li class="nav-item text-nowrap">
           <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../dependancies/"><i class="bi bi-diagram-3-fill" style="font-size: 1.5rem;"></i><span class="small">REF TREE</span></a>
         </li>
@@ -234,7 +234,11 @@
   <article class="card-reg">
     <header class="d-flex align-items-start flex-wrap gap-2 mb-1">
       <div class="publisher-logo-slot flex-shrink-0 order-0">
-        {{publisherLogo publisher}}
+        {{#if (publisherLink publisher)}}
+          <a href="{{publisherLink publisher}}" target="_blank" rel="noopener">{{publisherLogo publisher}}</a>
+        {{else}}
+          {{publisherLogo publisher}}
+        {{/if}}
       </div>
       <h3 class="h6 mb-2 flex-grow-1 min-w-0 order-1">
         <a class="anchor" id="{{id}}" href="#{{id}}"></a>
@@ -293,15 +297,15 @@
   </article>
 </template>
 
-<script src="../js/cards.js"></script>
+<script src="../js/docList.js"></script>
   <!-- Main content ends - do not edit below this line -->
   <footer class="page-footer font-small">
     <div class="container p-3 pb-0">
       <div class="row justify-content-md-center border-bottom d-flex">
         <div class="col text-center p-3">
         <small class="text-muted">
-            Site version: <code>1693718acbfc67414644d15ef50b219dc0f2ec36</code>
-            <br>Generated on: <code>2025-11-08T17:57:06.175Z</code>
+            Site version: <code>f5d07736009055e293f7e147e3a29a80d353d3c9</code>
+            <br>Generated on: <code>2025-11-10T19:53:47.962Z</code>
           </small>
         </div>
       </div>

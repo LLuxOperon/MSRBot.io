@@ -117,12 +117,12 @@
         <li class="nav-item text-nowrap">
           <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../../index.html"><i class="bi bi-house-fill" style="font-size: 1.5rem;"></i><span class="small">HOME</span></a>
         </li>
-        <!-- li class="nav-item text-nowrap">
-          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../../docs/index.html"><i class="bi bi-file-richtext-fill" style="font-size: 1.5rem;"></i><span class="small">DOCS</span></a -->
-        </li>
         <li class="nav-item text-nowrap">
-          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../../documents/index.html"><i class="bi bi-file-richtext-fill" style="font-size: 1.5rem;"></i><span class="small">DOCUMENTS</span></a>
+          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../../docs/index.html"><i class="bi bi-file-richtext-fill" style="font-size: 1.5rem;"></i><span class="small">DOCS</span></a>
         </li>
+        <!-- li class="nav-item text-nowrap">
+          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../../documents/index.html"><i class="bi bi-file-richtext-fill" style="font-size: 1.5rem;"></i><span class="small">LEGACY</span></a>
+        </li -->
         <li class="nav-item text-nowrap">
           <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../../dependancies/index.html"><i class="bi bi-diagram-3-fill" style="font-size: 1.5rem;"></i><span class="small">REF TREE</span></a>
         </li>
@@ -156,7 +156,7 @@
 <main class="container my-4">
   <header class="mb-3">
     <div class="d-flex align-items-center flex-wrap gap-2 mb-1">
-      <img src="../../resources/logos/smpte-logo.png" alt="SMPTE logo" height="25" class="align-text-bottom me-1" loading="lazy">
+        <a href="https://www.smpte.org/" target="_blank" rel="noopener"><img src="../../resources/logos/smpte-logo.png" alt="SMPTE logo" height="25" class="align-text-bottom me-1" loading="lazy"></a>
       <code class="me-1 fs-5">SMPTE ST 137:2000</code>
       <div class="d-inline-flex flex-wrap gap-1">
         
@@ -180,20 +180,27 @@
   <section class="row g-3">
     <div class="col-lg-7">
       <div class="card">
-        <div class="card-header">
-          <h2 class="h6 ">Details</h2>
+        <div class="card-header pb-0">
+          <h2 class="h5 card-title">Metadata</h2>
         </div>
         <div class="card-body">
           <dl class="row small mb-0">
-            <dt class="col-sm-4">Publisher</dt><dd class="col-sm-8">
-              <a href="https://www.smpte.org/" target="_blank" rel="noopener">SMPTE</a>
-</dd>
+            
+            <dt class="col-sm-4">Publisher</dt><dd class="col-sm-8"><a class="clear-filter" href="../?f.publisher=SMPTE">SMPTE</a></dd>
             <dt class="col-sm-4">Doc Type</dt><dd class="col-sm-8">Standard (ST)</dd>
             <dt class="col-sm-4">Publication Date</dt><dd class="col-sm-8">2000-05-30</dd>
+            
+            
+            <dt class="col-sm-4">Stabilized Date</dt><dd class="col-sm-8">2005-12-01</dd>
+            
+            
             <dt class="col-sm-4">DOI</dt><dd class="col-sm-8"><a href="https://doi.org/10.5594/SMPTE.ST137.2000" target="_blank" rel="noopener"><code>10.5594/SMPTE.ST137.2000</code></a></dd>
             <dt class="col-sm-4">Link</dt><dd class="col-sm-8"><a href="https://doi.org/10.5594/SMPTE.ST137.2000" target="_blank" rel="noopener" class="text-break d-inline-block" style="max-width:100%">https://doi.org/10.5594/SMPTE.ST137.2000</a></dd>
             
+            
             <dt class="col-sm-4">Group</dt><dd class="col-sm-8"><a href="/groups/?search.search=smpte-27c-tc">SMPTE 27C Cinema</a></dd>
+            
+            <dt class="col-sm-4">Keywords(s)</dt><dd class="col-sm-8"><a class="clear-filter" href="../?f.keywords=Film">Film</a>, <a class="clear-filter" href="../?f.keywords=Audio">Audio</a>, <a class="clear-filter" href="../?f.keywords=35mm">35mm</a>, <a class="clear-filter" href="../?f.keywords=Magnetic">Magnetic</a>, <a class="clear-filter" href="../?f.keywords=Sound">Sound</a>, <a class="clear-filter" href="../?f.keywords=Dimension">Dimension</a></dd>
             
             
           </dl>
@@ -202,12 +209,55 @@
       
 
       
-      <div class="p-2 text-muted small">
+      <div class="p-2 text-muted text-center small">
         <span class="fst-italic"><span class="label badge text-bg-light">[ LATEST VERSION ]</span>  of base SMPTE ST 137</span>
-        
-        
       </div>
 
+
+
+
+      <!-- 
+      <div class="card mb-3">
+        <div class="card-body">
+          <h2 class="h6">Reference Tree</h2>
+          <ul class="list-group list-group-flush small">
+            <li class="list-group-item">
+              <a href="../SMPTE.ST102.1997/">SMPTE ST 102:1997</a> [Superseded] <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#ff0000" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg> 
+            </li>
+            <li class="list-group-item">
+              <a href="../SMPTE.ST102.2002/">SMPTE ST 102:2002</a> [Active, Stabilized] <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#0c9c16" class="bi bi-check-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg> 
+            </li>
+            <li class="list-group-item">
+              <a href="../SMPTE.ST137.1994/">SMPTE ST 137:1994</a> [Superseded] <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#ff0000" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg> 
+            </li>
+            <li class="list-group-item">
+              <a href="../SMPTE.ST139.1996/">SMPTE ST 139:1996</a> [Superseded] <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#ff0000" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg> 
+            </li>
+            <li class="list-group-item">
+              <a href="../SMPTE.ST177.1995/">SMPTE ST 177:1995</a> [Active, Stabilized] <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#0c9c16" class="bi bi-check-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg> 
+            </li>
+            <li class="list-group-item">
+              <a href="../SMPTE.ST194.1991/">SMPTE ST 194:1991</a> [Superseded] <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#ff0000" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg> 
+            </li>
+            <li class="list-group-item">
+              <a href="../SMPTE.ST194.1997/">SMPTE ST 194:1997</a> [Superseded] <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#ff0000" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg> 
+            </li>
+            <li class="list-group-item">
+              <a href="../SMPTE.ST223.2001/">SMPTE ST 223:2001</a> [Active, Stabilized] <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#0c9c16" class="bi bi-check-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg> 
+            </li>
+            <li class="list-group-item">
+              <a href="../SMPTE.ST237.1998/">SMPTE ST 237:1998</a> [Superseded] <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#ff0000" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg> 
+            </li>
+            <li class="list-group-item">
+              <a href="../SMPTE.ST242.1993/">SMPTE ST 242:1993</a> [Superseded] <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#ff0000" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg> 
+            </li>
+            <li class="list-group-item">
+              <a href="../SMPTE.ST93.1998/">SMPTE ST 93:1998</a> [Superseded] <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#ff0000" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg> 
+            </li>
+          </ul>
+        </div>
+      </div>
+       -->
 
     </div>
 
@@ -260,8 +310,8 @@
       <div class="row justify-content-md-center border-bottom d-flex">
         <div class="col text-center p-3">
         <small class="text-muted">
-            Site version: <code>1693718acbfc67414644d15ef50b219dc0f2ec36</code>
-            <br>Generated on: <code>Sat Nov 08 2025 17:57:05 GMT+0000 (Coordinated Universal Time)</code>
+            Site version: <code>f5d07736009055e293f7e147e3a29a80d353d3c9</code>
+            <br>Generated on: <code>Mon Nov 10 2025 19:53:46 GMT+0000 (Coordinated Universal Time)</code>
           </small>
         </div>
       </div>

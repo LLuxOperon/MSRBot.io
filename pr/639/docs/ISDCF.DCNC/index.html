@@ -117,12 +117,12 @@
         <li class="nav-item text-nowrap">
           <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../../index.html"><i class="bi bi-house-fill" style="font-size: 1.5rem;"></i><span class="small">HOME</span></a>
         </li>
-        <!-- li class="nav-item text-nowrap">
-          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../../docs/index.html"><i class="bi bi-file-richtext-fill" style="font-size: 1.5rem;"></i><span class="small">DOCS</span></a -->
-        </li>
         <li class="nav-item text-nowrap">
-          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../../documents/index.html"><i class="bi bi-file-richtext-fill" style="font-size: 1.5rem;"></i><span class="small">DOCUMENTS</span></a>
+          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../../docs/index.html"><i class="bi bi-file-richtext-fill" style="font-size: 1.5rem;"></i><span class="small">DOCS</span></a>
         </li>
+        <!-- li class="nav-item text-nowrap">
+          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../../documents/index.html"><i class="bi bi-file-richtext-fill" style="font-size: 1.5rem;"></i><span class="small">LEGACY</span></a>
+        </li -->
         <li class="nav-item text-nowrap">
           <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../../dependancies/index.html"><i class="bi bi-diagram-3-fill" style="font-size: 1.5rem;"></i><span class="small">REF TREE</span></a>
         </li>
@@ -156,7 +156,7 @@
 <main class="container my-4">
   <header class="mb-3">
     <div class="d-flex align-items-center flex-wrap gap-2 mb-1">
-      <img src="../../resources/logos/ISDCF_logo-square-nobg.png" alt="ISDCF logo" height="25" class="align-text-bottom me-1" loading="lazy">
+        <a href="https://www.isdcf.com/" target="_blank" rel="noopener"><img src="../../resources/logos/ISDCF_logo-square-nobg.png" alt="ISDCF logo" height="25" class="align-text-bottom me-1" loading="lazy"></a>
       <code class="me-1 fs-5">ISDCF Doc 01</code>
       <div class="d-inline-flex flex-wrap gap-1">
         
@@ -180,22 +180,29 @@
   <section class="row g-3">
     <div class="col-lg-7">
       <div class="card">
-        <div class="card-header">
-          <h2 class="h6 ">Details</h2>
+        <div class="card-header pb-0">
+          <h2 class="h5 card-title">Metadata</h2>
         </div>
         <div class="card-body">
           <dl class="row small mb-0">
-            <dt class="col-sm-4">Publisher</dt><dd class="col-sm-8">
-              <a href="https://www.isdcf.com/" target="_blank" rel="noopener">ISDCF</a>
-</dd>
+            
+            <dt class="col-sm-4">Publisher</dt><dd class="col-sm-8"><a class="clear-filter" href="../?f.publisher=ISDCF">ISDCF</a></dd>
             <dt class="col-sm-4">Doc Type</dt><dd class="col-sm-8">Registry</dd>
             
             
+            
+            
+            
+            
+            
             <dt class="col-sm-4">Link</dt><dd class="col-sm-8"><a href="http://isdcf.com/dcnc" target="_blank" rel="noopener" class="text-break d-inline-block" style="max-width:100%">http://isdcf.com/dcnc</a></dd>
+            <dt class="col-sm-4">Repo</dt><dd class="col-sm-8"><a href="https://github.com/ISDCF/registries/" target="_blank" rel="noopener" class="text-break d-inline-block" style="max-width:100%">https://github.com/ISDCF/registries/</a></dd>
             
             
             
+            <dt class="col-sm-4">Keywords(s)</dt><dd class="col-sm-8"><a class="clear-filter" href="../?f.keywords=DCinema">DCinema</a>, <a class="clear-filter" href="../?f.keywords=DCP Core">DCP Core</a>, <a class="clear-filter" href="../?f.keywords=Packaging">Packaging</a>, <a class="clear-filter" href="../?f.keywords=Distribution">Distribution</a></dd>
             
+            <dt class="col-sm-4">Details</dt><dd class="col-sm-8"><em>ISDCF maintains the recommendation for naming DCP files.</em></dd>
           </dl>
         </div>
       </div>
@@ -203,6 +210,10 @@
 
       
 
+
+
+
+      <!--  -->
 
     </div>
 
@@ -242,8 +253,8 @@
       <div class="row justify-content-md-center border-bottom d-flex">
         <div class="col text-center p-3">
         <small class="text-muted">
-            Site version: <code>1693718acbfc67414644d15ef50b219dc0f2ec36</code>
-            <br>Generated on: <code>Sat Nov 08 2025 17:57:04 GMT+0000 (Coordinated Universal Time)</code>
+            Site version: <code>f5d07736009055e293f7e147e3a29a80d353d3c9</code>
+            <br>Generated on: <code>Mon Nov 10 2025 19:53:46 GMT+0000 (Coordinated Universal Time)</code>
           </small>
         </div>
       </div>

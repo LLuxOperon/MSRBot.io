@@ -222,6 +222,17 @@ pre {
     font-family: 'Lato', sans-serif !important;
 }
 
+/* Improve readability of links inside warning banners (e.g., Withdrawl notices) */
+.label-warn a,
+.label-warn a:visited {
+  color: #000;              /* force high contrast on blue badge */
+}
+.label-warn a:hover,
+.label-warn a:focus {
+  color: #000;
+  text-decoration: underline; /* visible affordance on interaction */
+}
+
 .chip {
     display: inline-block;
     padding: 0 10px;

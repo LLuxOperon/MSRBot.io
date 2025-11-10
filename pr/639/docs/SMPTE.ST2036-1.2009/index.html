@@ -117,12 +117,12 @@
         <li class="nav-item text-nowrap">
           <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../../index.html"><i class="bi bi-house-fill" style="font-size: 1.5rem;"></i><span class="small">HOME</span></a>
         </li>
-        <!-- li class="nav-item text-nowrap">
-          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../../docs/index.html"><i class="bi bi-file-richtext-fill" style="font-size: 1.5rem;"></i><span class="small">DOCS</span></a -->
-        </li>
         <li class="nav-item text-nowrap">
-          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../../documents/index.html"><i class="bi bi-file-richtext-fill" style="font-size: 1.5rem;"></i><span class="small">DOCUMENTS</span></a>
+          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../../docs/index.html"><i class="bi bi-file-richtext-fill" style="font-size: 1.5rem;"></i><span class="small">DOCS</span></a>
         </li>
+        <!-- li class="nav-item text-nowrap">
+          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../../documents/index.html"><i class="bi bi-file-richtext-fill" style="font-size: 1.5rem;"></i><span class="small">LEGACY</span></a>
+        </li -->
         <li class="nav-item text-nowrap">
           <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../../dependancies/index.html"><i class="bi bi-diagram-3-fill" style="font-size: 1.5rem;"></i><span class="small">REF TREE</span></a>
         </li>
@@ -156,7 +156,7 @@
 <main class="container my-4">
   <header class="mb-3">
     <div class="d-flex align-items-center flex-wrap gap-2 mb-1">
-      <img src="../../resources/logos/smpte-logo.png" alt="SMPTE logo" height="25" class="align-text-bottom me-1" loading="lazy">
+        <a href="https://www.smpte.org/" target="_blank" rel="noopener"><img src="../../resources/logos/smpte-logo.png" alt="SMPTE logo" height="25" class="align-text-bottom me-1" loading="lazy"></a>
       <code class="me-1 fs-5">SMPTE ST 2036-1:2009</code>
       <div class="d-inline-flex flex-wrap gap-1">
         
@@ -180,18 +180,25 @@
   <section class="row g-3">
     <div class="col-lg-7">
       <div class="card">
-        <div class="card-header">
-          <h2 class="h6 ">Details</h2>
+        <div class="card-header pb-0">
+          <h2 class="h5 card-title">Metadata</h2>
         </div>
         <div class="card-body">
           <dl class="row small mb-0">
-            <dt class="col-sm-4">Publisher</dt><dd class="col-sm-8">
-              <a href="https://www.smpte.org/" target="_blank" rel="noopener">SMPTE</a>
-</dd>
+            
+            <dt class="col-sm-4">Publisher</dt><dd class="col-sm-8"><a class="clear-filter" href="../?f.publisher=SMPTE">SMPTE</a></dd>
             <dt class="col-sm-4">Doc Type</dt><dd class="col-sm-8">Standard (ST)</dd>
             <dt class="col-sm-4">Publication Date</dt><dd class="col-sm-8">2009-12-18</dd>
+            
+            
+            
+            <dt class="col-sm-4">Superseded Date</dt><dd class="col-sm-8">2013-05-09</dd>
+            
             <dt class="col-sm-4">DOI</dt><dd class="col-sm-8"><a href="https://doi.org/10.5594/SMPTE.ST2036-1.2009" target="_blank" rel="noopener"><code>10.5594/SMPTE.ST2036-1.2009</code></a></dd>
             <dt class="col-sm-4">Link</dt><dd class="col-sm-8"><a href="https://doi.org/10.5594/SMPTE.ST2036-1.2009" target="_blank" rel="noopener" class="text-break d-inline-block" style="max-width:100%">https://doi.org/10.5594/SMPTE.ST2036-1.2009</a></dd>
+            
+            
+            
             
             
             
@@ -202,18 +209,26 @@
       
 
       
-      <div class="p-2 text-muted small">
+      <div class="p-2 text-muted text-center small">
         <span class="fst-italic">Newer version available of base SMPTE ST 2036-1</span>
+      </div>
+
+      <div class="row text-muted mx-2">
+        <div class="col col-sm-6">
         <br><span class="font-weight-bold small"> Superseded by:</span>
           <ul class="list-group list-group-flush">
               <li class="list-group-item">
                 <span class="small"><a class="-link clear-filter" href="../SMPTE.ST2036-1.2013">SMPTE ST 2036-1:2013</a> [Superseded]</span> <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#ff0000" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg> 
               </li> 
           </ul>
-        
-        
+        </div>
+        <div class="col col-sm-6">
+        </div>
       </div>
 
+
+
+      <!--  -->
 
     </div>
 
@@ -234,8 +249,8 @@
       <div class="row justify-content-md-center border-bottom d-flex">
         <div class="col text-center p-3">
         <small class="text-muted">
-            Site version: <code>1693718acbfc67414644d15ef50b219dc0f2ec36</code>
-            <br>Generated on: <code>Sat Nov 08 2025 17:57:05 GMT+0000 (Coordinated Universal Time)</code>
+            Site version: <code>f5d07736009055e293f7e147e3a29a80d353d3c9</code>
+            <br>Generated on: <code>Mon Nov 10 2025 19:53:47 GMT+0000 (Coordinated Universal Time)</code>
           </small>
         </div>
       </div>
