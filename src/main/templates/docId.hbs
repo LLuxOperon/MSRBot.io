@@ -60,24 +60,23 @@
               {{#ifnoteq projectStatus "Complete"}}<span class="label badge text-bg-warning text-uppercase">{{/ifnoteq}}{{#ifeq projectStatus "Complete"}}<span class="label badge text-bg-light text-uppercase">{{/ifeq}}{{workType}} - {{projectStatus}}</span>
               <br>{{#ifnoteq projectStatus "Complete"}}<span class="small">Under Development: {{/ifnoteq}}<a href="/projects/{{../../htmlLink}}#{{projectId}}">Project - {{projectId}}</a> {{#if newDoc}} - New Doc: <a class="{{../../idType}}-link clear-filter" href="../{{newDoc}}">{{getLabel newDoc}}</a> [{{getStatus newDoc}}]</span> {{{getstatusButton newDoc "10"}}} {{#with (docProjLookup @root.docProjs newDoc)}}{{#ifnoteq projectStatus "Complete"}}<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#F6BE00" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg>{{/ifnoteq}}{{/with}}{{/if}}</span>
             </dd>{{/if}}{{/with}}
-            {{#if keywords}}<dt class="col-sm-4">Keywords(s)</dt><dd class="col-sm-8">{{#keywords}}<a class="clear-filter" href="../?f.keywords={{this}}">{{this}}</a>{{#unless @last}}, {{/unless}}{{/keywords}}</dd>{{/if}}
+            {{#if keywords}}<dt class="col-sm-4">Keyword(s)</dt><dd class="col-sm-8">{{#keywords}}<a class="clear-filter" href="../?f.keywords={{this}}">{{this}}</a>{{#unless @last}}, {{/unless}}{{/keywords}}</dd>{{/if}}
             
             {{#if details}}<dt class="col-sm-4">Details</dt><dd class="col-sm-8"><em>{{details}}</em></dd>{{/if}}
           </dl>
         </div>
       </div>
       
-      {{#if status/withdrawnNotice}}
+      {{#if status.withdrawnNotice}}
       <div class="row small m-2">
-        <span class="label text-center px-3 label-warn text-bg-warning text-uppercase">Withdrawl notice: <a href="{{status/withdrawnNotice}}">{{status/withdrawnNotice}}</a></span>
+        <span class="label text-center px-3 label-warn text-bg-warning text-uppercase">Withdrawl notice: <a href="{{status.withdrawnNotice}}">{{status.withdrawnNotice}}</a></span>
       </div>
       {{/if}}
-      
       
     {{#if docBase}}
     <div class="p-2 text-muted text-center">
       <span class="fst-italic">
-        {{#if status.latestVersion}}{{#unless status/withdrawn}}Latest version of {{docBaseLabel}}{{/unless}}{{else}}Newer version available!{{/if}}
+        {{#if status.latestVersion}}{{#unless status.withdrawn}}<i class="bi bi-check2-circle text-success"></i> Latest version of {{docBaseLabel}}{{/unless}}{{else}}<i class="bi bi-exclamation-triangle-fill text-warning"></i> Newer version available!{{#if msiLatestAny}} <a class="clear-filter" href="../{{msiLatestAny}}/">{{getLabel msiLatestAny}}</a> [{{getStatus msiLatestAny}}] {{{getstatusButton msiLatestAny "10"}}} {{#with (docProjLookup @root.docProjs msiLatestAny)}}{{#ifnoteq projectStatus "Complete"}}<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#F6BE00" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg>{{/ifnoteq}}{{/with}}{{/if}}{{/if}}
       </span>
     </div>
 
@@ -105,7 +104,7 @@
               {{#if status.amended}}     <span class="badge badge-dsuite text-bg-secondary">[AMENDED]</span>{{/if}}
               {{#if status.reaffirmed}}  <span class="badge badge-dsuite text-bg-info">[REAFFIRMED]</span>{{/if}}
               {{#if status.stabilized}}  <span class="badge badge-dsuite text-bg-primary">[STABILIZED]</span>{{/if}}
-              {{#if stxatus.latestVersion}}       <span class="badge badge-dsuite bg-info-subtle text-info-emphasis">[LATEST VERSION]</span>{{/if}}
+              {{#if status.latestVersion}}       <span class="badge badge-dsuite bg-info-subtle text-info-emphasis">[LATEST VERSION]</span>{{/if}}
             </div>
           </li>
           {{/each}}
@@ -115,29 +114,29 @@
     {{/if}}
   {{/if}}
 
-      {{#if (or status/supersededBy status/amendedBy)}}
+      {{#if (or (len status.supersededBy) (len status.amendedBy))}}
       <div class="row text-muted mx-2">
         <div class="col col-sm-6">
-        {{#if status/supersededBy}}
+        {{#if (len status.supersededBy)}}
         <br><span class="font-weight-bold small"> Superseded by:</span>
           <ul class="list-group list-group-flush">
-          {{#status/supersededBy}}
-              <li class="list-group-item">
-                <span class="small"><a class="{{../../idType}}-link clear-filter" href="../{{this}}">{{getLabel this}}</a> [{{getStatus this}}]</span> {{{getstatusButton this "10"}}} {{#with (docProjLookup @root.docProjs this)}}{{#ifnoteq projectStatus "Complete"}}<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#F6BE00" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg>{{/ifnoteq}}{{/with}}
-              </li> 
-          {{/status/supersededBy}}
+          {{#each (asArray status.supersededBy)}}
+            <li class="list-group-item">
+              <span class="small"><a class="{{../../idType}}-link clear-filter" href="../{{this}}">{{getLabel this}}</a> [{{getStatus this}}]</span> {{{getstatusButton this "10"}}} {{#with (docProjLookup @root.docProjs this)}}{{#ifnoteq projectStatus "Complete"}}<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#F6BE00" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg>{{/ifnoteq}}{{/with}}
+            </li> 
+          {{/each}}
           </ul>
         {{/if}}
         </div>
         <div class="col col-sm-6">
-        {{#if status/amendedBy}}
+        {{#if (len status.amendedBy)}}
         <br><span class="font-weight-bold small"> Amended by:</span>
           <ul class="list-group list-group-flush">
-          {{#status/amendedBy}}
-              <li class="list-group-item">
-                <span class="small"><a class="{{../../idType}}-link clear-filter" href="../{{this}}">{{getLabel this}}</a> [{{getStatus this}}]</span> {{{getstatusButton this "10"}}} {{#with (docProjLookup @root.docProjs this)}}{{#ifnoteq projectStatus "Complete"}}<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#F6BE00" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg>{{/ifnoteq}}{{/with}}
-              </li> 
-          {{/status/amendedBy}}
+            {{#each (asArray status.amendedBy)}}
+            <li class="list-group-item">
+              <span class="small"><a class="{{../../idType}}-link clear-filter" href="../{{this}}">{{getLabel this}}</a> [{{getStatus this}}]</span> {{{getstatusButton this "10"}}} {{#with (docProjLookup @root.docProjs this)}}{{#ifnoteq projectStatus "Complete"}}<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#F6BE00" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg>{{/ifnoteq}}{{/with}}
+            </li> 
+            {{/each}}
           </ul>
         {{/if}}
         </div>
@@ -223,7 +222,7 @@
           <!-- HTML (SMPTE) -->
           <div class="mb-1 pt-3 border-top">
             <div class="d-flex align-items-center justify-content-between">
-              <h3 class="h6 mb-0">HTML: <img src="{{assetPrefix}}resources/logos/smpte-icon.png" alt="SMPTE Icon" width="24" class=" icon d-inline-block align-text-middle"> SMPTE's <a href="../SMPTE.AG26/" title="{{getLabel id}}">HTML Pub</a>)</h3>
+            <h3 class="h6 mb-0">HTML: <img src="{{assetPrefix}}resources/logos/smpte-icon.png" alt="SMPTE Icon" width="24" class=" icon d-inline-block align-text-middle"> SMPTE's <a href="../SMPTE.AG26/" title="{{getLabel docId}}">HTML Pub</a>)</h3>
               <button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-html-smpte-{{docId}}">Copy</button>
             </div>
             <div class="mt-1">Preview:</div>
