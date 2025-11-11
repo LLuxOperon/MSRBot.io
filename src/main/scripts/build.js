@@ -246,6 +246,149 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     if (number) out += (out ? ' ' : '') + number + (part ? `-${part}` : '');
     return out.trim();
   });
+
+  // --- Citation helpers (text, HTML-generic, HTML-SMPTE) + code-safe variants
+  function _yearFrom(pubDate){
+    const s = String(pubDate || '').trim();
+    const m = s.match(/^\d{4}/);
+    return m ? m[0] : '';
+  }
+function _doiUrl(doc){
+  const d = (doc && doc.doi) ? String(doc.doi).trim() : '';
+  if (!d) return '';
+  // Build full URL first, then encode the URL as a whole.
+  // encodeURI preserves forward slashes, which is correct for DOI paths.
+  return encodeURI('https://doi.org/' + d);
+}
+  function _bestHref(doc){
+    return _doiUrl(doc) || (doc && doc.href) || '';
+  }
+  function _idOf(doc){
+    return (doc && doc.docId) || '';
+  }
+  function _labelOf(doc){
+    return (doc && doc.docLabel) || '';
+  }
+  function _titleOf(doc){
+    return (doc && (doc.docTitle || doc.title)) || '';
+  }
+  function _publisherOf(doc){
+    return (doc && doc.publisher) || '';
+  }
+  function _escapeHtml(s){
+    return String(s || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  // Public helpers
+  hb.registerHelper('citeText', function(doc){
+    const tpl = siteConfig?.citations?.text?.preview;
+    return tpl ? __renderCiteTpl(tpl, doc) : _buildCiteText(doc);
+  });
+  hb.registerHelper('citeHtmlGeneric', function(doc){
+    const tpl = siteConfig?.citations?.generic?.preview;
+    return new hb.SafeString(tpl ? __renderCiteTpl(tpl, doc) : _buildCiteHtmlGeneric(doc));
+  });
+  hb.registerHelper('citeHtmlSmpte', function(doc){
+    return new hb.SafeString(_buildCiteHtmlSmpte(doc));
+  });
+
+  // Code-safe (escaped) versions for &lt;pre&gt; blocks
+  hb.registerHelper('citeCodeText', function(doc){
+    const tpl = siteConfig?.citations?.text?.preview;
+    return new hb.SafeString(_escapeHtml(tpl ? __renderCiteTpl(tpl, doc) : _buildCiteText(doc)));
+  });
+  hb.registerHelper('citeCodeHtmlGeneric', function(doc){
+    const tpl = siteConfig?.citations?.generic?.preview;
+    return new hb.SafeString(_escapeHtml(tpl ? __renderCiteTpl(tpl, doc) : _buildCiteHtmlGeneric(doc)));
+  });
+  hb.registerHelper('citeCodeHtmlSmpte', function(doc){
+    return new hb.SafeString(_escapeHtml(_buildCiteHtmlSmpte(doc)));
+  });
+
+  // --- Config-driven template rendering for SMPTE preview/snippet divergence
+  // Render a simple moustache-like template string using basic {{tokens}}
+  function __renderCiteTpl(tpl, doc) {
+    const pub = _publisherOf(doc) || 'SMPTE';
+    const id  = _idOf(doc);
+    // Build an anchor-safe refId by flattening all non-word characters to dashes.
+    // This is only used for anchor links (e.g., id="bib-{{refId}}").
+    const baseForRef = id || label || ttl || pub || '';
+    const bibId = String(baseForRef)
+      .replace(/[^\w]+/g, '-')       // flatten punctuation and spaces to '-'
+      .replace(/^-+|-+$/g, '')       // trim leading/trailing dashes
+      .toLowerCase();                // normalize for stable anchors
+    const label  = _labelOf(doc)
+    const ttl = _titleOf(doc);
+    const yr  = _yearFrom(doc && doc.publicationDate);
+    // Important: do NOT default to '#' here; it makes {{#if href}} always truthy.
+    // Leave empty when unknown so {{#if href}} works as expected in templates.
+    const href = _bestHref(doc);
+    const doi = (doc && doc.doi) ? String(doc.doi).trim() : '';
+
+    const map = { 
+      publisher: pub,
+      id,
+      bibId,
+      label,
+      title: ttl,
+      year: yr,
+      href,
+      doi
+    };
+
+    // Handle {{#if field}}...{{else if other}}...{{else}}...{{/if}}
+    tpl = String(tpl || '').replace(
+      /\{\{#if\s+([a-zA-Z0-9_]+)\}\}([\s\S]*?)(?:\{\{else\s+if\s+([a-zA-Z0-9_]+)\}\}([\s\S]*?))?(?:\{\{else\}\}([\s\S]*?))?\{\{\/if\}\}/g,
+      (m, key1, inner1, key2, inner2, innerElse) => {
+        const val1 = map[key1] ? String(map[key1]).trim() : '';
+        const val2 = key2 ? (map[key2] ? String(map[key2]).trim() : '') : '';
+        const truthy1 = val1 && val1 !== '#' && val1.toLowerCase() !== 'about:blank';
+        const truthy2 = val2 && val2 !== '#' && val2.toLowerCase() !== 'about:blank';
+        if (truthy1) return inner1;
+        if (truthy2) return inner2;
+        return innerElse || '';
+      }
+    );
+
+    // Then replace normal {{token}} placeholders
+    return tpl.replace(/\{\{\s*([a-zA-Z0-9_]+)\s*\}\}/g, (m, key) => {
+      const v = map[key];
+      return (v == null ? '' : _escapeHtml(String(v)));
+    });
+  }
+
+  // Helpers that prefer siteConfig.citations.smpte.{preview|snippet} if present
+  hb.registerHelper('citeHtmlSmptePreview', function(doc){
+    try {
+      const cfgTpl = siteConfig && siteConfig.citations && siteConfig.citations.smpte && siteConfig.citations.smpte.preview;
+      if (cfgTpl) {
+        return new hb.SafeString(__renderCiteTpl(cfgTpl, doc));
+      }
+      // Fallback to the default SMPTE HTML builder
+      return new hb.SafeString(_buildCiteHtmlSmpte(doc));
+    } catch (e) {
+      return new hb.SafeString(_buildCiteHtmlSmpte(doc));
+    }
+  });
+
+  hb.registerHelper('citeCodeHtmlSmpteSnippet', function(doc){
+    try {
+      const cfgTpl = siteConfig && siteConfig.citations && siteConfig.citations.smpte && siteConfig.citations.smpte.snippet;
+      if (cfgTpl) {
+        // For code blocks, escape the rendered HTML so users copy the literal tag string
+        return new hb.SafeString(_escapeHtml(__renderCiteTpl(cfgTpl, doc)));
+      }
+      // Fallback: use the same default SMPTE builder, escaped for code
+      return new hb.SafeString(_escapeHtml(_buildCiteHtmlSmpte(doc)));
+    } catch (e) {
+      return new hb.SafeString(_escapeHtml(_buildCiteHtmlSmpte(doc)));
+    }
+  });
   
   // --- Load registries (data only). 
   let registryDocument = JSON.parse(await fs.readFile(DATA_PATH, 'utf8'));

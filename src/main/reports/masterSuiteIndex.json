@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2025-11-07T06:52:30.398Z",
+  "generatedAt": "2025-11-11T00:37:59.194Z",
   "sourcePath": "src/main/data/documents.json",
-  "sourceHash": "sha256:ab9e91df458e3ab08249e4018497d2d86493ad74ffeec68f31200caabff1f46e",
+  "sourceHash": "sha256:9261aceae9a8e03b3815249832def2b8f9412fb3b8de861d9e42361c2360b016",
   "publisherCounts": {
-    "total": 2207,
+    "total": 2208,
     "counts": {
       "SMPTE": 1491,
       "IETF": 109,
-      "ISO": 105,
+      "ISO": 106,
       "ISO/IEC": 87,
       "DCI": 42,
       "W3C": 35,
@@ -11868,6 +11868,41 @@
       "hasWithdrawn": false,
       "hasStabilized": false,
       "latestActiveBaseId": "ISO.646.1991",
+      "latestSupersededBaseId": null,
+      "prevBaseId": null,
+      "flagInconsistencies": [],
+      "counts": {
+        "bases": 1,
+        "amendments": 0,
+        "supplements": 0
+      }
+    },
+    {
+      "key": "ISO||960|",
+      "publisher": "ISO",
+      "suite": null,
+      "number": "960",
+      "part": null,
+      "docs": [
+        {
+          "docId": "ISO.960.2021",
+          "publicationDate": "2021-06-01",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "ISO.960.2021",
+      "latestAnyId": "ISO.960.2021",
+      "latestDateKey": "20210601",
+      "hasActiveBase": true,
+      "hasWithdrawn": false,
+      "hasStabilized": false,
+      "latestActiveBaseId": "ISO.960.2021",
       "latestSupersededBaseId": null,
       "prevBaseId": null,
       "flagInconsistencies": [],

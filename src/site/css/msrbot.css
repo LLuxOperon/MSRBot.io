@@ -358,3 +358,9 @@ pre {
   min-width: 0;
   flex: 1 1 auto;
 }
+
+pre.snippet {
+  white-space: pre-wrap;      /* preserve spaces + wrap long lines */
+  word-break: break-word;     /* allow wrapping mid-word if needed */
+  overflow-x: auto;           /* scroll if too long */
+}

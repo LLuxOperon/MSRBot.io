@@ -19,6 +19,18 @@
     "404 — Parsey has flapped into the void and found nothing.",
     "404 — Parsey has waddled off to file a missing-page report."
   ],
+  "citations": {
+    "text": {
+      "preview": "{{label}} — {{title}}{{#if href}}. Available at {{href}}{{/if}}"
+    },
+    "generic": {
+      "preview": "<span class=\"citation\"><cite>{{label}}</cite> — {{title}}{{#if href}}. Available at <a href=\"{{href}}\" target=\"_blank\" rel=\"noopener\">{{href}}</a>{{/if}}</span>"
+    },
+    "smpte": {
+      "preview": "<cite id=\"bib-{{bibId}}\">{{label}}</cite>, {{title}}{{#if doi}}<br>doi:&nbsp;<span class=\"doi\">{{doi}}</span><br>url:&nbsp;<a href=\"{{href}}\" class=\"ext-ref\">{{href}}</a>{{else if href}}<br>url:&nbsp;<a href=\"{{href}}\" class=\"ext-ref\">{{href}}</a>{{/if}}",
+      "snippet": "<li>\n<cite id=\"bib-{{bibId}}\">{{label}}</cite>, {{title}}{{#if doi}}\n<span class=\"doi\">{{doi}}</span>{{else if href}}\n<a>{{href}}</a>{{/if}}\n</li>"
+    }
+  },
   "publisherLogos": {
     "SMPTE": "resources/logos/smpte-logo.png",
     "ISO": "resources/logos/iso-logo-print.gif",

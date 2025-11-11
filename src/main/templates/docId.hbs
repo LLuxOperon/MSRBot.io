@@ -192,6 +192,80 @@
     </div>
 
     <div class="col-lg-5">
+      <!-- Use this document as a reference -->
+      <div class="card mb-3">
+        <div class="card-header fw-semibold">Reference this Doc</div>
+        <div class="card-body small">
+          <!-- Plain text -->
+          <div class="mb-3">
+            <div class="d-flex align-items-center justify-content-between">
+              <h3 class="h6 mb-0">Plain text (<a href="../ISO.960.2021/">ISO 690</a> compliant)</h3>
+              <button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-text-{{docId}}">Copy</button>
+            </div>
+            <div class="mt-1">Preview:</div>
+            <div class="border rounded p-2 bg-body-secondary">{{citeText this}}</div>
+            <div class="mt-2">Snippet:</div>
+            <pre id="cite-text-{{docId}}" class="bg-light border rounded p-2 mb-0 snippet">{{{citeCodeText this}}}</pre>
+          </div>
+          
+          <!-- HTML (generic) -->
+          <div class="mb-3 pt-3 border-top">
+            <div class="d-flex align-items-center justify-content-between">
+              <h3 class="h6 mb-0">HTML: Generic (<a href="../ISO.960.2021/">ISO 690</a> compliant)</h3>
+              <button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-html-generic-{{docId}}">Copy</button>
+            </div>
+            <div class="mt-1">Preview:</div>
+            <div class="border rounded p-2 bg-body-secondary">{{{citeHtmlGeneric this}}}</div>
+            <div class="mt-2">Snippet:</div>
+            <pre id="cite-html-generic-{{docId}}" class="bg-light border rounded p-2 mb-0 snippet">{{{citeCodeHtmlGeneric this}}}</pre>
+          </div>
+
+          <!-- HTML (SMPTE) -->
+          <div class="mb-1 pt-3 border-top">
+            <div class="d-flex align-items-center justify-content-between">
+              <h3 class="h6 mb-0">HTML: <img src="{{assetPrefix}}resources/logos/smpte-icon.png" alt="SMPTE Icon" width="24" class=" icon d-inline-block align-text-middle"> SMPTE's <a href="../SMPTE.AG26/" title="{{getLabel id}}">HTML Pub</a>)</h3>
+              <button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-html-smpte-{{docId}}">Copy</button>
+            </div>
+            <div class="mt-1">Preview:</div>
+            <div class="border rounded p-2 bg-body-secondary">{{{citeHtmlSmptePreview this}}}</div>
+            <div class="mt-2">Snippet:</div>
+            <pre id="cite-html-smpte-{{docId}}" class="bg-light border rounded p-2 mb-0 snippet">{{{citeCodeHtmlSmpteSnippet this}}}</pre>
+          </div>
+        </div>
+      </div>
+
+      <script>
+      // Lightweight copy buttons for the three snippets on this page
+      (function(){
+        function copyFrom(targetSel){
+          try{
+            // Support targets passed as "#id" or "id"
+            let id = targetSel || '';
+            if (id.startsWith('#')) id = id.slice(1);
+
+            // Prefer getElementById to avoid CSS selector escaping issues with dots in IDs (e.g., SMPTE.ST96.2004)
+            const el = document.getElementById(id) || document.querySelector(targetSel);
+            if (!el) return;
+
+            const text = (typeof el.value === 'string') ? el.value : (el.innerText ?? el.textContent ?? '');
+            navigator.clipboard.writeText(text);
+          } catch (e) {
+            console.error('[copy] failed:', e);
+          }
+        }
+        document.addEventListener('click', function(ev){
+          const btn = ev.target.closest('[data-copy-target]');
+          if (!btn) return;
+          const sel = btn.getAttribute('data-copy-target');
+          copyFrom(sel);
+          // quick visual feedback
+          btn.disabled = true;
+          const prev = btn.innerText;
+          btn.innerText = 'Copied!';
+          setTimeout(() => { btn.disabled = false; btn.innerText = prev; }, 900);
+        }, { passive: true });
+      })();
+      </script>
       {{#if referencesResolved}}
         {{#if (len referencesResolved.normative)}}
         <div class="card mb-3">
