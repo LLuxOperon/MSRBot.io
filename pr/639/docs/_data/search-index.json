@@ -18169,6 +18169,47 @@
     "docBaseLabel": "ISO 9293"
   },
   {
+    "id": "ISO.960.2021",
+    "title": "Information and documentation — Guidelines for bibliographic references and citations to information resources",
+    "label": "ISO 690: 2021",
+    "publisher": "ISO",
+    "docType": "Standard",
+    "docTypeAbr": null,
+    "status": [
+      "active",
+      "latestVersion"
+    ],
+    "statusFlags": {
+      "active": true,
+      "latestVersion": true,
+      "superseded": false,
+      "withdrawn": false,
+      "draft": false,
+      "stabilized": false,
+      "reaffirmed": false,
+      "amended": false,
+      "versionless": false
+    },
+    "pubDate": "2021-06-01",
+    "pubTs": 1622505600000,
+    "year": 2021,
+    "hasDoi": false,
+    "doi": null,
+    "hasReleaseTag": false,
+    "group": [],
+    "groupNames": [],
+    "currentWork": [],
+    "hasCurrentWork": false,
+    "keywords": [],
+    "keywordsSearch": [
+      "Information and documentation — Guidelines for bibliographic references and citations to information resources",
+      "ISO 690: 2021"
+    ],
+    "href": "https://www.iso.org/standard/72642.html",
+    "docBase": "ISO||960|",
+    "docBaseLabel": "ISO 960"
+  },
+  {
     "id": "ISO.9899.1999",
     "title": "Programming languages — C",
     "label": "ISO 9899: 1999",

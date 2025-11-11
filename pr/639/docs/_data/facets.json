@@ -53,7 +53,7 @@
     "Cambridge University Press": 1,
     "ISDCF": 17,
     "ISO/CIE": 2,
-    "ISO": 105,
+    "ISO": 106,
     "ISO/IEC": 87,
     "Journal of Applied Photographic Engineering": 1,
     "The Journal of imaging science and technology": 1,
@@ -111,7 +111,7 @@
   "docType": {
     "Journal Article": 107,
     "Report": 4,
-    "Standard": 1240,
+    "Standard": 1241,
     "Technical Journal": 5,
     "Specification": 80,
     "Procedure": 2,
@@ -150,8 +150,8 @@
     "Style Guide": 1
   },
   "status": {
-    "active": 1454,
-    "latestVersion": 1309,
+    "active": 1455,
+    "latestVersion": 1310,
     "stabilized": 557,
     "superseded": 691,
     "amended": 85,
@@ -256,7 +256,7 @@
     "2018": 76,
     "2019": 79,
     "2020": 85,
-    "2021": 34,
+    "2021": 35,
     "2022": 58,
     "2023": 45,
     "2024": 13,
@@ -356,11 +356,11 @@
   },
   "hasDoi": {
     "true": 1371,
-    "false": 836
+    "false": 837
   },
   "hasReleaseTag": {
     "true": 1246,
-    "false": 961
+    "false": 962
   },
   "groupLabels": {
     "ampas-stc-aces": "AMPAS Science and Technology Council Academy Color Encoding System (ACES) Project Committee",

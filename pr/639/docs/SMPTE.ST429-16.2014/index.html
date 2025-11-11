@@ -120,9 +120,6 @@
         <li class="nav-item text-nowrap">
           <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../../docs/index.html"><i class="bi bi-file-richtext-fill" style="font-size: 1.5rem;"></i><span class="small">DOCS</span></a>
         </li>
-        <!-- li class="nav-item text-nowrap">
-          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../../documents/index.html"><i class="bi bi-file-richtext-fill" style="font-size: 1.5rem;"></i><span class="small">LEGACY</span></a>
-        </li -->
         <li class="nav-item text-nowrap">
           <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../../dependancies/index.html"><i class="bi bi-diagram-3-fill" style="font-size: 1.5rem;"></i><span class="small">REF TREE</span></a>
         </li>
@@ -475,6 +472,83 @@
     </div>
 
     <div class="col-lg-5">
+      <!-- Use this document as a reference -->
+      <div class="card mb-3">
+        <div class="card-header fw-semibold">Reference this Doc</div>
+        <div class="card-body small">
+          <!-- Plain text -->
+          <div class="mb-3">
+            <div class="d-flex align-items-center justify-content-between">
+              <h3 class="h6 mb-0">Plain text (<a href="../ISO.960.2021/">ISO 690</a> compliant)</h3>
+              <button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-text-SMPTE.ST429-16.2014">Copy</button>
+            </div>
+            <div class="mt-1">Preview:</div>
+            <div class="border rounded p-2 bg-body-secondary">SMPTE ST 429-16:2014 — D-Cinema Packaging — Additional Composition Metadata and Guidelines. Available at https://doi.org/10.5594/SMPTE.ST429-16.2014</div>
+            <div class="mt-2">Snippet:</div>
+            <pre id="cite-text-SMPTE.ST429-16.2014" class="bg-light border rounded p-2 mb-0 snippet">SMPTE ST 429-16:2014 — D-Cinema Packaging — Additional Composition Metadata and Guidelines. Available at https://doi.org/10.5594/SMPTE.ST429-16.2014</pre>
+          </div>
+          
+          <!-- HTML (generic) -->
+          <div class="mb-3 pt-3 border-top">
+            <div class="d-flex align-items-center justify-content-between">
+              <h3 class="h6 mb-0">HTML: Generic (<a href="../ISO.960.2021/">ISO 690</a> compliant)</h3>
+              <button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-html-generic-SMPTE.ST429-16.2014">Copy</button>
+            </div>
+            <div class="mt-1">Preview:</div>
+            <div class="border rounded p-2 bg-body-secondary"><span class="citation"><cite>SMPTE ST 429-16:2014</cite> — D-Cinema Packaging — Additional Composition Metadata and Guidelines. Available at <a href="https://doi.org/10.5594/SMPTE.ST429-16.2014" target="_blank" rel="noopener">https://doi.org/10.5594/SMPTE.ST429-16.2014</a></span></div>
+            <div class="mt-2">Snippet:</div>
+            <pre id="cite-html-generic-SMPTE.ST429-16.2014" class="bg-light border rounded p-2 mb-0 snippet">&lt;span class=&quot;citation&quot;&gt;&lt;cite&gt;SMPTE ST 429-16:2014&lt;/cite&gt; — D-Cinema Packaging — Additional Composition Metadata and Guidelines. Available at &lt;a href=&quot;https://doi.org/10.5594/SMPTE.ST429-16.2014&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://doi.org/10.5594/SMPTE.ST429-16.2014&lt;/a&gt;&lt;/span&gt;</pre>
+          </div>
+
+          <!-- HTML (SMPTE) -->
+          <div class="mb-1 pt-3 border-top">
+            <div class="d-flex align-items-center justify-content-between">
+              <h3 class="h6 mb-0">HTML: <img src="../../resources/logos/smpte-icon.png" alt="SMPTE Icon" width="24" class=" icon d-inline-block align-text-middle"> SMPTE's <a href="../SMPTE.AG26/" title="">HTML Pub</a>)</h3>
+              <button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-html-smpte-SMPTE.ST429-16.2014">Copy</button>
+            </div>
+            <div class="mt-1">Preview:</div>
+            <div class="border rounded p-2 bg-body-secondary"><cite id="bib-smpte-st429-16-2014">SMPTE ST 429-16:2014</cite>, D-Cinema Packaging — Additional Composition Metadata and Guidelines<br>doi:&nbsp;<span class="doi">10.5594/SMPTE.ST429-16.2014</span><br>url:&nbsp;<a href="https://doi.org/10.5594/SMPTE.ST429-16.2014" class="ext-ref">https://doi.org/10.5594/SMPTE.ST429-16.2014</a></div>
+            <div class="mt-2">Snippet:</div>
+            <pre id="cite-html-smpte-SMPTE.ST429-16.2014" class="bg-light border rounded p-2 mb-0 snippet">&lt;li&gt;
+&lt;cite id=&quot;bib-smpte-st429-16-2014&quot;&gt;SMPTE ST 429-16:2014&lt;/cite&gt;, D-Cinema Packaging — Additional Composition Metadata and Guidelines
+&lt;span class=&quot;doi&quot;&gt;10.5594/SMPTE.ST429-16.2014&lt;/span&gt;
+&lt;/li&gt;</pre>
+          </div>
+        </div>
+      </div>
+
+      <script>
+      // Lightweight copy buttons for the three snippets on this page
+      (function(){
+        function copyFrom(targetSel){
+          try{
+            // Support targets passed as "#id" or "id"
+            let id = targetSel || '';
+            if (id.startsWith('#')) id = id.slice(1);
+
+            // Prefer getElementById to avoid CSS selector escaping issues with dots in IDs (e.g., SMPTE.ST96.2004)
+            const el = document.getElementById(id) || document.querySelector(targetSel);
+            if (!el) return;
+
+            const text = (typeof el.value === 'string') ? el.value : (el.innerText ?? el.textContent ?? '');
+            navigator.clipboard.writeText(text);
+          } catch (e) {
+            console.error('[copy] failed:', e);
+          }
+        }
+        document.addEventListener('click', function(ev){
+          const btn = ev.target.closest('[data-copy-target]');
+          if (!btn) return;
+          const sel = btn.getAttribute('data-copy-target');
+          copyFrom(sel);
+          // quick visual feedback
+          btn.disabled = true;
+          const prev = btn.innerText;
+          btn.innerText = 'Copied!';
+          setTimeout(() => { btn.disabled = false; btn.innerText = prev; }, 900);
+        }, { passive: true });
+      })();
+      </script>
         <div class="card mb-3">
           <div class="card-body">
             <h2 class="h6">Normative Reference(s)</h2>
@@ -590,8 +664,8 @@
       <div class="row justify-content-md-center border-bottom d-flex">
         <div class="col text-center p-3">
         <small class="text-muted">
-            Site version: <code>71afa5bab90b8e09309a5a3207f33f7c017dda2d</code>
-            <br>Generated on: <code>Mon Nov 10 2025 21:56:31 GMT+0000 (Coordinated Universal Time)</code>
+            Site version: <code>09d428cc19f4bc1c0eec2c2652a4c8239a5cb8d4</code>
+            <br>Generated on: <code>Tue Nov 11 2025 02:58:57 GMT+0000 (Coordinated Universal Time)</code>
           </small>
         </div>
       </div>
