@@ -8779,8 +8779,8 @@
   },
   {
     "id": "ISBN.0201325632",
-    "title": "Applying the Standard Object Modelling Language",
-    "label": "UML Distilled",
+    "title": "UML Distilled: Applying the Standard Object Modelling Language",
+    "label": "The Computer Bulletin, Volume 40, Issue 5, September 1998, Page 30",
     "publisher": "Addison-Wesley",
     "docType": "Journal Article",
     "docTypeAbr": null,
@@ -8813,8 +8813,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "Applying the Standard Object Modelling Language",
-      "UML Distilled",
+      "UML Distilled: Applying the Standard Object Modelling Language",
+      "The Computer Bulletin, Volume 40, Issue 5, September 1998, Page 30",
       "Martin Fowler"
     ],
     "href": "https://doi.org/10.1093/combul/40.5.30-a",
@@ -9303,8 +9303,8 @@
   },
   {
     "id": "ISBN.9781119183471",
-    "title": "Protocols, Algorthms, and Source Code in C, 20th Anniversary Edition",
-    "label": "Applied Cryptography, Second Edition",
+    "title": "Applied Cryptography, Second Edition",
+    "label": "Protocols, Algorthms, and Source Code in C, 20th Anniversary Edition",
     "publisher": "Wiley",
     "docType": "Book",
     "docTypeAbr": null,
@@ -9337,8 +9337,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "Protocols, Algorthms, and Source Code in C, 20th Anniversary Edition",
       "Applied Cryptography, Second Edition",
+      "Protocols, Algorthms, and Source Code in C, 20th Anniversary Edition",
       "Bruce Schneier"
     ],
     "href": "https://onlinelibrary.wiley.com/doi/book/10.1002/9781119183471",
@@ -9575,7 +9575,7 @@
     "title": "Composition Metadata Guidelines",
     "label": "ISDCF Doc 06",
     "publisher": "ISDCF",
-    "docType": "Informational",
+    "docType": "Guideline",
     "docTypeAbr": null,
     "status": [
       "superseded",
@@ -19285,8 +19285,8 @@
   },
   {
     "id": "J05297",
-    "title": "The SMPTE Data Coding Protocol and Dictionaries, Jim Wilkinson, SMPTE Journal, July 2000 Vol. 109, No. 7, Page(s): 579 - 586 - Engineering Report",
-    "label": "SMPTE DCPD JW",
+    "title": "The SMPTE Data Coding Protocol and Dictionaries",
+    "label": "SMPTE Journal, July 2000 Vol. 109, No. 7, Page(s): 579 - 586",
     "publisher": "SMPTE",
     "docType": "Journal Article",
     "docTypeAbr": null,
@@ -19310,14 +19310,18 @@
     "hasDoi": true,
     "doi": "10.5594/J05297",
     "hasReleaseTag": false,
+    "authors": [
+      "Jim Wilkinson"
+    ],
     "group": [],
     "groupNames": [],
     "currentWork": [],
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "The SMPTE Data Coding Protocol and Dictionaries, Jim Wilkinson, SMPTE Journal, July 2000 Vol. 109, No. 7, Page(s): 579 - 586 - Engineering Report",
-      "SMPTE DCPD JW"
+      "The SMPTE Data Coding Protocol and Dictionaries",
+      "SMPTE Journal, July 2000 Vol. 109, No. 7, Page(s): 579 - 586",
+      "Jim Wilkinson"
     ],
     "href": "https://doi.org/10.5594/J05297",
     "docBase": null,
@@ -20673,8 +20677,8 @@
   },
   {
     "id": "J08349",
-    "title": "SMPTE Journal, Vol 109, No 3, March 2000, pp 205-210, 'A Tutorial on SDTI-CP'",
-    "label": "SMPTE SDTI JW",
+    "title": "A Tutorial on SDTI-CP",
+    "label": "SMPTE Journal, Vol 109, No 3, March 2000, pp 205-210",
     "publisher": "SMPTE",
     "docType": "Journal Article",
     "docTypeAbr": null,
@@ -20695,8 +20699,8 @@
     "pubDate": "2000-03-01",
     "pubTs": 951868800000,
     "year": 2000,
-    "hasDoi": false,
-    "doi": null,
+    "hasDoi": true,
+    "doi": "10.1093/J08349",
     "hasReleaseTag": false,
     "group": [],
     "groupNames": [],
@@ -20704,8 +20708,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "SMPTE Journal, Vol 109, No 3, March 2000, pp 205-210, 'A Tutorial on SDTI-CP'",
-      "SMPTE SDTI JW"
+      "A Tutorial on SDTI-CP",
+      "SMPTE Journal, Vol 109, No 3, March 2000, pp 205-210"
     ],
     "href": null,
     "docBase": null,
@@ -25139,8 +25143,8 @@
   },
   {
     "id": "OWASP.CS.TLP",
-    "title": "Transport Layer Protection",
-    "label": "Cheat Sheet",
+    "title": "Transport Layer Protection Cheat Sheet",
+    "label": "OWASP Cheat Sheet Series",
     "publisher": "OWASP",
     "docType": "Guideline",
     "docTypeAbr": null,
@@ -25171,8 +25175,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "Transport Layer Protection",
-      "Cheat Sheet"
+      "Transport Layer Protection Cheat Sheet",
+      "OWASP Cheat Sheet Series"
     ],
     "href": "https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Protection_Cheat_Sheet.html",
     "docBase": "OWASP|CS|TLP|",
@@ -37655,7 +37659,7 @@
   },
   {
     "id": "SMPTE.OM.Std",
-    "title": "Standards Operations Manual",
+    "title": "SMPTE Standards Operations Manual",
     "label": "SMPTE OM Standards",
     "publisher": "SMPTE",
     "docType": "Operations Manual",
@@ -37692,7 +37696,7 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "Standards Operations Manual",
+      "SMPTE Standards Operations Manual",
       "SMPTE OM Standards"
     ],
     "href": "https://doc.smpte-doc.org/standards-operations-manual/main/",
@@ -39344,8 +39348,8 @@
   },
   {
     "id": "SMPTE.PubReg.2018",
-    "title": "SMPTE docLabels Register",
-    "label": "SMPTE Published Registers",
+    "title": "SMPTE Metadata Registers",
+    "label": "SMPTE-RA",
     "publisher": "SMPTE",
     "docType": "Registry",
     "docTypeAbr": null,
@@ -39379,8 +39383,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "SMPTE docLabels Register",
-      "SMPTE Published Registers"
+      "SMPTE Metadata Registers",
+      "SMPTE-RA"
     ],
     "href": "https://registry.smpte-ra.org/apps/pages/published/",
     "docBase": null,

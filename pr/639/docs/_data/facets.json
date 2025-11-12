@@ -125,10 +125,10 @@
     "Statement": 1,
     "Recommendation": 85,
     "Best Practice": 17,
-    "Informational": 31,
+    "Informational": 30,
     "Book": 16,
     "Manual": 1,
-    "Guideline": 3,
+    "Guideline": 4,
     "Technical Doc": 8,
     "Directive": 3,
     "Notation": 1,
@@ -355,8 +355,8 @@
     "Aux Data": 2
   },
   "hasDoi": {
-    "true": 1372,
-    "false": 836
+    "true": 1373,
+    "false": 835
   },
   "hasReleaseTag": {
     "true": 1246,
