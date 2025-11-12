@@ -345,6 +345,50 @@ _Prevents orphaned branches from detached workflows._
 - Deterministic search/filtering with consistent `docType`, status, and metadata rendering.
 - Clear, discoverable search UX; build and data pipelines write to the correct directories.
 
+### 6.5 Frontend Refresh V — Per-Doc Rendering, MSI Surfacing & Citations
+
+**Per-Doc Emit & Resilience**
+- Per-document emit stabilized and debuggable; added defensive `prepareDocForRender()` normalizers.
+- Upgraded per-doc failure logs to include `publisher`, `docType`, and `refs: yes/no` for faster triage.
+- Sub-registries load correctly: `registries[].subRegistry` now pulls `groups`, `projects`, and `documents` where declared; templates receive `dataDocuments`, `dataGroups`, `dataProjects`.
+
+**MSI Wiring on Pages**
+- Reads `reports/masterSuiteIndex.json` and annotates each document with: `msiLatestAny`, `msiLatestBase`, `isLatestAny`, `isLatestBase`, `docBase`, `docBaseLabel`.
+- Surfaces a per-base **suite** (`docSuite`) sorted by date for clear lineage context on detail views.
+
+**Reference Plumbing (Non-Mutating)**
+- Computes `referencesResolved` in parallel (does not mutate source arrays).
+- Builds `referencedBy` and a bounded `referenceTree` (DFS depth 3) for contextual back-links on pages.
+
+**Status Strings & Badges**
+- Consolidated `currentStatus` label; `getStatusButton` returns green check for **Active**, red slash for **Superseded/Withdrawn**.
+- Card and detail templates use consistent badge ordering and classes.
+
+**Search & Data Outputs**
+- Documents build emits `build/docs/_data/documents.json` (strips `$meta`) for the site layer.
+- Kicks `build.search-index.js` to produce `_data/search-index.json` and related artifacts; cards render from the search index (no root `documents.json` dependency).
+
+**Publisher Branding**
+- Server writes `_data/publisher-logos.json` and `_data/publisher-urls.json` from `site.json` (honors alias map).
+- Handlebars helpers `{{publisherLogo}}` and `{{publisherLink}}` added; placement refined on cards and doc pages (logo near label/badges) with controllable height.
+- Fixed 404s by ensuring `_data/` exists under `build/` and using correct asset prefixes.
+
+**Citations System**
+- Centralized helpers: `citeText`, `citeHtmlGeneric`, `citeHtmlSmpte`, plus code-safe variants for copy blocks.
+- Config-driven SMPTE previews vs snippets (`site.json → citations.smpte.preview/snippet`).
+- Robust `joinAuthors` (CSL-JSON aware, Oxford comma, custom separators).
+- `citeIfEq` accepts config lists (e.g., `nonLineageDocTypes`) or comma lists; templates can branch without hardcoding.
+
+**Template & DX Helpers**
+- Added utility helpers: `ifeq`, `ifnoteq`, `or`, `and`, `len`, `asArray`, `formatLineageKey`, `getLabel`, `getUndatedLabel`, ID-safe slugging in citations, and group/project lookup helpers.
+- Site chrome: build emits `robots.txt`, `sitemap.xml`, `opensearch.xml`, and header/footer-styled `404.html` with penguin quips.
+
+**Result**
+- Fewer brittle template crashes and clearer failure signals.
+- Single source of truth (`site.json`) drives visuals (logos/links) and logic (doc-type lists).
+- MSI data is first-class on pages; every document exposes suite context and “latestness.”
+- Editors get copy-ready citations with accurate previews and robust author formatting.
+
 ## 7 Logging, Diffing, and PR Output
 - `logSmart.js` centralizes logging with a console budget (~3.5 MiB). Excess console chatter is tripwired while full logs are persisted to file.
 - Heartbeats and tripwires: periodic progress messages (`[HB pid:####] ... still processing — X/Y (Z%)`) with a start‑of‑run settings banner.
