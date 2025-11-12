@@ -201,25 +201,45 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   hb.registerHelper('citeIfEq', function (a, b, options) {
     const val = String(a || '').trim().toLowerCase();
 
-    // Normalize all comparison inputs into a lowercase array
+    // Normalize comparison inputs to a lowercase array
     const toArray = v =>
-      Array.isArray(v)
-        ? v.map(x => String(x).trim().toLowerCase())
-        : String(v || '').split(',').map(x => x.trim().toLowerCase()).filter(Boolean);
+      (Array.isArray(v) ? v : String(v || '').split(','))
+        .map(x => String(x).trim().toLowerCase())
+        .filter(Boolean);
 
-    let targets = toArray(b);
+    const rawTargets = toArray(b);
+    const outSet = new Set();
 
-    // If the template passes a special keyword, load from site config
-    if (targets.includes('nonlineagedoctypes')) {
-      try {
-        const cfg = require('../config/site.json');
-        const list = Array.isArray(cfg.nonLineageDocTypes) ? cfg.nonLineageDocTypes : [];
-        targets = list.map(x => x.trim().toLowerCase());
-      } catch { targets = []; }
+    const addList = (arr) => {
+      (Array.isArray(arr) ? arr : []).forEach(x => {
+        const t = String(x || '').trim().toLowerCase();
+        if (t) outSet.add(t);
+      });
+    };
+
+    // Load site config to expand keyword lists
+    let cfg = null;
+    try {
+      cfg = require('../config/site.json');
+    } catch (e) {
+      cfg = null;
     }
 
-    if (targets.includes(val)) return options.fn(this);
-    return options.inverse(this);
+    // Expand keywords and merge results; preserve literal items too
+    for (const t of rawTargets) {
+      if (t === 'nonlineagedoctypes') {
+        addList(cfg && Array.isArray(cfg.nonLineageDocTypes) ? cfg.nonLineageDocTypes : []);
+        continue;
+      }
+      if (t === 'titlelabeldoctypes') {
+        addList(cfg && Array.isArray(cfg.titleLabelDocTypes) ? cfg.titleLabelDocTypes : []);
+        continue;
+      }
+      // literal compare value
+      outSet.add(t);
+    }
+
+    return outSet.has(val) ? options.fn(this) : options.inverse(this);
   });
 
   hb.registerHelper('ifactive', function (a, b, options) {
@@ -896,14 +916,24 @@ function _doiUrl(doc){
     return docStatuses[docId];
   });
 
-  const docLabels = {}
-  registryDocument.forEach(item => { 
-    if (item.docType === "Journal Article" || item.docType === "White Paper" || item.docType === "Book" || item.docType === "Guideline" || item.docType === "Registry" )  {
-      docLabels[item.docId] = (item.docTitle)
+  const docLabels = {};
+  // Build a case-insensitive set from siteConfig.titleLabelDocTypes
+  const __titleLabelSet = new Set(
+    Array.isArray(siteConfig && siteConfig.titleLabelDocTypes)
+      ? siteConfig.titleLabelDocTypes.map(t => String(t || '').toLowerCase()).filter(Boolean)
+      : []
+  );
+
+  registryDocument.forEach(item => {
+    const dt = String(item && item.docType || '').toLowerCase();
+    // Prefer docTitle as the label for configured docTypes; otherwise fall back to docLabel.
+    // Also add defensive fallbacks if either field is missing.
+    if (__titleLabelSet.has(dt)) {
+      docLabels[item.docId] = (item.docTitle || item.docLabel || item.docId);
     } else {
-      docLabels[item.docId] = (item.docLabel)
-    }    
-  } );
+      docLabels[item.docId] = (item.docLabel || item.docTitle || item.docId);
+    }
+  });
 
   hb.registerHelper("getLabel", function(docId) {
     if (!docLabels.hasOwnProperty(docId)) {
@@ -1134,7 +1164,7 @@ hb.registerHelper('docProjLookup', function(collection, id) {
     const src = rel.startsWith('/') ? rel : `${assetPrefix}${rel}`;
 
     return new hb.SafeString(
-      `<img src="${src}" alt="${alt}" height="${h}" class="align-text-bottom me-1" loading="lazy">`
+      `<img src="${src}" alt="${alt}" height="${h}" class="align-text-bottom me-1 publisher-logo" loading="lazy">`
     );
   });
   

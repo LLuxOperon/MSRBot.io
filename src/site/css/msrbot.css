@@ -364,3 +364,9 @@ pre.snippet {
   word-break: break-word;     /* allow wrapping mid-word if needed */
   overflow-x: auto;           /* scroll if too long */
 }
+
+img.publisher-logo  {
+  max-width: 120px;
+  object-fit: contain;
+  vertical-align: middle;
+}

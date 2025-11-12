@@ -21,34 +21,53 @@
   ],
   "citations": {
     "text": {
-      "preview": "{{#citeIfEq docType \"nonLineageDocTypes\"}}{{#if authors}}{{joinAuthors authors oxford=true}}; {{/if}}{{/citeIfEq}}{{label}}, {{title}}{{#citeIfEq docType \"nonLineageDocTypes\"}}; {{publisher}}, {{#if year}}{{year}}{{/if}}{{#if isbn}}, ISBN: {{isbn}}{{/if}}{{/citeIfEq}}{{#if href}}. Available at {{href}}{{/if}}"
+      "preview": "{{#citeIfEq docType \"nonLineageDocTypes\"}}{{#if authors}}{{joinAuthors authors oxford=true}}; {{/if}}{{/citeIfEq}}{{#citeIfEq docType \"titleLabelDocTypes\"}}{{title}}, {{label}}{{else}}{{label}}, {{title}}{{/citeIfEq}}{{#citeIfEq docType \"nonLineageDocTypes\"}}; {{publisher}}, {{#if year}}{{year}}{{/if}}{{#if isbn}}, ISBN: {{isbn}}{{/if}}{{/citeIfEq}}{{#if href}}. Available at {{href}}{{/if}}"
     },
     "generic": {
-      "preview": "<span class=\"citation\">{{#citeIfEq docType \"nonLineageDocTypes\"}}{{#if authors}}{{joinAuthors authors oxford=true}}; {{/if}}{{/citeIfEq}}<cite>{{label}}</cite>, {{title}}{{#citeIfEq docType \"nonLineageDocTypes\"}}; {{publisher}}, {{#if year}}{{year}}{{/if}}{{#if isbn}}, ISBN: {{isbn}}{{/if}}{{/citeIfEq}}{{#if href}}. Available at <a href=\"{{href}}\" target=\"_blank\" rel=\"noopener\">{{href}}</a>{{/if}}</span>"
+      "preview": "<span class=\"citation\">{{#citeIfEq docType \"nonLineageDocTypes\"}}{{#if authors}}{{joinAuthors authors oxford=true}}; {{/if}}{{/citeIfEq}}{{#citeIfEq docType \"titleLabelDocTypes\"}}<cite>{{title}}</cite>, {{label}}{{else}}<cite>{{label}}</cite>, {{title}}{{/citeIfEq}}{{#citeIfEq docType \"nonLineageDocTypes\"}}; {{publisher}}, {{#if year}}{{year}}{{/if}}{{#if isbn}}, ISBN: {{isbn}}{{/if}}{{/citeIfEq}}{{#if href}}. Available at <a href=\"{{href}}\" target=\"_blank\" rel=\"noopener\">{{href}}</a>{{/if}}</span>"
     },
     "smpte": {
-      "preview": "{{#citeIfEq docType \"nonLineageDocTypes\"}}{{#if authors}}{{joinAuthors authors oxford=true}}; {{/if}}{{/citeIfEq}}<cite id=\"bib-{{bibId}}\">{{label}}</cite>, {{title}}{{#citeIfEq docType \"nonLineageDocTypes\"}}; {{publisher}}, {{#if year}}{{year}}{{/if}}{{#if isbn}}, ISBN: {{isbn}}{{/if}}{{/citeIfEq}}{{#if doi}}<br>doi:&nbsp;<span class=\"doi\">{{doi}}</span><br>url:&nbsp;<a href=\"{{href}}\" class=\"ext-ref\">{{href}}</a>{{else if href}}<br>url:&nbsp;<a href=\"{{href}}\" class=\"ext-ref\">{{href}}</a>{{/if}}",
-      "snippet": "<li>\n{{#citeIfEq docType \"nonLineageDocTypes\"}}{{#if authors}}{{joinAuthors authors oxford=true}}; {{/if}}{{/citeIfEq}}<cite id=\"bib-{{bibId}}\">{{label}}</cite>, {{title}}{{#citeIfEq docType \"nonLineageDocTypes\"}}; {{publisher}}, {{#if year}}{{year}}{{/if}}{{#if isbn}}, ISBN: {{isbn}}{{/if}}{{/citeIfEq}}{{#if doi}}\n<span class=\"doi\">{{doi}}</span>{{else if href}}\n<a>{{href}}</a>{{/if}}\n</li>"
+      "preview": "{{#citeIfEq docType \"nonLineageDocTypes\"}}{{#if authors}}{{joinAuthors authors oxford=true}}; {{/if}}{{/citeIfEq}}<cite id=\"bib-{{bibId}}\">{{#citeIfEq docType \"titleLabelDocTypes\"}}{{title}}</cite>, {{label}}{{else}}{{label}}</cite>, {{title}}{{/citeIfEq}}{{#citeIfEq docType \"nonLineageDocTypes\"}}; {{publisher}}, {{#if year}}{{year}}{{/if}}{{#if isbn}}, ISBN: {{isbn}}{{/if}}{{/citeIfEq}}{{#if doi}}<br>doi:&nbsp;<span class=\"doi\">{{doi}}</span><br>url:&nbsp;<a href=\"{{href}}\" class=\"ext-ref\">{{href}}</a>{{else if href}}<br>url:&nbsp;<a href=\"{{href}}\" class=\"ext-ref\">{{href}}</a>{{/if}}",
+      "snippet": "<li>\n{{#citeIfEq docType \"nonLineageDocTypes\"}}{{#if authors}}{{joinAuthors authors oxford=true}}; {{/if}}{{/citeIfEq}}<cite id=\"bib-{{bibId}}\">{{#citeIfEq docType \"titleLabelDocTypes\"}}{{title}}</cite>, {{label}}{{else}}{{label}}</cite>, {{title}}{{/citeIfEq}}{{#citeIfEq docType \"nonLineageDocTypes\"}}; {{publisher}}, {{#if year}}{{year}}{{/if}}{{#if isbn}}, ISBN: {{isbn}}{{/if}}{{/citeIfEq}}{{#if doi}}\n<span class=\"doi\">{{doi}}</span>{{else if href}}\n<a>{{href}}</a>{{/if}}\n</li>"
     }
   },
   "nonLineageDocTypes": [
-    "Journal Article",
-    "Magazine Article",
-    "Technical Journal",
     "Book",
-    "Patent",
-    "White Paper",
-    "Registry",
-    "Technical Bulletin",
-    "Technical Note",
-    "Procedure",
-    "Notation",
-    "Manual",
-    "Study Group Report",
     "Dissertation",
     "FAQ",
+    "Guideline",
+    "Journal Article",
+    "Magazine Article",
+    "Manual",
+    "Memo",
+    "Notation",
+    "Patent",
+    "Procedure",
+    "Registry",
+    "Statement",
+    "Study Group Report",
     "Style Guide",
-    "Template"
+    "Technical Journal",
+    "Technical Bulletin",
+    "Technical Note",
+    "Template",
+    "White Paper"
+  ],
+  "titleLabelDocTypes": [
+    "Book",
+    "Dissertation",
+    "Guideline",
+    "Journal Article",
+    "Magazine Article",
+    "Manual",
+    "Operations Manual",
+    "Patent",
+    "Registry",
+    "Study Group Report",
+    "Style Guide",
+    "Technical Journal",
+    "Technical Note",
+    "White Paper"
   ],
   "publisherLogos": {
     "SMPTE": "resources/logos/smpte-logo.png",

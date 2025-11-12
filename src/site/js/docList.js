@@ -320,7 +320,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       const alt = `${pub} logo`;
       const h = __publisherLogoHeight;
       return new window.Handlebars.SafeString(
-        `<img src="../${rel}" alt="${alt}" height="${h}" class="align-text-bottom me-1" loading="lazy">`
+        `<img src="../${rel}" alt="${alt}" height="${h}" class="align-text-bottom me-1 publisher-logo" loading="lazy">`
       );
     });
     window.Handlebars.registerHelper('publisherLink', function(pub){
@@ -375,11 +375,10 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       return (v !== undefined && v !== null && String(v).trim() !== '');
     });
     // doiLink helper: clickable DOI via doi.org
-    window.Handlebars.registerHelper('doiLink', function(doi){
-      const d = String(doi || '').trim();
-      if (!d) return '';
-      const url = 'https://doi.org/' + encodeURIComponent(d);
-      return new window.Handlebars.SafeString(`<a href="${url}" target="_blank" rel="noopener"><code>${d}</code></a>`);
+    hb.registerHelper('doiLink', doi => {
+      if (!doi) return '';
+      const clean = String(doi).replace(/^https?:\/\/(dx\\.)?doi\\.org\\//i, '');
+      return `<a href="https://doi.org/${encodeURI(clean)}" class="doi-link" target="_blank" rel="noopener">${clean}</a>`;
     });
     try {
       hbCard = window.Handlebars.compile(tplEl.innerHTML);
