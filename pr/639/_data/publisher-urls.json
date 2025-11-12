@@ -17,14 +17,17 @@
     "IETF": "https://www.ietf.org/",
     "AMWA": "https://www.amwa.tv/",
     "AMPAS": "https://www.oscars.org/",
+    "Addison-Wesley": "https://www.informit.com/imprint/index.aspx?st=61085",
     "MacMillan Co.": "https://us.macmillan.com/",
     "Franklin Institute": "https://fi.edu/",
-    "Cambridge University Press": "https://www.cambridge.org/us/universitypress"
+    "Cambridge University Press": "https://www.cambridge.org/us/universitypress",
+    "USPTO": "https://www.uspto.gov/",
+    "WHATWG": "https://whatwg.org/",
+    "Wiley": "https://www.wiley.com/"
   },
   "aliases": {
     "smpte": "SMPTE",
     "SMPTE – Society of Motion Picture and Television Engineers": "SMPTE",
-    "ISO/IEC": "ISO",
     "AMPAS": "Academy of Motion Picture Arts and Sciences"
   }
 }

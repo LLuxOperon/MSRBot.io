@@ -89,7 +89,7 @@
     "ANSI/UL": 2,
     "United Nations": 2,
     "Unicode Consortium": 5,
-    "USPO": 1,
+    "USPTO": 1,
     "W3C": 35,
     "WHATWG": 1,
     "University of Auckland": 1
@@ -109,7 +109,7 @@
     "smpte-34cs-tc": 2
   },
   "docType": {
-    "Journal Article": 107,
+    "Journal Article": 108,
     "Report": 4,
     "Standard": 1241,
     "Technical Journal": 5,
@@ -126,7 +126,7 @@
     "Recommendation": 85,
     "Best Practice": 17,
     "Informational": 31,
-    "Book": 17,
+    "Book": 16,
     "Manual": 1,
     "Guideline": 3,
     "Technical Doc": 8,
@@ -355,8 +355,8 @@
     "Aux Data": 2
   },
   "hasDoi": {
-    "true": 1371,
-    "false": 837
+    "true": 1372,
+    "false": 836
   },
   "hasReleaseTag": {
     "true": 1246,

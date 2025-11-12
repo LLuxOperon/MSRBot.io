@@ -8779,10 +8779,10 @@
   },
   {
     "id": "ISBN.0201325632",
-    "title": "UML Distilled - Applying the standard object modelling language",
-    "label": "ISBN 0-201-32563-2",
+    "title": "Applying the Standard Object Modelling Language",
+    "label": "UML Distilled",
     "publisher": "Addison-Wesley",
-    "docType": "Book",
+    "docType": "Journal Article",
     "docTypeAbr": null,
     "status": [
       "active"
@@ -8798,11 +8798,11 @@
       "amended": false,
       "versionless": false
     },
-    "pubDate": "1998-01-01",
-    "pubTs": 883612800000,
+    "pubDate": "1998-09-01",
+    "pubTs": 904608000000,
     "year": 1998,
-    "hasDoi": false,
-    "doi": null,
+    "hasDoi": true,
+    "doi": "10.1093/combul/40.5.30-a",
     "hasReleaseTag": false,
     "authors": [
       "Martin Fowler"
@@ -8813,11 +8813,11 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "UML Distilled - Applying the standard object modelling language",
-      "ISBN 0-201-32563-2",
+      "Applying the Standard Object Modelling Language",
+      "UML Distilled",
       "Martin Fowler"
     ],
-    "href": null,
+    "href": "https://doi.org/10.1093/combul/40.5.30-a",
     "docBase": null,
     "docBaseLabel": null
   },
@@ -94995,7 +94995,7 @@
     "id": "US5848159",
     "title": "Public key cryptographic apparatus and method",
     "label": "US Patent #5,848,159",
-    "publisher": "USPO",
+    "publisher": "USPTO",
     "docType": "Patent",
     "docTypeAbr": null,
     "status": [

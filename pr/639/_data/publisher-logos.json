@@ -17,15 +17,18 @@
     "IETF": "/resources/logos/ietf-logo.width-600.jpg",
     "AMWA": "/resources/logos/AMWA Logo 208x63.jpg",
     "AMPAS": "/resources/logos/AMPAS_logo2x.png",
+    "Addison-Wesley": "/resources/logos/Addison_Wesley_Logo.png",
     "MacMillan Co.": "/resources/logos/macmillan-logo-red-1.png",
     "Franklin Institute": "/resources/logos/tfir-logo.svg",
-    "Cambridge University Press": "/resources/logos/cambridge-university-press-logo-1x.png"
+    "Cambridge University Press": "/resources/logos/cambridge-university-press-logo-1x.png",
+    "USPTO": "/resources/logos/USPTO-logo-horiz.png",
+    "WHATWG": "/resources/logos/whatwg_logo.svg",
+    "Wiley": "/resources/logos/wiley-logo-footer.svg"
   },
   "height": 25,
   "aliases": {
     "smpte": "SMPTE",
     "SMPTE – Society of Motion Picture and Television Engineers": "SMPTE",
-    "ISO/IEC": "ISO",
     "AMPAS": "Academy of Motion Picture Arts and Sciences"
   }
 }
