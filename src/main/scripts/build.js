@@ -1400,7 +1400,12 @@ hb.registerHelper('docProjLookup', function(collection, id) {
       try {
         // Per‑doc canonical + social meta
         const perDocCanonical = new URL(`/docs/${encodeURIComponent(id)}/`, siteConfig.canonicalBase).href;
-        const perDocTitle = (d.docLabel || d.docId) + ' — ' + siteConfig.siteName;
+        const titlePrefList = Array.isArray(siteConfig?.titleLabelDocTypes)
+          ? siteConfig.titleLabelDocTypes.map(x => String(x).toLowerCase())
+          : [];
+        const useDocTitleFirst = titlePrefList.includes(String(d.docType || '').toLowerCase());
+        const perDocTitle = (useDocTitleFirst ? (d.docTitle || d.docLabel || d.docId) : (d.docLabel || d.docId)) + ' — ' + siteConfig.siteName;
+        const perDocListTitle = (useDocTitleFirst ? (d.docTitle || d.docLabel || d.docId) : (d.docLabel || d.docId));
         const perDocDesc = d.docTitle || siteConfig.siteDescription;
 
         const safeDoc = prepareDocForRender(d);
@@ -1421,7 +1426,7 @@ hb.registerHelper('docProjLookup', function(collection, id) {
           copyrightHolder: siteConfig.copyrightHolder,
           copyrightYear: siteConfig.copyrightYear,
           license: siteConfig.license,
-          listTitle: (d.docLabel || d.docId),
+          listTitle: perDocListTitle,
           licenseUrl: siteConfig.licenseUrl,
           locale: siteConfig.locale,
           siteDescription: perDocDesc,

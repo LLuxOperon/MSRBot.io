@@ -375,10 +375,12 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       return (v !== undefined && v !== null && String(v).trim() !== '');
     });
     // doiLink helper: clickable DOI via doi.org
-    hb.registerHelper('doiLink', doi => {
+    window.Handlebars.registerHelper('doiLink', function(doi) {
       if (!doi) return '';
-      const clean = String(doi).replace(/^https?:\/\/(dx\\.)?doi\\.org\\//i, '');
-      return `<a href="https://doi.org/${encodeURI(clean)}" class="doi-link" target="_blank" rel="noopener">${clean}</a>`;
+      const clean = String(doi).replace(/^https?:\/\/(dx\.)?doi\.org\//i, '');
+      return new window.Handlebars.SafeString(
+        `<a href="https://doi.org/${encodeURI(clean)}" class="doi-link" target="_blank" rel="noopener">${clean}</a>`
+      );
     });
     try {
       hbCard = window.Handlebars.compile(tplEl.innerHTML);
