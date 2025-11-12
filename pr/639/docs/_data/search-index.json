@@ -2449,7 +2449,7 @@
   {
     "id": "AMWA.AAF",
     "title": "Advanced Authoring Format (AAF) Edit Protocol ",
-    "label": "Advanced Authoring Format",
+    "label": "AMWA Advanced Authoring Format",
     "publisher": "AMWA",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -2481,7 +2481,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Advanced Authoring Format (AAF) Edit Protocol",
-      "Advanced Authoring Format"
+      "AMWA Advanced Authoring Format"
     ],
     "href": "https://e6cfd1ba-033d-44fd-8f16-0027ec40a7b2.filesusr.com/ugd/f66d69_ae65f49241334aa2b76af8b56a43ab82.pdf",
     "docBase": "AMWA|AAF||",
@@ -2490,7 +2490,7 @@
   {
     "id": "AMWA.AS-11",
     "title": "Media Contribution File Formats",
-    "label": "AS-11",
+    "label": "AMWA AS-11",
     "publisher": "AMWA",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -2522,7 +2522,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Media Contribution File Formats",
-      "AS-11"
+      "AMWA AS-11"
     ],
     "href": "https://www.amwa.tv/as-11",
     "docBase": "AMWA|AS|11|",
@@ -3312,7 +3312,7 @@
   {
     "id": "BBC.WHP198",
     "title": "Audio Description Studio Signal",
-    "label": "White Paper WHP 198",
+    "label": "WHP 198",
     "publisher": "BBC",
     "docType": "White Paper",
     "docTypeAbr": null,
@@ -3346,7 +3346,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Audio Description Studio Signal",
-      "White Paper WHP 198",
+      "WHP 198",
       "Trevor Ware"
     ],
     "href": "http://downloads.bbc.co.uk/rd/pubs/whp/whp-pdf-files/WHP198.pdf",
@@ -3912,7 +3912,7 @@
   {
     "id": "DCI.DCA-DVD.2022-0303",
     "title": "Direct View Display D-Cinema Addendum Version 1.0",
-    "label": "DVD D-Cinema Addendum v1 2022-0330",
+    "label": "DCI DVD D-Cinema Addendum v1 2022-0330",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -3943,7 +3943,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Direct View Display D-Cinema Addendum Version 1.0",
-      "DVD D-Cinema Addendum v1 2022-0330"
+      "DCI DVD D-Cinema Addendum v1 2022-0330"
     ],
     "href": "https://www.dcimovies.com/specification/DCI-Direct-View-Display-Addendum-v100_2022-0330.pdf",
     "docBase": "DCI|DCA|DVD|",
@@ -3952,7 +3952,7 @@
   {
     "id": "DCI.DCA-DVD.2023-0301",
     "title": "Direct View Display D-Cinema Addendum Version 1.1",
-    "label": "DVD D-Cinema Addendum v1.1",
+    "label": "DCI DVD D-Cinema Addendum v1.1",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -3984,7 +3984,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Direct View Display D-Cinema Addendum Version 1.1",
-      "DVD D-Cinema Addendum v1.1"
+      "DCI DVD D-Cinema Addendum v1.1"
     ],
     "href": "https://documents.dcimovies.com/Direct-View-Addendum/bcddea8e1760a0b83eb240f6b8e8fa462e055384/",
     "docBase": "DCI|DCA|DVD|",
@@ -3993,7 +3993,7 @@
   {
     "id": "DCI.DCA-HDR.2022-1014",
     "title": "High Dynamic Range D-Cinema Addendum Version 1.0",
-    "label": "HDR D-Cinema Addendum v1 2022-1014",
+    "label": "DCI HDR D-Cinema Addendum v1 2022-1014",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -4024,7 +4024,7 @@
     "keywords": [],
     "keywordsSearch": [
       "High Dynamic Range D-Cinema Addendum Version 1.0",
-      "HDR D-Cinema Addendum v1 2022-1014"
+      "DCI HDR D-Cinema Addendum v1 2022-1014"
     ],
     "href": "https://docs.dcimovies.com/hdr-addendum/f18141e7bf5acfd5ecb90da80261fec3e762bcf7/",
     "docBase": "DCI|DCA|HDR|",
@@ -4033,7 +4033,7 @@
   {
     "id": "DCI.DCA-HDR.2023-0301",
     "title": "High Dynamic Range D-Cinema Addendum Version 1.1",
-    "label": "HDR D-Cinema Addendum v1.1",
+    "label": "DCI HDR D-Cinema Addendum v1.1",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -4065,7 +4065,7 @@
     "keywords": [],
     "keywordsSearch": [
       "High Dynamic Range D-Cinema Addendum Version 1.1",
-      "HDR D-Cinema Addendum v1.1"
+      "DCI HDR D-Cinema Addendum v1.1"
     ],
     "href": "https://documents.dcimovies.com/HDR-Addendum/21e54ee3c65987ce09d692cfef791e19bf103d91/",
     "docBase": "DCI|DCA|HDR|",
@@ -4074,7 +4074,7 @@
   {
     "id": "DCI.DCA-OBA.2013-0909",
     "title": "Digital Cinema Object-Based Audio Addendum",
-    "label": "Object-Based Audio Addendum 2013-0909",
+    "label": "DCI Object-Based Audio Addendum 2013-0909",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -4108,7 +4108,7 @@
     ],
     "keywordsSearch": [
       "Digital Cinema Object-Based Audio Addendum",
-      "Object-Based Audio Addendum 2013-0909"
+      "DCI Object-Based Audio Addendum 2013-0909"
     ],
     "href": "https://www.dcimovies.com/archives/spec_v1_2_With_Errata_Incorporated/DCI_Object-Based_Audio_Addendum_2013-0909.pdf",
     "docBase": "DCI|DCA|OBA|",
@@ -4117,7 +4117,7 @@
   {
     "id": "DCI.DCA-OBA.2018-1001",
     "title": "Digital Cinema Object-Based Audio Addendum",
-    "label": "Object-Based Audio Addendum 2018-1001",
+    "label": "DCI Object-Based Audio Addendum 2018-1001",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -4152,7 +4152,7 @@
     ],
     "keywordsSearch": [
       "Digital Cinema Object-Based Audio Addendum",
-      "Object-Based Audio Addendum 2018-1001"
+      "DCI Object-Based Audio Addendum 2018-1001"
     ],
     "href": "https://www.dcimovies.com/specification/DCI_Object-Based_Audio_Addendum_2018-1001.pdf",
     "docBase": "DCI|DCA|OBA|",
@@ -4161,7 +4161,7 @@
   {
     "id": "DCI.DCA-S.2017-0711",
     "title": "Stereoscopic Digital Cinema Addendum",
-    "label": "Stereoscopic DC Addendum v1.0",
+    "label": "DCI Stereoscopic DC Addendum v1.0",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -4193,7 +4193,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Stereoscopic Digital Cinema Addendum",
-      "Stereoscopic DC Addendum v1.0"
+      "DCI Stereoscopic DC Addendum v1.0"
     ],
     "href": "https://www.dcimovies.com/specification/DCI_Stereoscopic_DC_Addendum.pdf",
     "docBase": "DCI|DCA|S|",
@@ -4202,7 +4202,7 @@
   {
     "id": "DCI.DCSS.v1.2.2012-1010",
     "title": "Digital Cinema System Specification Version 1.2",
-    "label": "DCSS v1.2 2012-1010",
+    "label": "DCI DCSS v1.2 2012-1010",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -4234,7 +4234,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Digital Cinema System Specification Version 1.2",
-      "DCSS v1.2 2012-1010"
+      "DCI DCSS v1.2 2012-1010"
     ],
     "href": "https://www.dcimovies.com/archives/spec_v1_2_With_Errata_Incorporated/DCI_DCSS_v12_with_errata_2012-1010.pdf",
     "docBase": "DCI|DCSS||",
@@ -4243,7 +4243,7 @@
   {
     "id": "DCI.DCSS.v1.2.2013-0821",
     "title": "DCSS Errata 1-2",
-    "label": "DCSS v1.2 Errata 1-2 2013-0821",
+    "label": "DCI DCSS v1.2 Errata 1-2 2013-0821",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -4274,7 +4274,7 @@
     "keywords": [],
     "keywordsSearch": [
       "DCSS Errata 1-2",
-      "DCSS v1.2 Errata 1-2 2013-0821"
+      "DCI DCSS v1.2 Errata 1-2 2013-0821"
     ],
     "href": "https://www.dcimovies.com/errata/v1_2_with-errata-8-12/Errata_1-2_2013-0821.pdf",
     "docBase": "DCI|DCSS||",
@@ -4283,7 +4283,7 @@
   {
     "id": "DCI.DCSS.v1.2.2014-0904",
     "title": "DCSS Errata 3-9",
-    "label": "DCSS v1.2 Errata 3-9 2014-0904",
+    "label": "DCI DCSS v1.2 Errata 3-9 2014-0904",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -4314,7 +4314,7 @@
     "keywords": [],
     "keywordsSearch": [
       "DCSS Errata 3-9",
-      "DCSS v1.2 Errata 3-9 2014-0904"
+      "DCI DCSS v1.2 Errata 3-9 2014-0904"
     ],
     "href": "https://www.dcimovies.com/errata/v1_2_with-errata-8-12/DCI-Errata-3-9_v1-2-inc_2014-0904.pdf",
     "docBase": "DCI|DCSS||",
@@ -4323,7 +4323,7 @@
   {
     "id": "DCI.DCSS.v1.2.2014-0905",
     "title": "DCSS Replacement Chapter 9",
-    "label": "DCSS v1.2 Replacement Chapter 9 20140904",
+    "label": "DCI DCSS v1.2 Replacement Chapter 9 20140904",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -4354,7 +4354,7 @@
     "keywords": [],
     "keywordsSearch": [
       "DCSS Replacement Chapter 9",
-      "DCSS v1.2 Replacement Chapter 9 20140904"
+      "DCI DCSS v1.2 Replacement Chapter 9 20140904"
     ],
     "href": "https://www.dcimovies.com/errata/v1_2_with-errata-8-12/DCSS-replacement_Chapter_9--20140904.pdf",
     "docBase": "DCI|DCSS||",
@@ -4363,7 +4363,7 @@
   {
     "id": "DCI.DCSS.v1.2.2015-0826",
     "title": "DCSS Errata 10-13",
-    "label": "DCSS v1.2 Errata 10-13 2015-08-26",
+    "label": "DCI DCSS v1.2 Errata 10-13 2015-08-26",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -4394,7 +4394,7 @@
     "keywords": [],
     "keywordsSearch": [
       "DCSS Errata 10-13",
-      "DCSS v1.2 Errata 10-13 2015-08-26"
+      "DCI DCSS v1.2 Errata 10-13 2015-08-26"
     ],
     "href": "https://www.dcimovies.com/errata/v1_2_with-errata-8-12/DCI-Errata_10-13_Aug-26-2015_v1-2_08-30-2012.pdf",
     "docBase": "DCI|DCSS||",
@@ -4403,7 +4403,7 @@
   {
     "id": "DCI.DCSS.v1.2.2015-0925",
     "title": "DCSS Errata 14",
-    "label": "DCSS v1.2 Errata 14 Sept-25-2015",
+    "label": "DCI DCSS v1.2 Errata 14 Sept-25-2015",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -4434,7 +4434,7 @@
     "keywords": [],
     "keywordsSearch": [
       "DCSS Errata 14",
-      "DCSS v1.2 Errata 14 Sept-25-2015"
+      "DCI DCSS v1.2 Errata 14 Sept-25-2015"
     ],
     "href": "https://www.dcimovies.com/errata/v1_2_with-errata-8-12/DCI-Errata_14_Sept-25-2015_v1-2_08-30-2012.pdf",
     "docBase": "DCI|DCSS||",
@@ -4443,7 +4443,7 @@
   {
     "id": "DCI.DCSS.v1.2.2016-0331",
     "title": "DCSS Errata 15-23",
-    "label": "DCSS v1.2 Errata 15-23 March-31-2016",
+    "label": "DCI DCSS v1.2 Errata 15-23 March-31-2016",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -4474,7 +4474,7 @@
     "keywords": [],
     "keywordsSearch": [
       "DCSS Errata 15-23",
-      "DCSS v1.2 Errata 15-23 March-31-2016"
+      "DCI DCSS v1.2 Errata 15-23 March-31-2016"
     ],
     "href": "https://www.dcimovies.com/errata/v1_2_with-errata-8-12/DCI-Errata_15-23_March-31-2016_v1-2_08-30-2012.pdf",
     "docBase": "DCI|DCSS||",
@@ -4483,7 +4483,7 @@
   {
     "id": "DCI.DCSS.v1.2.2016-0428",
     "title": "DCSS Errata 24",
-    "label": "DCSS v1.2 Errata 24 APRIL-28-2016",
+    "label": "DCI DCSS v1.2 Errata 24 APRIL-28-2016",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -4514,7 +4514,7 @@
     "keywords": [],
     "keywordsSearch": [
       "DCSS Errata 24",
-      "DCSS v1.2 Errata 24 APRIL-28-2016"
+      "DCI DCSS v1.2 Errata 24 APRIL-28-2016"
     ],
     "href": "https://www.dcimovies.com/errata/v1_2_with-errata-8-12/DCI-Errata_24_APRIL-28-2016_v1-2_08-30-2012.pdf",
     "docBase": "DCI|DCSS||",
@@ -4523,7 +4523,7 @@
   {
     "id": "DCI.DCSS.v1.2.2017-0302",
     "title": "DCSS Errata 25-38",
-    "label": "DCSS v1.2 Errata 25-38 2017-0302",
+    "label": "DCI DCSS v1.2 Errata 25-38 2017-0302",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -4554,7 +4554,7 @@
     "keywords": [],
     "keywordsSearch": [
       "DCSS Errata 25-38",
-      "DCSS v1.2 Errata 25-38 2017-0302"
+      "DCI DCSS v1.2 Errata 25-38 2017-0302"
     ],
     "href": "https://www.dcimovies.com/errata/v1_2_with-errata-8-12/DCSS_Errata_25-38_as_Approved_2017-0302.pdf",
     "docBase": "DCI|DCSS||",
@@ -4563,7 +4563,7 @@
   {
     "id": "DCI.DCSS.v1.2.2017-0802",
     "title": "DCSS Errata 39",
-    "label": "DCSS v1.2 Errata 39 2017-0802",
+    "label": "DCI DCSS v1.2 Errata 39 2017-0802",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -4594,7 +4594,7 @@
     "keywords": [],
     "keywordsSearch": [
       "DCSS Errata 39",
-      "DCSS v1.2 Errata 39 2017-0802"
+      "DCI DCSS v1.2 Errata 39 2017-0802"
     ],
     "href": "https://www.dcimovies.com/errata/v1_2_with-errata-8-12/DCI_DCSS_Erratum_39_2017-0802.pdf",
     "docBase": "DCI|DCSS||",
@@ -4603,7 +4603,7 @@
   {
     "id": "DCI.DCSS.v1.2.2017-0829",
     "title": "DCSS Errata 40-42",
-    "label": "DCSS v1.2 Errata 40-42 2017-0829",
+    "label": "DCI DCSS v1.2 Errata 40-42 2017-0829",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -4634,7 +4634,7 @@
     "keywords": [],
     "keywordsSearch": [
       "DCSS Errata 40-42",
-      "DCSS v1.2 Errata 40-42 2017-0829"
+      "DCI DCSS v1.2 Errata 40-42 2017-0829"
     ],
     "href": "https://www.dcimovies.com/errata/v1_2_with-errata-8-12/DCI_DCSS_Errata_40-42_2017-0829.pdf",
     "docBase": "DCI|DCSS||",
@@ -4643,7 +4643,7 @@
   {
     "id": "DCI.DCSS.v1.2.2017-1005",
     "title": "DCSS Errata 43",
-    "label": "DCSS v1.2 Errata 43 2017-1005",
+    "label": "DCI DCSS v1.2 Errata 43 2017-1005",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -4674,7 +4674,7 @@
     "keywords": [],
     "keywordsSearch": [
       "DCSS Errata 43",
-      "DCSS v1.2 Errata 43 2017-1005"
+      "DCI DCSS v1.2 Errata 43 2017-1005"
     ],
     "href": "https://www.dcimovies.com/errata/v1_2_with-errata-8-12/DCI_DCSS_Erratum_43_2017-1005.pdf",
     "docBase": "DCI|DCSS||",
@@ -4683,7 +4683,7 @@
   {
     "id": "DCI.DCSS.v1.2.2018-0124",
     "title": "DCSS Errata 44-45",
-    "label": "DCSS v1.2 Errata 44-45 2018-0124",
+    "label": "DCI DCSS v1.2 Errata 44-45 2018-0124",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -4714,7 +4714,7 @@
     "keywords": [],
     "keywordsSearch": [
       "DCSS Errata 44-45",
-      "DCSS v1.2 Errata 44-45 2018-0124"
+      "DCI DCSS v1.2 Errata 44-45 2018-0124"
     ],
     "href": "https://www.dcimovies.com/errata/v1_2_with-errata-8-12/DCI_DCSS_Errata_44-45_2018-0124.pdf",
     "docBase": "DCI|DCSS||",
@@ -4723,7 +4723,7 @@
   {
     "id": "DCI.DCSS.v1.3.2018-0627",
     "title": "Digital Cinema System Specification Version 1.3",
-    "label": "DCSS v1.3 2018-0627",
+    "label": "DCI DCSS v1.3 2018-0627",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -4755,7 +4755,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Digital Cinema System Specification Version 1.3",
-      "DCSS v1.3 2018-0627"
+      "DCI DCSS v1.3 2018-0627"
     ],
     "href": "https://www.dcimovies.com/specification/DCI_DCSS_Ver1-3_2018-0627.pdf",
     "docBase": "DCI|DCSS||",
@@ -4764,7 +4764,7 @@
   {
     "id": "DCI.DCSS.v1.3.2018-1001",
     "title": "DCSS Errata 1-9",
-    "label": "DCSS v1.3 Errata 1-9 2018-1001",
+    "label": "DCI DCSS v1.3 Errata 1-9 2018-1001",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -4795,7 +4795,7 @@
     "keywords": [],
     "keywordsSearch": [
       "DCSS Errata 1-9",
-      "DCSS v1.3 Errata 1-9 2018-1001"
+      "DCI DCSS v1.3 Errata 1-9 2018-1001"
     ],
     "href": "https://www.dcimovies.com/errata/v1_3/DCI_DCSS_Errata_1-9_2018-1001.pdf",
     "docBase": "DCI|DCSS||",
@@ -4804,7 +4804,7 @@
   {
     "id": "DCI.DCSS.v1.3.2018-1207",
     "title": "DCSS Errata 10-12",
-    "label": "DCSS v1.3 Errata 10-12 2018-1207",
+    "label": "DCI DCSS v1.3 Errata 10-12 2018-1207",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -4835,7 +4835,7 @@
     "keywords": [],
     "keywordsSearch": [
       "DCSS Errata 10-12",
-      "DCSS v1.3 Errata 10-12 2018-1207"
+      "DCI DCSS v1.3 Errata 10-12 2018-1207"
     ],
     "href": "https://www.dcimovies.com/errata/v1_3/DCI_DCSS_Errata_10-12_2018-1207.pdf",
     "docBase": "DCI|DCSS||",
@@ -4844,7 +4844,7 @@
   {
     "id": "DCI.DCSS.v1.3.20190809",
     "title": "DCSS Errata 13-17",
-    "label": "DCSS v1.3 Errata 13-17 2019-0809",
+    "label": "DCI DCSS v1.3 Errata 13-17 2019-0809",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -4875,7 +4875,7 @@
     "keywords": [],
     "keywordsSearch": [
       "DCSS Errata 13-17",
-      "DCSS v1.3 Errata 13-17 2019-0809"
+      "DCI DCSS v1.3 Errata 13-17 2019-0809"
     ],
     "href": "https://www.dcimovies.com/errata/v1_3/DCI_DCSS_Errata_13-17_2019-0809.pdf",
     "docBase": "DCI|DCSS||",
@@ -4884,7 +4884,7 @@
   {
     "id": "DCI.DCSS.v1.3.20191219",
     "title": "DCSS Errata 18-20",
-    "label": "DCSS v1.3 Errata 18-20 2019-1219",
+    "label": "DCI DCSS v1.3 Errata 18-20 2019-1219",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -4915,7 +4915,7 @@
     "keywords": [],
     "keywordsSearch": [
       "DCSS Errata 18-20",
-      "DCSS v1.3 Errata 18-20 2019-1219"
+      "DCI DCSS v1.3 Errata 18-20 2019-1219"
     ],
     "href": "https://www.dcimovies.com/errata/v1_3/DCI_DCSS_Errata_18-20_2019-1219.pdf",
     "docBase": "DCI|DCSS||",
@@ -4924,7 +4924,7 @@
   {
     "id": "DCI.DCSS.v1.3.2020-0206",
     "title": "DCSS Errata 21",
-    "label": "DCSS v1.3 Erratum 21 2020-0206",
+    "label": "DCI DCSS v1.3 Erratum 21 2020-0206",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -4955,7 +4955,7 @@
     "keywords": [],
     "keywordsSearch": [
       "DCSS Errata 21",
-      "DCSS v1.3 Erratum 21 2020-0206"
+      "DCI DCSS v1.3 Erratum 21 2020-0206"
     ],
     "href": "https://www.dcimovies.com/errata/v1_3/DCI_DCSS_Erratum_21_2020-0206.pdf",
     "docBase": "DCI|DCSS||",
@@ -4964,7 +4964,7 @@
   {
     "id": "DCI.DCSS.v1.3.2020-0506",
     "title": "DCSS Errata 22-28",
-    "label": "DCSS v1.3 Errata 22-28 2020-0506",
+    "label": "DCI DCSS v1.3 Errata 22-28 2020-0506",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -4995,7 +4995,7 @@
     "keywords": [],
     "keywordsSearch": [
       "DCSS Errata 22-28",
-      "DCSS v1.3 Errata 22-28 2020-0506"
+      "DCI DCSS v1.3 Errata 22-28 2020-0506"
     ],
     "href": "https://www.dcimovies.com/errata/v1_3/DCI_DCSS_Errata_22-28_2020-0506.pdf",
     "docBase": "DCI|DCSS||",
@@ -5004,7 +5004,7 @@
   {
     "id": "DCI.DCSS.v1.3.2020-0714",
     "title": "DCSS Errata 29",
-    "label": "DCSS v1.3 Errata 29 2020-0714",
+    "label": "DCI DCSS v1.3 Errata 29 2020-0714",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -5035,7 +5035,7 @@
     "keywords": [],
     "keywordsSearch": [
       "DCSS Errata 29",
-      "DCSS v1.3 Errata 29 2020-0714"
+      "DCI DCSS v1.3 Errata 29 2020-0714"
     ],
     "href": "https://www.dcimovies.com/errata/v1_3/DCI_DCSS_Errata_29_2020-0714.pdf",
     "docBase": "DCI|DCSS||",
@@ -5044,7 +5044,7 @@
   {
     "id": "DCI.DCSS.v1.4.0.2020-0720",
     "title": "Digital Cinema System Specification Version 1.4",
-    "label": "DCSS v1.4 2020-0720",
+    "label": "DCI DCSS v1.4 2020-0720",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -5084,7 +5084,7 @@
     ],
     "keywordsSearch": [
       "Digital Cinema System Specification Version 1.4",
-      "DCSS v1.4 2020-0720"
+      "DCI DCSS v1.4 2020-0720"
     ],
     "href": "https://www.dcimovies.com/specification/DCI_DCSS_v1-4_20-July-2020.pdf",
     "docBase": "DCI|DCSS||",
@@ -5093,7 +5093,7 @@
   {
     "id": "DCI.DCSS.v1.4.0.2020-0902",
     "title": "DCSS Errata 1-2",
-    "label": "DCSS v1.4 Errata 1-2 2020-0902",
+    "label": "DCI DCSS v1.4 Errata 1-2 2020-0902",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -5132,7 +5132,7 @@
     ],
     "keywordsSearch": [
       "DCSS Errata 1-2",
-      "DCSS v1.4 Errata 1-2 2020-0902"
+      "DCI DCSS v1.4 Errata 1-2 2020-0902"
     ],
     "href": "https://www.dcimovies.com/specification/DCI_DCSSv1-4_Errata_1-2_9-02-2020.pdf",
     "docBase": "DCI|DCSS||",
@@ -5141,7 +5141,7 @@
   {
     "id": "DCI.DCSS.v1.4.0.2020-1118",
     "title": "DCSS Errata 3-15",
-    "label": "DCSS v1.4 Errata 3-15 2020-1118",
+    "label": "DCI DCSS v1.4 Errata 3-15 2020-1118",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -5180,7 +5180,7 @@
     ],
     "keywordsSearch": [
       "DCSS Errata 3-15",
-      "DCSS v1.4 Errata 3-15 2020-1118"
+      "DCI DCSS v1.4 Errata 3-15 2020-1118"
     ],
     "href": "https://www.dcimovies.com/specification/DCI_DCSSv1-4_Errata_3-15_11-18-2020.pdf",
     "docBase": "DCI|DCSS||",
@@ -5189,7 +5189,7 @@
   {
     "id": "DCI.DCSS.v1.4.0.2021-0106",
     "title": "DCSS Errata 16-17",
-    "label": "DCSS v1.4 Errata 16-17 2021-0106",
+    "label": "DCI DCSS v1.4 Errata 16-17 2021-0106",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -5228,7 +5228,7 @@
     ],
     "keywordsSearch": [
       "DCSS Errata 16-17",
-      "DCSS v1.4 Errata 16-17 2021-0106"
+      "DCI DCSS v1.4 Errata 16-17 2021-0106"
     ],
     "href": "https://www.dcimovies.com/specification/DCI_DCSSv1-4_Errata_16-17_1-6-2021.pdf",
     "docBase": "DCI|DCSS||",
@@ -5237,7 +5237,7 @@
   {
     "id": "DCI.DCSS.v1.4.0.2021-0324",
     "title": "DCSS Errata 18-19",
-    "label": "DCSS v1.4 Errata 18-19 2021-0324",
+    "label": "DCI DCSS v1.4 Errata 18-19 2021-0324",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -5276,7 +5276,7 @@
     ],
     "keywordsSearch": [
       "DCSS Errata 18-19",
-      "DCSS v1.4 Errata 18-19 2021-0324"
+      "DCI DCSS v1.4 Errata 18-19 2021-0324"
     ],
     "href": "https://www.dcimovies.com/specification/DCI_DCSSv1-4_Errata-18-19_2021-03-24.pdf",
     "docBase": "DCI|DCSS||",
@@ -5285,7 +5285,7 @@
   {
     "id": "DCI.DCSS.v1.4.0.2021-0512",
     "title": "DCSS Errata 20-23",
-    "label": "DCSS v1.4 Errata 20-23 2021-0512",
+    "label": "DCI DCSS v1.4 Errata 20-23 2021-0512",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -5324,7 +5324,7 @@
     ],
     "keywordsSearch": [
       "DCSS Errata 20-23",
-      "DCSS v1.4 Errata 20-23 2021-0512"
+      "DCI DCSS v1.4 Errata 20-23 2021-0512"
     ],
     "href": "https://www.dcimovies.com/specification/DCI_DCSSv1-4_Errata_20-23_05-12-2021.pdf",
     "docBase": "DCI|DCSS||",
@@ -5333,7 +5333,7 @@
   {
     "id": "DCI.DCSS.v1.4.1.2021-1013",
     "title": "Digital Cinema System Specification Version 1.4.1",
-    "label": "DCSS v1.4.1",
+    "label": "DCI DCSS v1.4.1",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -5372,7 +5372,7 @@
     ],
     "keywordsSearch": [
       "Digital Cinema System Specification Version 1.4.1",
-      "DCSS v1.4.1"
+      "DCI DCSS v1.4.1"
     ],
     "href": "https://dcss.dcimovies.com/latest/dcss.html",
     "docBase": "DCI|DCSS||",
@@ -5381,7 +5381,7 @@
   {
     "id": "DCI.DCSS.v1.4.2.2022-0615",
     "title": "Digital Cinema System Specification Version 1.4.2",
-    "label": "DCSS v1.4.2",
+    "label": "DCI DCSS v1.4.2",
     "publisher": "DCI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -5421,7 +5421,7 @@
     ],
     "keywordsSearch": [
       "Digital Cinema System Specification Version 1.4.2",
-      "DCSS v1.4.2"
+      "DCI DCSS v1.4.2"
     ],
     "href": "https://dcss.dcimovies.com/0c0cff34d231b516cb89ae3fad352d5cf37a9515/dcss.html",
     "docBase": "DCI|DCSS||",
@@ -5429,8 +5429,8 @@
   },
   {
     "id": "DCI.M-DVD.2018-0627",
-    "title": "DCI Memorandum Regarding Direct View Displays",
-    "label": "Memo On Direct View Displays 20180627",
+    "title": "Memorandum Regarding Direct View Displays",
+    "label": "DCI Memo On Direct View Displays 20180627",
     "publisher": "DCI",
     "docType": "Memo",
     "docTypeAbr": null,
@@ -5461,8 +5461,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "DCI Memorandum Regarding Direct View Displays",
-      "Memo On Direct View Displays 20180627"
+      "Memorandum Regarding Direct View Displays",
+      "DCI Memo On Direct View Displays 20180627"
     ],
     "href": "https://www.dcimovies.com/announcements/DCI-Memo-On-Direct-View-Displays_2108-0627.pdf",
     "docBase": "DCI|M||DVD",
@@ -5470,8 +5470,8 @@
   },
   {
     "id": "DCI.M-HDR.2021-0701",
-    "title": "DCI Memorandum on HDR Double-Blind Image Testing",
-    "label": "Memo HDR Double-Blind Testing 20210701",
+    "title": "Memorandum on HDR Double-Blind Image Testing",
+    "label": "DCI Memo HDR Double-Blind Testing 20210701",
     "publisher": "DCI",
     "docType": "Memo",
     "docTypeAbr": null,
@@ -5502,8 +5502,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "DCI Memorandum on HDR Double-Blind Image Testing",
-      "Memo HDR Double-Blind Testing 20210701"
+      "Memorandum on HDR Double-Blind Image Testing",
+      "DCI Memo HDR Double-Blind Testing 20210701"
     ],
     "href": "https://www.dcimovies.com/announcements/DCI-Memo-on-HDR-Image-Testing_2021-0701.pdf",
     "docBase": "DCI|M||HDR",
@@ -5511,8 +5511,8 @@
   },
   {
     "id": "DCI.M-NIST.2020-0701",
-    "title": "DCI Memorandum on NIST Standards Transitions and 'Non-FIPS Mode'",
-    "label": "Memo NIST ST 20200701",
+    "title": "Memorandum on NIST Standards Transitions and 'Non-FIPS Mode'",
+    "label": "DCI Memo NIST ST 20200701",
     "publisher": "DCI",
     "docType": "Memo",
     "docTypeAbr": null,
@@ -5546,8 +5546,8 @@
       "Security"
     ],
     "keywordsSearch": [
-      "DCI Memorandum on NIST Standards Transitions and 'Non-FIPS Mode'",
-      "Memo NIST ST 20200701"
+      "Memorandum on NIST Standards Transitions and 'Non-FIPS Mode'",
+      "DCI Memo NIST ST 20200701"
     ],
     "href": "https://www.dcimovies.com/FIPS/DCI_Memo_on_NIST_Standards_transitions_and_Non-FIPS_mode_2020-07-01.pdf",
     "docBase": "DCI|M||NIST",
@@ -5555,8 +5555,8 @@
   },
   {
     "id": "DCI.M-RNG.2018-0511",
-    "title": "DCI Memorandum on RNG Revocation and Related NIST and FIPS Developments",
-    "label": "Memo on RNG Revocation 20180511",
+    "title": "Memorandum on RNG Revocation and Related NIST and FIPS Developments",
+    "label": "DCI Memo on RNG Revocation 20180511",
     "publisher": "DCI",
     "docType": "Memo",
     "docTypeAbr": null,
@@ -5587,8 +5587,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "DCI Memorandum on RNG Revocation and Related NIST and FIPS Developments",
-      "Memo on RNG Revocation 20180511"
+      "Memorandum on RNG Revocation and Related NIST and FIPS Developments",
+      "DCI Memo on RNG Revocation 20180511"
     ],
     "href": "https://www.dcimovies.com/announcements/DCI-Memo-on-RNG-Revocation_20180511.pdf",
     "docBase": "DCI|M||RNG",
@@ -5596,8 +5596,8 @@
   },
   {
     "id": "DCI.RP-HFR.2012-0928",
-    "title": "DCI High Frame Rates Digital Cinema Recommended Practice",
-    "label": "HFR RP",
+    "title": "High Frame Rates Digital Cinema Recommended Practice",
+    "label": "DCI HFR RP",
     "publisher": "DCI",
     "docType": "Recommended Practice",
     "docTypeAbr": null,
@@ -5628,8 +5628,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "DCI High Frame Rates Digital Cinema Recommended Practice",
-      "HFR RP"
+      "High Frame Rates Digital Cinema Recommended Practice",
+      "DCI HFR RP"
     ],
     "href": "https://www.dcimovies.com/Recommended_Practice/DCI_HFR_RP_2015-0716.pdf",
     "docBase": "DCI|RP|HFR|",
@@ -5637,8 +5637,8 @@
   },
   {
     "id": "DCI.S-TES.2019-0329",
-    "title": "DCI STATEMENT ON TECHNOLOGY EVOLUTION IN DIGITAL CINEMA ",
-    "label": "Technology Evolution Statement 20190329",
+    "title": "STATEMENT ON TECHNOLOGY EVOLUTION IN DIGITAL CINEMA ",
+    "label": "DCI Technology Evolution Statement 20190329",
     "publisher": "DCI",
     "docType": "Statement",
     "docTypeAbr": null,
@@ -5669,8 +5669,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "DCI STATEMENT ON TECHNOLOGY EVOLUTION IN DIGITAL CINEMA",
-      "Technology Evolution Statement 20190329"
+      "STATEMENT ON TECHNOLOGY EVOLUTION IN DIGITAL CINEMA",
+      "DCI Technology Evolution Statement 20190329"
     ],
     "href": "https://www.dcimovies.com/announcements/DCI-Technology-Evolution-Statement_2019-0329.pdf",
     "docBase": "DCI|S|TES|",
@@ -8413,7 +8413,7 @@
   {
     "id": "IETF.JSON.2022",
     "title": "A Media Type for Describing JSON Documents",
-    "label": "JSON Schema",
+    "label": "IETF JSON Schema",
     "publisher": "IETF",
     "docType": "Informational",
     "docTypeAbr": null,
@@ -8445,7 +8445,7 @@
     "keywords": [],
     "keywordsSearch": [
       "A Media Type for Describing JSON Documents",
-      "JSON Schema"
+      "IETF JSON Schema"
     ],
     "href": "https://json-schema.org/draft/2020-12/json-schema-core.html",
     "docBase": "IETF|JSON||",
@@ -8454,7 +8454,7 @@
   {
     "id": "IETF.JSON.draft-bhutton-json-schema-00.2020",
     "title": "JSON Schema: A Media Type for Describing JSON Documents",
-    "label": "draft-bhutton-json-schema-00",
+    "label": "IETF draft-bhutton-json-schema-00",
     "publisher": "IETF",
     "docType": "Informational",
     "docTypeAbr": null,
@@ -8485,7 +8485,7 @@
     "keywords": [],
     "keywordsSearch": [
       "JSON Schema: A Media Type for Describing JSON Documents",
-      "draft-bhutton-json-schema-00"
+      "IETF draft-bhutton-json-schema-00"
     ],
     "href": "https://datatracker.ietf.org/doc/html/draft-bhutton-json-schema-00",
     "docBase": "IETF|JSON||",
@@ -9303,8 +9303,8 @@
   },
   {
     "id": "ISBN.9781119183471",
-    "title": "Applied Cryptography, Second Edition: Protocols, Algorthms, and Source Code in C, 20th Anniversary Edition",
-    "label": "ISBN 978-1-119-18347-1",
+    "title": "Protocols, Algorthms, and Source Code in C, 20th Anniversary Edition",
+    "label": "Applied Cryptography, Second Edition",
     "publisher": "Wiley",
     "docType": "Book",
     "docTypeAbr": null,
@@ -9337,8 +9337,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "Applied Cryptography, Second Edition: Protocols, Algorthms, and Source Code in C, 20th Anniversary Edition",
-      "ISBN 978-1-119-18347-1",
+      "Protocols, Algorthms, and Source Code in C, 20th Anniversary Edition",
+      "Applied Cryptography, Second Edition",
       "Bruce Schneier"
     ],
     "href": "https://onlinelibrary.wiley.com/doi/book/10.1002/9781119183471",
@@ -18692,7 +18692,7 @@
   {
     "id": "ITUT.ASN1",
     "title": "Abstract Syntax Notation 1",
-    "label": "ASN.1",
+    "label": "ITU-T ASN.1",
     "publisher": "ITU-T",
     "docType": "Notation",
     "docTypeAbr": null,
@@ -18723,7 +18723,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Abstract Syntax Notation 1",
-      "ASN.1"
+      "ITU-T ASN.1"
     ],
     "href": "https://www.itu.int/en/ITU-T/asn1/Pages/introduction.aspx",
     "docBase": null,
@@ -24039,7 +24039,7 @@
   {
     "id": "NIST.FIPS.140-1",
     "title": "Security Requirements for Cryptographic Modules",
-    "label": "FIPS 140-1",
+    "label": "NIST FIPS 140-1",
     "publisher": "NIST",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -24070,7 +24070,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Security Requirements for Cryptographic Modules",
-      "FIPS 140-1"
+      "NIST FIPS 140-1"
     ],
     "href": "https://doi.org/10.6028/NIST.FIPS.140-1",
     "docBase": "NIST|FIPS|140|",
@@ -24079,7 +24079,7 @@
   {
     "id": "NIST.FIPS.140-2",
     "title": "Security Requirements for Cryptographic Modules",
-    "label": "FIPS 140-2",
+    "label": "NIST FIPS 140-2",
     "publisher": "NIST",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -24110,7 +24110,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Security Requirements for Cryptographic Modules",
-      "FIPS 140-2"
+      "NIST FIPS 140-2"
     ],
     "href": "https://doi.org/10.6028/NIST.FIPS.140-2",
     "docBase": "NIST|FIPS|140|",
@@ -24119,7 +24119,7 @@
   {
     "id": "NIST.FIPS.140-3",
     "title": "Security Requirements for Cryptographic Modules",
-    "label": "FIPS 140-3",
+    "label": "NIST FIPS 140-3",
     "publisher": "NIST",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -24151,7 +24151,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Security Requirements for Cryptographic Modules",
-      "FIPS 140-3"
+      "NIST FIPS 140-3"
     ],
     "href": "https://doi.org/10.6028/NIST.FIPS.140-3",
     "docBase": "NIST|FIPS|140|",
@@ -24160,7 +24160,7 @@
   {
     "id": "NIST.FIPS.180-1",
     "title": "Secure Hash Standard (SHS) - SHA1",
-    "label": "FIPS 180-1",
+    "label": "NIST FIPS 180-1",
     "publisher": "NIST",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -24192,7 +24192,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Secure Hash Standard (SHS) - SHA1",
-      "FIPS 180-1"
+      "NIST FIPS 180-1"
     ],
     "href": "https://doi.org/10.6028/NIST.FIPS.180-1",
     "docBase": "NIST|FIPS|180|",
@@ -24201,7 +24201,7 @@
   {
     "id": "NIST.FIPS.180-2",
     "title": "Secure Hash Standard (SHS)",
-    "label": "FIPS 180-2",
+    "label": "NIST FIPS 180-2",
     "publisher": "NIST",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -24233,7 +24233,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Secure Hash Standard (SHS)",
-      "FIPS 180-2"
+      "NIST FIPS 180-2"
     ],
     "href": "https://csrc.nist.gov/CSRC/media/Publications/fips/180/2/archive/2002-08-01/documents/fips180-2.pdf",
     "docBase": "NIST|FIPS|180|",
@@ -24242,7 +24242,7 @@
   {
     "id": "NIST.FIPS.180-3",
     "title": "Secure Hash Standard (SHS)",
-    "label": "FIPS 180-3",
+    "label": "NIST FIPS 180-3",
     "publisher": "NIST",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -24274,7 +24274,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Secure Hash Standard (SHS)",
-      "FIPS 180-3"
+      "NIST FIPS 180-3"
     ],
     "href": "https://csrc.nist.gov/CSRC/media/Publications/fips/180/3/archive/2008-10-31/documents/fips180-3_final.pdf",
     "docBase": "NIST|FIPS|180|",
@@ -24283,7 +24283,7 @@
   {
     "id": "NIST.FIPS.180-4",
     "title": "Secure Hash Standard (SHS)",
-    "label": "FIPS 180-4",
+    "label": "NIST FIPS 180-4",
     "publisher": "NIST",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -24315,7 +24315,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Secure Hash Standard (SHS)",
-      "FIPS 180-4"
+      "NIST FIPS 180-4"
     ],
     "href": "https://doi.org/10.6028/NIST.FIPS.180-4",
     "docBase": "NIST|FIPS|180|",
@@ -24324,7 +24324,7 @@
   {
     "id": "NIST.FIPS.186-2",
     "title": "Digital Signature Standard (DSS)",
-    "label": "FIPS PUB 186-2",
+    "label": "NIST FIPS PUB 186-2",
     "publisher": "NIST",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -24356,7 +24356,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Digital Signature Standard (DSS)",
-      "FIPS PUB 186-2"
+      "NIST FIPS PUB 186-2"
     ],
     "href": "https://csrc.nist.gov/CSRC/media/Publications/fips/186/2/archive/2001-10-05/documents/fips186-2-change1.pdf",
     "docBase": "NIST|FIPS|186|",
@@ -24365,7 +24365,7 @@
   {
     "id": "NIST.FIPS.186-3",
     "title": "Digital Signature Standard (DSS)",
-    "label": "FIPS 186-3",
+    "label": "NIST FIPS 186-3",
     "publisher": "NIST",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -24397,7 +24397,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Digital Signature Standard (DSS)",
-      "FIPS 186-3"
+      "NIST FIPS 186-3"
     ],
     "href": "https://csrc.nist.gov/CSRC/media/Publications/fips/186/3/archive/2009-06-25/documents/fips_186-3.pdf",
     "docBase": "NIST|FIPS|186|",
@@ -24406,7 +24406,7 @@
   {
     "id": "NIST.FIPS.186-4",
     "title": "Digital Signature Standard (DSS)",
-    "label": "FIPS 186-4",
+    "label": "NIST FIPS 186-4",
     "publisher": "NIST",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -24438,7 +24438,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Digital Signature Standard (DSS)",
-      "FIPS 186-4"
+      "NIST FIPS 186-4"
     ],
     "href": "https://doi.org/10.6028/NIST.FIPS.186-4",
     "docBase": "NIST|FIPS|186|",
@@ -24447,7 +24447,7 @@
   {
     "id": "NIST.FIPS.197",
     "title": "Advanced Encryption Standard (AES)",
-    "label": "FIPS 197",
+    "label": "NIST FIPS 197",
     "publisher": "NIST",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -24479,7 +24479,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Advanced Encryption Standard (AES)",
-      "FIPS 197"
+      "NIST FIPS 197"
     ],
     "href": "https://doi.org/10.6028/NIST.FIPS.197",
     "docBase": "NIST|FIPS|197|",
@@ -24488,7 +24488,7 @@
   {
     "id": "NIST.FIPS.198",
     "title": "The Keyed-Hash Message Authentication Code (HMAC)",
-    "label": "FIPS 198",
+    "label": "NIST FIPS 198",
     "publisher": "NIST",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -24520,7 +24520,7 @@
     "keywords": [],
     "keywordsSearch": [
       "The Keyed-Hash Message Authentication Code (HMAC)",
-      "FIPS 198"
+      "NIST FIPS 198"
     ],
     "href": "https://csrc.nist.gov/CSRC/media/Publications/fips/198/archive/2002-03-06/documents/fips-198a.pdf",
     "docBase": "NIST|FIPS|198|",
@@ -24529,7 +24529,7 @@
   {
     "id": "NIST.FIPS.198-1",
     "title": "The Keyed-Hash Message Authentication Code (HMAC)",
-    "label": "FIPS 198-1",
+    "label": "NIST FIPS 198-1",
     "publisher": "NIST",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -24561,7 +24561,7 @@
     "keywords": [],
     "keywordsSearch": [
       "The Keyed-Hash Message Authentication Code (HMAC)",
-      "FIPS 198-1"
+      "NIST FIPS 198-1"
     ],
     "href": "https://doi.org/10.6028/NIST.FIPS.198-1",
     "docBase": "NIST|FIPS|198|",
@@ -24570,7 +24570,7 @@
   {
     "id": "NIST.FIPS.46-3",
     "title": "Data Encryption Standard (DES)",
-    "label": "FIPS 46-3",
+    "label": "NIST FIPS 46-3",
     "publisher": "NIST",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -24601,7 +24601,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Data Encryption Standard (DES)",
-      "FIPS 46-3"
+      "NIST FIPS 46-3"
     ],
     "href": "https://csrc.nist.gov/CSRC/media/Publications/fips/46/3/archive/1999-10-25/documents/fips46-3.pdf",
     "docBase": "NIST|FIPS|46|",
@@ -24773,7 +24773,7 @@
   {
     "id": "NIST.SP.800-57p2",
     "title": "Recommendation for Key Management, Part 2: Best Practices for Key Management Organization",
-    "label": "SP 800-57 Part 2",
+    "label": "NIST SP 800-57 Part 2",
     "publisher": "NIST",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -24805,7 +24805,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Recommendation for Key Management, Part 2: Best Practices for Key Management Organization",
-      "SP 800-57 Part 2"
+      "NIST SP 800-57 Part 2"
     ],
     "href": "https://doi.org/10.6028/NIST.SP.800-57p2",
     "docBase": "NIST|SP|800-57|2",
@@ -24814,7 +24814,7 @@
   {
     "id": "NIST.SP.800-57p3",
     "title": "Recommendation for Key Management, Part 3: Application-Specific Key Management Guidance",
-    "label": "SP 800-57 Part 3",
+    "label": "NIST SP 800-57 Part 3",
     "publisher": "NIST",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -24846,7 +24846,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Recommendation for Key Management, Part 3: Application-Specific Key Management Guidance",
-      "SP 800-57 Part 3"
+      "NIST SP 800-57 Part 3"
     ],
     "href": "https://doi.org/10.6028/NIST.SP.800-57p3",
     "docBase": "NIST|SP|800-57|3",
@@ -24896,7 +24896,7 @@
   {
     "id": "NIST.SP.800-57pt2r1",
     "title": "Recommendation for Key Management: Part 2 – Best Practices for Key Management Organizations",
-    "label": "SP 800-57 Part 2 Rev. 1",
+    "label": "NIST SP 800-57 Part 2 Rev. 1",
     "publisher": "NIST",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -24928,7 +24928,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Recommendation for Key Management: Part 2 – Best Practices for Key Management Organizations",
-      "SP 800-57 Part 2 Rev. 1"
+      "NIST SP 800-57 Part 2 Rev. 1"
     ],
     "href": "https://doi.org/10.6028/NIST.SP.800-57pt2r1",
     "docBase": "NIST|SP|800-57|2",
@@ -24937,7 +24937,7 @@
   {
     "id": "NIST.SP.800-57pt3r1",
     "title": "Recommendation for Key Management, Part 3: Application-Specific Key Management Guidance",
-    "label": "SP 800-57 Part 3 Rev. 1",
+    "label": "NIST SP 800-57 Part 3 Rev. 1",
     "publisher": "NIST",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -24969,7 +24969,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Recommendation for Key Management, Part 3: Application-Specific Key Management Guidance",
-      "SP 800-57 Part 3 Rev. 1"
+      "NIST SP 800-57 Part 3 Rev. 1"
     ],
     "href": "https://doi.org/10.6028/NIST.SP.800-57pt3r1",
     "docBase": "NIST|SP|800-57|3",
@@ -25519,7 +25519,7 @@
   {
     "id": "R-REC-BR.1352-1.2002",
     "title": "File format for the exchange of audio programme materials with metadata on information technology media",
-    "label": "BR.1352-1: (2002)",
+    "label": "ITU-R BR.1352-1: (2002)",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -25550,7 +25550,7 @@
     "keywords": [],
     "keywordsSearch": [
       "File format for the exchange of audio programme materials with metadata on information technology media",
-      "BR.1352-1: (2002)"
+      "ITU-R BR.1352-1: (2002)"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/br/R-REC-BR.1352-1-200112-S!!PDF-E.pdf",
     "docBase": "ITU-R|BR|1352|",
@@ -25559,7 +25559,7 @@
   {
     "id": "R-REC-BR.1352-2.2002",
     "title": "File format for the exchange of audio programme materials with metadata on information technology media",
-    "label": "BR.1352-2:2002",
+    "label": "ITU-R BR.1352-2:2002",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -25591,7 +25591,7 @@
     "keywords": [],
     "keywordsSearch": [
       "File format for the exchange of audio programme materials with metadata on information technology media",
-      "BR.1352-2:2002"
+      "ITU-R BR.1352-2:2002"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/br/R-REC-BR.1352-2-200206-S!!PDF-E.pdf",
     "docBase": "ITU-R|BR|1352|",
@@ -25600,7 +25600,7 @@
   {
     "id": "R-REC-BR.1384-2.201103",
     "title": "Parameters for international exchange of multi-channel sound recordings with or without accompanying picture",
-    "label": "BR.1384-2 (03/2011)",
+    "label": "ITU-R BR.1384-2 (03/2011)",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -25631,7 +25631,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Parameters for international exchange of multi-channel sound recordings with or without accompanying picture",
-      "BR.1384-2 (03/2011)"
+      "ITU-R BR.1384-2 (03/2011)"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/br/R-REC-BR.1384-2-201103-W!!PDF-E.pdf",
     "docBase": "ITU-R|BR|1384|",
@@ -25640,7 +25640,7 @@
   {
     "id": "R-REC-BS.1196-a2.1995",
     "title": "Audio coding for digital terrestrial television broadcasting",
-    "label": "BS.1196 (1995) Annex 2",
+    "label": "ITU-R BS.1196 (1995) Annex 2",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -25672,7 +25672,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Audio coding for digital terrestrial television broadcasting",
-      "BS.1196 (1995) Annex 2"
+      "ITU-R BS.1196 (1995) Annex 2"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/bs/R-REC-BS.1196-0-199510-S!!PDF-E.pdf",
     "docBase": "ITU-R|BS|1196|",
@@ -25681,7 +25681,7 @@
   {
     "id": "R-REC-BS.1726-0.200504",
     "title": "Signal level of digital audio accompanying television in international programme exchange",
-    "label": "BS.1726-0 (04/2005)",
+    "label": "ITU-R BS.1726-0 (04/2005)",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -25713,7 +25713,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Signal level of digital audio accompanying television in international programme exchange",
-      "BS.1726-0 (04/2005)"
+      "ITU-R BS.1726-0 (04/2005)"
     ],
     "href": "https://www.itu.int/rec/R-REC-BS.1726-0-200504-I/en",
     "docBase": "ITU-R|BS|1726|",
@@ -25722,7 +25722,7 @@
   {
     "id": "R-REC-BS.1770-3.201208",
     "title": "Algorithms to measure audio programme loudness and true-peak audio level",
-    "label": "BS.1770-3 (08/2012)",
+    "label": "ITU-R BS.1770-3 (08/2012)",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -25753,7 +25753,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Algorithms to measure audio programme loudness and true-peak audio level",
-      "BS.1770-3 (08/2012)"
+      "ITU-R BS.1770-3 (08/2012)"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/bs/R-REC-BS.1770-3-201208-S!!MSW-E.docx",
     "docBase": "ITU-R|BS|1770|",
@@ -25762,7 +25762,7 @@
   {
     "id": "R-REC-BS.1770-4.201510",
     "title": "Algorithms to measure audio programme loudness and true-peak audio level",
-    "label": "BS.1770-4 (10/2015)",
+    "label": "ITU-R BS.1770-4 (10/2015)",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -25794,7 +25794,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Algorithms to measure audio programme loudness and true-peak audio level",
-      "BS.1770-4 (10/2015)"
+      "ITU-R BS.1770-4 (10/2015)"
     ],
     "href": "https://www.itu.int/rec/R-REC-BS.1770-4-201510-S/en",
     "docBase": "ITU-R|BS|1770|",
@@ -25803,7 +25803,7 @@
   {
     "id": "R-REC-BS.2051-2.201807",
     "title": "Advanced sound system for programme production",
-    "label": "BS.2051-2 (07/2018)",
+    "label": "ITU-R BS.2051-2 (07/2018)",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -25834,7 +25834,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Advanced sound system for programme production",
-      "BS.2051-2 (07/2018)"
+      "ITU-R BS.2051-2 (07/2018)"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/bs/R-REC-BS.2051-2-201807-S!!PDF-E.pdf",
     "docBase": "ITU-R|BS|2051|",
@@ -25843,7 +25843,7 @@
   {
     "id": "R-REC-BS.2051-3.202205",
     "title": "Advanced sound system for programme production",
-    "label": "BS.2051-3 (05/2022)",
+    "label": "ITU-R BS.2051-3 (05/2022)",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -25875,7 +25875,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Advanced sound system for programme production",
-      "BS.2051-3 (05/2022)"
+      "ITU-R BS.2051-3 (05/2022)"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/bs/R-REC-BS.2051-3-202205-I!!PDF-E.pdf",
     "docBase": "ITU-R|BS|2051|",
@@ -25884,7 +25884,7 @@
   {
     "id": "R-REC-BT.2020-2.201510",
     "title": "Parameter values for ultra-high definition television systems for production and international programme exchange",
-    "label": "BT.2020-2 (10/2015)",
+    "label": "ITU-R BT.2020-2 (10/2015)",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -25916,7 +25916,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Parameter values for ultra-high definition television systems for production and international programme exchange",
-      "BT.2020-2 (10/2015)"
+      "ITU-R BT.2020-2 (10/2015)"
     ],
     "href": "https://www.itu.int/rec/R-REC-BT.2020-2-201510-I/en",
     "docBase": "ITU-R|BT|2020|",
@@ -25925,7 +25925,7 @@
   {
     "id": "R-REC-BT.2035.201307",
     "title": "A reference viewing environment for evaluation of HDTV program material or completed programmes",
-    "label": "BT.2035 (07/2013)",
+    "label": "ITU-R BT.2035 (07/2013)",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -25957,7 +25957,7 @@
     "keywords": [],
     "keywordsSearch": [
       "A reference viewing environment for evaluation of HDTV program material or completed programmes",
-      "BT.2035 (07/2013)"
+      "ITU-R BT.2035 (07/2013)"
     ],
     "href": "https://www.itu.int/rec/R-REC-BT.2035-0-201307-I",
     "docBase": "ITU-R|BT|2035|",
@@ -25966,7 +25966,7 @@
   {
     "id": "R-REC-BT.2100-1.201706",
     "title": "Image parameter values for high dynamic range television for use in production and international programme exchange",
-    "label": "BT.2100-1 (06/2017)",
+    "label": "ITU-R BT.2100-1 (06/2017)",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -25997,7 +25997,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Image parameter values for high dynamic range television for use in production and international programme exchange",
-      "BT.2100-1 (06/2017)"
+      "ITU-R BT.2100-1 (06/2017)"
     ],
     "href": "https://www.itu.int/rec/R-REC-BT.2100-1-201706-S/en",
     "docBase": "ITU-R|BT|2100|",
@@ -26006,7 +26006,7 @@
   {
     "id": "R-REC-BT.2100-2.201807",
     "title": "The use of componentized workflows for the exchange of non-live television programmes",
-    "label": "BT.2100-2 (07/2018)",
+    "label": "ITU-R BT.2100-2 (07/2018)",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -26038,7 +26038,7 @@
     "keywords": [],
     "keywordsSearch": [
       "The use of componentized workflows for the exchange of non-live television programmes",
-      "BT.2100-2 (07/2018)"
+      "ITU-R BT.2100-2 (07/2018)"
     ],
     "href": "https://www.itu.int/rec/R-REC-BT.2100-2-201807-I/en",
     "docBase": "ITU-R|BT|2100|",
@@ -26047,7 +26047,7 @@
   {
     "id": "R-REC-BT.2153-0.202212",
     "title": "Image parameter values for high dynamic range television for use in production and international programme exchange",
-    "label": "BT.2153-0 (12/2022)",
+    "label": "ITU-R BT.2153-0 (12/2022)",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -26079,7 +26079,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Image parameter values for high dynamic range television for use in production and international programme exchange",
-      "BT.2153-0 (12/2022)"
+      "ITU-R BT.2153-0 (12/2022)"
     ],
     "href": "https://www.itu.int/rec/R-REC-BT.2153-0-202212-I/en",
     "docBase": "ITU-R|BT|2153|",
@@ -26088,7 +26088,7 @@
   {
     "id": "R-REC-BT.2390-10.202111",
     "title": "High dynamic range television for production and international programme exchange",
-    "label": "BT.2390-10 (11/2021)",
+    "label": "ITU-R BT.2390-10 (11/2021)",
     "publisher": "ITU-R",
     "docType": "Report",
     "docTypeAbr": null,
@@ -26120,7 +26120,7 @@
     "keywords": [],
     "keywordsSearch": [
       "High dynamic range television for production and international programme exchange",
-      "BT.2390-10 (11/2021)"
+      "ITU-R BT.2390-10 (11/2021)"
     ],
     "href": "https://www.itu.int/pub/R-REP-BT.2390-10-2021",
     "docBase": "ITU-R|BT|2390|",
@@ -26129,7 +26129,7 @@
   {
     "id": "R-REC-BT.2390-4.201804",
     "title": "High dynamic range television for production and international programme exchange",
-    "label": "BT.2390-4 (04/2018)",
+    "label": "ITU-R BT.2390-4 (04/2018)",
     "publisher": "ITU-R",
     "docType": "Report",
     "docTypeAbr": null,
@@ -26160,7 +26160,7 @@
     "keywords": [],
     "keywordsSearch": [
       "High dynamic range television for production and international programme exchange",
-      "BT.2390-4 (04/2018)"
+      "ITU-R BT.2390-4 (04/2018)"
     ],
     "href": "https://www.itu.int/pub/R-REP-BT.2390-4-2018",
     "docBase": "ITU-R|BT|2390|",
@@ -26169,7 +26169,7 @@
   {
     "id": "R-REC-BT.2390-8.202002",
     "title": "High dynamic range television for production and international programme exchange",
-    "label": "BT.2390-8 (02/2020)",
+    "label": "ITU-R BT.2390-8 (02/2020)",
     "publisher": "ITU-R",
     "docType": "Report",
     "docTypeAbr": null,
@@ -26200,7 +26200,7 @@
     "keywords": [],
     "keywordsSearch": [
       "High dynamic range television for production and international programme exchange",
-      "BT.2390-8 (02/2020)"
+      "ITU-R BT.2390-8 (02/2020)"
     ],
     "href": "https://www.itu.int/pub/R-REP-BT.2390-8-2020",
     "docBase": "ITU-R|BT|2390|",
@@ -26209,7 +26209,7 @@
   {
     "id": "R-REC-BT.470-6.199811",
     "title": "Conventional television systems",
-    "label": "BT.470-6 (11/98)",
+    "label": "ITU-R BT.470-6 (11/98)",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -26241,7 +26241,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Conventional television systems",
-      "BT.470-6 (11/98)"
+      "ITU-R BT.470-6 (11/98)"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.470-6-199811-S!!PDF-E.pdf",
     "docBase": "ITU-R|BT|470|",
@@ -26250,7 +26250,7 @@
   {
     "id": "R-REC-BT.6-270.201103",
     "title": "Studio encoding parameters of digital television for standard 4:3 and wide screen 16:9 aspect ratios",
-    "label": "BT.6/270(Rev1) (03/11)",
+    "label": "ITU-R BT.6/270(Rev1) (03/11)",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -26282,7 +26282,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Studio encoding parameters of digital television for standard 4:3 and wide screen 16:9 aspect ratios",
-      "BT.6/270(Rev1) (03/11)"
+      "ITU-R BT.6/270(Rev1) (03/11)"
     ],
     "href": "https://www.itu.int/rec/R-REC-BT.601-7-201103-P/en",
     "docBase": "ITU-R|BT|6|",
@@ -26291,7 +26291,7 @@
   {
     "id": "R-REC-BT.601-4.199510",
     "title": "Studio encoding parameters of digital television for standard 4:3 and wide screen 16:9 aspect ratios",
-    "label": "BT.601.4 (10/95)",
+    "label": "ITU-R BT.601.4 (10/95)",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -26322,7 +26322,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Studio encoding parameters of digital television for standard 4:3 and wide screen 16:9 aspect ratios",
-      "BT.601.4 (10/95)"
+      "ITU-R BT.601.4 (10/95)"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.601-4-199407-S!!MSW-E.doc",
     "docBase": "ITU-R|BT|601|",
@@ -26331,7 +26331,7 @@
   {
     "id": "R-REC-BT.601-5.199510",
     "title": "Studio encoding parameters of digital television for standard 4:3 and wide screen 16:9 aspect ratios",
-    "label": "BT.601.5 (10/95)",
+    "label": "ITU-R BT.601.5 (10/95)",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -26362,7 +26362,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Studio encoding parameters of digital television for standard 4:3 and wide screen 16:9 aspect ratios",
-      "BT.601.5 (10/95)"
+      "ITU-R BT.601.5 (10/95)"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.601-5-199510-S!!PDF-E.pdf",
     "docBase": "ITU-R|BT|601|",
@@ -26371,7 +26371,7 @@
   {
     "id": "R-REC-BT.601-6.200701",
     "title": "Studio encoding parameters of digital television for standard 4:3 and wide screen 16:9 aspect ratios",
-    "label": "BT.601.6 (01/07)",
+    "label": "ITU-R BT.601.6 (01/07)",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -26402,7 +26402,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Studio encoding parameters of digital television for standard 4:3 and wide screen 16:9 aspect ratios",
-      "BT.601.6 (01/07)"
+      "ITU-R BT.601.6 (01/07)"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.601-6-200701-S!!PDF-E.pdf",
     "docBase": "ITU-R|BT|601|",
@@ -26411,7 +26411,7 @@
   {
     "id": "R-REC-BT.601-7.201103",
     "title": "Studio encoding parameters of digital television for standard 4:3 and wide screen 16:9 aspect ratios",
-    "label": "BT.601.7 (03/2011)",
+    "label": "ITU-R BT.601.7 (03/2011)",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -26443,7 +26443,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Studio encoding parameters of digital television for standard 4:3 and wide screen 16:9 aspect ratios",
-      "BT.601.7 (03/2011)"
+      "ITU-R BT.601.7 (03/2011)"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.601-7-201103-I!!PDF-E.pdf",
     "docBase": "ITU-R|BT|601|",
@@ -26452,7 +26452,7 @@
   {
     "id": "R-REC-BT.656.199802",
     "title": "Interface for digital component video signals in 525-line and 625-line television systems operating at the 4:2:2 level of Recommendation ITU-R BT.601",
-    "label": "BT.656 (02/98)",
+    "label": "ITU-R BT.656 (02/98)",
     "publisher": "ITU-R",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -26483,7 +26483,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Interface for digital component video signals in 525-line and 625-line television systems operating at the 4:2:2 level of Recommendation ITU-R BT.601",
-      "BT.656 (02/98)"
+      "ITU-R BT.656 (02/98)"
     ],
     "href": "https://www.itu.int/rec/R-REC-BT.656/en",
     "docBase": "ITU-R|BT|656|",
@@ -26492,7 +26492,7 @@
   {
     "id": "R-REC-BT.709-1.199311",
     "title": "Parameter values for the HDTV standards for production and international programme exchange",
-    "label": "BT.709.1 (11/93)",
+    "label": "ITU-R BT.709.1 (11/93)",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -26523,7 +26523,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Parameter values for the HDTV standards for production and international programme exchange",
-      "BT.709.1 (11/93)"
+      "ITU-R BT.709.1 (11/93)"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.709-1-199311-S!!MSW-E.doc",
     "docBase": "ITU-R|BT|709|",
@@ -26532,7 +26532,7 @@
   {
     "id": "R-REC-BT.709-2.199510",
     "title": "Parameter values for the HDTV standards for production and international programme exchange",
-    "label": "BT.709.2 (10/95)",
+    "label": "ITU-R BT.709.2 (10/95)",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -26563,7 +26563,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Parameter values for the HDTV standards for production and international programme exchange",
-      "BT.709.2 (10/95)"
+      "ITU-R BT.709.2 (10/95)"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.709-2-199510-S!!MSW-E.doc",
     "docBase": "ITU-R|BT|709|",
@@ -26572,7 +26572,7 @@
   {
     "id": "R-REC-BT.709-3.199802",
     "title": "Parameter values for the HDTV standards for production and international programme exchange",
-    "label": "BT.709.3 (02/98)",
+    "label": "ITU-R BT.709.3 (02/98)",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -26603,7 +26603,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Parameter values for the HDTV standards for production and international programme exchange",
-      "BT.709.3 (02/98)"
+      "ITU-R BT.709.3 (02/98)"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.709-3-199802-S!!PDF-E.pdf",
     "docBase": "ITU-R|BT|709|",
@@ -26612,7 +26612,7 @@
   {
     "id": "R-REC-BT.709-4.200003",
     "title": "Parameter values for the HDTV standards for production and international programme exchange",
-    "label": "BT.709.4 (03/00)",
+    "label": "ITU-R BT.709.4 (03/00)",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -26643,7 +26643,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Parameter values for the HDTV standards for production and international programme exchange",
-      "BT.709.4 (03/00)"
+      "ITU-R BT.709.4 (03/00)"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.709-4-200003-S!!PDF-E.pdf",
     "docBase": "ITU-R|BT|709|",
@@ -26652,7 +26652,7 @@
   {
     "id": "R-REC-BT.709-5.200204",
     "title": "Parameter values for the HDTV standards for production and international programme exchange",
-    "label": "BT.709.5 (04/02)",
+    "label": "ITU-R BT.709.5 (04/02)",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -26683,7 +26683,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Parameter values for the HDTV standards for production and international programme exchange",
-      "BT.709.5 (04/02)"
+      "ITU-R BT.709.5 (04/02)"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.709-5-200204-S!!PDF-E.pdf",
     "docBase": "ITU-R|BT|709|",
@@ -26692,7 +26692,7 @@
   {
     "id": "R-REC-BT.709-6.201506",
     "title": "Parameter values for the HDTV standards for production and international programme exchange",
-    "label": "BT.709.6 (06/2015)",
+    "label": "ITU-R BT.709.6 (06/2015)",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -26724,7 +26724,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Parameter values for the HDTV standards for production and international programme exchange",
-      "BT.709.6 (06/2015)"
+      "ITU-R BT.709.6 (06/2015)"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.709-6-201506-I!!PDF-E.pdf",
     "docBase": "ITU-R|BT|709|",
@@ -26733,7 +26733,7 @@
   {
     "id": "RFC1035",
     "title": "DOMAIN NAMES - IMPLEMENTATION AND SPECIFICATION",
-    "label": "RFC 1035",
+    "label": "IETF RFC 1035",
     "publisher": "IETF",
     "docType": "Informational",
     "docTypeAbr": null,
@@ -26765,7 +26765,7 @@
     "keywords": [],
     "keywordsSearch": [
       "DOMAIN NAMES - IMPLEMENTATION AND SPECIFICATION",
-      "RFC 1035"
+      "IETF RFC 1035"
     ],
     "href": "https://www.rfc-editor.org/rfc/rfc1035",
     "docBase": "IETF|RFC|1035|",
@@ -26774,7 +26774,7 @@
   {
     "id": "RFC1321",
     "title": "The MD5 Message-Digest Algorithm",
-    "label": "RFC 1321",
+    "label": "IETF RFC 1321",
     "publisher": "IETF",
     "docType": "Informational",
     "docTypeAbr": null,
@@ -26806,7 +26806,7 @@
     "keywords": [],
     "keywordsSearch": [
       "The MD5 Message-Digest Algorithm",
-      "RFC 1321"
+      "IETF RFC 1321"
     ],
     "href": "https://www.rfc-editor.org/rfc/rfc1321",
     "docBase": "IETF|RFC|1321|",
@@ -26815,7 +26815,7 @@
   {
     "id": "RFC1494",
     "title": "Equivalences between 1988 X.400 and RFC-822 Message Bodies",
-    "label": "RFC 1494",
+    "label": "IETF RFC 1494",
     "publisher": "IETF",
     "docType": "Informational",
     "docTypeAbr": null,
@@ -26846,7 +26846,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Equivalences between 1988 X.400 and RFC-822 Message Bodies",
-      "RFC 1494"
+      "IETF RFC 1494"
     ],
     "href": "https://www.rfc-editor.org/rfc/rfc1494.html",
     "docBase": "IETF|RFC|1494|",
@@ -26855,7 +26855,7 @@
   {
     "id": "RFC1521",
     "title": "MIME (Multipurpose Internet Mail Extensions) Part One: Mechanisms for Specifying and Describing the Format of Internet Message Bodies",
-    "label": "RFC 1521",
+    "label": "IETF RFC 1521",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -26888,7 +26888,7 @@
     "keywords": [],
     "keywordsSearch": [
       "MIME (Multipurpose Internet Mail Extensions) Part One: Mechanisms for Specifying and Describing the Format of Internet Message Bodies",
-      "RFC 1521"
+      "IETF RFC 1521"
     ],
     "href": "https://tools.ietf.org/html/rfc1521",
     "docBase": "IETF|RFC|1521|",
@@ -26897,7 +26897,7 @@
   {
     "id": "RFC1590",
     "title": "Media Type Registration Procedure",
-    "label": "RFC 1590",
+    "label": "IETF RFC 1590",
     "publisher": "IETF",
     "docType": "Informational",
     "docTypeAbr": null,
@@ -26929,7 +26929,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Media Type Registration Procedure",
-      "RFC 1590"
+      "IETF RFC 1590"
     ],
     "href": "https://tools.ietf.org/html/rfc1590",
     "docBase": "IETF|RFC|1590|",
@@ -26938,7 +26938,7 @@
   {
     "id": "RFC1737",
     "title": "Functional Requirements for Uniform Resource Names",
-    "label": "RFC 1737",
+    "label": "IETF RFC 1737",
     "publisher": "IETF",
     "docType": "Informational",
     "docTypeAbr": null,
@@ -26970,7 +26970,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Functional Requirements for Uniform Resource Names",
-      "RFC 1737"
+      "IETF RFC 1737"
     ],
     "href": "https://tools.ietf.org/html/rfc1737",
     "docBase": "IETF|RFC|1737|",
@@ -26979,7 +26979,7 @@
   {
     "id": "RFC1738",
     "title": "Uniform Resource Locators (URL)",
-    "label": "RFC 1738",
+    "label": "IETF RFC 1738",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -27011,7 +27011,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Uniform Resource Locators (URL)",
-      "RFC 1738"
+      "IETF RFC 1738"
     ],
     "href": "https://www.ietf.org/rfc/rfc1738.txt",
     "docBase": "IETF|RFC|1738|",
@@ -27020,7 +27020,7 @@
   {
     "id": "RFC2045",
     "title": "Multipurpose Internet Mail Extensions (MIME) Part One: Format of Internet Message Bodies",
-    "label": "RFC 2045",
+    "label": "IETF RFC 2045",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -27052,7 +27052,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Multipurpose Internet Mail Extensions (MIME) Part One: Format of Internet Message Bodies",
-      "RFC 2045"
+      "IETF RFC 2045"
     ],
     "href": "https://tools.ietf.org/html/rfc2045",
     "docBase": "IETF|RFC|2045|",
@@ -27061,7 +27061,7 @@
   {
     "id": "RFC2046",
     "title": "Multipurpose Internet Mail Extensions (MIME) Part Two: Media Types",
-    "label": "RFC 2046",
+    "label": "IETF RFC 2046",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -27094,7 +27094,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Multipurpose Internet Mail Extensions (MIME) Part Two: Media Types",
-      "RFC 2046"
+      "IETF RFC 2046"
     ],
     "href": "https://tools.ietf.org/html/rfc2046",
     "docBase": "IETF|RFC|2046|",
@@ -27103,7 +27103,7 @@
   {
     "id": "RFC2077",
     "title": "The Model Primary Content Type for Multipurpose Internet Mail Extensions",
-    "label": "RFC 2077",
+    "label": "IETF RFC 2077",
     "publisher": "IETF",
     "docType": "Informational",
     "docTypeAbr": null,
@@ -27136,7 +27136,7 @@
     "keywords": [],
     "keywordsSearch": [
       "The Model Primary Content Type for Multipurpose Internet Mail Extensions",
-      "RFC 2077"
+      "IETF RFC 2077"
     ],
     "href": "https://www.rfc-editor.org/rfc/rfc2077.html",
     "docBase": "IETF|RFC|2077|",
@@ -27145,7 +27145,7 @@
   {
     "id": "RFC2104",
     "title": "HMAC: Keyed-Hashing for Message Authentication",
-    "label": "RFC 2104",
+    "label": "IETF RFC 2104",
     "publisher": "IETF",
     "docType": "Informational",
     "docTypeAbr": null,
@@ -27178,7 +27178,7 @@
     "keywords": [],
     "keywordsSearch": [
       "HMAC: Keyed-Hashing for Message Authentication",
-      "RFC 2104"
+      "IETF RFC 2104"
     ],
     "href": "https://tools.ietf.org/html/rfc2104",
     "docBase": "IETF|RFC|2104|",
@@ -27187,7 +27187,7 @@
   {
     "id": "RFC2141",
     "title": "URN Syntax",
-    "label": "RFC 2141",
+    "label": "IETF RFC 2141",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -27219,7 +27219,7 @@
     "keywords": [],
     "keywordsSearch": [
       "URN Syntax",
-      "RFC 2141"
+      "IETF RFC 2141"
     ],
     "href": "https://tools.ietf.org/html/rfc2141",
     "docBase": "IETF|RFC|2141|",
@@ -27228,7 +27228,7 @@
   {
     "id": "RFC2234",
     "title": "Augmented BNF for Syntax Specifications: ABNF",
-    "label": "RFC 2234",
+    "label": "IETF RFC 2234",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -27260,7 +27260,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Augmented BNF for Syntax Specifications: ABNF",
-      "RFC 2234"
+      "IETF RFC 2234"
     ],
     "href": "https://tools.ietf.org/html/rfc2234",
     "docBase": "IETF|RFC|2234|",
@@ -27269,7 +27269,7 @@
   {
     "id": "RFC2246",
     "title": "The TLS Protocol Version 1.0",
-    "label": "RFC 2246",
+    "label": "IETF RFC 2246",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -27301,7 +27301,7 @@
     "keywords": [],
     "keywordsSearch": [
       "The TLS Protocol Version 1.0",
-      "RFC 2246"
+      "IETF RFC 2246"
     ],
     "href": "https://tools.ietf.org/html/rfc2246",
     "docBase": "IETF|RFC|2246|",
@@ -27310,7 +27310,7 @@
   {
     "id": "RFC2253",
     "title": "Lightweight Directory Access Protocol (v3): UTF-8 String Representation of Distinguished Names",
-    "label": "RFC 2253",
+    "label": "IETF RFC 2253",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -27342,7 +27342,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Lightweight Directory Access Protocol (v3): UTF-8 String Representation of Distinguished Names",
-      "RFC 2253"
+      "IETF RFC 2253"
     ],
     "href": "https://tools.ietf.org/html/rfc2253",
     "docBase": "IETF|RFC|2253|",
@@ -27351,7 +27351,7 @@
   {
     "id": "RFC2302",
     "title": "Tag Image File Format (TIFF) - image/tiff MIME Sub-type Registration",
-    "label": "RFC 2302",
+    "label": "IETF RFC 2302",
     "publisher": "IETF",
     "docType": "Draft Standard",
     "docTypeAbr": null,
@@ -27383,7 +27383,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Tag Image File Format (TIFF) - image/tiff MIME Sub-type Registration",
-      "RFC 2302"
+      "IETF RFC 2302"
     ],
     "href": "https://datatracker.ietf.org/doc/html/rfc2302",
     "docBase": "IETF|RFC|2302|",
@@ -27392,7 +27392,7 @@
   {
     "id": "RFC2396",
     "title": "Uniform Resource Identifiers (URI): Generic Syntax",
-    "label": "RFC 2396",
+    "label": "IETF RFC 2396",
     "publisher": "IETF",
     "docType": "Draft Standard",
     "docTypeAbr": null,
@@ -27424,7 +27424,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Uniform Resource Identifiers (URI): Generic Syntax",
-      "RFC 2396"
+      "IETF RFC 2396"
     ],
     "href": "https://www.ietf.org/rfc/rfc2396.txt",
     "docBase": "IETF|RFC|2396|",
@@ -27433,7 +27433,7 @@
   {
     "id": "RFC2401",
     "title": "Security Architecture for the Internet Protocol",
-    "label": "RFC 2401",
+    "label": "IETF RFC 2401",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -27465,7 +27465,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Security Architecture for the Internet Protocol",
-      "RFC 2401"
+      "IETF RFC 2401"
     ],
     "href": "https://tools.ietf.org/html/rfc2401",
     "docBase": "IETF|RFC|2401|",
@@ -27474,7 +27474,7 @@
   {
     "id": "RFC2437",
     "title": "PKCS #1: RSA Cryptography Specifications Version 2.0",
-    "label": "RFC 2437",
+    "label": "IETF RFC 2437",
     "publisher": "IETF",
     "docType": "Informational",
     "docTypeAbr": null,
@@ -27506,7 +27506,7 @@
     "keywords": [],
     "keywordsSearch": [
       "PKCS #1: RSA Cryptography Specifications Version 2.0",
-      "RFC 2437"
+      "IETF RFC 2437"
     ],
     "href": "https://tools.ietf.org/html/rfc2437",
     "docBase": "IETF|RFC|2437|",
@@ -27515,7 +27515,7 @@
   {
     "id": "RFC2459",
     "title": "Internet X.509 Public Key Infrastructure Certificate and CRL Profile",
-    "label": "RFC 2459",
+    "label": "IETF RFC 2459",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -27547,7 +27547,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Internet X.509 Public Key Infrastructure Certificate and CRL Profile",
-      "RFC 2459"
+      "IETF RFC 2459"
     ],
     "href": "https://tools.ietf.org/html/rfc2459",
     "docBase": "IETF|RFC|2459|",
@@ -27556,7 +27556,7 @@
   {
     "id": "RFC2518",
     "title": " HTTP Extensions for Distributed Authoring -- WEBDAV",
-    "label": "RFC 2518",
+    "label": "IETF RFC 2518",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -27588,7 +27588,7 @@
     "keywords": [],
     "keywordsSearch": [
       "HTTP Extensions for Distributed Authoring -- WEBDAV",
-      "RFC 2518"
+      "IETF RFC 2518"
     ],
     "href": "https://www.rfc-editor.org/rfc/rfc2518",
     "docBase": "IETF|RFC|2518|",
@@ -27597,7 +27597,7 @@
   {
     "id": "RFC2616",
     "title": "Hypertext Transfer Protocol -- HTTP/1.1",
-    "label": "RFC 2616",
+    "label": "IETF RFC 2616",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -27629,7 +27629,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Hypertext Transfer Protocol -- HTTP/1.1",
-      "RFC 2616"
+      "IETF RFC 2616"
     ],
     "href": "https://tools.ietf.org/html/rfc2616",
     "docBase": "IETF|RFC|2616|",
@@ -27638,7 +27638,7 @@
   {
     "id": "RFC2617",
     "title": "HTTP Authentication: Basic and Digest Access Authentication",
-    "label": "RFC 2617",
+    "label": "IETF RFC 2617",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -27670,7 +27670,7 @@
     "keywords": [],
     "keywordsSearch": [
       "HTTP Authentication: Basic and Digest Access Authentication",
-      "RFC 2617"
+      "IETF RFC 2617"
     ],
     "href": "https://tools.ietf.org/html/rfc2617",
     "docBase": "IETF|RFC|2617|",
@@ -27679,7 +27679,7 @@
   {
     "id": "RFC2646",
     "title": "The Text/Plain Format Parameter",
-    "label": "RFC 2646",
+    "label": "IETF RFC 2646",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -27711,7 +27711,7 @@
     "keywords": [],
     "keywordsSearch": [
       "The Text/Plain Format Parameter",
-      "RFC 2646"
+      "IETF RFC 2646"
     ],
     "href": "https://tools.ietf.org/html/rfc2646",
     "docBase": "IETF|RFC|2646|",
@@ -27720,7 +27720,7 @@
   {
     "id": "RFC2693",
     "title": "SPKI Certificate Theory",
-    "label": "RFC 2693",
+    "label": "IETF RFC 2693",
     "publisher": "IETF",
     "docType": "Experimental",
     "docTypeAbr": null,
@@ -27752,7 +27752,7 @@
     "keywords": [],
     "keywordsSearch": [
       "SPKI Certificate Theory",
-      "RFC 2693"
+      "IETF RFC 2693"
     ],
     "href": "https://tools.ietf.org/html/rfc2693",
     "docBase": "IETF|RFC|2693|",
@@ -27761,7 +27761,7 @@
   {
     "id": "RFC2818",
     "title": "HTTP Over TLS",
-    "label": "RFC 2818",
+    "label": "IETF RFC 2818",
     "publisher": "IETF",
     "docType": "Informational",
     "docTypeAbr": null,
@@ -27794,7 +27794,7 @@
     "keywords": [],
     "keywordsSearch": [
       "HTTP Over TLS",
-      "RFC 2818"
+      "IETF RFC 2818"
     ],
     "href": "https://tools.ietf.org/html/rfc2818",
     "docBase": "IETF|RFC|2818|",
@@ -27803,7 +27803,7 @@
   {
     "id": "RFC2898",
     "title": "PKCS #5: Password-Based Cryptography Specification Version 2.0",
-    "label": "RFC 2898",
+    "label": "IETF RFC 2898",
     "publisher": "IETF",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -27835,7 +27835,7 @@
     "keywords": [],
     "keywordsSearch": [
       "PKCS #5: Password-Based Cryptography Specification Version 2.0",
-      "RFC 2898"
+      "IETF RFC 2898"
     ],
     "href": "https://www.ietf.org/rfc/rfc2898.txt",
     "docBase": "IETF|RFC|2898|",
@@ -27844,7 +27844,7 @@
   {
     "id": "RFC3023",
     "title": "XML Media Types",
-    "label": "RFC 3023",
+    "label": "IETF RFC 3023",
     "publisher": "IETF",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -27876,7 +27876,7 @@
     "keywords": [],
     "keywordsSearch": [
       "XML Media Types",
-      "RFC 3023"
+      "IETF RFC 3023"
     ],
     "href": "https://datatracker.ietf.org/doc/html/rfc3023",
     "docBase": "IETF|RFC|3023|",
@@ -27885,7 +27885,7 @@
   {
     "id": "RFC3061",
     "title": "A URN Namespace of Object Identifiers",
-    "label": "RFC 3061",
+    "label": "IETF RFC 3061",
     "publisher": "IETF",
     "docType": "Best Practice",
     "docTypeAbr": null,
@@ -27917,7 +27917,7 @@
     "keywords": [],
     "keywordsSearch": [
       "A URN Namespace of Object Identifiers",
-      "RFC 3061"
+      "IETF RFC 3061"
     ],
     "href": "https://www.rfc-editor.org/rfc/inline-errata/rfc3061.html",
     "docBase": "IETF|RFC|3061|",
@@ -27926,7 +27926,7 @@
   {
     "id": "RFC3066",
     "title": "Tags for the Identification of Languages",
-    "label": "RFC 3066",
+    "label": "IETF RFC 3066",
     "publisher": "IETF",
     "docType": "Best Practice",
     "docTypeAbr": null,
@@ -27958,7 +27958,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Tags for the Identification of Languages",
-      "RFC 3066"
+      "IETF RFC 3066"
     ],
     "href": "https://tools.ietf.org/html/rfc3066",
     "docBase": "IETF|RFC|3066|",
@@ -27967,7 +27967,7 @@
   {
     "id": "RFC3174",
     "title": "US Secure Hash Algorithm 1 (SHA1)",
-    "label": "RFC 3174",
+    "label": "IETF RFC 3174",
     "publisher": "IETF",
     "docType": "Informational",
     "docTypeAbr": null,
@@ -28002,7 +28002,7 @@
     ],
     "keywordsSearch": [
       "US Secure Hash Algorithm 1 (SHA1)",
-      "RFC 3174"
+      "IETF RFC 3174"
     ],
     "href": "https://tools.ietf.org/html/rfc3174",
     "docBase": "IETF|RFC|3174|",
@@ -28011,7 +28011,7 @@
   {
     "id": "RFC3268",
     "title": "Advanced Encryption Standard (AES) Ciphersuites for Transport Layer Security (TLS)",
-    "label": "RFC 3268",
+    "label": "IETF RFC 3268",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -28043,7 +28043,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Advanced Encryption Standard (AES) Ciphersuites for Transport Layer Security (TLS)",
-      "RFC 3268"
+      "IETF RFC 3268"
     ],
     "href": "https://tools.ietf.org/html/rfc3268",
     "docBase": "IETF|RFC|3268|",
@@ -28052,7 +28052,7 @@
   {
     "id": "RFC3275",
     "title": "(Extensible Markup Language) XML-Signature Syntax and Processing",
-    "label": "RFC 3275",
+    "label": "IETF RFC 3275",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -28084,7 +28084,7 @@
     "keywords": [],
     "keywordsSearch": [
       "(Extensible Markup Language) XML-Signature Syntax and Processing",
-      "RFC 3275"
+      "IETF RFC 3275"
     ],
     "href": "https://tools.ietf.org/html/rfc3275",
     "docBase": "IETF|RFC|3275|",
@@ -28093,7 +28093,7 @@
   {
     "id": "RFC3280",
     "title": "Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile",
-    "label": "RFC 3280",
+    "label": "IETF RFC 3280",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -28125,7 +28125,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile",
-      "RFC 3280"
+      "IETF RFC 3280"
     ],
     "href": "https://tools.ietf.org/html/rfc3280",
     "docBase": "IETF|RFC|3280|",
@@ -28134,7 +28134,7 @@
   {
     "id": "RFC3302",
     "title": "Tag Image File Format (TIFF) - image/tiff MIME Sub-type Registration",
-    "label": "RFC 2302",
+    "label": "IETF RFC 2302",
     "publisher": "IETF",
     "docType": "Draft Standard",
     "docTypeAbr": null,
@@ -28166,7 +28166,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Tag Image File Format (TIFF) - image/tiff MIME Sub-type Registration",
-      "RFC 2302"
+      "IETF RFC 2302"
     ],
     "href": "https://datatracker.ietf.org/doc/html/rfc3302",
     "docBase": "IETF|RFC|3302|",
@@ -28175,7 +28175,7 @@
   {
     "id": "RFC3339",
     "title": "Date and Time on the Internet: Timestamps",
-    "label": "RFC 3339",
+    "label": "IETF RFC 3339",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -28207,7 +28207,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Date and Time on the Internet: Timestamps",
-      "RFC 3339"
+      "IETF RFC 3339"
     ],
     "href": "https://tools.ietf.org/html/rfc3339",
     "docBase": "IETF|RFC|3339|",
@@ -28216,7 +28216,7 @@
   {
     "id": "RFC3406",
     "title": "Uniform Resource Names (URN) Namespace Definition Mechanisms",
-    "label": "RFC 3406",
+    "label": "IETF RFC 3406",
     "publisher": "IETF",
     "docType": "Best Practice",
     "docTypeAbr": null,
@@ -28248,7 +28248,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Uniform Resource Names (URN) Namespace Definition Mechanisms",
-      "RFC 3406"
+      "IETF RFC 3406"
     ],
     "href": "https://tools.ietf.org/html/rfc3406",
     "docBase": "IETF|RFC|3406|",
@@ -28257,7 +28257,7 @@
   {
     "id": "RFC3447",
     "title": "Public-Key Cryptography Standards (PKCS) #1: RSA Cryptography Specifications Version 2.1",
-    "label": "RFC 3447",
+    "label": "IETF RFC 3447",
     "publisher": "IETF",
     "docType": "Informational",
     "docTypeAbr": null,
@@ -28289,7 +28289,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Public-Key Cryptography Standards (PKCS) #1: RSA Cryptography Specifications Version 2.1",
-      "RFC 3447"
+      "IETF RFC 3447"
     ],
     "href": "https://tools.ietf.org/html/rfc3447",
     "docBase": "IETF|RFC|3447|",
@@ -28298,7 +28298,7 @@
   {
     "id": "RFC3629",
     "title": "UTF-8, a transformation format of ISO 10646",
-    "label": "RFC 3629",
+    "label": "IETF RFC 3629",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -28330,7 +28330,7 @@
     "keywords": [],
     "keywordsSearch": [
       "UTF-8, a transformation format of ISO 10646",
-      "RFC 3629"
+      "IETF RFC 3629"
     ],
     "href": "https://tools.ietf.org/html/rfc3629",
     "docBase": "IETF|RFC|3629|",
@@ -28339,7 +28339,7 @@
   {
     "id": "RFC3676",
     "title": "The Text/Plain Format and DelSp Parameters",
-    "label": "RFC 3676",
+    "label": "IETF RFC 3676",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -28371,7 +28371,7 @@
     "keywords": [],
     "keywordsSearch": [
       "The Text/Plain Format and DelSp Parameters",
-      "RFC 3676"
+      "IETF RFC 3676"
     ],
     "href": "https://tools.ietf.org/html/rfc3676",
     "docBase": "IETF|RFC|3676|",
@@ -28380,7 +28380,7 @@
   {
     "id": "RFC3798",
     "title": "Message Disposition Notification",
-    "label": "RFC 3798",
+    "label": "IETF RFC 3798",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -28412,7 +28412,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Message Disposition Notification",
-      "RFC 3798"
+      "IETF RFC 3798"
     ],
     "href": "https://tools.ietf.org/html/rfc3798",
     "docBase": "IETF|RFC|3798|",
@@ -28421,7 +28421,7 @@
   {
     "id": "RFC3986",
     "title": "Uniform Resource Identifier (URI): Generic Syntax",
-    "label": "RFC 3986",
+    "label": "IETF RFC 3986",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -28454,7 +28454,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Uniform Resource Identifier (URI): Generic Syntax",
-      "RFC 3986"
+      "IETF RFC 3986"
     ],
     "href": "https://tools.ietf.org/html/rfc3986",
     "docBase": "IETF|RFC|3986|",
@@ -28463,7 +28463,7 @@
   {
     "id": "RFC4051",
     "title": "Additional XML Security Uniform Resource Identifiers (URIs)",
-    "label": "RFC 4051",
+    "label": "IETF RFC 4051",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -28495,7 +28495,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Additional XML Security Uniform Resource Identifiers (URIs)",
-      "RFC 4051"
+      "IETF RFC 4051"
     ],
     "href": "https://tools.ietf.org/html/rfc4051",
     "docBase": "IETF|RFC|4051|",
@@ -28504,7 +28504,7 @@
   {
     "id": "RFC4055",
     "title": "Additional Algorithms and Identifiers for RSA Cryptography for use in the Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile",
-    "label": "RFC 4055",
+    "label": "IETF RFC 4055",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -28537,7 +28537,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Additional Algorithms and Identifiers for RSA Cryptography for use in the Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile",
-      "RFC 4055"
+      "IETF RFC 4055"
     ],
     "href": "https://tools.ietf.org/html/rfc4055",
     "docBase": "IETF|RFC|4055|",
@@ -28546,7 +28546,7 @@
   {
     "id": "RFC4122",
     "title": "A Universally Unique IDentifier (UUID) URN Namespace",
-    "label": "RFC 4122",
+    "label": "IETF RFC 4122",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -28578,7 +28578,7 @@
     "keywords": [],
     "keywordsSearch": [
       "A Universally Unique IDentifier (UUID) URN Namespace",
-      "RFC 4122"
+      "IETF RFC 4122"
     ],
     "href": "https://tools.ietf.org/html/rfc4122",
     "docBase": "IETF|RFC|4122|",
@@ -28587,7 +28587,7 @@
   {
     "id": "RFC4234",
     "title": "Augmented BNF for Syntax Specifications: ABNF",
-    "label": "RFC 4234",
+    "label": "IETF RFC 4234",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -28619,7 +28619,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Augmented BNF for Syntax Specifications: ABNF",
-      "RFC 4234"
+      "IETF RFC 4234"
     ],
     "href": "https://tools.ietf.org/html/rfc4234",
     "docBase": "IETF|RFC|4234|",
@@ -28628,7 +28628,7 @@
   {
     "id": "RFC4246",
     "title": "International Standard Audiovisual Number (ISAN) URN Definition",
-    "label": "RFC 4246",
+    "label": "IETF RFC 4246",
     "publisher": "IETF",
     "docType": "Informational",
     "docTypeAbr": null,
@@ -28660,7 +28660,7 @@
     "keywords": [],
     "keywordsSearch": [
       "International Standard Audiovisual Number (ISAN) URN Definition",
-      "RFC 4246"
+      "IETF RFC 4246"
     ],
     "href": "https://tools.ietf.org/html/rfc4246",
     "docBase": "IETF|RFC|4246|",
@@ -28669,7 +28669,7 @@
   {
     "id": "RFC4288",
     "title": "Media Type Specifications and Registration Procedures",
-    "label": "RFC 4288",
+    "label": "IETF RFC 4288",
     "publisher": "IETF",
     "docType": "Best Practice",
     "docTypeAbr": null,
@@ -28701,7 +28701,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Media Type Specifications and Registration Procedures",
-      "RFC 4288"
+      "IETF RFC 4288"
     ],
     "href": "https://tools.ietf.org/html/rfc4288",
     "docBase": "IETF|RFC|4288|",
@@ -28710,7 +28710,7 @@
   {
     "id": "RFC4301",
     "title": "Security Architecture for the Internet Protocol",
-    "label": "RFC 4301",
+    "label": "IETF RFC 4301",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -28743,7 +28743,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Security Architecture for the Internet Protocol",
-      "RFC 4301"
+      "IETF RFC 4301"
     ],
     "href": "https://tools.ietf.org/html/rfc4301",
     "docBase": "IETF|RFC|4301|",
@@ -28752,7 +28752,7 @@
   {
     "id": "RFC4346",
     "title": "The Transport Layer Security (TLS) Protocol Version 1.1",
-    "label": "RFC 4346",
+    "label": "IETF RFC 4346",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -28784,7 +28784,7 @@
     "keywords": [],
     "keywordsSearch": [
       "The Transport Layer Security (TLS) Protocol Version 1.1",
-      "RFC 4346"
+      "IETF RFC 4346"
     ],
     "href": "https://tools.ietf.org/html/rfc4346",
     "docBase": "IETF|RFC|4346|",
@@ -28793,7 +28793,7 @@
   {
     "id": "RFC4452",
     "title": "The 'info' URI Scheme for Information Assets with Identifiers in Public Namespaces",
-    "label": "RFC 4452",
+    "label": "IETF RFC 4452",
     "publisher": "IETF",
     "docType": "Informational",
     "docTypeAbr": null,
@@ -28825,7 +28825,7 @@
     "keywords": [],
     "keywordsSearch": [
       "The 'info' URI Scheme for Information Assets with Identifiers in Public Namespaces",
-      "RFC 4452"
+      "IETF RFC 4452"
     ],
     "href": "https://datatracker.ietf.org/doc/html/rfc4452",
     "docBase": "IETF|RFC|4452|",
@@ -28834,7 +28834,7 @@
   {
     "id": "RFC4510",
     "title": "Lightweight Directory Access Protocol (LDAP): Technical Specification Road Map",
-    "label": "RFC 4510",
+    "label": "IETF RFC 4510",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -28866,7 +28866,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Lightweight Directory Access Protocol (LDAP): Technical Specification Road Map",
-      "RFC 4510"
+      "IETF RFC 4510"
     ],
     "href": "https://tools.ietf.org/html/rfc4510",
     "docBase": "IETF|RFC|4510|",
@@ -28875,7 +28875,7 @@
   {
     "id": "RFC4514",
     "title": "Lightweight Directory Access Protocol (LDAP): String Representation of Distinguished Names",
-    "label": "RFC 4514",
+    "label": "IETF RFC 4514",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -28907,7 +28907,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Lightweight Directory Access Protocol (LDAP): String Representation of Distinguished Names",
-      "RFC 4514"
+      "IETF RFC 4514"
     ],
     "href": "https://tools.ietf.org/html/rfc4514",
     "docBase": "IETF|RFC|4514|",
@@ -28916,7 +28916,7 @@
   {
     "id": "RFC4539",
     "title": "Media Type Registration for the Society of Motion Picture and Television Engineers (SMPTE) Material Exchange Format (MXF)",
-    "label": "RFC 4539",
+    "label": "IETF RFC 4539",
     "publisher": "IETF",
     "docType": "Informational",
     "docTypeAbr": null,
@@ -28948,7 +28948,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Media Type Registration for the Society of Motion Picture and Television Engineers (SMPTE) Material Exchange Format (MXF)",
-      "RFC 4539"
+      "IETF RFC 4539"
     ],
     "href": "https://tools.ietf.org/html/rfc4539",
     "docBase": "IETF|RFC|4539|",
@@ -28957,7 +28957,7 @@
   {
     "id": "RFC4634",
     "title": "US Secure Hash Algorithms (SHA and HMAC-SHA)",
-    "label": "RFC 4634",
+    "label": "IETF RFC 4634",
     "publisher": "IETF",
     "docType": "Informational",
     "docTypeAbr": null,
@@ -28989,7 +28989,7 @@
     "keywords": [],
     "keywordsSearch": [
       "US Secure Hash Algorithms (SHA and HMAC-SHA)",
-      "RFC 4634"
+      "IETF RFC 4634"
     ],
     "href": "https://tools.ietf.org/html/rfc4634",
     "docBase": "IETF|RFC|4634|",
@@ -28998,7 +28998,7 @@
   {
     "id": "RFC4646",
     "title": "Tags for Identifying Languages",
-    "label": "RFC 4646",
+    "label": "IETF RFC 4646",
     "publisher": "IETF",
     "docType": "Best Practice",
     "docTypeAbr": null,
@@ -29030,7 +29030,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Tags for Identifying Languages",
-      "RFC 4646"
+      "IETF RFC 4646"
     ],
     "href": "https://tools.ietf.org/html/rfc4646",
     "docBase": "IETF|RFC|4646|",
@@ -29039,7 +29039,7 @@
   {
     "id": "RFC4647",
     "title": "Matching of Language Tags",
-    "label": "RFC 4647",
+    "label": "IETF RFC 4647",
     "publisher": "IETF",
     "docType": "Best Practice",
     "docTypeAbr": null,
@@ -29071,7 +29071,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Matching of Language Tags",
-      "RFC 4647"
+      "IETF RFC 4647"
     ],
     "href": "https://tools.ietf.org/html/rfc4647",
     "docBase": "IETF|RFC|4647|",
@@ -29080,7 +29080,7 @@
   {
     "id": "RFC4918",
     "title": " HTTP Extensions for Web Distributed Authoring and Versioning (WebDAV)",
-    "label": "RFC 4918",
+    "label": "IETF RFC 4918",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -29112,7 +29112,7 @@
     "keywords": [],
     "keywordsSearch": [
       "HTTP Extensions for Web Distributed Authoring and Versioning (WebDAV)",
-      "RFC 4918"
+      "IETF RFC 4918"
     ],
     "href": "https://www.rfc-editor.org/rfc/rfc4918",
     "docBase": "IETF|RFC|4918|",
@@ -29121,7 +29121,7 @@
   {
     "id": "RFC5119",
     "title": "A Uniform Resource Name (URN) Namespace for the Society of Motion Picture and Television Engineers (SMPTE}",
-    "label": "RFC 5119",
+    "label": "IETF RFC 5119",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -29153,7 +29153,7 @@
     "keywords": [],
     "keywordsSearch": [
       "A Uniform Resource Name (URN) Namespace for the Society of Motion Picture and Television Engineers (SMPTE}",
-      "RFC 5119"
+      "IETF RFC 5119"
     ],
     "href": "https://tools.ietf.org/html/rfc5119",
     "docBase": "IETF|RFC|5119|",
@@ -29162,7 +29162,7 @@
   {
     "id": "RFC5147",
     "title": "URI Fragment Identifiers for the text/plain Media Type",
-    "label": "RFC 5147",
+    "label": "IETF RFC 5147",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -29194,7 +29194,7 @@
     "keywords": [],
     "keywordsSearch": [
       "URI Fragment Identifiers for the text/plain Media Type",
-      "RFC 5147"
+      "IETF RFC 5147"
     ],
     "href": "https://tools.ietf.org/html/rfc5147",
     "docBase": "IETF|RFC|5147|",
@@ -29203,7 +29203,7 @@
   {
     "id": "RFC5234",
     "title": "Augmented BNF for Syntax Specifications: ABNF",
-    "label": "RFC 5234 (2008, January)",
+    "label": "IETF RFC 5234 (2008, January)",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -29236,7 +29236,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Augmented BNF for Syntax Specifications: ABNF",
-      "RFC 5234 (2008, January)"
+      "IETF RFC 5234 (2008, January)"
     ],
     "href": "https://tools.ietf.org/html/rfc5234",
     "docBase": "IETF|RFC|5234|",
@@ -29245,7 +29245,7 @@
   {
     "id": "RFC5246",
     "title": "The Transport Layer Security (TLS) Protocol Version 1.2",
-    "label": "RFC 5246",
+    "label": "IETF RFC 5246",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -29277,7 +29277,7 @@
     "keywords": [],
     "keywordsSearch": [
       "The Transport Layer Security (TLS) Protocol Version 1.2",
-      "RFC 5246"
+      "IETF RFC 5246"
     ],
     "href": "https://tools.ietf.org/html/rfc5246",
     "docBase": "IETF|RFC|5246|",
@@ -29286,7 +29286,7 @@
   {
     "id": "RFC5280",
     "title": "Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile",
-    "label": "RFC 5280",
+    "label": "IETF RFC 5280",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -29319,7 +29319,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile",
-      "RFC 5280"
+      "IETF RFC 5280"
     ],
     "href": "https://tools.ietf.org/html/rfc5280",
     "docBase": "IETF|RFC|5280|",
@@ -29328,7 +29328,7 @@
   {
     "id": "RFC5322",
     "title": "Internet Message Format",
-    "label": "RFC 5322",
+    "label": "IETF RFC 5322",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -29361,7 +29361,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Internet Message Format",
-      "RFC 5322"
+      "IETF RFC 5322"
     ],
     "href": "https://tools.ietf.org/html/rfc5322",
     "docBase": "IETF|RFC|5322|",
@@ -29370,7 +29370,7 @@
   {
     "id": "RFC5646",
     "title": "Tags for Identifying Languages",
-    "label": "RFC 5646",
+    "label": "IETF RFC 5646",
     "publisher": "IETF",
     "docType": "Best Practice",
     "docTypeAbr": null,
@@ -29402,7 +29402,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Tags for Identifying Languages",
-      "RFC 5646"
+      "IETF RFC 5646"
     ],
     "href": "https://tools.ietf.org/html/rfc5646",
     "docBase": "IETF|RFC|5646|",
@@ -29411,7 +29411,7 @@
   {
     "id": "RFC5689",
     "title": " Extended MKCOL for Web Distributed Authoring and Versioning (WebDAV)",
-    "label": "RFC 5689",
+    "label": "IETF RFC 5689",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -29443,7 +29443,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Extended MKCOL for Web Distributed Authoring and Versioning (WebDAV)",
-      "RFC 5689"
+      "IETF RFC 5689"
     ],
     "href": "https://www.rfc-editor.org/rfc/rfc5689",
     "docBase": "IETF|RFC|5689|",
@@ -29452,7 +29452,7 @@
   {
     "id": "RFC5756",
     "title": "Updates for RSAES-OAEP and RSASSA-PSS Algorithm Parameters",
-    "label": "RFC 5756",
+    "label": "IETF RFC 5756",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -29484,7 +29484,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Updates for RSAES-OAEP and RSASSA-PSS Algorithm Parameters",
-      "RFC 5756"
+      "IETF RFC 5756"
     ],
     "href": "https://tools.ietf.org/html/rfc5756",
     "docBase": "IETF|RFC|5756|",
@@ -29493,7 +29493,7 @@
   {
     "id": "RFC5785",
     "title": "Defining Well-Known Uniform Resource Identifiers (URIs)",
-    "label": "RFC 5785",
+    "label": "IETF RFC 5785",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -29525,7 +29525,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Defining Well-Known Uniform Resource Identifiers (URIs)",
-      "RFC 5785"
+      "IETF RFC 5785"
     ],
     "href": "https://tools.ietf.org/html/rfc5785",
     "docBase": "IETF|RFC|5785|",
@@ -29534,7 +29534,7 @@
   {
     "id": "RFC6040",
     "title": "Tunnelling of Explicit Congestion Notification",
-    "label": "RFC 6040",
+    "label": "IETF RFC 6040",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -29566,7 +29566,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Tunnelling of Explicit Congestion Notification",
-      "RFC 6040"
+      "IETF RFC 6040"
     ],
     "href": "https://tools.ietf.org/html/rfc6040",
     "docBase": "IETF|RFC|6040|",
@@ -29575,7 +29575,7 @@
   {
     "id": "RFC6151",
     "title": "Updated Security Considerations for the MD5 Message-Digest and the HMAC-MD5 Algorithms",
-    "label": "RFC 6151",
+    "label": "IETF RFC 6151",
     "publisher": "IETF",
     "docType": "Informational",
     "docTypeAbr": null,
@@ -29607,7 +29607,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Updated Security Considerations for the MD5 Message-Digest and the HMAC-MD5 Algorithms",
-      "RFC 6151"
+      "IETF RFC 6151"
     ],
     "href": "https://tools.ietf.org/html/rfc6151",
     "docBase": "IETF|RFC|6151|",
@@ -29616,7 +29616,7 @@
   {
     "id": "RFC6234",
     "title": "US Secure Hash Algorithms (SHA and SHA-based HMAC and HKDF)",
-    "label": "RFC 6234",
+    "label": "IETF RFC 6234",
     "publisher": "IETF",
     "docType": "Informational",
     "docTypeAbr": null,
@@ -29648,7 +29648,7 @@
     "keywords": [],
     "keywordsSearch": [
       "US Secure Hash Algorithms (SHA and SHA-based HMAC and HKDF)",
-      "RFC 6234"
+      "IETF RFC 6234"
     ],
     "href": "https://tools.ietf.org/html/rfc6234",
     "docBase": "IETF|RFC|6234|",
@@ -29657,7 +29657,7 @@
   {
     "id": "RFC6597",
     "title": "RTP Payload Format for Society of Motion Picture and Television Engineers (SMPTE) ST 336 Encoded Data",
-    "label": "RFC 6597",
+    "label": "IETF RFC 6597",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -29689,7 +29689,7 @@
     "keywords": [],
     "keywordsSearch": [
       "RTP Payload Format for Society of Motion Picture and Television Engineers (SMPTE) ST 336 Encoded Data",
-      "RFC 6597"
+      "IETF RFC 6597"
     ],
     "href": "https://tools.ietf.org/html/rfc6597",
     "docBase": "IETF|RFC|6597|",
@@ -29698,7 +29698,7 @@
   {
     "id": "RFC6657",
     "title": "Update to MIME regarding 'charset' Parameter Handling in Textual Media Types",
-    "label": "RFC 6657",
+    "label": "IETF RFC 6657",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -29730,7 +29730,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Update to MIME regarding 'charset' Parameter Handling in Textual Media Types",
-      "RFC 6657"
+      "IETF RFC 6657"
     ],
     "href": "https://tools.ietf.org/html/rfc6657",
     "docBase": "IETF|RFC|6657|",
@@ -29739,7 +29739,7 @@
   {
     "id": "RFC6818",
     "title": "Updates to the Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile",
-    "label": "RFC 6818",
+    "label": "IETF RFC 6818",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -29771,7 +29771,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Updates to the Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile",
-      "RFC 6818"
+      "IETF RFC 6818"
     ],
     "href": "https://tools.ietf.org/html/rfc6818",
     "docBase": "IETF|RFC|6818|",
@@ -29780,7 +29780,7 @@
   {
     "id": "RFC6838",
     "title": "Media Type Specifications and Registration Procedures",
-    "label": "RFC 6838",
+    "label": "IETF RFC 6838",
     "publisher": "IETF",
     "docType": "Best Practice",
     "docTypeAbr": null,
@@ -29812,7 +29812,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Media Type Specifications and Registration Procedures",
-      "RFC 6838"
+      "IETF RFC 6838"
     ],
     "href": "https://tools.ietf.org/html/rfc6838",
     "docBase": "IETF|RFC|6838|",
@@ -29821,7 +29821,7 @@
   {
     "id": "RFC6854",
     "title": "Update to Internet Message Format to Allow Group Syntax in the 'From:' and 'Sender:' Header Fields",
-    "label": "RFC 6854",
+    "label": "IETF RFC 6854",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -29853,7 +29853,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Update to Internet Message Format to Allow Group Syntax in the 'From:' and 'Sender:' Header Fields",
-      "RFC 6854"
+      "IETF RFC 6854"
     ],
     "href": "https://tools.ietf.org/html/rfc6854",
     "docBase": "IETF|RFC|6854|",
@@ -29862,7 +29862,7 @@
   {
     "id": "RFC6874",
     "title": "Representing IPv6 Zone Identifiers in Address Literals and Uniform Resource Identifiers",
-    "label": "RFC 6874",
+    "label": "IETF RFC 6874",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -29894,7 +29894,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Representing IPv6 Zone Identifiers in Address Literals and Uniform Resource Identifiers",
-      "RFC 6874"
+      "IETF RFC 6874"
     ],
     "href": "https://tools.ietf.org/html/rfc6874",
     "docBase": "IETF|RFC|6874|",
@@ -29903,7 +29903,7 @@
   {
     "id": "RFC6931",
     "title": "Additional XML Security Uniform Resource Identifiers (URIs)",
-    "label": "RFC 6931",
+    "label": "IETF RFC 6931",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -29935,7 +29935,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Additional XML Security Uniform Resource Identifiers (URIs)",
-      "RFC 6931"
+      "IETF RFC 6931"
     ],
     "href": "https://tools.ietf.org/html/rfc6931",
     "docBase": "IETF|RFC|6931|",
@@ -29944,7 +29944,7 @@
   {
     "id": "RFC7230",
     "title": "Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing",
-    "label": "RFC 7230",
+    "label": "IETF RFC 7230",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -29977,7 +29977,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing",
-      "RFC 7230"
+      "IETF RFC 7230"
     ],
     "href": "https://tools.ietf.org/html/rfc7230",
     "docBase": "IETF|RFC|7230|",
@@ -29986,7 +29986,7 @@
   {
     "id": "RFC7231",
     "title": "Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content",
-    "label": "RFC 7231",
+    "label": "IETF RFC 7231",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -30018,7 +30018,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content",
-      "RFC 7231"
+      "IETF RFC 7231"
     ],
     "href": "https://tools.ietf.org/html/rfc7231",
     "docBase": "IETF|RFC|7231|",
@@ -30027,7 +30027,7 @@
   {
     "id": "RFC7232",
     "title": "Hypertext Transfer Protocol (HTTP/1.1): Conditional Requests",
-    "label": "RFC 7232",
+    "label": "IETF RFC 7232",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -30059,7 +30059,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Hypertext Transfer Protocol (HTTP/1.1): Conditional Requests",
-      "RFC 7232"
+      "IETF RFC 7232"
     ],
     "href": "https://tools.ietf.org/html/rfc7232",
     "docBase": "IETF|RFC|7232|",
@@ -30068,7 +30068,7 @@
   {
     "id": "RFC7233",
     "title": "Hypertext Transfer Protocol (HTTP/1.1): Range Requests",
-    "label": "RFC 7233",
+    "label": "IETF RFC 7233",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -30100,7 +30100,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Hypertext Transfer Protocol (HTTP/1.1): Range Requests",
-      "RFC 7233"
+      "IETF RFC 7233"
     ],
     "href": "https://tools.ietf.org/html/rfc7233",
     "docBase": "IETF|RFC|7233|",
@@ -30109,7 +30109,7 @@
   {
     "id": "RFC7234",
     "title": "Hypertext Transfer Protocol (HTTP/1.1): Caching",
-    "label": "RFC 7234",
+    "label": "IETF RFC 7234",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -30141,7 +30141,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Hypertext Transfer Protocol (HTTP/1.1): Caching",
-      "RFC 7234"
+      "IETF RFC 7234"
     ],
     "href": "https://tools.ietf.org/html/rfc7234",
     "docBase": "IETF|RFC|7234|",
@@ -30150,7 +30150,7 @@
   {
     "id": "RFC7235",
     "title": "Hypertext Transfer Protocol (HTTP/1.1): Authentication",
-    "label": "RFC 7235",
+    "label": "IETF RFC 7235",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -30182,7 +30182,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Hypertext Transfer Protocol (HTTP/1.1): Authentication",
-      "RFC 7235"
+      "IETF RFC 7235"
     ],
     "href": "https://tools.ietf.org/html/rfc7235",
     "docBase": "IETF|RFC|7235|",
@@ -30191,7 +30191,7 @@
   {
     "id": "RFC7302",
     "title": "Entertainment Identifier Registry (EIDR) URN Namespace Definition",
-    "label": "RFC 7302",
+    "label": "IETF RFC 7302",
     "publisher": "IETF",
     "docType": "Informational",
     "docTypeAbr": null,
@@ -30223,7 +30223,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Entertainment Identifier Registry (EIDR) URN Namespace Definition",
-      "RFC 7302"
+      "IETF RFC 7302"
     ],
     "href": "https://tools.ietf.org/html/rfc7302",
     "docBase": "IETF|RFC|7302|",
@@ -30232,7 +30232,7 @@
   {
     "id": "RFC7303",
     "title": "XML Media Types",
-    "label": "RFC 7303",
+    "label": "IETF RFC 7303",
     "publisher": "IETF",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -30264,7 +30264,7 @@
     "keywords": [],
     "keywordsSearch": [
       "XML Media Types",
-      "RFC 7303"
+      "IETF RFC 7303"
     ],
     "href": "https://datatracker.ietf.org/doc/html/rfc7303",
     "docBase": "IETF|RFC|7303|",
@@ -30273,7 +30273,7 @@
   {
     "id": "RFC7320",
     "title": "URI Design and Ownership",
-    "label": "RFC 7320",
+    "label": "IETF RFC 7320",
     "publisher": "IETF",
     "docType": "Best Practice",
     "docTypeAbr": null,
@@ -30305,7 +30305,7 @@
     "keywords": [],
     "keywordsSearch": [
       "URI Design and Ownership",
-      "RFC 7320"
+      "IETF RFC 7320"
     ],
     "href": "https://tools.ietf.org/html/rfc7320",
     "docBase": "IETF|RFC|7320|",
@@ -30314,7 +30314,7 @@
   {
     "id": "RFC7405",
     "title": "Case-Sensitive String Support in ABNF",
-    "label": "RFC 7405",
+    "label": "IETF RFC 7405",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -30346,7 +30346,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Case-Sensitive String Support in ABNF",
-      "RFC 7405"
+      "IETF RFC 7405"
     ],
     "href": "https://tools.ietf.org/html/rfc7405",
     "docBase": "IETF|RFC|7405|",
@@ -30355,7 +30355,7 @@
   {
     "id": "RFC7615",
     "title": "HTTP Authentication-Info and Proxy-Authentication-Info Response Header Fields",
-    "label": "RFC 7615",
+    "label": "IETF RFC 7615",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -30387,7 +30387,7 @@
     "keywords": [],
     "keywordsSearch": [
       "HTTP Authentication-Info and Proxy-Authentication-Info Response Header Fields",
-      "RFC 7615"
+      "IETF RFC 7615"
     ],
     "href": "https://tools.ietf.org/html/rfc7615",
     "docBase": "IETF|RFC|7615|",
@@ -30396,7 +30396,7 @@
   {
     "id": "RFC7616",
     "title": "HTTP Digest Access Authentication",
-    "label": "RFC 7616",
+    "label": "IETF RFC 7616",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -30428,7 +30428,7 @@
     "keywords": [],
     "keywordsSearch": [
       "HTTP Digest Access Authentication",
-      "RFC 7616"
+      "IETF RFC 7616"
     ],
     "href": "https://tools.ietf.org/html/rfc7616",
     "docBase": "IETF|RFC|7616|",
@@ -30437,7 +30437,7 @@
   {
     "id": "RFC7617",
     "title": "The 'Basic' HTTP Authentication Scheme",
-    "label": "RFC 7617",
+    "label": "IETF RFC 7617",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -30469,7 +30469,7 @@
     "keywords": [],
     "keywordsSearch": [
       "The 'Basic' HTTP Authentication Scheme",
-      "RFC 7617"
+      "IETF RFC 7617"
     ],
     "href": "https://tools.ietf.org/html/rfc7617",
     "docBase": "IETF|RFC|7617|",
@@ -30478,7 +30478,7 @@
   {
     "id": "RFC7619",
     "title": "The NULL Authentication Method in the Internet Key Exchange Protocol Version 2 (IKEv2)",
-    "label": "RFC 7619",
+    "label": "IETF RFC 7619",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -30510,7 +30510,7 @@
     "keywords": [],
     "keywordsSearch": [
       "The NULL Authentication Method in the Internet Key Exchange Protocol Version 2 (IKEv2)",
-      "RFC 7619"
+      "IETF RFC 7619"
     ],
     "href": "https://tools.ietf.org/html/rfc7619",
     "docBase": "IETF|RFC|7619|",
@@ -30519,7 +30519,7 @@
   {
     "id": "RFC7950",
     "title": "The YANG 1.1 Data Modeling Language",
-    "label": "RFC 7950",
+    "label": "IETF RFC 7950",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -30552,7 +30552,7 @@
     "keywords": [],
     "keywordsSearch": [
       "The YANG 1.1 Data Modeling Language",
-      "RFC 7950"
+      "IETF RFC 7950"
     ],
     "href": "https://tools.ietf.org/html/rfc7950",
     "docBase": "IETF|RFC|7950|",
@@ -30561,7 +30561,7 @@
   {
     "id": "RFC7972",
     "title": "Entertainment Identifier Registry (EIDR) URN Namespace Definition",
-    "label": "RFC 7972",
+    "label": "IETF RFC 7972",
     "publisher": "IETF",
     "docType": "Informational",
     "docTypeAbr": null,
@@ -30593,7 +30593,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Entertainment Identifier Registry (EIDR) URN Namespace Definition",
-      "RFC 7972"
+      "IETF RFC 7972"
     ],
     "href": "https://tools.ietf.org/html/rfc7972",
     "docBase": "IETF|RFC|7972|",
@@ -30602,7 +30602,7 @@
   {
     "id": "RFC8017",
     "title": "PKCS #1: RSA Cryptography Specifications Version 2.2",
-    "label": "RFC 8017",
+    "label": "IETF RFC 8017",
     "publisher": "IETF",
     "docType": "Informational",
     "docTypeAbr": null,
@@ -30634,7 +30634,7 @@
     "keywords": [],
     "keywordsSearch": [
       "PKCS #1: RSA Cryptography Specifications Version 2.2",
-      "RFC 8017"
+      "IETF RFC 8017"
     ],
     "href": "https://tools.ietf.org/html/rfc8017",
     "docBase": "IETF|RFC|8017|",
@@ -30643,7 +30643,7 @@
   {
     "id": "RFC8098",
     "title": "Message Disposition Notification",
-    "label": "RFC 8098",
+    "label": "IETF RFC 8098",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -30675,7 +30675,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Message Disposition Notification",
-      "RFC 8098"
+      "IETF RFC 8098"
     ],
     "href": "https://tools.ietf.org/html/rfc8098",
     "docBase": "IETF|RFC|8098|",
@@ -30684,7 +30684,7 @@
   {
     "id": "RFC8141",
     "title": "Uniform Resource Names (URNs)",
-    "label": "RFC 8141",
+    "label": "IETF RFC 8141",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -30716,7 +30716,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Uniform Resource Names (URNs)",
-      "RFC 8141"
+      "IETF RFC 8141"
     ],
     "href": "https://tools.ietf.org/html/rfc8141",
     "docBase": "IETF|RFC|8141|",
@@ -30725,7 +30725,7 @@
   {
     "id": "RFC8259",
     "title": "The JavaScript Object Notation (JSON) Data Interchange Format",
-    "label": "RFC 8259",
+    "label": "IETF RFC 8259",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -30757,7 +30757,7 @@
     "keywords": [],
     "keywordsSearch": [
       "The JavaScript Object Notation (JSON) Data Interchange Format",
-      "RFC 8259"
+      "IETF RFC 8259"
     ],
     "href": "https://www.rfc-editor.org/rfc/rfc8259",
     "docBase": "IETF|RFC|8259|",
@@ -30766,7 +30766,7 @@
   {
     "id": "RFC8342",
     "title": "Network Management Datastore Architecture (NMDA)",
-    "label": "RFC 8342",
+    "label": "IETF RFC 8342",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -30798,7 +30798,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Network Management Datastore Architecture (NMDA)",
-      "RFC 8342"
+      "IETF RFC 8342"
     ],
     "href": "https://tools.ietf.org/html/rfc8342",
     "docBase": "IETF|RFC|8342|",
@@ -30807,7 +30807,7 @@
   {
     "id": "RFC8398",
     "title": "Internationalized Email Addresses in X.509 Certificates",
-    "label": "RFC 8398",
+    "label": "IETF RFC 8398",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -30839,7 +30839,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Internationalized Email Addresses in X.509 Certificates",
-      "RFC 8398"
+      "IETF RFC 8398"
     ],
     "href": "https://tools.ietf.org/html/rfc8398",
     "docBase": "IETF|RFC|8398|",
@@ -30848,7 +30848,7 @@
   {
     "id": "RFC8399",
     "title": "Internationalization Updates to RFC 5280",
-    "label": "RFC 8399",
+    "label": "IETF RFC 8399",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -30880,7 +30880,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Internationalization Updates to RFC 5280",
-      "RFC 8399"
+      "IETF RFC 8399"
     ],
     "href": "https://tools.ietf.org/html/rfc8399",
     "docBase": "IETF|RFC|8399|",
@@ -30889,7 +30889,7 @@
   {
     "id": "RFC8446",
     "title": "The Transport Layer Security (TLS) Protocol Version 1.3",
-    "label": "RFC 8446",
+    "label": "IETF RFC 8446",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -30921,7 +30921,7 @@
     "keywords": [],
     "keywordsSearch": [
       "The Transport Layer Security (TLS) Protocol Version 1.3",
-      "RFC 8446"
+      "IETF RFC 8446"
     ],
     "href": "https://tools.ietf.org/html/rfc8446",
     "docBase": "IETF|RFC|8446|",
@@ -30930,7 +30930,7 @@
   {
     "id": "RFC8526",
     "title": "NETCONF Extensions to Support the Network Management Datastore Architecture",
-    "label": "RFC 8526",
+    "label": "IETF RFC 8526",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -30962,7 +30962,7 @@
     "keywords": [],
     "keywordsSearch": [
       "NETCONF Extensions to Support the Network Management Datastore Architecture",
-      "RFC 8526"
+      "IETF RFC 8526"
     ],
     "href": "https://tools.ietf.org/html/rfc8526",
     "docBase": "IETF|RFC|8526|",
@@ -30971,7 +30971,7 @@
   {
     "id": "RFC8615",
     "title": "Well-Known Uniform Resource Identifiers (URIs)",
-    "label": "RFC 8615",
+    "label": "IETF RFC 8615",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -31003,7 +31003,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Well-Known Uniform Resource Identifiers (URIs)",
-      "RFC 8615"
+      "IETF RFC 8615"
     ],
     "href": "https://tools.ietf.org/html/rfc8615",
     "docBase": "IETF|RFC|8615|",
@@ -31012,7 +31012,7 @@
   {
     "id": "RFC8820",
     "title": "URI Design and Ownership",
-    "label": "RFC 8820",
+    "label": "IETF RFC 8820",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -31044,7 +31044,7 @@
     "keywords": [],
     "keywordsSearch": [
       "URI Design and Ownership",
-      "RFC 8820"
+      "IETF RFC 8820"
     ],
     "href": "https://www.rfc-editor.org/rfc/rfc8820",
     "docBase": "IETF|RFC|8820|",
@@ -31053,7 +31053,7 @@
   {
     "id": "RFC9141",
     "title": "Updating References to the IETF FTP Service",
-    "label": "RFC 9141",
+    "label": "IETF RFC 9141",
     "publisher": "IETF",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -31085,7 +31085,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Updating References to the IETF FTP Service",
-      "RFC 9141"
+      "IETF RFC 9141"
     ],
     "href": "https://www.rfc-editor.org/rfc/rfc9141",
     "docBase": "IETF|RFC|9141|",
@@ -93959,7 +93959,7 @@
   {
     "id": "T-REC-E.123.2001",
     "title": "Notation for national and international telephone numbers, e-mail addresses and web addresses",
-    "label": "RE.123 (02/2001)",
+    "label": "ITU-T RE.123 (02/2001)",
     "publisher": "ITU-T",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -93991,7 +93991,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Notation for national and international telephone numbers, e-mail addresses and web addresses",
-      "RE.123 (02/2001)"
+      "ITU-T RE.123 (02/2001)"
     ],
     "href": "https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-E.123-200102-I!!PDF-E&type=items",
     "docBase": "ITU-T|E|123|",
@@ -94000,7 +94000,7 @@
   {
     "id": "T-REC-E.123.2001am1.2008",
     "title": "Notation for national and international telephone numbers, e-mail addresses and web addresses",
-    "label": "RE.123 (02/2001) Amd. 1 (05/2008)",
+    "label": "ITU-T RE.123 (02/2001) Amd. 1 (05/2008)",
     "publisher": "ITU-T",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -94031,7 +94031,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Notation for national and international telephone numbers, e-mail addresses and web addresses",
-      "RE.123 (02/2001) Amd. 1 (05/2008)"
+      "ITU-T RE.123 (02/2001) Amd. 1 (05/2008)"
     ],
     "href": "https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-E.123-200805-I!Amd1!PDF-E&type=items",
     "docBase": "ITU-T|E|123|",
@@ -94040,7 +94040,7 @@
   {
     "id": "T-REC-E.123.2001e1.2008",
     "title": "Notation for national and international telephone numbers, e-mail addresses and web addresses",
-    "label": "RE.123 (02/2001) Erratum 1 (05/2008)",
+    "label": "ITU-T RE.123 (02/2001) Erratum 1 (05/2008)",
     "publisher": "ITU-T",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -94072,7 +94072,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Notation for national and international telephone numbers, e-mail addresses and web addresses",
-      "RE.123 (02/2001) Erratum 1 (05/2008)"
+      "ITU-T RE.123 (02/2001) Erratum 1 (05/2008)"
     ],
     "href": "https://www.itu.int/rec/dologin.asp?lang=e&id=T-REC-E.123-200805-I!Err1!PDF-E&type=items",
     "docBase": "ITU-T|E|123|",
@@ -94081,7 +94081,7 @@
   {
     "id": "T-REC-H.264.202108",
     "title": "Advanced video coding for generic audiovisual services",
-    "label": "REC H.264",
+    "label": "ITU-T REC H.264",
     "publisher": "ITU-T",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -94113,7 +94113,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Advanced video coding for generic audiovisual services",
-      "REC H.264"
+      "ITU-T REC H.264"
     ],
     "href": "https://www.itu.int/rec/T-REC-H.264-202408-I/en",
     "docBase": "ITU-T|H|264|",
@@ -94122,7 +94122,7 @@
   {
     "id": "T-REC-H.265.201612",
     "title": "High efficiency video coding",
-    "label": "REC H.265",
+    "label": "ITU-T REC H.265",
     "publisher": "ITU-T",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -94153,7 +94153,7 @@
     "keywords": [],
     "keywordsSearch": [
       "High efficiency video coding",
-      "REC H.265"
+      "ITU-T REC H.265"
     ],
     "href": "https://www.itu.int/rec/T-REC-H.265-201612-S/en",
     "docBase": "ITU-T|H|265|",
@@ -94162,7 +94162,7 @@
   {
     "id": "T-REC-H.265.201911",
     "title": "High efficiency video coding",
-    "label": "REC H.265",
+    "label": "ITU-T REC H.265",
     "publisher": "ITU-T",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -94194,7 +94194,7 @@
     "keywords": [],
     "keywordsSearch": [
       "High efficiency video coding",
-      "REC H.265"
+      "ITU-T REC H.265"
     ],
     "href": "https://www.itu.int/rec/T-REC-H.265-201911-I/en",
     "docBase": "ITU-T|H|265|",
@@ -94203,7 +94203,7 @@
   {
     "id": "T-REC-H.273.201612",
     "title": "Coding-independent code points for video signal type identification",
-    "label": "REC H.273",
+    "label": "ITU-T REC H.273",
     "publisher": "ITU-T",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -94234,7 +94234,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Coding-independent code points for video signal type identification",
-      "REC H.273"
+      "ITU-T REC H.273"
     ],
     "href": "https://www.itu.int/rec/T-REC-H.273-201612-I/en",
     "docBase": "ITU-T|H|273|",
@@ -94243,7 +94243,7 @@
   {
     "id": "T-REC-H.273.202107",
     "title": "Coding-independent code points for video signal type identification",
-    "label": "REC H.273",
+    "label": "ITU-T REC H.273",
     "publisher": "ITU-T",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -94275,7 +94275,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Coding-independent code points for video signal type identification",
-      "REC H.273"
+      "ITU-T REC H.273"
     ],
     "href": "https://www.itu.int/rec/T-REC-H.273-202107-I/en",
     "docBase": "ITU-T|H|273|",
@@ -94284,7 +94284,7 @@
   {
     "id": "T-REC-T.802.2005",
     "title": "Information technology – JPEG 2000 image coding system: Motion JPEG 2000",
-    "label": "RE.802-8:2005",
+    "label": "ITU-T RE.802-8:2005",
     "publisher": "ITU-T",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -94316,7 +94316,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Information technology – JPEG 2000 image coding system: Motion JPEG 2000",
-      "RE.802-8:2005"
+      "ITU-T RE.802-8:2005"
     ],
     "href": "https://www.itu.int/rec/T-REC-T.802-200501-I/en",
     "docBase": "ITU-T|T|802|",
@@ -94325,7 +94325,7 @@
   {
     "id": "T-REC-T.802.2005am1.2010",
     "title": "Information technology – JPEG 2000 image coding system: Motion JPEG 2000",
-    "label": "RE.802-8:2005 Amendment 1 (04/10)",
+    "label": "ITU-T RE.802-8:2005 Amendment 1 (04/10)",
     "publisher": "ITU-T",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -94357,7 +94357,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Information technology – JPEG 2000 image coding system: Motion JPEG 2000",
-      "RE.802-8:2005 Amendment 1 (04/10)"
+      "ITU-T RE.802-8:2005 Amendment 1 (04/10)"
     ],
     "href": "https://www.itu.int/rec/T-REC-T.802-201004-I!Amd1/en",
     "docBase": "ITU-T|T|802|",
@@ -94366,7 +94366,7 @@
   {
     "id": "T-REC-X.509.199706",
     "title": "Information technology - Open Systems Interconnection - The Directory: Authentication framework",
-    "label": "X.509, Jun 1997 E",
+    "label": "ITU-T X.509, Jun 1997 E",
     "publisher": "ITU-T",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -94397,7 +94397,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Information technology - Open Systems Interconnection - The Directory: Authentication framework",
-      "X.509, Jun 1997 E"
+      "ITU-T X.509, Jun 1997 E"
     ],
     "href": "https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-X.509-199708-S!!PDF-E&type=items",
     "docBase": "ITU-T|X|509|",
@@ -94406,7 +94406,7 @@
   {
     "id": "T-REC-X.509.201910",
     "title": "Information technology - Open Systems Interconnection - The Directory: Authentication framework",
-    "label": "X.509 (10/19)",
+    "label": "ITU-T X.509 (10/19)",
     "publisher": "ITU-T",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -94438,7 +94438,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Information technology - Open Systems Interconnection - The Directory: Authentication framework",
-      "X.509 (10/19)"
+      "ITU-T X.509 (10/19)"
     ],
     "href": "https://www.itu.int/rec/T-REC-X.509-201910-I",
     "docBase": "ITU-T|X|509|",
@@ -95044,7 +95044,7 @@
   {
     "id": "W3C.qaframe.spec.20041122",
     "title": "QA Framework: Specification Guidelines",
-    "label": "QAFrame",
+    "label": "W3C QA Framework",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -95081,7 +95081,7 @@
     "keywords": [],
     "keywordsSearch": [
       "QA Framework: Specification Guidelines",
-      "QAFrame",
+      "W3C QA Framework",
       "Karl Dubost",
       "Lynne Rosenthal",
       "Dominique Hazaël-Massieux",
@@ -95094,7 +95094,7 @@
   {
     "id": "W3C.qaframe.spec.20050817",
     "title": "QA Framework: Specification Guidelines",
-    "label": "QAFrame",
+    "label": "W3C QA Framework",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -95132,7 +95132,7 @@
     "keywords": [],
     "keywordsSearch": [
       "QA Framework: Specification Guidelines",
-      "QAFrame",
+      "W3C QA Framework",
       "Karl Dubost",
       "Lynne Rosenthal",
       "Dominique Hazaël-Massieux",
@@ -95145,7 +95145,7 @@
   {
     "id": "W3C.rddl.2002",
     "title": "Resource Directory Description Language (RDDL)",
-    "label": "RDDL",
+    "label": "W3C RDDL",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -95180,7 +95180,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Resource Directory Description Language (RDDL)",
-      "RDDL",
+      "W3C RDDL",
       "Jonathan Borden",
       "Tim Bray"
     ],
@@ -95191,7 +95191,7 @@
   {
     "id": "W3C.rddl.2010",
     "title": "Resource Directory Description Language (RDDL) 2.0",
-    "label": "RDDL 2",
+    "label": "W3C RDDL 2",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -95227,7 +95227,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Resource Directory Description Language (RDDL) 2.0",
-      "RDDL 2",
+      "W3C RDDL 2",
       "Jonathan Borden",
       "Tim Bray"
     ],
@@ -95238,7 +95238,7 @@
   {
     "id": "W3C.REC-html52.20171214",
     "title": "HTML 5.2",
-    "label": "REC-html52-20171214",
+    "label": "W3C HTML Rec",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -95270,7 +95270,7 @@
     "keywords": [],
     "keywordsSearch": [
       "HTML 5.2",
-      "REC-html52-20171214"
+      "W3C HTML Rec"
     ],
     "href": "https://www.w3.org/TR/2017/REC-html52-20171214/",
     "docBase": "W3C|HTML||",
@@ -95278,8 +95278,8 @@
   },
   {
     "id": "W3C.ttaf1.dfxp.20181108",
-    "title": "Timed Text (TT) Authoring Format 1.0 – Distribution Format Exchange Profile",
-    "label": "DFXP",
+    "title": "Timed Text (TT) Authoring Format 1.0 (Distribution Format Exchange Profile)",
+    "label": "W3C TT DFXP",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -95314,8 +95314,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "Timed Text (TT) Authoring Format 1.0 – Distribution Format Exchange Profile",
-      "DFXP",
+      "Timed Text (TT) Authoring Format 1.0 (Distribution Format Exchange Profile)",
+      "W3C TT DFXP",
       "Glenn Adams",
       "Pierre-Anthony Lemieux"
     ],
@@ -95326,7 +95326,7 @@
   {
     "id": "W3C.ttml.imsc1.0.1.20180424",
     "title": "TTML Profiles for Internet Media Subtitles and Captions 1.0.1 (IMSC1)",
-    "label": "TTML IMSC 1.0.1",
+    "label": "W3C TTML IMSC 1.0.1",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -95361,7 +95361,7 @@
     "keywords": [],
     "keywordsSearch": [
       "TTML Profiles for Internet Media Subtitles and Captions 1.0.1 (IMSC1)",
-      "TTML IMSC 1.0.1",
+      "W3C TTML IMSC 1.0.1",
       "Pierre-Anthony Lemieux"
     ],
     "href": "https://www.w3.org/TR/2018/REC-ttml-imsc1.0.1-20180424/",
@@ -95371,7 +95371,7 @@
   {
     "id": "W3C.ttml.imsc1.1.20181108",
     "title": "TTML Profiles for Internet Media Subtitles and Captions 1.1",
-    "label": "TTML IMSC 1.1",
+    "label": "W3C TTML IMSC 1.1",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -95406,7 +95406,7 @@
     "keywords": [],
     "keywordsSearch": [
       "TTML Profiles for Internet Media Subtitles and Captions 1.1",
-      "TTML IMSC 1.1",
+      "W3C TTML IMSC 1.1",
       "Pierre-Anthony Lemieux"
     ],
     "href": "https://www.w3.org/TR/2018/REC-ttml-imsc1.1-20181108/",
@@ -95416,7 +95416,7 @@
   {
     "id": "W3C.ttml.imsc1.2.20200804",
     "title": "TTML Profiles for Internet Media Subtitles and Captions 1.2",
-    "label": "TTML IMSC 1.2",
+    "label": "W3C TTML IMSC 1.2",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -95451,7 +95451,7 @@
     "keywords": [],
     "keywordsSearch": [
       "TTML Profiles for Internet Media Subtitles and Captions 1.2",
-      "TTML IMSC 1.2",
+      "W3C TTML IMSC 1.2",
       "Pierre-Anthony Lemieux"
     ],
     "href": "https://www.w3.org/TR/2020/REC-ttml-imsc1.2-20200804/",
@@ -95461,7 +95461,7 @@
   {
     "id": "W3C.ttml1.20181108",
     "title": "Timed Text Markup Language 1 (TTML1) (Third Edition)",
-    "label": "TTML1",
+    "label": "W3C TTML1",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -95497,7 +95497,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Timed Text Markup Language 1 (TTML1) (Third Edition)",
-      "TTML1",
+      "W3C TTML1",
       "Glenn Adams",
       "Pierre-Anthony Lemieux"
     ],
@@ -95508,7 +95508,7 @@
   {
     "id": "W3C.ttml2.20181108",
     "title": "Timed Text Markup Language 2 (TTML2)",
-    "label": "TTML2",
+    "label": "W3C TTML2",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -95544,7 +95544,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Timed Text Markup Language 2 (TTML2)",
-      "TTML2",
+      "W3C TTML2",
       "Glenn Adams",
       "Cyril Concolato"
     ],
@@ -95555,7 +95555,7 @@
   {
     "id": "W3C.xkms2.20030418",
     "title": "XML Key Management Specification (XKMS)",
-    "label": "XKMS",
+    "label": "W3C XKMS",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -95589,7 +95589,7 @@
     "keywords": [],
     "keywordsSearch": [
       "XML Key Management Specification (XKMS)",
-      "XKMS",
+      "W3C XKMS",
       "Phillip Hallam-Baker"
     ],
     "href": "https://www.w3.org/TR/2003/WD-xkms2-20030418/",
@@ -95599,7 +95599,7 @@
   {
     "id": "W3C.xkms2.20050628",
     "title": "XML Key Management Specification (XKMS 2.0)",
-    "label": "XKMS",
+    "label": "W3C XKMS 2.0",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -95635,7 +95635,7 @@
     "keywords": [],
     "keywordsSearch": [
       "XML Key Management Specification (XKMS 2.0)",
-      "XKMS",
+      "W3C XKMS 2.0",
       "Phillip Hallam-Baker",
       "Shivaram Mysore"
     ],
@@ -95646,7 +95646,7 @@
   {
     "id": "W3C.xlink1.1.20100506",
     "title": "XML Linking Language (XLink) Version 1.1",
-    "label": "XLink",
+    "label": "W3C XLin 1.1",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -95684,7 +95684,7 @@
     "keywords": [],
     "keywordsSearch": [
       "XML Linking Language (XLink) Version 1.1",
-      "XLink",
+      "W3C XLin 1.1",
       "Steven DeRose",
       "Eve Maler",
       "David Orchard",
@@ -95697,7 +95697,7 @@
   {
     "id": "W3C.xml-names.19990114",
     "title": "Namespaces in XML 1.0 (Second Edition)",
-    "label": "NS XML",
+    "label": "W3C XML Namespaces 1.0",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -95733,7 +95733,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Namespaces in XML 1.0 (Second Edition)",
-      "NS XML",
+      "W3C XML Namespaces 1.0",
       "Tim Bray",
       "Dave Hollander",
       "Andrew Layman"
@@ -95745,7 +95745,7 @@
   {
     "id": "W3C.xml-names.20060816",
     "title": "Namespaces in XML 1.0 (Second Edition)",
-    "label": "NS XML",
+    "label": "W3C XML Namespaces 1.0",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -95782,7 +95782,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Namespaces in XML 1.0 (Second Edition)",
-      "NS XML",
+      "W3C XML Namespaces 1.0",
       "Tim Bray",
       "Dave Hollander",
       "Andrew Layman",
@@ -95795,7 +95795,7 @@
   {
     "id": "W3C.xml-names.20091208",
     "title": "Namespaces in XML 1.0 (3rd Edition)",
-    "label": "NS XML",
+    "label": "W3C XML Namespaces 1.0",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -95834,7 +95834,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Namespaces in XML 1.0 (3rd Edition)",
-      "NS XML",
+      "W3C XML Namespaces 1.0",
       "Tim Bray",
       "Dave Hollander",
       "Andrew Layman",
@@ -95848,7 +95848,7 @@
   {
     "id": "W3C.xml.20040204",
     "title": "Extensible Markup Language (XML) 1.0 (3rd Edition)",
-    "label": "XML",
+    "label": "W3C XML 1",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -95886,7 +95886,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Extensible Markup Language (XML) 1.0 (3rd Edition)",
-      "XML",
+      "W3C XML 1",
       "Tim Bray",
       "Jean Paoli",
       "Michael Sperberg-McQueen",
@@ -95900,7 +95900,7 @@
   {
     "id": "W3C.xml.20081126",
     "title": "Extensible Markup Language (XML) 1.0 (Fifth Edition)",
-    "label": "XML",
+    "label": "W3C XML 1",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -95939,7 +95939,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Extensible Markup Language (XML) 1.0 (Fifth Edition)",
-      "XML",
+      "W3C XML 1",
       "Tim Bray",
       "Jean Paoli",
       "Michael Sperberg-McQueen",
@@ -95953,7 +95953,7 @@
   {
     "id": "W3C.xmlc14n.20010315",
     "title": "Canonical XML Version 1.0",
-    "label": "CXML 1.0",
+    "label": "W3C CXML 1.0",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -95988,7 +95988,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Canonical XML Version 1.0",
-      "CXML 1.0",
+      "W3C CXML 1.0",
       "John Boyer"
     ],
     "href": "https://www.w3.org/TR/2001/REC-xml-c14n-20010315",
@@ -95998,7 +95998,7 @@
   {
     "id": "W3C.xmlc14n1.1.20080502",
     "title": "Canonical XML Version 1.1",
-    "label": "CXML 1.1",
+    "label": "W3C CXML 1.1",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -96034,7 +96034,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Canonical XML Version 1.1",
-      "CXML 1.1",
+      "W3C CXML 1.1",
       "John Boyer",
       "Glenn Marcy"
     ],
@@ -96045,7 +96045,7 @@
   {
     "id": "W3C.xmldsig-core.20020212",
     "title": "XML Signature Syntax and Processing",
-    "label": "XML DSIG Core",
+    "label": "W3C XML DSig Core",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -96081,7 +96081,7 @@
     "keywords": [],
     "keywordsSearch": [
       "XML Signature Syntax and Processing",
-      "XML DSIG Core",
+      "W3C XML DSig Core",
       "Donald Eastlake",
       "Joseph Reagle",
       "David Solo"
@@ -96093,7 +96093,7 @@
   {
     "id": "W3C.xmldsig-core.20080610",
     "title": "XML Signature Syntax and Processing (Second Edition)",
-    "label": "XML DSIG Core",
+    "label": "W3C XML DSig Core",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -96137,7 +96137,7 @@
     "keywords": [],
     "keywordsSearch": [
       "XML Signature Syntax and Processing (Second Edition)",
-      "XML DSIG Core",
+      "W3C XML DSig Core",
       "Donald Eastlake",
       "Joseph Reagle",
       "David Solo",
@@ -96156,7 +96156,7 @@
   {
     "id": "W3C.xmldsig-core1.20130411",
     "title": "XML Signature Syntax and Processing Version 1.1",
-    "label": "XML DSIG CORE 1",
+    "label": "W3C XML DSig Core 1.1",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -96197,7 +96197,7 @@
     "keywords": [],
     "keywordsSearch": [
       "XML Signature Syntax and Processing Version 1.1",
-      "XML DSIG CORE 1",
+      "W3C XML DSig Core 1.1",
       "Donald Eastlake",
       "Joseph Reagle",
       "David Solo",
@@ -96213,7 +96213,7 @@
   {
     "id": "W3C.xmldsig-core2.20150723",
     "title": "XML Signature Syntax and Processing Version 2.0",
-    "label": "XML DSIG CORE 2",
+    "label": "W3C XML DSig Core 2.0",
     "publisher": "W3C",
     "docType": "Note",
     "docTypeAbr": null,
@@ -96255,7 +96255,7 @@
     "keywords": [],
     "keywordsSearch": [
       "XML Signature Syntax and Processing Version 2.0",
-      "XML DSIG CORE 2",
+      "W3C XML DSig Core 2.0",
       "Donald Eastlake",
       "Joseph Reagle",
       "David Solo",
@@ -96272,7 +96272,7 @@
   {
     "id": "W3C.xmlenc.core.20021210",
     "title": "XML Encryption Syntax and Processing",
-    "label": "XML ESP",
+    "label": "W3C XML Enc Core",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -96308,7 +96308,7 @@
     "keywords": [],
     "keywordsSearch": [
       "XML Encryption Syntax and Processing",
-      "XML ESP",
+      "W3C XML Enc Core",
       "Donald Eastlake",
       "Joseph Reagle"
     ],
@@ -96319,7 +96319,7 @@
   {
     "id": "W3C.xmlenc.core1.20130411",
     "title": "XML Encryption Syntax and Processing Version 1.1",
-    "label": "XML ESP 11",
+    "label": "W3C XML Enc Core 1.1",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -96357,7 +96357,7 @@
     "keywords": [],
     "keywordsSearch": [
       "XML Encryption Syntax and Processing Version 1.1",
-      "XML ESP 11",
+      "W3C XML Enc Core 1.1",
       "Donald Eastlake",
       "Joseph Reagle",
       "Frederick Hirsch",
@@ -96370,7 +96370,7 @@
   {
     "id": "W3C.xmlschema-0.20041028",
     "title": "XML Schema Part 0: Primer Second Edition",
-    "label": "XML SP",
+    "label": "W3C XML Schema P0",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -96406,7 +96406,7 @@
     "keywords": [],
     "keywordsSearch": [
       "XML Schema Part 0: Primer Second Edition",
-      "XML SP",
+      "W3C XML Schema P0",
       "David Fallside",
       "Priscilla Walmsley"
     ],
@@ -96417,7 +96417,7 @@
   {
     "id": "W3C.xmlschema-1.20010502",
     "title": "XML Schema Part 1: Structures Second Edition",
-    "label": "XML SCHEMA 1",
+    "label": "W3C XML Schema P1",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -96454,7 +96454,7 @@
     "keywords": [],
     "keywordsSearch": [
       "XML Schema Part 1: Structures Second Edition",
-      "XML SCHEMA 1",
+      "W3C XML Schema P1",
       "Henry Thompson",
       "David Beech",
       "Murray Maloney",
@@ -96467,7 +96467,7 @@
   {
     "id": "W3C.xmlschema-1.20041028",
     "title": "XML Schema Part 1: Structures Second Edition",
-    "label": "XML SCHEMA 1",
+    "label": "W3C XML Schema P1",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -96505,7 +96505,7 @@
     "keywords": [],
     "keywordsSearch": [
       "XML Schema Part 1: Structures Second Edition",
-      "XML SCHEMA 1",
+      "W3C XML Schema P1",
       "Henry Thompson",
       "David Beech",
       "Murray Maloney",
@@ -96518,7 +96518,7 @@
   {
     "id": "W3C.xmlschema-2.20041028",
     "title": "XML Schema Part 2: Datatypes Second Edition",
-    "label": "XML SCHEMA 2",
+    "label": "W3C XML Schema P2",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -96554,7 +96554,7 @@
     "keywords": [],
     "keywordsSearch": [
       "XML Schema Part 2: Datatypes Second Edition",
-      "XML SCHEMA 2",
+      "W3C XML Schema P2",
       "Paul V. Biron",
       "Ashok Malhotra"
     ],
@@ -96565,7 +96565,7 @@
   {
     "id": "W3C.xmlschema1.1-1.20120405",
     "title": "XML Schema Definition Language (XSD) 1.1 Part 1: Structures",
-    "label": "XML XSD 11 P1",
+    "label": "W3C XML XSD 1.1 P1",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -96605,7 +96605,7 @@
     "keywords": [],
     "keywordsSearch": [
       "XML Schema Definition Language (XSD) 1.1 Part 1: Structures",
-      "XML XSD 11 P1",
+      "W3C XML XSD 1.1 P1",
       "Sandy Gao",
       "Michael Sperberg-McQueen",
       "Henry Thompson",
@@ -96620,7 +96620,7 @@
   {
     "id": "W3C.xmlschema1.1-2.20120405",
     "title": "XML Schema Definition Language (XSD) 1.1 Part 2: Datatypes",
-    "label": "XML XSD 11 P2",
+    "label": "W3C XML XSD 1.1 P2",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -96660,7 +96660,7 @@
     "keywords": [],
     "keywordsSearch": [
       "XML Schema Definition Language (XSD) 1.1 Part 2: Datatypes",
-      "XML XSD 11 P2",
+      "W3C XML XSD 1.1 P2",
       "David Peterson",
       "Sandy Gao",
       "Ashok Malhotra",
@@ -96675,7 +96675,7 @@
   {
     "id": "W3C.xpath.19991116",
     "title": "XML Path Language (XPath) V1.0",
-    "label": "XML XPL",
+    "label": "W3C XML XPath 1",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -96711,7 +96711,7 @@
     "keywords": [],
     "keywordsSearch": [
       "XML Path Language (XPath) V1.0",
-      "XML XPL",
+      "W3C XML XPath 1",
       "James Clark",
       "Steven DeRose"
     ],
@@ -96722,7 +96722,7 @@
   {
     "id": "W3C.xpath3.1.20170321",
     "title": "XML Path Language (XPath) 3.1",
-    "label": "XML XPL",
+    "label": "W3C XML XPath 3.1",
     "publisher": "W3C",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -96759,7 +96759,7 @@
     "keywords": [],
     "keywordsSearch": [
       "XML Path Language (XPath) 3.1",
-      "XML XPL",
+      "W3C XML XPath 3.1",
       "Jonathan Robie",
       "Michael Dyck",
       "Josh Spiegel"
