@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2025-11-12T02:28:45.778Z",
+  "generatedAt": "2025-11-12T04:02:38.868Z",
   "sourcePath": "src/main/data/documents.json",
-  "sourceHash": "sha256:6b271fb8c6de2e0e00ce6ca7347f89aec2526bf18f1477f8a3da23992a062ad2",
+  "sourceHash": "sha256:f81c450d0c51a226187347e8497973e9d9ce4ac09d375b12c60b792fa103d41d",
   "publisherCounts": {
     "total": 2208,
     "counts": {
@@ -94,7 +94,7 @@
       "AUDIO": 1,
       "DLP": 1,
       "ALDUS CORP/ADOBE": 1,
-      "USPO": 1,
+      "USPTO": 1,
       "WHATWG": 1,
       "UNIVERSITY OF AUCKLAND": 1
     }
@@ -626,7 +626,7 @@
             "docId": "ISBN.0201325632",
             "reason": "FILTERED",
             "rule": "FILTERED",
-            "ruleDetail": "docType=Book",
+            "ruleDetail": "docType=Journal Article",
             "category": "docType"
           },
           {
@@ -1963,7 +1963,7 @@
           }
         ]
       },
-      "USPO": {
+      "USPTO": {
         "count": 1,
         "docIds": [
           "US5848159"

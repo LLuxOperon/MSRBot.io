@@ -68,14 +68,17 @@
     "IETF": "resources/logos/ietf-logo.width-600.jpg",
     "AMWA": "resources/logos/AMWA Logo 208x63.jpg",
     "AMPAS": "resources/logos/AMPAS_logo2x.png",
+    "Addison-Wesley": "resources/logos/Addison_Wesley_Logo.png",
     "MacMillan Co.": "resources/logos/macmillan-logo-red-1.png",
     "Franklin Institute": "resources/logos/tfir-logo.svg",
-    "Cambridge University Press": "resources/logos/cambridge-university-press-logo-1x.png"
+    "Cambridge University Press": "resources/logos/cambridge-university-press-logo-1x.png",
+    "USPTO": "resources/logos/USPTO-logo-horiz.png",
+    "WHATWG": "resources/logos/whatwg_logo.svg",
+    "Wiley": "resources/logos/wiley-logo-footer.svg"
   },
   "publisherLogoAliases": {
     "smpte": "SMPTE",
     "SMPTE – Society of Motion Picture and Television Engineers": "SMPTE",
-    "ISO/IEC": "ISO",
     "AMPAS": "Academy of Motion Picture Arts and Sciences"
   },
   "publisherLogoHeight": 25,
@@ -97,9 +100,13 @@
     "IETF": "https://www.ietf.org/",
     "AMWA": "https://www.amwa.tv/",
     "AMPAS": "https://www.oscars.org/",
+    "Addison-Wesley": "https://www.informit.com/imprint/index.aspx?st=61085",
     "MacMillan Co.": "https://us.macmillan.com/",
     "Franklin Institute": "https://fi.edu/",
-    "Cambridge University Press": "https://www.cambridge.org/us/universitypress"
+    "Cambridge University Press": "https://www.cambridge.org/us/universitypress",
+    "USPTO": "https://www.uspto.gov/",
+    "WHATWG": "https://whatwg.org/",
+    "Wiley": "https://www.wiley.com/"
   }
 
 }
