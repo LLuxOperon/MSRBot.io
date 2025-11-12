@@ -33,6 +33,12 @@
           "details": {
             "type": "string"
           },
+          "abstract": {
+            "type": "string"
+          },
+          "contentType": {
+            "type": "string"
+          },
           "docElement": {
             "type": "string"
           },
@@ -98,6 +104,9 @@
             ]
           },
           "doi": {
+            "type": "string"
+          },
+          "isbn": {
             "type": "string"
           },
           "group": {

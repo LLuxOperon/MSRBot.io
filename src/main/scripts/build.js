@@ -196,6 +196,32 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     return options.inverse(this);
   });
 
+  // Helper to compare values in citation templates (used inside __renderCiteTpl)
+  // Compare a docType against one or more allowed values or config-defined lists.
+  hb.registerHelper('citeIfEq', function (a, b, options) {
+    const val = String(a || '').trim().toLowerCase();
+
+    // Normalize all comparison inputs into a lowercase array
+    const toArray = v =>
+      Array.isArray(v)
+        ? v.map(x => String(x).trim().toLowerCase())
+        : String(v || '').split(',').map(x => x.trim().toLowerCase()).filter(Boolean);
+
+    let targets = toArray(b);
+
+    // If the template passes a special keyword, load from site config
+    if (targets.includes('nonlineagedoctypes')) {
+      try {
+        const cfg = require('../config/site.json');
+        const list = Array.isArray(cfg.nonLineageDocTypes) ? cfg.nonLineageDocTypes : [];
+        targets = list.map(x => x.trim().toLowerCase());
+      } catch { targets = []; }
+    }
+
+    if (targets.includes(val)) return options.fn(this);
+    return options.inverse(this);
+  });
+
   hb.registerHelper('ifactive', function (a, b, options) {
       return a + '-' + b
   });
@@ -275,6 +301,18 @@ function _doiUrl(doc){
   function _publisherOf(doc){
     return (doc && doc.publisher) || '';
   }
+  function _docTypeOf(doc){
+    return (doc && doc.docType) || '';
+  }
+  function _docBaseOf(doc){
+    return (doc && doc.docBase) || '';
+  }
+  function _isbnOf(doc){
+    return (doc && doc.isbn) || '';
+  }
+  function _authorsOf(doc){
+    return (doc && doc.authors) || '';
+  }
   function _escapeHtml(s){
     return String(s || '')
       .replace(/&/g, '&amp;')
@@ -283,6 +321,47 @@ function _doiUrl(doc){
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#39;');
   }
+
+  // Robust joinAuthors helper with CSL-JSON support, Oxford comma, and custom separators
+  hb.registerHelper('joinAuthors', function (authors, options) {
+    // Hash options
+    const hash = (options && options.hash) || {};
+    const sep = (typeof hash.sep === 'string') ? hash.sep : ', ';
+    const oxford = (hash.oxford === undefined) ? true : !!hash.oxford;
+    const lastSep = (typeof hash.lastSep === 'string') ? hash.lastSep : ' and ';
+
+    function authorToString(a) {
+      if (a == null) return '';
+      if (typeof a === 'string') return a.trim();
+
+      if (typeof a === 'object') {
+        // CSL-JSON common variants
+        if (typeof a.literal === 'string') return a.literal.trim();
+        if (a.name && typeof a.name === 'string') return a.name.trim();
+        if (a.name && typeof a.name === 'object' && typeof a.name.literal === 'string') return a.name.literal.trim();
+
+        const family = (a.family || a.last || '').toString().trim();
+        const given  = (a.given  || a.first || '').toString().trim();
+        const initials = (a.initials || '').toString().trim();
+
+        if (family && given) return `${given} ${family}`.trim();
+        if (family && initials) return `${initials} ${family}`.trim();
+        if (family) return family;
+        if (given) return given;
+      }
+      return '';
+    }
+
+    const arr = Array.isArray(authors) ? authors.map(authorToString).filter(Boolean) : [];
+    if (arr.length === 0) return '';
+    if (arr.length === 1) return arr[0];
+    if (arr.length === 2) return arr.join(lastSep);
+
+    const head = arr.slice(0, -1).join(sep);
+    const tail = arr[arr.length - 1];
+    // Oxford comma: include an extra separator before 'and' for lists of 3+
+    return oxford ? `${head}${sep}and ${tail}` : `${head}${lastSep}${tail}`;
+  });
 
   // Public helpers
   hb.registerHelper('citeText', function(doc){
@@ -311,55 +390,46 @@ function _doiUrl(doc){
   });
 
   // --- Config-driven template rendering for SMPTE preview/snippet divergence
-  // Render a simple moustache-like template string using basic {{tokens}}
+  // Render citation template using Handlebars (supports helpers like {{#citeIfEq ...}})
   function __renderCiteTpl(tpl, doc) {
-    const pub = _publisherOf(doc) || 'SMPTE';
-    const id  = _idOf(doc);
-    // Build an anchor-safe refId by flattening all non-word characters to dashes.
-    // This is only used for anchor links (e.g., id="bib-{{refId}}").
-    const baseForRef = id || label || ttl || pub || '';
+    // Gather fields
+    const publisher  = _publisherOf(doc) || 'SMPTE';
+    const docId   = _idOf(doc);
+    const docType = _docTypeOf(doc);
+    const docBase = _docBaseOf(doc);
+    const label  = _labelOf(doc);
+    const title    = _titleOf(doc);
+    const yr     = _yearFrom(doc && doc.publicationDate);
+    const href   = _bestHref(doc); // may be empty string; do NOT default to '#'
+    const isbn = _isbnOf(doc);
+    const authors = _authorsOf(doc);
+    const doi    = (doc && doc.doi) ? String(doc.doi).trim() : '';
+    // Build an anchor-safe refId by flattening non-word chars to dashes (lowercase)
+    const baseForRef = docId || label || title || publisher || '';
     const bibId = String(baseForRef)
-      .replace(/[^\w]+/g, '-')       // flatten punctuation and spaces to '-'
-      .replace(/^-+|-+$/g, '')       // trim leading/trailing dashes
-      .toLowerCase();                // normalize for stable anchors
-    const label  = _labelOf(doc)
-    const ttl = _titleOf(doc);
-    const yr  = _yearFrom(doc && doc.publicationDate);
-    // Important: do NOT default to '#' here; it makes {{#if href}} always truthy.
-    // Leave empty when unknown so {{#if href}} works as expected in templates.
-    const href = _bestHref(doc);
-    const doi = (doc && doc.doi) ? String(doc.doi).trim() : '';
+      .replace(/[^\w]+/g, '-')
+      .replace(/^-+|-+$/g, '')
+      .toLowerCase();
 
-    const map = { 
-      publisher: pub,
-      id,
+    // Context passed into the template
+    const map = {
+      publisher,
+      docId,
+      docType,
+      docBase,
       bibId,
       label,
-      title: ttl,
+      title,
       year: yr,
+      isbn,
+      authors,
       href,
       doi
     };
 
-    // Handle {{#if field}}...{{else if other}}...{{else}}...{{/if}}
-    tpl = String(tpl || '').replace(
-      /\{\{#if\s+([a-zA-Z0-9_]+)\}\}([\s\S]*?)(?:\{\{else\s+if\s+([a-zA-Z0-9_]+)\}\}([\s\S]*?))?(?:\{\{else\}\}([\s\S]*?))?\{\{\/if\}\}/g,
-      (m, key1, inner1, key2, inner2, innerElse) => {
-        const val1 = map[key1] ? String(map[key1]).trim() : '';
-        const val2 = key2 ? (map[key2] ? String(map[key2]).trim() : '') : '';
-        const truthy1 = val1 && val1 !== '#' && val1.toLowerCase() !== 'about:blank';
-        const truthy2 = val2 && val2 !== '#' && val2.toLowerCase() !== 'about:blank';
-        if (truthy1) return inner1;
-        if (truthy2) return inner2;
-        return innerElse || '';
-      }
-    );
-
-    // Then replace normal {{token}} placeholders
-    return tpl.replace(/\{\{\s*([a-zA-Z0-9_]+)\s*\}\}/g, (m, key) => {
-      const v = map[key];
-      return (v == null ? '' : _escapeHtml(String(v)));
-    });
+    // Compile & render using Handlebars so helpers like {{#citeIfEq ...}} work
+    const compiled = hb.compile(String(tpl || ''));
+    return compiled(map);
   }
 
   // Helpers that prefer siteConfig.citations.smpte.{preview|snippet} if present

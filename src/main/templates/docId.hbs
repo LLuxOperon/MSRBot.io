@@ -44,6 +44,8 @@
             {{#if status.statusNote}}<dt class="col-sm-4">Status Note</dt><dd class="col-sm-8"><em>{{status.statusNote}}</em></dd>{{/if}}
             {{#if publisher}}<dt class="col-sm-4">Publisher</dt><dd class="col-sm-8"><a class="clear-filter" href="../?f.publisher={{publisher}}">{{publisher}}</a></dd>{{/if}}
             {{#if docType}}<dt class="col-sm-4">Doc Type</dt><dd class="col-sm-8">{{docType}}{{#if docTypeAbr}} ({{docTypeAbr}}){{/if}}</dd>{{/if}}
+            {{#if contentType}}<dt class="col-sm-4">Content Type</dt><dd class="col-sm-8">{{contentType}}</dd>{{/if}}
+            {{#if abstract}}<dt class="col-sm-4">Abstract</dt><dd class="col-sm-8">{{abstract}}</dd>{{/if}}
             {{#if publicationDate}}<dt class="col-sm-4">Publication Date</dt><dd class="col-sm-8">{{publicationDate}}</dd>{{/if}}
             {{#if status.amendedDate}}<dt class="col-sm-4">Amended Date</dt><dd class="col-sm-8">{{status.amendedDate}}</dd>{{/if}}
             {{#if status.reaffirmDate}}<dt class="col-sm-4">Reaffirm Date</dt><dd class="col-sm-8">{{status.reaffirmDate}}</dd>{{/if}}
@@ -51,6 +53,7 @@
             {{#if status.supersededDate}}<dt class="col-sm-4">Superseded Date</dt><dd class="col-sm-8">{{status.supersededDate}}</dd>{{/if}}
             {{#if status.withdrawnDate}}<dt class="col-sm-4">Withdrawn Date</dt><dd class="col-sm-8">{{status.withdrawnDate}}</dd>{{/if}}
             {{#if doi}}<dt class="col-sm-4">DOI</dt><dd class="col-sm-8"><a href="https://doi.org/{{doi}}" target="_blank" rel="noopener"><code>{{doi}}</code></a></dd>{{/if}}
+            {{#if isbn}}<dt class="col-sm-4">ISBN</dt><dd class="col-sm-8"><code>{{isbn}}</code></dd>{{/if}}
             {{#if href}}<dt class="col-sm-4">Link</dt><dd class="col-sm-8"><a href="{{href}}" target="_blank" rel="noopener" class="text-break d-inline-block" style="max-width:100%">{{href}}</a></dd>{{/if}}
             {{#if repo}}<dt class="col-sm-4">Repo</dt><dd class="col-sm-8"><a href="{{repo}}" target="_blank" rel="noopener" class="text-break d-inline-block" style="max-width:100%">{{repo}}</a></dd>{{/if}}
             {{#if authors}}<dt class="col-sm-4">Author(s)</dt><dd class="col-sm-8">{{#authors}}{{this}}{{#unless @last}}, {{/unless}}{{/authors}}</dd>{{/if}}
@@ -199,36 +202,66 @@
           <div class="mb-3">
             <div class="d-flex align-items-center justify-content-between">
               <h3 class="h6 mb-0">Plain text (<a href="../ISO.960.2021/">ISO 690</a> compliant)</h3>
-              <button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-text-{{docId}}">Copy</button>
+              <div>
+                <button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-text-{{docId}}">Copy</button>
+                <!-- {{#if docBase}}{{#unless status.versionless}}<button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-text-undated-{{docId}}" title="Copy (undated)">Copy (undated)</button>{{/unless}}{{/if}} -->
+              </div>
             </div>
             <div class="mt-1">Preview:</div>
             <div class="border rounded p-2 bg-body-secondary">{{citeText this}}</div>
             <div class="mt-2">Snippet:</div>
             <pre id="cite-text-{{docId}}" class="bg-light border rounded p-2 mb-0 snippet">{{{citeCodeText this}}}</pre>
+            <!-- {{#if docBase}}{{#unless status.versionless}}<details class="mt-2">
+              <summary class="small text-muted">Undated variant</summary>
+              <div class="mt-1">Preview:</div>
+              <div class="border rounded p-2 bg-body-secondary">{{citeText this}}</div>
+              <div class="mt-2">Snippet:</div>
+              <pre id="cite-text-undated-{{docId}}" class="bg-light border rounded p-2 mb-0 snippet">{{{citeCodeText this}}}</pre>
+            </details>{{/unless}}{{/if}} -->
           </div>
           
           <!-- HTML (generic) -->
           <div class="mb-3 pt-3 border-top">
             <div class="d-flex align-items-center justify-content-between">
               <h3 class="h6 mb-0">HTML: Generic (<a href="../ISO.960.2021/">ISO 690</a> compliant)</h3>
-              <button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-html-generic-{{docId}}">Copy</button>
+              <div>
+                <button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-html-generic-{{docId}}">Copy</button>
+                <!-- {{#if docBase}}{{#unless status.versionless}}<button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-html-generic-undated-{{docId}}" title="Copy (undated)">Copy (undated)</button>{{/unless}}{{/if}} -->
+              </div>
             </div>
             <div class="mt-1">Preview:</div>
             <div class="border rounded p-2 bg-body-secondary">{{{citeHtmlGeneric this}}}</div>
             <div class="mt-2">Snippet:</div>
             <pre id="cite-html-generic-{{docId}}" class="bg-light border rounded p-2 mb-0 snippet">{{{citeCodeHtmlGeneric this}}}</pre>
+            <!-- {{#if docBase}}{{#unless status.versionless}}<details class="mt-2">
+              <summary class="small text-muted">Undated variant</summary>
+              <div class="mt-1">Preview:</div>
+              <div class="border rounded p-2 bg-body-secondary">{{{citeHtmlGeneric this}}}</div>
+              <div class="mt-2">Snippet:</div>
+              <pre id="cite-html-generic-undated-{{docId}}" class="bg-light border rounded p-2 mb-0 snippet">{{{citeCodeHtmlGeneric this}}}</pre>
+            </details>{{/unless}}{{/if}} -->
           </div>
 
           <!-- HTML (SMPTE) -->
           <div class="mb-1 pt-3 border-top">
             <div class="d-flex align-items-center justify-content-between">
-            <h3 class="h6 mb-0">HTML: <img src="{{assetPrefix}}resources/logos/smpte-icon.png" alt="SMPTE Icon" width="24" class=" icon d-inline-block align-text-middle"> SMPTE's <a href="../SMPTE.AG26/" title="{{getLabel docId}}">HTML Pub</a>)</h3>
-              <button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-html-smpte-{{docId}}">Copy</button>
+              <h3 class="h6 mb-0">HTML: <img src="{{assetPrefix}}resources/logos/smpte-icon.png" alt="SMPTE Icon" width="24" class=" icon d-inline-block align-text-middle"> SMPTE's <a href="../SMPTE.AG26/" title="{{getLabel docId}}">HTML Pub</a></h3>
+              <div>
+                <button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-html-smpte-{{docId}}">Copy</button>
+                <!-- {{#if docBase}}{{#unless status.versionless}}<button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-html-smpte-undated-{{docId}}" title="Copy (undated)">Copy (undated)</button>{{/unless}}{{/if}} -->
+              </div>
             </div>
             <div class="mt-1">Preview:</div>
             <div class="border rounded p-2 bg-body-secondary">{{{citeHtmlSmptePreview this}}}</div>
             <div class="mt-2">Snippet:</div>
             <pre id="cite-html-smpte-{{docId}}" class="bg-light border rounded p-2 mb-0 snippet">{{{citeCodeHtmlSmpteSnippet this}}}</pre>
+            <!-- {{#if docBase}}{{#unless status.versionless}}<details class="mt-2">
+              <summary class="small text-muted">Undated variant</summary>
+              <div class="mt-1">Preview:</div>
+              <div class="border rounded p-2 bg-body-secondary">{{{citeHtmlSmptePreview this}}}</div>
+              <div class="mt-2">Snippet:</div>
+              <pre id="cite-html-smpte-undated-{{docId}}" class="bg-light border rounded p-2 mb-0 snippet">{{{citeCodeHtmlSmpteSnippet this}}}</pre>
+            </details>{{/unless}}{{/if}} -->
           </div>
         </div>
       </div>
