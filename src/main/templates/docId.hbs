@@ -64,7 +64,7 @@
               <br>{{#ifnoteq projectStatus "Complete"}}<span class="small">Under Development: {{/ifnoteq}}<a href="/projects/{{../../htmlLink}}#{{projectId}}">Project - {{projectId}}</a> {{#if newDoc}} - New Doc: <a class="{{../../idType}}-link clear-filter" href="../{{newDoc}}">{{getLabel newDoc}}</a> [{{getStatus newDoc}}]</span> {{{getstatusButton newDoc "10"}}} {{#with (docProjLookup @root.docProjs newDoc)}}{{#ifnoteq projectStatus "Complete"}}<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#F6BE00" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg>{{/ifnoteq}}{{/with}}{{/if}}</span>
             </dd>{{/if}}{{/with}}
             {{#if keywords}}<dt class="col-sm-4">Keyword(s)</dt><dd class="col-sm-8">{{#keywords}}<a class="clear-filter" href="../?f.keywords={{this}}">{{this}}</a>{{#unless @last}}, {{/unless}}{{/keywords}}</dd>{{/if}}
-            {{#if revisionOf}}<dt class="col-sm-4">Revision(s) of</dt><dd class="col-sm-8">{{#revisionOf}}<a class="clear-filter" href="../{{this}}/">{{this}}</a>{{#unless @last}}, {{/unless}}{{/revisionOf}}</dd>{{/if}}
+            {{#if revisionOf}}<dt class="col-sm-4">Revision of</dt><dd class="col-sm-8">{{#revisionOf}}<a class="clear-filter" href="../{{this}}/">{{this}}</a>{{#unless @last}}; {{/unless}}{{/revisionOf}}</dd>{{/if}}
             
             {{#if details}}<dt class="col-sm-4">Details</dt><dd class="col-sm-8"><em>{{details}}</em></dd>{{/if}}
           </dl>

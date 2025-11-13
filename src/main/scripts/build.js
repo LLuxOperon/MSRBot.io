@@ -1066,7 +1066,9 @@ hb.registerHelper("getUndatedTitle", function(title) {
     // Bare "v1", "v1.4.1" tokens
     .replace(/\bv[0-9][0-9A-Za-z.\-]*/gi, '')
     // Year + "version" suffix: "1986 version"
-    .replace(/\b\d{4}\s+version\b/gi, '');
+    .replace(/\b\d{4}\s+version\b/gi, '')
+    // "Ver. 1.02" / "Ver 1.02"
+    .replace(/\bver\.?\s+[0-9][0-9A-Za-z.\-]*/gi, '');
 
   // 5) Remove trailing year-only parentheses or loose years left after version removal
   //    e.g., "Digital Broadcasting Version 2.1 (2007)" -> "Digital Broadcasting"

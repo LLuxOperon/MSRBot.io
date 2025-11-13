@@ -1,0 +1,8 @@
+---
+
+### 🛠 Canonicalization fixed missing $meta fields in 5 document(s):
+- AES17.1998 (injected: status.reaffirmed)
+- AES3.2009 (injected: status.reaffirmed)
+- AES5.2008 (injected: revisionOf)
+- AES5.2018 (injected: revisionOf)
+- AES7.2000 (injected: revisionOf)
