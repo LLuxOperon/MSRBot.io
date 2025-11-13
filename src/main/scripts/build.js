@@ -198,9 +198,7 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
 
   // Helper to compare values in citation templates (used inside __renderCiteTpl)
   // Compare a docType against one or more allowed values or config-defined lists.
-  hb.registerHelper('citeIfEq', function (a, b, options) {
-    const val = String(a || '').trim().toLowerCase();
-
+  function buildCiteTargetSet(b) {
     // Normalize comparison inputs to a lowercase array
     const toArray = v =>
       (Array.isArray(v) ? v : String(v || '').split(','))
@@ -235,11 +233,28 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
         addList(cfg && Array.isArray(cfg.titleLabelDocTypes) ? cfg.titleLabelDocTypes : []);
         continue;
       }
+      if (t === 'datelesspublishers') {
+        addList(cfg && Array.isArray(cfg.datelessPublishers) ? cfg.datelessPublishers : []);
+        continue;
+      }
       // literal compare value
       outSet.add(t);
     }
 
+    return outSet;
+  }
+
+  hb.registerHelper('citeIfEq', function (a, b, options) {
+    const val = String(a || '').trim().toLowerCase();
+    const outSet = buildCiteTargetSet(b);
     return outSet.has(val) ? options.fn(this) : options.inverse(this);
+  });
+
+  // Negated variant: run block when value is NOT in the target set
+  hb.registerHelper('citeIfNotEq', function (a, b, options) {
+    const val = String(a || '').trim().toLowerCase();
+    const outSet = buildCiteTargetSet(b);
+    return !outSet.has(val) ? options.fn(this) : options.inverse(this);
   });
 
   hb.registerHelper('ifactive', function (a, b, options) {
@@ -388,8 +403,16 @@ function _doiUrl(doc){
     const tpl = siteConfig?.citations?.text?.preview;
     return tpl ? __renderCiteTpl(tpl, doc) : _buildCiteText(doc);
   });
+  hb.registerHelper('citeTextUndated', function(doc){
+    const tpl = siteConfig?.citations?.text?.previewUndated;
+    return tpl ? __renderCiteTpl(tpl, doc) : _buildCiteText(doc);
+  });
   hb.registerHelper('citeHtmlGeneric', function(doc){
     const tpl = siteConfig?.citations?.generic?.preview;
+    return new hb.SafeString(tpl ? __renderCiteTpl(tpl, doc) : _buildCiteHtmlGeneric(doc));
+  });
+  hb.registerHelper('citeHtmlGenericUndated', function(doc){
+    const tpl = siteConfig?.citations?.generic?.previewUndated;
     return new hb.SafeString(tpl ? __renderCiteTpl(tpl, doc) : _buildCiteHtmlGeneric(doc));
   });
   hb.registerHelper('citeHtmlSmpte', function(doc){
@@ -401,10 +424,22 @@ function _doiUrl(doc){
     const tpl = siteConfig?.citations?.text?.preview;
     return new hb.SafeString(_escapeHtml(tpl ? __renderCiteTpl(tpl, doc) : _buildCiteText(doc)));
   });
+
+  hb.registerHelper('citeCodeTextUndated', function(doc){
+    const tpl = siteConfig?.citations?.text?.previewUndated;
+    return new hb.SafeString(_escapeHtml(tpl ? __renderCiteTpl(tpl, doc) : _buildCiteText(doc)));
+  });
+
   hb.registerHelper('citeCodeHtmlGeneric', function(doc){
     const tpl = siteConfig?.citations?.generic?.preview;
     return new hb.SafeString(_escapeHtml(tpl ? __renderCiteTpl(tpl, doc) : _buildCiteHtmlGeneric(doc)));
   });
+  
+  hb.registerHelper('citeCodeHtmlGenericUndated', function(doc){
+    const tpl = siteConfig?.citations?.generic?.previewUndated;
+    return new hb.SafeString(_escapeHtml(tpl ? __renderCiteTpl(tpl, doc) : _buildCiteHtmlGeneric(doc)));
+  });
+
   hb.registerHelper('citeCodeHtmlSmpte', function(doc){
     return new hb.SafeString(_escapeHtml(_buildCiteHtmlSmpte(doc)));
   });
@@ -469,6 +504,33 @@ function _doiUrl(doc){
   hb.registerHelper('citeCodeHtmlSmpteSnippet', function(doc){
     try {
       const cfgTpl = siteConfig && siteConfig.citations && siteConfig.citations.smpte && siteConfig.citations.smpte.snippet;
+      if (cfgTpl) {
+        // For code blocks, escape the rendered HTML so users copy the literal tag string
+        return new hb.SafeString(_escapeHtml(__renderCiteTpl(cfgTpl, doc)));
+      }
+      // Fallback: use the same default SMPTE builder, escaped for code
+      return new hb.SafeString(_escapeHtml(_buildCiteHtmlSmpte(doc)));
+    } catch (e) {
+      return new hb.SafeString(_escapeHtml(_buildCiteHtmlSmpte(doc)));
+    }
+  });
+
+  hb.registerHelper('citeHtmlSmptePreviewUndated', function(doc){
+    try {
+      const cfgTpl = siteConfig && siteConfig.citations && siteConfig.citations.smpte && siteConfig.citations.smpte.previewUndated;
+      if (cfgTpl) {
+        return new hb.SafeString(__renderCiteTpl(cfgTpl, doc));
+      }
+      // Fallback to the default SMPTE HTML builder
+      return new hb.SafeString(_buildCiteHtmlSmpte(doc));
+    } catch (e) {
+      return new hb.SafeString(_buildCiteHtmlSmpte(doc));
+    }
+  });
+
+  hb.registerHelper('citeCodeHtmlSmpteSnippetUndated', function(doc){
+    try {
+      const cfgTpl = siteConfig && siteConfig.citations && siteConfig.citations.smpte && siteConfig.citations.smpte.snippetUndated;
       if (cfgTpl) {
         // For code blocks, escape the rendered HTML so users copy the literal tag string
         return new hb.SafeString(_escapeHtml(__renderCiteTpl(cfgTpl, doc)));
@@ -951,11 +1013,75 @@ function _doiUrl(doc){
   });
 
   // Render a label without trailing date (e.g., "SMPTE ST 429-2:2023-09" -> "SMPTE ST 429-2")
-  hb.registerHelper("getUndatedLabel", function(docId) {
-    const label = docLabels.hasOwnProperty(docId) ? docLabels[docId] : docId;
-    // Strip ":YYYY", ":YYYY-MM" or ":YYYYMMDD" and anything after
-    return String(label).replace(/:\s?\d{4}(?:-\d{2}){0,2}.*$/, '');
-  });
+hb.registerHelper("getUndatedLabel", function(docId) {
+  const label = docLabels.hasOwnProperty(docId) ? docLabels[docId] : docId;
+  // Strip ":YYYY", ":YYYY-MM" or ":YYYYMMDD" and anything after
+  return String(label).replace(/:\s?\d{4}(?:-\d{2}){0,2}.*$/, '');
+});
+
+hb.registerHelper("getUndatedLabelCite", function(docId) {
+  const label = docLabels.hasOwnProperty(docId) ? docLabels[docId] : docId;
+  // Strip ":YYYY", ":YYYY-MM" or ":YYYYMMDD" and anything after
+  return String(label).replace(/:\s?\d{4}(?:-\d{2}){0,2}.*$/, '');
+});
+
+hb.registerHelper("getUndatedTitle", function(title) {
+  if (!title) return '';
+  let s = String(title);
+
+  // 1) Replace any parenthetical chunk that contains the word "Edition" (any case)
+  //    e.g., "(Eighth edition, 2018)" -> "(Latest Edition)"
+  //          "(Third Edition)"        -> "(Latest Edition)"
+  s = s.replace(/\(([^)]*\bedition\b[^)]*)\)/gi, '(Latest Edition)');
+
+  // 2) Replace inline edition phrases with "Latest Edition", without touching "Version"
+  //    Examples:
+  //      "Second Edition"      -> "Latest Edition"
+  //      "14th Edition"        -> "Latest Edition"
+  //      "1999 Edition"        -> "Latest Edition"
+  //      "Edition 6.0"         -> "Latest Edition"
+  s = s
+    // "[word/number] Edition"
+    .replace(
+      /\b(?:\d{4}|\d+(?:st|nd|rd|th)|first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|[A-Za-z]+)\s+edition\b/gi,
+      'Latest Edition'
+    )
+    // "Edition 6.0" / "Edition 2"
+    .replace(/\bedition\s+[0-9.]+\b/gi, 'Latest Edition');
+
+  // 3) If an edition phrase still carries a trailing year (e.g., "Latest Edition, 2018"),
+  //    strip the year so it becomes just "Latest Edition".
+  s = s.replace(/Latest Edition,\s*\d{4}(?:-\d{2}){0,2}/gi, 'Latest Edition');
+
+  // 4) Strip common "version" patterns completely (we do NOT replace with "Latest Version")
+  //    Examples:
+  //      "v1.1"                    -> ''
+  //      "Addendum v1 2022-10-14"  -> 'Addendum'
+  //      "Version 1.4"             -> ''
+  //      "VERSION 2.0.9"           -> ''
+  //      "1986 version"            -> ''
+  s = s
+    // "Version 1.4.1", "VERSION 2.0.9" (keep any leading punctuation/space for cleanup below)
+    .replace(/\bversion\s+[0-9][0-9A-Za-z.\-]*/gi, '')
+    // Bare "v1", "v1.4.1" tokens
+    .replace(/\bv[0-9][0-9A-Za-z.\-]*/gi, '')
+    // Year + "version" suffix: "1986 version"
+    .replace(/\b\d{4}\s+version\b/gi, '');
+
+  // 5) Remove trailing year-only parentheses or loose years left after version removal
+  //    e.g., "Digital Broadcasting Version 2.1 (2007)" -> "Digital Broadcasting"
+  s = s
+    // Parenthesized date: (2007), (2007-01), (2007-01-01)
+    .replace(/\(\s*\d{4}(?:-\d{2}(?:-\d{2})?)?\s*\)/g, '')
+    // Trailing ", 2007" or " 2007-01-01" at the end of the string
+    .replace(/[, ]+\d{4}(?:-\d{2}(?:-\d{2})?)?\s*$/g, '');
+
+  // 6) Collapse any multiple spaces created by the removals
+  s = s.replace(/\s{2,}/g, ' ');
+
+  return s.trim();
+});
+
 
   /* lookup if any projects exist for current document */
   

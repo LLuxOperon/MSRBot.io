@@ -21,16 +21,25 @@
   ],
   "citations": {
     "text": {
-      "preview": "{{#citeIfEq docType \"nonLineageDocTypes\"}}{{#if authors}}{{joinAuthors authors oxford=true}}; {{/if}}{{/citeIfEq}}{{#citeIfEq docType \"titleLabelDocTypes\"}}{{title}}, {{label}}{{else}}{{label}}, {{title}}{{/citeIfEq}}{{#citeIfEq docType \"nonLineageDocTypes\"}}; {{publisher}}, {{#if year}}{{year}}{{/if}}{{#if isbn}}, ISBN: {{isbn}}{{/if}}{{/citeIfEq}}{{#if href}}. Available at {{href}}{{/if}}"
+      "preview": "{{#citeIfEq docType \"nonLineageDocTypes\"}}{{#if authors}}{{joinAuthors authors oxford=true}}; {{/if}}{{/citeIfEq}}{{#citeIfEq docType \"titleLabelDocTypes\"}}{{title}}, {{label}}{{else}}{{label}}, {{title}}{{/citeIfEq}}{{#citeIfEq docType \"nonLineageDocTypes\"}}; {{publisher}}, {{#if year}}{{year}}{{/if}}{{#if isbn}}, ISBN: {{isbn}}{{/if}}{{/citeIfEq}}{{#if href}}. Available at {{href}}{{/if}}",
+      "previewUndated": "{{#citeIfEq docType \"nonLineageDocTypes\"}}{{#if authors}}{{joinAuthors authors oxford=true}}; {{/if}}{{/citeIfEq}}{{#citeIfEq docType \"titleLabelDocTypes\"}}{{getUndatedTitle title}}, {{getUndatedLabelCite docId}}{{else}}{{getUndatedLabelCite docId}}, {{getUndatedTitle title}}{{/citeIfEq}}{{#citeIfEq docType \"nonLineageDocTypes\"}}; {{publisher}}, {{#if year}}{{year}}{{/if}}{{#if isbn}}, ISBN: {{isbn}}{{/if}}{{/citeIfEq}}{{#if href}}. Available at {{href}}{{/if}}"
     },
+    
     "generic": {
-      "preview": "<span class=\"citation\">{{#citeIfEq docType \"nonLineageDocTypes\"}}{{#if authors}}{{joinAuthors authors oxford=true}}; {{/if}}{{/citeIfEq}}{{#citeIfEq docType \"titleLabelDocTypes\"}}<cite>{{title}}</cite>, {{label}}{{else}}<cite>{{label}}</cite>, {{title}}{{/citeIfEq}}{{#citeIfEq docType \"nonLineageDocTypes\"}}; {{publisher}}, {{#if year}}{{year}}{{/if}}{{#if isbn}}, ISBN: {{isbn}}{{/if}}{{/citeIfEq}}{{#if href}}. Available at <a href=\"{{href}}\" target=\"_blank\" rel=\"noopener\">{{href}}</a>{{/if}}</span>"
+      "preview": "<span class=\"citation\">{{#citeIfEq docType \"nonLineageDocTypes\"}}{{#if authors}}{{joinAuthors authors oxford=true}}; {{/if}}{{/citeIfEq}}{{#citeIfEq docType \"titleLabelDocTypes\"}}<cite>{{title}}</cite>, {{label}}{{else}}<cite>{{label}}</cite>, {{title}}{{/citeIfEq}}{{#citeIfEq docType \"nonLineageDocTypes\"}}; {{publisher}}, {{#if year}}{{year}}{{/if}}{{#if isbn}}, ISBN: {{isbn}}{{/if}}{{/citeIfEq}}{{#if href}}. Available at <a href=\"{{href}}\" target=\"_blank\" rel=\"noopener\">{{href}}</a>{{/if}}</span>",
+      "previewUndated": "<span class=\"citation\">{{#citeIfEq docType \"nonLineageDocTypes\"}}{{#if authors}}{{joinAuthors authors oxford=true}}; {{/if}}{{/citeIfEq}}{{#citeIfEq docType \"titleLabelDocTypes\"}}<cite>{{getUndatedTitle title}}</cite>, {{getUndatedLabelCite docId}}{{else}}<cite>{{getUndatedLabelCite docId}}</cite>, {{getUndatedTitle title}}{{/citeIfEq}}{{#citeIfEq docType \"nonLineageDocTypes\"}}; {{publisher}}, {{#if year}}{{year}}{{/if}}{{#if isbn}}, ISBN: {{isbn}}{{/if}}{{/citeIfEq}}{{#if href}}. Available at <a href=\"{{href}}\" target=\"_blank\" rel=\"noopener\">{{href}}</a>{{/if}}</span>"
     },
     "smpte": {
       "preview": "{{#citeIfEq docType \"nonLineageDocTypes\"}}{{#if authors}}{{joinAuthors authors oxford=true}}; {{/if}}{{/citeIfEq}}<cite id=\"bib-{{bibId}}\">{{#citeIfEq docType \"titleLabelDocTypes\"}}{{title}}</cite>, {{label}}{{else}}{{label}}</cite>, {{title}}{{/citeIfEq}}{{#citeIfEq docType \"nonLineageDocTypes\"}}; {{publisher}}, {{#if year}}{{year}}{{/if}}{{#if isbn}}, ISBN: {{isbn}}{{/if}}{{/citeIfEq}}{{#if doi}}<br>doi:&nbsp;<span class=\"doi\">{{doi}}</span><br>url:&nbsp;<a href=\"{{href}}\" class=\"ext-ref\">{{href}}</a>{{else if href}}<br>url:&nbsp;<a href=\"{{href}}\" class=\"ext-ref\">{{href}}</a>{{/if}}",
-      "snippet": "<li>\n{{#citeIfEq docType \"nonLineageDocTypes\"}}{{#if authors}}{{joinAuthors authors oxford=true}}; {{/if}}{{/citeIfEq}}<cite id=\"bib-{{bibId}}\">{{#citeIfEq docType \"titleLabelDocTypes\"}}{{title}}</cite>, {{label}}{{else}}{{label}}</cite>, {{title}}{{/citeIfEq}}{{#citeIfEq docType \"nonLineageDocTypes\"}}; {{publisher}}, {{#if year}}{{year}}{{/if}}{{#if isbn}}, ISBN: {{isbn}}{{/if}}{{/citeIfEq}}{{#if doi}}\n<span class=\"doi\">{{doi}}</span>{{else if href}}\n<a>{{href}}</a>{{/if}}\n</li>"
+      "snippet": "<li>\n{{#citeIfEq docType \"nonLineageDocTypes\"}}{{#if authors}}{{joinAuthors authors oxford=true}}; {{/if}}{{/citeIfEq}}<cite id=\"bib-{{bibId}}\">{{#citeIfEq docType \"titleLabelDocTypes\"}}{{title}}</cite>, {{label}}{{else}}{{label}}</cite>, {{title}}{{/citeIfEq}}{{#citeIfEq docType \"nonLineageDocTypes\"}}; {{publisher}}, {{#if year}}{{year}}{{/if}}{{#if isbn}}, ISBN: {{isbn}}{{/if}}{{/citeIfEq}}{{#if doi}}\n<span class=\"doi\">{{doi}}</span>{{else if href}}\n<a>{{href}}</a>{{/if}}\n</li>",
+      "previewUndated": "{{#citeIfEq docType \"nonLineageDocTypes\"}}{{#if authors}}{{joinAuthors authors oxford=true}}; {{/if}}{{/citeIfEq}}<cite id=\"bib-{{bibId}}\">{{#citeIfEq docType \"titleLabelDocTypes\"}}{{getUndatedTitle title}}</cite>, {{getUndatedLabelCite docId}}{{else}}{{getUndatedLabelCite docId}}</cite>, {{getUndatedTitle title}}{{/citeIfEq}}{{#citeIfEq docType \"nonLineageDocTypes\"}}; {{publisher}}, {{#if year}}{{year}}{{/if}}{{#if isbn}}, ISBN: {{isbn}}{{/if}}{{/citeIfEq}}{{#if doi}}<br>doi:&nbsp;<span class=\"doi\">{{doi}}</span><br>url:&nbsp;<a href=\"{{href}}\" class=\"ext-ref\">{{href}}</a>{{else if href}}<br>url:&nbsp;<a href=\"{{href}}\" class=\"ext-ref\">{{href}}</a>{{/if}}",
+      "snippetUndated": "<li>\n{{#citeIfEq docType \"nonLineageDocTypes\"}}{{#if authors}}{{joinAuthors authors oxford=true}}; {{/if}}{{/citeIfEq}}<cite id=\"bib-{{bibId}}\">{{#citeIfEq docType \"titleLabelDocTypes\"}}{{getUndatedTitle title}}</cite>, {{getUndatedLabelCite docId}}{{else}}{{getUndatedLabelCite docId}}</cite>, {{getUndatedTitle title}}{{/citeIfEq}}{{#citeIfEq docType \"nonLineageDocTypes\"}}; {{publisher}}, {{#if year}}{{year}}{{/if}}{{#if isbn}}, ISBN: {{isbn}}{{/if}}{{/citeIfEq}}{{#if doi}}\n<span class=\"doi\">{{doi}}</span>{{else if href}}\n<a>{{href}}</a>{{/if}}\n</li>"
     }
   },
+  "datelessPublishers": [
+    "DCI",
+    "IETF"
+  ],
   "nonLineageDocTypes": [
     "Book",
     "Dissertation",
@@ -60,7 +69,6 @@
     "Journal Article",
     "Magazine Article",
     "Manual",
-    "Operations Manual",
     "Patent",
     "Registry",
     "Study Group Report",
@@ -79,6 +87,7 @@
     "AES": "resources/logos/AES-Shield-Only-R.png",
     "ISDCF": "resources/logos/ISDCF_logo-square-nobg.png",
     "DCI": "resources/logos/dci-logo.D6QwqnEi.png",
+    "EBU": "resources/logos/EBU_logo_transparent.png",
     "W3C": "resources/logos/w3c.svg",
     "IMFUG": "resources/logos/IMFUG_cropped-mark.png",
     "IEEE": "resources/logos/ieee_logo.svg",
@@ -87,6 +96,8 @@
     "IETF": "resources/logos/ietf-logo.width-600.jpg",
     "AMWA": "resources/logos/AMWA Logo 208x63.jpg",
     "AMPAS": "resources/logos/AMPAS_logo2x.png",
+    "ARIB": "resources/logos/ARIB_logo1.png", 
+    "OMG": "resources/logos/OMG-logo-web-sm.svg",
     "Addison-Wesley": "resources/logos/Addison_Wesley_Logo.png",
     "MacMillan Co.": "resources/logos/macmillan-logo-red-1.png",
     "Franklin Institute": "resources/logos/tfir-logo.svg",
@@ -111,6 +122,7 @@
     "AES": "https://aes2.org/",
     "ISDCF": "https://www.isdcf.com/",
     "DCI": "https://www.dcimovies.com/",
+    "EBU": "https://tech.ebu.ch/",
     "W3C": "https://www.w3.org/",
     "IMFUG": "https://www.imfug.com/",
     "IEEE": "https://www.ieee.org/",
@@ -119,6 +131,8 @@
     "IETF": "https://www.ietf.org/",
     "AMWA": "https://www.amwa.tv/",
     "AMPAS": "https://www.oscars.org/",
+    "ARIB": "https://www.arib.or.jp/english/index.html", 
+    "OMG": "https://www.omg.org/",
     "Addison-Wesley": "https://www.informit.com/imprint/index.aspx?st=61085",
     "MacMillan Co.": "https://us.macmillan.com/",
     "Franklin Institute": "https://fi.edu/",

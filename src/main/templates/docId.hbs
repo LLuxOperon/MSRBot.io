@@ -64,6 +64,7 @@
               <br>{{#ifnoteq projectStatus "Complete"}}<span class="small">Under Development: {{/ifnoteq}}<a href="/projects/{{../../htmlLink}}#{{projectId}}">Project - {{projectId}}</a> {{#if newDoc}} - New Doc: <a class="{{../../idType}}-link clear-filter" href="../{{newDoc}}">{{getLabel newDoc}}</a> [{{getStatus newDoc}}]</span> {{{getstatusButton newDoc "10"}}} {{#with (docProjLookup @root.docProjs newDoc)}}{{#ifnoteq projectStatus "Complete"}}<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#F6BE00" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg>{{/ifnoteq}}{{/with}}{{/if}}</span>
             </dd>{{/if}}{{/with}}
             {{#if keywords}}<dt class="col-sm-4">Keyword(s)</dt><dd class="col-sm-8">{{#keywords}}<a class="clear-filter" href="../?f.keywords={{this}}">{{this}}</a>{{#unless @last}}, {{/unless}}{{/keywords}}</dd>{{/if}}
+            {{#if revisionOf}}<dt class="col-sm-4">Revision(s) of</dt><dd class="col-sm-8">{{#revisionOf}}<a class="clear-filter" href="../{{this}}/">{{this}}</a>{{#unless @last}}, {{/unless}}{{/revisionOf}}</dd>{{/if}}
             
             {{#if details}}<dt class="col-sm-4">Details</dt><dd class="col-sm-8"><em>{{details}}</em></dd>{{/if}}
           </dl>
@@ -204,20 +205,20 @@
               <h3 class="h6 mb-0">Plain text (<a href="../ISO.960.2021/">ISO 690</a> compliant)</h3>
               <div>
                 <button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-text-{{docId}}">Copy</button>
-                <!-- {{#if docBase}}{{#unless status.versionless}}<button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-text-undated-{{docId}}" title="Copy (undated)">Copy (undated)</button>{{/unless}}{{/if}} -->
+                {{#citeIfNotEq docType "nonLineageDocTypes"}}{{#citeIfNotEq publisher "datelessPublishers"}}{{#unless status.versionless}}<button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-text-undated-{{docId}}" title="Copy (undated)">Copy (undated)</button>{{/unless}}{{/citeIfNotEq}}{{/citeIfNotEq}}
               </div>
             </div>
             <div class="mt-1">Preview:</div>
             <div class="border rounded p-2 bg-body-secondary">{{citeText this}}</div>
             <div class="mt-2">Snippet:</div>
             <pre id="cite-text-{{docId}}" class="bg-light border rounded p-2 mb-0 snippet">{{{citeCodeText this}}}</pre>
-            <!-- {{#if docBase}}{{#unless status.versionless}}<details class="mt-2">
+            {{#citeIfNotEq docType "nonLineageDocTypes"}}{{#citeIfNotEq publisher "datelessPublishers"}}{{#unless status.versionless}}<details class="mt-2">
               <summary class="small text-muted">Undated variant</summary>
               <div class="mt-1">Preview:</div>
-              <div class="border rounded p-2 bg-body-secondary">{{citeText this}}</div>
+              <div class="border rounded p-2 bg-body-secondary">{{citeTextUndated this}}</div>
               <div class="mt-2">Snippet:</div>
-              <pre id="cite-text-undated-{{docId}}" class="bg-light border rounded p-2 mb-0 snippet">{{{citeCodeText this}}}</pre>
-            </details>{{/unless}}{{/if}} -->
+              <pre id="cite-text-undated-{{docId}}" class="bg-light border rounded p-2 mb-0 snippet">{{{citeCodeTextUndated this}}}</pre>
+            </details>{{/unless}}{{/citeIfNotEq}}{{/citeIfNotEq}}
           </div>
           
           <!-- HTML (generic) -->
@@ -226,20 +227,20 @@
               <h3 class="h6 mb-0">HTML: Generic (<a href="../ISO.960.2021/">ISO 690</a> compliant)</h3>
               <div>
                 <button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-html-generic-{{docId}}">Copy</button>
-                <!-- {{#if docBase}}{{#unless status.versionless}}<button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-html-generic-undated-{{docId}}" title="Copy (undated)">Copy (undated)</button>{{/unless}}{{/if}} -->
+                {{#citeIfNotEq docType "nonLineageDocTypes"}}{{#citeIfNotEq publisher "datelessPublishers"}}{{#unless status.versionless}}<button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-html-generic-undated-{{docId}}" title="Copy (undated)">Copy (undated)</button>{{/unless}}{{/citeIfNotEq}}{{/citeIfNotEq}}
               </div>
             </div>
             <div class="mt-1">Preview:</div>
             <div class="border rounded p-2 bg-body-secondary">{{{citeHtmlGeneric this}}}</div>
             <div class="mt-2">Snippet:</div>
             <pre id="cite-html-generic-{{docId}}" class="bg-light border rounded p-2 mb-0 snippet">{{{citeCodeHtmlGeneric this}}}</pre>
-            <!-- {{#if docBase}}{{#unless status.versionless}}<details class="mt-2">
+            {{#citeIfNotEq docType "nonLineageDocTypes"}}{{#citeIfNotEq publisher "datelessPublishers"}}{{#unless status.versionless}}<details class="mt-2">
               <summary class="small text-muted">Undated variant</summary>
               <div class="mt-1">Preview:</div>
-              <div class="border rounded p-2 bg-body-secondary">{{{citeHtmlGeneric this}}}</div>
+              <div class="border rounded p-2 bg-body-secondary">{{{citeHtmlGenericUndated this}}}</div>
               <div class="mt-2">Snippet:</div>
-              <pre id="cite-html-generic-undated-{{docId}}" class="bg-light border rounded p-2 mb-0 snippet">{{{citeCodeHtmlGeneric this}}}</pre>
-            </details>{{/unless}}{{/if}} -->
+              <pre id="cite-html-generic-undated-{{docId}}" class="bg-light border rounded p-2 mb-0 snippet">{{{citeCodeHtmlGenericUndated this}}}</pre>
+            </details>{{/unless}}{{/citeIfNotEq}}{{/citeIfNotEq}}
           </div>
 
           <!-- HTML (SMPTE) -->
@@ -248,20 +249,20 @@
               <h3 class="h6 mb-0">HTML: <img src="{{assetPrefix}}resources/logos/smpte-icon.png" alt="SMPTE Icon" width="24" class=" icon d-inline-block align-text-middle"> SMPTE's <a href="../SMPTE.AG26/" title="{{getLabel docId}}">HTML Pub</a></h3>
               <div>
                 <button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-html-smpte-{{docId}}">Copy</button>
-                <!-- {{#if docBase}}{{#unless status.versionless}}<button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-html-smpte-undated-{{docId}}" title="Copy (undated)">Copy (undated)</button>{{/unless}}{{/if}} -->
+                {{#citeIfNotEq docType "nonLineageDocTypes"}}{{#citeIfNotEq publisher "datelessPublishers"}}{{#unless status.versionless}}<button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-html-smpte-undated-{{docId}}" title="Copy (undated)">Copy (undated)</button>{{/unless}}{{/citeIfNotEq}}{{/citeIfNotEq}}
               </div>
             </div>
             <div class="mt-1">Preview:</div>
             <div class="border rounded p-2 bg-body-secondary">{{{citeHtmlSmptePreview this}}}</div>
             <div class="mt-2">Snippet:</div>
             <pre id="cite-html-smpte-{{docId}}" class="bg-light border rounded p-2 mb-0 snippet">{{{citeCodeHtmlSmpteSnippet this}}}</pre>
-            <!-- {{#if docBase}}{{#unless status.versionless}}<details class="mt-2">
+            {{#citeIfNotEq docType "nonLineageDocTypes"}}{{#citeIfNotEq publisher "datelessPublishers"}}{{#unless status.versionless}}<details class="mt-2">
               <summary class="small text-muted">Undated variant</summary>
               <div class="mt-1">Preview:</div>
-              <div class="border rounded p-2 bg-body-secondary">{{{citeHtmlSmptePreview this}}}</div>
+              <div class="border rounded p-2 bg-body-secondary">{{{citeHtmlSmptePreviewUndated this}}}</div>
               <div class="mt-2">Snippet:</div>
-              <pre id="cite-html-smpte-undated-{{docId}}" class="bg-light border rounded p-2 mb-0 snippet">{{{citeCodeHtmlSmpteSnippet this}}}</pre>
-            </details>{{/unless}}{{/if}} -->
+              <pre id="cite-html-smpte-undated-{{docId}}" class="bg-light border rounded p-2 mb-0 snippet">{{{citeCodeHtmlSmpteSnippetUndated this}}}</pre>
+            </details>{{/unless}}{{/citeIfNotEq}}{{/citeIfNotEq}}
           </div>
         </div>
       </div>
@@ -298,8 +299,8 @@
         }, { passive: true });
       })();
       </script>
-      {{#if referencesResolved}}
-        {{#if (len referencesResolved.normative)}}
+      
+      {{#if (len referencesResolved.normative)}}
         <div class="card mb-3">
           <div class="card-body">
             <h2 class="h6">Normative Reference(s)</h2>
@@ -313,26 +314,9 @@
             </ul>
           </div>
         </div>
-        {{/if}}
-      {{else if references}}
-        {{#if (len references.normative)}}
-        <div class="card mb-3">
-          <div class="card-body">
-            <h2 class="h6">Normative Reference(s)</h2>
-            <ul class="list-group list-group-flush small">
-            {{#each (asArray references.normative)}}
-              <li class="list-group-item">
-                <a href="../{{this}}/">{{getUndatedLabel this}}</a> [{{getStatus this}}] {{{getstatusButton this "10"}}} {{#with (docProjLookup @root.docProjs this)}}{{#ifnoteq projectStatus "Complete"}}<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#F6BE00" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg>{{/ifnoteq}}{{/with}}
-              </li>
-            {{/each}}
-            </ul>
-          </div>
-        </div>
-        {{/if}}
       {{/if}}
 
-      {{#if referencesResolved}}
-        {{#if (len referencesResolved.bibliographic)}}
+      {{#if (len referencesResolved.bibliographic)}}
         <div class="card mb-3">
           <div class="card-body">
             <h2 class="h6">Bibliographic Reference(s)</h2>
@@ -346,22 +330,6 @@
             </ul>
           </div>
         </div>
-        {{/if}}
-      {{else if references}}
-        {{#if (len references.bibliographic)}}
-        <div class="card mb-3">
-          <div class="card-body">
-            <h2 class="h6">Bibliographic Reference(s)</h2>
-            <ul class="list-group list-group-flush small">
-            {{#each (asArray references.bibliographic)}}
-              <li class="list-group-item">
-                <a href="../{{this}}/">{{getUndatedLabel this}}</a> [{{getStatus this}}] {{{getstatusButton this "10"}}} {{#with (docProjLookup @root.docProjs this)}}{{#ifnoteq projectStatus "Complete"}}<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#F6BE00" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg>{{/ifnoteq}}{{/with}}
-              </li>
-            {{/each}}
-            </ul>
-          </div>
-        </div>
-        {{/if}}
       {{/if}}
 
       {{#if (len referencedBy)}}
