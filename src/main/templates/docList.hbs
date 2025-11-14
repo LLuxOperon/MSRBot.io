@@ -81,21 +81,23 @@
 {{{{raw}}}}
 <template id="card-tpl-src">
   <article class="card-reg">
-    <header class="d-flex align-items-start flex-wrap gap-2 mb-1">
-      <div class="publisher-logo-slot flex-shrink-0 order-0">
+    <header class="d-flex align-items-start gap-2 mb-1">
+      <a class="anchor" id="{{id}}" href="#{{id}}"></a>
+      <div class="publisher-logo-slot flex-shrink-0 order-0 mt-1">
         {{#if (publisherLink publisher)}}
           <a href="{{publisherLink publisher}}" target="_blank" rel="noopener">{{publisherLogo publisher}}</a>
         {{else}}
           {{publisherLogo publisher}}
         {{/if}}
       </div>
-      <h3 class="h6 mb-2 flex-grow-1 min-w-0 order-1">
-        <a class="anchor" id="{{id}}" href="#{{id}}"></a>
-        <code class="me-1">{{label}}</code>
-        <br>
-        <a href="{{id}}/" class="text-decoration-none">{{title}}</a>
-      </h3>
-      <div class="d-flex gap-1 flex-wrap ms-auto justify-content-end text-end order-2">
+      <div class="title-block mb-2 flex-grow-1 order-1">
+        <h3 class="h6">
+          <code class="me-1">{{label}}</code>
+          <br>
+          <a href="{{id}}/" class="text-decoration-none">{{title}}</a>
+        </h3>
+      </div>
+      <div class="status-badges d-flex gap-1 flex-wrap ms-auto justify-content-end text-end order-2">
         {{#if (hasAny statusOrdered)}}
           {{#each statusOrdered}}
             {{{statusBadge this}}}
