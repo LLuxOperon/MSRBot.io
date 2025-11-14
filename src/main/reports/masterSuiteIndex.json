@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2025-11-13T03:48:02.979Z",
+  "generatedAt": "2025-11-14T06:46:14.811Z",
   "sourcePath": "src/main/data/documents.json",
-  "sourceHash": "sha256:dc007c789bf9b392f4f76ba258fe8963ec58ecf0b57cc16c626d215f7c14d59a",
+  "sourceHash": "sha256:5a466fb78b4c149bac435c1922a022b369597fa2a1b005d00d8c781506e98446",
   "publisherCounts": {
     "total": 2208,
     "counts": {
@@ -99,7 +99,7 @@
     }
   },
   "skippedDocs": {
-    "totalSkipped": 198,
+    "totalSkipped": 199,
     "byPublisher": {
       "POLYMER DEGRADATION AND STABILITY": {
         "count": 1,
@@ -554,6 +554,21 @@
             "reason": "FILTERED",
             "rule": "FILTERED",
             "ruleDetail": "docType=Registry",
+            "category": "docType"
+          }
+        ]
+      },
+      "FIAF": {
+        "count": 1,
+        "docIds": [
+          "FIAF.TR.FP.1997"
+        ],
+        "items": [
+          {
+            "docId": "FIAF.TR.FP.1997",
+            "reason": "FILTERED",
+            "rule": "FILTERED",
+            "ruleDetail": "docType=White Paper",
             "category": "docType"
           }
         ]
@@ -2079,7 +2094,7 @@
       }
     },
     "summaryByReason": {
-      "FILTERED": 198,
+      "FILTERED": 199,
       "UNKEYED": 0,
       "UNKNOWN": 0
     }
@@ -6149,41 +6164,6 @@
       "hasStabilized": false,
       "latestActiveBaseId": null,
       "latestSupersededBaseId": "ETSI.TS-101-154.2009",
-      "prevBaseId": null,
-      "flagInconsistencies": [],
-      "counts": {
-        "bases": 1,
-        "amendments": 0,
-        "supplements": 0
-      }
-    },
-    {
-      "key": "FIAF|TR|FP|",
-      "publisher": "FIAF",
-      "suite": "TR",
-      "number": "FP",
-      "part": null,
-      "docs": [
-        {
-          "docId": "FIAF.TR.FP.1997",
-          "publicationDate": null,
-          "releaseTag": null,
-          "statusActive": false,
-          "statusSuperseded": false,
-          "statusWithdrawn": false,
-          "statusStabilized": false,
-          "statusAmended": false,
-          "statusVersionless": false
-        }
-      ],
-      "latestBaseId": "FIAF.TR.FP.1997",
-      "latestAnyId": "FIAF.TR.FP.1997",
-      "latestDateKey": "19970000",
-      "hasActiveBase": false,
-      "hasWithdrawn": false,
-      "hasStabilized": false,
-      "latestActiveBaseId": null,
-      "latestSupersededBaseId": null,
       "prevBaseId": null,
       "flagInconsistencies": [],
       "counts": {

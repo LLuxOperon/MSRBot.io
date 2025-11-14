@@ -124,6 +124,11 @@
     "Eastman Kodak Company": "resources/logos/Eastman_Kodak_Company_logo.png",
     "EIDR": "resources/logos/LogoEIDR_4-390.png",
     "ETSI": "resources/logos/etsi-logo.svg",
+    "FIAF": "resources/logos/logoNoirFIAF.png",
+    "IANA": "resources/logos/iana-logo-header.svg",
+    "ICC": "resources/logos/ICC_logo_top.gif",
+    "IESNA": "resources/logos/ies-logo-lighting-authority-1.png",
+    "International Civil Aviation Organization": "resources/logos/ICAO-logo.svg",
     "OMG": "resources/logos/OMG-logo-web-sm.svg",
     "Acoustical Society of America": "resources/logos/ASA-logo.png",
     "Addison-Wesley": "resources/logos/Addison_Wesley_Logo.png",
@@ -138,7 +143,8 @@
     "smpte": "SMPTE",
     "SMPTE – Society of Motion Picture and Television Engineers": "SMPTE",
     "AMPAS": "Academy of Motion Picture Arts and Sciences",
-    "AIM": "Association for Automatic Identification & Mobility"
+    "AIM": "Association for Automatic Identification & Mobility",
+    "ICAO": "International Civil Aviation Organization"
   },
   "publisherLogoHeight": 25,
   "publisherUrls": {
@@ -183,6 +189,11 @@
     "Eastman Kodak Company": "https://www.kodak.com/",
     "EIDR": "https://www.eidr.org/",
     "ETSI": "https://www.etsi.org/",
+    "FIAF": "https://www.fiafnet.org/",
+    "IANA": "https://www.iana.org/",
+    "ICC": "https://www.color.org/",
+    "IESNA": "https://ies.org/",
+    "International Civil Aviation Organization": "https://www.icao.int/",
     "OMG": "https://www.omg.org/",
     "Acoustical Society of America": "https://pubs.aip.org/asa",
     "Addison-Wesley": "https://www.informit.com/imprint/index.aspx?st=61085",
