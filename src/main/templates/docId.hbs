@@ -208,14 +208,14 @@
               <h3 class="h6 mb-0">Plain text (<a href="../ISO.960.2021/">ISO 690</a> compliant)</h3>
               <div>
                 <button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-text-{{docId}}">Copy</button>
-                {{#citeIfNotEq docType "nonLineageDocTypes"}}{{#citeIfNotEq publisher "datelessPublishers"}}{{#unless status.versionless}}<button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-text-undated-{{docId}}" title="Copy (undated)">Copy (undated)</button>{{/unless}}{{/citeIfNotEq}}{{/citeIfNotEq}}
+                {{#citeIfNotEq docType "nonLineageDocTypes"}}{{#citeIfNotEq publisher "publishersDateless"}}{{#unless status.versionless}}<button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-text-undated-{{docId}}" title="Copy (undated)">Copy (undated)</button>{{/unless}}{{/citeIfNotEq}}{{/citeIfNotEq}}
               </div>
             </div>
             <div class="mt-1">Preview:</div>
             <div class="border rounded p-2 bg-body-secondary">{{citeText this}}</div>
             <div class="mt-2">Snippet:</div>
             <pre id="cite-text-{{docId}}" class="bg-light border rounded p-2 mb-0 snippet">{{{citeCodeText this}}}</pre>
-            {{#citeIfNotEq docType "nonLineageDocTypes"}}{{#citeIfNotEq publisher "datelessPublishers"}}{{#unless status.versionless}}<details class="mt-2">
+            {{#citeIfNotEq docType "nonLineageDocTypes"}}{{#citeIfNotEq publisher "publishersDateless"}}{{#unless status.versionless}}<details class="mt-2">
               <summary class="small text-muted">Undated variant</summary>
               <div class="mt-1">Preview:</div>
               <div class="border rounded p-2 bg-body-secondary">{{citeTextUndated this}}</div>
@@ -230,14 +230,14 @@
               <h3 class="h6 mb-0">HTML (<a href="../ISO.960.2021/">ISO 690</a> compliant)</h3>
               <div>
                 <button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-html-generic-{{docId}}">Copy</button>
-                {{#citeIfNotEq docType "nonLineageDocTypes"}}{{#citeIfNotEq publisher "datelessPublishers"}}{{#unless status.versionless}}<button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-html-generic-undated-{{docId}}" title="Copy (undated)">Copy (undated)</button>{{/unless}}{{/citeIfNotEq}}{{/citeIfNotEq}}
+                {{#citeIfNotEq docType "nonLineageDocTypes"}}{{#citeIfNotEq publisher "publishersDateless"}}{{#unless status.versionless}}<button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-html-generic-undated-{{docId}}" title="Copy (undated)">Copy (undated)</button>{{/unless}}{{/citeIfNotEq}}{{/citeIfNotEq}}
               </div>
             </div>
             <div class="mt-1">Preview:</div>
             <div class="border rounded p-2 bg-body-secondary">{{{citeHtmlGeneric this}}}</div>
             <div class="mt-2">Snippet:</div>
             <pre id="cite-html-generic-{{docId}}" class="bg-light border rounded p-2 mb-0 snippet">{{{citeCodeHtmlGeneric this}}}</pre>
-            {{#citeIfNotEq docType "nonLineageDocTypes"}}{{#citeIfNotEq publisher "datelessPublishers"}}{{#unless status.versionless}}<details class="mt-2">
+            {{#citeIfNotEq docType "nonLineageDocTypes"}}{{#citeIfNotEq publisher "publishersDateless"}}{{#unless status.versionless}}<details class="mt-2">
               <summary class="small text-muted">Undated variant</summary>
               <div class="mt-1">Preview:</div>
               <div class="border rounded p-2 bg-body-secondary">{{{citeHtmlGenericUndated this}}}</div>
@@ -252,14 +252,14 @@
               <h3 class="h6 mb-0"><img src="{{assetPrefix}}resources/logos/smpte-icon.png" alt="SMPTE Icon" width="24" class=" icon d-inline-block align-text-middle"> SMPTE's <a href="../SMPTE.AG26/" title="{{getLabel docId}}">HTML Pub</a></h3>
               <div>
                 <button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-html-smpte-{{docId}}">Copy</button>
-                {{#citeIfNotEq docType "nonLineageDocTypes"}}{{#citeIfNotEq publisher "datelessPublishers"}}{{#unless status.versionless}}<button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-html-smpte-undated-{{docId}}" title="Copy (undated)">Copy (undated)</button>{{/unless}}{{/citeIfNotEq}}{{/citeIfNotEq}}
+                {{#citeIfNotEq docType "nonLineageDocTypes"}}{{#citeIfNotEq publisher "publishersDateless"}}{{#unless status.versionless}}<button type="button" class="btn btn-sm btn-outline-secondary" data-copy-target="#cite-html-smpte-undated-{{docId}}" title="Copy (undated)">Copy (undated)</button>{{/unless}}{{/citeIfNotEq}}{{/citeIfNotEq}}
               </div>
             </div>
             <div class="mt-1">Preview:</div>
             <div class="border rounded p-2 bg-body-secondary">{{{citeHtmlSmptePreview this}}}</div>
             <div class="mt-2">Snippet:</div>
             <pre id="cite-html-smpte-{{docId}}" class="bg-light border rounded p-2 mb-0 snippet">{{{citeCodeHtmlSmpteSnippet this}}}</pre>
-            {{#citeIfNotEq docType "nonLineageDocTypes"}}{{#citeIfNotEq publisher "datelessPublishers"}}{{#unless status.versionless}}<details class="mt-2">
+            {{#citeIfNotEq docType "nonLineageDocTypes"}}{{#citeIfNotEq publisher "publishersDateless"}}{{#unless status.versionless}}<details class="mt-2">
               <summary class="small text-muted">Undated variant</summary>
               <div class="mt-1">Preview:</div>
               <div class="border rounded p-2 bg-body-secondary">{{{citeHtmlSmptePreviewUndated this}}}</div>

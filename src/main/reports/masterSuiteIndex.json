@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2025-11-14T06:46:14.811Z",
+  "generatedAt": "2025-11-14T18:11:01.162Z",
   "sourcePath": "src/main/data/documents.json",
-  "sourceHash": "sha256:5a466fb78b4c149bac435c1922a022b369597fa2a1b005d00d8c781506e98446",
+  "sourceHash": "sha256:dfc553a554651e2eefdf5a223888813e109ae5fe9bb6c0e118fb9611b2117c43",
   "publisherCounts": {
     "total": 2208,
     "counts": {
@@ -15,7 +15,7 @@
       "IEEE": 24,
       "NIST": 23,
       "AMPAS": 21,
-      "AES": 18,
+      "AES": 20,
       "ISDCF": 17,
       "EBU": 16,
       "IEC": 15,
@@ -45,7 +45,6 @@
       "CEN": 2,
       "ISO/CIE": 2,
       "NOKIA BELL LABS": 2,
-      "JAES": 2,
       "FRANKLIN INSTITUTE": 2,
       "UL": 2,
       "UNITED NATIONS": 2,
@@ -296,9 +295,11 @@
         ]
       },
       "AES": {
-        "count": 1,
+        "count": 3,
         "docIds": [
-          "AESj.v30.n9.580-595.198209"
+          "AESj.v30.n9.580-595.198209",
+          "JAES.v2-i4-215-218.1954",
+          "JAES.v45-i6-456-466.199706"
         ],
         "items": [
           {
@@ -306,6 +307,20 @@
             "reason": "FILTERED",
             "rule": "FILTERED",
             "ruleDetail": "docType=Technical Journal",
+            "category": "docType"
+          },
+          {
+            "docId": "JAES.v2-i4-215-218.1954",
+            "reason": "FILTERED",
+            "rule": "FILTERED",
+            "ruleDetail": "docType=Journal Article",
+            "category": "docType"
+          },
+          {
+            "docId": "JAES.v45-i6-456-466.199706",
+            "reason": "FILTERED",
+            "rule": "FILTERED",
+            "ruleDetail": "docType=Journal Article",
             "category": "docType"
           }
         ]
@@ -1762,29 +1777,6 @@
             "reason": "FILTERED",
             "rule": "FILTERED",
             "ruleDetail": "docType=Study Group Report",
-            "category": "docType"
-          }
-        ]
-      },
-      "JAES": {
-        "count": 2,
-        "docIds": [
-          "JAES.v2-i4-215-218.1954",
-          "JAES.v45-i6-456-466.199706"
-        ],
-        "items": [
-          {
-            "docId": "JAES.v2-i4-215-218.1954",
-            "reason": "FILTERED",
-            "rule": "FILTERED",
-            "ruleDetail": "docType=White Paper",
-            "category": "docType"
-          },
-          {
-            "docId": "JAES.v45-i6-456-466.199706",
-            "reason": "FILTERED",
-            "rule": "FILTERED",
-            "ruleDetail": "docType=White Paper",
             "category": "docType"
           }
         ]

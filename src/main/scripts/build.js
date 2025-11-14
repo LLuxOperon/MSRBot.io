@@ -233,8 +233,8 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
         addList(cfg && Array.isArray(cfg.titleLabelDocTypes) ? cfg.titleLabelDocTypes : []);
         continue;
       }
-      if (t === 'datelesspublishers') {
-        addList(cfg && Array.isArray(cfg.datelessPublishers) ? cfg.datelessPublishers : []);
+      if (t === 'publishersDateless') {
+        addList(cfg && Array.isArray(cfg.publishersDateless) ? cfg.publishersDateless : []);
         continue;
       }
       // literal compare value
