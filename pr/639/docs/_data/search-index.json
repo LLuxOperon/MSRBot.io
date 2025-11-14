@@ -608,9 +608,9 @@
     "docBaseLabel": null
   },
   {
-    "id": "AES-r2.2004",
-    "title": "AES project report for articles on professional audio and for equipment specifications — Notations for expressing levels (Revision of AES-R2-1998)",
-    "label": "AES-r2.2004 (s2012)",
+    "id": "AES-R2.2004",
+    "title": "AES project report for articles on professional audio and for equipment specifications — Notations for expressing levels",
+    "label": "AES-R2:2004 (s2012)",
     "publisher": "AES",
     "docType": "Report",
     "docTypeAbr": null,
@@ -642,8 +642,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "AES project report for articles on professional audio and for equipment specifications — Notations for expressing levels (Revision of AES-R2-1998)",
-      "AES-r2.2004 (s2012)"
+      "AES project report for articles on professional audio and for equipment specifications — Notations for expressing levels",
+      "AES-R2:2004 (s2012)"
     ],
     "href": "http://www.aes.org/publications/standards/search.cfm?docID=9",
     "docBase": "AES|R|2|",
@@ -652,7 +652,7 @@
   {
     "id": "AES11.2003",
     "title": "AES recommended practice for digital audio engineering - Synchronization of digital audio equipment in studio operations.",
-    "label": "AES11-2003",
+    "label": "AES11:2003",
     "publisher": "AES",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -683,7 +683,7 @@
     "keywords": [],
     "keywordsSearch": [
       "AES recommended practice for digital audio engineering - Synchronization of digital audio equipment in studio operations.",
-      "AES11-2003"
+      "AES11:2003"
     ],
     "href": "http://www.aes.org/publications/standards/search.cfm?docID=18",
     "docBase": "AES||11|",
@@ -691,13 +691,14 @@
   },
   {
     "id": "AES11.2009",
-    "title": "AES recommended practice for digital audio engineering - Synchronization of digital audio equipment in studio operations. (Revision of AES11-2003)",
-    "label": "AES11-2009 (r2019)",
+    "title": "AES recommended practice for digital audio engineering - Synchronization of digital audio equipment in studio operations",
+    "label": "AES11:2009 (r2019)",
     "publisher": "AES",
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
       "active",
+      "reaffirmed",
       "amended"
     ],
     "statusFlags": {
@@ -707,7 +708,7 @@
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
-      "reaffirmed": false,
+      "reaffirmed": true,
       "amended": true,
       "versionless": false
     },
@@ -723,8 +724,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "AES recommended practice for digital audio engineering - Synchronization of digital audio equipment in studio operations. (Revision of AES11-2003)",
-      "AES11-2009 (r2019)"
+      "AES recommended practice for digital audio engineering - Synchronization of digital audio equipment in studio operations",
+      "AES11:2009 (r2019)"
     ],
     "href": "http://www.aes.org/publications/standards/search.cfm?docID=18",
     "docBase": "AES||11|",
@@ -732,14 +733,15 @@
   },
   {
     "id": "AES11.2009ad1.2010",
-    "title": "Addendum 2010-02-19 - AES recommended practice for digital audio engineering - Synchronization of digital audio equipment in studio operations. (Revision of AES11-2003) ",
-    "label": "AES11-2009 (r2019) Addendum 2010-02-19",
+    "title": "Addendum 2010-02-19 - AES recommended practice for digital audio engineering - Synchronization of digital audio equipment in studio operations ",
+    "label": "AES11: 2009 (r2019) Addendum 2010-02-19",
     "publisher": "AES",
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
       "active",
-      "latestVersion"
+      "latestVersion",
+      "reaffirmed"
     ],
     "statusFlags": {
       "active": true,
@@ -748,7 +750,7 @@
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
-      "reaffirmed": false,
+      "reaffirmed": true,
       "amended": false,
       "versionless": false
     },
@@ -764,8 +766,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "Addendum 2010-02-19 - AES recommended practice for digital audio engineering - Synchronization of digital audio equipment in studio operations. (Revision of AES11-2003)",
-      "AES11-2009 (r2019) Addendum 2010-02-19"
+      "Addendum 2010-02-19 - AES recommended practice for digital audio engineering - Synchronization of digital audio equipment in studio operations",
+      "AES11: 2009 (r2019) Addendum 2010-02-19"
     ],
     "href": "http://www.aes.org/publications/standards/search.cfm?docID=18",
     "docBase": "AES||11|",
@@ -774,12 +776,13 @@
   {
     "id": "AES17.1998",
     "title": "AES standard method for digital audio engineering - Measurement of digital audio equipment",
-    "label": "AES17-1998 (R2009)",
+    "label": "AES17:1998 (R2009)",
     "publisher": "AES",
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
-      "superseded"
+      "superseded",
+      "reaffirmed"
     ],
     "statusFlags": {
       "active": false,
@@ -788,7 +791,7 @@
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
-      "reaffirmed": false,
+      "reaffirmed": true,
       "amended": false,
       "versionless": false
     },
@@ -805,7 +808,7 @@
     "keywords": [],
     "keywordsSearch": [
       "AES standard method for digital audio engineering - Measurement of digital audio equipment",
-      "AES17-1998 (R2009)"
+      "AES17:1998 (R2009)"
     ],
     "href": null,
     "docBase": "AES||17|",
@@ -814,7 +817,7 @@
   {
     "id": "AES17.2015",
     "title": "AES standard method for digital audio engineering - Measurement of digital audio equipment",
-    "label": "AES17-2015",
+    "label": "AES17:2015",
     "publisher": "AES",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -845,7 +848,7 @@
     "keywords": [],
     "keywordsSearch": [
       "AES standard method for digital audio engineering - Measurement of digital audio equipment",
-      "AES17-2015"
+      "AES17:2015"
     ],
     "href": null,
     "docBase": "AES||17|",
@@ -854,7 +857,7 @@
   {
     "id": "AES17.2020",
     "title": "AES standard method for digital audio engineering - Measurement of digital audio equipment",
-    "label": "AES17-2020",
+    "label": "AES17:2020",
     "publisher": "AES",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -886,7 +889,7 @@
     "keywords": [],
     "keywordsSearch": [
       "AES standard method for digital audio engineering - Measurement of digital audio equipment",
-      "AES17-2020"
+      "AES17:2020"
     ],
     "href": "https://www.aes.org/publications/standards/search.cfm?docID=21",
     "docBase": "AES||17|",
@@ -895,7 +898,7 @@
   {
     "id": "AES3.2003",
     "title": "AES standard for digital audio engineering - Serial transmission format for two-channel linearly represented digital audio data",
-    "label": "AES3-2003",
+    "label": "AES3:2003",
     "publisher": "AES",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -926,7 +929,7 @@
     "keywords": [],
     "keywordsSearch": [
       "AES standard for digital audio engineering - Serial transmission format for two-channel linearly represented digital audio data",
-      "AES3-2003"
+      "AES3:2003"
     ],
     "href": "http://www.aes.org/publications/standards/search.cfm?docID=13",
     "docBase": "AES||3|",
@@ -935,13 +938,14 @@
   {
     "id": "AES3.2009",
     "title": "AES standard for digital audio engineering - Serial transmission format for two-channel linearly represented digital audio data",
-    "label": "AES3-2009 (r2019)",
+    "label": "AES3:2009 (r2019)",
     "publisher": "AES",
     "docType": "Standard",
     "docTypeAbr": null,
     "status": [
       "active",
-      "latestVersion"
+      "latestVersion",
+      "reaffirmed"
     ],
     "statusFlags": {
       "active": true,
@@ -950,7 +954,7 @@
       "withdrawn": false,
       "draft": false,
       "stabilized": false,
-      "reaffirmed": false,
+      "reaffirmed": true,
       "amended": false,
       "versionless": false
     },
@@ -967,7 +971,7 @@
     "keywords": [],
     "keywordsSearch": [
       "AES standard for digital audio engineering - Serial transmission format for two-channel linearly represented digital audio data",
-      "AES3-2009 (r2019)"
+      "AES3:2009 (r2019)"
     ],
     "href": "http://www.aes.org/publications/standards/search.cfm?docID=13",
     "docBase": "AES||3|",
@@ -976,7 +980,7 @@
   {
     "id": "AES31-2.2019",
     "title": "AES standard on network and file transfer of audio - Audio-file transfer and exchange - File format for transferring digital audio data between systems of different type and manufacture",
-    "label": "AES31-2-2019",
+    "label": "AES31-2:2019",
     "publisher": "AES",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -1008,7 +1012,7 @@
     "keywords": [],
     "keywordsSearch": [
       "AES standard on network and file transfer of audio - Audio-file transfer and exchange - File format for transferring digital audio data between systems of different type and manufacture",
-      "AES31-2-2019"
+      "AES31-2:2019"
     ],
     "href": "https://www.aes.org/publications/standards/search.cfm?docID=53",
     "docBase": "AES||31|2",
@@ -1017,7 +1021,7 @@
   {
     "id": "AES5.2003",
     "title": "AES recommended practice for professional digital audio - Preferred sampling frequencies for applications employing pulse-code modulation",
-    "label": "AES5-2003",
+    "label": "AES5:2003",
     "publisher": "AES",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -1048,7 +1052,7 @@
     "keywords": [],
     "keywordsSearch": [
       "AES recommended practice for professional digital audio - Preferred sampling frequencies for applications employing pulse-code modulation",
-      "AES5-2003"
+      "AES5:2003"
     ],
     "href": "http://www.aes.org/publications/standards/search.cfm?docID=14",
     "docBase": "AES||5|",
@@ -1056,8 +1060,8 @@
   },
   {
     "id": "AES5.2008",
-    "title": "AES recommended practice for professional digital audio - Preferred sampling frequencies for applications employing pulse-code modulation (revision of AES5-2003)",
-    "label": "AES5-2008",
+    "title": "AES recommended practice for professional digital audio - Preferred sampling frequencies for applications employing pulse-code modulation",
+    "label": "AES5:2008",
     "publisher": "AES",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -1087,8 +1091,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "AES recommended practice for professional digital audio - Preferred sampling frequencies for applications employing pulse-code modulation (revision of AES5-2003)",
-      "AES5-2008"
+      "AES recommended practice for professional digital audio - Preferred sampling frequencies for applications employing pulse-code modulation",
+      "AES5:2008"
     ],
     "href": "http://www.aes.org/publications/standards/search.cfm?docID=14",
     "docBase": "AES||5|",
@@ -1096,8 +1100,8 @@
   },
   {
     "id": "AES5.2018",
-    "title": "AES recommended practice for professional digital audio - Preferred sampling frequencies for applications employing pulse-code modulation (revision of AES5-2003)",
-    "label": "AES5-2018",
+    "title": "AES recommended practice for professional digital audio - Preferred sampling frequencies for applications employing pulse-code modulation",
+    "label": "AES5:2018",
     "publisher": "AES",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -1128,8 +1132,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "AES recommended practice for professional digital audio - Preferred sampling frequencies for applications employing pulse-code modulation (revision of AES5-2003)",
-      "AES5-2018"
+      "AES recommended practice for professional digital audio - Preferred sampling frequencies for applications employing pulse-code modulation",
+      "AES5:2018"
     ],
     "href": "http://www.aes.org/publications/standards/search.cfm?docID=14",
     "docBase": "AES||5|",
@@ -1138,7 +1142,7 @@
   {
     "id": "AES6.1982",
     "title": "AES standard for the preservation and restoration of audio recording - Method of measuring recorded fluxivity of magnetic sound records at medium wavelengths",
-    "label": "AES6-1982",
+    "label": "AES6:1982",
     "publisher": "AES",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -1169,7 +1173,7 @@
     "keywords": [],
     "keywordsSearch": [
       "AES standard for the preservation and restoration of audio recording - Method of measuring recorded fluxivity of magnetic sound records at medium wavelengths",
-      "AES6-1982"
+      "AES6:1982"
     ],
     "href": null,
     "docBase": "AES||6|",
@@ -1177,8 +1181,8 @@
   },
   {
     "id": "AES6.2008",
-    "title": "AES standard for the preservation and restoration of audio recording - Method of measuring recorded fluxivity of magnetic sound records at medium wavelengths (Revision of AES7-1982)",
-    "label": "AES6-2008 (s2013)",
+    "title": "AES standard for the preservation and restoration of audio recording - Method of measuring recorded fluxivity of magnetic sound records at medium wavelengths",
+    "label": "AES6:2008 (s2013)",
     "publisher": "AES",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -1211,8 +1215,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "AES standard for the preservation and restoration of audio recording - Method of measuring recorded fluxivity of magnetic sound records at medium wavelengths (Revision of AES7-1982)",
-      "AES6-2008 (s2013)"
+      "AES standard for the preservation and restoration of audio recording - Method of measuring recorded fluxivity of magnetic sound records at medium wavelengths",
+      "AES6:2008 (s2013)"
     ],
     "href": "https://www.aes.org/publications/standards/search.cfm?docID=15",
     "docBase": "AES||6|",
@@ -1221,7 +1225,7 @@
   {
     "id": "AES7.1982",
     "title": "AES standard for the preservation and restoration of audio recording - Method of measuring recorded fluxivity of magnetic sound records at medium wavelengths",
-    "label": "AES7-1982",
+    "label": "AES7:1982",
     "publisher": "AES",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -1252,7 +1256,7 @@
     "keywords": [],
     "keywordsSearch": [
       "AES standard for the preservation and restoration of audio recording - Method of measuring recorded fluxivity of magnetic sound records at medium wavelengths",
-      "AES7-1982"
+      "AES7:1982"
     ],
     "href": null,
     "docBase": "AES||7|",
@@ -1260,8 +1264,8 @@
   },
   {
     "id": "AES7.2000",
-    "title": "AES standard for the preservation and restoration of audio recording - Method of measuring recorded fluxivity of magnetic sound records at medium wavelengths (Revision of AES7-1982)",
-    "label": "AES7-2000 (s2012)",
+    "title": "AES standard for the preservation and restoration of audio recording - Method of measuring recorded fluxivity of magnetic sound records at medium wavelengths",
+    "label": "AES7:2000 (s2012)",
     "publisher": "AES",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -1294,8 +1298,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "AES standard for the preservation and restoration of audio recording - Method of measuring recorded fluxivity of magnetic sound records at medium wavelengths (Revision of AES7-1982)",
-      "AES7-2000 (s2012)"
+      "AES standard for the preservation and restoration of audio recording - Method of measuring recorded fluxivity of magnetic sound records at medium wavelengths",
+      "AES7:2000 (s2012)"
     ],
     "href": "https://www.aes.org/publications/standards/search.cfm?docID=16",
     "docBase": "AES||7|",
@@ -1352,7 +1356,7 @@
   {
     "id": "AIIM.MS34.1990",
     "title": "Dimensions For Reels Used For 16-Mm And 35-Mm Microfilm (Revision And Redesignation Of ANSI PH5.6-1968)",
-    "label": "ANSI/AIIM MS34-1990",
+    "label": "ANSI/AIIM MS34:1990",
     "publisher": "ANSI/AIIM",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -1384,7 +1388,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Dimensions For Reels Used For 16-Mm And 35-Mm Microfilm (Revision And Redesignation Of ANSI PH5.6-1968)",
-      "ANSI/AIIM MS34-1990"
+      "ANSI/AIIM MS34:1990"
     ],
     "href": "https://webstore.ansi.org/standards/aiim/ansiaiimms341990",
     "docBase": "AIIM|MS|34|",
@@ -1393,8 +1397,8 @@
   {
     "id": "AIM.BC4.1999",
     "title": "INTERNATIONAL SYMBOLOGY SPECIFICATION - CODE 128",
-    "label": "AIM BC4-1999",
-    "publisher": "Association for Automatic Identification & Mobility",
+    "label": "AIM BC4:1999",
+    "publisher": "Automatic Identification Manufacturers",
     "docType": "Specification",
     "docTypeAbr": null,
     "status": [
@@ -1425,7 +1429,7 @@
     "keywords": [],
     "keywordsSearch": [
       "INTERNATIONAL SYMBOLOGY SPECIFICATION - CODE 128",
-      "AIM BC4-1999"
+      "AIM BC4:1999"
     ],
     "href": "https://www.intertekinform.com/en-ca/standards/aim-bc4-1999-93924_saig_aim_aim_196679/?srsltid=AfmBOorrxiO18fwEVVBbLc4896_WWJF07W3mkf0GKnQNOpIMkeGjxYyT",
     "docBase": "AIM|BC|4|",
@@ -1434,7 +1438,7 @@
   {
     "id": "AIM.USS-128.1986",
     "title": "Uniform Symbology Specification 1986 version",
-    "label": "USS-128",
+    "label": "AIM USS-128:1986",
     "publisher": "Automatic Identification Manufacturers",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -1466,7 +1470,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Uniform Symbology Specification 1986 version",
-      "USS-128"
+      "AIM USS-128:1986"
     ],
     "href": "https://www.expresscorp.com/uploads/specifications/45/USS-128.pdf",
     "docBase": "AIM|USS|128|",
@@ -2531,7 +2535,7 @@
   {
     "id": "ANSI.S4.3.1982",
     "title": "Method for Measurement of Weighted Peak Flutter of Sound Recording and Reproducing Equipment",
-    "label": "ANSI S4.3-1982",
+    "label": "ANSI S4.3:1982",
     "publisher": "ANSI",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -2563,57 +2567,16 @@
     "keywords": [],
     "keywordsSearch": [
       "Method for Measurement of Weighted Peak Flutter of Sound Recording and Reproducing Equipment",
-      "ANSI S4.3-1982"
+      "ANSI S4.3:1982"
     ],
     "href": null,
     "docBase": "ASA|S4|3|",
     "docBaseLabel": "ASA S4 3"
   },
   {
-    "id": "ANSI.S4.6.1982",
-    "title": "Method of measuring recorded fluxivity of magnetic sound records at medium wavelengths",
-    "label": "ANSI/ASA S4.6-1982",
-    "publisher": "ANSI",
-    "docType": "Standard",
-    "docTypeAbr": null,
-    "status": [
-      "superseded",
-      "withdrawn"
-    ],
-    "statusFlags": {
-      "active": false,
-      "latestVersion": false,
-      "superseded": true,
-      "withdrawn": true,
-      "draft": false,
-      "stabilized": false,
-      "reaffirmed": false,
-      "amended": false,
-      "versionless": false
-    },
-    "pubDate": "",
-    "pubTs": null,
-    "year": null,
-    "hasDoi": false,
-    "doi": null,
-    "hasReleaseTag": false,
-    "group": [],
-    "groupNames": [],
-    "currentWork": [],
-    "hasCurrentWork": false,
-    "keywords": [],
-    "keywordsSearch": [
-      "Method of measuring recorded fluxivity of magnetic sound records at medium wavelengths",
-      "ANSI/ASA S4.6-1982"
-    ],
-    "href": null,
-    "docBase": "ASA|S4|6|",
-    "docBaseLabel": "ASA S4 6"
-  },
-  {
     "id": "ARIB.STD-B32.v2.1.2001",
     "title": "Video Coding, Audio Coding and Multiplexing Specifications for Digital Broadcasting Version 2.1 (2007)",
-    "label": "ARIB STD-B32 v2.1",
+    "label": "ARIB STD-B32:2001",
     "publisher": "ARIB",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -2645,7 +2608,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Video Coding, Audio Coding and Multiplexing Specifications for Digital Broadcasting Version 2.1 (2007)",
-      "ARIB STD-B32 v2.1"
+      "ARIB STD-B32:2001"
     ],
     "href": "https://www.arib.or.jp/english/std_tr/broadcasting/desc/std-b32.html",
     "docBase": "ARIB|STD|B32|",
@@ -2654,7 +2617,7 @@
   {
     "id": "ASA.S1.11.1986",
     "title": "Octave-Band And Fractional-Octave-Band Analog And Digital Filters",
-    "label": "ANSI/ASA S1.11-1986 (R1998)",
+    "label": "ANSI/ASA S1.11:1986 (R1998)",
     "publisher": "ANSI/ASA",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -2685,7 +2648,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Octave-Band And Fractional-Octave-Band Analog And Digital Filters",
-      "ANSI/ASA S1.11-1986 (R1998)"
+      "ANSI/ASA S1.11:1986 (R1998)"
     ],
     "href": "https://webstore.ansi.org/standards/asa/ansis1111986r1998",
     "docBase": "ASA|S1|11|",
@@ -2694,7 +2657,7 @@
   {
     "id": "ASA.S1.11.2004",
     "title": "Octave-Band And Fractional-Octave-Band Analog And Digital Filters",
-    "label": "ANSI/ASA S1.11-2004 (R2009)",
+    "label": "ANSI/ASA S1.11:2004 (R2009)",
     "publisher": "ANSI/ASA",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -2726,7 +2689,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Octave-Band And Fractional-Octave-Band Analog And Digital Filters",
-      "ANSI/ASA S1.11-2004 (R2009)"
+      "ANSI/ASA S1.11:2004 (R2009)"
     ],
     "href": "https://webstore.ansi.org/standards/asa/ansiasas1112004r2009",
     "docBase": "ASA|S1|11|",
@@ -2735,7 +2698,7 @@
   {
     "id": "ASA.S1.11.p1.2014",
     "title": "Electroacoustics - Octave-Band And Fractional-Octave-Band Filters - Part 1: Specifications (A Nationally Adopted International Standard",
-    "label": "ANSI/ASA S1.11-2014/Part 1 / IEC 61260:1-2014",
+    "label": "ANSI/ASA S1.11:2014/Part 1 / IEC 61260:1:2014",
     "publisher": "ANSI/ASA",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -2767,7 +2730,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Electroacoustics - Octave-Band And Fractional-Octave-Band Filters - Part 1: Specifications (A Nationally Adopted International Standard",
-      "ANSI/ASA S1.11-2014/Part 1 / IEC 61260:1-2014"
+      "ANSI/ASA S1.11:2014/Part 1 / IEC 61260:1:2014"
     ],
     "href": "https://webstore.ansi.org/standards/asa/ANSIASAS1112014PartIEC61260",
     "docBase": "ASA|S1|11|1",
@@ -2776,7 +2739,7 @@
   {
     "id": "ASA.S1.13.1995",
     "title": "Measurement Of Sound Pressure Levels In Air",
-    "label": "ANSI/ASA S1.13-1995",
+    "label": "ANSI/ASA S1.13:1995",
     "publisher": "ANSI/ASA",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -2807,7 +2770,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Measurement Of Sound Pressure Levels In Air",
-      "ANSI/ASA S1.13-1995"
+      "ANSI/ASA S1.13:1995"
     ],
     "href": null,
     "docBase": "ASA|S1|13|",
@@ -2816,7 +2779,7 @@
   {
     "id": "ASA.S1.13.2005",
     "title": "Measurement Of Sound Pressure Levels In Air",
-    "label": "ANSI/ASA S1.13-2005",
+    "label": "ANSI/ASA S1.13:2005",
     "publisher": "ANSI/ASA",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -2848,7 +2811,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Measurement Of Sound Pressure Levels In Air",
-      "ANSI/ASA S1.13-2005"
+      "ANSI/ASA S1.13:2005"
     ],
     "href": "https://webstore.ansi.org/standards/asa/ansis1132005",
     "docBase": "ASA|S1|13|",
@@ -2857,7 +2820,7 @@
   {
     "id": "ASA.S1.4.1983",
     "title": "American National Standard Specification For Sound Level Meters",
-    "label": "ANSI S1.4-1983 (R2006)/ANSI S1.4a-1985 (R2006)",
+    "label": "ANSI/ASA S1.4:1983 (R2006)/ANSI S1.4a:1985 (R2006)",
     "publisher": "ANSI/ASA",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -2888,7 +2851,7 @@
     "keywords": [],
     "keywordsSearch": [
       "American National Standard Specification For Sound Level Meters",
-      "ANSI S1.4-1983 (R2006)/ANSI S1.4a-1985 (R2006)"
+      "ANSI/ASA S1.4:1983 (R2006)/ANSI S1.4a:1985 (R2006)"
     ],
     "href": "https://webstore.ansi.org/standards/asa/ansis11983r20064a1985",
     "docBase": "ASA|S1|4|",
@@ -2897,7 +2860,7 @@
   {
     "id": "ASA.S1.4.2014",
     "title": "American National Standard Electroacoustics - Sound Level Meters - Part 1: Specifications (A Nationally Adopted International Standard)",
-    "label": "ANSI/ASA S1.4-2014/Part 1 / IEC 61672:1-2013",
+    "label": "ANSI/ASA S1.4:2014/Part 1 / IEC 61672-1:2013",
     "publisher": "ANSI/ASA",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -2929,7 +2892,7 @@
     "keywords": [],
     "keywordsSearch": [
       "American National Standard Electroacoustics - Sound Level Meters - Part 1: Specifications (A Nationally Adopted International Standard)",
-      "ANSI/ASA S1.4-2014/Part 1 / IEC 61672:1-2013"
+      "ANSI/ASA S1.4:2014/Part 1 / IEC 61672-1:2013"
     ],
     "href": "https://webstore.ansi.org/standards/asa/ansiasas12014partiec616722013",
     "docBase": "ASA|S1|4|",
@@ -2938,7 +2901,7 @@
   {
     "id": "ASA.S1.40.2006",
     "title": "American National Standard Specifications And Verification Procedures For Sound Calibrators",
-    "label": "ANSI/ASA S1.40-2006 (R2011)",
+    "label": "ANSI/ASA S1.40:2006 (R2011)",
     "publisher": "ANSI/ASA",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -2970,7 +2933,7 @@
     "keywords": [],
     "keywordsSearch": [
       "American National Standard Specifications And Verification Procedures For Sound Calibrators",
-      "ANSI/ASA S1.40-2006 (R2011)"
+      "ANSI/ASA S1.40:2006 (R2011)"
     ],
     "href": "https://webstore.ansi.org/Standards/ASA/ansiasas1402006r2011",
     "docBase": "ASA|S1|40|",
@@ -2979,7 +2942,7 @@
   {
     "id": "ASA.S12.2.2008",
     "title": "Criteria For Evaluating Room Noise",
-    "label": "ANSI/ASA S12.2-2008",
+    "label": "ANSI/ASA S12.2:2008",
     "publisher": "ANSI/ASA",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -3010,7 +2973,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Criteria For Evaluating Room Noise",
-      "ANSI/ASA S12.2-2008"
+      "ANSI/ASA S12.2:2008"
     ],
     "href": "https://webstore.ansi.org/Standards/ASA/ansiasas122008",
     "docBase": "ASA|S12|2|",
@@ -3019,7 +2982,7 @@
   {
     "id": "ASA.S12.2.2019",
     "title": "Criteria For Evaluating Room Noise",
-    "label": "ANSI/ASA S12.2-2019",
+    "label": "ANSI/ASA S12.2:2019",
     "publisher": "ANSI/ASA",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -3051,11 +3014,52 @@
     "keywords": [],
     "keywordsSearch": [
       "Criteria For Evaluating Room Noise",
-      "ANSI/ASA S12.2-2019"
+      "ANSI/ASA S12.2:2019"
     ],
     "href": "https://webstore.ansi.org/Standards/ASA/ANSIASAS122019",
     "docBase": "ASA|S12|2|",
     "docBaseLabel": "ASA S12 2"
+  },
+  {
+    "id": "ASA.S4.6.1982",
+    "title": "Method of measuring recorded fluxivity of magnetic sound records at medium wavelengths",
+    "label": "ANSI/ASA S4.6:1982",
+    "publisher": "ANSI/ASA",
+    "docType": "Standard",
+    "docTypeAbr": null,
+    "status": [
+      "superseded",
+      "withdrawn"
+    ],
+    "statusFlags": {
+      "active": false,
+      "latestVersion": false,
+      "superseded": true,
+      "withdrawn": true,
+      "draft": false,
+      "stabilized": false,
+      "reaffirmed": false,
+      "amended": false,
+      "versionless": false
+    },
+    "pubDate": "",
+    "pubTs": null,
+    "year": null,
+    "hasDoi": false,
+    "doi": null,
+    "hasReleaseTag": false,
+    "group": [],
+    "groupNames": [],
+    "currentWork": [],
+    "hasCurrentWork": false,
+    "keywords": [],
+    "keywordsSearch": [
+      "Method of measuring recorded fluxivity of magnetic sound records at medium wavelengths",
+      "ANSI/ASA S4.6:1982"
+    ],
+    "href": null,
+    "docBase": "ASA|S4|6|",
+    "docBaseLabel": "ASA S4 6"
   },
   {
     "id": "ASC.CDL.R1-2.2009",
@@ -3106,7 +3110,7 @@
   {
     "id": "ASHRAE.52.1.2019",
     "title": "Gravimetric And Dust Spot Procedures For Testing Air-Cleaning Devices Used In General Ventilation For Removing Particulate Matter",
-    "label": "ANSI/ASHRAE 52.1-1992",
+    "label": "ANSI/ASHRAE 52.1:1992",
     "publisher": "ANSI/ASHRAE",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -3138,7 +3142,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Gravimetric And Dust Spot Procedures For Testing Air-Cleaning Devices Used In General Ventilation For Removing Particulate Matter",
-      "ANSI/ASHRAE 52.1-1992"
+      "ANSI/ASHRAE 52.1:1992"
     ],
     "href": "https://webstore.ansi.org/standards/ashrae/ansiashrae521992",
     "docBase": "ASHRAE||52.1|",
@@ -3272,7 +3276,7 @@
   {
     "id": "ATSC.AC3.A52.AnnexA.1995",
     "title": "DIGITAL AUDIO COMPRESSION (AC-3) (E-AC-3) STANDARD, Annex A, 'AC-3 Elementary Streams in an MPEG-2 Multiplex'",
-    "label": "ATSC A/52 Annex A",
+    "label": "ATSC A/52 Annex A:1995",
     "publisher": "ATSC",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -3303,7 +3307,7 @@
     "keywords": [],
     "keywordsSearch": [
       "DIGITAL AUDIO COMPRESSION (AC-3) (E-AC-3) STANDARD, Annex A, 'AC-3 Elementary Streams in an MPEG-2 Multiplex'",
-      "ATSC A/52 Annex A"
+      "ATSC A/52 Annex A:1995"
     ],
     "href": null,
     "docBase": "ATSC|AC3|A52|",
@@ -3400,7 +3404,7 @@
   {
     "id": "CEA.608.2008",
     "title": "Line 21 Data Services",
-    "label": "CEA 608-E-2008 (ANSI)",
+    "label": "CEA 608-E:2008 (ANSI)",
     "publisher": "CEA",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -3431,7 +3435,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Line 21 Data Services",
-      "CEA 608-E-2008 (ANSI)"
+      "CEA 608-E:2008 (ANSI)"
     ],
     "href": "https://webstore.ansi.org/Standards/CEA/CEA6082008ANSI",
     "docBase": "CEA||608|",
@@ -3440,7 +3444,7 @@
   {
     "id": "CEA.608.2014",
     "title": "Line 21 Data Services",
-    "label": "CEA 608-E-2008 (R2014) (ANSI)",
+    "label": "CEA 608-E:2008 (R2014) (ANSI)",
     "publisher": "CEA",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -3472,7 +3476,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Line 21 Data Services",
-      "CEA 608-E-2008 (R2014) (ANSI)"
+      "CEA 608-E:2008 (R2014) (ANSI)"
     ],
     "href": "https://webstore.ansi.org/Standards/CEA/CEA6082008R2014ANSI",
     "docBase": "CEA||608|",
@@ -3481,7 +3485,7 @@
   {
     "id": "CEA.708.2008",
     "title": "Digital Television (DTV) Closed Captioning",
-    "label": "CEA 708-D-2008",
+    "label": "CEA 708-D:2008",
     "publisher": "CEA",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -3512,7 +3516,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Digital Television (DTV) Closed Captioning",
-      "CEA 708-D-2008"
+      "CEA 708-D:2008"
     ],
     "href": "https://webstore.ansi.org/standards/cea/cea7082008",
     "docBase": "CEA||708|",
@@ -3521,7 +3525,7 @@
   {
     "id": "CEA.708.2013",
     "title": "Digital Television (DTV) Closed Captioning",
-    "label": "CEA 708-E-2013",
+    "label": "CEA 708-E:2013",
     "publisher": "CEA",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -3552,7 +3556,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Digital Television (DTV) Closed Captioning",
-      "CEA 708-E-2013"
+      "CEA 708-E:2013"
     ],
     "href": "https://webstore.ansi.org/Standards/CEA/CEA7082013",
     "docBase": "CEA||708|",
@@ -3561,7 +3565,7 @@
   {
     "id": "CEA.708.2013-08",
     "title": "Digital Television (DTV) Closed Captioning",
-    "label": "CEA 708-E-2013 (ANSI)",
+    "label": "CEA 708-E:2013 (ANSI)",
     "publisher": "CEA",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -3593,7 +3597,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Digital Television (DTV) Closed Captioning",
-      "CEA 708-E-2013 (ANSI)"
+      "CEA 708-E:2013 (ANSI)"
     ],
     "href": "https://webstore.ansi.org/Standards/CEA/CEA7082013ANSI",
     "docBase": "CEA||708|",
@@ -3871,7 +3875,7 @@
   {
     "id": "CTA.861-G.2016",
     "title": "A DTV Profile For Uncompressed High Speed Digital Interfaces",
-    "label": "CTA 861-G-2016",
+    "label": "CTA 861-G:2016",
     "publisher": "CTA",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -3903,7 +3907,7 @@
     "keywords": [],
     "keywordsSearch": [
       "A DTV Profile For Uncompressed High Speed Digital Interfaces",
-      "CTA 861-G-2016"
+      "CTA 861-G:2016"
     ],
     "href": "https://webstore.ansi.org/standards/ansi/cta8612016",
     "docBase": "CTA||861|",
@@ -5435,12 +5439,11 @@
     "docType": "Memo",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "active"
     ],
     "statusFlags": {
       "active": true,
-      "latestVersion": true,
+      "latestVersion": false,
       "superseded": false,
       "withdrawn": false,
       "draft": false,
@@ -5465,8 +5468,8 @@
       "DCI Memo On Direct View Displays 20180627"
     ],
     "href": "https://www.dcimovies.com/announcements/DCI-Memo-On-Direct-View-Displays_2108-0627.pdf",
-    "docBase": "DCI|M||DVD",
-    "docBaseLabel": "DCI M"
+    "docBase": null,
+    "docBaseLabel": null
   },
   {
     "id": "DCI.M-HDR.2021-0701",
@@ -5476,12 +5479,11 @@
     "docType": "Memo",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "active"
     ],
     "statusFlags": {
       "active": true,
-      "latestVersion": true,
+      "latestVersion": false,
       "superseded": false,
       "withdrawn": false,
       "draft": false,
@@ -5506,8 +5508,8 @@
       "DCI Memo HDR Double-Blind Testing 20210701"
     ],
     "href": "https://www.dcimovies.com/announcements/DCI-Memo-on-HDR-Image-Testing_2021-0701.pdf",
-    "docBase": "DCI|M||HDR",
-    "docBaseLabel": "DCI M"
+    "docBase": null,
+    "docBaseLabel": null
   },
   {
     "id": "DCI.M-NIST.2020-0701",
@@ -5517,12 +5519,11 @@
     "docType": "Memo",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "active"
     ],
     "statusFlags": {
       "active": true,
-      "latestVersion": true,
+      "latestVersion": false,
       "superseded": false,
       "withdrawn": false,
       "draft": false,
@@ -5550,8 +5551,8 @@
       "DCI Memo NIST ST 20200701"
     ],
     "href": "https://www.dcimovies.com/FIPS/DCI_Memo_on_NIST_Standards_transitions_and_Non-FIPS_mode_2020-07-01.pdf",
-    "docBase": "DCI|M||NIST",
-    "docBaseLabel": "DCI M"
+    "docBase": null,
+    "docBaseLabel": null
   },
   {
     "id": "DCI.M-RNG.2018-0511",
@@ -5561,12 +5562,11 @@
     "docType": "Memo",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "active"
     ],
     "statusFlags": {
       "active": true,
-      "latestVersion": true,
+      "latestVersion": false,
       "superseded": false,
       "withdrawn": false,
       "draft": false,
@@ -5591,8 +5591,8 @@
       "DCI Memo on RNG Revocation 20180511"
     ],
     "href": "https://www.dcimovies.com/announcements/DCI-Memo-on-RNG-Revocation_20180511.pdf",
-    "docBase": "DCI|M||RNG",
-    "docBaseLabel": "DCI M"
+    "docBase": null,
+    "docBaseLabel": null
   },
   {
     "id": "DCI.RP-HFR.2012-0928",
@@ -5643,12 +5643,11 @@
     "docType": "Statement",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "active"
     ],
     "statusFlags": {
       "active": true,
-      "latestVersion": true,
+      "latestVersion": false,
       "superseded": false,
       "withdrawn": false,
       "draft": false,
@@ -5673,8 +5672,8 @@
       "DCI Technology Evolution Statement 20190329"
     ],
     "href": "https://www.dcimovies.com/announcements/DCI-Technology-Evolution-Statement_2019-0329.pdf",
-    "docBase": "DCI|S|TES|",
-    "docBaseLabel": "DCI S TES"
+    "docBase": null,
+    "docBaseLabel": null
   },
   {
     "id": "DMA.TR.8350.2",
@@ -5685,7 +5684,8 @@
     "docTypeAbr": null,
     "status": [
       "active",
-      "latestVersion"
+      "latestVersion",
+      "versionless"
     ],
     "statusFlags": {
       "active": true,
@@ -5696,7 +5696,7 @@
       "stabilized": false,
       "reaffirmed": false,
       "amended": false,
-      "versionless": false
+      "versionless": true
     },
     "pubDate": "1991-09-01",
     "pubTs": 683683200000,
@@ -5849,7 +5849,7 @@
   {
     "id": "EBU.R128.2011",
     "title": "Loudness Normalisation and Permitted Maximum Level of Audio Signals",
-    "label": "EBU R 128",
+    "label": "EBU R 128:2011",
     "publisher": "EBU",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -5880,7 +5880,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Loudness Normalisation and Permitted Maximum Level of Audio Signals",
-      "EBU R 128"
+      "EBU R 128:2011"
     ],
     "href": null,
     "docBase": "EBU|R|128|",
@@ -5889,7 +5889,7 @@
   {
     "id": "EBU.R128.2020",
     "title": "Loudness Normalisation and Permitted Maximum Level of Audio Signals",
-    "label": "EBU R 128",
+    "label": "EBU R 128:2020",
     "publisher": "EBU",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -5921,7 +5921,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Loudness Normalisation and Permitted Maximum Level of Audio Signals",
-      "EBU R 128"
+      "EBU R 128:2020"
     ],
     "href": "https://tech.ebu.ch/docs/r/r128.pdf",
     "docBase": "EBU|R|128|",
@@ -5930,7 +5930,7 @@
   {
     "id": "EBU.R128s1.2020",
     "title": "Loudness Parameters For Short-Form Content",
-    "label": "EBU R 128 S1",
+    "label": "EBU R 128:2020 S1",
     "publisher": "EBU",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -5961,7 +5961,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Loudness Parameters For Short-Form Content",
-      "EBU R 128 S1"
+      "EBU R 128:2020 S1"
     ],
     "href": "https://tech.ebu.ch/docs/r/r128s1.pdf",
     "docBase": "EBU|R|128|",
@@ -5970,7 +5970,7 @@
   {
     "id": "EBU.R68.2000",
     "title": "Alignment level in digital audio production equipment and in digital audio recorders",
-    "label": "EBU R68-2000",
+    "label": "EBU R68:2000",
     "publisher": "EBU",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -6002,7 +6002,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Alignment level in digital audio production equipment and in digital audio recorders",
-      "EBU R68-2000"
+      "EBU R68:2000"
     ],
     "href": "https://tech.ebu.ch/docs/r/r068.pdf",
     "docBase": "EBU|R|68|",
@@ -6011,7 +6011,7 @@
   {
     "id": "EBU.Tech3245s.1988",
     "title": "RC SYSTEMS FOR TV PRODUCTION EQUIPMENT - SUPPLEMENTS 1 TO 5",
-    "label": "EBU Tech 3245 S",
+    "label": "EBU Tech 3245S:1998",
     "publisher": "EBU",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -6043,7 +6043,7 @@
     "keywords": [],
     "keywordsSearch": [
       "RC SYSTEMS FOR TV PRODUCTION EQUIPMENT - SUPPLEMENTS 1 TO 5",
-      "EBU Tech 3245 S"
+      "EBU Tech 3245S:1998"
     ],
     "href": "https://tech.ebu.ch/publications/tech3245s",
     "docBase": "EBU|TECH|3245|",
@@ -6052,7 +6052,7 @@
   {
     "id": "EBU.Tech3267.1992",
     "title": "EBU INTERFACES FOR 625-LINE 4:2:2 DIGITAL VIDEO SIGNALS",
-    "label": "EBU Tech 3267",
+    "label": "EBU Tech 3267:1992",
     "publisher": "EBU",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -6084,7 +6084,7 @@
     "keywords": [],
     "keywordsSearch": [
       "EBU INTERFACES FOR 625-LINE 4:2:2 DIGITAL VIDEO SIGNALS",
-      "EBU Tech 3267"
+      "EBU Tech 3267:1992"
     ],
     "href": "https://tech.ebu.ch/publications/tech3267",
     "docBase": "EBU|TECH|3267|",
@@ -6093,7 +6093,7 @@
   {
     "id": "EBU.Tech3289.2001",
     "title": "Preservation and Reuse of Film Material for Television: Guidance for Broadcasters",
-    "label": "EBU Tech 3289 (2001)",
+    "label": "EBU Tech 3289:2001",
     "publisher": "EBU",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -6125,7 +6125,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Preservation and Reuse of Film Material for Television: Guidance for Broadcasters",
-      "EBU Tech 3289 (2001)"
+      "EBU Tech 3289:2001"
     ],
     "href": null,
     "docBase": "EBU|TECH|3289|",
@@ -6134,7 +6134,7 @@
   {
     "id": "EBU.Tech3289s.2004",
     "title": "PRESERVATION AND REUSE OF FILM MATERIAL FOR TELEVISION - SUPPLEMENT 1",
-    "label": "EBU Tech 3289 S",
+    "label": "EBU Tech 3289S:2004",
     "publisher": "EBU",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -6166,7 +6166,7 @@
     "keywords": [],
     "keywordsSearch": [
       "PRESERVATION AND REUSE OF FILM MATERIAL FOR TELEVISION - SUPPLEMENT 1",
-      "EBU Tech 3289 S"
+      "EBU Tech 3289S:2004"
     ],
     "href": "https://tech.ebu.ch/publications/tech3289s",
     "docBase": "EBU|TECH|3289|",
@@ -6174,8 +6174,8 @@
   },
   {
     "id": "EBU.Tech3350.2012",
-    "title": "EBU-TT Part 1 - Subtitling Format Definition",
-    "label": "EBU Tech 3350 v1.0",
+    "title": "EBU-TT Part 1 - Subtitling Format Definition v1.0",
+    "label": "EBU Tech 3350:2012",
     "publisher": "EBU",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -6205,8 +6205,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "EBU-TT Part 1 - Subtitling Format Definition",
-      "EBU Tech 3350 v1.0"
+      "EBU-TT Part 1 - Subtitling Format Definition v1.0",
+      "EBU Tech 3350:2012"
     ],
     "href": "https://tech.ebu.ch/docs/tech/tech3350v1-0.pdf",
     "docBase": "EBU|TECH|3350|",
@@ -6214,8 +6214,8 @@
   },
   {
     "id": "EBU.Tech3350.2015",
-    "title": "EBU-TT Part 1 - Subtitling Format Definition",
-    "label": "EBU Tech 3350 v1.1",
+    "title": "EBU-TT Part 1 - Subtitling Format Definition v1.1",
+    "label": "EBU Tech 3350:2015",
     "publisher": "EBU",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -6245,8 +6245,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "EBU-TT Part 1 - Subtitling Format Definition",
-      "EBU Tech 3350 v1.1"
+      "EBU-TT Part 1 - Subtitling Format Definition v1.1",
+      "EBU Tech 3350:2015"
     ],
     "href": "https://tech.ebu.ch/docs/tech/tech3350v1_1.pdf",
     "docBase": "EBU|TECH|3350|",
@@ -6254,8 +6254,8 @@
   },
   {
     "id": "EBU.Tech3350.2017",
-    "title": "EBU-TT Part 1 - Subtitling Format Definition",
-    "label": "EBU Tech 3350 v1.2",
+    "title": "EBU-TT Part 1 - Subtitling Format Definition v1.2",
+    "label": "EBU Tech 3350:2017",
     "publisher": "EBU",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -6286,8 +6286,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "EBU-TT Part 1 - Subtitling Format Definition",
-      "EBU Tech 3350 v1.2"
+      "EBU-TT Part 1 - Subtitling Format Definition v1.2",
+      "EBU Tech 3350:2017"
     ],
     "href": "https://tech.ebu.ch/docs/tech/tech3350v1_2.pdf",
     "docBase": "EBU|TECH|3350|",
@@ -6295,8 +6295,8 @@
   },
   {
     "id": "EBU.Tech3360.2017",
-    "title": "EBU-TT Part 2 - Mapping EBU STL (Tech 3264) To EBU-TT Subtitle Files",
-    "label": "EBU Tech 3360 v1.0",
+    "title": "EBU-TT Part 2 - Mapping EBU STL (Tech 3264) To EBU-TT Subtitle Files v1.0",
+    "label": "EBU Tech 3360:2017",
     "publisher": "EBU",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -6327,8 +6327,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "EBU-TT Part 2 - Mapping EBU STL (Tech 3264) To EBU-TT Subtitle Files",
-      "EBU Tech 3360 v1.0"
+      "EBU-TT Part 2 - Mapping EBU STL (Tech 3264) To EBU-TT Subtitle Files v1.0",
+      "EBU Tech 3360:2017"
     ],
     "href": "https://tech.ebu.ch/docs/tech/tech3360.pdf",
     "docBase": "EBU|TECH|3360|",
@@ -6336,8 +6336,8 @@
   },
   {
     "id": "EBU.Tech3370.2017",
-    "title": "EBU-TT Part 3 - Live Subtitling Applications",
-    "label": "EBU Tech 3370 v1.0",
+    "title": "EBU-TT Part 3 - Live Subtitling Applications v1.0",
+    "label": "EBU Tech 3370:2017",
     "publisher": "EBU",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -6368,8 +6368,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "EBU-TT Part 3 - Live Subtitling Applications",
-      "EBU Tech 3370 v1.0"
+      "EBU-TT Part 3 - Live Subtitling Applications v1.0",
+      "EBU Tech 3370:2017"
     ],
     "href": "https://tech.ebu.ch/docs/tech/tech3370.pdf",
     "docBase": "EBU|TECH|3370|",
@@ -6377,8 +6377,8 @@
   },
   {
     "id": "EBU.Tech3380.2015",
-    "title": "EBU-TT-D Subtitling Distribution Format",
-    "label": "EBU Tech 3380 v1.0",
+    "title": "EBU-TT-D Subtitling Distribution Format v1.0",
+    "label": "EBU Tech 3380:2015",
     "publisher": "EBU",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -6408,8 +6408,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "EBU-TT-D Subtitling Distribution Format",
-      "EBU Tech 3380 v1.0"
+      "EBU-TT-D Subtitling Distribution Format v1.0",
+      "EBU Tech 3380:2015"
     ],
     "href": "https://tech.ebu.ch/docs/tech/tech3380v1_0.pdf",
     "docBase": "EBU|TECH|3380|",
@@ -6417,8 +6417,8 @@
   },
   {
     "id": "EBU.Tech3380.2018",
-    "title": "EBU-TT-D Subtitling Distribution Format",
-    "label": "EBU Tech 3380 v1.0.1",
+    "title": "EBU-TT-D Subtitling Distribution Format v1.0.1",
+    "label": "EBU Tech 3380:2018",
     "publisher": "EBU",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -6449,8 +6449,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "EBU-TT-D Subtitling Distribution Format",
-      "EBU Tech 3380 v1.0.1"
+      "EBU-TT-D Subtitling Distribution Format v1.0.1",
+      "EBU Tech 3380:2018"
     ],
     "href": "https://tech.ebu.ch/docs/tech/tech3380v1_0_1.pdf",
     "docBase": "EBU|TECH|3380|",
@@ -6458,8 +6458,8 @@
   },
   {
     "id": "EBU.Tech3390.2017",
-    "title": "EBU-TT Part M Metadata Definitions",
-    "label": "EBU Tech 3390 v1.0",
+    "title": "EBU-TT Part M Metadata Definitions v1.0",
+    "label": "EBU Tech 3390:2017",
     "publisher": "EBU",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -6490,8 +6490,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "EBU-TT Part M Metadata Definitions",
-      "EBU Tech 3390 v1.0"
+      "EBU-TT Part M Metadata Definitions v1.0",
+      "EBU Tech 3390:2017"
     ],
     "href": "https://tech.ebu.ch/docs/tech/tech3390.pdf",
     "docBase": "EBU|TECH|3390|",
@@ -6540,7 +6540,7 @@
   {
     "id": "EIDR.ID.201201",
     "title": "EIDR ID Format Ver. 1.02",
-    "label": "EIDR ID 1.02",
+    "label": "EIDR ID:201201",
     "publisher": "EIDR",
     "docType": "Best Practice",
     "docTypeAbr": null,
@@ -6571,7 +6571,7 @@
     "keywords": [],
     "keywordsSearch": [
       "EIDR ID Format Ver. 1.02",
-      "EIDR ID 1.02"
+      "EIDR ID:201201"
     ],
     "href": "http://eidr.org/documents/EIDR_ID_Format_v1.02_Jan2012.pdf",
     "docBase": "EIDR||ID|",
@@ -6580,7 +6580,7 @@
   {
     "id": "EIDR.ID.201702",
     "title": "EIDR ID Format Ver. 1.5",
-    "label": "EIDR ID 1.5",
+    "label": "EIDR ID:201702",
     "publisher": "EIDR",
     "docType": "Best Practice",
     "docTypeAbr": null,
@@ -6611,7 +6611,7 @@
     "keywords": [],
     "keywordsSearch": [
       "EIDR ID Format Ver. 1.5",
-      "EIDR ID 1.5"
+      "EIDR ID:201702"
     ],
     "href": "http://eidr.org/documents/EIDR_ID_Format.pdf",
     "docBase": "EIDR||ID|",
@@ -6620,7 +6620,7 @@
   {
     "id": "EIDR.ID.201710",
     "title": "EIDR ID Format Ver. 1.51",
-    "label": "EIDR ID 1.51",
+    "label": "EIDR ID:201710",
     "publisher": "EIDR",
     "docType": "Best Practice",
     "docTypeAbr": null,
@@ -6652,7 +6652,7 @@
     "keywords": [],
     "keywordsSearch": [
       "EIDR ID Format Ver. 1.51",
-      "EIDR ID 1.51"
+      "EIDR ID:201710"
     ],
     "href": "http://eidr.org/documents/EIDR_ID_Format.pdf",
     "docBase": "EIDR||ID|",
@@ -6661,7 +6661,7 @@
   {
     "id": "EIDR.SV-DFR.201512",
     "title": "EIDR SYSTEM VERSION 2.0.9 DATA FIELDS REFERENCE",
-    "label": "EIDR SV 2.0.9 DFR",
+    "label": "EIDR SV DFR:2015",
     "publisher": "EIDR",
     "docType": "Informational",
     "docTypeAbr": null,
@@ -6693,7 +6693,7 @@
     "keywords": [],
     "keywordsSearch": [
       "EIDR SYSTEM VERSION 2.0.9 DATA FIELDS REFERENCE",
-      "EIDR SV 2.0.9 DFR"
+      "EIDR SV DFR:2015"
     ],
     "href": "https://eidr.org/documents/EIDR_2.0_Data_Fields.pdf",
     "docBase": "EIDR||SV-DFR|",
@@ -6701,8 +6701,8 @@
   },
   {
     "id": "ETSI.ETR-154.1997",
-    "title": "Digital Video Broadcasting (DVB); Implementation guidelines for the use of MPEG-2 Systems, Video and Audio in satellite, cable and terrestrial broadcasting applications",
-    "label": "ETR 154 Edition 3",
+    "title": "Digital Video Broadcasting (DVB); Implementation guidelines for the use of MPEG-2 Systems, Video and Audio in satellite, cable and terrestrial broadcasting applications, Edition 3",
+    "label": "ETSI ETR 154:1997",
     "publisher": "ETSI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -6732,8 +6732,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "Digital Video Broadcasting (DVB); Implementation guidelines for the use of MPEG-2 Systems, Video and Audio in satellite, cable and terrestrial broadcasting applications",
-      "ETR 154 Edition 3"
+      "Digital Video Broadcasting (DVB); Implementation guidelines for the use of MPEG-2 Systems, Video and Audio in satellite, cable and terrestrial broadcasting applications, Edition 3",
+      "ETSI ETR 154:1997"
     ],
     "href": null,
     "docBase": "ETSI|ETR|154|",
@@ -6741,8 +6741,8 @@
   },
   {
     "id": "ETSI.ETR-154.2000",
-    "title": "Digital Video Broadcasting (DVB); Implementation guidelines for the use of MPEG-2 Systems, Video and Audio in satellite, cable and terrestrial broadcasting applications",
-    "label": "ETR 154 V1.4.1",
+    "title": "Digital Video Broadcasting (DVB); Implementation guidelines for the use of MPEG-2 Systems, Video and Audio in satellite, cable and terrestrial broadcasting applications, V1.4.1",
+    "label": "ETR 154:2000",
     "publisher": "ETSI",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -6773,8 +6773,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "Digital Video Broadcasting (DVB); Implementation guidelines for the use of MPEG-2 Systems, Video and Audio in satellite, cable and terrestrial broadcasting applications",
-      "ETR 154 V1.4.1"
+      "Digital Video Broadcasting (DVB); Implementation guidelines for the use of MPEG-2 Systems, Video and Audio in satellite, cable and terrestrial broadcasting applications, V1.4.1",
+      "ETR 154:2000"
     ],
     "href": "https://www.etsi.org/deliver/etsi_tr/101100_101199/101154/01.04.01_60/tr_101154v010401p.pdf",
     "docBase": "ETSI|ETR|154|",
@@ -6823,17 +6823,17 @@
   },
   {
     "id": "FIAF.TR.FP.1997",
-    "title": "Technical aspects on the preservation of moving images, International Preservation Commission of the International Federation of Film Archives (FIAF), November 1997",
-    "label": "FIAF 1997",
+    "title": "Technical aspects on the preservation of moving images, International Preservation Commission of the International Federation of Film Archives (FIAF), November 1977",
+    "label": "FIAF INFORMAL CONSULTATION:1997",
     "publisher": "FIAF",
-    "docType": "Specification",
+    "docType": "White Paper",
     "docTypeAbr": null,
     "status": [
-      "latestVersion"
+      "active"
     ],
     "statusFlags": {
-      "active": false,
-      "latestVersion": true,
+      "active": true,
+      "latestVersion": false,
       "superseded": false,
       "withdrawn": false,
       "draft": false,
@@ -6842,24 +6842,28 @@
       "amended": false,
       "versionless": false
     },
-    "pubDate": "",
-    "pubTs": null,
-    "year": null,
+    "pubDate": "1977-11-01",
+    "pubTs": 247190400000,
+    "year": 1977,
     "hasDoi": false,
     "doi": null,
     "hasReleaseTag": false,
+    "authors": [
+      "VOLKMANN, Herbert"
+    ],
     "group": [],
     "groupNames": [],
     "currentWork": [],
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "Technical aspects on the preservation of moving images, International Preservation Commission of the International Federation of Film Archives (FIAF), November 1997",
-      "FIAF 1997"
+      "Technical aspects on the preservation of moving images, International Preservation Commission of the International Federation of Film Archives (FIAF), November 1977",
+      "FIAF INFORMAL CONSULTATION:1997",
+      "VOLKMANN, Herbert"
     ],
-    "href": null,
-    "docBase": "FIAF|TR|FP|",
-    "docBaseLabel": "FIAF TR FP"
+    "href": "https://www.fiafnet.org/images/tinyUpload/2022/02/11-1979_Technical_Aspects_Preservation_Volkmann_PRO-007_RED.pdf",
+    "docBase": null,
+    "docBaseLabel": null
   },
   {
     "id": "GB.6ZoYngEACAAJ.1949",
@@ -8332,7 +8336,7 @@
   {
     "id": "IESNA.RP16.1996",
     "title": "Nomenclature and Definitions for Illuminating Engineering",
-    "label": "ANSI/IESNA RP-16-1996",
+    "label": "ANSI/IESNA RP-16:1996",
     "publisher": "IESNA",
     "docType": "Recommended Practice",
     "docTypeAbr": null,
@@ -8363,7 +8367,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Nomenclature and Definitions for Illuminating Engineering",
-      "ANSI/IESNA RP-16-1996"
+      "ANSI/IESNA RP-16:1996"
     ],
     "href": null,
     "docBase": "IESNA|RP|16|",
@@ -8377,12 +8381,11 @@
     "docType": "Guideline",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "active"
     ],
     "statusFlags": {
       "active": true,
-      "latestVersion": true,
+      "latestVersion": false,
       "superseded": false,
       "withdrawn": false,
       "draft": false,
@@ -8407,8 +8410,8 @@
       "IETF Statement"
     ],
     "href": "https://www.ietf.org/about/groups/iesg/statements/formal-languages-use/",
-    "docBase": "IETF|FLS||",
-    "docBaseLabel": "IETF FLS"
+    "docBase": null,
+    "docBaseLabel": null
   },
   {
     "id": "IETF.JSON.2022",
@@ -8699,7 +8702,7 @@
   {
     "id": "INCITS.X3.4.1986",
     "title": "Information Systems - Coded Character Sets - 7-Bit American National Standard Code For Information Interchange (7-Bit ASCII)",
-    "label": "ANSI/INCITS X3.4-1986 (R1997)",
+    "label": "ANSI/INCITS X3.4:1986 (R1997)",
     "publisher": "ANSI/INCITS",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -8731,7 +8734,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Information Systems - Coded Character Sets - 7-Bit American National Standard Code For Information Interchange (7-Bit ASCII)",
-      "ANSI/INCITS X3.4-1986 (R1997)"
+      "ANSI/INCITS X3.4:1986 (R1997)"
     ],
     "href": "https://webstore.ansi.org/standards/incits/ansix31986r1997",
     "docBase": "INCITS|X3|4|",
@@ -9608,8 +9611,8 @@
       "ISDCF Doc 06"
     ],
     "href": null,
-    "docBase": "ISDCF||D06|",
-    "docBaseLabel": "ISDCF D06"
+    "docBase": null,
+    "docBaseLabel": null
   },
   {
     "id": "ISDCF.D07.2017",
@@ -23184,7 +23187,7 @@
   {
     "id": "NAPM.1.10.1995",
     "title": "Photography (Films) — Aerial Films/Spools/Containers — Dimensions",
-    "label": "ANSI/NAPM 1.10-1995",
+    "label": "ANSI/NAPM 1.10:1995",
     "publisher": "ANSI/NAPM",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -23215,7 +23218,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Photography (Films) — Aerial Films/Spools/Containers — Dimensions",
-      "ANSI/NAPM 1.10-1995"
+      "ANSI/NAPM 1.10:1995"
     ],
     "href": null,
     "docBase": "NAPM||1|10",
@@ -23223,8 +23226,8 @@
   },
   {
     "id": "NAPM.IT2.18.1996",
-    "title": "Photography - Density Measurements - Part 3: Spectral Conditions (Revision And Redesignation Of ANSI/ISO 5-3-1984, ANSI PH2.18-1985) (Same As ANSI/ISO 5-3-1995)",
-    "label": "ANSI/NAPM IT2.18-1996",
+    "title": "Photography - Density Measurements - Part 3: Spectral Conditions",
+    "label": "ANSI/NAPM IT2.18:1996",
     "publisher": "ANSI/NAPM",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -23255,8 +23258,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "Photography - Density Measurements - Part 3: Spectral Conditions (Revision And Redesignation Of ANSI/ISO 5-3-1984, ANSI PH2.18-1985) (Same As ANSI/ISO 5-3-1995)",
-      "ANSI/NAPM IT2.18-1996"
+      "Photography - Density Measurements - Part 3: Spectral Conditions",
+      "ANSI/NAPM IT2.18:1996"
     ],
     "href": "https://webstore.ansi.org/standards/i3a/ansinapmit2191994",
     "docBase": "NAPM|IT|2|18",
@@ -23264,8 +23267,8 @@
   },
   {
     "id": "NAPM.IT2.19.1994",
-    "title": "Photography - Density Measurements - Part 2: Geometric Conditions For Transmission Density (Revision And Redesignation Of ANSI IT2.19-1990) (Same As ANSI/ISO 5-2-1991)",
-    "label": "ANSI/NAPM IT2.19-1994",
+    "title": "Photography - Density Measurements - Part 2: Geometric Conditions For Transmission Density",
+    "label": "ANSI/NAPM IT2.19:1994",
     "publisher": "ANSI/NAPM",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -23296,8 +23299,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "Photography - Density Measurements - Part 2: Geometric Conditions For Transmission Density (Revision And Redesignation Of ANSI IT2.19-1990) (Same As ANSI/ISO 5-2-1991)",
-      "ANSI/NAPM IT2.19-1994"
+      "Photography - Density Measurements - Part 2: Geometric Conditions For Transmission Density",
+      "ANSI/NAPM IT2.19:1994"
     ],
     "href": "https://webstore.ansi.org/standards/i3a/ansinapmit2191994",
     "docBase": "NAPM|IT|2|19",
@@ -23305,8 +23308,8 @@
   },
   {
     "id": "NAPM.IT9.1.1996",
-    "title": "Imaging Materials - Processed Silver-Gelatin Type Black-And White Film - Specifications For Stability (Revision And Redesignation Of ANSI/NAPM IT9.1-1992) (Same As ANSI/ISO 10602-1995)",
-    "label": "ANSI/NAPM IT9.1-1996",
+    "title": "Imaging Materials - Processed Silver-Gelatin Type Black-And White Film - Specifications For Stability",
+    "label": "ANSI/NAPM IT9.1:1996",
     "publisher": "ANSI/NAPM",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -23337,8 +23340,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "Imaging Materials - Processed Silver-Gelatin Type Black-And White Film - Specifications For Stability (Revision And Redesignation Of ANSI/NAPM IT9.1-1992) (Same As ANSI/ISO 10602-1995)",
-      "ANSI/NAPM IT9.1-1996"
+      "Imaging Materials - Processed Silver-Gelatin Type Black-And White Film - Specifications For Stability",
+      "ANSI/NAPM IT9.1:1996"
     ],
     "href": "https://webstore.ansi.org/standards/i3a/ansinapmit91996",
     "docBase": "NAPM|IT|9|1",
@@ -23347,7 +23350,7 @@
   {
     "id": "NAPM.IT9.11.1993",
     "title": " Imaging Media — Processed Safety Photographic Films — Storage",
-    "label": "ANSI/NAPM IT9.11-1993",
+    "label": "ANSI/NAPM IT9.11:1993",
     "publisher": "ANSI/NAPM",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -23379,7 +23382,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Imaging Media — Processed Safety Photographic Films — Storage",
-      "ANSI/NAPM IT9.11-1993"
+      "ANSI/NAPM IT9.11:1993"
     ],
     "href": null,
     "docBase": "NAPM|IT|9|11",
@@ -23387,8 +23390,8 @@
   },
   {
     "id": "NAPM.IT9.12.1995",
-    "title": "Imaging Materials - Processed Vesicular Photographic Film - Specifications For Stability (Revision And Redesignation Of ANSI/ISO 9718-1991, ANSI IT9.12-1991) (Same As ANSI/ISO 9718-1995)",
-    "label": "ANSI/NAPM IT9.12-1995",
+    "title": "Imaging Materials - Processed Vesicular Photographic Film - Specifications For Stability",
+    "label": "ANSI/NAPM IT9.12:1995",
     "publisher": "ANSI/NAPM",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -23419,8 +23422,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "Imaging Materials - Processed Vesicular Photographic Film - Specifications For Stability (Revision And Redesignation Of ANSI/ISO 9718-1991, ANSI IT9.12-1991) (Same As ANSI/ISO 9718-1995)",
-      "ANSI/NAPM IT9.12-1995"
+      "Imaging Materials - Processed Vesicular Photographic Film - Specifications For Stability",
+      "ANSI/NAPM IT9.12:1995"
     ],
     "href": "https://webstore.ansi.org/standards/i3a/ansinapmit9121995",
     "docBase": "NAPM|IT|9|12",
@@ -23429,7 +23432,7 @@
   {
     "id": "NAPM.IT9.13.1996",
     "title": "Imaging Materials - Glossary Of Terms Pertaining To Stability",
-    "label": "ANSI/NAPM IT9.13-1996",
+    "label": "ANSI/NAPM IT9.13:1996",
     "publisher": "ANSI/NAPM",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -23461,7 +23464,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Imaging Materials - Glossary Of Terms Pertaining To Stability",
-      "ANSI/NAPM IT9.13-1996"
+      "ANSI/NAPM IT9.13:1996"
     ],
     "href": "https://webstore.ansi.org/standards/i3a/ansinapmit9131996",
     "docBase": "NAPM|IT|9|13",
@@ -23470,7 +23473,7 @@
   {
     "id": "NAPM.IT9.15.1997",
     "title": " Imaging Materials--Method for the Evaluation of the Effectiveness of Chemical Conversion of Silver Images Against Oxidation",
-    "label": "ANSI/NAPM IT9.15-1997",
+    "label": "ANSI/NAPM IT9.15:1997",
     "publisher": "ANSI/NAPM",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -23502,7 +23505,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Imaging Materials--Method for the Evaluation of the Effectiveness of Chemical Conversion of Silver Images Against Oxidation",
-      "ANSI/NAPM IT9.15-1997"
+      "ANSI/NAPM IT9.15:1997"
     ],
     "href": null,
     "docBase": "NAPM|IT|9|15",
@@ -23511,7 +23514,7 @@
   {
     "id": "NAPM.IT9.4.1994",
     "title": "Imaging Materials — Processed Films — Method for Determining Lubrication",
-    "label": "ANSI/NAPM IT9.4-1993 (R1996)",
+    "label": "ANSI/NAPM IT9.4:1993 (R1996)",
     "publisher": "ANSI/NAPM",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -23542,7 +23545,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Imaging Materials — Processed Films — Method for Determining Lubrication",
-      "ANSI/NAPM IT9.4-1993 (R1996)"
+      "ANSI/NAPM IT9.4:1993 (R1996)"
     ],
     "href": null,
     "docBase": "NAPM|IT|9|4",
@@ -23550,8 +23553,8 @@
   },
   {
     "id": "NAPM.IT9.5.1994",
-    "title": "Imaging Materials - Ammonia-Processed Diazo Photographic Film - Specifications For Stability (Revision And Redesignation Of ANSI IT9.5-1992) (Same As ANSI/ISO 8225-1995)",
-    "label": "ANSI/NAPM IT9.5-1994",
+    "title": "Imaging Materials - Ammonia-Processed Diazo Photographic Film - Specifications For Stability",
+    "label": "ANSI/NAPM IT9.5:1994",
     "publisher": "ANSI/NAPM",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -23582,8 +23585,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "Imaging Materials - Ammonia-Processed Diazo Photographic Film - Specifications For Stability (Revision And Redesignation Of ANSI IT9.5-1992) (Same As ANSI/ISO 8225-1995)",
-      "ANSI/NAPM IT9.5-1994"
+      "Imaging Materials - Ammonia-Processed Diazo Photographic Film - Specifications For Stability",
+      "ANSI/NAPM IT9.5:1994"
     ],
     "href": null,
     "docBase": "NAPM|IT|9|5",
@@ -23591,8 +23594,8 @@
   },
   {
     "id": "NAPM.IT9.5.1996",
-    "title": "Imaging Materials - Ammonia-Processed Diazo Photographic Film - Specifications For Stability (Revision And Redesignation Of ANSI IT9.5-1992) (Same As ANSI/ISO 8225-1995)",
-    "label": "ANSI/ISO 8225-1995 ANSI/NAPM IT9.5-1996",
+    "title": "Imaging Materials - Ammonia-Processed Diazo Photographic Film - Specifications For Stability",
+    "label": "ANSI/NAPM IT9.5:1996 ANSI/ISO 8225:1995 ",
     "publisher": "ANSI/NAPM",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -23623,8 +23626,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "Imaging Materials - Ammonia-Processed Diazo Photographic Film - Specifications For Stability (Revision And Redesignation Of ANSI IT9.5-1992) (Same As ANSI/ISO 8225-1995)",
-      "ANSI/ISO 8225-1995 ANSI/NAPM IT9.5-1996"
+      "Imaging Materials - Ammonia-Processed Diazo Photographic Film - Specifications For Stability",
+      "ANSI/NAPM IT9.5:1996 ANSI/ISO 8225:1995"
     ],
     "href": "https://webstore.ansi.org/standards/i3a/ansiiso82251995napmit91996",
     "docBase": "NAPM|IT|9|5",
@@ -23632,8 +23635,8 @@
   },
   {
     "id": "NAPM.IT9.6.1991",
-    "title": "Imaging Materials - Photographic Films - Specifications For Safety Film (Revision And Redesignation Of ANSI PH1.25-1984 (R1989)) (Same As ANSI/ISO 543-1990 (R1995))",
-    "label": "ANSI/NAPM IT9.6-1991 (R1996)",
+    "title": "Imaging Materials - Photographic Films - Specifications For Safety Film",
+    "label": "ANSI/NAPM IT9.6:1991 (R1996)",
     "publisher": "ANSI/NAPM",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -23664,8 +23667,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "Imaging Materials - Photographic Films - Specifications For Safety Film (Revision And Redesignation Of ANSI PH1.25-1984 (R1989)) (Same As ANSI/ISO 543-1990 (R1995))",
-      "ANSI/NAPM IT9.6-1991 (R1996)"
+      "Imaging Materials - Photographic Films - Specifications For Safety Film",
+      "ANSI/NAPM IT9.6:1991 (R1996)"
     ],
     "href": "https://webstore.ansi.org/standards/i3a/ansinapmit91991r1996",
     "docBase": "NAPM|IT|9|6",
@@ -23801,7 +23804,7 @@
   {
     "id": "NFPA.40.1997",
     "title": "Standard for the Storage and Handling of Cellulose Nitrate Film",
-    "label": "ANSI/NFPA 40-1997",
+    "label": "ANSI/NFPA 40:1997",
     "publisher": "ANSI/NFPA",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -23832,7 +23835,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Standard for the Storage and Handling of Cellulose Nitrate Film",
-      "ANSI/NFPA 40-1997"
+      "ANSI/NFPA 40:1997"
     ],
     "href": null,
     "docBase": "NFPA||40|",
@@ -24981,8 +24984,8 @@
   },
   {
     "id": "OMG.OCL.2-3-1",
-    "title": "Object Constraint Language",
-    "label": "OCL v2.3.1",
+    "title": "Object Constraint Language v2.3.1",
+    "label": "OMG OCL:2012",
     "publisher": "OMG",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -25012,8 +25015,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "Object Constraint Language",
-      "OCL v2.3.1"
+      "Object Constraint Language v2.3.1",
+      "OMG OCL:2012"
     ],
     "href": "https://www.omg.org/spec/OCL/2.3.1/PDF",
     "docBase": "OMG|OCL||",
@@ -25021,8 +25024,8 @@
   },
   {
     "id": "OMG.OCL.2-4",
-    "title": "Object Constraint Language",
-    "label": "OCL v2.4",
+    "title": "Object Constraint Language v2.4",
+    "label": "OMG OCL:2014",
     "publisher": "OMG",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -25053,8 +25056,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "Object Constraint Language",
-      "OCL v2.4"
+      "Object Constraint Language v2.4",
+      "OMG OCL:2014"
     ],
     "href": "https://www.omg.org/spec/OCL/2.4/PDF",
     "docBase": "OMG|OCL||",
@@ -25062,8 +25065,8 @@
   },
   {
     "id": "OMG.UML.2-4-1",
-    "title": "Unified Modeling Language",
-    "label": "UML v2.4.1",
+    "title": "Unified Modeling Language v2.4.1",
+    "label": "OMG UML:2011",
     "publisher": "OMG",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -25093,8 +25096,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "Unified Modeling Language",
-      "UML v2.4.1"
+      "Unified Modeling Language v2.4.1",
+      "OMG UML:2011"
     ],
     "href": "https://www.omg.org/spec/UML/2.4.1/About-UML",
     "docBase": "OMG|UML||",
@@ -25102,8 +25105,8 @@
   },
   {
     "id": "OMG.UML.2-5-1",
-    "title": "Unified Modeling Language",
-    "label": "UML v2.5.1",
+    "title": "Unified Modeling Language v2.5.1",
+    "label": "OMG UML:2017",
     "publisher": "OMG",
     "docType": "Specification",
     "docTypeAbr": null,
@@ -25134,8 +25137,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "Unified Modeling Language",
-      "UML v2.5.1"
+      "Unified Modeling Language v2.5.1",
+      "OMG UML:2017"
     ],
     "href": "https://www.omg.org/spec/UML",
     "docBase": "OMG|UML||",
@@ -25149,12 +25152,11 @@
     "docType": "Guideline",
     "docTypeAbr": null,
     "status": [
-      "active",
-      "latestVersion"
+      "active"
     ],
     "statusFlags": {
       "active": true,
-      "latestVersion": true,
+      "latestVersion": false,
       "superseded": false,
       "withdrawn": false,
       "draft": false,
@@ -25179,13 +25181,13 @@
       "OWASP Cheat Sheet Series"
     ],
     "href": "https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Protection_Cheat_Sheet.html",
-    "docBase": "OWASP|CS|TLP|",
-    "docBaseLabel": "OWASP CS TLP"
+    "docBase": null,
+    "docBaseLabel": null
   },
   {
     "id": "PIMA.IT3.301.1990",
-    "title": "Photography - Cameras - Automatic Control Of Exposure (Reaffirmation And Redesignation Of ANSI/ISO 2721-1982, ANSI PH3.301-1990)",
-    "label": "ANSI/ISO 2721-1982 (R1997) ANSI/PIMA IT3.301-1990 (R1997)",
+    "title": "Photography - Cameras - Automatic Control Of Exposure",
+    "label": "ANSI/PIMA IT3.301:1990 (R1997) ANSI/ISO 2721:1982 (R1997)",
     "publisher": "ANSI/PIMA",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -25216,8 +25218,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "Photography - Cameras - Automatic Control Of Exposure (Reaffirmation And Redesignation Of ANSI/ISO 2721-1982, ANSI PH3.301-1990)",
-      "ANSI/ISO 2721-1982 (R1997) ANSI/PIMA IT3.301-1990 (R1997)"
+      "Photography - Cameras - Automatic Control Of Exposure",
+      "ANSI/PIMA IT3.301:1990 (R1997) ANSI/ISO 2721:1982 (R1997)"
     ],
     "href": "https://webstore.ansi.org/standards/i3a/ansiiso27211982r1997pimait3301",
     "docBase": "PIMA|IT|3|301",
@@ -25225,8 +25227,8 @@
   },
   {
     "id": "PIMA.IT7.231.1998",
-    "title": "AUDIOVISUAL SYSTMS - PROJECTION IN INDOOR ROOMS - PART 1: SCREEN ILLUMINATION TEST FOR STILL PROJECTORS",
-    "label": "ANSI/PIMA IT7.231 1998 Edition, 1998",
+    "title": "AUDIOVISUAL SYSTMS - PROJECTION IN INDOOR ROOMS - PART 1: SCREEN ILLUMINATION TEST FOR STILL PROJECTORS,  Edition 1998",
+    "label": "ANSI/PIMA IT7.231:1998",
     "publisher": "ANSI/PIMA",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -25256,8 +25258,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "AUDIOVISUAL SYSTMS - PROJECTION IN INDOOR ROOMS - PART 1: SCREEN ILLUMINATION TEST FOR STILL PROJECTORS",
-      "ANSI/PIMA IT7.231 1998 Edition, 1998"
+      "AUDIOVISUAL SYSTMS - PROJECTION IN INDOOR ROOMS - PART 1: SCREEN ILLUMINATION TEST FOR STILL PROJECTORS, Edition 1998",
+      "ANSI/PIMA IT7.231:1998"
     ],
     "href": null,
     "docBase": "PIMA|IT|7|231",
@@ -25266,7 +25268,7 @@
   {
     "id": "PIMA.IT9.11.1998",
     "title": " Imaging Media — Processed Safety Photographic Films — Storage",
-    "label": "ANSI/PIMA IT9.11-1998",
+    "label": "ANSI/PIMA IT9.11:1998",
     "publisher": "ANSI/PIMA",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -25298,7 +25300,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Imaging Media — Processed Safety Photographic Films — Storage",
-      "ANSI/PIMA IT9.11-1998"
+      "ANSI/PIMA IT9.11:1998"
     ],
     "href": null,
     "docBase": "PIMA|IT|9|11",
@@ -25307,7 +25309,7 @@
   {
     "id": "PIMA.IT9.2.1991",
     "title": "Imaging Media — Photographic Processed Films Plates and Papers — Filing Enclosures and Storage Containers",
-    "label": "ANSI/PIMA IT9.2-1991",
+    "label": "ANSI/PIMA IT9.2:1991",
     "publisher": "ANSI/PIMA",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -25339,7 +25341,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Imaging Media — Photographic Processed Films Plates and Papers — Filing Enclosures and Storage Containers",
-      "ANSI/PIMA IT9.2-1991"
+      "ANSI/PIMA IT9.2:1991"
     ],
     "href": null,
     "docBase": "PIMA|IT|9|2",
@@ -25348,7 +25350,7 @@
   {
     "id": "PIMA.IT9.2.1998",
     "title": "Imaging Materials — Photographic Processed Films, Plates, and Papers — Filing Enclosures and Storage Containers",
-    "label": "ANSI/PIMA IT9.2-1998",
+    "label": "ANSI/PIMA IT9.2:1998",
     "publisher": "ANSI/PIMA",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -25380,7 +25382,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Imaging Materials — Photographic Processed Films, Plates, and Papers — Filing Enclosures and Storage Containers",
-      "ANSI/PIMA IT9.2-1998"
+      "ANSI/PIMA IT9.2:1998"
     ],
     "href": null,
     "docBase": "PIMA|IT|9|2",
@@ -37705,8 +37707,8 @@
   },
   {
     "id": "SMPTE.OM.Std.2015",
-    "title": "SMPTE Standards Operations Manual v.3.1",
-    "label": "SMPTE OM Standards v3.1",
+    "title": "SMPTE Standards Operations Manual v3.1",
+    "label": "SMPTE OM Standards:2015",
     "publisher": "SMPTE",
     "docType": "Operations Manual",
     "docTypeAbr": "OM",
@@ -37740,8 +37742,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "SMPTE Standards Operations Manual v.3.1",
-      "SMPTE OM Standards v3.1"
+      "SMPTE Standards Operations Manual v3.1",
+      "SMPTE OM Standards:2015"
     ],
     "href": "https://www.smpte.org/sites/default/files/SMPTE%20Standards%20OM%20v3.1.pdf",
     "docBase": "SMPTE|OM|Std|",
@@ -94634,7 +94636,7 @@
   {
     "id": "UL.900.1995",
     "title": "Test Performance of Air Filter Units",
-    "label": "ANSI/UL 900-1995",
+    "label": "ANSI/UL 900:1995",
     "publisher": "ANSI/UL",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -94665,7 +94667,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Test Performance of Air Filter Units",
-      "ANSI/UL 900-1995"
+      "ANSI/UL 900:1995"
     ],
     "href": null,
     "docBase": "UL||900|",
@@ -94673,8 +94675,8 @@
   },
   {
     "id": "UL.900.2015",
-    "title": "Air Filter Units",
-    "label": "ANSI/UL Standard 900, Edition 8",
+    "title": "Air Filter Units, Edition 8",
+    "label": "ANSI/UL 900:2015",
     "publisher": "ANSI/UL",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -94705,8 +94707,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "Air Filter Units",
-      "ANSI/UL Standard 900, Edition 8"
+      "Air Filter Units, Edition 8",
+      "ANSI/UL 900:2015"
     ],
     "href": "https://www.shopulstandards.com/ProductDetail.aspx?UniqueKey=29403",
     "docBase": "UL||900|",
