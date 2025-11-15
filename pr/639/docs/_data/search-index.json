@@ -3,7 +3,7 @@
     "id": "0141-3910.90.90019-4",
     "title": "Archival preservation of photographic films—A perspective",
     "label": "Polymer Degradation and Stability Volume 29, Issue 1, 1990, Pages 3-29",
-    "publisher": "Polymer Degradation and Stability",
+    "publisher": "ScienceDirect",
     "docType": "Journal Article",
     "docTypeAbr": null,
     "status": [
@@ -47,7 +47,7 @@
     "id": "0950-7671.1.3.302",
     "title": "The measurement of photographic density",
     "label": "Journal of Scientific Instruments, Volume 1, Number 3",
-    "publisher": "Scientific Instruments",
+    "publisher": "IOP Publishing Ltd",
     "docType": "Journal Article",
     "docTypeAbr": null,
     "status": [
@@ -5677,9 +5677,9 @@
   },
   {
     "id": "DMA.TR.8350.2",
-    "title": "DEPARTMENT OF DEFENSE WORLD GEODETIC SYSTEM 1984 - ITS DEFINITION AND RELATIONSHIPS WITH LOCAL GEODETIC SYSTEMS",
-    "label": "DMA TR 8350.2; Second Edition; 1 September 1991",
-    "publisher": "U.S. Defense Mapping Agency ",
+    "title": "Department of Defense World Geodetic System 1984: Its Definition and Relationships with Local Geodetic Systems; Second Edition; 1 September 1991",
+    "label": "DMA TR 8350.2",
+    "publisher": "U.S. Defense Mapping Agency",
     "docType": "Technical Report",
     "docTypeAbr": null,
     "status": [
@@ -5710,10 +5710,10 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "DEPARTMENT OF DEFENSE WORLD GEODETIC SYSTEM 1984 - ITS DEFINITION AND RELATIONSHIPS WITH LOCAL GEODETIC SYSTEMS",
-      "DMA TR 8350.2; Second Edition; 1 September 1991"
+      "Department of Defense World Geodetic System 1984: Its Definition and Relationships with Local Geodetic Systems; Second Edition; 1 September 1991",
+      "DMA TR 8350.2"
     ],
-    "href": null,
+    "href": "https://apps.dtic.mil/sti/citations/ADA280358",
     "docBase": "U.S. DEFENSE MAPPING AGENCY|TR|8350.2|",
     "docBaseLabel": "U.S. DEFENSE MAPPING AGENCY TR 8350.2"
   },
@@ -6869,7 +6869,7 @@
     "id": "GB.6ZoYngEACAAJ.1949",
     "title": "Sound Recording",
     "label": "Chapter 21",
-    "publisher": "Wiley",
+    "publisher": "John Wiley & Sons, Inc.",
     "docType": "Book",
     "docTypeAbr": null,
     "status": [
@@ -8337,7 +8337,7 @@
     "id": "IESNA.RP16.1996",
     "title": "Nomenclature and Definitions for Illuminating Engineering",
     "label": "ANSI/IESNA RP-16:1996",
-    "publisher": "IESNA",
+    "publisher": "Illuminating Engineering Society",
     "docType": "Recommended Practice",
     "docTypeAbr": null,
     "status": [
@@ -8741,46 +8741,6 @@
     "docBaseLabel": "INCITS X3 4"
   },
   {
-    "id": "ISBN.0195392884",
-    "title": "New Oxford American Dictionary, Third Edition",
-    "label": "ISBN 0-195-39288-4",
-    "publisher": "Oxford University Press",
-    "docType": "Book",
-    "docTypeAbr": null,
-    "status": [
-      "active"
-    ],
-    "statusFlags": {
-      "active": true,
-      "latestVersion": false,
-      "superseded": false,
-      "withdrawn": false,
-      "draft": false,
-      "stabilized": false,
-      "reaffirmed": false,
-      "amended": false,
-      "versionless": false
-    },
-    "pubDate": "2010-09-02",
-    "pubTs": 1283385600000,
-    "year": 2010,
-    "hasDoi": false,
-    "doi": null,
-    "hasReleaseTag": false,
-    "group": [],
-    "groupNames": [],
-    "currentWork": [],
-    "hasCurrentWork": false,
-    "keywords": [],
-    "keywordsSearch": [
-      "New Oxford American Dictionary, Third Edition",
-      "ISBN 0-195-39288-4"
-    ],
-    "href": null,
-    "docBase": null,
-    "docBaseLabel": null
-  },
-  {
     "id": "ISBN.0201325632",
     "title": "UML Distilled: Applying the Standard Object Modelling Language",
     "label": "The Computer Bulletin, Volume 40, Issue 5, September 1998, Page 30",
@@ -8916,7 +8876,7 @@
     "id": "ISBN.9780070048416",
     "title": "Noise and Vibration Control",
     "label": "ISBN 978-0-070-04841-6, p. 565",
-    "publisher": "McGraw-Hill Book Company",
+    "publisher": "McGraw Hill",
     "docType": "Book",
     "docTypeAbr": null,
     "status": [
@@ -8953,6 +8913,46 @@
       "Beranek, Leo L"
     ],
     "href": null,
+    "docBase": null,
+    "docBaseLabel": null
+  },
+  {
+    "id": "ISBN.9780195392883",
+    "title": "New Oxford American Dictionary, Third Edition",
+    "label": "ISBN 9780195392883",
+    "publisher": "Oxford University Press",
+    "docType": "Book",
+    "docTypeAbr": null,
+    "status": [
+      "active"
+    ],
+    "statusFlags": {
+      "active": true,
+      "latestVersion": false,
+      "superseded": false,
+      "withdrawn": false,
+      "draft": false,
+      "stabilized": false,
+      "reaffirmed": false,
+      "amended": false,
+      "versionless": false
+    },
+    "pubDate": "2010-09-02",
+    "pubTs": 1283385600000,
+    "year": 2010,
+    "hasDoi": true,
+    "doi": "10.1093/acref/9780195392883.001.0001",
+    "hasReleaseTag": false,
+    "group": [],
+    "groupNames": [],
+    "currentWork": [],
+    "hasCurrentWork": false,
+    "keywords": [],
+    "keywordsSearch": [
+      "New Oxford American Dictionary, Third Edition",
+      "ISBN 9780195392883"
+    ],
+    "href": "https://www.oxfordreference.com/display/10.1093/acref/9780195392883.001.0001/acref-9780195392883",
     "docBase": null,
     "docBaseLabel": null
   },
@@ -9004,16 +9004,16 @@
   },
   {
     "id": "ISBN.9780226103891",
-    "title": "CHICAGO DOCUMENTATION STYLE (14th Edition)",
+    "title": "The Chicago Manual of Style (14th Edition)",
     "label": "ISBN 978-0-226-103891",
     "publisher": "University of Chicago Press",
     "docType": "Book",
     "docTypeAbr": null,
     "status": [
-      "unknown"
+      "active"
     ],
     "statusFlags": {
-      "active": false,
+      "active": true,
       "latestVersion": false,
       "superseded": false,
       "withdrawn": false,
@@ -9023,9 +9023,9 @@
       "amended": false,
       "versionless": false
     },
-    "pubDate": "",
-    "pubTs": null,
-    "year": null,
+    "pubDate": "1993-09-01",
+    "pubTs": 746841600000,
+    "year": 1993,
     "hasDoi": false,
     "doi": null,
     "hasReleaseTag": false,
@@ -9035,10 +9035,10 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "CHICAGO DOCUMENTATION STYLE (14th Edition)",
+      "The Chicago Manual of Style (14th Edition)",
       "ISBN 978-0-226-103891"
     ],
-    "href": null,
+    "href": "https://www.chicagomanualofstyle.org/",
     "docBase": null,
     "docBaseLabel": null
   },
@@ -9046,7 +9046,7 @@
     "id": "ISBN.9780470024270",
     "title": "The Reproduction of Colour",
     "label": "ISBN 978-0-470-02427-0",
-    "publisher": "John Wiley & Sons, Ltd",
+    "publisher": "John Wiley & Sons, Inc.",
     "docType": "Book",
     "docTypeAbr": null,
     "status": [
@@ -9136,7 +9136,7 @@
     "id": "ISBN.9780471223573",
     "title": "Practical Cryptography",
     "label": "ISBN 978-0-471-22357-3",
-    "publisher": "Wiley",
+    "publisher": "John Wiley & Sons, Inc.",
     "docType": "Book",
     "docTypeAbr": null,
     "status": [
@@ -9308,7 +9308,7 @@
     "id": "ISBN.9781119183471",
     "title": "Applied Cryptography, Second Edition",
     "label": "Protocols, Algorthms, and Source Code in C, 20th Anniversary Edition",
-    "publisher": "Wiley",
+    "publisher": "John Wiley & Sons, Inc.",
     "docType": "Book",
     "docTypeAbr": null,
     "status": [
@@ -18459,8 +18459,8 @@
   {
     "id": "ISSN.0098-7298",
     "title": "Stability of Processed Polyester Base Photographic Films",
-    "label": "J. of Appl. Photog. Engineering, vol. 7, no. 6, pp. 160-167, Dec. 1981.",
-    "publisher": "Journal of Applied Photographic Engineering",
+    "label": "Journal of Applied Photographic Engineering, vol. 7, no. 6, pp. 160-167, Dec. 1981.",
+    "publisher": "Society for Imaging Science and Technology",
     "docType": "Technical Journal",
     "docTypeAbr": null,
     "status": [
@@ -18494,7 +18494,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Stability of Processed Polyester Base Photographic Films",
-      "J. of Appl. Photog. Engineering, vol. 7, no. 6, pp. 160-167, Dec. 1981.",
+      "Journal of Applied Photographic Engineering, vol. 7, no. 6, pp. 160-167, Dec. 1981.",
       "P. Z. Adelstein",
       "J. L. McCrea"
     ],
@@ -18506,7 +18506,7 @@
     "id": "ISSN.1062-3701",
     "title": "The effects and prevention of the Vinegar syndrome",
     "label": "Journal of Imaging Science and Technology, vol. 38, pp. 249-261, May/June 1994.",
-    "publisher": "The Journal of imaging science and technology",
+    "publisher": "Society for Imaging Science and Technology",
     "docType": "Technical Journal",
     "docTypeAbr": null,
     "status": [
@@ -18558,9 +18558,9 @@
   },
   {
     "id": "ISSN.15502716",
-    "title": "Practical use and calculation of cct and duv",
-    "label": "ISSN: 15502716",
-    "publisher": "The Journal of the Illuminating Engineering Society",
+    "title": "Practical use and calculation of CCt and Duv",
+    "label": "The Journal of the Illuminating Engineering Society Volume 10, 2014 - Issue 1, Pages 47-55",
+    "publisher": "Illuminating Engineering Society",
     "docType": "Technical Journal",
     "docTypeAbr": null,
     "status": [
@@ -18592,8 +18592,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "Practical use and calculation of cct and duv",
-      "ISSN: 15502716",
+      "Practical use and calculation of CCt and Duv",
+      "The Journal of the Illuminating Engineering Society Volume 10, 2014 - Issue 1, Pages 47-55",
       "Yoshi Ohno"
     ],
     "href": "https://doi.org/10.1080/15502724.2014.839020",
@@ -22474,8 +22474,8 @@
     "id": "JAES.v2-i4-215-218.1954",
     "title": "An Experimental Study of distortion",
     "label": "JAES Volume 2 Issue 4 pp. 215-218; October 1954",
-    "publisher": "JAES",
-    "docType": "White Paper",
+    "publisher": "AES",
+    "docType": "Journal Article",
     "docTypeAbr": null,
     "status": [
       "active"
@@ -22518,14 +22518,14 @@
     "id": "JAES.v45-i6-456-466.199706",
     "title": "Virtual Sound Source Positioning Using Vector Base Amplitude Panning",
     "label": "JAES Volume 45 Issue 6 pp. 456-466; June 1997",
-    "publisher": "JAES",
-    "docType": "White Paper",
+    "publisher": "AES",
+    "docType": "Journal Article",
     "docTypeAbr": null,
     "status": [
-      "unknown"
+      "active"
     ],
     "statusFlags": {
-      "active": false,
+      "active": true,
       "latestVersion": false,
       "superseded": false,
       "withdrawn": false,
@@ -22542,7 +22542,7 @@
     "doi": null,
     "hasReleaseTag": false,
     "authors": [
-      "Yoshi Ohno"
+      "Pulkki, Ville"
     ],
     "group": [],
     "groupNames": [],
@@ -22552,17 +22552,17 @@
     "keywordsSearch": [
       "Virtual Sound Source Positioning Using Vector Base Amplitude Panning",
       "JAES Volume 45 Issue 6 pp. 456-466; June 1997",
-      "Yoshi Ohno"
+      "Pulkki, Ville"
     ],
-    "href": "http://www.aes.org/e-lib/browse.cfm?elib=37",
+    "href": "https://secure.aes.org/forum/pubs/journal/?elib=7853",
     "docBase": null,
     "docBaseLabel": null
   },
   {
     "id": "JAIC.019713697806124475",
     "title": "Moisture Relationships of Photographic Film",
-    "label": "Volume 36, 1997 - Issue 3",
-    "publisher": "Journal of the American Institute for Conservation",
+    "label": "JAIC 1997, Volume 36, Number 3, Article 2 (pp. 193 to 206)",
+    "publisher": "American Institute for Conservation",
     "docType": "Journal Article",
     "docTypeAbr": null,
     "status": [
@@ -22597,19 +22597,19 @@
     "keywords": [],
     "keywordsSearch": [
       "Moisture Relationships of Photographic Film",
-      "Volume 36, 1997 - Issue 3",
+      "JAIC 1997, Volume 36, Number 3, Article 2 (pp. 193 to 206)",
       "P. Z. Adelstein",
       "J. L. Bigourdan",
       "J. M. Reilly"
     ],
-    "href": "https://doi.org/10.1179/019713697806124475",
+    "href": "https://cool.culturalheritage.org/jaic/articles/jaic36-03-002_indx.html",
     "docBase": null,
     "docBaseLabel": null
   },
   {
     "id": "JOSA.12.000559",
     "title": "The Relation Between Diffuse and Specular Density",
-    "label": "J. Opt. Soc. Am Vol. 12, Issue 6, pp. 559-565 (1926)",
+    "label": "Journal of the Optical Society of America Vol. 12, Issue 6, pp. 559-565 (1926)",
     "publisher": "Optical Society of America",
     "docType": "White Paper",
     "docTypeAbr": null,
@@ -22643,7 +22643,7 @@
     "keywords": [],
     "keywordsSearch": [
       "The Relation Between Diffuse and Specular Density",
-      "J. Opt. Soc. Am Vol. 12, Issue 6, pp. 559-565 (1926)",
+      "Journal of the Optical Society of America Vol. 12, Issue 6, pp. 559-565 (1926)",
       "Clifton Tuttle"
     ],
     "href": "https://doi.org/10.1364/JOSA.12.000559",
@@ -22653,7 +22653,7 @@
   {
     "id": "JOSA.14.000365",
     "title": "The Relation between the Specular and the Diffuse Photographic Densities",
-    "label": "J. Opt. Soc. Am Vol. 14, Issue 5, pp. 365-373 (1927)",
+    "label": "Journal of the Optical Society of America Vol. 14, Issue 5, pp. 365-373 (1927)",
     "publisher": "Optical Society of America",
     "docType": "White Paper",
     "docTypeAbr": null,
@@ -22688,7 +22688,7 @@
     "keywords": [],
     "keywordsSearch": [
       "The Relation between the Specular and the Diffuse Photographic Densities",
-      "J. Opt. Soc. Am Vol. 14, Issue 5, pp. 365-373 (1927)",
+      "Journal of the Optical Society of America Vol. 14, Issue 5, pp. 365-373 (1927)",
       "Clifton Tuttle",
       "Ludwik Silberstein"
     ],
@@ -22699,7 +22699,7 @@
   {
     "id": "JOSA.4.000420",
     "title": "On the Theory of Tone Reproduction with a Graphic Method for the Solution of Problems",
-    "label": "J. Opt. Soc. Am Vol. 4, Issue 6, pp. 420-431 (1920)",
+    "label": "Journal of the Optical Society of America Vol. 4, Issue 6, pp. 420-431 (1920)",
     "publisher": "Optical Society of America",
     "docType": "White Paper",
     "docTypeAbr": null,
@@ -22733,7 +22733,7 @@
     "keywords": [],
     "keywordsSearch": [
       "On the Theory of Tone Reproduction with a Graphic Method for the Solution of Problems",
-      "J. Opt. Soc. Am Vol. 4, Issue 6, pp. 420-431 (1920)",
+      "Journal of the Optical Society of America Vol. 4, Issue 6, pp. 420-431 (1920)",
       "L. A. Jones"
     ],
     "href": "https://doi.org/10.1364/JOSA.4.000420",
@@ -23054,7 +23054,7 @@
     "id": "mfir.17.5.270",
     "title": "Stability of Black-and-White Photographic Images, with Special Reference to Microfilm",
     "label": "Proceedings of Conservation in Archives, pp. 117-127, 1988-May",
-    "publisher": "Conservation in Archives",
+    "publisher": "De Gruyter Brill",
     "docType": "Journal Article",
     "docTypeAbr": null,
     "status": [
@@ -23096,7 +23096,7 @@
       "Kaspars M. Cupriks",
       "Peter Z. Adelstein"
     ],
-    "href": "https://doi.org/10.1515/mfir.1988.17.5.270",
+    "href": "https://cool.culturalheritage.org/byorg/abbey/an/an12/an12-5/an12-507.html",
     "docBase": null,
     "docBaseLabel": null
   },
@@ -23722,8 +23722,8 @@
   },
   {
     "id": "NFPA.232.1995",
-    "title": "NFPA 232: Standard For The Protection Of Records, 1995 Edition",
-    "label": "NFPA 232-1995",
+    "title": "Standard For The Protection Of Records, 1995 Edition",
+    "label": "NFPA 232:1995",
     "publisher": "NFPA",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -23753,8 +23753,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "NFPA 232: Standard For The Protection Of Records, 1995 Edition",
-      "NFPA 232-1995"
+      "Standard For The Protection Of Records, 1995 Edition",
+      "NFPA 232:1995"
     ],
     "href": "https://webstore.ansi.org/standards/nfpa/nfpa2321995",
     "docBase": "NFPA||232|",
@@ -23763,7 +23763,7 @@
   {
     "id": "NFPA.232.2022",
     "title": "Standard For The Protection Of Records",
-    "label": "NFPA 232-2022",
+    "label": "NFPA 232:2022",
     "publisher": "NFPA",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -23795,7 +23795,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Standard For The Protection Of Records",
-      "NFPA 232-2022"
+      "NFPA 232:2022"
     ],
     "href": "https://webstore.ansi.org/standards/nfpa/nfpa2322022",
     "docBase": "NFPA||232|",
@@ -23924,8 +23924,8 @@
   },
   {
     "id": "NFPA.90A.1993",
-    "title": "Standard For The Installation Of Air Conditioning And Ventilating Systems, 1999 Edition",
-    "label": "NFPA 90A-19993",
+    "title": "Standard For The Installation Of Air Conditioning And Ventilating Systems, 1993 Edition",
+    "label": "NFPA 90A:1993",
     "publisher": "NFPA",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -23955,8 +23955,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "Standard For The Installation Of Air Conditioning And Ventilating Systems, 1999 Edition",
-      "NFPA 90A-19993"
+      "Standard For The Installation Of Air Conditioning And Ventilating Systems, 1993 Edition",
+      "NFPA 90A:1993"
     ],
     "href": null,
     "docBase": "NFPA||90A|",
@@ -23965,7 +23965,7 @@
   {
     "id": "NFPA.90A.1999",
     "title": "Standard For The Installation Of Air Conditioning And Ventilating Systems, 1999 Edition",
-    "label": "NFPA 90A-1999",
+    "label": "NFPA 90A:1999",
     "publisher": "NFPA",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -23996,7 +23996,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Standard For The Installation Of Air Conditioning And Ventilating Systems, 1999 Edition",
-      "NFPA 90A-1999"
+      "NFPA 90A:1999"
     ],
     "href": "https://webstore.ansi.org/standards/nfpa/nfpa90a1999",
     "docBase": "NFPA||90A|",
@@ -24005,7 +24005,7 @@
   {
     "id": "NFPA.90A.2021",
     "title": "Standard For The Installation Of Air-Conditioning And Ventilating Systems",
-    "label": "NFPA 90A-2021",
+    "label": "NFPA 90A:2021",
     "publisher": "NFPA",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -24037,7 +24037,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Standard For The Installation Of Air-Conditioning And Ventilating Systems",
-      "NFPA 90A-2021"
+      "NFPA 90A:2021"
     ],
     "href": "https://webstore.ansi.org/standards/nfpa/nfpa90a2021",
     "docBase": "NFPA||90A|",
@@ -25391,15 +25391,15 @@
   {
     "id": "PJv49n33p200.1909",
     "title": "The Absorption and Scatter of Light by Photographic Negatives Measured by Means of the Martens Polarization Photometer",
-    "label": "Phot. J., vol. 49, no. 33, pp. 200, 1909",
-    "publisher": "Phot. Journal",
+    "label": "The Photographic Journal vol. 49, no. 33, pp. 200, 1909",
+    "publisher": "The Royal Photographic Society",
     "docType": "Journal Article",
     "docTypeAbr": null,
     "status": [
-      "unknown"
+      "active"
     ],
     "statusFlags": {
-      "active": false,
+      "active": true,
       "latestVersion": false,
       "superseded": false,
       "withdrawn": false,
@@ -25409,8 +25409,8 @@
       "amended": false,
       "versionless": false
     },
-    "pubDate": "1909-01-01",
-    "pubTs": -1924992000000,
+    "pubDate": "1909-04-01",
+    "pubTs": -1917216000000,
     "year": 1909,
     "hasDoi": false,
     "doi": null,
@@ -25425,18 +25425,18 @@
     "keywords": [],
     "keywordsSearch": [
       "The Absorption and Scatter of Light by Photographic Negatives Measured by Means of the Martens Polarization Photometer",
-      "Phot. J., vol. 49, no. 33, pp. 200, 1909",
+      "The Photographic Journal vol. 49, no. 33, pp. 200, 1909",
       "A. Callier"
     ],
-    "href": null,
+    "href": "https://archive.rps.org/archive/volume-49/726160-volume-49-page-200",
     "docBase": null,
     "docBaseLabel": null
   },
   {
     "id": "PJv53p127.1913",
     "title": "The Underexposure Period in Theory and Practice",
-    "label": "Phot. Jour., vol. 53, pp. 127, April 1913",
-    "publisher": "Phot. Journal",
+    "label": "The Photographic Journal vol. 53, pp. 127, April 1913",
+    "publisher": "The Royal Photographic Society",
     "docType": "Journal Article",
     "docTypeAbr": null,
     "status": [
@@ -25469,7 +25469,7 @@
     "keywords": [],
     "keywordsSearch": [
       "The Underexposure Period in Theory and Practice",
-      "Phot. Jour., vol. 53, pp. 127, April 1913",
+      "The Photographic Journal vol. 53, pp. 127, April 1913",
       "F. F. Renwick"
     ],
     "href": null,
@@ -25479,8 +25479,8 @@
   {
     "id": "PJv56n40p49.1916",
     "title": "The Opacity of Diffusing Media",
-    "label": "Phot. J., vol. 56, no. 40, pp. 49, 1916",
-    "publisher": "Phot. Journal",
+    "label": "The Photographic Journal vol. 56, no. 40, pp. 49, 1916",
+    "publisher": "The Royal Photographic Society",
     "docType": "Journal Article",
     "docTypeAbr": null,
     "status": [
@@ -25514,7 +25514,7 @@
     "keywords": [],
     "keywordsSearch": [
       "The Opacity of Diffusing Media",
-      "Phot. J., vol. 56, no. 40, pp. 49, 1916",
+      "The Photographic Journal vol. 56, no. 40, pp. 49, 1916",
       "F. F. Renwick",
       "O. Bloch"
     ],
@@ -25525,7 +25525,7 @@
   {
     "id": "R-REC-BR.1352-1.2002",
     "title": "File format for the exchange of audio programme materials with metadata on information technology media",
-    "label": "ITU-R BR.1352-1: (2002)",
+    "label": "ITU-R BR.1352-1:2002",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -25556,7 +25556,7 @@
     "keywords": [],
     "keywordsSearch": [
       "File format for the exchange of audio programme materials with metadata on information technology media",
-      "ITU-R BR.1352-1: (2002)"
+      "ITU-R BR.1352-1:2002"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/br/R-REC-BR.1352-1-200112-S!!PDF-E.pdf",
     "docBase": "ITU-R|BR|1352|",
@@ -25606,7 +25606,7 @@
   {
     "id": "R-REC-BR.1384-2.201103",
     "title": "Parameters for international exchange of multi-channel sound recordings with or without accompanying picture",
-    "label": "ITU-R BR.1384-2 (03/2011)",
+    "label": "ITU-R BR.1384-2:2011-03",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -25637,7 +25637,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Parameters for international exchange of multi-channel sound recordings with or without accompanying picture",
-      "ITU-R BR.1384-2 (03/2011)"
+      "ITU-R BR.1384-2:2011-03"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/br/R-REC-BR.1384-2-201103-W!!PDF-E.pdf",
     "docBase": "ITU-R|BR|1384|",
@@ -25646,7 +25646,7 @@
   {
     "id": "R-REC-BS.1196-a2.1995",
     "title": "Audio coding for digital terrestrial television broadcasting",
-    "label": "ITU-R BS.1196 (1995) Annex 2",
+    "label": "ITU-R BS.1196 Annex 2:1995",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -25678,7 +25678,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Audio coding for digital terrestrial television broadcasting",
-      "ITU-R BS.1196 (1995) Annex 2"
+      "ITU-R BS.1196 Annex 2:1995"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/bs/R-REC-BS.1196-0-199510-S!!PDF-E.pdf",
     "docBase": "ITU-R|BS|1196|",
@@ -25687,7 +25687,7 @@
   {
     "id": "R-REC-BS.1726-0.200504",
     "title": "Signal level of digital audio accompanying television in international programme exchange",
-    "label": "ITU-R BS.1726-0 (04/2005)",
+    "label": "ITU-R BS.1726-0:2005-04",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -25719,7 +25719,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Signal level of digital audio accompanying television in international programme exchange",
-      "ITU-R BS.1726-0 (04/2005)"
+      "ITU-R BS.1726-0:2005-04"
     ],
     "href": "https://www.itu.int/rec/R-REC-BS.1726-0-200504-I/en",
     "docBase": "ITU-R|BS|1726|",
@@ -25728,7 +25728,7 @@
   {
     "id": "R-REC-BS.1770-3.201208",
     "title": "Algorithms to measure audio programme loudness and true-peak audio level",
-    "label": "ITU-R BS.1770-3 (08/2012)",
+    "label": "ITU-R BS.1770-3:2012-08",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -25759,7 +25759,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Algorithms to measure audio programme loudness and true-peak audio level",
-      "ITU-R BS.1770-3 (08/2012)"
+      "ITU-R BS.1770-3:2012-08"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/bs/R-REC-BS.1770-3-201208-S!!MSW-E.docx",
     "docBase": "ITU-R|BS|1770|",
@@ -25768,7 +25768,7 @@
   {
     "id": "R-REC-BS.1770-4.201510",
     "title": "Algorithms to measure audio programme loudness and true-peak audio level",
-    "label": "ITU-R BS.1770-4 (10/2015)",
+    "label": "ITU-R BS.1770-4:2015-10",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -25800,7 +25800,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Algorithms to measure audio programme loudness and true-peak audio level",
-      "ITU-R BS.1770-4 (10/2015)"
+      "ITU-R BS.1770-4:2015-10"
     ],
     "href": "https://www.itu.int/rec/R-REC-BS.1770-4-201510-S/en",
     "docBase": "ITU-R|BS|1770|",
@@ -25809,7 +25809,7 @@
   {
     "id": "R-REC-BS.2051-2.201807",
     "title": "Advanced sound system for programme production",
-    "label": "ITU-R BS.2051-2 (07/2018)",
+    "label": "ITU-R BS.2051-2:2018-07",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -25840,7 +25840,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Advanced sound system for programme production",
-      "ITU-R BS.2051-2 (07/2018)"
+      "ITU-R BS.2051-2:2018-07"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/bs/R-REC-BS.2051-2-201807-S!!PDF-E.pdf",
     "docBase": "ITU-R|BS|2051|",
@@ -25849,7 +25849,7 @@
   {
     "id": "R-REC-BS.2051-3.202205",
     "title": "Advanced sound system for programme production",
-    "label": "ITU-R BS.2051-3 (05/2022)",
+    "label": "ITU-R BS.2051-3:2022-05",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -25881,7 +25881,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Advanced sound system for programme production",
-      "ITU-R BS.2051-3 (05/2022)"
+      "ITU-R BS.2051-3:2022-05"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/bs/R-REC-BS.2051-3-202205-I!!PDF-E.pdf",
     "docBase": "ITU-R|BS|2051|",
@@ -25890,7 +25890,7 @@
   {
     "id": "R-REC-BT.2020-2.201510",
     "title": "Parameter values for ultra-high definition television systems for production and international programme exchange",
-    "label": "ITU-R BT.2020-2 (10/2015)",
+    "label": "ITU-R BT.2020-2:2015-10",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -25922,7 +25922,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Parameter values for ultra-high definition television systems for production and international programme exchange",
-      "ITU-R BT.2020-2 (10/2015)"
+      "ITU-R BT.2020-2:2015-10"
     ],
     "href": "https://www.itu.int/rec/R-REC-BT.2020-2-201510-I/en",
     "docBase": "ITU-R|BT|2020|",
@@ -25931,7 +25931,7 @@
   {
     "id": "R-REC-BT.2035.201307",
     "title": "A reference viewing environment for evaluation of HDTV program material or completed programmes",
-    "label": "ITU-R BT.2035 (07/2013)",
+    "label": "ITU-R BT.2035:2013-07",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -25963,7 +25963,7 @@
     "keywords": [],
     "keywordsSearch": [
       "A reference viewing environment for evaluation of HDTV program material or completed programmes",
-      "ITU-R BT.2035 (07/2013)"
+      "ITU-R BT.2035:2013-07"
     ],
     "href": "https://www.itu.int/rec/R-REC-BT.2035-0-201307-I",
     "docBase": "ITU-R|BT|2035|",
@@ -25972,7 +25972,7 @@
   {
     "id": "R-REC-BT.2100-1.201706",
     "title": "Image parameter values for high dynamic range television for use in production and international programme exchange",
-    "label": "ITU-R BT.2100-1 (06/2017)",
+    "label": "ITU-R BT.2100-1:2017-06",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -26003,7 +26003,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Image parameter values for high dynamic range television for use in production and international programme exchange",
-      "ITU-R BT.2100-1 (06/2017)"
+      "ITU-R BT.2100-1:2017-06"
     ],
     "href": "https://www.itu.int/rec/R-REC-BT.2100-1-201706-S/en",
     "docBase": "ITU-R|BT|2100|",
@@ -26012,7 +26012,7 @@
   {
     "id": "R-REC-BT.2100-2.201807",
     "title": "The use of componentized workflows for the exchange of non-live television programmes",
-    "label": "ITU-R BT.2100-2 (07/2018)",
+    "label": "ITU-R BT.2100-2:2018-07",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -26044,7 +26044,7 @@
     "keywords": [],
     "keywordsSearch": [
       "The use of componentized workflows for the exchange of non-live television programmes",
-      "ITU-R BT.2100-2 (07/2018)"
+      "ITU-R BT.2100-2:2018-07"
     ],
     "href": "https://www.itu.int/rec/R-REC-BT.2100-2-201807-I/en",
     "docBase": "ITU-R|BT|2100|",
@@ -26053,7 +26053,7 @@
   {
     "id": "R-REC-BT.2153-0.202212",
     "title": "Image parameter values for high dynamic range television for use in production and international programme exchange",
-    "label": "ITU-R BT.2153-0 (12/2022)",
+    "label": "ITU-R BT.2153-0:2022-12",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -26085,7 +26085,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Image parameter values for high dynamic range television for use in production and international programme exchange",
-      "ITU-R BT.2153-0 (12/2022)"
+      "ITU-R BT.2153-0:2022-12"
     ],
     "href": "https://www.itu.int/rec/R-REC-BT.2153-0-202212-I/en",
     "docBase": "ITU-R|BT|2153|",
@@ -26094,7 +26094,7 @@
   {
     "id": "R-REC-BT.2390-10.202111",
     "title": "High dynamic range television for production and international programme exchange",
-    "label": "ITU-R BT.2390-10 (11/2021)",
+    "label": "ITU-R BT.2390-10:2021-11",
     "publisher": "ITU-R",
     "docType": "Report",
     "docTypeAbr": null,
@@ -26126,7 +26126,7 @@
     "keywords": [],
     "keywordsSearch": [
       "High dynamic range television for production and international programme exchange",
-      "ITU-R BT.2390-10 (11/2021)"
+      "ITU-R BT.2390-10:2021-11"
     ],
     "href": "https://www.itu.int/pub/R-REP-BT.2390-10-2021",
     "docBase": "ITU-R|BT|2390|",
@@ -26135,7 +26135,7 @@
   {
     "id": "R-REC-BT.2390-4.201804",
     "title": "High dynamic range television for production and international programme exchange",
-    "label": "ITU-R BT.2390-4 (04/2018)",
+    "label": "ITU-R BT.2390-4:2018-04",
     "publisher": "ITU-R",
     "docType": "Report",
     "docTypeAbr": null,
@@ -26166,7 +26166,7 @@
     "keywords": [],
     "keywordsSearch": [
       "High dynamic range television for production and international programme exchange",
-      "ITU-R BT.2390-4 (04/2018)"
+      "ITU-R BT.2390-4:2018-04"
     ],
     "href": "https://www.itu.int/pub/R-REP-BT.2390-4-2018",
     "docBase": "ITU-R|BT|2390|",
@@ -26175,7 +26175,7 @@
   {
     "id": "R-REC-BT.2390-8.202002",
     "title": "High dynamic range television for production and international programme exchange",
-    "label": "ITU-R BT.2390-8 (02/2020)",
+    "label": "ITU-R BT.2390-8:2020-02",
     "publisher": "ITU-R",
     "docType": "Report",
     "docTypeAbr": null,
@@ -26206,7 +26206,7 @@
     "keywords": [],
     "keywordsSearch": [
       "High dynamic range television for production and international programme exchange",
-      "ITU-R BT.2390-8 (02/2020)"
+      "ITU-R BT.2390-8:2020-02"
     ],
     "href": "https://www.itu.int/pub/R-REP-BT.2390-8-2020",
     "docBase": "ITU-R|BT|2390|",
@@ -26215,7 +26215,7 @@
   {
     "id": "R-REC-BT.470-6.199811",
     "title": "Conventional television systems",
-    "label": "ITU-R BT.470-6 (11/98)",
+    "label": "ITU-R BT.470-6:1998-11",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -26247,7 +26247,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Conventional television systems",
-      "ITU-R BT.470-6 (11/98)"
+      "ITU-R BT.470-6:1998-11"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.470-6-199811-S!!PDF-E.pdf",
     "docBase": "ITU-R|BT|470|",
@@ -26255,8 +26255,8 @@
   },
   {
     "id": "R-REC-BT.6-270.201103",
-    "title": "Studio encoding parameters of digital television for standard 4:3 and wide screen 16:9 aspect ratios",
-    "label": "ITU-R BT.6/270(Rev1) (03/11)",
+    "title": "Studio encoding parameters of digital television for standard 4:3 and wide screen 16:9 aspect ratios (Rev1)",
+    "label": "ITU-R BT.6/270:2011-03",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -26287,8 +26287,8 @@
     "hasCurrentWork": false,
     "keywords": [],
     "keywordsSearch": [
-      "Studio encoding parameters of digital television for standard 4:3 and wide screen 16:9 aspect ratios",
-      "ITU-R BT.6/270(Rev1) (03/11)"
+      "Studio encoding parameters of digital television for standard 4:3 and wide screen 16:9 aspect ratios (Rev1)",
+      "ITU-R BT.6/270:2011-03"
     ],
     "href": "https://www.itu.int/rec/R-REC-BT.601-7-201103-P/en",
     "docBase": "ITU-R|BT|6|",
@@ -26297,7 +26297,7 @@
   {
     "id": "R-REC-BT.601-4.199510",
     "title": "Studio encoding parameters of digital television for standard 4:3 and wide screen 16:9 aspect ratios",
-    "label": "ITU-R BT.601.4 (10/95)",
+    "label": "ITU-R BT.601.4:1995-10",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -26328,7 +26328,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Studio encoding parameters of digital television for standard 4:3 and wide screen 16:9 aspect ratios",
-      "ITU-R BT.601.4 (10/95)"
+      "ITU-R BT.601.4:1995-10"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.601-4-199407-S!!MSW-E.doc",
     "docBase": "ITU-R|BT|601|",
@@ -26337,7 +26337,7 @@
   {
     "id": "R-REC-BT.601-5.199510",
     "title": "Studio encoding parameters of digital television for standard 4:3 and wide screen 16:9 aspect ratios",
-    "label": "ITU-R BT.601.5 (10/95)",
+    "label": "ITU-R BT.601.5:1995-10",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -26368,7 +26368,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Studio encoding parameters of digital television for standard 4:3 and wide screen 16:9 aspect ratios",
-      "ITU-R BT.601.5 (10/95)"
+      "ITU-R BT.601.5:1995-10"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.601-5-199510-S!!PDF-E.pdf",
     "docBase": "ITU-R|BT|601|",
@@ -26377,7 +26377,7 @@
   {
     "id": "R-REC-BT.601-6.200701",
     "title": "Studio encoding parameters of digital television for standard 4:3 and wide screen 16:9 aspect ratios",
-    "label": "ITU-R BT.601.6 (01/07)",
+    "label": "ITU-R BT.601.6:2007-01",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -26408,7 +26408,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Studio encoding parameters of digital television for standard 4:3 and wide screen 16:9 aspect ratios",
-      "ITU-R BT.601.6 (01/07)"
+      "ITU-R BT.601.6:2007-01"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.601-6-200701-S!!PDF-E.pdf",
     "docBase": "ITU-R|BT|601|",
@@ -26417,7 +26417,7 @@
   {
     "id": "R-REC-BT.601-7.201103",
     "title": "Studio encoding parameters of digital television for standard 4:3 and wide screen 16:9 aspect ratios",
-    "label": "ITU-R BT.601.7 (03/2011)",
+    "label": "ITU-R BT.601.7:2011-03",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -26449,7 +26449,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Studio encoding parameters of digital television for standard 4:3 and wide screen 16:9 aspect ratios",
-      "ITU-R BT.601.7 (03/2011)"
+      "ITU-R BT.601.7:2011-03"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.601-7-201103-I!!PDF-E.pdf",
     "docBase": "ITU-R|BT|601|",
@@ -26458,7 +26458,7 @@
   {
     "id": "R-REC-BT.656.199802",
     "title": "Interface for digital component video signals in 525-line and 625-line television systems operating at the 4:2:2 level of Recommendation ITU-R BT.601",
-    "label": "ITU-R BT.656 (02/98)",
+    "label": "ITU-R BT.656:1998-02",
     "publisher": "ITU-R",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -26489,7 +26489,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Interface for digital component video signals in 525-line and 625-line television systems operating at the 4:2:2 level of Recommendation ITU-R BT.601",
-      "ITU-R BT.656 (02/98)"
+      "ITU-R BT.656:1998-02"
     ],
     "href": "https://www.itu.int/rec/R-REC-BT.656/en",
     "docBase": "ITU-R|BT|656|",
@@ -26498,7 +26498,7 @@
   {
     "id": "R-REC-BT.709-1.199311",
     "title": "Parameter values for the HDTV standards for production and international programme exchange",
-    "label": "ITU-R BT.709.1 (11/93)",
+    "label": "ITU-R BT.709.1:1993-11",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -26529,7 +26529,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Parameter values for the HDTV standards for production and international programme exchange",
-      "ITU-R BT.709.1 (11/93)"
+      "ITU-R BT.709.1:1993-11"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.709-1-199311-S!!MSW-E.doc",
     "docBase": "ITU-R|BT|709|",
@@ -26538,7 +26538,7 @@
   {
     "id": "R-REC-BT.709-2.199510",
     "title": "Parameter values for the HDTV standards for production and international programme exchange",
-    "label": "ITU-R BT.709.2 (10/95)",
+    "label": "ITU-R BT.709.2:1995-10",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -26569,7 +26569,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Parameter values for the HDTV standards for production and international programme exchange",
-      "ITU-R BT.709.2 (10/95)"
+      "ITU-R BT.709.2:1995-10"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.709-2-199510-S!!MSW-E.doc",
     "docBase": "ITU-R|BT|709|",
@@ -26578,7 +26578,7 @@
   {
     "id": "R-REC-BT.709-3.199802",
     "title": "Parameter values for the HDTV standards for production and international programme exchange",
-    "label": "ITU-R BT.709.3 (02/98)",
+    "label": "ITU-R BT.709.3:1998-02",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -26609,7 +26609,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Parameter values for the HDTV standards for production and international programme exchange",
-      "ITU-R BT.709.3 (02/98)"
+      "ITU-R BT.709.3:1998-02"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.709-3-199802-S!!PDF-E.pdf",
     "docBase": "ITU-R|BT|709|",
@@ -26618,7 +26618,7 @@
   {
     "id": "R-REC-BT.709-4.200003",
     "title": "Parameter values for the HDTV standards for production and international programme exchange",
-    "label": "ITU-R BT.709.4 (03/00)",
+    "label": "ITU-R BT.709.4:2000-03",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -26649,7 +26649,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Parameter values for the HDTV standards for production and international programme exchange",
-      "ITU-R BT.709.4 (03/00)"
+      "ITU-R BT.709.4:2000-03"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.709-4-200003-S!!PDF-E.pdf",
     "docBase": "ITU-R|BT|709|",
@@ -26658,7 +26658,7 @@
   {
     "id": "R-REC-BT.709-5.200204",
     "title": "Parameter values for the HDTV standards for production and international programme exchange",
-    "label": "ITU-R BT.709.5 (04/02)",
+    "label": "ITU-R BT.709.5:2002-04",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -26689,7 +26689,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Parameter values for the HDTV standards for production and international programme exchange",
-      "ITU-R BT.709.5 (04/02)"
+      "ITU-R BT.709.5:2002-04"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.709-5-200204-S!!PDF-E.pdf",
     "docBase": "ITU-R|BT|709|",
@@ -26698,7 +26698,7 @@
   {
     "id": "R-REC-BT.709-6.201506",
     "title": "Parameter values for the HDTV standards for production and international programme exchange",
-    "label": "ITU-R BT.709.6 (06/2015)",
+    "label": "ITU-R BT.709.6:2015-06",
     "publisher": "ITU-R",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -26730,7 +26730,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Parameter values for the HDTV standards for production and international programme exchange",
-      "ITU-R BT.709.6 (06/2015)"
+      "ITU-R BT.709.6:2015-06"
     ],
     "href": "https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.709-6-201506-I!!PDF-E.pdf",
     "docBase": "ITU-R|BT|709|",
@@ -31101,14 +31101,14 @@
     "id": "rnc-nce-v16-n2-1981-p64-73",
     "title": "Revised noise criteria for application in the acoustical design and rating of HVAC systems",
     "label": "Noise Control Engineering vol. 16, no. 2 (March-April 1981), pp 64-73",
-    "publisher": "Noise Control Engineering",
+    "publisher": "Institute of Noise Control Engineering of the USA",
     "docType": "White Paper",
     "docTypeAbr": null,
     "status": [
-      "unknown"
+      "active"
     ],
     "statusFlags": {
-      "active": false,
+      "active": true,
       "latestVersion": false,
       "superseded": false,
       "withdrawn": false,
@@ -31137,7 +31137,7 @@
       "Noise Control Engineering vol. 16, no. 2 (March-April 1981), pp 64-73",
       "2 Blazier, Warren E., Jr"
     ],
-    "href": null,
+    "href": "https://ince.publisher.ingentaconnect.com/contentone/ince/nce/1981/00000016/00000002/art00002?crawler=true&mimetype=application/pdf",
     "docBase": null,
     "docBaseLabel": null
   },
@@ -31145,7 +31145,7 @@
     "id": "RTF-ASD-NBSA.2000",
     "title": "Architectural Styles and the Design of Network-based Software Architectures",
     "label": "RTF ASD NBSA 2000",
-    "publisher": "UCI",
+    "publisher": "University of California, Irvine",
     "docType": "Dissertation",
     "docTypeAbr": null,
     "status": [
@@ -93965,7 +93965,7 @@
   {
     "id": "T-REC-E.123.2001",
     "title": "Notation for national and international telephone numbers, e-mail addresses and web addresses",
-    "label": "ITU-T RE.123 (02/2001)",
+    "label": "ITU-T RE.123:2001-02",
     "publisher": "ITU-T",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -93997,7 +93997,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Notation for national and international telephone numbers, e-mail addresses and web addresses",
-      "ITU-T RE.123 (02/2001)"
+      "ITU-T RE.123:2001-02"
     ],
     "href": "https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-E.123-200102-I!!PDF-E&type=items",
     "docBase": "ITU-T|E|123|",
@@ -94006,7 +94006,7 @@
   {
     "id": "T-REC-E.123.2001am1.2008",
     "title": "Notation for national and international telephone numbers, e-mail addresses and web addresses",
-    "label": "ITU-T RE.123 (02/2001) Amd. 1 (05/2008)",
+    "label": "ITU-T RE.123:2001-02 Amd. 1:2008-05",
     "publisher": "ITU-T",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -94037,7 +94037,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Notation for national and international telephone numbers, e-mail addresses and web addresses",
-      "ITU-T RE.123 (02/2001) Amd. 1 (05/2008)"
+      "ITU-T RE.123:2001-02 Amd. 1:2008-05"
     ],
     "href": "https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-E.123-200805-I!Amd1!PDF-E&type=items",
     "docBase": "ITU-T|E|123|",
@@ -94046,7 +94046,7 @@
   {
     "id": "T-REC-E.123.2001e1.2008",
     "title": "Notation for national and international telephone numbers, e-mail addresses and web addresses",
-    "label": "ITU-T RE.123 (02/2001) Erratum 1 (05/2008)",
+    "label": "ITU-T RE.123:2001-02 Erratum 1:2008-05",
     "publisher": "ITU-T",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -94078,7 +94078,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Notation for national and international telephone numbers, e-mail addresses and web addresses",
-      "ITU-T RE.123 (02/2001) Erratum 1 (05/2008)"
+      "ITU-T RE.123:2001-02 Erratum 1:2008-05"
     ],
     "href": "https://www.itu.int/rec/dologin.asp?lang=e&id=T-REC-E.123-200805-I!Err1!PDF-E&type=items",
     "docBase": "ITU-T|E|123|",
@@ -94087,7 +94087,7 @@
   {
     "id": "T-REC-H.264.202108",
     "title": "Advanced video coding for generic audiovisual services",
-    "label": "ITU-T REC H.264",
+    "label": "ITU-T REC H.264:2021-08",
     "publisher": "ITU-T",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -94119,7 +94119,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Advanced video coding for generic audiovisual services",
-      "ITU-T REC H.264"
+      "ITU-T REC H.264:2021-08"
     ],
     "href": "https://www.itu.int/rec/T-REC-H.264-202408-I/en",
     "docBase": "ITU-T|H|264|",
@@ -94128,7 +94128,7 @@
   {
     "id": "T-REC-H.265.201612",
     "title": "High efficiency video coding",
-    "label": "ITU-T REC H.265",
+    "label": "ITU-T REC H.265:2016-12",
     "publisher": "ITU-T",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -94159,7 +94159,7 @@
     "keywords": [],
     "keywordsSearch": [
       "High efficiency video coding",
-      "ITU-T REC H.265"
+      "ITU-T REC H.265:2016-12"
     ],
     "href": "https://www.itu.int/rec/T-REC-H.265-201612-S/en",
     "docBase": "ITU-T|H|265|",
@@ -94168,7 +94168,7 @@
   {
     "id": "T-REC-H.265.201911",
     "title": "High efficiency video coding",
-    "label": "ITU-T REC H.265",
+    "label": "ITU-T REC H.265:2019-11",
     "publisher": "ITU-T",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -94200,7 +94200,7 @@
     "keywords": [],
     "keywordsSearch": [
       "High efficiency video coding",
-      "ITU-T REC H.265"
+      "ITU-T REC H.265:2019-11"
     ],
     "href": "https://www.itu.int/rec/T-REC-H.265-201911-I/en",
     "docBase": "ITU-T|H|265|",
@@ -94209,7 +94209,7 @@
   {
     "id": "T-REC-H.273.201612",
     "title": "Coding-independent code points for video signal type identification",
-    "label": "ITU-T REC H.273",
+    "label": "ITU-T REC H.273:2016-12",
     "publisher": "ITU-T",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -94240,7 +94240,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Coding-independent code points for video signal type identification",
-      "ITU-T REC H.273"
+      "ITU-T REC H.273:2016-12"
     ],
     "href": "https://www.itu.int/rec/T-REC-H.273-201612-I/en",
     "docBase": "ITU-T|H|273|",
@@ -94249,7 +94249,7 @@
   {
     "id": "T-REC-H.273.202107",
     "title": "Coding-independent code points for video signal type identification",
-    "label": "ITU-T REC H.273",
+    "label": "ITU-T REC H.273:2021-07",
     "publisher": "ITU-T",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -94281,7 +94281,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Coding-independent code points for video signal type identification",
-      "ITU-T REC H.273"
+      "ITU-T REC H.273:2021-07"
     ],
     "href": "https://www.itu.int/rec/T-REC-H.273-202107-I/en",
     "docBase": "ITU-T|H|273|",
@@ -94331,7 +94331,7 @@
   {
     "id": "T-REC-T.802.2005am1.2010",
     "title": "Information technology – JPEG 2000 image coding system: Motion JPEG 2000",
-    "label": "ITU-T RE.802-8:2005 Amendment 1 (04/10)",
+    "label": "ITU-T RE.802-8:2005 Amendment 1:2010-04",
     "publisher": "ITU-T",
     "docType": "Recommendation",
     "docTypeAbr": null,
@@ -94363,7 +94363,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Information technology – JPEG 2000 image coding system: Motion JPEG 2000",
-      "ITU-T RE.802-8:2005 Amendment 1 (04/10)"
+      "ITU-T RE.802-8:2005 Amendment 1:2010-04"
     ],
     "href": "https://www.itu.int/rec/T-REC-T.802-201004-I!Amd1/en",
     "docBase": "ITU-T|T|802|",
@@ -94372,7 +94372,7 @@
   {
     "id": "T-REC-X.509.199706",
     "title": "Information technology - Open Systems Interconnection - The Directory: Authentication framework",
-    "label": "ITU-T X.509, Jun 1997 E",
+    "label": "ITU-T X.509:1997-06 E",
     "publisher": "ITU-T",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -94403,7 +94403,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Information technology - Open Systems Interconnection - The Directory: Authentication framework",
-      "ITU-T X.509, Jun 1997 E"
+      "ITU-T X.509:1997-06 E"
     ],
     "href": "https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-X.509-199708-S!!PDF-E&type=items",
     "docBase": "ITU-T|X|509|",
@@ -94412,7 +94412,7 @@
   {
     "id": "T-REC-X.509.201910",
     "title": "Information technology - Open Systems Interconnection - The Directory: Authentication framework",
-    "label": "ITU-T X.509 (10/19)",
+    "label": "ITU-T X.509:2019-10",
     "publisher": "ITU-T",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -94444,7 +94444,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Information technology - Open Systems Interconnection - The Directory: Authentication framework",
-      "ITU-T X.509 (10/19)"
+      "ITU-T X.509:2019-10"
     ],
     "href": "https://www.itu.int/rec/T-REC-X.509-201910-I",
     "docBase": "ITU-T|X|509|",
@@ -94454,7 +94454,7 @@
     "id": "TAPT-AM.1977-09",
     "title": "Thinking about Print-Through",
     "label": "Audio, 61:54 ff., Sept. 1977",
-    "publisher": "Audio",
+    "publisher": "Audio Magazine",
     "docType": "Magazine Article",
     "docTypeAbr": null,
     "status": [
@@ -94718,7 +94718,7 @@
     "id": "UN.M49",
     "title": "Standard Country or Area Codes for Statistical Use (M49)",
     "label": "UN Series M, No. 49",
-    "publisher": "United Nations",
+    "publisher": "United Nations Statistics Division",
     "docType": "Registry",
     "docTypeAbr": null,
     "status": [
@@ -94759,7 +94759,7 @@
     "id": "UN.SCAC.R4",
     "title": "Standard Country or Area Codes for Statistics Use, 1999 (Revision 4)",
     "label": "UN SCAC R4",
-    "publisher": "United Nations",
+    "publisher": "United Nations Statistics Division",
     "docType": "Registry",
     "docTypeAbr": null,
     "status": [
