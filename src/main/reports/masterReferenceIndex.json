@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-11-13T03:46:26.030Z",
+  "generatedAt": "2025-11-14T20:53:42.597Z",
   "stats": {
     "uniqueRefIds": 1057
   },
@@ -4201,8 +4201,8 @@
       "refId": "ISBN.0195392884",
       "normalized": null,
       "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "ISBN.0195392884",
+        "sourcePresent": false,
+        "sourceDocId": null,
         "firstConfirmedSourceAt": "2025-10-07T22:56:58.828Z"
       },
       "provenance": {

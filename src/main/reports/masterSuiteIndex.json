@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2025-11-14T18:11:01.162Z",
+  "generatedAt": "2025-11-15T04:18:15.903Z",
   "sourcePath": "src/main/data/documents.json",
-  "sourceHash": "sha256:dfc553a554651e2eefdf5a223888813e109ae5fe9bb6c0e118fb9611b2117c43",
+  "sourceHash": "sha256:85c0df2f986e08411a4e66e855f050a88994728788302cc39b384944616d4bd8",
   "publisherCounts": {
     "total": 2208,
     "counts": {
@@ -29,6 +29,7 @@
       "ADDISON-WESLEY": 5,
       "PIMA": 5,
       "UNICODE CONSORTIUM": 5,
+      "JOHN WILEY & SONS, INC.": 4,
       "IANA": 4,
       "OMG": 4,
       "ACOUSTICAL SOCIETY OF AMERICA": 3,
@@ -36,20 +37,21 @@
       "CIE": 3,
       "DPP": 3,
       "ETSI": 3,
-      "WILEY": 3,
       "ICC": 3,
+      "SOCIETY FOR IMAGING SCIENCE AND TECHNOLOGY": 3,
       "OPTICAL SOCIETY OF AMERICA": 3,
-      "PHOT. JOURNAL": 3,
+      "THE ROYAL PHOTOGRAPHIC SOCIETY": 3,
       "AUTOMATIC IDENTIFICATION MANUFACTURERS": 2,
       "AMWA": 2,
       "CEN": 2,
+      "ILLUMINATING ENGINEERING SOCIETY": 2,
       "ISO/CIE": 2,
       "NOKIA BELL LABS": 2,
       "FRANKLIN INSTITUTE": 2,
       "UL": 2,
-      "UNITED NATIONS": 2,
-      "POLYMER DEGRADATION AND STABILITY": 1,
-      "SCIENTIFIC INSTRUMENTS": 1,
+      "UNITED NATIONS STATISTICS DIVISION": 2,
+      "SCIENCEDIRECT": 1,
+      "IOP PUBLISHING LTD": 1,
       "PHYSICS TODAY": 1,
       "SOCIETY OF AMERICAN ARCHIVISTS": 1,
       "AIIM": 1,
@@ -65,31 +67,25 @@
       "U.S. DEFENSE MAPPING AGENCY": 1,
       "FIAF": 1,
       "INTERNATIONAL CIVIL AVIATION ORGANIZATION": 1,
-      "IESNA": 1,
       "INCITS": 1,
+      "MCGRAW HILL": 1,
       "OXFORD UNIVERSITY PRESS": 1,
-      "MCGRAW-HILL BOOK COMPANY": 1,
       "PEARSON": 1,
       "UNIVERSITY OF CHICAGO PRESS": 1,
-      "JOHN WILEY & SONS, LTD": 1,
       "MERRIAM-WEBSTER": 1,
       "EASTMAN KODAK COMPANY": 1,
       "CAMBRIDGE UNIVERSITY PRESS": 1,
-      "JOURNAL OF APPLIED PHOTOGRAPHIC ENGINEERING": 1,
-      "THE JOURNAL OF IMAGING SCIENCE AND TECHNOLOGY": 1,
-      "THE JOURNAL OF THE ILLUMINATING ENGINEERING SOCIETY": 1,
-      "SOCIETY FOR IMAGING SCIENCE AND TECHNOLOGY": 1,
       "IMAGE TECHNOLOGY": 1,
-      "JOURNAL OF THE AMERICAN INSTITUTE FOR CONSERVATION": 1,
+      "AMERICAN INSTITUTE FOR CONSERVATION": 1,
       "LIVE SOUND INTERNATIONAL": 1,
-      "CONSERVATION IN ARCHIVES": 1,
+      "DE GRUYTER BRILL": 1,
       "MACMILLAN CO.": 1,
       "NAB": 1,
       "US DEPT OF COMMERCE": 1,
       "OWASP": 1,
-      "NOISE CONTROL ENGINEERING": 1,
-      "UCI": 1,
-      "AUDIO": 1,
+      "INSTITUTE OF NOISE CONTROL ENGINEERING OF THE USA": 1,
+      "UNIVERSITY OF CALIFORNIA, IRVINE": 1,
+      "AUDIO MAGAZINE": 1,
       "DLP": 1,
       "ALDUS CORP/ADOBE": 1,
       "USPTO": 1,
@@ -100,7 +96,7 @@
   "skippedDocs": {
     "totalSkipped": 199,
     "byPublisher": {
-      "POLYMER DEGRADATION AND STABILITY": {
+      "SCIENCEDIRECT": {
         "count": 1,
         "docIds": [
           "0141-3910.90.90019-4"
@@ -115,7 +111,7 @@
           }
         ]
       },
-      "SCIENTIFIC INSTRUMENTS": {
+      "IOP PUBLISHING LTD": {
         "count": 1,
         "docIds": [
           "0950-7671.1.3.302"
@@ -588,16 +584,24 @@
           }
         ]
       },
-      "WILEY": {
-        "count": 3,
+      "JOHN WILEY & SONS, INC.": {
+        "count": 4,
         "docIds": [
           "GB.6ZoYngEACAAJ.1949",
+          "ISBN.9780470024270",
           "ISBN.9780471223573",
           "ISBN.9781119183471"
         ],
         "items": [
           {
             "docId": "GB.6ZoYngEACAAJ.1949",
+            "reason": "FILTERED",
+            "rule": "FILTERED",
+            "ruleDetail": "docType=Book",
+            "category": "docType"
+          },
+          {
+            "docId": "ISBN.9780470024270",
             "reason": "FILTERED",
             "rule": "FILTERED",
             "ruleDetail": "docType=Book",
@@ -688,21 +692,6 @@
           }
         ]
       },
-      "OXFORD UNIVERSITY PRESS": {
-        "count": 1,
-        "docIds": [
-          "ISBN.0195392884"
-        ],
-        "items": [
-          {
-            "docId": "ISBN.0195392884",
-            "reason": "FILTERED",
-            "rule": "FILTERED",
-            "ruleDetail": "docType=Book",
-            "category": "docType"
-          }
-        ]
-      },
       "ADDISON-WESLEY": {
         "count": 5,
         "docIds": [
@@ -750,7 +739,7 @@
           }
         ]
       },
-      "MCGRAW-HILL BOOK COMPANY": {
+      "MCGRAW HILL": {
         "count": 1,
         "docIds": [
           "ISBN.9780070048416"
@@ -758,6 +747,21 @@
         "items": [
           {
             "docId": "ISBN.9780070048416",
+            "reason": "FILTERED",
+            "rule": "FILTERED",
+            "ruleDetail": "docType=Book",
+            "category": "docType"
+          }
+        ]
+      },
+      "OXFORD UNIVERSITY PRESS": {
+        "count": 1,
+        "docIds": [
+          "ISBN.9780195392883"
+        ],
+        "items": [
+          {
+            "docId": "ISBN.9780195392883",
             "reason": "FILTERED",
             "rule": "FILTERED",
             "ruleDetail": "docType=Book",
@@ -788,21 +792,6 @@
         "items": [
           {
             "docId": "ISBN.9780226103891",
-            "reason": "FILTERED",
-            "rule": "FILTERED",
-            "ruleDetail": "docType=Book",
-            "category": "docType"
-          }
-        ]
-      },
-      "JOHN WILEY & SONS, LTD": {
-        "count": 1,
-        "docIds": [
-          "ISBN.9780470024270"
-        ],
-        "items": [
-          {
-            "docId": "ISBN.9780470024270",
             "reason": "FILTERED",
             "rule": "FILTERED",
             "ruleDetail": "docType=Book",
@@ -917,10 +906,12 @@
           }
         ]
       },
-      "JOURNAL OF APPLIED PHOTOGRAPHIC ENGINEERING": {
-        "count": 1,
+      "SOCIETY FOR IMAGING SCIENCE AND TECHNOLOGY": {
+        "count": 3,
         "docIds": [
-          "ISSN.0098-7298"
+          "ISSN.0098-7298",
+          "ISSN.1062-3701",
+          "IST.157"
         ],
         "items": [
           {
@@ -929,25 +920,24 @@
             "rule": "FILTERED",
             "ruleDetail": "docType=Technical Journal",
             "category": "docType"
-          }
-        ]
-      },
-      "THE JOURNAL OF IMAGING SCIENCE AND TECHNOLOGY": {
-        "count": 1,
-        "docIds": [
-          "ISSN.1062-3701"
-        ],
-        "items": [
+          },
           {
             "docId": "ISSN.1062-3701",
             "reason": "FILTERED",
             "rule": "FILTERED",
             "ruleDetail": "docType=Technical Journal",
             "category": "docType"
+          },
+          {
+            "docId": "IST.157",
+            "reason": "FILTERED",
+            "rule": "FILTERED",
+            "ruleDetail": "docType=White Paper",
+            "category": "docType"
           }
         ]
       },
-      "THE JOURNAL OF THE ILLUMINATING ENGINEERING SOCIETY": {
+      "ILLUMINATING ENGINEERING SOCIETY": {
         "count": 1,
         "docIds": [
           "ISSN.15502716"
@@ -958,21 +948,6 @@
             "reason": "FILTERED",
             "rule": "FILTERED",
             "ruleDetail": "docType=Technical Journal",
-            "category": "docType"
-          }
-        ]
-      },
-      "SOCIETY FOR IMAGING SCIENCE AND TECHNOLOGY": {
-        "count": 1,
-        "docIds": [
-          "IST.157"
-        ],
-        "items": [
-          {
-            "docId": "IST.157",
-            "reason": "FILTERED",
-            "rule": "FILTERED",
-            "ruleDetail": "docType=White Paper",
             "category": "docType"
           }
         ]
@@ -1781,7 +1756,7 @@
           }
         ]
       },
-      "JOURNAL OF THE AMERICAN INSTITUTE FOR CONSERVATION": {
+      "AMERICAN INSTITUTE FOR CONSERVATION": {
         "count": 1,
         "docIds": [
           "JAIC.019713697806124475"
@@ -1842,7 +1817,7 @@
           }
         ]
       },
-      "CONSERVATION IN ARCHIVES": {
+      "DE GRUYTER BRILL": {
         "count": 1,
         "docIds": [
           "mfir.17.5.270"
@@ -1917,7 +1892,7 @@
           }
         ]
       },
-      "PHOT. JOURNAL": {
+      "THE ROYAL PHOTOGRAPHIC SOCIETY": {
         "count": 3,
         "docIds": [
           "PJv49n33p200.1909",
@@ -1948,7 +1923,7 @@
           }
         ]
       },
-      "NOISE CONTROL ENGINEERING": {
+      "INSTITUTE OF NOISE CONTROL ENGINEERING OF THE USA": {
         "count": 1,
         "docIds": [
           "rnc-nce-v16-n2-1981-p64-73"
@@ -1963,7 +1938,7 @@
           }
         ]
       },
-      "UCI": {
+      "UNIVERSITY OF CALIFORNIA, IRVINE": {
         "count": 1,
         "docIds": [
           "RTF-ASD-NBSA.2000"
@@ -2001,7 +1976,7 @@
           }
         ]
       },
-      "AUDIO": {
+      "AUDIO MAGAZINE": {
         "count": 1,
         "docIds": [
           "TAPT-AM.1977-09"
@@ -2016,7 +1991,7 @@
           }
         ]
       },
-      "UNITED NATIONS": {
+      "UNITED NATIONS STATISTICS DIVISION": {
         "count": 2,
         "docIds": [
           "UN.M49",

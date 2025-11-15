@@ -233,7 +233,7 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
         addList(cfg && Array.isArray(cfg.titleLabelDocTypes) ? cfg.titleLabelDocTypes : []);
         continue;
       }
-      if (t === 'publishersDateless') {
+      if (t === 'publishersdateless') {
         addList(cfg && Array.isArray(cfg.publishersDateless) ? cfg.publishersDateless : []);
         continue;
       }
@@ -1264,19 +1264,49 @@ hb.registerHelper('docProjLookup', function(collection, id) {
       return str.replace(/\./g, '-')
   });
 
-  hb.registerHelper('publisherLogo', function (pub, opts) {
-    if (!pub || typeof pub !== 'string') return '';
+hb.registerHelper('publisherLogo', function (pub, opts) {
+  if (!pub || typeof pub !== 'string') return '';
 
-    // Resolve config maps
-    const logos = (siteConfig && siteConfig.publisherLogos && typeof siteConfig.publisherLogos === 'object')
-      ? siteConfig.publisherLogos
-      : null;
-    const rel = logos ? logos[pub] : null;
-    if (!rel) return '';
+  // Resolve config maps
+  const logos = (siteConfig && siteConfig.publisherLogos && typeof siteConfig.publisherLogos === 'object')
+    ? siteConfig.publisherLogos
+    : null;
+  const aliases = (siteConfig && siteConfig.publisherLogoAliases && typeof siteConfig.publisherLogoAliases === 'object')
+    ? siteConfig.publisherLogoAliases
+    : {};
+  const raw = String(pub).trim();
+  let rel = null;
+  // 1) Exact match
+  if (logos && logos[raw]) rel = logos[raw];
+  // 2) Alias (case-insensitive)
+  if (!rel && aliases && typeof aliases === 'object') {
+    const lowerAliases = {};
+    for (const [a, c] of Object.entries(aliases)) {
+      lowerAliases[String(a).toLowerCase()] = String(c);
+    }
+    const canon = lowerAliases[raw.toLowerCase()];
+    if (canon && logos && logos[canon]) rel = logos[canon];
+  }
+  // 3) First-token fallback
+  if (!rel) {
+    const first = raw.split(/[–—-]|,|\(|\)|:/)[0].trim();
+    if (first && logos && logos[first]) rel = logos[first];
+  }
+  // 4) Case-insensitive direct key match
+  if (!rel && logos && typeof logos === 'object') {
+    const lower = raw.toLowerCase();
+    for (const [k, v] of Object.entries(logos)) {
+      if (String(k).toLowerCase() === lower) {
+        rel = v;
+        break;
+      }
+    }
+  }
+  if (!rel) return '';
 
-    // Access render root for assetPrefix + default height
-    const root = (opts && opts.data && opts.data.root) ? opts.data.root : {};
-    const assetPrefix = (typeof root.assetPrefix === 'string') ? root.assetPrefix : '';
+  // Access render root for assetPrefix + default height
+  const root = (opts && opts.data && opts.data.root) ? opts.data.root : {};
+  const assetPrefix = (typeof root.assetPrefix === 'string') ? root.assetPrefix : '';
 
     // Height precedence: explicit hash height > root.publisherLogoHeight > siteConfig.publisherLogoHeight > 25
     let h = 25;
