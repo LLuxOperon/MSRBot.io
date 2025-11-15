@@ -348,46 +348,82 @@ _Prevents orphaned branches from detached workflows._
 ### 6.5 Frontend Refresh V — Per-Doc Rendering, MSI Surfacing & Citations
 
 **Per-Doc Emit & Resilience**
-- Per-document emit stabilized and debuggable; added defensive `prepareDocForRender()` normalizers.
-- Upgraded per-doc failure logs to include `publisher`, `docType`, and `refs: yes/no` for faster triage.
+- Per-document emit stabilized and debuggable; added defensive `prepareDocForRender()` normalizers to guard against missing/partial fields.
+- Upgraded per-doc failure logs to include `docId`, `publisher`, `docType`, and `refs: yes/no` for faster triage.
 - Sub-registries load correctly: `registries[].subRegistry` now pulls `groups`, `projects`, and `documents` where declared; templates receive `dataDocuments`, `dataGroups`, `dataProjects`.
+- Hardened detail pages against missing subregistry data; isolated doc failures now log cleanly instead of crashing templates.
 
 **MSI Wiring on Pages**
 - Reads `reports/masterSuiteIndex.json` and annotates each document with: `msiLatestAny`, `msiLatestBase`, `isLatestAny`, `isLatestBase`, `docBase`, `docBaseLabel`.
 - Surfaces a per-base **suite** (`docSuite`) sorted by date for clear lineage context on detail views.
+- Suite logic is stable and sorted; title/label preference rules implemented:
+  - `docLabel` used for listings.
+  - `docTitle` preferred in detail view when `docType` is in `titleLabelDocTypes`.
+  - `perDocTitle` and `listTitle` reflect the chosen hierarchy.
 
 **Reference Plumbing (Non-Mutating)**
 - Computes `referencesResolved` in parallel (does not mutate source arrays).
 - Builds `referencedBy` and a bounded `referenceTree` (DFS depth 3) for contextual back-links on pages.
 
-**Status Strings & Badges**
+**Status Strings, Badges & DocId Layout**
 - Consolidated `currentStatus` label; `getStatusButton` returns green check for **Active**, red slash for **Superseded/Withdrawn**.
 - Card and detail templates use consistent badge ordering and classes.
+- DocId header layout rebuilt:
+  - Logo → Label → Badges on a tight flex row; label wraps fully without breaking layout.
+  - Status badges moved out of the H1 into a dedicated flex region.
+  - Small screens: header intelligently stacks; badges move to top-left; label wrap and word-break behavior fixed.
+  - H1 title isolated from layout shifts; badge overflow issues resolved.
+- CSS stabilized for badges:
+  - `align-items: flex-end`, per-badge `white-space: nowrap`, controlled flex-basis.
+  - Long titles no longer push logos/badges into odd rows; explicit `min-width: 0` on the title block.
+  - Status badges right-aligned on wide screens, stack correctly on small screens.
+  - Media-query overrides enforce predictable wrap behavior; layout is now stable and deterministic.
 
-**Search & Data Outputs**
+**Search & Data Outputs / Build Pipeline**
 - Documents build emits `build/docs/_data/documents.json` (strips `$meta`) for the site layer.
-- Kicks `build.search-index.js` to produce `_data/search-index.json` and related artifacts; cards render from the search index (no root `documents.json` dependency).
+- `build.search-index.js` produces `_data/search-index.json` and related artifacts; cards render from the search index (no root `documents.json` dependency).
+- Per-doc generator ensures each detail page has access to `groups`, `projects`, and `referencesResolved`; suites use the effective docs dataset.
+- CSV export and effective docs datasets now strip all `$meta` fields, significantly reducing output size and keeping UI-facing data clean.
 
 **Publisher Branding**
 - Server writes `_data/publisher-logos.json` and `_data/publisher-urls.json` from `site.json` (honors alias map).
-- Handlebars helpers `{{publisherLogo}}` and `{{publisherLink}}` added; placement refined on cards and doc pages (logo near label/badges) with controllable height.
+- Handlebars helpers `{{publisherLogo}}` and `{{publisherLink}}` added:
+  - Cards display publisher logos next to labels with controlled max-width to prevent runaway logos.
+  - DocId pages place the logo on the title line (next to label) for strong visual identity.
+  - Logos are linkable on detail pages via publisher URLs defined in `site.json`.
 - Fixed 404s by ensuring `_data/` exists under `build/` and using correct asset prefixes.
 
 **Citations System**
 - Centralized helpers: `citeText`, `citeHtmlGeneric`, `citeHtmlSmpte`, plus code-safe variants for copy blocks.
 - Config-driven SMPTE previews vs snippets (`site.json → citations.smpte.preview/snippet`).
-- Robust `joinAuthors` (CSL-JSON aware, Oxford comma, custom separators).
-- `citeIfEq` accepts config lists (e.g., `nonLineageDocTypes`) or comma lists; templates can branch without hardcoding.
+- `joinAuthors` is CSL-JSON aware with Oxford comma support and configurable separators; `[object Object]` issues resolved.
+- New helpers introduced:
+  - `citeIfEq`, `citeIfNotEq`
+  - `getUndatedLabel`, `getUndatedTitle`
+- `citeIfEq` supports config lists (e.g., `nonLineageDocTypes`) or comma-separated lists, allowing templates to branch without hardcoding.
+- Snippet engine:
+  - Copy buttons always pull from snippet text, never the preview.
+  - Uses `innerText` / `textContent` for reliable extraction.
+  - Per-snippet IDs and DOM-safe `getElementById` lookups ensure correct binding.
+- Undated variant infrastructure scaffolded:
+  - Preview + snippet wrappers wired.
+  - Buttons appear only when allowed.
+  - Logic paused mid-implementation pending a cleaner approach after complexity surfaced.
 
 **Template & DX Helpers**
-- Added utility helpers: `ifeq`, `ifnoteq`, `or`, `and`, `len`, `asArray`, `formatLineageKey`, `getLabel`, `getUndatedLabel`, ID-safe slugging in citations, and group/project lookup helpers.
-- Site chrome: build emits `robots.txt`, `sitemap.xml`, `opensearch.xml`, and header/footer-styled `404.html` with penguin quips.
+- Utility helpers added and refined: `ifeq`, `ifnoteq`, `or`, `and`, `len`, `asArray`, `formatLineageKey`, `getLabel`, `getUndatedLabel`, ID-safe slugging in citations, and group/project lookup helpers.
+- Fixed edge cases in `len`, `asArray`, and helper sequencing that previously caused template crashes.
+- Error messages for isolated document failures are clearer and more localized.
+
+**Site Chrome**
+- Build emits `robots.txt`, `sitemap.xml`, `opensearch.xml`, and header/footer-styled `404.html` with penguin quips (consistent with branding and SEO overhauls).
 
 **Result**
 - Fewer brittle template crashes and clearer failure signals.
-- Single source of truth (`site.json`) drives visuals (logos/links) and logic (doc-type lists).
+- Single source of truth (`site.json`) drives visuals (logos/links) and logic (doc-type lists and publisher metadata).
 - MSI data is first-class on pages; every document exposes suite context and “latestness.”
-- Editors get copy-ready citations with accurate previews and robust author formatting.
+- Detail pages (DocId views) present a stable, responsive header with clean logo/badge behavior; CSS is predictable across breakpoints.
+- Editors get copy-ready citations with accurate previews, robust author formatting, and safer snippet behavior.
 
 ## 7 Logging, Diffing, and PR Output
 - `logSmart.js` centralizes logging with a console budget (~3.5 MiB). Excess console chatter is tripwired while full logs are persisted to file.
