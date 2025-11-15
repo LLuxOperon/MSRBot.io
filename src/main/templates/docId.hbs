@@ -94,7 +94,7 @@
         <ul class="list-group list-group-flush small">
           {{#each docSuite}}
           <li class="list-group-item d-flex align-items-start justify-content-between doc-suite-row{{#ifeq ../docId docId}} bg-light{{/ifeq}}">
-            <div class="me-1 text-nowrap">
+            <div class="me-1 text-wrap">
               {{#ifeq ../docId docId}}<strong>▶</strong>{{/ifeq}}
               <a class="clear-filter" href="../{{docId}}/">{{docLabel}}</a>
               {{#if publicationDate}} <span class="text-muted">({{publicationDate}})</span>{{/if}}

@@ -1012,11 +1012,36 @@ function _doiUrl(doc){
     return docTitles[docId];
   });
 
-  // Render a label without trailing date (e.g., "SMPTE ST 429-2:2023-09" -> "SMPTE ST 429-2")
+// Render a label without trailing date (e.g., "SMPTE ST 429-2:2023-09" -> "SMPTE ST 429-2")
 hb.registerHelper("getUndatedLabel", function(docId) {
   const label = docLabels.hasOwnProperty(docId) ? docLabels[docId] : docId;
   // Strip ":YYYY", ":YYYY-MM" or ":YYYYMMDD" and anything after
   return String(label).replace(/:\s?\d{4}(?:-\d{2}){0,2}.*$/, '');
+});
+
+// --- Shared stripper for DOI/HREF base identifiers
+function __stripUndatedTail(seg) {
+  if (!seg) return '';
+  return String(seg).replace(
+    /^(.*?)(\.\d{4}(?:\d{2}|-\d{2}(?:-\d{2})?)?(?:Am\d+)?(?:\.\d{4}(?:\d{2}|-\d{2}(?:-\d{2})?)?)?)$/,
+    '$1'
+  );
+}
+
+function __stripUndatedPath(str) {
+  if (!str) return '';
+  const s = String(str);
+  const idx = s.lastIndexOf('/');
+  if (idx === -1) return __stripUndatedTail(s);
+  return s.slice(0, idx + 1) + __stripUndatedTail(s.slice(idx + 1));
+}
+
+hb.registerHelper("getUndatedDoiCite", function(doi) {
+  return __stripUndatedPath(doi);
+});
+
+hb.registerHelper("getUndatedHrefCite", function(href) {
+  return __stripUndatedPath(href);
 });
 
 hb.registerHelper("getUndatedLabelCite", function(docId) {

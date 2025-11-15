@@ -78,8 +78,8 @@ pre {
 
 #toTopBtn {
     position: fixed;
-    bottom: 36px;
-    right: 39px;
+    bottom: 40px;
+    right: 40px;
     z-index: 98;
     padding: 21px;
     background-color: hsla(5, 76%, 62%, .8)
