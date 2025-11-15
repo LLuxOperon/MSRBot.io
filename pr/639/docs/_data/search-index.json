@@ -8174,7 +8174,7 @@
   {
     "id": "IEEE.STD152.1992",
     "title": "Audio Program Level Measurement",
-    "label": "IEEE 152-1991",
+    "label": "IEEE 152:1991",
     "publisher": "IEEE",
     "docType": "Standard",
     "docTypeAbr": null,
@@ -8205,7 +8205,7 @@
     "keywords": [],
     "keywordsSearch": [
       "Audio Program Level Measurement",
-      "IEEE 152-1991"
+      "IEEE 152:1991"
     ],
     "href": "https://doi.org/10.1109/IEEESTD.1992.114393",
     "docBase": "IEEE|STD|152|",
