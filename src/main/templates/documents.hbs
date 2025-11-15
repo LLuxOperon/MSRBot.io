@@ -32,7 +32,6 @@
             {{publisher}}
           </td>
           <td class="group">
-            {{#if group}}{{#with (groupIdLookup ../dataGroups group)}}{{#if groupId}}<a href="../groups/{{../../htmlLink}}?search.search={{groupId}}">{{/if}}{{groupOrg}} {{groupName}} {{groupDesc}}{{#if groupId}}</a>{{/if}}{{/with}}{{/if}}
           </td>
           <td class="group d-none">
             {{#if group}}{{#with (groupIdLookup ../dataGroups group)}}{{groupOrg}} {{groupName}} {{groupDesc}}{{/with}}{{/if}}

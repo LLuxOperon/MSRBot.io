@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-10-28T04:58:13.678Z",
+  "generatedAt": "2025-11-14T20:53:42.597Z",
   "stats": {
     "uniqueRefIds": 1057
   },
@@ -369,16 +369,16 @@
         }
       ]
     },
-    "AES-r2.2004": {
-      "refId": "AES-r2.2004",
+    "AES-R2.2004": {
+      "refId": "AES-R2.2004",
       "normalized": null,
       "resolution": {
         "sourcePresent": true,
-        "sourceDocId": "AES-r2.2004",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.818Z"
+        "sourceDocId": "AES-R2.2004",
+        "firstConfirmedSourceAt": "2025-11-13T00:58:51.040Z"
       },
       "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.761Z",
+        "firstSeen": "2025-11-13T00:58:50.956Z",
         "mapSource": [
           "replay"
         ],
@@ -1569,42 +1569,6 @@
         }
       ]
     },
-    "ANSI.S4.6.1982": {
-      "refId": "ANSI.S4.6.1982",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "ANSI.S4.6.1982",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.827Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.717Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.RP127.2004",
-          "type": "normative",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "SMPTE.RP143.2004",
-          "type": "normative",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
     "ARIB.STD-B32.v2.1.2001": {
       "refId": "ARIB.STD-B32.v2.1.2001",
       "normalized": null,
@@ -1913,6 +1877,42 @@
       "rawVariants": [
         {
           "docId": "SMPTE.RP2096-1.2017",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "ASA.S4.6.1982": {
+      "refId": "ASA.S4.6.1982",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "ASA.S4.6.1982",
+        "firstConfirmedSourceAt": "2025-11-13T02:13:21.661Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-11-13T02:13:21.541Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.RP127.2004",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "SMPTE.RP143.2004",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -4201,8 +4201,8 @@
       "refId": "ISBN.0195392884",
       "normalized": null,
       "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "ISBN.0195392884",
+        "sourcePresent": false,
+        "sourceDocId": null,
         "firstConfirmedSourceAt": "2025-10-07T22:56:58.828Z"
       },
       "provenance": {

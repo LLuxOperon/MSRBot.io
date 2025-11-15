@@ -1,0 +1,4 @@
+---
+
+### 🛠 Canonicalization fixed missing $meta fields in 1 document(s):
+- AES6.2008 (injected: revisionOf)
