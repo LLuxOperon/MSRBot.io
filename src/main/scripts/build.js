@@ -1397,6 +1397,101 @@ hb.registerHelper('publisherLogo', function (pub, opts) {
   } catch (e) {
     console.warn(e);
   }
+
+  // --- Emit per-document reference tree pages at /reftree/{docId}/index.html (only once for main documents list)
+  if (listType === 'documents' && templateName === 'documents') {
+    try {
+      const refTreeTplSrc = await fs.readFile('src/main/templates/refTree.hbs', 'utf8');
+      const refTreeTpl = hb.compile(refTreeTplSrc);
+      const refTreeRoot = path.join(BUILD_PATH, 'reftree');
+      await fs.mkdir(refTreeRoot, { recursive: true });
+
+      let __rtOk = 0, __rtFail = 0;
+      for (const d of registryDocument) {
+        if (!d || !d.docId) continue;
+        const id = String(d.docId);
+        const dir = path.join(refTreeRoot, id);
+        await fs.mkdir(dir, { recursive: true });
+
+        try {
+          const canonical = new URL(`/reftree/${encodeURIComponent(id)}/`, siteConfig.canonicalBase).href;
+
+          const titlePrefList = Array.isArray(siteConfig?.titleLabelDocTypes)
+            ? siteConfig.titleLabelDocTypes.map(x => String(x).toLowerCase())
+            : [];
+          const useDocTitleFirst = titlePrefList.includes(String(d.docType || '').toLowerCase());
+          const baseLabel = useDocTitleFirst ? (d.docTitle || d.docLabel || d.docId)
+                                             : (d.docLabel || d.docId);
+          const pageTitle = `Reference Tree — ${baseLabel} — ${siteConfig.siteName}`;
+          const listTitle = `Reference Tree — ${baseLabel}`;
+          const pageDesc  = d.docTitle || siteConfig.siteDescription;
+
+          // Root-style label/title for refTree header + center card:
+          // - label: prefer docLabel, then docTitle, then docId
+          // - title: prefer docTitle, else fall back to label
+          const rootLabel = d.docLabel || d.docTitle || d.docId;
+          const rootTitle = d.docTitle || rootLabel;
+
+          const refTreeHtml = refTreeTpl({
+            // document fields for this root
+            docId: d.docId,
+            docTitle: d.docTitle,
+            docRootLabel: rootLabel,
+            docRootTitle: rootTitle,
+            publisher: d.publisher,
+            docType: d.docType,
+            // collections if the template/partials need lookups
+            dataDocuments: registryDocument,
+            dataGroups: registryGroup,
+            dataProjects: registryProject,
+            docProjs: docProjs,
+            // meta
+            site_version: site_version,
+            siteName: siteConfig.siteName,
+            author: siteConfig.author,
+            authorUrl: siteConfig.authorUrl,
+            copyright: siteConfig.copyright,
+            copyrightHolder: siteConfig.copyrightHolder,
+            copyrightYear: siteConfig.copyrightYear,
+            license: siteConfig.license,
+            licenseUrl: siteConfig.licenseUrl,
+            locale: siteConfig.locale,
+            siteDescription: pageDesc,
+            siteTitle: pageTitle,
+            listTitle,
+            canonicalBase: siteConfig.canonicalBase,
+            canonicalUrl: canonical,
+            ogTitle: pageTitle,
+            ogDescription: pageDesc,
+            ogImage: new URL(siteConfig.ogImage, siteConfig.canonicalBase).href,
+            ogImageAlt: siteConfig.ogImageAlt,
+            assetPrefix: '../../',
+            htmlLink: ('GH_PAGES_BUILD' in process.env) ? '' : 'index.html',
+            date: new Date(),
+            publisherUrls: siteConfig.publisherUrls,
+            titleLabelDocTypes: Array.isArray(siteConfig?.titleLabelDocTypes) ? siteConfig.titleLabelDocTypes : [],
+          });
+
+          const outFile = path.join(dir, 'index.html');
+          await fs.writeFile(outFile, refTreeHtml, 'utf8');
+          __rtOk++;
+        } catch (perDocRtErr) {
+          __rtFail++;
+          console.warn(
+            `[build] Per-doc refTree emit failed for ${id} — pub:${d.publisher || 'unknown'}, type:${d.docType || 'unknown'}`,
+            '\nReason:',
+            perDocRtErr && perDocRtErr.stack ? perDocRtErr.stack : (perDocRtErr && perDocRtErr.message ? perDocRtErr.message : perDocRtErr)
+          );
+          continue;
+        }
+      }
+      if (__rtFail) {
+        console.warn(`[build] RefTree pages emitted with warnings: ok=${__rtOk}, failed=${__rtFail}`);
+      }
+    } catch (e) {
+      console.warn('[build] Could not emit per-doc refTree pages:', e && e.message ? e.message : e);
+    }
+  }
   
   /* create build directory */
   
@@ -1833,10 +1928,10 @@ void (async () => {
   const nowISO = new Date().toISOString();
   const urls = [
     '/',
-    '/dependancies/',
     '/groups/',
     '/projects/',
-    '/docs/'
+    '/docs/',
+    '/reftree/'
   ];
   const urlset = urls.map(u => {
     const loc = new URL(u, siteConfig.canonicalBase).href;

@@ -1,0 +1,132 @@
+  {{>header}}
+    <!-- Main content starts - do not edit above this line -->
+
+    <main class="container my-4">
+      <header class="mb-3">
+        <div class="d-flex justify-content-between align-items-start">
+          <div>
+            <h1 class="h5 mb-1">REF TREE</h1>
+            <p class="text-muted mb-1">
+              Starting document root:
+              <a href="../../docs/{{docId}}/">{{docRootTitle}}</a>
+              <span class="ms-1"><code>{{docRootLabel}}</code></span>
+            </p>
+            {{#if publisher}}
+              <p class="text-muted small mb-0">
+                {{publisher}} • {{docType}} • [{{getStatus docId}}] {{{getstatusButton docId "10"}}}
+                {{#with (docProjLookup @root.docProjs docId)}}
+                  {{#ifnoteq projectStatus "Complete"}}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#F6BE00" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16">
+                      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/>
+                    </svg>
+                  {{/ifnoteq}}
+                {{/with}}
+              </p>
+            {{/if}}
+          </div>
+          <div class="text-end">
+            <a class="btn btn-outline-secondary btn-sm mb-1" href="../../docs/{{docId}}/">
+              ← Back to Doc
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Root band: full-width sticky bar so it stays visible while exploring the tree -->
+      <div id="ref-root-topbar" class="sticky-top bg-white border-bottom px-3 py-2 mb-3">
+        <div class="row justify-content-md-center">
+          <div class="col-md-8">
+            <div class="card h-100 mb-0">
+              <div class="card-header d-flex justify-content-between align-items-center gap-2">
+                <h2 class="h6 mb-0">Current Tree Root</h2>
+
+                <div class="small text-muted text-nowrap">
+                  Max Ref Depth:
+                  <select id="rt-depth-select" class="form-select form-select-sm d-inline w-auto ms-1">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3" selected>3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
+              </div>
+              <div id="rt-root" class="card-body small"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reference panels row: upstream and downstream side-by-side -->
+      <section class="row g-3">
+        <div class="col-lg-6">
+          <div class="card h-100">
+            <div class="card-header">
+              <h2 class="h6 mb-0"><i class="bi bi-arrow-up-left"></i> Referenced By</h2>
+              <div class="small text-muted">Docs that depend on <a href="../../docs/{{docId}}/">{{getLabel docId}}</a></div>
+              <div class="small">
+                <span class="text-muted">View:</span>
+                <button type="button"
+                        class="btn btn-link btn-sm p-0 rt-view-toggle fw-semibold"
+                        data-panel="up"
+                        data-view="levels">
+                  Simple
+                </button>
+                <span class="text-muted">·</span>
+                <button type="button"
+                        class="btn btn-link btn-sm p-0 rt-view-toggle"
+                        data-panel="up"
+                        data-view="routes">
+                  Expanded
+                </button>
+              </div>
+            </div>
+            <div id="rt-upstream" class="card-body small"></div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card h-100">
+            <div class="card-header">
+              <h2 class="h6 mb-0">References Of <i class="bi bi-arrow-down-right"></i></h2>
+              <div class="small text-muted">Docs that <a href="../../docs/{{docId}}/">{{getLabel docId}}</a> depend on</div>
+              <div class="small">
+                <span class="text-muted">View:</span>
+                <button type="button"
+                        class="btn btn-link btn-sm p-0 rt-view-toggle fw-semibold"
+                        data-panel="down"
+                        data-view="levels">
+                  Simple
+                </button>
+                <span class="text-muted">·</span>
+                <button type="button"
+                        class="btn btn-link btn-sm p-0 rt-view-toggle"
+                        data-panel="down"
+                        data-view="routes">
+                  Expanded
+                </button>
+              </div>
+            </div>
+            <div id="rt-downstream" class="card-body small"></div>
+          </div>
+        </div>
+      </section>
+
+      
+    </main>
+
+    <script>
+      window.assetPrefix = "{{assetPrefix}}";
+      window.MSR_REF_ROOT = "{{docId}}";
+      window.MSR_TITLE_LABEL_DOC_TYPES = [
+        {{#if titleLabelDocTypes}}
+          {{#each titleLabelDocTypes}}
+            "{{this}}"{{#unless @last}}, {{/unless}}
+          {{/each}}
+        {{/if}}
+      ];
+    </script>
+    <script src="{{assetPrefix}}js/refTree.js"></script>
+
+    <!-- Main content ends - do not edit below this line -->
+{{>footer}}

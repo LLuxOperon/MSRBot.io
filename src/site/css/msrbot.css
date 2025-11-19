@@ -288,6 +288,13 @@ pre {
   background-color: #fff;
 }
 
+#ref-root-topbar.sticky-top {
+  position: sticky;
+  top: calc(var(--msr-navbar-height) + 0.0rem);
+  z-index: 1020; /* same layer as cards-topbar, under navbar */
+  background-color: #fff;
+}
+
 /* Facet accordion cleanup */
 #facet .accordion-button { 
   padding: .4rem .75rem; 
@@ -445,4 +452,82 @@ img.publisher-logo  {
     gap: .25rem;
     margin-bottom: .25rem;
   }
+}
+
+/* Reference tree connector styling (scoped to refTree page) */
+.rt-tree,
+.rt-tree ul {
+  position: relative;
+  padding-left: 0.75rem;
+  margin-left: 0.25rem;
+}
+
+.rt-tree-item {
+  position: relative;
+  padding-left: 0.75rem;
+  margin: 0.15rem 0;
+}
+
+.rt-tree-item::before {
+  content: "";
+  position: absolute;
+  left: -0.55rem;
+  top: 0.8rem;
+  width: 0.5rem;
+  border-top: 1px solid rgba(108, 117, 125, 0.6);
+}
+
+.rt-tree-item::after {
+  content: "";
+  position: absolute;
+  top: 0.85rem;
+  left: 0;
+  width: 0.75rem;
+  border-top: 1px solid #dee2e6;
+}
+
+.rt-tree > .rt-tree-item::before {
+  /* Top-level items: only draw from this item downward */
+  top: 0.85rem;
+}
+
+.rt-tree-item:last-child::before {
+  /* Stop the vertical line after the last child for a clean end-cap */
+  bottom: 0.85rem;
+}
+
+.rt-node {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(248, 249, 250, 0.9);
+  border-radius: 0.25rem;
+  padding: 0.1rem 0.35rem;
+}
+
+.rt-tree-children {
+  margin-top: 0.15rem;
+  border-left: 1px dashed rgba(108, 117, 125, 0.5); /* muted dashed line */
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+/* Simple-view level headings: blue for upstream, green for downstream */
+.rt-level-heading-up {
+  border-left: 3px solid rgba(13, 110, 253, 0.6); /* bootstrap primary-ish */
+  padding-left: 0.35rem;
+}
+.rt-level-heading-down {
+  border-left: 3px solid rgba(25, 135, 84, 0.6); /* bootstrap success-ish */
+  padding-left: 0.35rem;
+}
+
+.rt-level-list-up {
+  border-left: 1px solid rgba(13, 110, 253, 0.25);
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+}
+.rt-level-list-down {
+  border-left: 1px solid rgba(25, 135, 84, 0.25);
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
 }
