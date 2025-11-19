@@ -1,25 +1,24 @@
 {
-  "generatedAt": "2025-11-12T15:51:42.651Z",
+  "generatedAt": "2025-11-19T04:48:55.592Z",
   "target": "documents.json",
   "good": 1950,
   "skippedByDomain": 0,
   "skippedByPublisher": 0,
   "index": {
-    "error": 246,
+    "error": 245,
     "errorBreakdown": {
-      "Unreachable (403)": 60,
+      "Unreachable (403)": 61,
       "Unreachable (404)": 162,
-      "Unreachable (ECONNABORTED)": 2,
       "Unreachable (ENOTFOUND)": 2,
       "Unreachable (ERR_BAD_REQUEST)": 1,
       "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)": 2,
       "Unreachable (HPE_INVALID_CONSTANT)": 16,
       "Unreachable (UNABLE_TO_VERIFY_LEAF_SIGNATURE)": 1
     },
-    "redirectMismatch": 15,
+    "redirectMismatch": 16,
     "redirectBreakdown": {
       "undefined": 0,
-      "other": 15
+      "other": 16
     },
     "expectationMismatch": 35,
     "expectationBreakdown": {
@@ -630,6 +629,16 @@
           "explanation": "The server refused access to the URL.",
           "recommendedAction": "Check if the resource requires authentication or is private.",
           "riskLevel": "High"
+        },
+        {
+          "docId": "RTF-ASD-NBSA.2000",
+          "publisher": "UCI",
+          "field": "href",
+          "url": "https://www.ics.uci.edu/~fielding/pubs/dissertation/fielding_dissertation.pdf",
+          "message": "Unreachable (403)",
+          "explanation": "The server refused access to the URL.",
+          "recommendedAction": "Check if the resource requires authentication or is private.",
+          "riskLevel": "High"
         }
       ],
       "404": [
@@ -1014,6 +1023,16 @@
           "riskLevel": "High"
         },
         {
+          "docId": "ISBN.9780877798071",
+          "publisher": "Merriam-Webster",
+          "field": "href",
+          "url": "https://shop.merriam-webster.com/products/merriam-websters-collegiate-dictionary-eleventh-edition",
+          "message": "Unreachable (404)",
+          "explanation": "The URL points to a resource that was not found (dead link).",
+          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
+          "riskLevel": "High"
+        },
+        {
           "docId": "ISO.26428-1.20XX",
           "publisher": "ISO",
           "field": "href",
@@ -1068,16 +1087,6 @@
           "publisher": "NIST",
           "field": "href",
           "url": "https://doi.org/10.6028/NIST.FIPS.186-4",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "NIST.SP.800-57pt2r1",
-          "publisher": "NIST",
-          "field": "href",
-          "url": "https://doi.org/10.6028/NIST.SP.800-57pt2r1",
           "message": "Unreachable (404)",
           "explanation": "The URL points to a resource that was not found (dead link).",
           "recommendedAction": "Double-check the URL or remove it if no longer valid.",
@@ -2428,28 +2437,6 @@
           "riskLevel": "High"
         }
       ],
-      "ECONNABORTED": [
-        {
-          "docId": "IEEE.STD1394.2008",
-          "publisher": "IEEE",
-          "field": "href",
-          "url": "https://doi.org/10.1109/IEEESTD.2008.4659233",
-          "message": "Unreachable (ECONNABORTED)",
-          "explanation": "Connection timed out.",
-          "recommendedAction": "Retry later or check the server’s responsiveness.",
-          "riskLevel": "Medium-High"
-        },
-        {
-          "docId": "mfir.17.5.270",
-          "publisher": "Conservation in Archives",
-          "field": "href",
-          "url": "https://doi.org/10.1515/mfir.1988.17.5.270",
-          "message": "Unreachable (ECONNABORTED)",
-          "explanation": "Connection timed out.",
-          "recommendedAction": "Retry later or check the server’s responsiveness.",
-          "riskLevel": "Medium-High"
-        }
-      ],
       "UNABLE_TO_VERIFY_LEAF_SIGNATURE": [
         {
           "docId": "ISO.15444-1.2004amd2.2009",
@@ -2515,9 +2502,19 @@
           "publisher": "Scientific Instruments",
           "field": "href",
           "url": "https://doi.org/10.1088/0950-7671/1/3/302",
-          "resolvedUrl": "https://validate.perfdrive.com/fb803c746e9148689b3984a31fccd902/?ssa=b8f83a11-db5d-4775-9d5f-f0809c531052&ssb=33044200708&ssc=https%3A%2F%2Fiopscience.iop.org%2Farticle%2F10.1088%2F0950-7671%2F1%2F3%2F302&ssi=7bc43e16-cnvj-48e1-9cda-84761e4a0a17&ssk=botmanager_support@radware.com&ssm=15911435331404769105360133642970&ssn=a8cc80e313a6b09d0460e8c5bd12c8865b2543663c44-d5b4-40dd-8c00c9&sso=f15e054e-0283fbe1b321dbce57bfdf61272748c168ebbcc113572556&ssp=56675596281762933491176294305369519&ssq=91977476206073261818862060508246016849028&ssr=MjAuMTYxLjY5LjM3&sst=axios/1.12.0&ssu=&ssv=&ssw=&ssx=eyJyZCI6ImlvcC5vcmciLCJfX3V6bWYiOiI3ZjkwMDA0MzY2M2M0NC1kNWI0LTQwZGQtODU0ZS0wMjgzZmJlMWIzMjExLTE3NjI5NjIwNjA4OTMwLTAwMWU4NjM5Y2UxYjRmNzM0MGQxMCIsInV6bXgiOiI3ZjkwMDBkZjljODNkNS02OTM2LTQ2MjgtYWExMS1lMTQ5NjM2MDZlNTMxLTE3NjI5NjIwNjA4OTMwLTA3YjIzZTcyODI2MDUzNzYxMCJ9",
+          "resolvedUrl": "https://validate.perfdrive.com/fb803c746e9148689b3984a31fccd902/?ssa=635d4557-0e02-402a-b534-967c009f5204&ssb=85815241315&ssc=https%3A%2F%2Fiopscience.iop.org%2Farticle%2F10.1088%2F0950-7671%2F1%2F3%2F302&ssi=4e4a1b36-cnvj-447d-bfb3-0dc863a539ad&ssk=botmanager_support@radware.com&ssm=33306196428042250109296712316009&ssn=8968b80655f5eb7583894e0ee5c9880ff7f3c6ed741c-6ea0-4bab-a37528&sso=8d649a7b-f17a7cb3e5b522d024494a7fa6df0c924c611f2a08098f72&ssp=73850434431763511579176352030358723&ssq=68147642718799006364927187161408600355066&ssr=MjAuNTUuMTUuOTg=&sst=axios/1.12.0&ssu=&ssv=&ssw=&ssx=eyJ1em14IjoiN2Y5MDAwMmI2NGMzYjEtYjkzNS00M2UwLWI1NjEtYzA1NmFhMGZmZDBkMS0xNzYzNTI3MTg3OTkwMC1mZWVmMGE3ZTU3OTI3NzEwMTAiLCJyZCI6ImlvcC5vcmciLCJfX3V6bWYiOiI3ZjkwMDBjNmVkNzQxYy02ZWEwLTRiYWItYWE3Yi1mMTdhN2NiM2U1YjUxLTE3NjM1MjcxODc5OTAwLTAwMTc0OGQ0YjdhNDE2ZWU2OGIxMCJ9",
           "resolvedField": "resolvedHref",
           "expectedResolved": "https://iopscience.iop.org/article/10.1088/0950-7671/1/3/302",
+          "message": "resolved url mismatch"
+        },
+        {
+          "docId": "ML3807.M56.1916",
+          "publisher": "MacMillan Co.",
+          "field": "href",
+          "url": "https://ia800204.us.archive.org/19/items/scienceofmusical00mill/scienceofmusical00mill.pdf",
+          "resolvedUrl": "https://ia801303.us.archive.org/1/items/scienceofmusical00mill/scienceofmusical00mill.pdf",
+          "resolvedField": "resolvedHref",
+          "expectedResolved": "https://ia601303.us.archive.org/1/items/scienceofmusical00mill/scienceofmusical00mill.pdf",
           "message": "resolved url mismatch"
         },
         {
