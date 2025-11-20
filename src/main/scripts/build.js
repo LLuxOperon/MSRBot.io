@@ -1496,6 +1496,51 @@ hb.registerHelper('publisherLogo', function (pub, opts) {
     } catch (e) {
       console.warn('[build] Could not emit per-doc refTree pages:', e && e.message ? e.message : e);
     }
+
+    // --- Emit /reftree/index.html landing page using refTreeIndex.hbs
+    try {
+      const refTreeIndexTplSrc = await fs.readFile('src/main/templates/refTreeIndex.hbs', 'utf8');
+      const refTreeIndexTpl = hb.compile(refTreeIndexTplSrc);
+      const refTreeIndexRoot = path.join(BUILD_PATH, 'reftree');
+      await fs.mkdir(refTreeIndexRoot, { recursive: true });
+
+      const refTreeCanonical = new URL('/reftree/', siteConfig.canonicalBase).href;
+      const refTreePageTitle = `Reference Trees — ${siteConfig.siteName}`;
+      const refTreeListTitle = 'Reference Trees';
+      const refTreeDesc = 'Explore dependency and citation trees for documents in the registry.';
+
+      const refTreeIndexHtml = refTreeIndexTpl({
+        templateName: 'refTreeIndex',
+        listTitle: refTreeListTitle,
+        site_version: site_version,
+        date: new Date(),
+        // meta
+        siteName: siteConfig.siteName,
+        author: siteConfig.author,
+        authorUrl: siteConfig.authorUrl,
+        copyright: siteConfig.copyright,
+        copyrightHolder: siteConfig.copyrightHolder,
+        copyrightYear: siteConfig.copyrightYear,
+        license: siteConfig.license,
+        licenseUrl: siteConfig.licenseUrl,
+        locale: siteConfig.locale,
+        siteDescription: refTreeDesc,
+        siteTitle: refTreePageTitle,
+        canonicalBase: siteConfig.canonicalBase,
+        canonicalUrl: refTreeCanonical,
+        ogTitle: refTreePageTitle,
+        ogDescription: refTreeDesc,
+        ogImage: new URL(siteConfig.ogImage, siteConfig.canonicalBase).href,
+        ogImageAlt: siteConfig.ogImageAlt,
+        assetPrefix: '../',
+        publisherUrls: siteConfig.publisherUrls,
+      });
+
+      await fs.writeFile(path.join(refTreeIndexRoot, 'index.html'), refTreeIndexHtml, 'utf8');
+      console.log('[build] Wrote build/reftree/index.html');
+    } catch (e) {
+      console.warn('[build] Could not emit refTree index page:', e && e.message ? e.message : e);
+    }
   }
   
   /* create build directory */
