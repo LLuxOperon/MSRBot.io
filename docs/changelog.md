@@ -1,7 +1,7 @@
 # MSRBot.io — Consolidated Technical Chronicle
 
 **Status:** Gold-copy consolidation  
-**Consolidation Date:** 2025-11-05
+**Consolidation Date:** 2025-11-20
 
 This document consolidates the MSRBot.io worklog into a single, category‑organized technical chronicle. Dates are de‑emphasized in favor of system architecture and implementation detail. All filenames, scripts, fields, and JSON keys are shown in monospace.
 
@@ -424,6 +424,84 @@ _Prevents orphaned branches from detached workflows._
 - MSI data is first-class on pages; every document exposes suite context and “latestness.”
 - Detail pages (DocId views) present a stable, responsive header with clean logo/badge behavior; CSS is predictable across breakpoints.
 - Editors get copy-ready citations with accurate previews, robust author formatting, and safer snippet behavior.
+
+### 6.6 Reference Tree System — Graph-Based Cross-Reference Explorer
+
+**Overview**
+- Implemented a full **Reference Tree** system that exposes cross-document relationships as a first-class feature.
+- Entry points:
+  - `/reftree/` index page with search and curated starting points.
+  - Per-document RefTree pages generated from registry data and MSI/refs plumbing.
+- RefTree now behaves as a stable, user-facing feature rather than a prototype.
+
+**RefTree Index Page**
+- Built a dedicated landing page at `/reftree/` with two primary panels:
+  - **Start Exploring** — search box with smart matching and suggestions.
+  - **Interesting Starting Points** — auto-ranked “most-connected” documents to onboard new users.
+- Added suggestion UI and preview lists to avoid 404 traps when searching by label/title/number.
+
+**Search Engine & Matching**
+- Normalized queries for robustness (case-insensitive, tolerant of dots/dashes and number formatting).
+- Implemented match scoring:
+  - Exact `docId` matches score highest.
+  - Exact label/title matches score just below.
+  - Compact and substring matches use lower tiers.
+- Auto-redirects only on high-confidence matches; otherwise presents a result list with label + title.
+- Added **“Show all N matches”** behavior for broad queries (e.g., publisher or series searches).
+
+**Most-Connected Documents**
+- Derived “most-connected” ranking from `referencesResolved` + `referencedBy` data.
+- Surface top documents by combined reference degree, showing `label`, `title`, and `docId` for clarity.
+- Used as curated tour starting points (e.g., 428/429 families, IMF, ST 2110, NIST 800-series).
+
+**Per-Document RefTree Pages**
+- Introduced per-doc RefTree views with two modes:
+  - **Simple** — depth-based neighbors only.
+  - **Expanded** — full graph traversal via resolved references.
+- Features:
+  - Depth selector (1–5 plus `max`, with support for values above 5).
+  - Node expand/collapse controls to manage large graphs.
+  - Clear upstream/downstream labeling and parent-level detection.
+  - Graph-line and layout adjustments for readability at multiple depths.
+
+**Root Card & Layout**
+- Root document presented as a **sticky top card**:
+  - Uses build pipeline helpers for accurate label/title/status logic.
+  - Consistent ordering of label, title, status, and publisher icons.
+  - Styling aligned with the main `docId` detail pages.
+- Layout improvements:
+  - Cleaner top-of-page copy oriented toward non-expert users.
+  - Controls (depth selector, expand/collapse) kept on a single stable toolbar row across breakpoints.
+  - No-underline button styles for interactive controls; text remains readable and scan-friendly.
+
+**Templates, Helpers & Shared JS**
+- Split logic between:
+  - `refTree.js` — per-doc tree behavior.
+  - `refTreeIndex.js` — index/search and “most-connected” logic.
+- Removed inline script fragments from templates; moved behavior into shared JS modules.
+- Integrated build-time helpers (e.g., `getLabel`, status helpers, publisher helpers, “any” checks) for consistent display.
+- Fixed missing publisher variables and mismatched helper usage that previously caused inconsistencies.
+
+**Build & Data Plumbing**
+- Updated `build.js` to:
+  - Emit per-doc RefTree JSON cleanly for each document.
+  - Inject a full documents snapshot into `_data` for the RefTree index and search.
+  - Resolve initialization ordering issues (e.g., `docProjs` before use).
+- Ensured RefTree draws exclusively from the registry’s authoritative documents and refs (including `referencesResolved` and `referencedBy`).
+
+**Deferred Enhancements (Future Work)**
+- Left space for future iterations:
+  - Fully interactive GraphViz/SVG-style visualizations.
+  - Path highlighting for step-by-step traversal.
+  - Dedicated `/search/` endpoint for full-registry search.
+  - Specialized typography or indicators for cycles and suite/family clustering.
+
+**Result**
+- RefTree now provides:
+  - A stable UX foundation for exploring document relationships.
+  - Onboarding-friendly entry points for new users.
+  - High-signal tooling for editors working with complex reference graphs.
+  - Clear extension paths for future visualization and search enhancements.
 
 ## 7 Logging, Diffing, and PR Output
 - `logSmart.js` centralizes logging with a console budget (~3.5 MiB). Excess console chatter is tripwired while full logs are persisted to file.
