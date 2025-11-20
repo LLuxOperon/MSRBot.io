@@ -30,7 +30,7 @@
                             ]
                         }
                     },
-                    "docId": {
+                    "newDoc": {
                         "type": "string"
                     },
                    

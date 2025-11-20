@@ -1,5 +1,6 @@
   {{>header}}
     <!-- Main content starts - do not edit above this line -->
+  <div class="container mt-3">
     <table id="sorttableGroups" class="table table-small table-hover">
       <thead class="thead-light">
         <tr>
@@ -61,7 +62,7 @@
           </td>
           <td>
             {{#ifeq groupType "TC"}}
-            <a href="../documents/{{../htmlLink}}?search.search={{spaceReplace groupOrg}}{{#if parentgroupId}}{{#with (groupIdLookup ../dataGroups parentgroupId)}}%20{{spaceReplace groupName}}{{/with}}{{/if}}%20{{spaceReplace groupName}}{{#if groupDesc}}%20{{spaceReplace groupDesc}}{{/if}}">Published</a>
+            <a href="../docs/?f.group={{groupId}}#">Published</a>
             {{/ifeq}}
           </td>
           <td>
@@ -89,5 +90,7 @@
         {{/data}}
       </tbody>
     </table>
+
+  </div>
     <!-- Main content ends - do not edit below this line -->
 {{>footer}}
