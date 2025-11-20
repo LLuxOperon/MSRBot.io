@@ -330,6 +330,11 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     // minimal helpers
     window.Handlebars.registerHelper('join', function(arr, sep){ return Array.isArray(arr) ? arr.join(sep||', ') : ''; });
     window.Handlebars.registerHelper('len', function(x){ return (Array.isArray(x) || typeof x === 'string') ? x.length : 0; });
+    window.Handlebars.registerHelper('any', function(){
+      // Drop Handlebars options hash (last arg)
+      const args = Array.prototype.slice.call(arguments, 0, -1);
+      return args.some(v => !!v);
+    });
     window.Handlebars.registerHelper('gt', function(a,b){ return Number(a) > Number(b); });
     window.Handlebars.registerHelper('statusBadge', function(status){
       const raw = String(status || '');
