@@ -469,6 +469,9 @@ $(document).ready(function() {
 
 });
 
+
+
+
 /* "Back To Top" button functionality */
 
 $(document).ready(function() {
@@ -486,4 +489,46 @@ $(document).on('click', '#toTopBtn', function(e){
   window.scrollTo({ top: 0, behavior: 'smooth' });
   return false;
 });
+});
+
+/* Dynamic navbar active state based on current URL vs nav hrefs */
+$(document).ready(function () {
+  try {
+    var here = window.location && window.location.href ? window.location.href : '';
+    if (!here) return;
+
+    // Normalize common index.html endings for comparison
+    here = here.replace(/\/index\.html([?#].*)?$/, '/$1');
+
+    var navLinks = document.querySelectorAll('.navbar .nav-link[id^="nav-"]');
+    var bestMatch = null;
+    var bestLen = 0;
+
+    navLinks.forEach(function (link) {
+      if (!link || !link.href) return;
+      var href = link.href;
+
+      // Normalize link href similarly
+      href = href.replace(/\/index\.html([?#].*)?$/, '/$1');
+
+      // We want the longest href that is a prefix of the current URL
+      if (here.indexOf(href) === 0 && href.length > bestLen) {
+        bestMatch = link;
+        bestLen = href.length;
+      }
+    });
+
+    // If nothing matched as a prefix, fall back to home if present
+    if (!bestMatch) {
+      bestMatch = document.getElementById('nav-home');
+    }
+
+    if (bestMatch) {
+      bestMatch.classList.add('active');
+    }
+  } catch (e) {
+    if (window && window.console && console.warn) {
+      console.warn('[msrbot] Failed to set active nav link:', e);
+    }
+  }
 });
