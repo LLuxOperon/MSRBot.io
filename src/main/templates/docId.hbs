@@ -216,38 +216,21 @@
         </div>  
       </div>
       {{/if}}
-      
-
-      <!-- {{#if (len referenceTree)}}
-      <div class="card mb-3">
-        <div class="card-body">
-          <h2 class="h6">Reference Tree</h2>
-          <ul class="list-group list-group-flush small">
-          {{#each (asArray referenceTree)}}
-            <li class="list-group-item">
-              <a href="../{{this}}/">{{getLabel this}}</a> [{{getStatus this}}] {{{getstatusButton this "10"}}} {{#with (docProjLookup @root.docProjs this)}}{{#ifnoteq projectStatus "Complete"}}<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#F6BE00" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/></svg>{{/ifnoteq}}{{/with}}
-            </li>
-          {{/each}}
-          </ul>
-        </div>
-      </div>
-      {{/if}} -->
-
     </div>
 
     <div class="col-lg-5">
-
+      {{#if (any (len referencesResolved.normative) (len referencesResolved.bibliographic) (len referencedBy))}}
       <div class="card mb-3">
         <div class="card-body small">
           <h2 class="h6 mb-2">Reference Tree</h2>
           <p class="mb-2 text-muted">
-            Explore all documents that reference this one and all documents it references, as a navigable tree.
+            Explore all references and references to this document, as a navigable tree.
           </p>
-          <a class="btn btn-outline-secondary btn-sm" href="../../reftree/{{docId}}/">
-            Open reference tree
-          </a>
+          <a class="btn btn-outline-secondary btn-sm" href="../../reftree/{{docId}}/">Open Reference Tree</a>
         </div>
       </div>
+      {{/if}}
+
       <!-- Use this document as a reference -->
       <div class="card mb-3">
         <div class="card-header fw-semibold">Reference this Doc</div>

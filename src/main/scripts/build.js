@@ -283,6 +283,11 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     return a && b;
   });
 
+  hb.registerHelper('any', function (...args) {
+    const values = args.slice(0, -1);
+    return values.some(v => !!v);
+  });
+
   // Returns the length of arrays/strings, or the number of keys for objects
   hb.registerHelper('len', function (val) {
     if (Array.isArray(val)) return val.length;

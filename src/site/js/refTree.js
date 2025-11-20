@@ -287,7 +287,13 @@
 
       const chip = document.createElement('div');
       chip.className = 'rt-node d-inline-flex align-items-center gap-1';
+
+      const hasChildren = node.children && node.children.length;
+
       chip.innerHTML = `
+        ${hasChildren
+          ? '<button type="button" class="btn btn-link btn-sm p-0 rt-node-toggle" aria-label="Toggle children" title="Toggle children">▾</button>'
+          : '<span class="rt-node-toggle-spacer"></span>'}
         <a href="../${encodeURIComponent(id)}/"
            class="ref-node d-inline-flex align-items-center gap-1"
            data-doc-id="${escapeHtml(id)}">
@@ -314,6 +320,48 @@
 
     el.innerHTML = '';
     el.appendChild(rootUl);
+  }
+
+  function collapseAll(panel) {
+    const containerId = panel === 'up' ? 'rt-upstream' : 'rt-downstream';
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    const items = container.querySelectorAll('.rt-tree-item');
+    items.forEach((li) => {
+      if (li.querySelector('.rt-tree-children')) {
+        li.classList.add('rt-tree-collapsed');
+        const btn = li.querySelector('.rt-node-toggle');
+        if (btn) {
+          btn.textContent = '▸';
+        }
+      }
+    });
+  }
+
+  function expandAll(panel) {
+    const containerId = panel === 'up' ? 'rt-upstream' : 'rt-downstream';
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    const items = container.querySelectorAll('.rt-tree-item.rt-tree-collapsed');
+    items.forEach((li) => {
+      li.classList.remove('rt-tree-collapsed');
+      const btn = li.querySelector('.rt-node-toggle');
+      if (btn) {
+        btn.textContent = '▾';
+      }
+    });
+  }
+
+  function syncCollapseControls(panel) {
+    const view = panel === 'up' ? viewModeUp : viewModeDown;
+    const els = document.querySelectorAll('.rt-collapse-controls[data-panel="' + panel + '"]');
+    els.forEach((el) => {
+      if (view === 'routes') {
+        el.classList.remove('d-none');
+      } else {
+        el.classList.add('d-none');
+      }
+    });
   }
 
   function renderPanels() {
@@ -343,19 +391,32 @@
     const hasProj = hasActiveProjectFor(id);
     const projIcon = buildProjectIcon(hasProj, 12);
 
-    const publisher = d && d.publisher ? escapeHtml(d.publisher) : '';
-    const docType = d && d.docType ? escapeHtml(d.docType) : '';
+    // Use raw and escaped versions for publisher and docType
+    const rawPublisher = d && d.publisher ? String(d.publisher) : '';
+    const rawDocType = d && d.docType ? String(d.docType) : '';
+
+    const publisher = rawPublisher ? escapeHtml(rawPublisher) : '';
+    const docType = rawDocType ? escapeHtml(rawDocType) : '';
 
     const metaLine = (publisher || docType)
-      ? `<div class="text-muted small mb-1">${publisher}${publisher && docType ? ' • ' : ''}${docType}${statusStr ? ' • <span class="ms-1">[' + escapeHtml(statusStr) + ']</span>' : ''}${statusIcon ? '<span class="ms-1">' + statusIcon + '</span>' : ''}${projIcon ? '<span class="ms-1">' + projIcon + '</span>' : ''}</div>`
+      ? `<div class="text-muted small mb-1">
+           ${publisher
+             ? `<a class="clear-filter" href="../../docs/?f.publisher=${encodeURIComponent(rawPublisher)}">${publisher}</a>`
+             : ''}
+           ${publisher && docType ? ' • ' : ''}
+           ${docType
+             ? `<a class="clear-filter" href="../../docs/?f.docType=${encodeURIComponent(rawDocType)}">${docType}</a>`
+             : ''}
+           ${statusStr ? ' • <span class="ms-1">[' + escapeHtml(statusStr) + ']</span>' : ''}
+           ${statusIcon ? '<span class="ms-1">' + statusIcon + '</span>' : ''}
+           ${projIcon ? '<span class="ms-1">' + projIcon + '</span>' : ''}
+         </div>`
       : '';
     el.innerHTML = `
         <div class="mb-2">
-          <div class="fw-semibold mb-1 d-flex flex-wrap align-items-center gap-1">
+          <div class="mb-1 d-flex flex-wrap align-items-center gap-1">
             <span><code>${escapeHtml(label)}</code></span>
-            <br>
-            <span class="fw-semibold">${escapeHtml(d.docTitle || label)}</span>
-            
+            <span class="fw-semibold"><a class="clear-filter" href="../../docs/${id}/">${escapeHtml(d.docTitle || label)}</a></span>
           </div>
           ${metaLine}
         </div>
@@ -364,8 +425,8 @@
             Click a document ID below to re-center the tree on that document.
           </span>
           <span class="text-nowrap">
-            <a href="../${encodeURIComponent(id)}/"rm 0rf 
-              class="btn btn-outline-secondary btn-sm">
+            <a href="../${encodeURIComponent(id)}/"
+               class="btn btn-outline-secondary btn-sm">
               Set as new root
             </a>
             <button type="button"
@@ -382,16 +443,18 @@
     currentRoot = id;
     const depthSelect = document.getElementById('rt-depth-select');
     if (depthSelect) {
-      depthSelect.value = String(maxDepth);
+      depthSelect.value = (maxDepth === Number.MAX_SAFE_INTEGER) ? 'max' : String(maxDepth);
     }
 
     renderRoot(id);
 
+    const effectiveDepth = maxDepth;
+
     // Recompute caches for this root
-    cacheUpLevels = buildLevels(id, 'up', maxDepth);
-    cacheDownLevels = buildLevels(id, 'down', maxDepth);
-    cacheUpRoutes = buildRoutes(id, 'up', maxDepth);
-    cacheDownRoutes = buildRoutes(id, 'down', maxDepth);
+    cacheUpLevels = buildLevels(id, 'up', effectiveDepth);
+    cacheDownLevels = buildLevels(id, 'down', effectiveDepth);
+    cacheUpRoutes = buildRoutes(id, 'up', effectiveDepth);
+    cacheDownRoutes = buildRoutes(id, 'down', effectiveDepth);
 
     // Render according to current view modes
     renderPanels();
@@ -441,15 +504,26 @@
     const depthSelect = document.getElementById('rt-depth-select');
     if (depthSelect) {
       // Initialize select from current maxDepth
-      depthSelect.value = String(maxDepth);
+      depthSelect.value = (maxDepth === Number.MAX_SAFE_INTEGER) ? 'max' : String(maxDepth);
       depthSelect.addEventListener('change', (ev) => {
-        const val = parseInt(ev.target.value, 10);
-        if (!Number.isNaN(val) && val > 0) {
-          maxDepth = val;
-          reroot(currentRoot);
+        const raw = ev.target.value;
+        if (raw === 'max') {
+          maxDepth = Number.MAX_SAFE_INTEGER;
+        } else {
+          const val = parseInt(raw, 10);
+          if (!Number.isNaN(val) && val > 0) {
+            maxDepth = val;
+          } else {
+            maxDepth = MAX_DEPTH_DEFAULT;
+          }
         }
+        reroot(currentRoot);
       });
     }
+
+    // Ensure collapse controls visibility matches initial view mode (levels by default)
+    syncCollapseControls('up');
+    syncCollapseControls('down');
 
     // Toggle between Simple (levels) and Expanded (routes) views per panel
     document.addEventListener('click', (ev) => {
@@ -478,7 +552,10 @@
         }
       });
 
-      renderPanels();
+      // Show collapse/expand controls only in Expanded (routes) view
+      syncCollapseControls(panel);
+
+      renderPanels();;
     }, { passive: false });
 
     document.addEventListener('click', (ev) => {
@@ -488,6 +565,36 @@
       if (!id) return;
       ev.preventDefault();
       reroot(id);
+    }, { passive: false });
+
+    document.addEventListener('click', (ev) => {
+      const btn = ev.target.closest('.rt-collapse-toggle');
+      if (!btn) return;
+
+      ev.preventDefault();
+
+      const panel = btn.getAttribute('data-panel');
+      const action = btn.getAttribute('data-action');
+      if (!panel || !action) return;
+
+      if (action === 'collapse') {
+        collapseAll(panel);
+      } else if (action === 'expand') {
+        expandAll(panel);
+      }
+    }, { passive: false });
+
+    document.addEventListener('click', (ev) => {
+      const btn = ev.target.closest('.rt-node-toggle');
+      if (!btn) return;
+
+      ev.preventDefault();
+
+      const li = btn.closest('.rt-tree-item');
+      if (!li) return;
+
+      const nowCollapsed = li.classList.toggle('rt-tree-collapsed');
+      btn.textContent = nowCollapsed ? '▸' : '▾';
     }, { passive: false });
   }
 

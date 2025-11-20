@@ -51,6 +51,13 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Anchor buttons should look like buttons, not underlined links */
+a.btn,
+a.btn:hover,
+a.btn:focus {
+  text-decoration: none;
+}
+
 .cancelled {
     text-decoration:line-through;
     font-style:italic;
@@ -504,11 +511,38 @@ img.publisher-logo  {
   padding: 0.1rem 0.35rem;
 }
 
+/* Per-node expand/collapse toggle in Expanded view */
+.rt-node-toggle {
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin-right: 0.15rem;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.rt-node-toggle:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Keep nodes without children aligned by reserving space for the toggle */
+.rt-node-toggle-spacer {
+  display: inline-block;
+  width: 0.75rem;
+  margin-right: 0.15rem;
+}
+
 .rt-tree-children {
   margin-top: 0.15rem;
   border-left: 1px dashed rgba(108, 117, 125, 0.5); /* muted dashed line */
   margin-left: 0.5rem;
   padding-left: 0.5rem;
+}
+
+/* Collapse/expand support for Expanded tree view */
+.rt-tree-item.rt-tree-collapsed > .rt-tree-children {
+  display: none;
 }
 
 /* Simple-view level headings: blue for upstream, green for downstream */

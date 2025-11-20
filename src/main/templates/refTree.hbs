@@ -4,16 +4,17 @@
     <main class="container my-4">
       <header class="mb-3">
         <div class="d-flex justify-content-between align-items-start">
-          <div>
-            <h1 class="h5 mb-1">REF TREE</h1>
+          <div class="gap-2">
             <p class="text-muted mb-1">
               Starting document root:
-              <a href="../../docs/{{docId}}/">{{docRootTitle}}</a>
-              <span class="ms-1"><code>{{docRootLabel}}</code></span>
+              <span class="ms-1 fs-6"><code>{{docRootLabel}}</code></span>
+            </p>
+            <p class="h5 mb-2">
+              <a class="text-decoration-none"  href="../../docs/{{docId}}/">{{docRootTitle}}</a>
             </p>
             {{#if publisher}}
               <p class="text-muted small mb-0">
-                {{publisher}} • {{docType}} • [{{getStatus docId}}] {{{getstatusButton docId "10"}}}
+                <a class="clear-filter" href="../../docs/?f.publisher={{publisher}}">{{publisher}}</a> • <a class="clear-filter" href="../../docs/?f.docType={{docType}}">{{docType}}</a> • [{{getStatus docId}}] {{{getstatusButton docId "10"}}}
                 {{#with (docProjLookup @root.docProjs docId)}}
                   {{#ifnoteq projectStatus "Complete"}}
                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#F6BE00" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16">
@@ -25,7 +26,7 @@
             {{/if}}
           </div>
           <div class="text-end">
-            <a class="btn btn-outline-secondary btn-sm mb-1" href="../../docs/{{docId}}/">
+            <a class="btn btn-outline-secondary btn-sm ms-2 mb-1 text-nowrap" href="../../docs/{{docId}}/">
               ← Back to Doc
             </a>
           </div>
@@ -48,6 +49,7 @@
                     <option value="3" selected>3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
+                    <option value="max">Max</option>
                   </select>
                 </div>
               </div>
@@ -64,21 +66,39 @@
             <div class="card-header">
               <h2 class="h6 mb-0"><i class="bi bi-arrow-up-left"></i> Referenced By</h2>
               <div class="small text-muted">Docs that depend on <a href="../../docs/{{docId}}/">{{getLabel docId}}</a></div>
-              <div class="small">
-                <span class="text-muted">View:</span>
-                <button type="button"
-                        class="btn btn-link btn-sm p-0 rt-view-toggle fw-semibold"
-                        data-panel="up"
-                        data-view="levels">
-                  Simple
-                </button>
-                <span class="text-muted">·</span>
-                <button type="button"
-                        class="btn btn-link btn-sm p-0 rt-view-toggle"
-                        data-panel="up"
-                        data-view="routes">
-                  Expanded
-                </button>
+              <div class="small d-flex justify-content-between align-items-center flex-wrap gap-1">
+                <span>
+                  <span class="text-muted">View:</span>
+                  <button type="button"
+                          class="btn btn-link btn-sm p-0 rt-view-toggle fw-semibold"
+                          data-panel="up"
+                          data-view="levels">
+                    Simple
+                  </button>
+                  <span class="text-muted">·</span>
+                  <button type="button"
+                          class="btn btn-link btn-sm p-0 rt-view-toggle"
+                          data-panel="up"
+                          data-view="routes">
+                    Expanded
+                  </button>
+                </span>
+                <span class="rt-collapse-controls d-none" data-panel="up">
+                  <span class="text-muted">Tree:</span>
+                  <button type="button"
+                          class="btn btn-link btn-sm p-0 rt-collapse-toggle"
+                          data-panel="up"
+                          data-action="collapse">
+                    Collapse all
+                  </button>
+                  <span class="text-muted">·</span>
+                  <button type="button"
+                          class="btn btn-link btn-sm p-0 rt-collapse-toggle"
+                          data-panel="up"
+                          data-action="expand">
+                    Expand all
+                  </button>
+                </span>
               </div>
             </div>
             <div id="rt-upstream" class="card-body small"></div>
@@ -90,21 +110,39 @@
             <div class="card-header">
               <h2 class="h6 mb-0">References Of <i class="bi bi-arrow-down-right"></i></h2>
               <div class="small text-muted">Docs that <a href="../../docs/{{docId}}/">{{getLabel docId}}</a> depend on</div>
-              <div class="small">
-                <span class="text-muted">View:</span>
-                <button type="button"
-                        class="btn btn-link btn-sm p-0 rt-view-toggle fw-semibold"
-                        data-panel="down"
-                        data-view="levels">
-                  Simple
-                </button>
-                <span class="text-muted">·</span>
-                <button type="button"
-                        class="btn btn-link btn-sm p-0 rt-view-toggle"
-                        data-panel="down"
-                        data-view="routes">
-                  Expanded
-                </button>
+              <div class="small d-flex justify-content-between align-items-center flex-wrap gap-1">
+                <span>
+                  <span class="text-muted">View:</span>
+                  <button type="button"
+                          class="btn btn-link btn-sm p-0 rt-view-toggle fw-semibold"
+                          data-panel="down"
+                          data-view="levels">
+                    Simple
+                  </button>
+                  <span class="text-muted">·</span>
+                  <button type="button"
+                          class="btn btn-link btn-sm p-0 rt-view-toggle"
+                          data-panel="down"
+                          data-view="routes">
+                    Expanded
+                  </button>
+                </span>
+                <span class="rt-collapse-controls d-none" data-panel="down">
+                  <span class="text-muted">Tree:</span>
+                  <button type="button"
+                          class="btn btn-link btn-sm p-0 rt-collapse-toggle"
+                          data-panel="down"
+                          data-action="collapse">
+                    Collapse all
+                  </button>
+                  <span class="text-muted">·</span>
+                  <button type="button"
+                          class="btn btn-link btn-sm p-0 rt-collapse-toggle"
+                          data-panel="down"
+                          data-action="expand">
+                    Expand all
+                  </button>
+                </span>
               </div>
             </div>
             <div id="rt-downstream" class="card-body small"></div>
@@ -112,7 +150,6 @@
         </div>
       </section>
 
-      
     </main>
 
     <script>
