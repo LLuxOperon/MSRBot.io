@@ -102,19 +102,25 @@ const registries = [
     "subRegistry": [
       "groups",
       "projects"
-    ]
+    ],
+    "extras": {
+      "logicOnly": true
+    }
   },
   {
     "listType": "documents",
     "templateType": "documents",
-    "templateName": "dependancies",
+    "templateName": "refTree",
     "idType": "document",
     "listTitle": "Ref Tree",
     "subRegistry": [
       "documents",
       "groups",
       "projects"
-    ]
+    ],
+    "extras": {
+      "logicOnly": true
+    }
   },
   {
     "listType": "projects",
@@ -143,6 +149,7 @@ const registries = [
 /* load and build the templates */
 
 async function buildRegistry ({ listType, templateType, templateName, idType, listTitle, subRegistry, output, extras }) {
+  const logicOnly = extras && extras.logicOnly;
   console.log(`Building ${templateName} started`)
 
   var DATA_PATH = path.join(REGISTRIES_REPO_PATH, "data/" + listType + ".json");
@@ -175,16 +182,18 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   hb.registerPartial('header', await fs.readFile("src/main/templates/partials/header.hbs", 'utf8'));
   hb.registerPartial('footer', await fs.readFile("src/main/templates/partials/footer.hbs", 'utf8'));
 
-  /* instantiate template */
-  let template = hb.compile(
-    await fs.readFile(
-      TEMPLATE_PATH,
-      'utf8'
-    )
-  );
-  
-  if (!template) {
-    throw "Cannot load HTML template";
+  /* instantiate template (skippable for logic-only registries) */
+  let template = null;
+  if (!logicOnly) {
+    template = hb.compile(
+      await fs.readFile(
+        TEMPLATE_PATH,
+        'utf8'
+      )
+    );
+    if (!template) {
+      throw "Cannot load HTML template";
+    }
   }
 
   /* if Conditional helpers */
@@ -906,8 +915,6 @@ function _doiUrl(doc){
 
   let docDependancy
   for (let i in registryDocument) {
-    let depCheck = true
-    let depPresent
     if (registryDocument[i].referencedBy && registryDocument[i].referenceTree) {
       docDependancy = true
     }
@@ -1546,9 +1553,9 @@ hb.registerHelper('publisherLogo', function (pub, opts) {
   /* create build directory */
   
   await fs.mkdir(BUILD_PATH, { recursive: true });
-    if (templateName != "index") { 
-      await fs.mkdir(BUILD_PATH + "/" + templateName, { recursive: true });
-    }
+  if (!logicOnly && templateName != "index") { 
+    await fs.mkdir(BUILD_PATH + "/" + templateName, { recursive: true });
+  }
     // Ensure _data directory exists
     await fs.mkdir(path.join(BUILD_PATH, '_data'), { recursive: true });
     // Emit publisher logos + optional aliases for client-side docList.js
@@ -1615,14 +1622,16 @@ hb.registerHelper('publisherLogo', function (pub, opts) {
 
   /* determine if build on GH to remove "index.html" from internal link */
 
-  let htmlLink = "index.html"
-  if ('GH_PAGES_BUILD' in process.env) {
-    htmlLink = ""
-  }
-  
   /* apply template */
   
-    var html = template({
+  let htmlLink = "index.html";
+  if ('GH_PAGES_BUILD' in process.env) {
+    htmlLink = "";
+  }
+  
+  let html = null;
+  if (!logicOnly) {
+    html = template({
       "data": registryDocument,
       // If this page's subRegistry included documents, prefer that complete dataset for cross-lookups.
       // Otherwise, fall back to the primary dataset only when the primary listType is "documents".
@@ -1661,6 +1670,7 @@ hb.registerHelper('publisherLogo', function (pub, opts) {
       "assetPrefix": assetPrefix,
       "publisherUrls": siteConfig.publisherUrls,
     });
+  }
 
   // --- Safe normalization for per‑doc rendering (prevents .length on undefined)
   function __normArray(v) { return Array.isArray(v) ? v : []; }
@@ -1793,8 +1803,10 @@ hb.registerHelper('publisherLogo', function (pub, opts) {
     console.warn('[build] Could not emit per-doc pages:', e && e.message ? e.message : e);
   }
   
-  /* write HTML file */
-  await fs.writeFile(path.join(BUILD_PATH, PAGE_SITE_PATH), html, 'utf8');
+  /* write HTML file (skip for logic-only registries) */
+  if (!logicOnly && html != null) {
+    await fs.writeFile(path.join(BUILD_PATH, PAGE_SITE_PATH), html, 'utf8');
+  }
 
   // Build docList search index (search-index.json + facets.json) once per run
   // Only trigger from the main index page to avoid duplicate executions
