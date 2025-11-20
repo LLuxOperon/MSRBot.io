@@ -159,7 +159,7 @@
   function showSuggestions(query, matches) {
     if (!resultsEl) return;
     if (!matches || !matches.length) {
-      resultsEl.innerHTML = '<div class="text-muted">Try a different docId, label, or part of the title.</div>';
+      resultsEl.innerHTML = '<div class="text-muted fst-italic">Try a different docId, label, or part of the title.</div>';
       resultsEl.classList.remove('d-none');
       return;
     }
@@ -170,7 +170,7 @@
     html += '<ul class="list-unstyled mb-0">';
     matches.slice(0, 10).forEach(function (m) {
       html += '<li class="mb-1">';
-      html += '<a href="../reftree/' + encodeURIComponent(m.id) + '/" class="link-primary">' +
+      html += '<a href="../reftree/' + encodeURIComponent(m.id) + '/">' +
         escapeHtml(m.label || m.id) + ' (' + escapeHtml(m.id) + ')' +
         '</a>';
       if (m.title) {
@@ -199,7 +199,7 @@
         fullHtml += '<ul class="list-unstyled mb-0">';
         matches.forEach(function (m) {
           fullHtml += '<li class="mb-1">';
-          fullHtml += '<a href="../reftree/' + encodeURIComponent(m.id) + '/" class="link-primary">' +
+          fullHtml += '<a href="../reftree/' + encodeURIComponent(m.id) + '/">' +
             escapeHtml(m.label || m.id) + ' (' + escapeHtml(m.id) + ')' +
             '</a>';
           if (m.title) {

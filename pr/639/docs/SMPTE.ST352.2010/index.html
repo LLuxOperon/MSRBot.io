@@ -58,7 +58,7 @@
 
   <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.4/b-2.1.1/r-2.2.9/sp-1.4.0/sl-1.3.4/datatables.min.js"></script>
   <script src="https://cdn.datatables.net/plug-ins/1.11.4/features/deepLink/dataTables.deepLink.min.js"></script>
-  <script src="../../js/features.js"></script>
+  <script src="../../js/msrbot.js"></script>
 
   <!-- JSON-LD: basic WebSite schema -->
   <script type="application/ld+json">
@@ -106,45 +106,44 @@
   
 </head>
 <body>
-  <nav class="navbar navbar-expand-md sticky-top bg-light d-flex px-2 border-bottom">
-    <div class="navbar-brand"><a class="clear-filter" href="#"><img src="../../static/MSRBot-PrZ3-blue.svg" alt="MSR" width="30" height="30" class="me-2"><img src="../../static/MSRBot-Logo-blue.svg" alt="MSR" height="30"></a></div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      
-      <ul class="navbar-nav ms-auto mb-lg-0">
-        <li class="nav-item text-nowrap">
-          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../../index.html"><i class="bi bi-house-fill" style="font-size: 1.3rem;"></i><span class="small">HOME</span></a>
-        </li>
-        <li class="nav-item text-nowrap">
-          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../../docs/index.html"><i class="bi bi-file-richtext-fill" style="font-size: 1.3rem;"></i><span class="small">DOCS</span></a>
-        </li>
-        <li class="nav-item text-nowrap">
-          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../../reftree/index.html"><i class="bi bi-diagram-3-fill" style="font-size: 1.3rem;"></i><span class="small">REF TREE</span></a>
-        </li>
-        <li class="nav-item text-nowrap">
-          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../../groups/index.html"><i class="bi bi-people-fill" style="font-size: 1.3rem;"></i><span class="small">GROUPS</span></a>
-        </li>
-        <li class="nav-item text-nowrap">
-          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="../../projects/index.html"><i class="bi bi-kanban-fill" style="font-size: 1.3rem;"></i><span class="small">PROJECTS</span></a>
-        </li>
-        <li class="nav-item text-nowrap">
-          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="https://github.com/PrZ3r/MSRBot.io" target="_blank" ><i class="bi bi-github" style="font-size: 1.3rem;"></i><span class="small">CONTRIBUTE</span></a>
-        </li>
-      </ul>
+  <nav class="navbar navbar-expand-md sticky-top bg-light d-flex px-3 border-bottom shadow">
+    <div class="container">
+      <div class="navbar-brand"><a class="clear-filter" href="#"><img src="../../static/MSRBot-PrZ3-blue.svg" alt="MSR" width="28" height="28" class="me-2"><img src="../../static/MSRBot-Logo-blue.svg" alt="MSR" height="28"></a></div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        
+        <ul class="navbar-nav ms-auto mb-lg-0">
+          <li class="nav-item text-nowrap">
+            <a id="nav-home" class="nav-link d-flex flex-column text-center" aria-current="page" href="../../index.html"><i class="bi bi-house-fill" style="font-size: 1.3rem;"></i><span class="small">HOME</span></a>
+          </li>
+          <li class="nav-item text-nowrap">
+            <a id="nav-docs" class="nav-link d-flex flex-column text-center" aria-current="page" href="../../docs/index.html"><i class="bi bi-file-richtext-fill" style="font-size: 1.3rem;"></i><span class="small">DOCS</span></a>
+          </li>
+          <li class="nav-item text-nowrap">
+            <a id="nav-reftree" class="nav-link d-flex flex-column text-center" aria-current="page" href="../../reftree/index.html"><i class="bi bi-diagram-3-fill" style="font-size: 1.3rem;"></i><span class="small">REF TREE</span></a>
+          </li>
+          <li class="nav-item text-nowrap">
+            <a id="nav-groups" class="nav-link d-flex flex-column text-center" aria-current="page" href="../../groups/index.html"><i class="bi bi-people-fill" style="font-size: 1.3rem;"></i><span class="small">GROUPS</span></a>
+          </li>
+          <li class="nav-item text-nowrap">
+            <a id="nav-projects" class="nav-link d-flex flex-column text-center" aria-current="page" href="../../projects/index.html"><i class="bi bi-kanban-fill" style="font-size: 1.3rem;"></i><span class="small">PROJECTS</span></a>
+          </li>
+          <li class="nav-item text-nowrap">
+            <a class="nav-link d-flex flex-column text-center" aria-current="page" href="https://github.com/PrZ3r/MSRBot.io" target="_blank" ><i class="bi bi-github" style="font-size: 1.3rem;"></i><span class="small">CONTRIBUTE</span></a>
+          </li>
+        </ul>
 
-      <ul class="navbar-nav d-print-none ms-auto">
-        <li class="nav-item">
-          <a id="json-feed" target="_blank" class="nav-link" href="https://raw.githubusercontent.com/PrZ3r/MSRBot.io/master/src/main/data/.json">API <i class="bi bi-code-slash" width="1em" height="1em" viewBox="0 0 16 16"></i></a>
-        </li>
-        <li class="nav-item">
-          <a href="javascript:void(0)" onclick="window.print();return false;" class="nav-link" title="Print Page">Print <i class="bi bi-printer" width="1em" height="1em" viewBox="0 0 16 16"></i></a>
-        </li>
-        <li class="nav-item">
-          <a id="csv-download" target="_blank" class="nav-link" title="Download as CSV" href="../../">CSV <i class="bi bi-table" width="1em" height="1em" viewBox="0 0 16 16"></i></a>
-        </li>
-      </ul>
+        <ul class="navbar-nav d-print-none ms-auto">
+          <li class="nav-item">
+            <a id="json-feed" target="_blank" class="nav-link" href="https://raw.githubusercontent.com/PrZ3r/MSRBot.io/master/src/main/data/.json">API <i class="bi bi-code-slash" width="1em" height="1em" viewBox="0 0 16 16"></i></a>
+          </li>
+          <li class="nav-item">
+            <a id="csv-download" target="_blank" class="nav-link" title="Download as CSV" href="../../">CSV <i class="bi bi-table" width="1em" height="1em" viewBox="0 0 16 16"></i></a>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
   <a href="#" id="toTopBtn" class="cd-top text-replace js-cd-top cd-top--is-visible cd-top--fade-out" data-abc="true"></a>
@@ -471,31 +470,32 @@
 <!-- Main content ends - do not edit below this line -->
   <footer class="page-footer font-small">
     <div class="container p-3 pb-0">
-      <div class="row justify-content-md-center border-bottom d-flex">
-        <div class="col text-center p-3">
-        <small class="text-muted">
-            Site version: <code>4bf2dae1457aec29a5e6c4d91972ec93ce0cad2b</code>
-            <br>Generated on: <code>Thu Nov 20 2025 06:03:06 GMT+0000 (Coordinated Universal Time)</code>
+      <div class="row justify-content-center d-flex flex-wrap">
+        <div class="col col-md-5 col-auto d-flex text-start">
+          <small class="text-muted">
+            <p>
+              <span class="fw-semibold">Site version:</span> <code>8b358392efc5188c1280360bb699e5fd16483d29</code>
+              <br><span class="fw-semibold">Generated on:</span> <code>Thu Nov 20 2025 22:05:28 GMT+0000 (Coordinated Universal Time)</code>
+            </p>
+            <p>
+              :: GO TO <i class="bi bi-github"></i> <a href="https://github.com/PrZ3r/MSRBot.io" target="_blank">https://github.com/PrZ3r/MSRBot.io</a> <i class="bi bi-github"></i> TO CONTRIBUTE ::
+            </p>
           </small>
         </div>
-      </div>
-      <div class="footer-copyright row justify-content-md-center d-flex py-2 bg-white">
-        <div class="col-md-6 col-lg-6 col-xl-6 p-3 text-center">
+     
+        <div class="footer-copyright col col-auto d-flex col-md-7 text-end">
           <small class="text-muted">
             <p>
               ALL INFORMATION PRESENTED HERE IS STRICTLY VOLUNTARY, SHOULD NOT BE USED FOR IMPLEMENTING PRODUCTS, NO WARRANTY EXPRESSED OR IMPLIED. PROVIDED FOR CONVENIENCE ONLY, USE AT YOUR OWN RISK. 
             </p>
             <p>
-              MIT License: Copyright © 2025 <a href="https://github.com/SteveLLamb/" target="_blank">Steve LLamb</a> and <a href="https://github.com/PrZ3r/" target="_blank">PrZ3</a>
-              <br><span class="fst-italic">
-              See <a href="https://github.com/PrZ3r/MSRBot.io/blob/main/LICENSE.md" target="_blank">LICENSE</a> for Data Disclaimer.</span>
+              Copyright © 2025 <a href="https://github.com/SteveLLamb/" target="_blank">Steve LLamb</a> and <a href="https://github.com/PrZ3r/" target="_blank">PrZ3</a>; <span class="fst-italic">
+              See <a href="https://github.com/PrZ3r/MSRBot.io/blob/main/LICENSE.md" target="_blank">LICENSE</a> and <a href="https://github.com/PrZ3r/MSRBot.io/blob/main/README.md" target="_blank">README</a> for Data Disclaimer.</span>
             </p>
-            <p>
-              :: GO TO <i class="bi bi-github"></i> <a href="https://github.com/PrZ3r/MSRBot.io" target="_blank">https://github.com/PrZ3r/MSRBot.io</a> <i class="bi bi-github"></i> TO CONTRIBUTE ::
-            </p>
+            
           </small> 
         </div>
-      </div>
+      </div>  
     </div>
   </footer> 
 </body>

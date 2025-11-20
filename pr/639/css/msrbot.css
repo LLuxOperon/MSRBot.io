@@ -37,9 +37,10 @@ div.dtsp-panesContainer {
 }
 
 body {
-    margin-right: 15px;
-    margin-left: 15px;
+    margin-right: 0px;
+    margin-left: 0px;
     font-family: 'Lato', sans-serif !important;
+    background-color: #e1e0dd;  
 }
 
 a {
@@ -211,6 +212,17 @@ pre {
   }
 }
 
+/* Shared status badge container: subtle gradient pill to make status pop */
+.status-badges {
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px; /* pill-like background */
+  background: linear-gradient(
+    90deg,
+    rgba(19, 152, 176, 0.12),
+    rgba(19, 152, 176, 0)
+  );
+}
+
 /* Badge for card metadata (e.g., publisher, docType, year, DOI) */
 .badge-reg {
     background-color: #1398b0;
@@ -279,7 +291,12 @@ pre {
 }
 
 :root {
-  --msr-navbar-height: 72.55px; 
+  --msr-navbar-height: 64px; 
+}
+
+.navbar {
+  padding-top: 0.25rem;
+  padding-bottom: 0.0rem;
 }
 
 .navbar.sticky-top {
@@ -287,19 +304,39 @@ pre {
   z-index: 1030; /* Bootstrap default for sticky nav */
 }
 
+a.nav-link,
+a.nav-link:hover,
+a.nav-link:focus {
+  text-decoration: none;
+}
+
+/* LinkedIn-style thick underline for active nav links */
+.navbar .nav-link.active {
+  border-bottom: 3px solid #1398b0;
+  color: #1398b0 !important;
+  font-weight: 600;
+}
+
+.navbar .nav-link {
+  padding-bottom: 0.4rem;
+}
+
+.navbar .nav-link {
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
 #cards-topbar.sticky-top {
   position: sticky;
   top: calc(var(--msr-navbar-height) + 0.0rem);
   /*top: 65px; /* height of your navbar */
   z-index: 1020; /* slightly below navbar so it stays under dropdowns */
-  background-color: #fff;
 }
 
 #ref-root-topbar.sticky-top {
   position: sticky;
   top: calc(var(--msr-navbar-height) + 0.0rem);
   z-index: 1020; /* same layer as cards-topbar, under navbar */
-  background-color: #fff;
+  background-color: #e1e0dd;
 }
 
 /* Facet accordion cleanup */
@@ -459,6 +496,10 @@ img.publisher-logo  {
     gap: .25rem;
     margin-bottom: .25rem;
   }
+}
+
+#pager-bottom {
+  background-color: #e1e0dd; 
 }
 
 /* Reference tree connector styling (scoped to refTree page) */
