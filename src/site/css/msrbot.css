@@ -88,7 +88,7 @@ pre {
     position: fixed;
     bottom: 40px;
     right: 40px;
-    z-index: 98;
+    z-index: 1020;
     padding: 21px;
     background-color: hsla(5, 76%, 62%, .8)
 } 
@@ -517,6 +517,7 @@ img.publisher-logo  {
 
 #pager-bottom {
   background-color: #e1e0dd; 
+  z-index: 1010; 
 }
 
 /* Reference tree connector styling (scoped to refTree page) */
