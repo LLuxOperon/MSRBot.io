@@ -515,7 +515,8 @@ img.publisher-logo  {
   }
 }
 
-#pager-bottom {
+#pager-bottom,
+#groupPagerBottom {
   background-color: #e1e0dd; 
   z-index: 1010; 
 }

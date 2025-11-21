@@ -3,12 +3,25 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!cards.length) return;
 
   const searchInput       = document.getElementById('groupSearch');
+  const pageSizeSelect    = document.getElementById('groupPageSize');
   const clearBtn          = document.getElementById('groupClearFilters');
+
   const resultCountEl     = document.getElementById('groupResultCount');
+  const totalCountEl      = document.getElementById('groupTotalCount');
   const filterSummaryEl   = document.getElementById('groupFilterSummary');
   const activeFiltersEl   = document.getElementById('groupActiveFilters');
   const resultsLineEl     = document.getElementById('groupResultsLine');
   const totalGroups       = cards.length;
+
+  // pager bits
+  const prevBtn           = document.getElementById('groupPrevPage');
+  const nextBtn           = document.getElementById('groupNextPage');
+  const prevBtnBottom     = document.getElementById('groupPrevPageBottom');
+  const nextBtnBottom     = document.getElementById('groupNextPageBottom');
+  const pageNumsEl        = document.getElementById('groupPageNums');
+  const pageNumsBottomEl  = document.getElementById('groupPageNumsBottom');
+  const pageMetaEl        = document.getElementById('groupPageMeta');
+  const pageMetaBottomEl  = document.getElementById('groupPageMetaBottom');
 
   const facetRoot         = document.getElementById('groupFacet');
   const facetDrawerBody   = document.getElementById('groupFacetDrawerBody');
@@ -19,6 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
     tc:     new Set(),
     type:   new Set(),
     status: new Set(),
+    page:   1,
+    size:   20,
   };
 
   // --- Build basic map for TC ancestry: id -> { id, type, parent }
@@ -31,6 +46,57 @@ document.addEventListener('DOMContentLoaded', () => {
       parent: ds.parentId || ''
     });
   });
+
+  // --- URL sync (page/size/search/filters) ---
+  function initFromURL(){
+    try {
+      const sp = new URLSearchParams(window.location.search);
+      const p = parseInt(sp.get('page'), 10);
+      const s = parseInt(sp.get('size'), 10);
+      if (Number.isFinite(p) && p >= 1) state.page = p;
+      if (Number.isFinite(s) && s > 0) state.size = s;
+
+      const q = sp.get('q');
+      if (typeof q === 'string') state.search = q;
+
+      sp.forEach((val, key) => {
+        if (!key.startsWith('f.')) return;
+        const facet = key.slice(2);
+        const arr = String(val).split(',').map(x => x.trim()).filter(Boolean);
+        const set = state[facet];
+        if (set instanceof Set) arr.forEach(v => set.add(v));
+      });
+    } catch {}
+  }
+
+  function updateURLAll(push){
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.set('page', String(state.page));
+      url.searchParams.set('size', String(state.size));
+
+      if (state.search && String(state.search).trim() !== '') {
+        url.searchParams.set('q', String(state.search).trim());
+      } else {
+        url.searchParams.delete('q');
+      }
+
+      const toDelete = [];
+      url.searchParams.forEach((_, key) => { if (key.startsWith('f.')) toDelete.push(key); });
+      toDelete.forEach(k => url.searchParams.delete(k));
+
+      ['org','tc','type','status'].forEach(k => {
+        const set = state[k];
+        if (set instanceof Set && set.size) {
+          url.searchParams.set(`f.${k}`, Array.from(set).map(String).join(','));
+        }
+      });
+
+      if (push) window.history.pushState({}, '', url);
+      else window.history.replaceState({}, '', url);
+    } catch {}
+  }
+  // --- end URL sync ---
 
   function findTcId(groupId) {
     let node = groupMap.get(groupId);
@@ -147,6 +213,8 @@ document.addEventListener('DOMContentLoaded', () => {
       set.add(value);
     }
     syncFacetInputs();
+    state.page = 1;
+    updateURLAll(true); 
     applyFilters();
   }
 
@@ -238,63 +306,179 @@ document.addEventListener('DOMContentLoaded', () => {
     syncFacetInputs();
   }
 
+  function renderPageNumbersInto(container, totalPages){
+    if (!container) return;
+    const p = state.page;
+    const max = totalPages;
+    const parts = [];
+
+    const makeBtn = (label, page, {active=false, disabled=false}={}) => (
+      `<button type="button" class="btn btn-outline-secondary btn-sm${active ? ' active' : ''}"`+
+      `${disabled ? ' disabled' : ''} data-page="${page}" aria-label="Page ${label}">${label}</button>`
+    );
+
+    const addRange = (from, to) => {
+      for (let i = from; i <= to; i++) parts.push(makeBtn(String(i), i, {active: i === p}));
+    };
+
+    if (max <= 7) {
+      addRange(1, max);
+    } else {
+      addRange(1, 2);
+      const start = Math.max(3, p - 1);
+      const end   = Math.min(max - 2, p + 1);
+      if (start > 3) parts.push(makeBtn('…', p, {disabled:true}));
+      addRange(start, end);
+      if (end < max - 2) parts.push(makeBtn('…', p, {disabled:true}));
+      addRange(max - 1, max);
+    }
+
+    container.innerHTML = parts.join('');
+  }
+
+  function wirePagerClicks(){
+    const handler = (e) => {
+      const btn = e.target.closest('button[data-page]');
+      if (!btn) return;
+      const page = parseInt(btn.getAttribute('data-page'), 10);
+      if (Number.isFinite(page)) {
+        state.page = page;
+        updateURLAll(true);
+        applyFilters();
+      }
+    };
+    if (pageNumsEl) pageNumsEl.addEventListener('click', handler);
+    if (pageNumsBottomEl) pageNumsBottomEl.addEventListener('click', handler);
+  }
+
   function applyFilters() {
     const search = state.search.trim().toLowerCase();
-    let visibleCount = 0;
 
+    const filtered = [];
     cards.forEach(card => {
       const ds = card.dataset;
-      let visible = true;
+      let ok = true;
 
       if (search) {
-        if (!ds.searchText || !ds.searchText.includes(search)) visible = false;
+        if (!ds.searchText || !ds.searchText.includes(search)) ok = false;
       }
-
-      if (visible && state.org.size) {
-        if (!state.org.has(ds.org)) visible = false;
-      }
-
-      if (visible && state.tc.size) {
+      if (ok && state.org.size && !state.org.has(ds.org)) ok = false;
+      if (ok && state.tc.size) {
         const tc = ds.tc || '';
-        if (!tc || !state.tc.has(tc)) visible = false;
+        if (!tc || !state.tc.has(tc)) ok = false;
       }
+      if (ok && state.type.size && !state.type.has(ds.type)) ok = false;
+      if (ok && state.status.size && !state.status.has(ds.status)) ok = false;
 
-      if (visible && state.type.size) {
-        if (!state.type.has(ds.type)) visible = false;
-      }
-
-      if (visible && state.status.size) {
-        if (!state.status.has(ds.status)) visible = false;
-      }
-
-      card.style.display = visible ? '' : 'none';
-      if (visible) visibleCount++;
+      if (ok) filtered.push(card);
     });
 
-    if (resultCountEl) {
-      resultCountEl.textContent = String(visibleCount);
-    }
+    const totalVisible = filtered.length;
     const total = totalGroups;
+    const size = Math.max(1, state.size || 20);
+    const totalPages = Math.max(1, Math.ceil(totalVisible / size));
+
+    if (state.page > totalPages) state.page = totalPages;
+    if (state.page < 1) state.page = 1;
+
+    const start = (state.page - 1) * size;
+    const end = start + size;
+    const pageSlice = filtered.slice(start, end);
+
+    const pageSet = new Set(pageSlice);
+    cards.forEach(card => {
+      card.style.display = pageSet.has(card) ? '' : 'none';
+    });
+
+    if (resultCountEl) resultCountEl.textContent = String(totalVisible);
+    if (totalCountEl) totalCountEl.textContent = String(total);
 
     if (resultsLineEl) {
-      if (!visibleCount) {
+      if (!totalVisible) {
         resultsLineEl.textContent = 'No groups found';
-      } else if (visibleCount < total) {
-        resultsLineEl.textContent =
-          `Showing ${visibleCount} of ${total} groups (filtered from ${total} total groups)`;
       } else {
-        resultsLineEl.textContent = `Showing ${visibleCount} of ${total} groups`;
+        const startNum = start + 1;
+        const endNum = Math.min(end, totalVisible);
+        const isFiltered = (state.org.size || state.tc.size || state.type.size || state.status.size || search);
+        const filteredSuffix = isFiltered && totalVisible < total
+          ? ` (filtered from ${total} total)`
+          : '';
+        resultsLineEl.textContent = `Showing ${startNum}–${endNum} of ${totalVisible} groups${filteredSuffix}`;
       }
     }
 
-    // Keep the total count span in sync if present
-    const totalEl = document.getElementById('groupTotalCount');
-    if (totalEl) {
-      totalEl.textContent = String(total);
-    }
+    const canPrev = state.page > 1;
+    const canNext = state.page < totalPages;
+    if (prevBtn) prevBtn.disabled = !canPrev;
+    if (nextBtn) nextBtn.disabled = !canNext;
+    if (prevBtnBottom) prevBtnBottom.disabled = !canPrev;
+    if (nextBtnBottom) nextBtnBottom.disabled = !canNext;
+
+    if (pageMetaEl) pageMetaEl.textContent = `Page ${state.page} of ${totalPages}`;
+    if (pageMetaBottomEl) pageMetaBottomEl.textContent = `Page ${state.page} of ${totalPages}`;
+
+    renderPageNumbersInto(pageNumsEl, totalPages);
+    renderPageNumbersInto(pageNumsBottomEl, totalPages);
 
     renderActiveFilters();
     updateFilterSummary();
+
+    return filtered;
+  }
+
+  function findIndexById(list, id){
+    if (!id) return -1;
+    return list.findIndex(card => String(card.dataset.groupId) === String(id));
+  }
+
+  function highlightAndScrollTo(id){
+    const anchor = document.getElementById(id);
+    if (!anchor) return;
+    const card = anchor.closest('.group-card') || anchor;
+    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    const prevOutline = card.style.outline;
+    const prevShadow = card.style.boxShadow;
+    card.style.outline = '2px solid #1398b0';
+    card.style.boxShadow = '0 0 0 4px rgba(19,152,176,0.15)';
+    setTimeout(()=>{
+      card.style.outline = prevOutline || '';
+      card.style.boxShadow = prevShadow || '';
+    }, 1600);
+  }
+
+  function navigateToCardById(id){
+    if (!id) return;
+    let rows = applyFilters();
+    let pos = findIndexById(rows, id);
+
+    if (pos === -1) {
+      state.search = '';
+      state.org.clear();
+      state.tc.clear();
+      state.type.clear();
+      state.status.clear();
+      rows = applyFilters();
+      pos = findIndexById(rows, id);
+      if (pos === -1) return;
+    }
+
+    const targetPage = Math.floor(pos / state.size) + 1;
+    state.page = targetPage;
+    updateURLAll(true);
+    applyFilters();
+
+    requestAnimationFrame(() => requestAnimationFrame(() => highlightAndScrollTo(id)));
+  }
+
+  function initHashDeepLink(){
+    const h = (window.location.hash || '').replace(/^#/, '').trim();
+    if (h) navigateToCardById(h);
+
+    window.addEventListener('hashchange', () => {
+      const hh = (window.location.hash || '').replace(/^#/, '').trim();
+      if (hh) navigateToCardById(hh);
+    });
   }
 
   function renderActiveFilters() {
@@ -339,7 +523,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!(set instanceof Set)) return;
 
         set.delete(value);
-
+        state.page = 1;
+        updateURLAll(true);
         syncFacetInputs();
         applyFilters();
       });
@@ -356,7 +541,8 @@ document.addEventListener('DOMContentLoaded', () => {
         state.status.clear();
 
         if (searchInput) searchInput.value = '';
-
+        state.page = 1;
+        updateURLAll(true);     
         syncFacetInputs();
         applyFilters();
       });
@@ -393,6 +579,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (searchInput) {
     searchInput.addEventListener('input', () => {
       state.search = searchInput.value || '';
+      state.page = 1;
+      updateURLAll(true);
       applyFilters();
     });
   }
@@ -408,14 +596,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (searchInput) searchInput.value = '';
 
+      state.page = 1;
+      updateURLAll(true);
       syncFacetInputs();
       applyFilters();
     });
   }
 
-  // Build accordion facets for both sidebar and offcanvas drawer
+ // Init URL → state
+  initFromURL();
+
+  // Prime UI from URL state
+  if (searchInput && state.search) searchInput.value = state.search;
+  if (pageSizeSelect) pageSizeSelect.value = String(state.size);
+
+  // Build facets
   buildFacetAccordions();
 
-  // Initial sync + render
+  // Pager wiring
+  const goPrev = () => {
+    if (state.page > 1) {
+      state.page--;
+      updateURLAll(true);
+      applyFilters();
+    }
+  };
+  const goNext = () => {
+    state.page++;
+    updateURLAll(true);
+    applyFilters();
+  };
+
+  if (prevBtn) prevBtn.addEventListener('click', goPrev);
+  if (nextBtn) nextBtn.addEventListener('click', goNext);
+  if (prevBtnBottom) prevBtnBottom.addEventListener('click', goPrev);
+  if (nextBtnBottom) nextBtnBottom.addEventListener('click', goNext);
+  wirePagerClicks();
+
+  if (pageSizeSelect) {
+    pageSizeSelect.addEventListener('change', () => {
+      const v = parseInt(pageSizeSelect.value, 10);
+      if (Number.isFinite(v) && v > 0) state.size = v;
+      state.page = 1;
+      updateURLAll(true);
+      applyFilters();
+    });
+  }
+
+  // Initial render
   applyFilters();
+
+  // Hash deep-link support
+  initHashDeepLink();
 });

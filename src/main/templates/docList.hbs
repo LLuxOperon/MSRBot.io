@@ -115,12 +115,12 @@
     </header>
 
     <div class="meta mb-1 small text-muted d-flex flex-wrap align-items-center gap-1">
-      {{#if publisher}}<span class="badge-reg">{{publisher}}</span>{{/if}}
-      {{#if docType}}<span class="badge-reg">{{docType}}</span>{{/if}}
-      {{#if year}}<span class="badge-reg">{{year}}</span>{{/if}}
-      {{#if hasReleaseTag}}<span class="badge-reg">releaseTag</span>{{/if}}
+      {{#if publisher}}<span class="badge-reg"><a href="?f.publisher={{publisher}}">{{publisher}}</a></span>{{/if}}
+      {{#if docType}}<span class="badge-reg"><a href="?f.docType={{docType}}">{{docType}}</a></span>{{/if}}
+      {{#if year}}<span class="badge-reg"><a href="?f.year={{year}}">{{year}}</a></span>{{/if}}
+      {{#if hasReleaseTag}}<span class="badge-reg">releaseTag: <a href="?q={{releaseTag}}">{{releaseTag}}</a></span>{{/if}}
       {{#if (hasAny groupNames)}}
-        <span class="badge-reg">{{join groupNames ", "}}</span>
+        <span class="badge-reg"><a href="../groups/#{{group}}">{{join groupNames ", "}}</a></span>
       {{/if}}
       {{#if (hasAny currentWork)}}<span class="badge-reg badge-work">{{join currentWork ", "}}</span>{{/if}}
       {{#if doi}}

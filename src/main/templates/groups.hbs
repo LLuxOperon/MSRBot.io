@@ -10,8 +10,18 @@
         <i class="bi bi-funnel"></i> Filters
       </button>
       <input id="groupSearch" type="search" class="form-control flex-grow-1" placeholder="Search Groups…">
+      <div class="input-group input-group-sm w-auto" aria-label="Results per page">
+        <span class="input-group-text">Per page</span>
+        <select id="groupPageSize" class="form-select">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="20">20</option>
+          <option value="40" selected>40</option>
+          <option value="100">100</option>
+        </select>
+      </div>
+      <div id="groupActiveFilters" class="d-flex flex-wrap align-items-center gap-1"></div>
     </div>
-    <div id="groupActiveFilters" class="d-flex flex-wrap align-items-center gap-1 mt-2"></div>
   </div>
 </div>
 
@@ -19,15 +29,22 @@
   <div class="row g-3">
     <!-- Facets: built dynamically by groups.js from card data -->
     <aside id="groupFacet" class="col-lg-3 d-none d-lg-block"><!-- Facets injected here --></aside>
-
-    <section id="groups-main" class="col-lg-9">
+    <section id="groupCardsMain" class="col-lg-9">
       <div id="groupResultsLine" class="text-muted small mb-2">
-        Showing <strong id="groupResultCount">{{len data}}</strong> of <strong id="groupTotalCount">{{len data}}</strong> groups
+        Showing <strong id="groupResultCount">{{len data}}</strong> groups
       </div>
-
+      <div class="sticky pt-2">
+        <nav id="groupPager" class="d-flex justify-content-between align-items-center mb-2">
+          <div class="btn-group">
+            <button id="groupPrevPage" type="button" class="btn btn-outline-secondary btn-sm">Prev</button>
+            <button id="groupNextPage" type="button" class="btn btn-outline-secondary btn-sm">Next</button>
+          </div>
+          <div id="groupPageNums" class="btn-group"></div>
+          <div id="groupPageMeta" class="small text-muted">Page 1 of 1</div>
+        </nav>
+      </div>
       <div id="groupCards" class="cards">
         {{#data}}
-
         <article
           class="card-reg group-card mb-2"
           data-org="{{groupOrg}}"
@@ -44,7 +61,6 @@
         >
           <header class="d-flex align-items-start gap-2 mb-1">
             <a class="anchor" id="{{groupId}}" href="#{{groupId}}"></a>
-
             <div class="flex-grow-1">
               <h3 class="h6 mb-1">
                 <code class="me-1">{{groupId}}</code>
@@ -53,7 +69,6 @@
                 </a>
               </h3>
             </div>
-
             <div class="status-badges d-flex gap-1 flex-wrap ms-auto justify-content-end text-end">
               {{#ifeq groupStatus.active true}}
                 <span class="badge text-bg-success">Active</span>
@@ -66,7 +81,6 @@
               {{/if}}
             </div>
           </header>
-
           <div class="small text-muted mb-1">
             {{#if parentgroupId}}
               {{#with (groupIdLookup ../data parentgroupId)}}
@@ -86,7 +100,6 @@
             <span class="ms-auto">Link: <a href="{{groupLink}}" target="_blank" rel="noopener">{{groupLink}}</a></span>
             {{/if}}
           </div>
-
           <div class="small mb-2">
             {{groupSummary}}
             {{#ifeq groupStatus/active false}}
@@ -115,7 +128,6 @@
               </span>
             {{/ifeq}}
           </div>
-
           <div class="small text-muted d-flex flex-wrap align-items-center gap-2 mb-1">
             {{#if groupType}}
               <span class="badge-reg">{{groupType}}</span>
@@ -127,16 +139,13 @@
               <span class="badge-reg">Closed</span>
             {{/ifeq}}
           </div>
-
           <div class="small mt-1 d-flex flex-wrap align-items-center gap-2">
             {{#if groupRepo}}
               <a href="{{groupRepo}}" target="_blank" class="badge-reg text-decoration-none">Repo</a>
             {{/if}}
-
             {{#ifeq groupType "TC"}}
-              <a href="../docs/?f.group={{groupId}}#" class="badge-reg text-decoration-none">Published Docs</a>
+              <a href="../docs/?f.group={{groupId}}" class="badge-reg text-decoration-none">Published Docs</a>
             {{/ifeq}}
-
             {{#if groupType}}
               <a
                 href="../projects/{{../htmlLink}}?search.search={{spaceReplace groupOrg}}{{#if parentgroupId}}{{#with (groupIdLookup ../data parentgroupId)}}%20{{spaceReplace groupName}}{{/with}}{{/if}}%20{{spaceReplace groupName}}{{#if groupDesc}}%20{{spaceReplace groupDesc}}{{/if}}"
@@ -145,7 +154,6 @@
                 Projects
               </a>
             {{/if}}
-
             {{#if groupDocs}}
               <a href="{{groupDocs}}" target="_blank" class="badge-reg text-decoration-none">Documents</a>
             {{/if}}
@@ -158,6 +166,16 @@
           </div>
         </article>
         {{/data}}
+      </div>
+      <div id="groupPagerBottom" class="sticky-bottom py-2">
+        <nav class="d-flex justify-content-between align-items-center">
+          <div class="btn-group">
+            <button id="groupPrevPageBottom" type="button" class="btn btn-outline-secondary btn-sm">Prev</button>
+            <button id="groupNextPageBottom" type="button" class="btn btn-outline-secondary btn-sm">Next</button>
+          </div>
+          <div id="groupPageNumsBottom" class="btn-group"></div>
+          <div id="groupPageMetaBottom" class="small text-muted">Page 1 of 1</div>
+        </nav>
       </div>
     </section>
   </div>

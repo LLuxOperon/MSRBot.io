@@ -238,6 +238,7 @@ const squash = s => compact(s).replace(/\s+/g, ' ');
       year,
       hasDoi: Boolean(d.doi),
       doi: d.doi || null,
+      releaseTag: d.releaseTag,
       hasReleaseTag: Boolean(d.releaseTag),
       authors: d.authors,
       group,
