@@ -80,7 +80,7 @@
     "groupStatus": {
       "active": true
     },
-    "groupType": "SC"
+    "groupType": "TC"
   },
   {
     "groupId": "smpte-01sc-cg",
@@ -369,10 +369,11 @@
   },
   {
     "groupCal": "https://teams.microsoft.com/l/channel/19%3Ac3ff6a01de044d65b533856f97106ccb%40thread.tacv2/tab%3A%3A3ba6ba5f-66b2-44f7-8822-0947b89aa312?context=%7B%22channelId%22%3A%2219%3Ac3ff6a01de044d65b533856f97106ccb%40thread.tacv2%22%7D&tenantId=c6051a58-269b-4f08-835f-eedebf4596b3",
+    "groupDesc": "Document Maintenance (DX)",
     "groupDocs": "https://smpte.sharepoint.com/sites/21DC-DocumentMaintenance/Shared%20Documents/Forms/AllItems.aspx",
     "groupId": "smpte-27c-tcwg-dx",
     "groupLink": "https://teams.microsoft.com/l/channel/19%3Ac3ff6a01de044d65b533856f97106ccb%40thread.tacv2/General?groupId=3e990441-c8ba-4b93-8a37-825355479680&tenantId=c6051a58-269b-4f08-835f-eedebf4596b3",
-    "groupName": "10 - Document Maintenance",
+    "groupName": "-10",
     "groupOrg": "SMPTE",
     "groupStatus": {
       "active": true

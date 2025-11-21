@@ -1,96 +1,178 @@
-  {{>header}}
-    <!-- Main content starts - do not edit above this line -->
-  <div class="container mt-3">
-    <table id="sorttableGroups" class="table table-small table-hover">
-      <thead class="thead-light">
-        <tr>
-          <th scope="col" class="d-none"></th>
-          <th scope="col">Organization</th>
-          <th scope="col" class="col-2">Group</th>
-          <th scope="col" class="text-center text-nowrap">Group Type</th>
-          <th scope="col" class="d-none"></th>
-          <th scope="col">Status</th>
-          <th scope="col" class="col-3">Description</th>
-          <th scope="col" class="d-none"></th>
-          <th scope="col" class="col-2 text-nowrap">Parent Group</th>
-          <th scope="col"></th>
-          <th scope="col"></th>
-          <th scope="col"></th>
-          <th scope="col"></th>
-          <th scope="col"></th>
-          <th scope="col"></th>
-        </tr>
-      </thead>
-      <tbody id="searchTable">
-        {{#data}}
-        <tr id="{{../idType}}-{{groupId}}" {{#ifeq groupStatus/pending true}}class="pending"{{/ifeq}}>
-          <td class="grouplabel d-none">
-            <code>{{groupId}}</code>
-          </td>
-          <td>
-            <a class="anchor" id="{{groupId}}" href="#{{groupId}}"></a>{{groupOrg}}
-          </td>
-          <td>
-            {{#if groupLink}}<a href="{{groupLink}}" target="_blank">{{/if}}{{#if parentgroupId}}{{#with (groupIdLookup ../data parentgroupId)}}{{#ifnoteq groupType "TC"}}{{#with (groupIdLookup ../../data parentgroupId)}}{{groupName}}{{/with}} {{/ifnoteq}}{{#ifeq groupType "TC"}}{{groupName}}{{/ifeq}} - {{/with}}{{/if}}{{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}}{{#if groupLink}}</a>{{/if}}
-          </td>
-          <td class="text-center">
-            {{groupType}}
-          </td>
-          <td class="d-none">
-            {{#ifeq groupStatus/active true}}Active{{/ifeq}}{{#ifeq groupStatus/active false}}Closed{{/ifeq}}{{#ifeq groupStatus/pending true}}Pending{{/ifeq}}
-          </td>
-          <td>
-            {{#ifeq groupStatus/active true}}<span class="label badge text-bg-success">Active</span>{{/ifeq}}{{#ifeq groupStatus/active false}}<span class="label badge text-bg-warning">Closed</span>{{/ifeq}}{{#ifeq groupStatus/pending true}}<span class="label badge text-bg-warning">Pending</span>{{/ifeq}}
-          </td>
-          <td>
-            {{groupSummary}}
-            {{#ifeq groupStatus/active false}}<span class="font-weight-bold small"><em>** NOTE: This group is no longer active{{#if groupStatus/assignedGroup}}; all work and documents (published, in draft, and repos) have been reassigned to: {{#groupStatus/assignedGroup}}{{#unless @first}}, {{/unless}}{{#with (groupIdLookup ../../data this)}}<a class="group-link clear-filter" href="#{{groupId}}">{{groupOrg}} {{#if parentgroupId}}{{#with (groupIdLookup ../../../data parentgroupId)}}{{#if parentgroupId}}{{#with (groupIdLookup ../../../../data parentgroupId)}}{{groupName}}{{/with}} {{/if}}{{groupName}}{{/with}} {{/if}}{{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}}{{#if groupLink}}{{/if}}</a>{{/with}}{{/groupStatus/assignedGroup}}{{/if}}. **</em></span>{{/ifeq}}
-          </td>
-          <td class="d-none">
-            {{#ifeq groupType "TC"}}{{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}}{{/ifeq}}
-            {{#if parentgroupId}}{{#with (groupIdLookup ../data parentgroupId)}}
-            {{#ifeq groupType "TC"}}{{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}}{{/ifeq}}
-            {{#ifnoteq groupType "TC"}}{{#with (groupIdLookup ../../data parentgroupId)}}{{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}}{{/with}}{{/ifnoteq}}{{/with}}{{/if}}
-          </td>
-          <td>
-            {{#if parentgroupId}}{{#with (groupIdLookup ../data parentgroupId)}}<a class="group-link clear-filter" href="#{{groupId}}">{{groupOrg}} {{#ifnoteq groupType "TC"}}{{#with (groupIdLookup ../../data parentgroupId)}}{{groupName}}{{/with}} - {{/ifnoteq}} {{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}} {{groupType}}</a>{{/with}}{{/if}}
-          </td>
-          <td class="text-center">
-            {{#if groupRepo}}
-            <a href="{{groupRepo}}" target="_blank">Repo</a>
-            {{/if}}
-          </td>
-          <td>
-            {{#ifeq groupType "TC"}}
-            <a href="../docs/?f.group={{groupId}}#">Published</a>
-            {{/ifeq}}
-          </td>
-          <td>
-            {{#if groupType}}
-            <a href="../projects/{{../htmlLink}}?search.search={{spaceReplace groupOrg}}{{#if parentgroupId}}{{#with (groupIdLookup ../dataGroups parentgroupId)}}%20{{spaceReplace groupName}}{{/with}}{{/if}}%20{{spaceReplace groupName}}{{#if groupDesc}}%20{{spaceReplace groupDesc}}{{/if}}">Projects</a>
-            {{/if}}
-          </td>
-          <td class="text-center">
-            {{#if groupDocs}}
-            <a href="{{groupDocs}}" target="_blank">Documents</a>
-            {{/if}}
-          </td>
-          <td class="text-center">
-            {{#if groupCal}}
-            <a href="{{groupCal}}" target="_blank">Calendar</a>
-            {{/if}}
-          </td>
-          <td class="text-center">
-            {{#if groupBallots}}
-            <a href="{{groupBallots}}" target="_blank">Ballots</a>
-            {{/if}}
-          </td>
-          
-        </tr>
-        {{/data}}
-      </tbody>
-    </table>
+{{> header}}
+<!-- Main content starts - do not edit above this line -->
 
+<div id="groups-topbar" class="sticky-top border-bottom">
+  <div class="container px-3 py-2 bg-white">
+    <div id="groupFilterSummary" class="text-muted small mb-1"></div>
+    <div id="groupToolbar" class="d-flex flex-wrap align-items-center gap-2">
+      <button class="btn btn-outline-secondary d-lg-none" type="button"
+        data-bs-toggle="offcanvas" data-bs-target="#groupFacetDrawer" aria-controls="groupFacetDrawer">
+        <i class="bi bi-funnel"></i> Filters
+      </button>
+      <input id="groupSearch" type="search" class="form-control flex-grow-1" placeholder="Search Groups…">
+    </div>
+    <div id="groupActiveFilters" class="d-flex flex-wrap align-items-center gap-1 mt-2"></div>
   </div>
-    <!-- Main content ends - do not edit below this line -->
-{{>footer}}
+</div>
+
+<div class="container mt-3">
+  <div class="row g-3">
+    <!-- Facets: built dynamically by groups.js from card data -->
+    <aside id="groupFacet" class="col-lg-3 d-none d-lg-block"><!-- Facets injected here --></aside>
+
+    <section id="groups-main" class="col-lg-9">
+      <div id="groupResultsLine" class="text-muted small mb-2">
+        Showing <strong id="groupResultCount">{{len data}}</strong> of <strong id="groupTotalCount">{{len data}}</strong> groups
+      </div>
+
+      <div id="groupCards" class="cards">
+        {{#data}}
+
+        <article
+          class="card-reg group-card mb-2"
+          data-org="{{groupOrg}}"
+          data-type="{{groupType}}"
+          data-status="{{#if groupStatus.active}}Active{{else}}Closed{{/if}}"
+          data-group-id="{{groupId}}"
+          data-group-name="{{groupName}}"
+          data-group-desc="{{groupDesc}}"
+          {{#if parentgroupId}}
+            {{#with (groupIdLookup ../data parentgroupId)}}
+              data-tc="{{groupId}}"
+            {{/with}}
+          {{/if}}
+        >
+          <header class="d-flex align-items-start gap-2 mb-1">
+            <a class="anchor" id="{{groupId}}" href="#{{groupId}}"></a>
+
+            <div class="flex-grow-1">
+              <h3 class="h6 mb-1">
+                <code class="me-1">{{groupId}}</code>
+                <a href="../docs/?f.group={{groupId}}" class="text-decoration-none">
+                  {{groupOrg}} {{#if parentgroupId}}{{#with (groupIdLookup ../data parentgroupId)}}{{#ifnoteq groupType "TC"}}{{#with (groupIdLookup ../../data parentgroupId)}}{{groupName}}{{/with}} {{/ifnoteq}}{{#ifeq groupType "TC"}}{{groupName}}{{/ifeq}} {{/with}}{{/if}}{{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}}
+                </a>
+              </h3>
+            </div>
+
+            <div class="status-badges d-flex gap-1 flex-wrap ms-auto justify-content-end text-end">
+              {{#ifeq groupStatus.active true}}
+                <span class="badge text-bg-success">Active</span>
+              {{/ifeq}}
+              {{#ifeq groupStatus.active false}}
+                <span class="badge text-bg-secondary">Closed</span>
+              {{/ifeq}}
+              {{#if groupType}}
+                <span class="badge text-bg-light border">{{groupType}}</span>
+              {{/if}}
+            </div>
+          </header>
+
+          <div class="small text-muted mb-1">
+            {{#if parentgroupId}}
+              {{#with (groupIdLookup ../data parentgroupId)}}
+                <span class="badge-reg">
+                  Parent: <a class="group-link clear-filter" href="#{{groupId}}">
+                    {{groupOrg}}
+                    {{#ifnoteq groupType "TC"}}
+                      {{#with (groupIdLookup ../../data parentgroupId)}}
+                        {{groupName}}
+                      {{/with}} {{/ifnoteq}}
+                    {{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}} {{groupType}}
+                  </a>
+                </span>
+              {{/with}}
+            {{/if}}
+            {{#if groupLink}}
+            <span class="ms-auto">Link: <a href="{{groupLink}}" target="_blank" rel="noopener">{{groupLink}}</a></span>
+            {{/if}}
+          </div>
+
+          <div class="small mb-2">
+            {{groupSummary}}
+            {{#ifeq groupStatus/active false}}
+              <span class="fw-bold small d-block mt-1">
+                <em>** NOTE: This group is no longer active{{#if groupStatus/assignedGroup}}; all work and documents (published, in draft, and repos) have been reassigned to:
+                  {{#groupStatus/assignedGroup}}
+                    {{#unless @first}}, {{/unless}}
+                    {{#with (groupIdLookup ../../data this)}}
+                      <a class="group-link clear-filter" href="#{{groupId}}">
+                        {{groupOrg}}
+                        {{#if parentgroupId}}
+                          {{#with (groupIdLookup ../../../data parentgroupId)}}
+                            {{#if parentgroupId}}
+                              {{#with (groupIdLookup ../../../../data parentgroupId)}}
+                                {{groupName}}
+                              {{/with}}
+                            {{/if}}
+                            {{groupName}}
+                          {{/with}}
+                        {{/if}}
+                        {{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}}
+                      </a>
+                    {{/with}}
+                  {{/groupStatus/assignedGroup}}
+                {{/if}}. **</em>
+              </span>
+            {{/ifeq}}
+          </div>
+
+          <div class="small text-muted d-flex flex-wrap align-items-center gap-2 mb-1">
+            {{#if groupType}}
+              <span class="badge-reg">{{groupType}}</span>
+            {{/if}}
+            {{#ifeq groupStatus.active true}}
+              <span class="badge-reg">Active</span>
+            {{/ifeq}}
+            {{#ifeq groupStatus.active false}}
+              <span class="badge-reg">Closed</span>
+            {{/ifeq}}
+          </div>
+
+          <div class="small mt-1 d-flex flex-wrap align-items-center gap-2">
+            {{#if groupRepo}}
+              <a href="{{groupRepo}}" target="_blank" class="badge-reg text-decoration-none">Repo</a>
+            {{/if}}
+
+            {{#ifeq groupType "TC"}}
+              <a href="../docs/?f.group={{groupId}}#" class="badge-reg text-decoration-none">Published Docs</a>
+            {{/ifeq}}
+
+            {{#if groupType}}
+              <a
+                href="../projects/{{../htmlLink}}?search.search={{spaceReplace groupOrg}}{{#if parentgroupId}}{{#with (groupIdLookup ../data parentgroupId)}}%20{{spaceReplace groupName}}{{/with}}{{/if}}%20{{spaceReplace groupName}}{{#if groupDesc}}%20{{spaceReplace groupDesc}}{{/if}}"
+                class="badge-reg text-decoration-none"
+              >
+                Projects
+              </a>
+            {{/if}}
+
+            {{#if groupDocs}}
+              <a href="{{groupDocs}}" target="_blank" class="badge-reg text-decoration-none">Documents</a>
+            {{/if}}
+            {{#if groupCal}}
+              <a href="{{groupCal}}" target="_blank" class="badge-reg text-decoration-none">Calendar</a>
+            {{/if}}
+            {{#if groupBallots}}
+              <a href="{{groupBallots}}" target="_blank" class="badge-reg text-decoration-none">Ballots</a>
+            {{/if}}
+          </div>
+        </article>
+        {{/data}}
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- Offcanvas drawer for facets on small screens -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="groupFacetDrawer" aria-labelledby="groupFacetDrawerLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="groupFacetDrawerLabel">Filters</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body" id="groupFacetDrawerBody"><!-- Facets cloned here --></div>
+</div>
+
+<script src="../js/groups.js"></script>
+
+<!-- Main content ends - do not edit below this line -->
+{{> footer}}

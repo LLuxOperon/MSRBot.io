@@ -312,6 +312,17 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     return [val];
   });
 
+  // Helper to set a transient status token on the current context for group cards
+  hb.registerHelper('setStatusToken', function (value, options) {
+    // Store a transient status token on the current context
+    if (options && options.data && options.data.root) {
+      options.data.root.statusToken = value;
+    } else {
+      this.statusToken = value;
+    }
+    return '';
+  });
+
   // Render a human-friendly label from a lineage key like "ISO||15444|1" → "ISO 15444-1"
   hb.registerHelper('formatLineageKey', function(key) {
     if (!key || typeof key !== 'string') return '';

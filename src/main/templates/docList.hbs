@@ -9,7 +9,7 @@
         data-bs-toggle="offcanvas" data-bs-target="#facetDrawer" aria-controls="facetDrawer">
         <i class="bi bi-funnel"></i> Filters
       </button>
-      <input id="q" type="search" class="form-control flex-grow-1" placeholder="Search…">
+      <input id="q" type="search" class="form-control flex-grow-1" placeholder="Search Docs…">
       <select id="sort" class="form-select w-auto">
         <option value="pubDate:desc">Latest</option>
         <option value="pubDate:asc">Oldest</option>
@@ -119,11 +119,9 @@
       {{#if docType}}<span class="badge-reg">{{docType}}</span>{{/if}}
       {{#if year}}<span class="badge-reg">{{year}}</span>{{/if}}
       {{#if hasReleaseTag}}<span class="badge-reg">releaseTag</span>{{/if}}
-      {{#unless hideGroup}}
-        {{#if (hasAny groupNames)}}
-          <span class="badge-reg">{{join groupNames ", "}}</span>
-        {{/if}}
-      {{/unless}}
+      {{#if (hasAny groupNames)}}
+        <span class="badge-reg">{{join groupNames ", "}}</span>
+      {{/if}}
       {{#if (hasAny currentWork)}}<span class="badge-reg badge-work">{{join currentWork ", "}}</span>{{/if}}
       {{#if doi}}
         <span class="badge-reg">DOI: {{{doiLink doi}}}</span>
