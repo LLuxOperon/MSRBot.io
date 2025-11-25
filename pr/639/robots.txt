@@ -2,7 +2,6 @@
 # Managed by PrZ3 Unit — Penguin Parsing Protocol v3-Gen
 User-agent: *
 Allow: /
-Disallow: /docs/
 Disallow: /tmp/
 Disallow: /pr/
 

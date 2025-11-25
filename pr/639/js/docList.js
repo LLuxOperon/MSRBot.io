@@ -435,6 +435,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       d.id || '',
       d.publisher || '',
       d.doi || '',
+      d.releaseTag || '',
       d.publicationDate || '',
       ...(Array.isArray(d.groupNames) ? d.groupNames : []),
       ...(Array.isArray(d.group) ? d.group : []),
@@ -548,7 +549,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   var hayById = null;
   if (hasMini) {
     mini = new window.MiniSearch({
-      fields: ['title','label','id','keywords','keywordsSearch','currentWork','publisher','doi','group','groupNames','publicationDate'],
+      fields: ['title','label','id','keywords','keywordsSearch','currentWork','publisher','doi','releaseTag','group','groupNames','publicationDate'],
       storeFields: ['id'],
       searchOptions: {
         // Stronger signal on human-facing identifiers; curated keywords beat assembled tokens
@@ -563,6 +564,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
           group: 1,
           currentWork: 1,
           doi: 1,
+          releaseTag: 1,
           publicationDate: 2
         },
         combineWith: 'AND',
@@ -580,6 +582,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       currentWork: toStr(r.currentWork),
       publisher: r.publisher || '',
       doi: r.doi || '',
+      releaseTag: r.releaseTag || '',
       publicationDate: r.pubDate || '',
       group: toStr(r.group),
       groupNames: toStr(r.groupNames)
@@ -650,7 +653,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   }
 
   // --- State
-  const state = { q:'', f:{}, sort:'pubDate:desc', page:1, size:40 };
+  const state = { q:'', f:{}, sort:'pubDate:desc', page:1, size:20 };
   // Compute combined sticky offset (navbar + cards-topbar) and expose as CSS var
   function computeStickyOffset(){
     const sels = ['.navbar.sticky-top', '#cards-topbar'];
@@ -1057,6 +1060,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
           d.id || '',
           d.publisher || '',
           d.doi || '',
+          d.releaseTag || '',
           d.publicationDate || '',
           ...(Array.isArray(d.groupNames) ? d.groupNames : []),
           ...(Array.isArray(d.group) ? d.group : []),
@@ -1357,6 +1361,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
     // clamp page
     const totalPages = Math.max(1, Math.ceil(filtered / state.size || 1));
+    
+
     if (state.page > totalPages) state.page = totalPages;
     if (state.page < 1) state.page = 1;
     renderPageNumbers(totalPages);
@@ -1373,9 +1379,9 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       if (filtered === 0) {
         resultsLine.textContent = 'No documents found';
       } else if (filtered < total) {
-        resultsLine.textContent = `Showing ${startHuman} to ${endHuman} of ${filtered} entries (filtered from ${total} total entries)`;
+        resultsLine.textContent = `Showing ${startHuman} to ${endHuman} of ${filtered} docs (filtered from ${total} total docs)`;
       } else {
-        resultsLine.textContent = `Showing ${startHuman} to ${endHuman} of ${total} entries`;
+        resultsLine.textContent = `Showing ${startHuman} to ${endHuman} of ${total} docs`;
       }
     }
 
@@ -1550,7 +1556,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     pageSizeSel.addEventListener('change', e => {
       clearHashNoScroll();
       const n = parseInt(e.target.value, 10);
-      state.size = Number.isFinite(n) && n > 0 ? n : 40;
+      state.size = Number.isFinite(n) && n > 0 ? n : 20;
       state.page = 1;
       updateURLAll(true);
       render();

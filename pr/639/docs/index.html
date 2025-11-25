@@ -152,20 +152,23 @@
   <div class="container px-3 py-2 bg-white">
     <div id="filterSummary" class="text-muted small mb-1"></div>
     <div id="toolbar" class="d-flex flex-wrap align-items-center gap-2">
-      
+
       <button class="btn btn-outline-secondary d-lg-none" type="button"
         data-bs-toggle="offcanvas" data-bs-target="#facetDrawer" aria-controls="facetDrawer">
         <i class="bi bi-funnel"></i> Filters
       </button>
-      <input id="q" type="search" class="form-control flex-grow-1" placeholder="Search…">
-      <select id="sort" class="form-select w-auto">
-        <option value="pubDate:desc">Latest</option>
-        <option value="pubDate:asc">Oldest</option>
-        <option value="label:asc">Label A→Z</option>
-        <option value="label:desc">Label Z→A</option>
-        <option value="title:asc">Title A→Z</option>
-        <option value="title:desc">Title Z→A</option>
-      </select>
+      <input id="q" type="search" class="form-control flex-grow-1" placeholder="Search Docs…">
+      <div class="input-group input-group-sm w-auto" aria-label="Sort results">
+        <span class="input-group-text">Sort</span>
+        <select id="sort" class="form-select w-auto">
+          <option value="pubDate:desc">Latest</option>
+          <option value="pubDate:asc">Oldest</option>
+          <option value="label:asc">Label (A-Z)</option>
+          <option value="label:desc">Label (Z-A)</option>
+          <option value="title:asc">Title (A-Z)</option>
+          <option value="title:desc">Title (Z-A)</option>
+        </select>
+      </div>
       <div class="input-group input-group-sm w-auto" aria-label="Filter by year">
         <span class="input-group-text">Year</span>
         <select id="yearSelect" class="form-select">
@@ -262,15 +265,13 @@
     </header>
 
     <div class="meta mb-1 small text-muted d-flex flex-wrap align-items-center gap-1">
-      {{#if publisher}}<span class="badge-reg">{{publisher}}</span>{{/if}}
-      {{#if docType}}<span class="badge-reg">{{docType}}</span>{{/if}}
-      {{#if year}}<span class="badge-reg">{{year}}</span>{{/if}}
-      {{#if hasReleaseTag}}<span class="badge-reg">releaseTag</span>{{/if}}
-      {{#unless hideGroup}}
-        {{#if (hasAny groupNames)}}
-          <span class="badge-reg">{{join groupNames ", "}}</span>
-        {{/if}}
-      {{/unless}}
+      {{#if publisher}}<span class="badge-reg"><a href="?f.publisher={{publisher}}">{{publisher}}</a></span>{{/if}}
+      {{#if docType}}<span class="badge-reg"><a href="?f.docType={{docType}}">{{docType}}</a></span>{{/if}}
+      {{#if year}}<span class="badge-reg"><a href="?f.year={{year}}">{{year}}</a></span>{{/if}}
+      {{#if hasReleaseTag}}<span class="badge-reg">releaseTag: <a href="?q={{releaseTag}}">{{releaseTag}}</a></span>{{/if}}
+      {{#if (hasAny groupNames)}}
+        <span class="badge-reg"><a href="../groups/#{{group}}">{{join groupNames ", "}}</a></span>
+      {{/if}}
       {{#if (hasAny currentWork)}}<span class="badge-reg badge-work">{{join currentWork ", "}}</span>{{/if}}
       {{#if doi}}
         <span class="badge-reg">DOI: {{{doiLink doi}}}</span>
@@ -292,8 +293,10 @@
     {{#if docBase}}
       <div class="small text-muted mt-0">Doc Base: <span class="fst-italic">{{docBaseLabel}}</span></div>
     {{/if}}
-      <div class="small text-muted mt-0">Keywords: <span class="fst-italic">{{#if (hasAny keywords)}}{{join keywords ", "}}, {{/if}}
-      {{#if (hasAny keywordsSearch)}}{{join keywordsSearch ", "}}{{/if}}</span></div> 
+    {{#if (hasAny keywords)}}
+      <div class="small text-muted mt-0">Keywords: <span class="fst-italic">{{#keywords}}<a class="clear-filter" href="?f.keywords={{this}}">{{this}}</a>{{#unless @last}}, {{/unless}}{{/keywords}} 
+      </span></div>
+    {{/if}}
   </article>
 </template>
 
@@ -305,8 +308,8 @@
         <div class="col col-md-5 col-auto d-flex text-start">
           <small class="text-muted">
             <p>
-              <span class="fw-semibold">Site version:</span> <code>98bceb61923a45c3b4be21f86060cff40fb3a11f</code>
-              <br><span class="fw-semibold">Generated on:</span> <code>2025-11-25T16:02:04.692Z</code>
+              <span class="fw-semibold">Site version:</span> <code>93c7588cad66ff7f2bc3abdba6738940b95398b1</code>
+              <br><span class="fw-semibold">Generated on:</span> <code>2025-11-25T21:29:46.908Z</code>
             </p>
             <p>
               :: GO TO <i class="bi bi-github"></i> <a href="https://github.com/PrZ3r/MSRBot.io" target="_blank">https://github.com/PrZ3r/MSRBot.io</a> <i class="bi bi-github"></i> TO CONTRIBUTE ::

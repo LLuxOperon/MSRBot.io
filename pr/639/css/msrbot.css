@@ -88,7 +88,7 @@ pre {
     position: fixed;
     bottom: 40px;
     right: 40px;
-    z-index: 98;
+    z-index: 1020;
     padding: 21px;
     background-color: hsla(5, 76%, 62%, .8)
 } 
@@ -285,7 +285,13 @@ pre {
     font-family: 'Lato', sans-serif !important;
 }
 
-#activeFilters .chip {
+.chip-x {
+    text-decoration: none; 
+    color: #fff;
+}
+
+#activeFilters .chip,
+#groupActiveFilters .chip {
     background-color: #1398b0;
     color: #fff;
 }
@@ -325,7 +331,8 @@ a.nav-link:focus {
   transition: border-color 0.2s ease, color 0.2s ease;
 }
 
-#cards-topbar.sticky-top {
+#cards-topbar.sticky-top, 
+#groups-topbar.sticky-top {
   position: sticky;
   top: calc(var(--msr-navbar-height) + 0.0rem);
   /*top: 65px; /* height of your navbar */
@@ -340,7 +347,10 @@ a.nav-link:focus {
 }
 
 /* Facet accordion cleanup */
-#facet .accordion-button { 
+#facet .accordion-button,
+#groupFacet .accordion-button,
+#facetDrawerBody .accordion-button,
+#groupFacetDrawerBody .accordion-button { 
   padding: .4rem .75rem; 
   font-weight: 600; 
 }
@@ -498,8 +508,10 @@ img.publisher-logo  {
   }
 }
 
-#pager-bottom {
+#pager-bottom,
+#groupPagerBottom {
   background-color: #e1e0dd; 
+  z-index: 1010; 
 }
 
 /* Reference tree connector styling (scoped to refTree page) */
