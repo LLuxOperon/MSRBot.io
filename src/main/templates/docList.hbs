@@ -4,20 +4,22 @@
   <div class="container px-3 py-2 bg-white">
     <div id="filterSummary" class="text-muted small mb-1"></div>
     <div id="toolbar" class="d-flex flex-wrap align-items-center gap-2">
-      
+
       <button class="btn btn-outline-secondary d-lg-none" type="button"
         data-bs-toggle="offcanvas" data-bs-target="#facetDrawer" aria-controls="facetDrawer">
         <i class="bi bi-funnel"></i> Filters
       </button>
       <input id="q" type="search" class="form-control flex-grow-1" placeholder="Search Docs…">
-      <select id="sort" class="form-select w-auto">
-        <option value="pubDate:desc">Latest</option>
-        <option value="pubDate:asc">Oldest</option>
-        <option value="label:asc">Label A→Z</option>
-        <option value="label:desc">Label Z→A</option>
-        <option value="title:asc">Title A→Z</option>
-        <option value="title:desc">Title Z→A</option>
-      </select>
+      <div class="input-group input-group-sm w-auto" aria-label="Sort results">
+        <select id="sort" class="form-select w-auto">
+          <option value="pubDate:desc">Latest</option>
+          <option value="pubDate:asc">Oldest</option>
+          <option value="label:asc">Label A→Z</option>
+          <option value="label:desc">Label Z→A</option>
+          <option value="title:asc">Title A→Z</option>
+          <option value="title:desc">Title Z→A</option>
+        </select>
+      </div>
       <div class="input-group input-group-sm w-auto" aria-label="Filter by year">
         <span class="input-group-text">Year</span>
         <select id="yearSelect" class="form-select">
@@ -143,8 +145,10 @@
     {{#if docBase}}
       <div class="small text-muted mt-0">Doc Base: <span class="fst-italic">{{docBaseLabel}}</span></div>
     {{/if}}
-      <div class="small text-muted mt-0">Keywords: <span class="fst-italic">{{#if (hasAny keywords)}}{{join keywords ", "}}, {{/if}}
-      {{#if (hasAny keywordsSearch)}}{{join keywordsSearch ", "}}{{/if}}</span></div> 
+    {{#if (hasAny keywords)}}
+      <div class="small text-muted mt-0">Keywords: <span class="fst-italic">{{#keywords}}<a class="clear-filter" href="?f.keywords={{this}}">{{this}}</a>{{#unless @last}}, {{/unless}}{{/keywords}} 
+      </span></div>
+    {{/if}}
   </article>
 </template>
 {{{{/raw}}}}

@@ -10,6 +10,16 @@
         <i class="bi bi-funnel"></i> Filters
       </button>
       <input id="groupSearch" type="search" class="form-control flex-grow-1" placeholder="Search Groups…">
+      <div class="input-group input-group-sm w-auto" aria-label="Sort results">
+       <select id="groupSort" class="form-select w-auto">
+        <option value="groupOrg:asc">Org A→Z</option>
+        <option value="groupOrg:desc">Org Z→A</option>
+        <option value="groupId:asc">Name A→Z</option>
+        <option value="groupId:desc">Name Z→A</option>
+        <option value="groupType:asc">Type A→Z</option>
+        <option value="groupType:desc">Type Z→A</option>
+      </select>
+      </div>
       <div class="input-group input-group-sm w-auto" aria-label="Results per page">
         <span class="input-group-text">Per page</span>
         <select id="groupPageSize" class="form-select">
@@ -30,9 +40,7 @@
     <!-- Facets: built dynamically by groups.js from card data -->
     <aside id="groupFacet" class="col-lg-3 d-none d-lg-block"><!-- Facets injected here --></aside>
     <section id="groupCardsMain" class="col-lg-9">
-      <div id="groupResultsLine" class="text-muted small mb-2">
-        Showing <strong id="groupResultCount">{{len data}}</strong> groups
-      </div>
+      <div id="groupResultsLine" class="text-muted small mb-2">Showing <strong id="groupResultCount">0</strong> of <strong id="groupTotalCount">0</strong> groups</div>
       <div class="sticky pt-2">
         <nav id="groupPager" class="d-flex justify-content-between align-items-center mb-2">
           <div class="btn-group">
@@ -43,39 +51,44 @@
           <div id="groupPageMeta" class="small text-muted">Page 1 of 1</div>
         </nav>
       </div>
-      <div id="groupCards" class="cards">
-        {{#data}}
+      <div id="groupCards" class="cards"><!-- Cards rendered client-side from normalized groups.json --></div>
+
+      {{{{raw}}}}
+      <template id="group-card-tpl-src">
         <article
-          class="card-reg group-card mb-2"
+          class="card-reg group-card"
           data-org="{{groupOrg}}"
           data-type="{{groupType}}"
-          data-status="{{#if groupStatus.active}}Active{{else}}Closed{{/if}}"
+          data-status="{{statusText}}"
           data-group-id="{{groupId}}"
           data-group-name="{{groupName}}"
           data-group-desc="{{groupDesc}}"
-          {{#if parentgroupId}}
-            {{#with (groupIdLookup ../data parentgroupId)}}
-              data-tc="{{groupId}}"
-            {{/with}}
-          {{/if}}
+          data-parent-id="{{parentgroupId}}"
+          data-tc="{{tcId}}"
         >
           <header class="d-flex align-items-start gap-2 mb-1">
             <a class="anchor" id="{{groupId}}" href="#{{groupId}}"></a>
-            <div class="flex-grow-1">
+            <div class="publisher-logo-slot flex-shrink-0 order-0 mt-1">
+              {{#if (publisherLink groupOrg)}}
+                <a href="{{publisherLink groupOrg}}" target="_blank" rel="noopener">{{publisherLogo groupOrg}}</a>
+              {{else}}
+                {{publisherLogo groupOrg}}
+              {{/if}}
+            </div>
+            <div class="title-block mb-2 flex-grow-1 order-1">
               <h3 class="h6 mb-1">
                 <code class="me-1">{{groupId}}</code>
                 <a href="../docs/?f.group={{groupId}}" class="text-decoration-none">
-                  {{groupOrg}} {{#if parentgroupId}}{{#with (groupIdLookup ../data parentgroupId)}}{{#ifnoteq groupType "TC"}}{{#with (groupIdLookup ../../data parentgroupId)}}{{groupName}}{{/with}} {{/ifnoteq}}{{#ifeq groupType "TC"}}{{groupName}}{{/ifeq}} {{/with}}{{/if}}{{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}}
+                  <span class="group-label">{{groupLabel}}</span>
                 </a>
               </h3>
             </div>
-            <div class="status-badges d-flex gap-1 flex-wrap ms-auto justify-content-end text-end">
-              {{#ifeq groupStatus.active true}}
+            <div class="status-badges d-flex gap-1 flex-wrap ms-auto justify-content-end text-end order-2">
+              {{#if isActive}}
                 <span class="badge text-bg-success">Active</span>
-              {{/ifeq}}
-              {{#ifeq groupStatus.active false}}
+              {{else}}
                 <span class="badge text-bg-secondary">Closed</span>
-              {{/ifeq}}
+              {{/if}}
               {{#if groupType}}
                 <span class="badge text-bg-light border">{{groupType}}</span>
               {{/if}}
@@ -86,57 +99,30 @@
               {{#with (groupIdLookup ../data parentgroupId)}}
                 <span class="badge-reg">
                   Parent: <a class="group-link clear-filter" href="#{{groupId}}">
-                    {{groupOrg}}
-                    {{#ifnoteq groupType "TC"}}
-                      {{#with (groupIdLookup ../../data parentgroupId)}}
-                        {{groupName}}
-                      {{/with}} {{/ifnoteq}}
-                    {{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}} {{groupType}}
+                    {{#if groupLabel}}{{groupLabel}}{{else}}{{groupId}}{{/if}}
                   </a>
                 </span>
               {{/with}}
             {{/if}}
             {{#if groupLink}}
-            <span class="ms-auto">Link: <a href="{{groupLink}}" target="_blank" rel="noopener">{{groupLink}}</a></span>
+              <span class="ms-auto">Link: <a href="{{groupLink}}" target="_blank" rel="noopener">{{groupLink}}</a></span>
             {{/if}}
           </div>
           <div class="small mb-2">
             {{groupSummary}}
-            {{#ifeq groupStatus/active false}}
+            {{#ifeq isActive false}}
               <span class="fw-bold small d-block mt-1">
-                <em>** NOTE: This group is no longer active{{#if groupStatus/assignedGroup}}; all work and documents (published, in draft, and repos) have been reassigned to:
-                  {{#groupStatus/assignedGroup}}
+                <em>** NOTE: This group is no longer active{{#if groupStatus.assignedGroup}}; all work and documents (published, in draft, and repos) have been reassigned to:
+                  {{#groupStatus.assignedGroup}}
                     {{#unless @first}}, {{/unless}}
                     {{#with (groupIdLookup ../../data this)}}
                       <a class="group-link clear-filter" href="#{{groupId}}">
-                        {{groupOrg}}
-                        {{#if parentgroupId}}
-                          {{#with (groupIdLookup ../../../data parentgroupId)}}
-                            {{#if parentgroupId}}
-                              {{#with (groupIdLookup ../../../../data parentgroupId)}}
-                                {{groupName}}
-                              {{/with}}
-                            {{/if}}
-                            {{groupName}}
-                          {{/with}}
-                        {{/if}}
-                        {{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}}
+                        {{#if groupLabel}}{{groupLabel}}{{else}}{{groupId}}{{/if}}
                       </a>
                     {{/with}}
-                  {{/groupStatus/assignedGroup}}
+                  {{/groupStatus.assignedGroup}}
                 {{/if}}. **</em>
               </span>
-            {{/ifeq}}
-          </div>
-          <div class="small text-muted d-flex flex-wrap align-items-center gap-2 mb-1">
-            {{#if groupType}}
-              <span class="badge-reg">{{groupType}}</span>
-            {{/if}}
-            {{#ifeq groupStatus.active true}}
-              <span class="badge-reg">Active</span>
-            {{/ifeq}}
-            {{#ifeq groupStatus.active false}}
-              <span class="badge-reg">Closed</span>
             {{/ifeq}}
           </div>
           <div class="small mt-1 d-flex flex-wrap align-items-center gap-2">
@@ -165,8 +151,8 @@
             {{/if}}
           </div>
         </article>
-        {{/data}}
-      </div>
+      </template>
+      {{{{/raw}}}}
       <div id="groupPagerBottom" class="sticky-bottom py-2">
         <nav class="d-flex justify-content-between align-items-center">
           <div class="btn-group">

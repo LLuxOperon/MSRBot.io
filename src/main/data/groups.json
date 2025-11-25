@@ -72,10 +72,12 @@
   },
   {
     "groupCal": "https://outlook.office365.com/calendar/published/d4612d2d0a0a46e6a18a8272a86004f1@m.smpte.org/fac4f171a668491688fd10ed21e63dde2735573671355137262/calendar.html",
+    "groupDesc": "Standards Community",
     "groupDocs": "https://smpte.sharepoint.com/sites/SCStandardsCommunity/Shared%20Documents/Forms/AllItems.aspx",
     "groupId": "smpte-01sc",
     "groupLink": "https://teams.microsoft.com/l/team/19%3ae19516f36d1549c1b8e2ac122f1dd214%40thread.tacv2/conversations?groupId=8a648854-73b1-4fa3-8001-6b62a49efe53&tenantId=c6051a58-269b-4f08-835f-eedebf4596b3",
-    "groupName": "Standards Community",
+    "groupName": "SC",
+    "groupDesc": "Standards Community",
     "groupOrg": "SMPTE",
     "groupStatus": {
       "active": true
@@ -110,7 +112,8 @@
     "groupDocs": "https://smpte.sharepoint.com/sites/STStandardsCommittee/Shared%20Documents/Forms/AllItems.aspx",
     "groupId": "smpte-02c-st",
     "groupLink": "https://teams.microsoft.com/l/team/19%3a258dae6b0df548cf9ec108796f467dd8%40thread.tacv2/conversations?groupId=45b18962-fd04-4863-8158-4f1aab05f83b&tenantId=c6051a58-269b-4f08-835f-eedebf4596b3",
-    "groupName": "ST Standards Committee",
+    "groupName": "ST",
+    "groupDesc": "Standards Committee",
     "groupOrg": "SMPTE",
     "groupRepo": "https://github.com/orgs/SMPTE/teams/standards-committee",
     "groupStatus": {

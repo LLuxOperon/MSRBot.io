@@ -1361,6 +1361,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
     // clamp page
     const totalPages = Math.max(1, Math.ceil(filtered / state.size || 1));
+    
+
     if (state.page > totalPages) state.page = totalPages;
     if (state.page < 1) state.page = 1;
     renderPageNumbers(totalPages);

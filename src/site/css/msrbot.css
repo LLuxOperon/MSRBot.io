@@ -339,13 +339,6 @@ a.nav-link:focus {
   z-index: 1020; /* slightly below navbar so it stays under dropdowns */
 }
 
-#cards-topbar.sticky-top {
-  position: sticky;
-  top: calc(var(--msr-navbar-height) + 0.0rem);
-  /*top: 65px; /* height of your navbar */
-  z-index: 1020; /* slightly below navbar so it stays under dropdowns */
-}
-
 #ref-root-topbar.sticky-top {
   position: sticky;
   top: calc(var(--msr-navbar-height) + 0.0rem);

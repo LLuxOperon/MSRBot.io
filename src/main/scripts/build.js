@@ -30,12 +30,23 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /* pass the option  */
 
 const path = require('path');
-const fs = require('fs').promises;
+const fsRaw = require('fs');
+const fs = fsRaw.promises; // use promises API everywhere by default
 const { promisify } = require('util');
 const execFile = promisify(require('child_process').execFile);
 
+// Capture the original callback writeFile once so later monkey-patching
+// (e.g., during groups build) can't cause recursion.
+const _writeFileCb = fsRaw.writeFile.bind(fsRaw);
+const _writeFile = (filePath, data, encoding = 'utf8') =>
+  new Promise((resolve, reject) => {
+    _writeFileCb(filePath, data, encoding, (err) => (err ? reject(err) : resolve()));
+  });
 
 const hb = require('handlebars');
+const { readFile } = fs; // promises readFile
+const { json2csvAsync } = require('json-2-csv');
+
 // Server-side helper to pass through raw blocks used to embed client-side templates
 hb.registerHelper('raw', function(options) {
   return new hb.SafeString(options.fn(this));
@@ -87,8 +98,6 @@ async function copyRecursive(src, dest) {
 
 // Warn once per process for empty MSI
 let __msiWarnedEmpty = false;
-const { readFile, writeFile } = require('fs').promises;
-const { json2csvAsync } = require('json-2-csv');
 
 /* list the available registries type (lower case), id (single, for links), titles (Upper Case), and schema builds */
 
@@ -146,6 +155,179 @@ const registries = [
   }
 ]
 
+// One-shot guard so normalized groups emit can't loop during sub-registry builds
+let __normalizedGroupsEmitted = false;
+
+// Safe write wrapper to strictly prevent legacy groups.json writes.
+// Returns true if a file was actually written, false if skipped.
+const __skippedLegacyWrites = new Set();
+async function writeFileSafe(filePath, data, encoding = 'utf8') {
+  const p = String(filePath || '');
+  if (/build[\\/]groups[\\/]_data[\\/]groups\.json$/.test(p)) {
+    __skippedLegacyWrites.add(p);
+    console.log(`[build] Skipping legacy groups.json write (normalized groups.json is authoritative): ${p}`);
+    return false;
+  }
+  await _writeFile(filePath, data, encoding);
+  return true;
+}
+
+// --- Groups registry normalization + emit (for client-side groups view)
+function normalizeGroupsRegistry(rawGroups){
+  const groups = Array.isArray(rawGroups) ? rawGroups : [];
+  const byId = new Map();
+  groups.forEach(g => {
+    if (g && g.groupId) byId.set(String(g.groupId), g);
+  });
+
+  function findTcId(g){
+    if (!g) return '';
+    let cur = g;
+    const seen = new Set();
+    while (cur && cur.groupId && !seen.has(cur.groupId)) {
+      const curId = String(cur.groupId);
+      seen.add(curId);
+      const curType = String(cur.groupType || '').trim().toUpperCase();
+      if (curType === 'TC') return curId;
+      const pid = cur.parentgroupId ?? cur.parentGroupId;
+      const parentId = pid ? String(pid) : '';
+      if (!parentId) break;
+      cur = byId.get(parentId);
+    }
+    return '';
+  }
+
+  function buildAncestorChain(g){
+    const chain = [];
+    let cur = g;
+    const seen = new Set();
+    while (cur) {
+      const pid = cur.parentgroupId ?? cur.parentGroupId;
+      const parentId = pid ? String(pid) : '';
+      if (!parentId || seen.has(parentId)) break;
+      seen.add(parentId);
+      const parent = byId.get(parentId);
+      if (!parent) break;
+      chain.unshift(parent);
+      cur = parent;
+    }
+    return chain;
+  }
+
+  return groups.map(g => {
+    const out = { ...(g || {}) };
+
+    const active = !!(g && g.groupStatus && g.groupStatus.active);
+    out.isActive = active;
+    out.statusText = active ? 'Active' : 'Closed';
+    out.hasParent = !!(g && g.parentgroupId);
+
+    // tcId: self if TC, otherwise first TC ancestor
+    const gTypeNorm = String((g && g.groupType) || '').trim().toUpperCase();
+    out.tcId = (gTypeNorm === 'TC') ? String(g.groupId || '') : findTcId(g);
+
+    // groupLabel: derived once at build time.
+    // Rules:
+    //  - TC:   "<org> <tcName> <tcDesc?>"
+    //  - Non-TC under a TC: "<org> <tcName> <nonTC ancestor labels...> <selfName> <selfDesc?>"
+    //  - Non-TC without TC: "<org> <nonTC ancestor labels...> <selfName> <selfDesc?>"
+    const org = (g && g.groupOrg) ? String(g.groupOrg).trim() : '';
+
+    const selfName = String((g && g.groupName) || '').trim();
+    const selfDesc = String((g && g.groupDesc) || '').trim();
+    const selfLabel = [selfName, selfDesc].filter(Boolean).join(' ').trim();
+
+    // Non-TC ancestors (exclude any TC so we don't duplicate the TC label)
+    const nonTcAncestors = buildAncestorChain(g)
+      .filter(a => a && String(a.groupType || '').trim().toUpperCase() !== 'TC')
+      .map(a => {
+        const n = String(a.groupName || '').trim();
+        const d = String(a.groupDesc || '').trim();
+        return [n, d].filter(Boolean).join(' ').trim();
+      })
+      .filter(Boolean);
+
+    // TC label (if any)
+    // Rules:
+    //  - For TC cards: include TC name + desc in the TC label (so TC stands on its own).
+    //  - For children under a TC: include TC name ONLY (no TC desc), so child labels stay short.
+    let tcLabel = '';
+    if (out.tcId) {
+      const tcNode = byId.get(String(out.tcId));
+      if (tcNode) {
+        const tcName = String(tcNode.groupName || '').trim();
+        const tcDesc = String(tcNode.groupDesc || '').trim();
+        if (gTypeNorm === 'TC') {
+          tcLabel = [tcName, tcDesc].filter(Boolean).join(' ').trim();
+        } else {
+          tcLabel = tcName; // children get TC NAME ONLY
+        }
+      }
+      // If we still didn't get a TC label, fall back to immediate parent name (NAME ONLY)
+      if (!tcLabel) {
+        const pid = g && (g.parentgroupId ?? g.parentGroupId);
+        const parentId = pid ? String(pid) : '';
+        const parent = parentId ? byId.get(parentId) : null;
+        if (parent) {
+          const pn = String(parent.groupName || '').trim();
+          tcLabel = pn;
+        }
+      }
+    }
+
+    if (gTypeNorm === 'TC') {
+      out.groupLabel = [org, selfLabel]
+        .filter(Boolean)
+        .join(' ')
+        .replace(/\s+/g, ' ')
+        .trim() || String(g && g.groupId || '');
+    } else {
+      out.groupLabel = [org, tcLabel, ...nonTcAncestors, selfLabel]
+        .filter(Boolean)
+        .join(' ')
+        .replace(/\s+/g, ' ')
+        .trim() || String(g && g.groupId || '');
+    }
+
+    // searchText for client search
+    out.searchText = [
+      g && g.groupId,
+      g && g.groupOrg,
+      g && g.groupName,
+      g && g.groupDesc,
+      g && g.groupSummary,
+      g && g.groupType,
+      out.statusText,
+      out.tcId
+    ].filter(Boolean).join(' ').toLowerCase();
+
+    return out;
+  });
+}
+
+async function emitNormalizedGroups({ dataPath }){
+  if (__normalizedGroupsEmitted) {
+    console.log('[build] Skipping normalized groups emit (already emitted once).');
+    return null;
+  }
+  __normalizedGroupsEmitted = true;
+  try {
+    const raw = JSON.parse(await fs.readFile(dataPath, 'utf8'));
+    const norm = normalizeGroupsRegistry(raw);
+    const outDir = path.join(BUILD_PATH, 'groups', '_data');
+    await fs.mkdir(outDir, { recursive: true });
+    // Authoritative normalized groups registry for client-side use
+    const outPath = path.join(outDir, 'groups.json');
+    await _writeFile(outPath, JSON.stringify(norm, null, 2), 'utf8');
+    console.log(`[build] Wrote normalized groups registry: ${outPath} (count=${norm.length})`);
+    return norm;
+  } catch (e) {
+    console.warn('[build] Failed to emit normalized groups registry:', e && e.message ? e.message : e);
+    return null;
+  }
+}
+// --- end groups normalization
+
 /* load and build the templates */
 
 async function buildRegistry ({ listType, templateType, templateName, idType, listTitle, subRegistry, output, extras }) {
@@ -154,6 +336,29 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
 
   var DATA_PATH = path.join(REGISTRIES_REPO_PATH, "data/" + listType + ".json");
   var TEMPLATE_PATH = "src/main/templates/" + templateName + ".hbs";
+
+  // Load registry data before emitting JSON files
+  let data = JSON.parse(await fs.readFile(DATA_PATH, 'utf8'));
+  const raw = data;
+  // --- Registry JSON emit
+  // Normalized groups must ONLY be emitted during the groups pass.
+  // Sub-registry builds may *read* groups.json but must never rewrite it.
+  if (templateName === 'groups') {
+    const norm = await emitNormalizedGroups({ dataPath: DATA_PATH });
+    if (Array.isArray(norm) && norm.length) {
+      data = norm; // use normalized data for template render / CSV
+    }
+  }
+  // --- Generic registry JSON emit (ALL registries except groups)
+  // Groups are emitted via emitNormalizedGroups() + optional raw copy above.
+  if (templateName !== 'groups') {
+    const outDir = path.join(BUILD_PATH, templateName, '_data');
+    await fs.mkdir(outDir, { recursive: true });
+    const outPath = path.join(outDir, `${listType}.json`);
+    await writeFileSafe(outPath, JSON.stringify(data, null, 2), 'utf8');
+    console.log(`[build] Wrote build/${templateName}/_data/${listType}.json`);
+  }
+  // --- end registry JSON emit
   var PAGE_SITE_PATH
   if (output) {
     PAGE_SITE_PATH = output;
@@ -1496,7 +1701,7 @@ hb.registerHelper('publisherLogo', function (pub, opts) {
           });
 
           const outFile = path.join(dir, 'index.html');
-          await fs.writeFile(outFile, refTreeHtml, 'utf8');
+          await writeFileSafe(outFile, refTreeHtml, 'utf8');
           __rtOk++;
         } catch (perDocRtErr) {
           __rtFail++;
@@ -1554,7 +1759,7 @@ hb.registerHelper('publisherLogo', function (pub, opts) {
         publisherUrls: siteConfig.publisherUrls,
       });
 
-      await fs.writeFile(path.join(refTreeIndexRoot, 'index.html'), refTreeIndexHtml, 'utf8');
+      await writeFileSafe(path.join(refTreeIndexRoot, 'index.html'), refTreeIndexHtml, 'utf8');
       console.log('[build] Wrote build/reftree/index.html');
     } catch (e) {
       console.warn('[build] Could not emit refTree index page:', e && e.message ? e.message : e);
@@ -1593,7 +1798,7 @@ hb.registerHelper('publisherLogo', function (pub, opts) {
         height: (typeof siteConfig.publisherLogoHeight === 'number' ? siteConfig.publisherLogoHeight : 25),
         aliases: aliasesOut
       };
-      await fs.writeFile(
+      await writeFileSafe(
         path.join(BUILD_PATH, '_data', 'publisher-logos.json'),
         JSON.stringify(logosPayload, null, 2),
         'utf8'
@@ -1622,7 +1827,7 @@ hb.registerHelper('publisherLogo', function (pub, opts) {
         urls: urlsOut,
         aliases: urlAliasesOut
       };
-      await fs.writeFile(
+      await writeFileSafe(
         path.join(BUILD_PATH, '_data', 'publisher-urls.json'),
         JSON.stringify(urlsPayload, null, 2),
         'utf8'
@@ -1793,7 +1998,7 @@ hb.registerHelper('publisherLogo', function (pub, opts) {
         });
 
         const outFile = path.join(docDir, 'index.html');
-        await fs.writeFile(outFile, docHtml, 'utf8');
+        await writeFileSafe(outFile, docHtml, 'utf8');
         __ok++;
       } catch (perDocErr) {
         __fail++;
@@ -1816,7 +2021,7 @@ hb.registerHelper('publisherLogo', function (pub, opts) {
   
   /* write HTML file (skip for logic-only registries) */
   if (!logicOnly && html != null) {
-    await fs.writeFile(path.join(BUILD_PATH, PAGE_SITE_PATH), html, 'utf8');
+    await writeFileSafe(path.join(BUILD_PATH, PAGE_SITE_PATH), html, 'utf8');
   }
 
   // Build docList search index (search-index.json + facets.json) once per run
@@ -1833,7 +2038,7 @@ hb.registerHelper('publisherLogo', function (pub, opts) {
             (key, val) => (typeof key === 'string' && key.includes('$meta') ? undefined : val)
           )
         );
-        await fs.writeFile(EFFECTIVE_DOCS_PATH, JSON.stringify(cleanEffective, null, 2), 'utf8');
+        await writeFileSafe(EFFECTIVE_DOCS_PATH, JSON.stringify(cleanEffective, null, 2), 'utf8');
         console.log(`[build] Wrote ${EFFECTIVE_DOCS_PATH}`);
       } catch (e) {
         console.warn('[build] Could not write documents snapshot:', e && e.message ? e.message : e);
@@ -1864,7 +2069,7 @@ hb.registerHelper('publisherLogo', function (pub, opts) {
   }
 
   async function writeCSV (fileName, data) {
-    await writeFile(fileName, data, 'utf8');
+    await writeFileSafe(fileName, data, 'utf8');
   }
 
   (async () => {
@@ -1909,7 +2114,7 @@ void (async () => {
   const docsOgImage = new URL(siteConfig.ogImage, siteConfig.canonicalBase).href;
   const docsOgImageAlt = siteConfig.ogImageAlt;
   const docsAssetPrefix = '../';
-  await fs.writeFile(path.join('build','docs','index.html'), renderCards({
+  await writeFileSafe(path.join('build','docs','index.html'), renderCards({
     templateName: 'docList',
     listTitle: 'Docs',
     htmlLink: '', // same relative handling as other pages
@@ -1979,7 +2184,7 @@ void (async () => {
     assetPrefix: '',
     publisherUrls: siteConfig.publisherUrls,
   });
-  await fs.writeFile(path.join(BUILD_PATH, 'index.html'), homeHtml, 'utf8');
+  await writeFileSafe(path.join(BUILD_PATH, 'index.html'), homeHtml, 'utf8');
   console.log('[build] Wrote build/index.html');
 
   // --- Emit robots.txt and sitemap.xml
@@ -1988,13 +2193,12 @@ void (async () => {
     '# Managed by PrZ3 Unit — Penguin Parsing Protocol v3-Gen',
     'User-agent: *',
     'Allow: /',
-    'Disallow: /docs/',
     'Disallow: /tmp/',
     'Disallow: /pr/',
     '',
     `Sitemap: ${new URL('/sitemap.xml', siteConfig.canonicalBase).href}`
   ].join('\n');
-  await fs.writeFile(path.join(BUILD_PATH, 'robots.txt'), robotsTxt, 'utf8');
+  await writeFileSafe(path.join(BUILD_PATH, 'robots.txt'), robotsTxt, 'utf8');
   console.log('[build] Wrote build/robots.txt');
 
   // Build a simple sitemap of core routes
@@ -2021,7 +2225,7 @@ void (async () => {
   ${urlset}
   </urlset>
   `;
-  await fs.writeFile(path.join(BUILD_PATH, 'sitemap.xml'), sitemapXml, 'utf8');
+  await writeFileSafe(path.join(BUILD_PATH, 'sitemap.xml'), sitemapXml, 'utf8');
   console.log('[build] Wrote build/sitemap.xml');
 
   // --- Emit OpenSearch descriptor
@@ -2032,7 +2236,7 @@ void (async () => {
     <Url type="text/html" template="${new URL('/search', siteConfig.canonicalBase).href}?q={searchTerms}"/>
   </OpenSearchDescription>
   `;
-  await fs.writeFile(path.join(BUILD_PATH, 'opensearch.xml'), openSearchXml, 'utf8');
+  await writeFileSafe(path.join(BUILD_PATH, 'opensearch.xml'), openSearchXml, 'utf8');
   console.log('[build] Wrote build/opensearch.xml');
 
   // --- Emit 404.html for GitHub Pages (rendered with header/footer)
@@ -2121,7 +2325,7 @@ void (async () => {
     penguinMessagesJson: penguinMessagesJson,
     publisherUrls: siteConfig.publisherUrls,
   });
-  await fs.writeFile(path.join(BUILD_PATH, '404.html'), fourOhFourHtml, 'utf8');
+  await writeFileSafe(path.join(BUILD_PATH, '404.html'), fourOhFourHtml, 'utf8');
   console.log('[build] Wrote build/404.html');
 
 })().catch(console.error)

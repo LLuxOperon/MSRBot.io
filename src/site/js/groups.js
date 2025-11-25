@@ -1,5 +1,186 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const cards = Array.from(document.querySelectorAll('.group-card'));
+document.addEventListener('DOMContentLoaded', async () => {
+  const cardsRoot = document.getElementById('groupCards');
+  if (!cardsRoot) return;
+
+  async function loadJSONTry(candidates){
+    const errs = [];
+    for (const url of candidates) {
+      try {
+        const res = await fetch(url, { cache: 'no-store' });
+        if (res.ok) return await res.json();
+        errs.push(`${url} → ${res.status}`);
+      } catch (e) {
+        errs.push(`${url} → ${e.message || e}`);
+      }
+    }
+    throw new Error(`Failed to fetch any candidate: ${errs.join(' | ')}`);
+  }
+
+  async function ensureHandlebars(){
+    if (window.Handlebars) return true;
+    return new Promise((resolve) => {
+      const s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/handlebars@4.7.8/dist/handlebars.min.js';
+      s.async = true;
+      s.onload = () => resolve(!!window.Handlebars);
+      s.onerror = () => resolve(false);
+      document.head.appendChild(s);
+    });
+  }
+
+  let groups = [];
+  try {
+    groups = await loadJSONTry([
+      '/groups/_data/groups.json',
+      'groups/_data/groups.json',
+      '../groups/_data/groups.json',
+      './_data/groups.json'
+    ]);
+    if (!Array.isArray(groups)) groups = [];
+  } catch (e) {
+    console.error('[groups] Failed to load normalized groups.json:', e);
+    cardsRoot.innerHTML = '<div class="alert alert-warning">Groups view could not load data.</div>';
+    return;
+  }
+
+  await ensureHandlebars();
+  // --- Client-side Handlebars helpers (match docList behavior enough for groups cards)
+  if (window.Handlebars) {
+    // Try to load publisher logos + urls config (optional; safe to fail)
+    let __publisherLogos = {}, __publisherLogoHeight = 18, __publisherAliases = {};
+    let __publisherUrls = {}, __publisherUrlAliases = {};
+    try {
+      const cfg = await loadJSONTry([
+        '/_data/publisher-logos.json',
+        '../_data/publisher-logos.json',
+        '._data/publisher-logos.json',
+        '/docs/_data/publisher-logos.json'
+      ]);
+      if (cfg && typeof cfg === 'object') {
+        __publisherLogos = cfg.logos || {};
+        __publisherLogoHeight = Number(cfg.height) || 18;
+        __publisherAliases = (cfg.aliases && typeof cfg.aliases === 'object') ? cfg.aliases : {};
+      }
+    } catch {}
+    try {
+      const ucfg = await loadJSONTry([
+        '/_data/publisher-urls.json',
+        '../_data/publisher-urls.json',
+        '._data/publisher-urls.json',
+        '/docs/_data/publisher-urls.json'
+      ]);
+      if (ucfg && typeof ucfg === 'object') {
+        __publisherUrls = ucfg.urls || {};
+        __publisherUrlAliases = (ucfg.aliases && typeof ucfg.aliases === 'object') ? ucfg.aliases : {};
+      }
+    } catch {}
+
+    function resolvePublisherLogo(pubRaw){
+      const input = String(pubRaw || '').trim();
+      if (!input) return null;
+      if (__publisherLogos[input]) return __publisherLogos[input];
+      const lowerAliases = __publisherAliases.__lowerCache || (__publisherAliases.__lowerCache = (() => {
+        const m = {}; for (const [a,c] of Object.entries(__publisherAliases)) m[String(a).toLowerCase()] = String(c); return m;
+      })());
+      const canon = lowerAliases[input.toLowerCase()];
+      if (canon && __publisherLogos[canon]) return __publisherLogos[canon];
+      const firstToken = input.split(/[–—-]|,|\(|\)|:/)[0].trim();
+      if (firstToken && __publisherLogos[firstToken]) return __publisherLogos[firstToken];
+      const lowerKey = input.toLowerCase();
+      for (const [k,v] of Object.entries(__publisherLogos)) if (String(k).toLowerCase() === lowerKey) return v;
+      return null;
+    }
+    function resolvePublisherUrl(pubRaw){
+      const input = String(pubRaw || '').trim();
+      if (!input) return null;
+      if (__publisherUrls[input]) return __publisherUrls[input];
+      const lowerAliases = __publisherUrlAliases.__lowerCache || (__publisherUrlAliases.__lowerCache = (() => {
+        const m = {}; for (const [a,c] of Object.entries(__publisherUrlAliases)) m[String(a).toLowerCase()] = String(c); return m;
+      })());
+      const canon = lowerAliases[input.toLowerCase()];
+      if (canon && __publisherUrls[canon]) return __publisherUrls[canon];
+      const firstToken = input.split(/[–—-]|,|\(|\)|:/)[0].trim();
+      if (firstToken && __publisherUrls[firstToken]) return __publisherUrls[firstToken];
+      const lowerKey = input.toLowerCase();
+      for (const [k,v] of Object.entries(__publisherUrls)) if (String(k).toLowerCase() === lowerKey) return v;
+      return null;
+    }
+
+    window.Handlebars.registerHelper('publisherLogo', function(pub){
+      const rel = resolvePublisherLogo(pub);
+      if (!rel) return '';
+      const alt = `${pub} logo`;
+      const h = __publisherLogoHeight;
+      return new window.Handlebars.SafeString(
+        `<img src="../${rel}" alt="${alt}" height="${h}" class="align-text-bottom me-1 publisher-logo" loading="lazy">`
+      );
+    });
+    window.Handlebars.registerHelper('publisherLink', function(pub){
+      return resolvePublisherUrl(pub) || '';
+    });
+
+    // simple utility helpers
+    window.Handlebars.registerHelper('ifeq', function(a, b, opts) {
+      return (a == b) ? opts.fn(this) : opts.inverse(this);
+    });
+    window.Handlebars.registerHelper('ifnoteq', function(a, b, opts) {
+      return (a != b) ? opts.fn(this) : opts.inverse(this);
+    });
+    window.Handlebars.registerHelper('join', (arr, sep) => Array.isArray(arr) ? arr.join(sep||', ') : '');
+    window.Handlebars.registerHelper('len', v => (Array.isArray(v)||typeof v==='string') ? v.length : (v&&typeof v==='object'?Object.keys(v).length:0));
+    window.Handlebars.registerHelper('hasAny', arr => Array.isArray(arr) && arr.length>0);
+    window.Handlebars.registerHelper('any', function(){ const args = Array.prototype.slice.call(arguments,0,-1); return args.some(v=>!!v); });
+    window.Handlebars.registerHelper('spaceReplace', s => encodeURIComponent(String(s||'').trim()).replace(/%20/g,'%20'));
+
+    // groupIdLookup: ignore passed data arg, use normalized groups map
+    const __groupById = new Map(Array.isArray(groups) ? groups.map(x => [String(x.groupId), x]) : []);
+    window.Handlebars.registerHelper('groupIdLookup', function(_dataIgnored, id){
+      if (!id) return null;
+      return __groupById.get(String(id)) || null;
+    });
+  }
+  // --- end helpers
+  const tplSrc = document.getElementById('group-card-tpl-src');
+  let hbCard = null;
+  if (tplSrc && window.Handlebars) {
+    try { hbCard = window.Handlebars.compile(tplSrc.innerHTML); } catch {}
+  }
+
+  function renderCard(g){
+    if (hbCard) {
+      try { return hbCard(g); }
+      catch (e) {
+        console.warn('[groups] Card template failed for', g && g.groupId, e);
+      }
+    }
+    // ultra-fallback, should rarely be used
+    const esc = s => String(s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    return `
+      <article class="card-reg group-card"
+        data-org="${esc(g.groupOrg)}"
+        data-type="${esc(g.groupType)}"
+        data-status="${esc(g.statusText)}"
+        data-group-id="${esc(g.groupId)}"
+        data-group-name="${esc(g.groupName)}"
+        data-group-desc="${esc(g.groupDesc)}"
+        data-parent-id="${esc(g.parentgroupId||'')}"
+        data-tc="${esc(g.tcId||'')}"
+      >
+        <header class="d-flex align-items-start gap-2 mb-1">
+          <a class="anchor" id="${esc(g.groupId)}" href="#${esc(g.groupId)}"></a>
+          <div class="title-block mb-2 flex-grow-1">
+            <h3 class="h6 mb-1"><code class="me-1">${esc(g.groupId)}</code> ${esc(g.groupLabel||g.groupName||'')}</h3>
+          </div>
+          <div class="status-badges ms-auto">${g.isActive ? '<span class="badge text-bg-success">Active</span>' : '<span class="badge text-bg-secondary">Closed</span>'}</div>
+        </header>
+      </article>`;
+  }
+
+  // Render all cards from normalized data
+  cardsRoot.innerHTML = groups.map(renderCard).join('');
+
+  // Now discover cards from DOM
+  const cards = Array.from(cardsRoot.querySelectorAll('.group-card'));
   if (!cards.length) return;
 
   const searchInput       = document.getElementById('groupSearch');
@@ -12,6 +193,37 @@ document.addEventListener('DOMContentLoaded', () => {
   const activeFiltersEl   = document.getElementById('groupActiveFilters');
   const resultsLineEl     = document.getElementById('groupResultsLine');
   const totalGroups       = cards.length;
+  if (totalCountEl) totalCountEl.textContent = String(totalGroups);
+
+  // --- Sticky offset (navbar + groups topbar) so hash jumps don't hide cards
+  function computeStickyOffset(){
+    const sels = ['.navbar.sticky-top', '#groups-topbar'];
+    let h = 0;
+    for (const sel of sels) {
+      const el = document.querySelector(sel);
+      if (!el) continue;
+      const r = el.getBoundingClientRect();
+      const cs = getComputedStyle(el);
+      const topPx = parseFloat(cs.top) || 0;
+      const isAffixed = (cs.position === 'sticky' || cs.position === 'fixed');
+      const isAtTop = isAffixed && (r.top <= topPx + 2);
+      if (isAtTop) h += r.height;
+    }
+    h = Math.max(0, Math.floor(h + 8));
+    document.documentElement.style.setProperty('--sticky-offset', h + 'px');
+    return h;
+  }
+  function refreshStickyOffset(){
+    _stickyOffsetPx = computeStickyOffset();
+    // Apply scroll-margin-top to cards so hash jumps respect sticky UI
+    const m = `var(--sticky-offset, 0px)`;
+    cards.forEach(c => { c.style.scrollMarginTop = m; });
+  }
+  window.addEventListener('resize', refreshStickyOffset);
+  window.addEventListener('load', refreshStickyOffset);
+  // Initial application
+  refreshStickyOffset();
+  // --- end sticky offset
 
   // pager bits
   const prevBtn           = document.getElementById('groupPrevPage');
@@ -22,6 +234,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const pageNumsBottomEl  = document.getElementById('groupPageNumsBottom');
   const pageMetaEl        = document.getElementById('groupPageMeta');
   const pageMetaBottomEl  = document.getElementById('groupPageMetaBottom');
+
+  const pagerTopWrap      = document.getElementById('groupPager');
+  const pagerBottomWrap   = document.getElementById('groupPagerBottom');
+
+  // Track whether pagination is needed so the observer can respect single-page cases
+  let _hasMultiplePages = false;
 
   const facetRoot         = document.getElementById('groupFacet');
   const facetDrawerBody   = document.getElementById('groupFacetDrawerBody');
@@ -34,16 +252,23 @@ document.addEventListener('DOMContentLoaded', () => {
     status: new Set(),
     page:   1,
     size:   20,
+    sort:   'groupOrg:asc',
   };
 
-  // --- Build basic map for TC ancestry: id -> { id, type, parent }
+  // --- Build basic map for ancestry + display fields
+  // id -> { id, type, parent, org, name, desc }
   const groupMap = new Map();
   cards.forEach(card => {
     const ds = card.dataset;
-    groupMap.set(ds.groupId, {
-      id:     ds.groupId,
+    const id = ds.groupId;
+    if (!id) return;
+    groupMap.set(id, {
+      id,
       type:   ds.type || '',
-      parent: ds.parentId || ''
+      parent: ds.parentId || '',
+      org:    ds.org || '',
+      name:   ds.groupName || '',
+      desc:   ds.groupDesc || ''
     });
   });
 
@@ -59,6 +284,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const q = sp.get('q');
       if (typeof q === 'string') state.search = q;
 
+      const sortParam = sp.get('sort');
+      if (typeof sortParam === 'string' && sortParam.trim() !== '') {
+        state.sort = sortParam.trim();
+      }
+
       sp.forEach((val, key) => {
         if (!key.startsWith('f.')) return;
         const facet = key.slice(2);
@@ -66,6 +296,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const set = state[facet];
         if (set instanceof Set) arr.forEach(v => set.add(v));
       });
+
+      const sortSelect = document.getElementById('groupSort');
+      if (sortSelect) {
+        const next = state.sort || 'groupOrg:asc';
+        if (![...sortSelect.options].some(o => o.value === next)) {
+          const opt = document.createElement('option');
+          opt.value = next; opt.textContent = next;
+          sortSelect.appendChild(opt);
+        }
+        sortSelect.value = next;
+      }
     } catch {}
   }
 
@@ -74,6 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const url = new URL(window.location.href);
       url.searchParams.set('page', String(state.page));
       url.searchParams.set('size', String(state.size));
+      url.searchParams.set('sort', String(state.sort || 'groupOrg:asc'));
 
       if (state.search && String(state.search).trim() !== '') {
         url.searchParams.set('q', String(state.search).trim());
@@ -351,6 +593,43 @@ document.addEventListener('DOMContentLoaded', () => {
     if (pageNumsBottomEl) pageNumsBottomEl.addEventListener('click', handler);
   }
 
+  function sortCards(list) {
+    const norm = v => String(v || '').toLowerCase();
+    const mode = String(state.sort || 'groupOrg:asc');
+    const [key, dir] = mode.split(':');
+    const asc = (dir !== 'desc');
+
+    const getOrg  = c => norm(c.dataset.org);
+    const getType = c => norm(c.dataset.type);
+    const getId   = c => norm(c.dataset.groupId);
+
+    const cmp = (a, b, sel) => {
+      const av = sel(a);
+      const bv = sel(b);
+      const r = av.localeCompare(bv);
+      return asc ? r : -r;
+    };
+
+    const out = list.slice();
+
+    switch (key) {
+      case 'groupOrg':
+        out.sort((a, b) => cmp(a, b, getOrg));
+        break;
+
+      case 'groupType':
+        out.sort((a, b) => cmp(a, b, getType));
+        break;
+
+      case 'groupId':
+      default:
+        out.sort((a, b) => cmp(a, b, getId));
+        break;
+    }
+
+    return out;
+  }
+
   function applyFilters() {
     const search = state.search.trim().toLowerCase();
 
@@ -375,15 +654,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const totalVisible = filtered.length;
     const total = totalGroups;
-    const size = Math.max(1, state.size || 20);
+    const size = Math.max(1, state.size || 0);
     const totalPages = Math.max(1, Math.ceil(totalVisible / size));
+    // Recompute sticky offset after layout changes (filters/paging) but avoid scroll-jitter
+    refreshStickyOffset();
 
     if (state.page > totalPages) state.page = totalPages;
     if (state.page < 1) state.page = 1;
 
+    const sorted = sortCards(filtered);
+
     const start = (state.page - 1) * size;
     const end = start + size;
-    const pageSlice = filtered.slice(start, end);
+    const pageSlice = sorted.slice(start, end);
 
     const pageSet = new Set(pageSlice);
     cards.forEach(card => {
@@ -643,8 +926,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  const sortSelect = document.getElementById('groupSort');
+  if (sortSelect) {
+    sortSelect.addEventListener('change', () => {
+      state.sort = sortSelect.value || 'groupOrg:asc';
+      state.page = 1;
+      updateURLAll(true);
+      applyFilters();
+    });
+  }
+
   // Initial render
   applyFilters();
+
+  // Hide bottom pager while top pager is visible (docList parity)
+  if (pagerTopWrap && pagerBottomWrap && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+  
+      // When top pager is on screen, hide bottom sticky pager; otherwise show it
+      pagerBottomWrap.style.display = entry.isIntersecting ? 'none' : '';
+    }, { root: null, threshold: 0.01 });
+    io.observe(pagerTopWrap);
+  }
 
   // Hash deep-link support
   initHashDeepLink();
