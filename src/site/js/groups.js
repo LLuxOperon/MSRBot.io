@@ -185,6 +185,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const searchInput       = document.getElementById('groupSearch');
   const pageSizeSelect    = document.getElementById('groupPageSize');
+  const sortSelect        = document.getElementById('groupSort');
   const clearBtn          = document.getElementById('groupClearFilters');
 
   const resultCountEl     = document.getElementById('groupResultCount');
@@ -254,6 +255,20 @@ document.addEventListener('DOMContentLoaded', async () => {
     size:   20,
     sort:   'groupOrg:asc',
   };
+
+  // Helper to keep the page-size dropdown in sync with state.size
+  function syncPageSizeSelectFromState() {
+    if (!pageSizeSelect) return;
+    const val = String(state.size || 20);
+    // Ensure an option exists matching the current size; if not, add it
+    if (![...pageSizeSelect.options].some(o => o.value === val)) {
+      const opt = document.createElement('option');
+      opt.value = val;
+      opt.textContent = val;
+      pageSizeSelect.appendChild(opt);
+    }
+    pageSizeSelect.value = val;
+  }
 
   // --- Build basic map for ancestry + display fields
   // id -> { id, type, parent, org, name, desc }
@@ -599,9 +614,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     const [key, dir] = mode.split(':');
     const asc = (dir !== 'desc');
 
-    const getOrg  = c => norm(c.dataset.org);
-    const getType = c => norm(c.dataset.type);
-    const getId   = c => norm(c.dataset.groupId);
+    const getOrg    = c => norm(c.dataset.org);
+    const getType   = c => norm(c.dataset.type);
+    const getId     = c => norm(c.dataset.groupId);
+    const getStatus = c => norm(c.dataset.status);
 
     const cmp = (a, b, sel) => {
       const av = sel(a);
@@ -619,6 +635,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       case 'groupType':
         out.sort((a, b) => cmp(a, b, getType));
+        break;
+
+      case 'status':
+        out.sort((a, b) => cmp(a, b, getStatus));
         break;
 
       case 'groupId':
@@ -668,6 +688,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     const end = start + size;
     const pageSlice = sorted.slice(start, end);
 
+    // Reorder visible cards in DOM to match the sorted page slice
+    const frag = document.createDocumentFragment();
+    pageSlice.forEach(card => frag.appendChild(card));
+    cardsRoot.appendChild(frag);
+
+    // Hide all non-page cards, show only current page slice
     const pageSet = new Set(pageSlice);
     cards.forEach(card => {
       card.style.display = pageSet.has(card) ? '' : 'none';
@@ -706,7 +732,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     renderActiveFilters();
     updateFilterSummary();
 
-    return filtered;
+    // Return the sorted list so helpers like navigateToCardById
+    // compute pages against the same ordering the user sees.
+    return sorted;
   }
 
   function findIndexById(list, id){
@@ -736,11 +764,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     let pos = findIndexById(rows, id);
 
     if (pos === -1) {
+      // Not present under current filters; clear all filters/search and try full index
       state.search = '';
       state.org.clear();
       state.tc.clear();
       state.type.clear();
       state.status.clear();
+
+      if (searchInput) searchInput.value = '';
+      syncFacetInputs();
+
       rows = applyFilters();
       pos = findIndexById(rows, id);
       if (pos === -1) return;
@@ -886,12 +919,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }
 
+
  // Init URL → state
   initFromURL();
 
   // Prime UI from URL state
   if (searchInput && state.search) searchInput.value = state.search;
-  if (pageSizeSelect) pageSizeSelect.value = String(state.size);
+  syncPageSizeSelectFromState();
 
   // Build facets
   buildFacetAccordions();
@@ -922,14 +956,15 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (Number.isFinite(v) && v > 0) state.size = v;
       state.page = 1;
       updateURLAll(true);
+      syncPageSizeSelectFromState();
       applyFilters();
     });
   }
 
-  const sortSelect = document.getElementById('groupSort');
   if (sortSelect) {
     sortSelect.addEventListener('change', () => {
-      state.sort = sortSelect.value || 'groupOrg:asc';
+      const v = sortSelect.value || 'groupOrg:asc';
+      state.sort = v;
       state.page = 1;
       updateURLAll(true);
       applyFilters();
@@ -939,16 +974,66 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Initial render
   applyFilters();
 
-  // Hide bottom pager while top pager is visible (docList parity)
-  if (pagerTopWrap && pagerBottomWrap && 'IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-  
-      // When top pager is on screen, hide bottom sticky pager; otherwise show it
-      pagerBottomWrap.style.display = entry.isIntersecting ? 'none' : '';
-    }, { root: null, threshold: 0.01 });
-    io.observe(pagerTopWrap);
-  }
+  // After initial render, honor any #GROUPID hash in the URL
+  initHashDeepLink();
+
+  // Auto-hide bottom pager when the top pager is actually visible (not covered by sticky headers)
+  (function(){
+    if (!pagerBottomWrap) return; // nothing to control
+
+    const headerSelectors = ['.navbar.sticky-top', '#groups-topbar'];
+    function headerOffsetPx(){
+      return headerSelectors.reduce((sum, sel) => {
+        const el = document.querySelector(sel);
+        if (!el) return sum;
+        const r = el.getBoundingClientRect();
+        const cs = getComputedStyle(el);
+        const topPx = parseFloat(cs.top) || 0;
+        const isAffixed = (cs.position === 'sticky' || cs.position === 'fixed');
+        const isAtTop = isAffixed && (r.top <= topPx + 2);
+        return sum + (isAtTop ? r.height : 0);
+      }, 0);
+    }
+
+    function setHidden(hide){
+      pagerBottomWrap.style.display = hide ? 'none' : '';
+    }
+
+    function fallbackToggle(){
+      if (!pagerTopWrap) { setHidden(false); return; }
+      const r = pagerTopWrap.getBoundingClientRect();
+      const offset = headerOffsetPx();
+      const visible = (r.bottom > offset) && (r.top < window.innerHeight);
+      setHidden(!!visible);
+    }
+
+    let io = null;
+    function initObserver(){
+      if (!pagerTopWrap || !('IntersectionObserver' in window)) return;
+      const offset = headerOffsetPx();
+      if (io) { io.disconnect(); io = null; }
+      io = new IntersectionObserver((entries) => {
+        for (const e of entries) setHidden(e.isIntersecting);
+      }, {
+        root: null,
+        threshold: 0,
+        rootMargin: `-${Math.max(0, Math.floor(offset))}px 0px 0px 0px`
+      });
+      io.observe(pagerTopWrap);
+      // initial state using precise geometry
+      fallbackToggle();
+    }
+
+    // init + listeners
+    initObserver();
+    if (!io) {
+      window.addEventListener('scroll', fallbackToggle, { passive: true });
+      window.addEventListener('resize', fallbackToggle);
+      fallbackToggle();
+    } else {
+      window.addEventListener('resize', initObserver);
+    }
+  })();
 
   // Hash deep-link support
   initHashDeepLink();

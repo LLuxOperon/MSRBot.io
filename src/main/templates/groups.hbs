@@ -11,14 +11,17 @@
       </button>
       <input id="groupSearch" type="search" class="form-control flex-grow-1" placeholder="Search Groups…">
       <div class="input-group input-group-sm w-auto" aria-label="Sort results">
-       <select id="groupSort" class="form-select w-auto">
-        <option value="groupOrg:asc">Org A→Z</option>
-        <option value="groupOrg:desc">Org Z→A</option>
-        <option value="groupId:asc">Name A→Z</option>
-        <option value="groupId:desc">Name Z→A</option>
-        <option value="groupType:asc">Type A→Z</option>
-        <option value="groupType:desc">Type Z→A</option>
-      </select>
+        <span class="input-group-text">Sort</span>
+        <select id="groupSort" class="form-select w-auto">
+          <option value="groupOrg:asc">Org (A-Z)</option>
+          <option value="groupOrg:desc">Org (Z-A)</option>
+          <option value="groupName:asc">Name (A-Z)</option>
+          <option value="groupName:desc">Name (Z-A)</option>
+          <option value="groupType:asc">Type (A-Z)</option>
+          <option value="groupType:desc">Type (Z-A)</option>
+          <option value="status:asc">Status (A-Z)</option>
+          <option value="status:desc">Status (Z-A)</option>
+        </select>
       </div>
       <div class="input-group input-group-sm w-auto" aria-label="Results per page">
         <span class="input-group-text">Per page</span>
@@ -77,7 +80,7 @@
             </div>
             <div class="title-block mb-2 flex-grow-1 order-1">
               <h3 class="h6 mb-1">
-                <code class="me-1">{{groupId}}</code>
+                <code class="me-1 d-none">{{groupId}}</code>
                 <a href="../docs/?f.group={{groupId}}" class="text-decoration-none">
                   <span class="group-label">{{groupLabel}}</span>
                 </a>
@@ -94,21 +97,38 @@
               {{/if}}
             </div>
           </header>
-          <div class="small text-muted mb-1">
+          <div class="meta mb-1 small text-muted d-flex flex-wrap align-items-center gap-1">
+            {{#if groupRepo}}
+              <span class="badge-reg"><a href="{{groupRepo}}" target="_blank">Repo</a></span>
+            {{/if}}
+            {{#ifeq groupType "TC"}}
+              <span class="badge-reg"><a href="../docs/?f.group={{groupId}}">Published Docs</a></span>
+            {{/ifeq}}
+            {{#if groupType}}
+              <span class="badge-reg"><a
+                href="../projects/{{../htmlLink}}?search.search={{spaceReplace groupOrg}}{{#if parentgroupId}}{{#with (groupIdLookup ../data parentgroupId)}}%20{{spaceReplace groupName}}{{/with}}{{/if}}%20{{spaceReplace groupName}}{{#if groupDesc}}%20{{spaceReplace groupDesc}}{{/if}}"
+                >Projects</a></span>
+            {{/if}}
+            {{#if groupDocs}}
+              <span class="badge-reg"><a href="{{groupDocs}}" target="_blank">Work Docs</a></span>
+            {{/if}}
+            {{#if groupCal}}
+              <span class="badge-reg"><a href="{{groupCal}}" target="_blank">Calendar</a></span>
+            {{/if}}
+            {{#if groupBallots}}
+              <span class="badge-reg"><a href="{{groupBallots}}" target="_blank">Ballots</a></span>
+            {{/if}}
             {{#if parentgroupId}}
               {{#with (groupIdLookup ../data parentgroupId)}}
-                <span class="badge-reg">
-                  Parent: <a class="group-link clear-filter" href="#{{groupId}}">
-                    {{#if groupLabel}}{{groupLabel}}{{else}}{{groupId}}{{/if}}
-                  </a>
-                </span>
+                <span class="badge-reg">Parent: <a class="group-link clear-filter" href="#{{groupId}}">{{#if groupLabel}}{{groupLabel}}{{else}}{{groupId}}{{/if}}</a></span>
               {{/with}}
             {{/if}}
-            {{#if groupLink}}
+
+          {{#if groupLink}}
               <span class="ms-auto">Link: <a href="{{groupLink}}" target="_blank" rel="noopener">{{groupLink}}</a></span>
             {{/if}}
           </div>
-          <div class="small mb-2">
+          <div class="small text-muted mt-2 d-flex flex-wrap align-items-center gap-2">
             {{groupSummary}}
             {{#ifeq isActive false}}
               <span class="fw-bold small d-block mt-1">
@@ -124,31 +144,6 @@
                 {{/if}}. **</em>
               </span>
             {{/ifeq}}
-          </div>
-          <div class="small mt-1 d-flex flex-wrap align-items-center gap-2">
-            {{#if groupRepo}}
-              <a href="{{groupRepo}}" target="_blank" class="badge-reg text-decoration-none">Repo</a>
-            {{/if}}
-            {{#ifeq groupType "TC"}}
-              <a href="../docs/?f.group={{groupId}}" class="badge-reg text-decoration-none">Published Docs</a>
-            {{/ifeq}}
-            {{#if groupType}}
-              <a
-                href="../projects/{{../htmlLink}}?search.search={{spaceReplace groupOrg}}{{#if parentgroupId}}{{#with (groupIdLookup ../data parentgroupId)}}%20{{spaceReplace groupName}}{{/with}}{{/if}}%20{{spaceReplace groupName}}{{#if groupDesc}}%20{{spaceReplace groupDesc}}{{/if}}"
-                class="badge-reg text-decoration-none"
-              >
-                Projects
-              </a>
-            {{/if}}
-            {{#if groupDocs}}
-              <a href="{{groupDocs}}" target="_blank" class="badge-reg text-decoration-none">Documents</a>
-            {{/if}}
-            {{#if groupCal}}
-              <a href="{{groupCal}}" target="_blank" class="badge-reg text-decoration-none">Calendar</a>
-            {{/if}}
-            {{#if groupBallots}}
-              <a href="{{groupBallots}}" target="_blank" class="badge-reg text-decoration-none">Ballots</a>
-            {{/if}}
           </div>
         </article>
       </template>
