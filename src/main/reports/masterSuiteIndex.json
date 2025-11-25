@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2025-11-19T04:36:38.459Z",
+  "generatedAt": "2025-11-25T16:01:13.546Z",
   "sourcePath": "src/main/data/documents.json",
-  "sourceHash": "sha256:430b178123badef98c28ec6939674d6b0ec4e121da2c41b9f690cb31c0fcb0e0",
+  "sourceHash": "sha256:79b9855358f6391e13abe03dedbc2c3b367cc148eccb05642462d4ab55984925",
   "publisherCounts": {
     "total": 2207,
     "counts": {
@@ -33380,7 +33380,7 @@
           "statusActive": true,
           "statusSuperseded": false,
           "statusWithdrawn": false,
-          "statusStabilized": false,
+          "statusStabilized": true,
           "statusAmended": false,
           "statusVersionless": false
         }
@@ -33390,7 +33390,7 @@
       "latestDateKey": "20111003",
       "hasActiveBase": true,
       "hasWithdrawn": false,
-      "hasStabilized": false,
+      "hasStabilized": true,
       "latestActiveBaseId": "SMPTE.RP2058-2.2011",
       "latestSupersededBaseId": null,
       "prevBaseId": null,
@@ -33415,7 +33415,7 @@
           "statusActive": true,
           "statusSuperseded": false,
           "statusWithdrawn": false,
-          "statusStabilized": false,
+          "statusStabilized": true,
           "statusAmended": false,
           "statusVersionless": false
         }
@@ -33425,7 +33425,7 @@
       "latestDateKey": "20111003",
       "hasActiveBase": true,
       "hasWithdrawn": false,
-      "hasStabilized": false,
+      "hasStabilized": true,
       "latestActiveBaseId": "SMPTE.RP2058-3.2011",
       "latestSupersededBaseId": null,
       "prevBaseId": null,
@@ -33450,7 +33450,7 @@
           "statusActive": true,
           "statusSuperseded": false,
           "statusWithdrawn": false,
-          "statusStabilized": false,
+          "statusStabilized": true,
           "statusAmended": false,
           "statusVersionless": false
         }
@@ -33460,7 +33460,7 @@
       "latestDateKey": "20111003",
       "hasActiveBase": true,
       "hasWithdrawn": false,
-      "hasStabilized": false,
+      "hasStabilized": true,
       "latestActiveBaseId": "SMPTE.RP2058-4.2011",
       "latestSupersededBaseId": null,
       "prevBaseId": null,
@@ -52283,7 +52283,7 @@
           "statusActive": true,
           "statusSuperseded": false,
           "statusWithdrawn": false,
-          "statusStabilized": false,
+          "statusStabilized": true,
           "statusAmended": false,
           "statusVersionless": false
         }
@@ -52293,7 +52293,7 @@
       "latestDateKey": "20110307",
       "hasActiveBase": true,
       "hasWithdrawn": false,
-      "hasStabilized": false,
+      "hasStabilized": true,
       "latestActiveBaseId": "SMPTE.ST2058-1.2011",
       "latestSupersededBaseId": null,
       "prevBaseId": null,
