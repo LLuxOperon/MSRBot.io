@@ -49064,7 +49064,8 @@
     "docTypeAbr": "RP",
     "status": [
       "active",
-      "latestVersion"
+      "latestVersion",
+      "stabilized"
     ],
     "statusFlags": {
       "active": true,
@@ -49072,7 +49073,7 @@
       "superseded": false,
       "withdrawn": false,
       "draft": false,
-      "stabilized": false,
+      "stabilized": true,
       "reaffirmed": false,
       "amended": false,
       "versionless": false
@@ -49105,7 +49106,8 @@
     "docTypeAbr": "RP",
     "status": [
       "active",
-      "latestVersion"
+      "latestVersion",
+      "stabilized"
     ],
     "statusFlags": {
       "active": true,
@@ -49113,7 +49115,7 @@
       "superseded": false,
       "withdrawn": false,
       "draft": false,
-      "stabilized": false,
+      "stabilized": true,
       "reaffirmed": false,
       "amended": false,
       "versionless": false
@@ -49146,7 +49148,8 @@
     "docTypeAbr": "RP",
     "status": [
       "active",
-      "latestVersion"
+      "latestVersion",
+      "stabilized"
     ],
     "statusFlags": {
       "active": true,
@@ -49154,7 +49157,7 @@
       "superseded": false,
       "withdrawn": false,
       "draft": false,
-      "stabilized": false,
+      "stabilized": true,
       "reaffirmed": false,
       "amended": false,
       "versionless": false
@@ -64984,7 +64987,8 @@
     "docTypeAbr": "ST",
     "status": [
       "active",
-      "latestVersion"
+      "latestVersion",
+      "stabilized"
     ],
     "statusFlags": {
       "active": true,
@@ -64992,7 +64996,7 @@
       "superseded": false,
       "withdrawn": false,
       "draft": false,
-      "stabilized": false,
+      "stabilized": true,
       "reaffirmed": false,
       "amended": false,
       "versionless": false
