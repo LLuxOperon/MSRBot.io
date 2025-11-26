@@ -291,7 +291,8 @@ pre {
 }
 
 #activeFilters .chip,
-#groupActiveFilters .chip {
+#groupActiveFilters .chip,
+#projectActiveFilters .chip {
     background-color: #1398b0;
     color: #fff;
 }
@@ -332,7 +333,8 @@ a.nav-link:focus {
 }
 
 #cards-topbar.sticky-top, 
-#groups-topbar.sticky-top {
+#groups-topbar.sticky-top,
+#projects-topbar.sticky-top {
   position: sticky;
   top: calc(var(--msr-navbar-height) + 0.0rem);
   /*top: 65px; /* height of your navbar */
@@ -349,8 +351,10 @@ a.nav-link:focus {
 /* Facet accordion cleanup */
 #facet .accordion-button,
 #groupFacet .accordion-button,
+#projectFacet .accordion-button,
 #facetDrawerBody .accordion-button,
-#groupFacetDrawerBody .accordion-button { 
+#groupFacetDrawerBody .accordion-button,
+#projectFacetDrawerBody .accordion-button { 
   padding: .4rem .75rem; 
   font-weight: 600; 
 }
@@ -509,7 +513,8 @@ img.publisher-logo  {
 }
 
 #pager-bottom,
-#groupPagerBottom {
+#groupPagerBottom,
+#projectPagerBottom {
   background-color: #e1e0dd; 
   z-index: 1010; 
 }

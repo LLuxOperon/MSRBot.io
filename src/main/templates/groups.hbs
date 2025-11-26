@@ -13,12 +13,12 @@
       <div class="input-group input-group-sm w-auto" aria-label="Sort results">
         <span class="input-group-text">Sort</span>
         <select id="groupSort" class="form-select w-auto">
-          <option value="groupOrg:asc">Org (A-Z)</option>
-          <option value="groupOrg:desc">Org (Z-A)</option>
-          <option value="groupName:asc">Name (A-Z)</option>
-          <option value="groupName:desc">Name (Z-A)</option>
-          <option value="groupType:asc">Type (A-Z)</option>
-          <option value="groupType:desc">Type (Z-A)</option>
+          <option value="org:asc">Org (A-Z)</option>
+          <option value="org:desc">Org (Z-A)</option>
+          <option value="name:asc">Name (A-Z)</option>
+          <option value="name:desc">Name (Z-A)</option>
+          <option value="type:asc">Type (A-Z)</option>
+          <option value="type:desc">Type (Z-A)</option>
           <option value="status:asc">Status (A-Z)</option>
           <option value="status:desc">Status (Z-A)</option>
         </select>
@@ -106,7 +106,7 @@
             {{/ifeq}}
             {{#if groupType}}
               <span class="badge-reg"><a
-                href="../projects/{{../htmlLink}}?search.search={{spaceReplace groupOrg}}{{#if parentgroupId}}{{#with (groupIdLookup ../data parentgroupId)}}%20{{spaceReplace groupName}}{{/with}}{{/if}}%20{{spaceReplace groupName}}{{#if groupDesc}}%20{{spaceReplace groupDesc}}{{/if}}"
+                href="../projects/{{../htmlLink}}?f.group={{spaceReplace groupOrg}}{{#if parentgroupId}}{{#with (groupIdLookup ../data parentgroupId)}}%20{{spaceReplace groupName}}{{/with}}{{/if}}%20{{spaceReplace groupName}}{{#if groupDesc}}%20{{spaceReplace groupDesc}}{{/if}}"
                 >Projects</a></span>
             {{/if}}
             {{#if groupDocs}}
@@ -124,7 +124,7 @@
               {{/with}}
             {{/if}}
 
-          {{#if groupLink}}
+            {{#if groupLink}}
               <span class="ms-auto">Link: <a href="{{groupLink}}" target="_blank" rel="noopener">{{groupLink}}</a></span>
             {{/if}}
           </div>

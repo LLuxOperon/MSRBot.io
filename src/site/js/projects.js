@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', async () => {
-  const cardsRoot = document.getElementById('groupCards');
+  const cardsRoot = document.getElementById('projectCards');
   if (!cardsRoot) return;
 
   async function loadJSONTry(candidates){
@@ -28,23 +28,65 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }
 
+  let projects = [];
+  try {
+    const raw = await loadJSONTry([
+      '/projects/_data/projects.json',
+      'projects/_data/projects.json',
+      '../projects/_data/projects.json',
+      './_data/projects.json'
+    ]);
+
+    if (Array.isArray(raw)) {
+      projects = raw;
+    } else if (raw && Array.isArray(raw.data)) {
+      projects = raw.data;
+    } else {
+      projects = [];
+    }
+  } catch (e) {
+    console.error('[projects] Failed to load projects.json:', e);
+    cardsRoot.innerHTML = '<div class="alert alert-warning">Projects view could not load data.</div>';
+    return;
+  }
+
+  // Load normalized groups for lookups
   let groups = [];
   try {
-    groups = await loadJSONTry([
+    const gRaw = await loadJSONTry([
       '/groups/_data/groups.json',
       'groups/_data/groups.json',
       '../groups/_data/groups.json',
       './_data/groups.json'
     ]);
-    if (!Array.isArray(groups)) groups = [];
+    if (Array.isArray(gRaw)) {
+      groups = gRaw;
+    }
   } catch (e) {
-    console.error('[groups] Failed to load normalized groups.json:', e);
-    cardsRoot.innerHTML = '<div class="alert alert-warning">Groups view could not load data.</div>';
-    return;
+    console.warn('[projects] Failed to load groups.json for lookups:', e);
   }
 
+  // Load documents for getLabel(docId) lookups (doc labels in Affects section)
+  let documents = [];
+  try {
+    const dRaw = await loadJSONTry([
+      '/docs/_data/documents.json',
+      'docs/_data/documents.json',
+      '../docs/_data/documents.json',
+      './_data/documents.json'
+    ]);
+    if (Array.isArray(dRaw)) {
+      documents = dRaw;
+    } else if (dRaw && Array.isArray(dRaw.data)) {
+      documents = dRaw.data;
+    }
+  } catch (e) {
+    console.warn('[projects] Failed to load documents.json for labels:', e);
+  }
+
+
   await ensureHandlebars();
-  // --- Client-side Handlebars helpers (match docList behavior enough for groups cards)
+  // --- Client-side Handlebars helpers (match docList behavior enough for projects cards)
   if (window.Handlebars) {
     // Try to load publisher logos + urls config (optional; safe to fail)
     let __publisherLogos = {}, __publisherLogoHeight = 18, __publisherAliases = {};
@@ -132,15 +174,45 @@ document.addEventListener('DOMContentLoaded', async () => {
     window.Handlebars.registerHelper('any', function(){ const args = Array.prototype.slice.call(arguments,0,-1); return args.some(v=>!!v); });
     window.Handlebars.registerHelper('spaceReplace', s => encodeURIComponent(String(s||'').trim()).replace(/%20/g,'%20'));
 
+    // Build a docId → document map for label lookups
+    const __docById = new Map(
+      Array.isArray(documents)
+        ? documents
+            .map(d => {
+              const id = String(d.docId || d.id || '').trim();
+              return id ? [id, d] : null;
+            })
+            .filter(Boolean)
+        : []
+    );
+
+    // getLabel: prefer document label/title when available, fall back to docId
+    window.Handlebars.registerHelper('getLabel', function(docId) {
+      const id = String(docId || '').trim();
+      if (!id) return '';
+      const doc = __docById.get(id);
+      if (!doc) return id;
+      const label = doc.label || doc.docLabel || doc.title || doc.docId || id;
+      return String(label);
+    });
+
+    // projectIdLookup: ignore passed data arg, use normalized projects map
+    const __projectById = new Map(Array.isArray(projects) ? projects.map(x => [String(x.projectId), x]) : []);
+    window.Handlebars.registerHelper('projectIdLookup', function(_dataIgnored, id){
+      if (!id) return null;
+      return __projectById.get(String(id)) || null;
+    });
+
     // groupIdLookup: ignore passed data arg, use normalized groups map
     const __groupById = new Map(Array.isArray(groups) ? groups.map(x => [String(x.groupId), x]) : []);
     window.Handlebars.registerHelper('groupIdLookup', function(_dataIgnored, id){
       if (!id) return null;
       return __groupById.get(String(id)) || null;
     });
+
   }
   // --- end helpers
-  const tplSrc = document.getElementById('group-card-tpl-src');
+  const tplSrc = document.getElementById('project-card-tpl-src');
   let hbCard = null;
   if (tplSrc && window.Handlebars) {
     try { hbCard = window.Handlebars.compile(tplSrc.innerHTML); } catch {}
@@ -150,26 +222,24 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (hbCard) {
       try { return hbCard(g); }
       catch (e) {
-        console.warn('[groups] Card template failed for', g && g.groupId, e);
+        console.warn('[projects] Card template failed for', g && g.projectId, e);
       }
     }
     // ultra-fallback, should rarely be used
     const esc = s => String(s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
     return `
-      <article class="card-reg group-card"
-        data-org="${esc(g.groupOrg)}"
-        data-type="${esc(g.groupType)}"
+      <article class="card-reg project-card"
+        data-group="${esc(g.projectGroup)}"
+        data-type="${esc(g.projectType)}"
         data-status="${esc(g.statusText)}"
-        data-group-id="${esc(g.groupId)}"
-        data-group-name="${esc(g.groupName)}"
-        data-group-desc="${esc(g.groupDesc)}"
-        data-parent-id="${esc(g.parentgroupId||'')}"
-        data-tc="${esc(g.tcId||'')}"
+        data-project-id="${esc(g.projectId)}"
+        data-project-name="${esc(g.projectName)}"
+        data-project-desc="${esc(g.projectDesc)}"
       >
         <header class="d-flex align-items-start gap-2 mb-1">
-          <a class="anchor" id="${esc(g.groupId)}" href="#${esc(g.groupId)}"></a>
+          <a class="anchor" id="${esc(g.projectId)}" href="#${esc(g.projectId)}"></a>
           <div class="title-block mb-2 flex-grow-1">
-            <h3 class="h6 mb-1"><code class="me-1">${esc(g.groupId)}</code> ${esc(g.groupLabel||g.groupName||'')}</h3>
+            <h3 class="h6 mb-1"><code class="me-1">${esc(g.projectId)}</code> ${esc(g.projectLabel||g.projectName||'')}</h3>
           </div>
           <div class="status-badges ms-auto">${g.isActive ? '<span class="badge text-bg-success">Active</span>' : '<span class="badge text-bg-secondary">Closed</span>'}</div>
         </header>
@@ -177,28 +247,28 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   // Render all cards from normalized data
-  cardsRoot.innerHTML = groups.map(renderCard).join('');
+  cardsRoot.innerHTML = projects.map(renderCard).join('');
 
   // Now discover cards from DOM
-  const cards = Array.from(cardsRoot.querySelectorAll('.group-card'));
+  const cards = Array.from(cardsRoot.querySelectorAll('.project-card'));
   if (!cards.length) return;
 
-  const searchInput       = document.getElementById('groupSearch');
-  const pageSizeSelect    = document.getElementById('groupPageSize');
-  const sortSelect        = document.getElementById('groupSort');
-  const clearBtn          = document.getElementById('groupClearFilters');
+  const searchInput       = document.getElementById('projectSearch');
+  const pageSizeSelect    = document.getElementById('projectPageSize');
+  const sortSelect        = document.getElementById('projectSort');
+  const clearBtn          = document.getElementById('projectClearFilters');
 
-  const resultCountEl     = document.getElementById('groupResultCount');
-  const totalCountEl      = document.getElementById('groupTotalCount');
-  const filterSummaryEl   = document.getElementById('groupFilterSummary');
-  const activeFiltersEl   = document.getElementById('groupActiveFilters');
-  const resultsLineEl     = document.getElementById('groupResultsLine');
-  const totalGroups       = cards.length;
-  if (totalCountEl) totalCountEl.textContent = String(totalGroups);
+  const resultCountEl     = document.getElementById('projectResultCount');
+  const totalCountEl      = document.getElementById('projectTotalCount');
+  const filterSummaryEl   = document.getElementById('projectFilterSummary');
+  const activeFiltersEl   = document.getElementById('projectActiveFilters');
+  const resultsLineEl     = document.getElementById('projectResultsLine');
+  const totalProjects     = cards.length;
+  if (totalCountEl) totalCountEl.textContent = String(totalProjects);
 
-  // --- Sticky offset (navbar + groups topbar) so hash jumps don't hide cards
+  // --- Sticky offset (navbar + projects topbar) so hash jumps don't hide cards
   function computeStickyOffset(){
-    const sels = ['.navbar.sticky-top', '#groups-topbar'];
+    const sels = ['.navbar.sticky-top', '#projects-topbar'];
     let h = 0;
     for (const sel of sels) {
       const el = document.querySelector(sel);
@@ -227,23 +297,23 @@ document.addEventListener('DOMContentLoaded', async () => {
   // --- end sticky offset
 
   // pager bits
-  const prevBtn           = document.getElementById('groupPrevPage');
-  const nextBtn           = document.getElementById('groupNextPage');
-  const prevBtnBottom     = document.getElementById('groupPrevPageBottom');
-  const nextBtnBottom     = document.getElementById('groupNextPageBottom');
-  const pageNumsEl        = document.getElementById('groupPageNums');
-  const pageNumsBottomEl  = document.getElementById('groupPageNumsBottom');
-  const pageMetaEl        = document.getElementById('groupPageMeta');
-  const pageMetaBottomEl  = document.getElementById('groupPageMetaBottom');
+  const prevBtn           = document.getElementById('projectPrevPage');
+  const nextBtn           = document.getElementById('projectNextPage');
+  const prevBtnBottom     = document.getElementById('projectPrevPageBottom');
+  const nextBtnBottom     = document.getElementById('projectNextPageBottom');
+  const pageNumsEl        = document.getElementById('projectPageNums');
+  const pageNumsBottomEl  = document.getElementById('projectPageNumsBottom');
+  const pageMetaEl        = document.getElementById('projectPageMeta');
+  const pageMetaBottomEl  = document.getElementById('projectPageMetaBottom');
 
-  const pagerTopWrap      = document.getElementById('groupPager');
-  const pagerBottomWrap   = document.getElementById('groupPagerBottom');
+  const pagerTopWrap      = document.getElementById('projectPager');
+  const pagerBottomWrap   = document.getElementById('projectPagerBottom');
 
   // Track whether pagination is needed so the observer can respect single-page cases
   let _hasMultiplePages = false;
 
-  const facetRoot         = document.getElementById('groupFacet');
-  const facetDrawerBody   = document.getElementById('groupFacetDrawerBody');
+  const facetRoot         = document.getElementById('projectFacet');
+  const facetDrawerBody   = document.getElementById('projectFacetDrawerBody');
 
   const state = {
     search: '',
@@ -253,7 +323,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     status: new Set(),
     page:   1,
     size:   20,
-    sort:   'org:asc',
+    sort:   'id:asc',
   };
 
   // Helper to keep the page-size dropdown in sync with state.size
@@ -270,21 +340,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     pageSizeSelect.value = val;
   }
 
-  // --- Build basic map for ancestry + display fields
-  // id -> { id, type, parent, org, name, desc }
-  const groupMap = new Map();
+  // Precompute search text for each project card
   cards.forEach(card => {
     const ds = card.dataset;
-    const id = ds.groupId;
-    if (!id) return;
-    groupMap.set(id, {
-      id,
-      type:   ds.type || '',
-      parent: ds.parentId || '',
-      org:    ds.org || '',
-      name:   ds.groupName || '',
-      desc:   ds.groupDesc || ''
-    });
+    const text = [
+      ds.projectId || '',
+      ds.org || '',
+      ds.type || '',
+      ds.status || '',
+      (card.textContent || '')
+    ]
+      .join(' ')
+      .toLowerCase();
+    card.dataset.searchText = text;
   });
 
   // --- URL sync (page/size/search/filters) ---
@@ -307,15 +375,18 @@ document.addEventListener('DOMContentLoaded', async () => {
       sp.forEach((val, key) => {
         if (!key.startsWith('f.')) return;
         const facet = key.slice(2);
+        // Map URL facet name to internal state key
+        const stateKey = (facet === 'group') ? 'org' : facet;
         const arr = String(val).split(',').map(x => x.trim()).filter(Boolean);
-        const set = state[facet];
+        const set = state[stateKey];
         if (set instanceof Set) arr.forEach(v => set.add(v));
       });
 
-      const sortSelect = document.getElementById('groupSort');
+      const sortSelect = document.getElementById('projectSort');
       if (sortSelect) {
-        const next = state.sort || 'org:asc';
+        const next = state.sort || 'id:asc';
         if (![...sortSelect.options].some(o => o.value === next)) {
+          
           const opt = document.createElement('option');
           opt.value = next; opt.textContent = next;
           sortSelect.appendChild(opt);
@@ -330,7 +401,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       const url = new URL(window.location.href);
       url.searchParams.set('page', String(state.page));
       url.searchParams.set('size', String(state.size));
-      url.searchParams.set('sort', String(state.sort || 'org:asc'));
+      url.searchParams.set('sort', String(state.sort || 'id:asc'));
 
       if (state.search && String(state.search).trim() !== '') {
         url.searchParams.set('q', String(state.search).trim());
@@ -342,10 +413,17 @@ document.addEventListener('DOMContentLoaded', async () => {
       url.searchParams.forEach((_, key) => { if (key.startsWith('f.')) toDelete.push(key); });
       toDelete.forEach(k => url.searchParams.delete(k));
 
-      ['org','tc','type','status'].forEach(k => {
-        const set = state[k];
+      // Map internal state keys to URL facet names: org → group
+      const facetMap = [
+        ['org',   'group'],
+        ['type',  'type'],
+        ['status','status'],
+      ];
+
+      facetMap.forEach(([stateKey, urlKey]) => {
+        const set = state[stateKey];
         if (set instanceof Set && set.size) {
-          url.searchParams.set(`f.${k}`, Array.from(set).map(String).join(','));
+          url.searchParams.set(`f.${urlKey}`, Array.from(set).map(String).join(','));
         }
       });
 
@@ -355,70 +433,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
   // --- end URL sync ---
 
-  function findTcId(groupId) {
-    let node = groupMap.get(groupId);
-    while (node) {
-      if (node.type === 'TC') return node.id;
-      if (!node.parent) break;
-      node = groupMap.get(node.parent);
-    }
-    return '';
-  }
-
-  // Precompute TC ids + search text on each card
-  cards.forEach(card => {
-    const ds  = card.dataset;
-    const gid = ds.groupId;
-    const type = ds.type || '';
-
-    let tcId = '';
-    if (type === 'TC') {
-      tcId = gid;
-    } else {
-      tcId = findTcId(gid);
-    }
-    if (tcId) {
-      card.dataset.tc = tcId;
-    }
-
-    const text = [
-      ds.org || '',
-      ds.type || '',
-      ds.status || '',
-      ds.tc || '',
-      (card.textContent || '')
-    ]
-      .join(' ')
-      .toLowerCase();
-
-    card.dataset.searchText = text;
-  });
-
-  // --- Build TC label lookup: tcId -> human label (org + name + desc)
-  const tcLabelMap = new Map();
-  cards.forEach(card => {
-    const ds = card.dataset;
-    const gid = ds.groupId || '';
-    const type = ds.type || '';
-    if (!gid) return;
-    if (type === 'TC') {
-      const org  = ds.org || '';
-      const name = ds.groupName || '';
-      const desc = ds.groupDesc || '';
-      const label = [org, name, desc].filter(Boolean).join(' ').trim() || gid;
-      tcLabelMap.set(gid, label);
-    }
-  });
 
   // --- Collect facet values
   const orgValues    = new Set();
-  const tcValues     = new Set();
   const typeValues   = new Set();
   const statusValues = new Set();
 
   // --- Facet value counts
   const orgCounts    = new Map();
-  const tcCounts     = new Map();
   const typeCounts   = new Map();
   const statusCounts = new Map();
 
@@ -427,10 +449,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (ds.org) {
       orgValues.add(ds.org);
       orgCounts.set(ds.org, (orgCounts.get(ds.org) || 0) + 1);
-    }
-    if (ds.tc) {
-      tcValues.add(ds.tc);
-      tcCounts.set(ds.tc, (tcCounts.get(ds.tc) || 0) + 1);
     }
     if (ds.type) {
       typeValues.add(ds.type);
@@ -445,8 +463,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   function syncFacetInputs() {
     const allInputs = document.querySelectorAll(
-      '#groupFacet input.form-check-input[data-facet-key], ' +
-      '#groupFacetDrawerBody input.form-check-input[data-facet-key]'
+      '#projectFacet input.form-check-input[data-facet-key], ' +
+      '#projectFacetDrawerBody input.form-check-input[data-facet-key]'
     );
     allInputs.forEach(cb => {
       const key = cb.dataset.facetKey;
@@ -483,7 +501,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (!arr.length) return '';
       const collapseId = `${idPrefix}-facet-${facetKey}`;
       const headerId   = `${collapseId}-hdr`;
-      const isDefaultOpen = facetKey !== 'tc';
+      const isDefaultOpen = true;
 
       const buttons = arr.map(val => {
         const count = counts && counts.get(val) ? counts.get(val) : 0;
@@ -493,7 +511,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             `<input class="form-check-input" id="${safeId}" type="checkbox" ` +
               `data-facet-key="${facetKey}" value="${val}">` +
             `<label class="form-check-label d-flex justify-content-between" for="${safeId}">` +
-              `<span>${facetKey === 'tc' ? (tcLabelMap.get(val) || val) : val}</span>` +
+              `<span>${val}</span>` +
               `<span class="text-muted small ms-2">${count}</span>` +
             `</label>` +
           `</div>`
@@ -520,15 +538,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     };
 
     const sections = [
-      ['Organization',        orgValues,    orgCounts,    'org'],
-      ['Technical Committee', tcValues,     tcCounts,     'tc'],
-      ['Group Type',          typeValues,   typeCounts,   'type'],
-      ['Status',              statusValues, statusCounts, 'status'],
+      ['Group',        orgValues,    orgCounts,    'org'],
+      ['Work Type',    typeValues,   typeCounts,   'type'],
+      ['Status',       statusValues, statusCounts, 'status'],
     ];
 
     const desktopHtml = `
       <div class="accordion" id="facetAcc">
-        ${sections.map(([title, values, counts, key]) => makeSection(title, values, counts, key, 'groupFacet')).join('')}
+        ${sections.map(([title, values, counts, key]) => makeSection(title, values, counts, key, 'projectFacet')).join('')}
       </div>`;
 
     if (facetRoot) {
@@ -538,7 +555,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (facetDrawerBody) {
       const drawerHtml = `
         <div class="accordion" id="facetAccDrawer">
-          ${sections.map(([title, values, counts, key]) => makeSection(title, values, counts, key, 'groupFacetDrawer')).join('')}
+          ${sections.map(([title, values, counts, key]) => makeSection(title, values, counts, key, 'projectFacetDrawer')).join('')}
         </div>`;
       facetDrawerBody.innerHTML = drawerHtml;
     }
@@ -609,45 +626,56 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   function sortCards(list) {
-    const norm = v => String(v || '').toLowerCase();
-    const mode = String(state.sort || 'org:asc');
-    const [key, dir] = mode.split(':');
-    const asc = (dir !== 'desc');
+    const sortSpec = String(state.sort || 'id:asc');
+    const [rawKey, rawDir] = sortSpec.split(':');
+    const key = rawKey || 'group';
+    const dir = (rawDir === 'desc') ? -1 : 1;
 
-    const getOrg    = c => norm(c.dataset.org);
-    const getType   = c => norm(c.dataset.type);
-    const getId     = c => norm(c.dataset.groupId);
-    const getStatus = c => norm(c.dataset.status);
+    const collator = new Intl.Collator(undefined, {
+      numeric: true,
+      sensitivity: 'base',
+    });
 
-    const cmp = (a, b, sel) => {
-      const av = sel(a);
-      const bv = sel(b);
-      const r = av.localeCompare(bv);
-      return asc ? r : -r;
-    };
+    return list.slice().sort((a, b) => {
+      const da = a.dataset || {};
+      const db = b.dataset || {};
 
-    const out = list.slice();
+      let va = '';
+      let vb = '';
 
-    switch (key) {
-      case 'org':
-        out.sort((a, b) => cmp(a, b, getOrg));
-        break;
+      switch (key) {
+        case 'group':
+          // Full resolved group string from data-org
+          va = da.org || '';
+          vb = db.org || '';
+          break;
+        case 'type':
+          va = da.type || '';
+          vb = db.type || '';
+          break;
+        case 'status':
+          va = da.status || '';
+          vb = db.status || '';
+          break;
+        case 'id':
+          va = da.projectId || '';
+          vb = db.projectId || '';
+          break;
+        default:
+          // Fallback: same as group sort
+          va = da.org || '';
+          vb = db.org || '';
+          break;
+      }
 
-      case 'type':
-        out.sort((a, b) => cmp(a, b, getType));
-        break;
+      const cmp = collator.compare(va, vb);
+      if (cmp !== 0) return cmp * dir;
 
-      case 'status':
-        out.sort((a, b) => cmp(a, b, getStatus));
-        break;
-
-      case 'groupId':
-      default:
-        out.sort((a, b) => cmp(a, b, getId));
-        break;
-    }
-
-    return out;
+      // Deterministic tie-breaker on projectId
+      const ta = da.projectId || '';
+      const tb = db.projectId || '';
+      return collator.compare(ta, tb);
+    });
   }
 
   function applyFilters() {
@@ -662,10 +690,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (!ds.searchText || !ds.searchText.includes(search)) ok = false;
       }
       if (ok && state.org.size && !state.org.has(ds.org)) ok = false;
-      if (ok && state.tc.size) {
-        const tc = ds.tc || '';
-        if (!tc || !state.tc.has(tc)) ok = false;
-      }
       if (ok && state.type.size && !state.type.has(ds.type)) ok = false;
       if (ok && state.status.size && !state.status.has(ds.status)) ok = false;
 
@@ -673,7 +697,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     const totalVisible = filtered.length;
-    const total = totalGroups;
+    const total = totalProjects;
     const size = Math.max(1, state.size || 0);
     const totalPages = Math.max(1, Math.ceil(totalVisible / size));
     // Recompute sticky offset after layout changes (filters/paging) but avoid scroll-jitter
@@ -704,15 +728,15 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (resultsLineEl) {
       if (!totalVisible) {
-        resultsLineEl.textContent = 'No groups found';
+        resultsLineEl.textContent = 'No projects found';
       } else {
         const startNum = start + 1;
         const endNum = Math.min(end, totalVisible);
-        const isFiltered = (state.org.size || state.tc.size || state.type.size || state.status.size || search);
+        const isFiltered = (state.org.size || state.type.size || state.status.size || search);
         const filteredSuffix = isFiltered && totalVisible < total
           ? ` (filtered from ${total} total)`
           : '';
-        resultsLineEl.textContent = `Showing ${startNum}–${endNum} of ${totalVisible} groups${filteredSuffix}`;
+        resultsLineEl.textContent = `Showing ${startNum}–${endNum} of ${totalVisible} projects${filteredSuffix}`;
       }
     }
 
@@ -739,13 +763,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   function findIndexById(list, id){
     if (!id) return -1;
-    return list.findIndex(card => String(card.dataset.groupId) === String(id));
+    return list.findIndex(card => String(card.dataset.projectId) === String(id));
   }
 
   function highlightAndScrollTo(id){
     const anchor = document.getElementById(id);
     if (!anchor) return;
-    const card = anchor.closest('.group-card') || anchor;
+    const card = anchor.closest('.project-card') || anchor;
     card.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
     const prevOutline = card.style.outline;
@@ -823,7 +847,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const hasChips = chips.length > 0;
     const clearAll = hasChips
-      ? `<button id="groupClearAllFilters" type="button" class="btn btn-sm btn-outline-secondary ms-1">Clear all</button>`
+      ? `<button id="projectClearAllFilters" type="button" class="btn btn-sm btn-outline-secondary ms-1">Clear all</button>`
       : '';
 
     activeFiltersEl.innerHTML = chips.join('') + clearAll;
@@ -847,7 +871,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     // Wire "Clear all"
-    const clearAllBtn = document.getElementById('groupClearAllFilters');
+    const clearAllBtn = document.getElementById('projectClearAllFilters');
     if (clearAllBtn) {
       clearAllBtn.addEventListener('click', () => {
         state.search = '';
@@ -870,7 +894,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const bits = [];
 
     if (state.org.size) {
-      bits.push('Organization: ' + Array.from(state.org).join(' + '));
+      bits.push('Group: ' + Array.from(state.org).join(' + '));
     }
     if (state.tc.size) {
       const tcLabels = Array.from(state.tc).map(v => tcLabelMap.get(v) || v);
@@ -963,7 +987,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   if (sortSelect) {
     sortSelect.addEventListener('change', () => {
-      const v = sortSelect.value || 'org:asc';
+      const v = sortSelect.value || 'projectGroup:asc';
       state.sort = v;
       state.page = 1;
       updateURLAll(true);
@@ -981,7 +1005,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   (function(){
     if (!pagerBottomWrap) return; // nothing to control
 
-    const headerSelectors = ['.navbar.sticky-top', '#groups-topbar'];
+    const headerSelectors = ['.navbar.sticky-top', '#projects-topbar'];
     function headerOffsetPx(){
       return headerSelectors.reduce((sum, sel) => {
         const el = document.querySelector(sel);
