@@ -16,18 +16,6 @@ a.anchor {
     scroll-margin-top: var(--sticky-offset, 10px);
 }
 
-.dataTables_info {
-    padding: 8px;
-}
-
-.dataTables_filter {
-    padding: 5px;
-}
-
-.dataTables_wrapper {
-    font-family: 'Lato', sans-serif !important;
-}
-
 div.dtsp-panesContainer {
     font-family: 'Lato', sans-serif !important;
 }
@@ -85,6 +73,7 @@ pre {
 }
 
 #toTopBtn {
+    display: none;
     position: fixed;
     bottom: 40px;
     right: 40px;
@@ -330,6 +319,25 @@ a.nav-link:focus {
 
 .navbar .nav-link {
   transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.dev-links-stack {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;              /* slight separation */
+  margin-left: 0.5rem;   /* breathing room from neighbors */
+}
+
+.dev-link {
+  font-size: 0.78rem;   
+  line-height: 1.1rem;
+  color: var(--bs-body-color);
+  text-decoration: none;
+}
+
+.dev-link:hover {
+  text-decoration: underline;
 }
 
 #cards-topbar.sticky-top, 

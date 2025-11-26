@@ -27,238 +27,30 @@ TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-/* Filter accross all collumns in table */
+/* "Back To Top" button functionality (vanilla JS, no jQuery) */
 
-$(document).ready(function(){
-  $("#search").on("input", function() {
-    var value = $(this).val().toLowerCase();
-    $("#searchTable tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+document.addEventListener('DOMContentLoaded', function () {
+  var toTopBtn = document.getElementById('toTopBtn');
+  if (toTopBtn) {
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 20) {
+        toTopBtn.style.display = 'block';
+      } else {
+        toTopBtn.style.display = 'none';
+      }
     });
-  });
-});
 
-/* Clear filtering */
-
-$(document).on('click', '.clear-filter', function(){       
-
-  var docTable = $('#sorttableDocs').DataTable();
-  docTable
-   .search( '' )
-   .columns().search( '' )
-   .draw();
-
-  $('#sorttableDocs').DataTable().searchPanes.clearSelections();
-  $('#sorttableDocs').DataTable().order([1, 'asc']).draw();
-
-  var groupTable = $('#sorttableGroups').DataTable();
-  groupTable
-   .search( '' )
-   .columns().search( '' )
-   .draw();
-
-  $('#sorttableGroups').DataTable().searchPanes.clearSelections();
-  $('#sorttableGroups').DataTable().order([0, 'asc']).draw();
-
-  var groupProj = $('#sorttableProjs').DataTable();
-  groupProj
-   .search( '' )
-   .columns().search( '' )
-   .draw();
-
-  $('#sorttableProjs').DataTable().searchPanes.clearSelections();
-  $('#sorttableProjs').DataTable().order([0, 'asc']).draw();
-
-  var url= document.location.href;
-  window.history.pushState({}, "", url.split("?")[0]);
-
-});
-
-/* DataTable options for sort headers and filtering - Groups*/
-
-$(document).ready(function() {
-
-  var searchOptions = $.fn.dataTable.ext.deepLink( ['search.search' ] );
-
-  var defaultOptions = {
-    autoWidth: false,
-    paging: false,
-    pageLength: 25,
-    lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]], 
-    responsive: true,
-    buttons: [
-      {
-        extend: 'searchPanes',
-        config:{
-          cascadePanes: true,
-          emptyMessage:"<i><b>None Defined</b></i>",
-          dtOpts: {
-            select: {
-                style: 'multi'
-            }
-          }, 
-          layout: 'columns-4',
-          viewTotal: true,
-          columns: [1, 7, 3, 4]
-        }
-      },
-      {
-        text: 'Clear All Filters',
-        action: function ( e, dt, node, config ) {
-          var table = $('#sorttableGroups').DataTable();
-          table
-           .search( '' )
-           .columns().search( '' )
-           .draw();
-
-          $('#sorttableGroups').DataTable().searchPanes.clearSelections();
-          $('#sorttableGroups').DataTable().order([0, 'asc']).draw();
-
-          var url= document.location.href;
-          window.history.pushState({}, "", url.split("?")[0]);
-        }
-      }
-    ],
-    columnDefs:[
-      {
-        width: '16.6%',
-        targets:[2]
-      },
-      {
-        width: '20%',
-        targets:[6]
-      },
-      {
-        visible: true,
-        targets:[7],
-        searchPanes: {
-          header: "Technical Committee"
-        }
-      },
-      {
-        width: '16.6%',
-        targets:[8]
-      }
-    ],
-    dom: 
-      "<'row'<'col d-print-none d-flex align-items-center'B><'col d-flex justify-content-center align-items-center'i><'col d-print-none d-flex justify-content-end align-items-center'f>>" +
-      "<'row'<'col-sm-12't>>" +
-      "<'row'<'col-sm-12'lp>>",
-    language: {
-      processing: "Loading filtering options...",
-      searchPanes: {
-        collapse: {0: 'Filter Options', _: 'Filter Options (%d)'}
-      }
-    }
-  };
-
-  var dt = $('#sorttableGroups').DataTable( 
-    $.extend( defaultOptions, searchOptions )
-  );
-
-});
-
-/* DataTable options for sort headers and filtering - Projects*/
-
-$(document).ready(function() {
-
-  var searchOptions = $.fn.dataTable.ext.deepLink( ['search.search' ] );
-
-  var defaultOptions = {
-    autoWidth: false,
-    paging: false,
-    pageLength: 25,
-    lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]], 
-    responsive: false,
-    buttons: [
-      {
-        extend: 'searchPanes',
-        config:{
-          cascadePanes: true,
-          emptyMessage:"<i><b>None Defined</b></i>",
-          dtOpts: {
-            select: {
-                style: 'multi'
-            }
-          }, 
-          layout: 'columns-3',
-          viewTotal: true,
-          columns: [6, 2, 4]
-        }
-      },
-      {
-        text: 'Clear All Filters',
-        action: function ( e, dt, node, config ) {
-          var table = $('#sorttableProjs').DataTable();
-          table
-           .search( '' )
-           .columns().search( '' )
-           .draw();
-
-          $('#sorttableProjs').DataTable().searchPanes.clearSelections();
-          $('#sorttableProjs').DataTable().order([0, 'asc']).draw();
-
-          var url= document.location.href;
-          window.history.pushState({}, "", url.split("?")[0]);
-        }
-      }
-    ],
-    dom: 
-      "<'row'<'col d-print-none d-flex align-items-center'B><'col d-flex justify-content-center align-items-center'i><'col d-print-none d-flex justify-content-end align-items-center'f>>" +
-      "<'row'<'col-sm-12't>>" +
-      "<'row'<'col-sm-12'lp>>",
-    language: {
-      processing: "Loading filtering options...",
-      searchPanes: {
-        collapse: {0: 'Filter Options', _: 'Filter Options (%d)'}
-      }
-    },
-    columnDefs:[
-
-      {
-        visible: false,
-        targets:[4],
-        searchPanes: {
-          header: "Status"
-        }
-      },
-      {
-        visible: false,
-        targets:[6],
-        searchPanes: {
-          header: "Group"
-        }
-      }
-    ]
+    // Native smooth scroll
+    toTopBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
-
-  var dt = $('#sorttableProjs').DataTable( 
-    $.extend( defaultOptions, searchOptions )
-  );
-
 });
 
-/* "Back To Top" button functionality */
-
-$(document).ready(function() {
-$(window).scroll(function() {
-if ($(this).scrollTop() > 20) {
-$('#toTopBtn').fadeIn();
-} else {
-$('#toTopBtn').fadeOut();
-}
-});
-
-// Native smooth scroll (starts immediately, avoids jQuery animation queue)
-$(document).on('click', '#toTopBtn', function(e){
-  e.preventDefault();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-  return false;
-});
-});
-
-/* Dynamic navbar active state based on current URL vs nav hrefs */
-$(document).ready(function () {
+/* Dynamic navbar active state based on current URL vs nav hrefs (vanilla JS) */
+document.addEventListener('DOMContentLoaded', function () {
   try {
     var here = window.location && window.location.href ? window.location.href : '';
     if (!here) return;

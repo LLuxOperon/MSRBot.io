@@ -401,11 +401,11 @@
     const metaLine = (publisher || docType)
       ? `<div class="text-muted small mb-1">
            ${publisher
-             ? `<a class="clear-filter" href="../../docs/?f.publisher=${encodeURIComponent(rawPublisher)}">${publisher}</a>`
+             ? `<a class="" href="../../docs/?f.publisher=${encodeURIComponent(rawPublisher)}">${publisher}</a>`
              : ''}
            ${publisher && docType ? ' • ' : ''}
            ${docType
-             ? `<a class="clear-filter" href="../../docs/?f.docType=${encodeURIComponent(rawDocType)}">${docType}</a>`
+             ? `<a class="" href="../../docs/?f.docType=${encodeURIComponent(rawDocType)}">${docType}</a>`
              : ''}
            ${statusStr ? ' • <span class="ms-1">[' + escapeHtml(statusStr) + ']</span>' : ''}
            ${statusIcon ? '<span class="ms-1">' + statusIcon + '</span>' : ''}
@@ -416,7 +416,7 @@
         <div class="mb-2">
           <div class="mb-1 d-flex flex-wrap align-items-center gap-1">
             <span><code>${escapeHtml(label)}</code></span>
-            <span class="fw-semibold"><a class="clear-filter" href="../../docs/${id}/">${escapeHtml(d.docTitle || label)}</a></span>
+            <span class="fw-semibold"><a class="" href="../../docs/${id}/">${escapeHtml(d.docTitle || label)}</a></span>
           </div>
           ${metaLine}
         </div>

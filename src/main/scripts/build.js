@@ -351,10 +351,17 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   }
   // --- Generic registry JSON emit (ALL registries except groups)
   // Groups are emitted via emitNormalizedGroups() + optional raw copy above.
-  if (templateName !== 'groups') {
+  // Skip emitting build/documents/_data/documents.json; that folder is unused now.
+  // Also skip build/refTree/_data/documents.json — refTree client JS reads docs/_data/documents.json directly.
+  if (
+    templateName !== 'groups' &&
+    !(templateName === 'documents' && listType === 'documents') &&
+    !(templateName === 'refTree' && listType === 'documents')
+  ) {
     const outDir = path.join(BUILD_PATH, templateName, '_data');
     await fs.mkdir(outDir, { recursive: true });
     const outPath = path.join(outDir, `${listType}.json`);
+
     await writeFileSafe(outPath, JSON.stringify(data, null, 2), 'utf8');
     console.log(`[build] Wrote build/${templateName}/_data/${listType}.json`);
   }
@@ -379,7 +386,12 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   const ogImageAlt = siteConfig.ogImageAlt;
   // Asset prefix for relative local assets in header/footer
   const assetPrefix = '../';
-  var CSV_SITE_PATH = templateType + ".csv";
+  // Emit CSV into the shared /_data/ folder so all pages can link to a single canonical export.
+  // Example outputs:
+  //   build/_data/documents.csv
+  //   build/_data/groups.csv
+  //   build/_data/projects.csv
+  var CSV_SITE_PATH = "_data/" + templateType + ".csv";
   const inputFileName = DATA_PATH;
   const outputFileName = BUILD_PATH + "/" + CSV_SITE_PATH;
 

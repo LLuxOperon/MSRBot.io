@@ -120,7 +120,7 @@
             {{/if}}
             {{#if parentgroupId}}
               {{#with (groupIdLookup ../data parentgroupId)}}
-                <span class="badge-reg">Parent: <a class="group-link clear-filter" href="#{{groupId}}">{{#if groupLabel}}{{groupLabel}}{{else}}{{groupId}}{{/if}}</a></span>
+                <span class="badge-reg">Parent: <a class="group-link " href="#{{groupId}}">{{#if groupLabel}}{{groupLabel}}{{else}}{{groupId}}{{/if}}</a></span>
               {{/with}}
             {{/if}}
 
@@ -136,7 +136,7 @@
                   {{#groupStatus.assignedGroup}}
                     {{#unless @first}}, {{/unless}}
                     {{#with (groupIdLookup ../../data this)}}
-                      <a class="group-link clear-filter" href="#{{groupId}}">
+                      <a class="group-link " href="#{{groupId}}">
                         {{#if groupLabel}}{{groupLabel}}{{else}}{{groupId}}{{/if}}
                       </a>
                     {{/with}}

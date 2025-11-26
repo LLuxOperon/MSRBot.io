@@ -14,7 +14,7 @@
             </p>
             {{#if publisher}}
               <p class="text-muted small mb-0">
-                <a class="clear-filter" href="../../docs/?f.publisher={{publisher}}">{{publisher}}</a> • <a class="clear-filter" href="../../docs/?f.docType={{docType}}">{{docType}}</a> • [{{getStatus docId}}] {{{getstatusButton docId "10"}}}
+                <a class="" href="../../docs/?f.publisher={{publisher}}">{{publisher}}</a> • <a class="" href="../../docs/?f.docType={{docType}}">{{docType}}</a> • [{{getStatus docId}}] {{{getstatusButton docId "10"}}}
                 {{#with (docProjLookup @root.docProjs docId)}}
                   {{#ifnoteq projectStatus "Complete"}}
                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#F6BE00" class="bi bi-slash-circle-fill align-baseline" viewBox="0 0 16 16">
