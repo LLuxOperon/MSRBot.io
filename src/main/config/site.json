@@ -166,6 +166,9 @@
     "WHATWG": "resources/logos/whatwg_logo.svg",
     "Wiley": "resources/logos/wiley-logo-footer.svg"
   },
+  "publisherLogosDark": {
+    "SMPTE": "resources/logos/smpte-logo_white.svg"
+  },
   "publisherUrls": {
     "AES": "https://aes2.org/",
     "AIM": "https://www.aimglobal.org/",

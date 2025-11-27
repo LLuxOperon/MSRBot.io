@@ -1,7 +1,7 @@
   {{>header}}
     <!-- Main content starts - do not edit above this line -->
-<div id="projects-topbar" class="sticky-top border-bottom">
-  <div class="container px-3 py-2 bg-white">
+<div id="projects-topbar" class="sticky-top">
+  <div class="container px-3 py-2">
     <div id="projectFilterSummary" class="text-muted small mb-1"></div>
     <div id="projectToolbar" class="d-flex flex-wrap align-items-center gap-2">
       <button class="btn btn-outline-secondary d-lg-none" type="button"
@@ -61,7 +61,7 @@
       {{{{raw}}}}
       <template id="project-card-tpl-src">
         <article
-          class="card-reg project-card"
+          class="card-reg project-card border border-secondary-subtle"
           data-org="{{#if assignedGroup}}{{#with (groupIdLookup ../dataGroups assignedGroup)}}{{groupOrg}} {{#if parentgroupId}}{{#with (groupIdLookup ../../dataGroups parentgroupId)}}{{groupName}}{{/with}} {{/if}}{{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}}{{/with}}{{/if}}"
           data-type="{{workType}}"
           data-status="{{projectStatus}}"
@@ -95,7 +95,7 @@
                   <span class="badge text-bg-warning">{{projectStatus}}</span>
                 {{/if}}
               {{/ifeq}}
-              <span class="badge text-bg-light border">{{workType}}</span>
+              <span class="badge bg-light-subtle text-light-emphasis">{{workType}}</span>
             </div>
           </header>
 

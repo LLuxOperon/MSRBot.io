@@ -1,8 +1,8 @@
 {{> header}}
 <!-- Main content starts - do not edit above this line -->
 
-<div id="groups-topbar" class="sticky-top border-bottom">
-  <div class="container px-3 py-2 bg-white">
+<div id="groups-topbar" class="sticky-top">
+  <div class="container px-3 py-2 ">
     <div id="groupFilterSummary" class="text-muted small mb-1"></div>
     <div id="groupToolbar" class="d-flex flex-wrap align-items-center gap-2">
       <button class="btn btn-outline-secondary d-lg-none" type="button"
@@ -59,7 +59,7 @@
       {{{{raw}}}}
       <template id="group-card-tpl-src">
         <article
-          class="card-reg group-card"
+          class="card-reg group-card border border-secondary-subtle"
           data-org="{{groupOrg}}"
           data-type="{{groupType}}"
           data-status="{{statusText}}"
@@ -93,7 +93,7 @@
                 <span class="badge text-bg-secondary">Closed</span>
               {{/if}}
               {{#if groupType}}
-                <span class="badge text-bg-light border">{{groupType}}</span>
+                <span class="badge bg-light-subtle text-light-emphasis">{{groupType}}</span>
               {{/if}}
             </div>
           </header>

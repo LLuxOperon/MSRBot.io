@@ -222,14 +222,21 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     // --- Publisher logo helper (client-side; data fetched at runtime)
     // Expects build/_data/publisher-logos.json with shape: { logos: { "SMPTE": "/static/logos/smpte.svg", ... }, height: 18 }
     let __publisherLogos = {};
+    let __publisherLogosDark = {};
     let __publisherLogoHeight = 18;
     let __publisherAliases = {};
     try {
       const cfg = await loadJSONTry(['../_data/publisher-logos.json']);
       if (cfg && typeof cfg === 'object') {
-        __publisherLogos = cfg.logos || {};
-        __publisherLogoHeight = Number(cfg.height) || 18;
-        __publisherAliases = (cfg.aliases && typeof cfg.aliases === 'object') ? cfg.aliases : {};
+        const logos = cfg.logos || cfg.publisherLogos || {};
+        const logosDark = cfg.logosDark || cfg.publisherLogosDark || {};
+        const height = cfg.height || cfg.publisherLogoHeight;
+        const aliases = cfg.aliases || cfg.publisherLogoAliases || {};
+
+        __publisherLogos = logos;
+        __publisherLogosDark = logosDark;
+        __publisherLogoHeight = Number(height) || 18;
+        __publisherAliases = (aliases && typeof aliases === 'object') ? aliases : {};
       }
     } catch (e) {
       console.warn('[docList] publisher logos config not available (tried multiple paths):', e && e.message ? e.message : e);
@@ -247,36 +254,46 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       console.warn('[docList] publisher urls config not available:', e && e.message ? e.message : e);
     }
 
-    function resolvePublisherLogo(pubRaw){
+    function resolvePublisherLogoFromMap(map, aliases, pubRaw){
       const input = String(pubRaw || '').trim();
-      if (!input) return null;
+      if (!input || !map || typeof map !== 'object') return null;
 
       // 1) Exact
-      if (__publisherLogos[input]) return __publisherLogos[input];
+      if (map[input]) return map[input];
 
       // 2) Alias (case-insensitive keys)
-      const lowerAliases = __publisherAliases.__lowerCache || ( __publisherAliases.__lowerCache = (() => {
+      const lowerAliases = aliases.__lowerCache || (aliases.__lowerCache = (() => {
         const m = {};
-        for (const [a, c] of Object.entries(__publisherAliases)) {
+        for (const [a, c] of Object.entries(aliases)) {
           m[String(a).toLowerCase()] = String(c);
         }
         return m;
       })());
       const canonFromAlias = lowerAliases[input.toLowerCase()];
-      if (canonFromAlias && __publisherLogos[canonFromAlias]) return __publisherLogos[canonFromAlias];
+      if (canonFromAlias && map[canonFromAlias]) return map[canonFromAlias];
 
       // 3) Simple tokenization: take first token before common separators (mdash/en dash, hyphen, comma, paren)
       const firstToken = input.split(/[–—-]|,|\(|\)|:/)[0].trim();
-      if (firstToken && __publisherLogos[firstToken]) return __publisherLogos[firstToken];
+      if (firstToken && map[firstToken]) return map[firstToken];
 
       // 4) Case-insensitive direct match on keys
       const lowerKey = input.toLowerCase();
-      for (const [k, v] of Object.entries(__publisherLogos)) {
+      for (const [k, v] of Object.entries(map)) {
         if (String(k).toLowerCase() === lowerKey) return v;
       }
 
       return null;
     }
+
+    function resolvePublisherLogo(pubRaw){
+      return resolvePublisherLogoFromMap(__publisherLogos, __publisherAliases, pubRaw);
+    }
+
+    function resolvePublisherLogoDark(pubRaw){
+      if (!__publisherLogosDark || !Object.keys(__publisherLogosDark).length) return null;
+      return resolvePublisherLogoFromMap(__publisherLogosDark, __publisherAliases, pubRaw);
+    }
+
     function resolvePublisherUrl(pubRaw){
       const input = String(pubRaw || '').trim();
       if (!input) return null;
@@ -306,21 +323,44 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       }
       return null;
     }
+
     const __pubWarned = new Set();
     window.Handlebars.registerHelper('publisherLogo', function(pub) {
-      const rel = resolvePublisherLogo(pub);
-      if (!rel) {
+      const relLight = resolvePublisherLogo(pub);
+
+      if (!relLight) {
         const key = String(pub || '');
         if (key && !__pubWarned.has(key)) {
           __pubWarned.add(key);
-          console.debug('[docList] publisherLogo: no logo for publisher "%s". Available keys: %o', key, Object.keys(__publisherLogos));
+          console.debug(
+            '[docList] publisherLogo: no logo for publisher "%s". Available keys: %o',
+            key,
+            Object.keys(__publisherLogos)
+          );
         }
         return '';
       }
+
+      const relDark = resolvePublisherLogoDark(pub);
       const alt = `${pub} logo`;
       const h = __publisherLogoHeight;
+
+      const lightUrl = `../${relLight}`;
+      const attrs = [
+        `src="${lightUrl}"`,
+        `alt="${alt}"`,
+        `height="${h}"`,
+        'class="align-text-bottom me-1 publisher-logo"',
+        'loading="lazy"',
+        `data-logo-light="${lightUrl}"`
+      ];
+
+      if (relDark) {
+        attrs.push(`data-logo-dark="../${relDark}"`);
+      }
+
       return new window.Handlebars.SafeString(
-        `<img src="../${rel}" alt="${alt}" height="${h}" class="align-text-bottom me-1 publisher-logo" loading="lazy">`
+        `<img ${attrs.join(' ')}>`
       );
     });
     window.Handlebars.registerHelper('publisherLink', function(pub){
@@ -351,7 +391,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         reaffirmed:'text-bg-info',
         stabilized:'text-bg-primary',
         latestversion: 'bg-info-subtle text-info-emphasis'
-      }[s] || 'text-bg-light';
+      }[s] || 'text-';
 
       // Insert spaces between camelCase boundaries and underscores, then uppercase
       const pretty = raw

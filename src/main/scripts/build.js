@@ -1529,49 +1529,58 @@ hb.registerHelper('docProjLookup', function(collection, id) {
       return str.replace(/\./g, '-')
   });
 
-hb.registerHelper('publisherLogo', function (pub, opts) {
-  if (!pub || typeof pub !== 'string') return '';
+  function resolvePublisherLogoFromMapNode(map, aliases, pubRaw) {
+    const input = String(pubRaw || '').trim();
+    if (!input || !map || typeof map !== 'object') return null;
 
-  // Resolve config maps
-  const logos = (siteConfig && siteConfig.publisherLogos && typeof siteConfig.publisherLogos === 'object')
-    ? siteConfig.publisherLogos
-    : null;
-  const aliases = (siteConfig && siteConfig.publisherLogoAliases && typeof siteConfig.publisherLogoAliases === 'object')
-    ? siteConfig.publisherLogoAliases
-    : {};
-  const raw = String(pub).trim();
-  let rel = null;
-  // 1) Exact match
-  if (logos && logos[raw]) rel = logos[raw];
-  // 2) Alias (case-insensitive)
-  if (!rel && aliases && typeof aliases === 'object') {
+    // 1) Exact
+    if (map[input]) return map[input];
+
+    // 2) Alias (case-insensitive keys)
     const lowerAliases = {};
-    for (const [a, c] of Object.entries(aliases)) {
+    for (const [a, c] of Object.entries(aliases || {})) {
       lowerAliases[String(a).toLowerCase()] = String(c);
     }
-    const canon = lowerAliases[raw.toLowerCase()];
-    if (canon && logos && logos[canon]) rel = logos[canon];
-  }
-  // 3) First-token fallback
-  if (!rel) {
-    const first = raw.split(/[–—-]|,|\(|\)|:/)[0].trim();
-    if (first && logos && logos[first]) rel = logos[first];
-  }
-  // 4) Case-insensitive direct key match
-  if (!rel && logos && typeof logos === 'object') {
-    const lower = raw.toLowerCase();
-    for (const [k, v] of Object.entries(logos)) {
-      if (String(k).toLowerCase() === lower) {
-        rel = v;
-        break;
-      }
-    }
-  }
-  if (!rel) return '';
+    const canonFromAlias = lowerAliases[input.toLowerCase()];
+    if (canonFromAlias && map[canonFromAlias]) return map[canonFromAlias];
 
-  // Access render root for assetPrefix + default height
-  const root = (opts && opts.data && opts.data.root) ? opts.data.root : {};
-  const assetPrefix = (typeof root.assetPrefix === 'string') ? root.assetPrefix : '';
+    // 3) Simple tokenization: take first token before common separators (mdash/en dash, hyphen, comma, paren)
+    const firstToken = input.split(/[–—-]|,|\(|\)|:/)[0].trim();
+    if (firstToken && map[firstToken]) return map[firstToken];
+
+    // 4) Case-insensitive direct match on keys
+    const lowerKey = input.toLowerCase();
+    for (const [k, v] of Object.entries(map)) {
+      if (String(k).toLowerCase() === lowerKey) return v;
+    }
+    return null;
+  }
+
+  hb.registerHelper('publisherLogo', function (pub, opts) {
+    if (!pub || typeof pub !== 'string') return '';
+
+    const raw = String(pub).trim();
+    if (!raw) return '';
+
+    // Resolve config maps (light + dark + aliases)
+    const logos = (siteConfig && siteConfig.publisherLogos && typeof siteConfig.publisherLogos === 'object')
+      ? siteConfig.publisherLogos
+      : {};
+    const logosDark = (siteConfig && siteConfig.publisherLogosDark && typeof siteConfig.publisherLogosDark === 'object')
+      ? siteConfig.publisherLogosDark
+      : {};
+    const aliases = (siteConfig && siteConfig.publisherLogoAliases && typeof siteConfig.publisherLogoAliases === 'object')
+      ? siteConfig.publisherLogoAliases
+      : {};
+
+    const relLight = resolvePublisherLogoFromMapNode(logos, aliases, raw);
+    if (!relLight) return '';
+
+    const relDark = resolvePublisherLogoFromMapNode(logosDark, aliases, raw) || null;
+
+    // Access render root for assetPrefix + default height
+    const root = (opts && opts.data && opts.data.root) ? opts.data.root : {};
+    const assetPrefix = (typeof root.assetPrefix === 'string') ? root.assetPrefix : '';
 
     // Height precedence: explicit hash height > root.publisherLogoHeight > siteConfig.publisherLogoHeight > 25
     let h = 25;
@@ -1583,11 +1592,31 @@ hb.registerHelper('publisherLogo', function (pub, opts) {
       h = siteConfig.publisherLogoHeight;
     }
 
+    // Build URLs relative to assetPrefix
+    const lightUrl = relLight.startsWith('/')
+      ? `${assetPrefix}${relLight.replace(/^\//, '')}`
+      : `${assetPrefix}${relLight}`;
+    const darkUrl = relDark
+      ? (relDark.startsWith('/')
+          ? `${assetPrefix}${relDark.replace(/^\//, '')}`
+          : `${assetPrefix}${relDark}`)
+      : null;
+
     const alt = `${pub} logo`;
-    const src = rel.startsWith('/') ? rel : `${assetPrefix}${rel}`;
+    const attrs = [
+      `src="${lightUrl}"`,
+      `alt="${alt}"`,
+      `height="${h}"`,
+      'class="align-text-bottom me-1 publisher-logo"',
+      'loading="lazy"',
+      `data-logo-light="${lightUrl}"`
+    ];
+    if (darkUrl) {
+      attrs.push(`data-logo-dark="${darkUrl}"`);
+    }
 
     return new hb.SafeString(
-      `<img src="${src}" alt="${alt}" height="${h}" class="align-text-bottom me-1 publisher-logo" loading="lazy">`
+      `<img ${attrs.join(' ')}>`
     );
   });
   
@@ -1797,6 +1826,17 @@ hb.registerHelper('publisherLogo', function (pub, opts) {
           logosOut[String(k).trim()] = rel.startsWith('/') ? rel : '/' + rel;
         }
       }
+
+      // Optional dark-logo map (only for publishers that define a dark variant)
+      const logosDarkOut = {};
+      if (siteConfig && siteConfig.publisherLogosDark && typeof siteConfig.publisherLogosDark === 'object') {
+        for (const [k, v] of Object.entries(siteConfig.publisherLogosDark)) {
+          if (!v) continue;
+          const rel = String(v).trim();
+          logosDarkOut[String(k).trim()] = rel.startsWith('/') ? rel : '/' + rel;
+        }
+      }
+
       // Optional alias map: { "smpte": "SMPTE", "SMPTE – Society of Motion Picture…": "SMPTE" }
       const aliasesOut = {};
       if (siteConfig && siteConfig.publisherLogoAliases && typeof siteConfig.publisherLogoAliases === 'object') {
@@ -1805,11 +1845,14 @@ hb.registerHelper('publisherLogo', function (pub, opts) {
           aliasesOut[String(alias).trim()] = String(canon).trim();
         }
       }
+
       const logosPayload = {
         logos: logosOut,
+        logosDark: logosDarkOut,
         height: (typeof siteConfig.publisherLogoHeight === 'number' ? siteConfig.publisherLogoHeight : 25),
         aliases: aliasesOut
       };
+
       await writeFileSafe(
         path.join(BUILD_PATH, '_data', 'publisher-logos.json'),
         JSON.stringify(logosPayload, null, 2),

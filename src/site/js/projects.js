@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // --- Client-side Handlebars helpers (match docList behavior enough for projects cards)
   if (window.Handlebars) {
     // Try to load publisher logos + urls config (optional; safe to fail)
-    let __publisherLogos = {}, __publisherLogoHeight = 18, __publisherAliases = {};
+    let __publisherLogos = {}, __publisherLogosDark = {}, __publisherLogoHeight = 18, __publisherAliases = {};
     let __publisherUrls = {}, __publisherUrlAliases = {};
     try {
       const cfg = await loadJSONTry([
@@ -99,9 +99,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         '/docs/_data/publisher-logos.json'
       ]);
       if (cfg && typeof cfg === 'object') {
-        __publisherLogos = cfg.logos || {};
-        __publisherLogoHeight = Number(cfg.height) || 18;
-        __publisherAliases = (cfg.aliases && typeof cfg.aliases === 'object') ? cfg.aliases : {};
+        const logos = cfg.logos || cfg.publisherLogos || {};
+        const logosDark = cfg.logosDark || cfg.publisherLogosDark || {};
+        const height = cfg.height || cfg.publisherLogoHeight;
+        const aliases = cfg.aliases || cfg.publisherLogoAliases || {};
+
+        __publisherLogos = logos;
+        __publisherLogosDark = logosDark;
+        __publisherLogoHeight = Number(height) || 18;
+        __publisherAliases = (aliases && typeof aliases === 'object') ? aliases : {};
       }
     } catch {}
     try {
@@ -117,20 +123,43 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
     } catch {}
 
-    function resolvePublisherLogo(pubRaw){
+    function resolvePublisherLogoFromMap(map, aliases, pubRaw){
       const input = String(pubRaw || '').trim();
-      if (!input) return null;
-      if (__publisherLogos[input]) return __publisherLogos[input];
-      const lowerAliases = __publisherAliases.__lowerCache || (__publisherAliases.__lowerCache = (() => {
-        const m = {}; for (const [a,c] of Object.entries(__publisherAliases)) m[String(a).toLowerCase()] = String(c); return m;
+      if (!input || !map || typeof map !== 'object') return null;
+
+      // 1) Exact
+      if (map[input]) return map[input];
+
+      // 2) Alias (case-insensitive keys)
+      const lowerAliases = aliases.__lowerCache || (aliases.__lowerCache = (() => {
+        const m = {};
+        for (const [a, c] of Object.entries(aliases)) {
+          m[String(a).toLowerCase()] = String(c);
+        }
+        return m;
       })());
-      const canon = lowerAliases[input.toLowerCase()];
-      if (canon && __publisherLogos[canon]) return __publisherLogos[canon];
+      const canonFromAlias = lowerAliases[input.toLowerCase()];
+      if (canonFromAlias && map[canonFromAlias]) return map[canonFromAlias];
+
+      // 3) Simple tokenization: take first token before common separators (mdash/en dash, hyphen, comma, paren)
       const firstToken = input.split(/[–—-]|,|\(|\)|:/)[0].trim();
-      if (firstToken && __publisherLogos[firstToken]) return __publisherLogos[firstToken];
+      if (firstToken && map[firstToken]) return map[firstToken];
+
+      // 4) Case-insensitive direct match on keys
       const lowerKey = input.toLowerCase();
-      for (const [k,v] of Object.entries(__publisherLogos)) if (String(k).toLowerCase() === lowerKey) return v;
+      for (const [k, v] of Object.entries(map)) {
+        if (String(k).toLowerCase() === lowerKey) return v;
+      }
       return null;
+    }
+
+    function resolvePublisherLogo(pubRaw){
+      return resolvePublisherLogoFromMap(__publisherLogos, __publisherAliases, pubRaw);
+    }
+
+    function resolvePublisherLogoDark(pubRaw){
+      if (!__publisherLogosDark || !Object.keys(__publisherLogosDark).length) return null;
+      return resolvePublisherLogoFromMap(__publisherLogosDark, __publisherAliases, pubRaw);
     }
     function resolvePublisherUrl(pubRaw){
       const input = String(pubRaw || '').trim();
@@ -149,12 +178,29 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     window.Handlebars.registerHelper('publisherLogo', function(pub){
-      const rel = resolvePublisherLogo(pub);
-      if (!rel) return '';
+      const relLight = resolvePublisherLogo(pub);
+      if (!relLight) return '';
+
+      const relDark = resolvePublisherLogoDark(pub);
       const alt = `${pub} logo`;
       const h = __publisherLogoHeight;
+
+      const lightUrl = `../${relLight}`;
+      const attrs = [
+        `src="${lightUrl}"`,
+        `alt="${alt}"`,
+        `height="${h}"`,
+        'class="align-text-bottom me-1 publisher-logo"',
+        'loading="lazy"',
+        `data-logo-light="${lightUrl}"`
+      ];
+
+      if (relDark) {
+        attrs.push(`data-logo-dark="../${relDark}"`);
+      }
+
       return new window.Handlebars.SafeString(
-        `<img src="../${rel}" alt="${alt}" height="${h}" class="align-text-bottom me-1 publisher-logo" loading="lazy">`
+        `<img ${attrs.join(' ')}>`
       );
     });
     window.Handlebars.registerHelper('publisherLink', function(pub){

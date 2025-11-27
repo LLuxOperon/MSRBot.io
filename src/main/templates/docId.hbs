@@ -95,7 +95,7 @@
         <h2 class="h6 mb-2">Document Suite — {{docBaseLabel}}</h2>
         <ul class="list-group list-group-flush small">
           {{#each docSuite}}
-          <li class="list-group-item d-flex align-items-start justify-content-between doc-suite-row{{#ifeq ../docId docId}} bg-light{{/ifeq}}">
+          <li class="list-group-item d-flex align-items-start justify-content-between doc-suite-row{{#ifeq ../docId docId}} badge-node-current{{/ifeq}}">
             <div class="me-1 text-wrap">
               {{#ifeq ../docId docId}}<strong>▶</strong>{{/ifeq}}
               <a class="" href="../{{docId}}/">{{docLabel}}</a>
@@ -249,13 +249,13 @@
             <div class="mt-1">Preview:</div>
             <div class="border rounded p-2 bg-body-secondary">{{citeText this}}</div>
             <div class="mt-2">Snippet:</div>
-            <pre id="cite-text-{{docId}}" class="bg-light border rounded p-2 mb-0 snippet">{{{citeCodeText this}}}</pre>
+            <pre id="cite-text-{{docId}}" class=" border rounded p-2 mb-0 snippet">{{{citeCodeText this}}}</pre>
             {{#citeIfNotEq docType "nonLineageDocTypes"}}{{#citeIfNotEq publisher "publishersDateless"}}{{#unless status.versionless}}<details class="mt-2">
               <summary class="small text-muted">Undated variant</summary>
               <div class="mt-1">Preview:</div>
               <div class="border rounded p-2 bg-body-secondary">{{citeTextUndated this}}</div>
               <div class="mt-2">Snippet:</div>
-              <pre id="cite-text-undated-{{docId}}" class="bg-light border rounded p-2 mb-0 snippet">{{{citeCodeTextUndated this}}}</pre>
+              <pre id="cite-text-undated-{{docId}}" class=" border rounded p-2 mb-0 snippet">{{{citeCodeTextUndated this}}}</pre>
             </details>{{/unless}}{{/citeIfNotEq}}{{/citeIfNotEq}}
           </div>
           
@@ -271,13 +271,13 @@
             <div class="mt-1">Preview:</div>
             <div class="border rounded p-2 bg-body-secondary">{{{citeHtmlGeneric this}}}</div>
             <div class="mt-2">Snippet:</div>
-            <pre id="cite-html-generic-{{docId}}" class="bg-light border rounded p-2 mb-0 snippet">{{{citeCodeHtmlGeneric this}}}</pre>
+            <pre id="cite-html-generic-{{docId}}" class=" border rounded p-2 mb-0 snippet">{{{citeCodeHtmlGeneric this}}}</pre>
             {{#citeIfNotEq docType "nonLineageDocTypes"}}{{#citeIfNotEq publisher "publishersDateless"}}{{#unless status.versionless}}<details class="mt-2">
               <summary class="small text-muted">Undated variant</summary>
               <div class="mt-1">Preview:</div>
               <div class="border rounded p-2 bg-body-secondary">{{{citeHtmlGenericUndated this}}}</div>
               <div class="mt-2">Snippet:</div>
-              <pre id="cite-html-generic-undated-{{docId}}" class="bg-light border rounded p-2 mb-0 snippet">{{{citeCodeHtmlGenericUndated this}}}</pre>
+              <pre id="cite-html-generic-undated-{{docId}}" class=" border rounded p-2 mb-0 snippet">{{{citeCodeHtmlGenericUndated this}}}</pre>
             </details>{{/unless}}{{/citeIfNotEq}}{{/citeIfNotEq}}
           </div>
 
@@ -293,13 +293,13 @@
             <div class="mt-1">Preview:</div>
             <div class="border rounded p-2 bg-body-secondary">{{{citeHtmlSmptePreview this}}}</div>
             <div class="mt-2">Snippet:</div>
-            <pre id="cite-html-smpte-{{docId}}" class="bg-light border rounded p-2 mb-0 snippet">{{{citeCodeHtmlSmpteSnippet this}}}</pre>
+            <pre id="cite-html-smpte-{{docId}}" class=" border rounded p-2 mb-0 snippet">{{{citeCodeHtmlSmpteSnippet this}}}</pre>
             {{#citeIfNotEq docType "nonLineageDocTypes"}}{{#citeIfNotEq publisher "publishersDateless"}}{{#unless status.versionless}}<details class="mt-2">
               <summary class="small text-muted">Undated variant</summary>
               <div class="mt-1">Preview:</div>
               <div class="border rounded p-2 bg-body-secondary">{{{citeHtmlSmptePreviewUndated this}}}</div>
               <div class="mt-2">Snippet:</div>
-              <pre id="cite-html-smpte-undated-{{docId}}" class="bg-light border rounded p-2 mb-0 snippet">{{{citeCodeHtmlSmpteSnippetUndated this}}}</pre>
+              <pre id="cite-html-smpte-undated-{{docId}}" class=" border rounded p-2 mb-0 snippet">{{{citeCodeHtmlSmpteSnippetUndated this}}}</pre>
             </details>{{/unless}}{{/citeIfNotEq}}{{/citeIfNotEq}}
           </div>
         </div>
