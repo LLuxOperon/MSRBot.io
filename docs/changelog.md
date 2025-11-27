@@ -1,7 +1,9 @@
 # MSRBot.io — Consolidated Technical Chronicle
 
 **Status:** Gold-copy consolidation  
-**Consolidation Date:** 2025-11-20
+> This covers pre-release (via mid 2020) > v1.0.0
+
+**Consolidation Date:** 2025-11-26
 
 This document consolidates the MSRBot.io worklog into a single, category‑organized technical chronicle. Dates are de‑emphasized in favor of system architecture and implementation detail. All filenames, scripts, fields, and JSON keys are shown in monospace.
 
@@ -502,6 +504,74 @@ _Prevents orphaned branches from detached workflows._
   - Onboarding-friendly entry points for new users.
   - High-signal tooling for editors working with complex reference graphs.
   - Clear extension paths for future visualization and search enhancements.
+
+### 6.7 Groups, Projects, Theming & Navigation Overhaul
+
+**Normalized Groups Registry**  
+- Rebuilt groups system as a first-class normalized registry; removed legacy recursive overwrite loop.  
+- `build/groups/_data/groups.json` emitted as the authoritative normalized dataset; raw export provided as `groups.raw.json`.  
+- Stable normalized fields: `groupId`, `groupOrg`, `groupName`, `groupDesc`, `groupType`, `groupStatus.active`, `isActive`, `statusText`, `hasParent`, `tcId`, `groupLabel`, `searchText`.  
+- Standardized `groupLabel` rules:  
+  - TCs: `ORG <tcName> <tcDesc>`  
+  - Child of TC: `ORG <tcName> <childName> <childDesc>`  
+  - Deep children: `ORG <tcName> <nonTC ancestors> <selfName> <selfDesc>`  
+  - TC description not inherited by children.
+
+**Groups UI**  
+- Groups page rebuilt to operate on normalized data only.  
+- Cards display `groupLabel`, `groupOrg`, `groupType`, `groupSummary`, `statusText`, `isActive`.  
+- Parent/TC links working; assigned groups, linked projects, and documents resolve cleanly.  
+- Facets, filters, chips, and URL-hash behavior aligned with documents and cards UI.  
+- Sorting stable on `groupId`, `groupOrg`, `groupType`, `groupLabel`; paging applied after sorting.
+
+**Projects Registry & UI**  
+- Introduced a new Projects registry and UI built parallel to Groups.  
+- Cards display core project metadata: projectId, work type, status, primary/affected docs, repo link.  
+- Cross-link helpers (`getLabel`, `getTitle`, `publisherLink`, logos) applied consistently across doc/project/group lookups.  
+- Facets and filters fully wired; chip + hash behavior matches Groups.  
+- Sorting aligned with dropdown text; no mismatched internal sort keys.
+
+**Documents, RefTree, and Detail View Integration**  
+- RefTree pages built in the documents pass; canonical URLs at `/reftree/{docId}/`.  
+- Per-doc pages include normalized MSI, suite, referencesResolved, referencedBy, referenceTree, docSuite, currentWork, and related group/project context.  
+- RefTree index renewed with intro content, curated starting points, and consistent site styling.
+
+**Build Pipeline Improvements**  
+- `writeFileSafe` fixed to prevent accidental clobbering of groups data.  
+- Removed unused `/documents/_data` emission paths.  
+- RefTree no longer emits its own documents payload; uses effective snapshot.  
+- Project registry integrated via `registryProject` and `docProjsMap`, preferring non-Complete projects.
+
+**Theming System**  
+- Theme popover added with Auto/Light/Dark options; choices persist and update without reload.  
+- Global dark/light modes corrected for cards, facets, and accordions.  
+- Publisher logos now theme-aware: helpers emit `data-logo-light` and `data-logo-dark` and JS switches them dynamically.
+
+**Navigation & Dev Tools**  
+- Navbar cleaned; removed legacy DataTables script remnants.  
+- Core nav centered; tools and preferences kept right-aligned without shifting layout.  
+- Added Dev Tools popover exposing CSV and JSON exports under `build/_data/` with short descriptions.  
+- Site logo linked simply to `/`.
+
+**Search, OpenSearch & Sitemap**  
+- `opensearch.xml` generated declaratively; uses `/docs/?q={searchTerms}`.  
+- New `sitemap.xml` emitted at build time, containing:  
+  - `/`, `/groups/`, `/projects/`, `/docs/`, `/reftree/`  
+  - All document detail pages (`/docs/{docId}/`)  
+  - Absolute URLs from `canonicalBase`; includes `lastmod`, `changefreq`, and `priority`.  
+- Removed static sitemap.xml to avoid clobbering.
+
+**Misc Helpers & Polish**  
+- Added `getUndatedLabel`, `getUndatedDoiCite`, `getUndatedHrefCite`, `getUndatedTitle` to support undated citation display.  
+- Status pipeline unified via `currentStatus`; icons rendered through `getStatus` and `getstatusButton`.  
+- PublisherLink helper now resolves via alias map shared with logos.  
+- Hash offsets again respect sticky headers site-wide.  
+- Numerous CSS adjustments to card headers, facets, and dark-mode cases.
+
+**Deferred / Future Work**  
+- Dev-facing API page with schema versions and filtered slices.  
+- Advanced theming (reduced-motion, density modes).  
+- Namespace/schema validation for XML families (planned core infra).
 
 ## 7 Logging, Diffing, and PR Output
 - `logSmart.js` centralizes logging with a console budget (~3.5 MiB). Excess console chatter is tripwired while full logs are persisted to file.

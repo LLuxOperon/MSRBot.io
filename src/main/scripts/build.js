@@ -2104,6 +2104,77 @@ hb.registerHelper('docProjLookup', function(collection, id) {
       } catch (e) {
         console.warn('[docList] Index build failed:', e && e.message ? e.message : e);
       }
+
+      // --- Emit sitemap.xml including all /docs/{docId}/ detail pages
+      try {
+        const nowIso = new Date().toISOString();
+
+        function xmlEscape(str) {
+          return String(str || '')
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&apos;');
+        }
+
+        const entries = [];
+
+        function addUrl(pathname, changefreq, priority) {
+          try {
+            const loc = new URL(pathname, siteConfig.canonicalBase).href;
+            entries.push({
+              loc,
+              lastmod: nowIso,
+              changefreq,
+              priority
+            });
+          } catch (e) {
+            console.warn('[sitemap] Skipping invalid URL path:', pathname, e && e.message ? e.message : e);
+          }
+        }
+
+        // Core entry points
+        addUrl('/', 'daily', '1.0');
+        addUrl('/groups/', 'daily', '0.8');
+        addUrl('/projects/', 'daily', '0.8');
+        addUrl('/docs/', 'daily', '0.8');
+        addUrl('/reftree/', 'daily', '0.8');
+
+        // Per-document detail pages at /docs/{docId}/
+        if (Array.isArray(registryDocument)) {
+          for (const d of registryDocument) {
+            if (!d || !d.docId) continue;
+            const id = String(d.docId);
+            // Encode docId for URL safety; keep canonicalBase handling via URL()
+            addUrl(`/docs/${encodeURIComponent(id)}/`, 'weekly', '0.6');
+          }
+        }
+
+        const sitemapLines = [];
+        sitemapLines.push('<?xml version="1.0" encoding="UTF-8"?>');
+        sitemapLines.push('  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">');
+        for (const e of entries) {
+          sitemapLines.push('    <url>');
+          sitemapLines.push(`      <loc>${xmlEscape(e.loc)}</loc>`);
+          sitemapLines.push(`      <lastmod>${xmlEscape(e.lastmod)}</lastmod>`);
+          if (e.changefreq) {
+            sitemapLines.push(`      <changefreq>${xmlEscape(e.changefreq)}</changefreq>`);
+          }
+          if (e.priority) {
+            sitemapLines.push(`      <priority>${xmlEscape(e.priority)}</priority>`);
+          }
+          sitemapLines.push('    </url>');
+        }
+        sitemapLines.push('  </urlset>');
+        const sitemapXml = sitemapLines.join('\n') + '\n';
+
+        const sitemapPath = path.join(BUILD_PATH, 'sitemap.xml');
+        await writeFileSafe(sitemapPath, sitemapXml, 'utf8');
+        console.log('[build] Wrote sitemap.xml with', entries.length, 'URLs');
+      } catch (e) {
+        console.warn('[build] Could not emit sitemap.xml:', e && e.message ? e.message : e);
+      }
     }
   
   /* set the CHROMEPATH environment variable to provide your own Chrome executable */
@@ -2256,39 +2327,15 @@ void (async () => {
   await writeFileSafe(path.join(BUILD_PATH, 'robots.txt'), robotsTxt, 'utf8');
   console.log('[build] Wrote build/robots.txt');
 
-  // Build a simple sitemap of core routes
-  const nowISO = new Date().toISOString();
-  const urls = [
-    '/',
-    '/groups/',
-    '/projects/',
-    '/docs/',
-    '/reftree/'
-  ];
-  const urlset = urls.map(u => {
-    const loc = new URL(u, siteConfig.canonicalBase).href;
-    return `  <url>
-      <loc>${loc}</loc>
-      <lastmod>${nowISO}</lastmod>
-      <changefreq>daily</changefreq>
-      <priority>${u === '/' ? '1.0' : '0.8'}</priority>
-    </url>`;
-  }).join('\n');
-
-  const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
-  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  ${urlset}
-  </urlset>
-  `;
-  await writeFileSafe(path.join(BUILD_PATH, 'sitemap.xml'), sitemapXml, 'utf8');
-  console.log('[build] Wrote build/sitemap.xml');
-
   // --- Emit OpenSearch descriptor
   const openSearchXml = `<?xml version="1.0" encoding="UTF-8"?>
   <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
     <ShortName>MSRBot</ShortName>
     <Description>Search MSRBot.io</Description>
-    <Url type="text/html" template="${new URL('/search', siteConfig.canonicalBase).href}?q={searchTerms}"/>
+    <InputEncoding>UTF-8</InputEncoding>
+    <OutputEncoding>UTF-8</OutputEncoding>
+    <Image height="16" width="16" type="image/png">https://msrbot.io/static/icons/favicon-32.png</Image>
+    <Url type="text/html" template="${new URL('/docs/', siteConfig.canonicalBase).href}?q={searchTerms}"/>
   </OpenSearchDescription>
   `;
   await writeFileSafe(path.join(BUILD_PATH, 'opensearch.xml'), openSearchXml, 'utf8');

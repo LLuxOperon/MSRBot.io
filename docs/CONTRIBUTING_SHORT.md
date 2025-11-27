@@ -24,8 +24,7 @@ npm run build
 npx http-server build --no-cache
 ```
 
-
-> These commands ensure your changes don’t break MSR’s automated workflows or data chain. The last command builds the site locally.
+> These commands ensure your changes don’t break MSR’s automated workflows or data chain. The last commands build the site locally and initiates a local server to render the client side pages. 
 
 ---
 
