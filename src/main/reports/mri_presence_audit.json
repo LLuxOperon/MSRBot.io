@@ -1,12 +1,12 @@
 {
   "generatedAt": "2025-11-26T04:40:40.692Z",
   "sourcePath": "src/main/data/documents.json",
-  "processedDocs": 2207,
+  "processedDocs": 2208,
   "replayMode": "full-replay",
   "seenRefs": 2852,
   "seenSightings": 2852,
-  "presentCount": 1024,
-  "missingCount": 33,
+  "presentCount": 1023,
+  "missingCount": 34,
   "missing": [
     {
       "refId": "AES3-1.2009",
@@ -292,6 +292,21 @@
           "cite": "",
           "href": "",
           "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    {
+      "refId": "ISBN.0195392884",
+      "sourceDocId": null,
+      "sightingCount": 1,
+      "sightings": [
+        {
+          "docId": "SMPTE.AG16",
+          "type": "normative",
+          "cite": "New Oxford American Dictionary, Third Edition, 2010",
+          "href": "",
+          "rawRef": "New Oxford American Dictionary, Third Edition, 2010",
           "title": null
         }
       ]

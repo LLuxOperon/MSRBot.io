@@ -47,7 +47,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       s.async = true;
       s.onload = () => resolve(!!window.Handlebars);
       s.onerror = () => {
-        console.error('[cards] Failed to load Handlebars runtime.');
+        console.error('[docList] Failed to load Handlebars runtime.');
         resolve(false);
       };
       document.head.appendChild(s);
@@ -97,7 +97,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       } catch {}
     }
 
-    console.warn('[cards] MiniSearch not available (UMD/ESM). Falling back to plain includes() search.');
+    console.warn('[docList] MiniSearch not available (UMD/ESM). Falling back to plain includes() search.');
     return false;
   }
 
@@ -111,15 +111,30 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     }
   }
 
+  // Try a list of candidate URLs in order until one loads
+  async function loadJSONTry(candidates){
+    const errs = [];
+    for (const url of candidates) {
+      try {
+        const res = await fetch(url, { cache: 'no-store' });
+        if (res.ok) return await res.json();
+        errs.push(`${url} → ${res.status}`);
+      } catch (e) {
+        errs.push(`${url} → ${e.message || e}`);
+      }
+    }
+    throw new Error(`Failed to fetch any candidate: ${errs.join(' | ')}`);
+  }
+
   let idx, facets, synonymsMap = {};
   try {
     [idx, facets] = await Promise.all([
-      loadJSON('_data/search-index.json'),
-      loadJSON('_data/facets.json')
+      loadJSONTry(['/docs/_data/search-index.json', 'docs/_data/search-index.json', '../docs/_data/search-index.json']),
+      loadJSONTry(['/docs/_data/facets.json', '/docs/_data/facets.json', 'docs/_data/facets.json', '../docs/_data/facets.json'])
     ]);
     // load synonyms if available
     try {
-      synonymsMap = await loadJSON('_data/synonyms.json');
+      synonymsMap = await loadJSONTry(['/docs/_data/synonyms.json', 'docs/_data/synonyms.json', '../docs/_data/synonyms.json']);
       if (!synonymsMap || typeof synonymsMap !== 'object') synonymsMap = {};
     } catch {
       synonymsMap = {};
@@ -194,35 +209,197 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     }
   }
   if (!tplEl) {
-    console.error('[cards] [TEMPLATE] Missing #card-tpl and #card-tpl-src. The page must include <template id="card-tpl-src">…</template>.');
+    console.error('[docList] [TEMPLATE] Missing #card-tpl and #card-tpl-src. The page must include <template id="card-tpl-src">…</template>.');
   } else if (!tplEl.innerHTML || tplEl.innerHTML.trim().length === 0) {
-    console.error('[cards] [TEMPLATE] card template node is empty. Check cards.hbs for the inline template content.');
+    console.error('[docList] [TEMPLATE] card template node is empty. Check docList.hbs for the inline template content.');
   }
 
   if (!(await ensureHandlebars())) {
-    console.error('[cards] [RUNTIME] Handlebars not available; templates cannot render.');
+    console.error('[docList] [RUNTIME] Handlebars not available; templates cannot render.');
   }
 
   if (tplEl && window.Handlebars) {
+    // --- Publisher logo helper (client-side; data fetched at runtime)
+    // Expects build/_data/publisher-logos.json with shape: { logos: { "SMPTE": "/static/logos/smpte.svg", ... }, height: 18 }
+    let __publisherLogos = {};
+    let __publisherLogosDark = {};
+    let __publisherLogoHeight = 18;
+    let __publisherAliases = {};
+    try {
+      const cfg = await loadJSONTry(['../_data/publisher-logos.json']);
+      if (cfg && typeof cfg === 'object') {
+        const logos = cfg.logos || cfg.publisherLogos || {};
+        const logosDark = cfg.logosDark || cfg.publisherLogosDark || {};
+        const height = cfg.height || cfg.publisherLogoHeight;
+        const aliases = cfg.aliases || cfg.publisherLogoAliases || {};
+
+        __publisherLogos = logos;
+        __publisherLogosDark = logosDark;
+        __publisherLogoHeight = Number(height) || 18;
+        __publisherAliases = (aliases && typeof aliases === 'object') ? aliases : {};
+      }
+    } catch (e) {
+      console.warn('[docList] publisher logos config not available (tried multiple paths):', e && e.message ? e.message : e);
+    }
+    // Publisher URLs config (link targets)
+    let __publisherUrls = {};
+    let __publisherUrlAliases = {};
+    try {
+      const ucfg = await loadJSONTry(['../_data/publisher-urls.json']);
+      if (ucfg && typeof ucfg === 'object') {
+        __publisherUrls = ucfg.urls || {};
+        __publisherUrlAliases = (ucfg.aliases && typeof ucfg.aliases === 'object') ? ucfg.aliases : {};
+      }
+    } catch (e) {
+      console.warn('[docList] publisher urls config not available:', e && e.message ? e.message : e);
+    }
+
+    function resolvePublisherLogoFromMap(map, aliases, pubRaw){
+      const input = String(pubRaw || '').trim();
+      if (!input || !map || typeof map !== 'object') return null;
+
+      // 1) Exact
+      if (map[input]) return map[input];
+
+      // 2) Alias (case-insensitive keys)
+      const lowerAliases = aliases.__lowerCache || (aliases.__lowerCache = (() => {
+        const m = {};
+        for (const [a, c] of Object.entries(aliases)) {
+          m[String(a).toLowerCase()] = String(c);
+        }
+        return m;
+      })());
+      const canonFromAlias = lowerAliases[input.toLowerCase()];
+      if (canonFromAlias && map[canonFromAlias]) return map[canonFromAlias];
+
+      // 3) Simple tokenization: take first token before common separators (mdash/en dash, hyphen, comma, paren)
+      const firstToken = input.split(/[–—-]|,|\(|\)|:/)[0].trim();
+      if (firstToken && map[firstToken]) return map[firstToken];
+
+      // 4) Case-insensitive direct match on keys
+      const lowerKey = input.toLowerCase();
+      for (const [k, v] of Object.entries(map)) {
+        if (String(k).toLowerCase() === lowerKey) return v;
+      }
+
+      return null;
+    }
+
+    function resolvePublisherLogo(pubRaw){
+      return resolvePublisherLogoFromMap(__publisherLogos, __publisherAliases, pubRaw);
+    }
+
+    function resolvePublisherLogoDark(pubRaw){
+      if (!__publisherLogosDark || !Object.keys(__publisherLogosDark).length) return null;
+      return resolvePublisherLogoFromMap(__publisherLogosDark, __publisherAliases, pubRaw);
+    }
+
+    function resolvePublisherUrl(pubRaw){
+      const input = String(pubRaw || '').trim();
+      if (!input) return null;
+
+      // 1) Exact
+      if (__publisherUrls[input]) return __publisherUrls[input];
+
+      // 2) Alias (case-insensitive)
+      const lowerAliases = __publisherUrlAliases.__lowerCache || ( __publisherUrlAliases.__lowerCache = (() => {
+        const m = {};
+        for (const [a, c] of Object.entries(__publisherUrlAliases)) {
+          m[String(a).toLowerCase()] = String(c);
+        }
+        return m;
+      })());
+      const canonFromAlias = lowerAliases[input.toLowerCase()];
+      if (canonFromAlias && __publisherUrls[canonFromAlias]) return __publisherUrls[canonFromAlias];
+
+      // 3) First token
+      const firstToken = input.split(/[–—-]|,|\(|\)|:/)[0].trim();
+      if (firstToken && __publisherUrls[firstToken]) return __publisherUrls[firstToken];
+
+      // 4) Case-insensitive direct match
+      const lowerKey = input.toLowerCase();
+      for (const [k, v] of Object.entries(__publisherUrls)) {
+        if (String(k).toLowerCase() === lowerKey) return v;
+      }
+      return null;
+    }
+
+    const __pubWarned = new Set();
+    window.Handlebars.registerHelper('publisherLogo', function(pub) {
+      const relLight = resolvePublisherLogo(pub);
+
+      if (!relLight) {
+        const key = String(pub || '');
+        if (key && !__pubWarned.has(key)) {
+          __pubWarned.add(key);
+          console.debug(
+            '[docList] publisherLogo: no logo for publisher "%s". Available keys: %o',
+            key,
+            Object.keys(__publisherLogos)
+          );
+        }
+        return '';
+      }
+
+      const relDark = resolvePublisherLogoDark(pub);
+      const alt = `${pub} logo`;
+      const h = __publisherLogoHeight;
+
+      const lightUrl = `../${relLight}`;
+      const attrs = [
+        `src="${lightUrl}"`,
+        `alt="${alt}"`,
+        `height="${h}"`,
+        'class="align-text-bottom me-1 publisher-logo"',
+        'loading="lazy"',
+        `data-logo-light="${lightUrl}"`
+      ];
+
+      if (relDark) {
+        attrs.push(`data-logo-dark="../${relDark}"`);
+      }
+
+      return new window.Handlebars.SafeString(
+        `<img ${attrs.join(' ')}>`
+      );
+    });
+    window.Handlebars.registerHelper('publisherLink', function(pub){
+      const url = resolvePublisherUrl(pub);
+      return url || '';
+    });
     // minimal helpers
     window.Handlebars.registerHelper('join', function(arr, sep){ return Array.isArray(arr) ? arr.join(sep||', ') : ''; });
     window.Handlebars.registerHelper('len', function(x){ return (Array.isArray(x) || typeof x === 'string') ? x.length : 0; });
+    window.Handlebars.registerHelper('any', function(){
+      // Drop Handlebars options hash (last arg)
+      const args = Array.prototype.slice.call(arguments, 0, -1);
+      return args.some(v => !!v);
+    });
     window.Handlebars.registerHelper('gt', function(a,b){ return Number(a) > Number(b); });
     window.Handlebars.registerHelper('statusBadge', function(status){
-      const s = String(status || '').toLowerCase();
+      const raw = String(status || '');
+      const s = raw.toLowerCase();
       const cls = {
         unknown:   'text-bg-danger',
         withdrawn: 'text-bg-danger',
         superseded:'text-bg-warning',
         draft:     'text-bg-warning',
-        publiccd:  'text-bg-success',
+        publiccd:  'text-bg-info',
         active:    'text-bg-success',
-        versionless:'text-bg-info',
+        versionless:'bg-success-subtle text-info-emphasis',
         amended:   'text-bg-secondary',
         reaffirmed:'text-bg-info',
-        stabilized:'text-bg-primary'
-      }[s] || 'text-bg-light';
-      const label = s ? `[ ${s.toUpperCase()} ]` : '[ UNKNOWN ]';
+        stabilized:'text-bg-primary',
+        latestversion: 'bg-info-subtle text-info-emphasis'
+      }[s] || 'text-';
+
+      // Insert spaces between camelCase boundaries and underscores, then uppercase
+      const pretty = raw
+        .replace(/([a-z])([A-Z])/g, '$1 $2')
+        .replace(/_/g, ' ')
+        .trim();
+
+      const label = pretty ? `[${pretty.toUpperCase()}]` : '[UNKNOWN]';
       return new window.Handlebars.SafeString(`<span class="label badge ${cls}">${label}</span>`);
     });
     // coalesce helper: returns first non-empty arg (skipping options hash)
@@ -243,16 +420,17 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       return (v !== undefined && v !== null && String(v).trim() !== '');
     });
     // doiLink helper: clickable DOI via doi.org
-    window.Handlebars.registerHelper('doiLink', function(doi){
-      const d = String(doi || '').trim();
-      if (!d) return '';
-      const url = 'https://doi.org/' + encodeURIComponent(d);
-      return new window.Handlebars.SafeString(`<a href="${url}" target="_blank" rel="noopener"><code>${d}</code></a>`);
+    window.Handlebars.registerHelper('doiLink', function(doi) {
+      if (!doi) return '';
+      const clean = String(doi).replace(/^https?:\/\/(dx\.)?doi\.org\//i, '');
+      return new window.Handlebars.SafeString(
+        `<a href="https://doi.org/${encodeURI(clean)}" class="doi-link" target="_blank" rel="noopener">${clean}</a>`
+      );
     });
     try {
       hbCard = window.Handlebars.compile(tplEl.innerHTML);
     } catch (e) {
-      console.error('[cards] [COMPILE] Handlebars failed to compile card template:', e);
+      console.error('[docList] [COMPILE] Handlebars failed to compile docList template:', e);
     }
   }
 
@@ -297,6 +475,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       d.id || '',
       d.publisher || '',
       d.doi || '',
+      d.releaseTag || '',
       d.publicationDate || '',
       ...(Array.isArray(d.groupNames) ? d.groupNames : []),
       ...(Array.isArray(d.group) ? d.group : []),
@@ -410,7 +589,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   var hayById = null;
   if (hasMini) {
     mini = new window.MiniSearch({
-      fields: ['title','label','id','keywords','keywordsSearch','currentWork','publisher','doi','group','groupNames','publicationDate'],
+      fields: ['title','label','id','keywords','keywordsSearch','currentWork','publisher','doi','releaseTag','group','groupNames','publicationDate'],
       storeFields: ['id'],
       searchOptions: {
         // Stronger signal on human-facing identifiers; curated keywords beat assembled tokens
@@ -425,6 +604,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
           group: 1,
           currentWork: 1,
           doi: 1,
+          releaseTag: 1,
           publicationDate: 2
         },
         combineWith: 'AND',
@@ -442,6 +622,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       currentWork: toStr(r.currentWork),
       publisher: r.publisher || '',
       doi: r.doi || '',
+      releaseTag: r.releaseTag || '',
       publicationDate: r.pubDate || '',
       group: toStr(r.group),
       groupNames: toStr(r.groupNames)
@@ -512,7 +693,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   }
 
   // --- State
-  const state = { q:'', f:{}, sort:'pubDate:desc', page:1, size:40 };
+  const state = { q:'', f:{}, sort:'pubDate:desc', page:1, size:20 };
   // Compute combined sticky offset (navbar + cards-topbar) and expose as CSS var
   function computeStickyOffset(){
     const sels = ['.navbar.sticky-top', '#cards-topbar'];
@@ -611,7 +792,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         });
       }
     } catch (e) {
-      console.warn('[cards] search tips init failed:', e && e.message ? e.message : e);
+      console.warn('[docList] search tips init failed:', e && e.message ? e.message : e);
     }
   }
 
@@ -919,6 +1100,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
           d.id || '',
           d.publisher || '',
           d.doi || '',
+          d.releaseTag || '',
           d.publicationDate || '',
           ...(Array.isArray(d.groupNames) ? d.groupNames : []),
           ...(Array.isArray(d.group) ? d.group : []),
@@ -1017,7 +1199,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
   function cardHTML(d, opts){
     if (!hbCard) {
-      console.error('[cards] [RENDER] No compiled template. Causes: missing #card-tpl-src, Handlebars not loaded, or compile error.');
+      console.error('[docList] [RENDER] No compiled template. Causes: missing #card-tpl-src, Handlebars not loaded, or compile error.');
       return `<div class="alert alert-danger">Cards cannot render: template missing or Handlebars runtime unavailable.</div>`;
     }
     try {
@@ -1026,8 +1208,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         statusOrdered: orderStatuses(d.status)
       }));
     } catch (err) {
-      console.error('[cards] Template render error:', err);
-      return `<div class="alert alert-danger">[cards] Template render error: ${err.message}</div>`;
+      console.error('[docList] Template render error:', err);
+      return `<div class="alert alert-danger">[docList] Template render error: ${err.message}</div>`;
     }
   }
 
@@ -1219,6 +1401,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
     // clamp page
     const totalPages = Math.max(1, Math.ceil(filtered / state.size || 1));
+    
+
     if (state.page > totalPages) state.page = totalPages;
     if (state.page < 1) state.page = 1;
     renderPageNumbers(totalPages);
@@ -1235,9 +1419,9 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       if (filtered === 0) {
         resultsLine.textContent = 'No documents found';
       } else if (filtered < total) {
-        resultsLine.textContent = `Showing ${startHuman} to ${endHuman} of ${filtered} entries (filtered from ${total} total entries)`;
+        resultsLine.textContent = `Showing ${startHuman} to ${endHuman} of ${filtered} docs (filtered from ${total} total docs)`;
       } else {
-        resultsLine.textContent = `Showing ${startHuman} to ${endHuman} of ${total} entries`;
+        resultsLine.textContent = `Showing ${startHuman} to ${endHuman} of ${total} docs`;
       }
     }
 
@@ -1412,7 +1596,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     pageSizeSel.addEventListener('change', e => {
       clearHashNoScroll();
       const n = parseInt(e.target.value, 10);
-      state.size = Number.isFinite(n) && n > 0 ? n : 40;
+      state.size = Number.isFinite(n) && n > 0 ? n : 20;
       state.page = 1;
       updateURLAll(true);
       render();

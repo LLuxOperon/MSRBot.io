@@ -3,11 +3,11 @@
   "sourcePath": "src/main/data/documents.json",
   "sourceHash": "sha256:79b9855358f6391e13abe03dedbc2c3b367cc148eccb05642462d4ab55984925",
   "publisherCounts": {
-    "total": 2207,
+    "total": 2208,
     "counts": {
       "SMPTE": 1491,
       "IETF": 109,
-      "ISO": 105,
+      "ISO": 106,
       "ISO/IEC": 87,
       "DCI": 42,
       "W3C": 35,
@@ -15,13 +15,13 @@
       "IEEE": 24,
       "NIST": 23,
       "AMPAS": 21,
-      "AES": 18,
+      "AES": 20,
       "ISDCF": 17,
       "EBU": 16,
       "IEC": 15,
       "ITU-T": 13,
       "NAPM": 12,
-      "ASA": 10,
+      "ASA": 11,
       "NFPA": 8,
       "CEA": 5,
       "EIDR": 5,
@@ -29,6 +29,7 @@
       "ADDISON-WESLEY": 5,
       "PIMA": 5,
       "UNICODE CONSORTIUM": 5,
+      "JOHN WILEY & SONS, INC.": 4,
       "IANA": 4,
       "OMG": 4,
       "ACOUSTICAL SOCIETY OF AMERICA": 3,
@@ -36,26 +37,25 @@
       "CIE": 3,
       "DPP": 3,
       "ETSI": 3,
-      "WILEY": 3,
       "ICC": 3,
+      "SOCIETY FOR IMAGING SCIENCE AND TECHNOLOGY": 3,
       "OPTICAL SOCIETY OF AMERICA": 3,
-      "PHOT. JOURNAL": 3,
+      "THE ROYAL PHOTOGRAPHIC SOCIETY": 3,
+      "AUTOMATIC IDENTIFICATION MANUFACTURERS": 2,
       "AMWA": 2,
-      "ANSI": 2,
       "CEN": 2,
+      "ILLUMINATING ENGINEERING SOCIETY": 2,
       "ISO/CIE": 2,
       "NOKIA BELL LABS": 2,
-      "JAES": 2,
       "FRANKLIN INSTITUTE": 2,
       "UL": 2,
-      "UNITED NATIONS": 2,
-      "POLYMER DEGRADATION AND STABILITY": 1,
-      "SCIENTIFIC INSTRUMENTS": 1,
+      "UNITED NATIONS STATISTICS DIVISION": 2,
+      "SCIENCEDIRECT": 1,
+      "IOP PUBLISHING LTD": 1,
       "PHYSICS TODAY": 1,
       "SOCIETY OF AMERICAN ARCHIVISTS": 1,
       "AIIM": 1,
-      "ASSOCIATION FOR AUTOMATIC IDENTIFICATION & MOBILITY": 1,
-      "AUTOMATIC IDENTIFICATION MANUFACTURERS": 1,
+      "ANSI": 1,
       "ARIB": 1,
       "ASC": 1,
       "ASHRAE": 1,
@@ -67,42 +67,36 @@
       "U.S. DEFENSE MAPPING AGENCY": 1,
       "FIAF": 1,
       "INTERNATIONAL CIVIL AVIATION ORGANIZATION": 1,
-      "IESNA": 1,
       "INCITS": 1,
+      "MCGRAW HILL": 1,
       "OXFORD UNIVERSITY PRESS": 1,
-      "MCGRAW-HILL BOOK COMPANY": 1,
       "PEARSON": 1,
       "UNIVERSITY OF CHICAGO PRESS": 1,
-      "JOHN WILEY & SONS, LTD": 1,
       "MERRIAM-WEBSTER": 1,
       "EASTMAN KODAK COMPANY": 1,
       "CAMBRIDGE UNIVERSITY PRESS": 1,
-      "JOURNAL OF APPLIED PHOTOGRAPHIC ENGINEERING": 1,
-      "THE JOURNAL OF IMAGING SCIENCE AND TECHNOLOGY": 1,
-      "THE JOURNAL OF THE ILLUMINATING ENGINEERING SOCIETY": 1,
-      "SOCIETY FOR IMAGING SCIENCE AND TECHNOLOGY": 1,
       "IMAGE TECHNOLOGY": 1,
-      "JOURNAL OF THE AMERICAN INSTITUTE FOR CONSERVATION": 1,
+      "AMERICAN INSTITUTE FOR CONSERVATION": 1,
       "LIVE SOUND INTERNATIONAL": 1,
-      "CONSERVATION IN ARCHIVES": 1,
+      "DE GRUYTER BRILL": 1,
       "MACMILLAN CO.": 1,
       "NAB": 1,
       "US DEPT OF COMMERCE": 1,
       "OWASP": 1,
-      "NOISE CONTROL ENGINEERING": 1,
-      "UCI": 1,
-      "AUDIO": 1,
+      "INSTITUTE OF NOISE CONTROL ENGINEERING OF THE USA": 1,
+      "UNIVERSITY OF CALIFORNIA, IRVINE": 1,
+      "AUDIO MAGAZINE": 1,
       "DLP": 1,
       "ALDUS CORP/ADOBE": 1,
-      "USPO": 1,
+      "USPTO": 1,
       "WHATWG": 1,
       "UNIVERSITY OF AUCKLAND": 1
     }
   },
   "skippedDocs": {
-    "totalSkipped": 190,
+    "totalSkipped": 199,
     "byPublisher": {
-      "POLYMER DEGRADATION AND STABILITY": {
+      "SCIENCEDIRECT": {
         "count": 1,
         "docIds": [
           "0141-3910.90.90019-4"
@@ -117,7 +111,7 @@
           }
         ]
       },
-      "SCIENTIFIC INSTRUMENTS": {
+      "IOP PUBLISHING LTD": {
         "count": 1,
         "docIds": [
           "0950-7671.1.3.302"
@@ -297,9 +291,11 @@
         ]
       },
       "AES": {
-        "count": 1,
+        "count": 3,
         "docIds": [
-          "AESj.v30.n9.580-595.198209"
+          "AESj.v30.n9.580-595.198209",
+          "JAES.v2-i4-215-218.1954",
+          "JAES.v45-i6-456-466.199706"
         ],
         "items": [
           {
@@ -307,6 +303,20 @@
             "reason": "FILTERED",
             "rule": "FILTERED",
             "ruleDetail": "docType=Technical Journal",
+            "category": "docType"
+          },
+          {
+            "docId": "JAES.v2-i4-215-218.1954",
+            "reason": "FILTERED",
+            "rule": "FILTERED",
+            "ruleDetail": "docType=Journal Article",
+            "category": "docType"
+          },
+          {
+            "docId": "JAES.v45-i6-456-466.199706",
+            "reason": "FILTERED",
+            "rule": "FILTERED",
+            "ruleDetail": "docType=Journal Article",
             "category": "docType"
           }
         ]
@@ -497,6 +507,53 @@
           }
         ]
       },
+      "DCI": {
+        "count": 5,
+        "docIds": [
+          "DCI.M-DVD.2018-0627",
+          "DCI.M-HDR.2021-0701",
+          "DCI.M-NIST.2020-0701",
+          "DCI.M-RNG.2018-0511",
+          "DCI.S-TES.2019-0329"
+        ],
+        "items": [
+          {
+            "docId": "DCI.M-DVD.2018-0627",
+            "reason": "FILTERED",
+            "rule": "FILTERED",
+            "ruleDetail": "docType=Memo",
+            "category": "docType"
+          },
+          {
+            "docId": "DCI.M-HDR.2021-0701",
+            "reason": "FILTERED",
+            "rule": "FILTERED",
+            "ruleDetail": "docType=Memo",
+            "category": "docType"
+          },
+          {
+            "docId": "DCI.M-NIST.2020-0701",
+            "reason": "FILTERED",
+            "rule": "FILTERED",
+            "ruleDetail": "docType=Memo",
+            "category": "docType"
+          },
+          {
+            "docId": "DCI.M-RNG.2018-0511",
+            "reason": "FILTERED",
+            "rule": "FILTERED",
+            "ruleDetail": "docType=Memo",
+            "category": "docType"
+          },
+          {
+            "docId": "DCI.S-TES.2019-0329",
+            "reason": "FILTERED",
+            "rule": "FILTERED",
+            "ruleDetail": "docType=Statement",
+            "category": "docType"
+          }
+        ]
+      },
       "EIDR": {
         "count": 1,
         "docIds": [
@@ -512,16 +569,39 @@
           }
         ]
       },
-      "WILEY": {
-        "count": 3,
+      "FIAF": {
+        "count": 1,
+        "docIds": [
+          "FIAF.TR.FP.1997"
+        ],
+        "items": [
+          {
+            "docId": "FIAF.TR.FP.1997",
+            "reason": "FILTERED",
+            "rule": "FILTERED",
+            "ruleDetail": "docType=White Paper",
+            "category": "docType"
+          }
+        ]
+      },
+      "JOHN WILEY & SONS, INC.": {
+        "count": 4,
         "docIds": [
           "GB.6ZoYngEACAAJ.1949",
+          "ISBN.9780470024270",
           "ISBN.9780471223573",
           "ISBN.9781119183471"
         ],
         "items": [
           {
             "docId": "GB.6ZoYngEACAAJ.1949",
+            "reason": "FILTERED",
+            "rule": "FILTERED",
+            "ruleDetail": "docType=Book",
+            "category": "docType"
+          },
+          {
+            "docId": "ISBN.9780470024270",
             "reason": "FILTERED",
             "rule": "FILTERED",
             "ruleDetail": "docType=Book",
@@ -597,17 +677,17 @@
           }
         ]
       },
-      "OXFORD UNIVERSITY PRESS": {
+      "IETF": {
         "count": 1,
         "docIds": [
-          "ISBN.0195392884"
+          "IETF.FLS.2001"
         ],
         "items": [
           {
-            "docId": "ISBN.0195392884",
+            "docId": "IETF.FLS.2001",
             "reason": "FILTERED",
             "rule": "FILTERED",
-            "ruleDetail": "docType=Book",
+            "ruleDetail": "docType=Guideline",
             "category": "docType"
           }
         ]
@@ -626,7 +706,7 @@
             "docId": "ISBN.0201325632",
             "reason": "FILTERED",
             "rule": "FILTERED",
-            "ruleDetail": "docType=Book",
+            "ruleDetail": "docType=Journal Article",
             "category": "docType"
           },
           {
@@ -659,7 +739,7 @@
           }
         ]
       },
-      "MCGRAW-HILL BOOK COMPANY": {
+      "MCGRAW HILL": {
         "count": 1,
         "docIds": [
           "ISBN.9780070048416"
@@ -667,6 +747,21 @@
         "items": [
           {
             "docId": "ISBN.9780070048416",
+            "reason": "FILTERED",
+            "rule": "FILTERED",
+            "ruleDetail": "docType=Book",
+            "category": "docType"
+          }
+        ]
+      },
+      "OXFORD UNIVERSITY PRESS": {
+        "count": 1,
+        "docIds": [
+          "ISBN.9780195392883"
+        ],
+        "items": [
+          {
+            "docId": "ISBN.9780195392883",
             "reason": "FILTERED",
             "rule": "FILTERED",
             "ruleDetail": "docType=Book",
@@ -697,21 +792,6 @@
         "items": [
           {
             "docId": "ISBN.9780226103891",
-            "reason": "FILTERED",
-            "rule": "FILTERED",
-            "ruleDetail": "docType=Book",
-            "category": "docType"
-          }
-        ]
-      },
-      "JOHN WILEY & SONS, LTD": {
-        "count": 1,
-        "docIds": [
-          "ISBN.9780470024270"
-        ],
-        "items": [
-          {
-            "docId": "ISBN.9780470024270",
             "reason": "FILTERED",
             "rule": "FILTERED",
             "ruleDetail": "docType=Book",
@@ -765,12 +845,20 @@
         ]
       },
       "ISDCF": {
-        "count": 2,
+        "count": 3,
         "docIds": [
+          "ISDCF.D06.2012",
           "ISDCF.D12.2017",
           "ISDCF.DCNC"
         ],
         "items": [
+          {
+            "docId": "ISDCF.D06.2012",
+            "reason": "FILTERED",
+            "rule": "FILTERED",
+            "ruleDetail": "docType=Guideline",
+            "category": "docType"
+          },
           {
             "docId": "ISDCF.D12.2017",
             "reason": "FILTERED",
@@ -818,10 +906,12 @@
           }
         ]
       },
-      "JOURNAL OF APPLIED PHOTOGRAPHIC ENGINEERING": {
-        "count": 1,
+      "SOCIETY FOR IMAGING SCIENCE AND TECHNOLOGY": {
+        "count": 3,
         "docIds": [
-          "ISSN.0098-7298"
+          "ISSN.0098-7298",
+          "ISSN.1062-3701",
+          "IST.157"
         ],
         "items": [
           {
@@ -830,25 +920,24 @@
             "rule": "FILTERED",
             "ruleDetail": "docType=Technical Journal",
             "category": "docType"
-          }
-        ]
-      },
-      "THE JOURNAL OF IMAGING SCIENCE AND TECHNOLOGY": {
-        "count": 1,
-        "docIds": [
-          "ISSN.1062-3701"
-        ],
-        "items": [
+          },
           {
             "docId": "ISSN.1062-3701",
             "reason": "FILTERED",
             "rule": "FILTERED",
             "ruleDetail": "docType=Technical Journal",
             "category": "docType"
+          },
+          {
+            "docId": "IST.157",
+            "reason": "FILTERED",
+            "rule": "FILTERED",
+            "ruleDetail": "docType=White Paper",
+            "category": "docType"
           }
         ]
       },
-      "THE JOURNAL OF THE ILLUMINATING ENGINEERING SOCIETY": {
+      "ILLUMINATING ENGINEERING SOCIETY": {
         "count": 1,
         "docIds": [
           "ISSN.15502716"
@@ -859,21 +948,6 @@
             "reason": "FILTERED",
             "rule": "FILTERED",
             "ruleDetail": "docType=Technical Journal",
-            "category": "docType"
-          }
-        ]
-      },
-      "SOCIETY FOR IMAGING SCIENCE AND TECHNOLOGY": {
-        "count": 1,
-        "docIds": [
-          "IST.157"
-        ],
-        "items": [
-          {
-            "docId": "IST.157",
-            "reason": "FILTERED",
-            "rule": "FILTERED",
-            "ruleDetail": "docType=White Paper",
             "category": "docType"
           }
         ]
@@ -1682,30 +1756,7 @@
           }
         ]
       },
-      "JAES": {
-        "count": 2,
-        "docIds": [
-          "JAES.v2-i4-215-218.1954",
-          "JAES.v45-i6-456-466.199706"
-        ],
-        "items": [
-          {
-            "docId": "JAES.v2-i4-215-218.1954",
-            "reason": "FILTERED",
-            "rule": "FILTERED",
-            "ruleDetail": "docType=White Paper",
-            "category": "docType"
-          },
-          {
-            "docId": "JAES.v45-i6-456-466.199706",
-            "reason": "FILTERED",
-            "rule": "FILTERED",
-            "ruleDetail": "docType=White Paper",
-            "category": "docType"
-          }
-        ]
-      },
-      "JOURNAL OF THE AMERICAN INSTITUTE FOR CONSERVATION": {
+      "AMERICAN INSTITUTE FOR CONSERVATION": {
         "count": 1,
         "docIds": [
           "JAIC.019713697806124475"
@@ -1766,7 +1817,7 @@
           }
         ]
       },
-      "CONSERVATION IN ARCHIVES": {
+      "DE GRUYTER BRILL": {
         "count": 1,
         "docIds": [
           "mfir.17.5.270"
@@ -1821,12 +1872,27 @@
             "docId": "NIST.KMGD",
             "reason": "FILTERED",
             "rule": "FILTERED",
-            "ruleDetail": "status.draft=true",
-            "category": "policy"
+            "ruleDetail": "docType=Guideline",
+            "category": "docType"
           }
         ]
       },
-      "PHOT. JOURNAL": {
+      "OWASP": {
+        "count": 1,
+        "docIds": [
+          "OWASP.CS.TLP"
+        ],
+        "items": [
+          {
+            "docId": "OWASP.CS.TLP",
+            "reason": "FILTERED",
+            "rule": "FILTERED",
+            "ruleDetail": "docType=Guideline",
+            "category": "docType"
+          }
+        ]
+      },
+      "THE ROYAL PHOTOGRAPHIC SOCIETY": {
         "count": 3,
         "docIds": [
           "PJv49n33p200.1909",
@@ -1857,7 +1923,7 @@
           }
         ]
       },
-      "NOISE CONTROL ENGINEERING": {
+      "INSTITUTE OF NOISE CONTROL ENGINEERING OF THE USA": {
         "count": 1,
         "docIds": [
           "rnc-nce-v16-n2-1981-p64-73"
@@ -1872,7 +1938,7 @@
           }
         ]
       },
-      "UCI": {
+      "UNIVERSITY OF CALIFORNIA, IRVINE": {
         "count": 1,
         "docIds": [
           "RTF-ASD-NBSA.2000"
@@ -1910,7 +1976,7 @@
           }
         ]
       },
-      "AUDIO": {
+      "AUDIO MAGAZINE": {
         "count": 1,
         "docIds": [
           "TAPT-AM.1977-09"
@@ -1925,7 +1991,7 @@
           }
         ]
       },
-      "UNITED NATIONS": {
+      "UNITED NATIONS STATISTICS DIVISION": {
         "count": 2,
         "docIds": [
           "UN.M49",
@@ -1963,7 +2029,7 @@
           }
         ]
       },
-      "USPO": {
+      "USPTO": {
         "count": 1,
         "docIds": [
           "US5848159"
@@ -1995,13 +2061,13 @@
       }
     },
     "summaryByReason": {
-      "FILTERED": 190,
+      "FILTERED": 199,
       "UNKEYED": 0,
       "UNKNOWN": 0
     }
   },
   "flagSummary": {
-    "totalFlags": 294,
+    "totalFlags": 293,
     "byType": {
       "DOCID_PUBDATE_MISMATCH": {
         "count": 29,
@@ -2125,7 +2191,7 @@
         ]
       },
       "SUPERSEDED_BY_OUT_OF_LINEAGE": {
-        "count": 96,
+        "count": 95,
         "examples": [
           {
             "lineage": "AIM|BC|4|",
@@ -2149,7 +2215,7 @@
           },
           {
             "lineage": "ASA|S4|6|",
-            "flag": "SUPERSEDED_BY_OUT_OF_LINEAGE:ANSI.S4.6.1982->AES7.2000"
+            "flag": "SUPERSEDED_BY_OUT_OF_LINEAGE:ASA.S4.6.1982->AES7.2000"
           },
           {
             "lineage": "DCI|DCA|OBA|",
@@ -2350,10 +2416,6 @@
           {
             "lineage": "IETF|RFC|7320|",
             "flag": "SUPERSEDED_BY_OUT_OF_LINEAGE:RFC7320->RFC8820"
-          },
-          {
-            "lineage": "ISDCF||D06|",
-            "flag": "SUPERSEDED_BY_OUT_OF_LINEAGE:ISDCF.D06.2012->SMPTE.ST429-16.2014"
           },
           {
             "lineage": "ISO||3166|",
@@ -3577,7 +3639,7 @@
       "part": null,
       "docs": [
         {
-          "docId": "AES-r2.2004",
+          "docId": "AES-R2.2004",
           "publicationDate": "2004-02-04",
           "releaseTag": null,
           "statusActive": true,
@@ -3588,13 +3650,13 @@
           "statusVersionless": false
         }
       ],
-      "latestBaseId": "AES-r2.2004",
-      "latestAnyId": "AES-r2.2004",
+      "latestBaseId": "AES-R2.2004",
+      "latestAnyId": "AES-R2.2004",
       "latestDateKey": "20040204",
       "hasActiveBase": true,
       "hasWithdrawn": false,
       "hasStabilized": true,
-      "latestActiveBaseId": "AES-r2.2004",
+      "latestActiveBaseId": "AES-R2.2004",
       "latestSupersededBaseId": null,
       "prevBaseId": null,
       "flagInconsistencies": [],
@@ -4438,7 +4500,7 @@
       "part": null,
       "docs": [
         {
-          "docId": "ANSI.S4.6.1982",
+          "docId": "ASA.S4.6.1982",
           "publicationDate": null,
           "releaseTag": null,
           "statusActive": false,
@@ -4449,17 +4511,17 @@
           "statusVersionless": false
         }
       ],
-      "latestBaseId": "ANSI.S4.6.1982",
-      "latestAnyId": "ANSI.S4.6.1982",
+      "latestBaseId": "ASA.S4.6.1982",
+      "latestAnyId": "ASA.S4.6.1982",
       "latestDateKey": "19820000",
       "hasActiveBase": false,
       "hasWithdrawn": true,
       "hasStabilized": false,
       "latestActiveBaseId": null,
-      "latestSupersededBaseId": "ANSI.S4.6.1982",
+      "latestSupersededBaseId": "ASA.S4.6.1982",
       "prevBaseId": null,
       "flagInconsistencies": [
-        "SUPERSEDED_BY_OUT_OF_LINEAGE:ANSI.S4.6.1982->AES7.2000"
+        "SUPERSEDED_BY_OUT_OF_LINEAGE:ASA.S4.6.1982->AES7.2000"
       ],
       "counts": {
         "bases": 1,
@@ -5347,146 +5409,6 @@
       }
     },
     {
-      "key": "DCI|M||DVD",
-      "publisher": "DCI",
-      "suite": "M",
-      "number": null,
-      "part": "DVD",
-      "docs": [
-        {
-          "docId": "DCI.M-DVD.2018-0627",
-          "publicationDate": "2018-06-27",
-          "releaseTag": null,
-          "statusActive": true,
-          "statusSuperseded": false,
-          "statusWithdrawn": false,
-          "statusStabilized": false,
-          "statusAmended": false,
-          "statusVersionless": false
-        }
-      ],
-      "latestBaseId": "DCI.M-DVD.2018-0627",
-      "latestAnyId": "DCI.M-DVD.2018-0627",
-      "latestDateKey": "20180627",
-      "hasActiveBase": true,
-      "hasWithdrawn": false,
-      "hasStabilized": false,
-      "latestActiveBaseId": "DCI.M-DVD.2018-0627",
-      "latestSupersededBaseId": null,
-      "prevBaseId": null,
-      "flagInconsistencies": [],
-      "counts": {
-        "bases": 1,
-        "amendments": 0,
-        "supplements": 0
-      }
-    },
-    {
-      "key": "DCI|M||HDR",
-      "publisher": "DCI",
-      "suite": "M",
-      "number": null,
-      "part": "HDR",
-      "docs": [
-        {
-          "docId": "DCI.M-HDR.2021-0701",
-          "publicationDate": "2021-07-01",
-          "releaseTag": null,
-          "statusActive": true,
-          "statusSuperseded": false,
-          "statusWithdrawn": false,
-          "statusStabilized": false,
-          "statusAmended": false,
-          "statusVersionless": false
-        }
-      ],
-      "latestBaseId": "DCI.M-HDR.2021-0701",
-      "latestAnyId": "DCI.M-HDR.2021-0701",
-      "latestDateKey": "20210701",
-      "hasActiveBase": true,
-      "hasWithdrawn": false,
-      "hasStabilized": false,
-      "latestActiveBaseId": "DCI.M-HDR.2021-0701",
-      "latestSupersededBaseId": null,
-      "prevBaseId": null,
-      "flagInconsistencies": [],
-      "counts": {
-        "bases": 1,
-        "amendments": 0,
-        "supplements": 0
-      }
-    },
-    {
-      "key": "DCI|M||NIST",
-      "publisher": "DCI",
-      "suite": "M",
-      "number": null,
-      "part": "NIST",
-      "docs": [
-        {
-          "docId": "DCI.M-NIST.2020-0701",
-          "publicationDate": "2020-07-01",
-          "releaseTag": null,
-          "statusActive": true,
-          "statusSuperseded": false,
-          "statusWithdrawn": false,
-          "statusStabilized": false,
-          "statusAmended": false,
-          "statusVersionless": false
-        }
-      ],
-      "latestBaseId": "DCI.M-NIST.2020-0701",
-      "latestAnyId": "DCI.M-NIST.2020-0701",
-      "latestDateKey": "20200701",
-      "hasActiveBase": true,
-      "hasWithdrawn": false,
-      "hasStabilized": false,
-      "latestActiveBaseId": "DCI.M-NIST.2020-0701",
-      "latestSupersededBaseId": null,
-      "prevBaseId": null,
-      "flagInconsistencies": [],
-      "counts": {
-        "bases": 1,
-        "amendments": 0,
-        "supplements": 0
-      }
-    },
-    {
-      "key": "DCI|M||RNG",
-      "publisher": "DCI",
-      "suite": "M",
-      "number": null,
-      "part": "RNG",
-      "docs": [
-        {
-          "docId": "DCI.M-RNG.2018-0511",
-          "publicationDate": "2018-05-11",
-          "releaseTag": null,
-          "statusActive": true,
-          "statusSuperseded": false,
-          "statusWithdrawn": false,
-          "statusStabilized": false,
-          "statusAmended": false,
-          "statusVersionless": false
-        }
-      ],
-      "latestBaseId": "DCI.M-RNG.2018-0511",
-      "latestAnyId": "DCI.M-RNG.2018-0511",
-      "latestDateKey": "20180511",
-      "hasActiveBase": true,
-      "hasWithdrawn": false,
-      "hasStabilized": false,
-      "latestActiveBaseId": "DCI.M-RNG.2018-0511",
-      "latestSupersededBaseId": null,
-      "prevBaseId": null,
-      "flagInconsistencies": [],
-      "counts": {
-        "bases": 1,
-        "amendments": 0,
-        "supplements": 0
-      }
-    },
-    {
       "key": "DCI|RP|HFR|",
       "publisher": "DCI",
       "suite": "RP",
@@ -5512,41 +5434,6 @@
       "hasWithdrawn": false,
       "hasStabilized": false,
       "latestActiveBaseId": "DCI.RP-HFR.2012-0928",
-      "latestSupersededBaseId": null,
-      "prevBaseId": null,
-      "flagInconsistencies": [],
-      "counts": {
-        "bases": 1,
-        "amendments": 0,
-        "supplements": 0
-      }
-    },
-    {
-      "key": "DCI|S|TES|",
-      "publisher": "DCI",
-      "suite": "S",
-      "number": "TES",
-      "part": null,
-      "docs": [
-        {
-          "docId": "DCI.S-TES.2019-0329",
-          "publicationDate": "2019-03-29",
-          "releaseTag": null,
-          "statusActive": true,
-          "statusSuperseded": false,
-          "statusWithdrawn": false,
-          "statusStabilized": false,
-          "statusAmended": false,
-          "statusVersionless": false
-        }
-      ],
-      "latestBaseId": "DCI.S-TES.2019-0329",
-      "latestAnyId": "DCI.S-TES.2019-0329",
-      "latestDateKey": "20190329",
-      "hasActiveBase": true,
-      "hasWithdrawn": false,
-      "hasStabilized": false,
-      "latestActiveBaseId": "DCI.S-TES.2019-0329",
       "latestSupersededBaseId": null,
       "prevBaseId": null,
       "flagInconsistencies": [],
@@ -6244,41 +6131,6 @@
       "hasStabilized": false,
       "latestActiveBaseId": null,
       "latestSupersededBaseId": "ETSI.TS-101-154.2009",
-      "prevBaseId": null,
-      "flagInconsistencies": [],
-      "counts": {
-        "bases": 1,
-        "amendments": 0,
-        "supplements": 0
-      }
-    },
-    {
-      "key": "FIAF|TR|FP|",
-      "publisher": "FIAF",
-      "suite": "TR",
-      "number": "FP",
-      "part": null,
-      "docs": [
-        {
-          "docId": "FIAF.TR.FP.1997",
-          "publicationDate": null,
-          "releaseTag": null,
-          "statusActive": false,
-          "statusSuperseded": false,
-          "statusWithdrawn": false,
-          "statusStabilized": false,
-          "statusAmended": false,
-          "statusVersionless": false
-        }
-      ],
-      "latestBaseId": "FIAF.TR.FP.1997",
-      "latestAnyId": "FIAF.TR.FP.1997",
-      "latestDateKey": "19970000",
-      "hasActiveBase": false,
-      "hasWithdrawn": false,
-      "hasStabilized": false,
-      "latestActiveBaseId": null,
-      "latestSupersededBaseId": null,
       "prevBaseId": null,
       "flagInconsistencies": [],
       "counts": {
@@ -7061,41 +6913,6 @@
       "hasWithdrawn": false,
       "hasStabilized": false,
       "latestActiveBaseId": null,
-      "latestSupersededBaseId": null,
-      "prevBaseId": null,
-      "flagInconsistencies": [],
-      "counts": {
-        "bases": 1,
-        "amendments": 0,
-        "supplements": 0
-      }
-    },
-    {
-      "key": "IETF|FLS||",
-      "publisher": "IETF",
-      "suite": "FLS",
-      "number": null,
-      "part": null,
-      "docs": [
-        {
-          "docId": "IETF.FLS.2001",
-          "publicationDate": "2001-10-01",
-          "releaseTag": null,
-          "statusActive": true,
-          "statusSuperseded": false,
-          "statusWithdrawn": false,
-          "statusStabilized": false,
-          "statusAmended": false,
-          "statusVersionless": false
-        }
-      ],
-      "latestBaseId": "IETF.FLS.2001",
-      "latestAnyId": "IETF.FLS.2001",
-      "latestDateKey": "20011001",
-      "hasActiveBase": true,
-      "hasWithdrawn": false,
-      "hasStabilized": false,
-      "latestActiveBaseId": "IETF.FLS.2001",
       "latestSupersededBaseId": null,
       "prevBaseId": null,
       "flagInconsistencies": [],
@@ -11294,43 +11111,6 @@
       }
     },
     {
-      "key": "ISDCF||D06|",
-      "publisher": "ISDCF",
-      "suite": null,
-      "number": "D06",
-      "part": null,
-      "docs": [
-        {
-          "docId": "ISDCF.D06.2012",
-          "publicationDate": null,
-          "releaseTag": null,
-          "statusActive": false,
-          "statusSuperseded": true,
-          "statusWithdrawn": true,
-          "statusStabilized": false,
-          "statusAmended": false,
-          "statusVersionless": false
-        }
-      ],
-      "latestBaseId": "ISDCF.D06.2012",
-      "latestAnyId": "ISDCF.D06.2012",
-      "latestDateKey": "20120000",
-      "hasActiveBase": false,
-      "hasWithdrawn": true,
-      "hasStabilized": false,
-      "latestActiveBaseId": null,
-      "latestSupersededBaseId": "ISDCF.D06.2012",
-      "prevBaseId": null,
-      "flagInconsistencies": [
-        "SUPERSEDED_BY_OUT_OF_LINEAGE:ISDCF.D06.2012->SMPTE.ST429-16.2014"
-      ],
-      "counts": {
-        "bases": 1,
-        "amendments": 0,
-        "supplements": 0
-      }
-    },
-    {
       "key": "ISDCF||D07|",
       "publisher": "ISDCF",
       "suite": null,
@@ -11868,6 +11648,41 @@
       "hasWithdrawn": false,
       "hasStabilized": false,
       "latestActiveBaseId": "ISO.646.1991",
+      "latestSupersededBaseId": null,
+      "prevBaseId": null,
+      "flagInconsistencies": [],
+      "counts": {
+        "bases": 1,
+        "amendments": 0,
+        "supplements": 0
+      }
+    },
+    {
+      "key": "ISO||960|",
+      "publisher": "ISO",
+      "suite": null,
+      "number": "960",
+      "part": null,
+      "docs": [
+        {
+          "docId": "ISO.960.2021",
+          "publicationDate": "2021-06-01",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "ISO.960.2021",
+      "latestAnyId": "ISO.960.2021",
+      "latestDateKey": "20210601",
+      "hasActiveBase": true,
+      "hasWithdrawn": false,
+      "hasStabilized": false,
+      "latestActiveBaseId": "ISO.960.2021",
       "latestSupersededBaseId": null,
       "prevBaseId": null,
       "flagInconsistencies": [],
@@ -18689,41 +18504,6 @@
       "flagInconsistencies": [],
       "counts": {
         "bases": 2,
-        "amendments": 0,
-        "supplements": 0
-      }
-    },
-    {
-      "key": "OWASP|CS|TLP|",
-      "publisher": "OWASP",
-      "suite": "CS",
-      "number": "TLP",
-      "part": null,
-      "docs": [
-        {
-          "docId": "OWASP.CS.TLP",
-          "publicationDate": null,
-          "releaseTag": null,
-          "statusActive": true,
-          "statusSuperseded": false,
-          "statusWithdrawn": false,
-          "statusStabilized": false,
-          "statusAmended": false,
-          "statusVersionless": false
-        }
-      ],
-      "latestBaseId": "OWASP.CS.TLP",
-      "latestAnyId": "OWASP.CS.TLP",
-      "latestDateKey": "00000000",
-      "hasActiveBase": true,
-      "hasWithdrawn": false,
-      "hasStabilized": false,
-      "latestActiveBaseId": "OWASP.CS.TLP",
-      "latestSupersededBaseId": null,
-      "prevBaseId": null,
-      "flagInconsistencies": [],
-      "counts": {
-        "bases": 1,
         "amendments": 0,
         "supplements": 0
       }
@@ -56994,7 +56774,7 @@
           "statusWithdrawn": false,
           "statusStabilized": false,
           "statusAmended": false,
-          "statusVersionless": false
+          "statusVersionless": true
         }
       ],
       "latestBaseId": "DMA.TR.8350.2",

@@ -70,6 +70,10 @@ const PUB_COUNTS_OUT = arg('--pub-out', 'src/main/reports/masterSuiteIndex-publi
 const SKIPS_OUT = arg('--skips-out', 'src/main/reports/masterSuiteIndex-skippedDocs.json');
 const SEPARATE_AUX = has('--separate-aux');
 
+// Load non-lineage doc types from the shared site config
+const SITE_CONFIG = require('../config/site.json');
+const NON_LINEAGE_DOCTYPES = new Set(Array.isArray(SITE_CONFIG.nonLineageDocTypes) ? SITE_CONFIG.nonLineageDocTypes : []);
+
 function sha256File(p) {
   const h = crypto.createHash('sha256');
   h.update(fs.readFileSync(p));
@@ -80,27 +84,6 @@ function ensureDir(p) {
   fs.mkdirSync(path.dirname(p), { recursive: true });
 }
 
-// Doc types that do not participate in lineage graphs. We still carry them in
-// the skipped report as FILTERED-by-docType for auditability.
-const NON_LINEAGE_DOCTYPES = new Set([
-  'Journal Article',
-  'Magazine Article',
-  'Technical Journal',
-  'Book',
-  'Patent',
-  'White Paper',
-  'Registry',
-  'Technical Bulletin',
-  'Technical Note',
-  'Procedure',
-  'Notation',
-  'Manual',
-  'Study Group Report',
-  'Dissertation',
-  'FAQ',
-  'Style Guide',
-  'Template'
-]);
 
 // Helper to infer versionless (evergreen) documents
 function inferVersionless(doc) {

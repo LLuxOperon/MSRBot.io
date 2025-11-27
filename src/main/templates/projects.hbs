@@ -1,72 +1,173 @@
   {{>header}}
     <!-- Main content starts - do not edit above this line -->
-    <table id="sorttableProjs" class="table table-small table-hover">
-      <thead class="thead-light">
-        <tr>
-          <th scope="col">Project</th>
-          <th scope="col">Document</th>
-          <th scope="col" class="text-center text-nowrap">Work Type</th>
-          <th scope="col">Status</th>
-          <th scope="col" class="d-none"></th>
-          <th scope="col">Group</th>
-          <th scope="col" class="d-none"></th>
-          <th scope="col">Affects</th>
-          <th scope="col" class="col-2">Notes</th>
-        </tr>
-      </thead>
-      <tbody id="searchTable">
-        {{#data}}
-        <tr id="{{../idType}}-{{projectId}}" {{#ifeq projectStatus "Cancelled"}}class="cancelled"{{/ifeq}}{{#ifeq projectStatus "Pending"}}class="pending"{{/ifeq}}>
-          <td class="projectlabel">
-            <a class="anchor" id="{{projectId}}" href="#{{projectId}}"></a><code>{{projectId}}</code>
-          </td>
-          <td>
-            {{#if docId}}
-            <a class="document-link clear-filter" href="../documents/{{../htmlLink}}?search.search={{docId}}">{{docId}}</a>
-            <!--<br>
-            [{{getStatus this}}] {{{getstatusButton docId "12"}}}-->
+<div id="projects-topbar" class="sticky-top">
+  <div class="container px-3 py-2">
+    <div id="projectFilterSummary" class="text-muted small mb-1"></div>
+    <div id="projectToolbar" class="d-flex flex-wrap align-items-center gap-2">
+      <button class="btn btn-outline-secondary d-lg-none" type="button"
+        data-bs-toggle="offcanvas" data-bs-target="#projectFacetDrawer" aria-controls="projectFacetDrawer">
+        <i class="bi bi-funnel"></i> Filters
+      </button>
+      <input id="projectSearch" type="search" class="form-control flex-grow-1" placeholder="Search projects…">
+      <div class="input-group input-group-sm w-auto" aria-label="Sort results">
+        <span class="input-group-text">Sort</span>
+        <select id="projectSort" class="form-select w-auto">
+          <option value="id:asc">Label (A–Z)</option>
+          <option value="id:desc">Label (Z–A)</option>
+          <option value="group:asc">Group (A–Z)</option>
+          <option value="group:desc">Group (Z–A)</option>
+          <option value="type:asc">Type (A–Z)</option>
+          <option value="type:desc">Type (Z–A)</option>
+          <option value="status:asc">Status (A–Z)</option>
+          <option value="status:desc">Status (Z–A)</option>
+        </select>
+      </div>
+      <div class="input-group input-group-sm w-auto" aria-label="Results per page">
+        <span class="input-group-text">Per page</span>
+        <select id="projectPageSize" class="form-select">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="20" selected>20</option>
+          <option value="40">40</option>
+          <option value="100">100</option>
+        </select>
+      </div>
+      <div id="projectActiveFilters" class="d-flex flex-wrap align-items-center gap-1"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-3">
+  <div class="row g-3">
+    <!-- Facets: built dynamically by projects.js from card data -->
+    <aside id="projectFacet" class="col-lg-3 d-none d-lg-block"><!-- Facets injected here --></aside>
+    <section id="projectCardsMain" class="col-lg-9">
+      <div id="projectResultsLine" class="text-muted small mb-2">
+        Showing <strong id="projectResultCount">0</strong> of <strong id="projectTotalCount">0</strong> projects
+      </div>
+      <div class="sticky pt-2">
+        <nav id="projectPager" class="d-flex justify-content-between align-items-center mb-2">
+          <div class="btn-group">
+            <button id="projectPrevPage" type="button" class="btn btn-outline-secondary btn-sm">Prev</button>
+            <button id="projectNextPage" type="button" class="btn btn-outline-secondary btn-sm">Next</button>
+          </div>
+          <div id="projectPageNums" class="btn-group"></div>
+          <div id="projectPageMeta" class="small text-muted">Page 1 of 1</div>
+        </nav>
+      </div>
+
+      <div id="projectCards" class="cards"><!-- Cards rendered client-side from projects.json --></div>
+
+      {{{{raw}}}}
+      <template id="project-card-tpl-src">
+        <article
+          class="card-reg project-card border border-secondary-subtle"
+          data-org="{{#if assignedGroup}}{{#with (groupIdLookup ../dataGroups assignedGroup)}}{{groupOrg}} {{#if parentgroupId}}{{#with (groupIdLookup ../../dataGroups parentgroupId)}}{{groupName}}{{/with}} {{/if}}{{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}}{{/with}}{{/if}}"
+          data-type="{{workType}}"
+          data-status="{{projectStatus}}"
+          data-project-id="{{projectId}}"
+        >
+          <header class="d-flex align-items-start gap-2 mb-1">
+            <a class="anchor" id="{{projectId}}" href="#{{projectId}}"></a>
+            <div class="publisher-logo-slot flex-shrink-0 order-0 mt-1">
+              {{#with (groupIdLookup ../dataGroups assignedGroup) as |g|}}
+                {{#if (publisherLink g.groupOrg)}}
+                  <a href="{{publisherLink g.groupOrg}}" target="_blank" rel="noopener">{{publisherLogo g.groupOrg}}</a>
+                {{else}}
+                  {{publisherLogo g.groupOrg}}
+                {{/if}}
+              {{/with}}
+            </div>
+            <div class="title-block mb-2 flex-grow-1 order-1">
+              <h3 class="h6 mb-1">
+                <code class="me-1">{{projectId}}</code>
+                <span class="title-label">
+                {{#if projectLink}}<a href="{{projectLink}}" target="_blank" rel="noopener">{{projectName}}</a>
+                {{else}}{{projectName}}{{/if}}
+                </span>
+              </h3>
+            </div>
+            <div class="status-badges d-flex gap-1 flex-wrap ms-auto justify-content-end text-end order-2">
+              {{#ifeq projectStatus "Complete"}}
+                <span class="badge text-bg-success">Complete</span>
+              {{else}}
+                {{#if projectStatus}}
+                  <span class="badge text-bg-warning">{{projectStatus}}</span>
+                {{/if}}
+              {{/ifeq}}
+              <span class="badge bg-light-subtle text-light-emphasis">{{workType}}</span>
+            </div>
+          </header>
+
+          <div class="meta mb-1 small text-muted d-flex flex-wrap align-items-center gap-1">
+            {{#if newDoc}}
+              <span class="badge-reg">
+                New document:
+                <a class="document-link " href="../docs/{{newDoc}}/">{{newDoc}}</a>
+              </span>
             {{/if}}
-          </td>
-          <td>
-            {{workType}}
-          </td>
-          <td class="text-center">
-            {{#if projectLink}}<a href="{{projectLink}}" target="_blank">{{/if}}{{projectStatus}}{{#if projectLink}}</a>{{/if}}
-          </td>
-          <td class="d-none">
-            {{projectStatus}}
-          </td>
-          <td>
+
             {{#if assignedGroup}}
-            {{#with (groupIdLookup ../dataGroups assignedGroup)}}
-            {{#if groupId}}<a href="../groups/{{../../htmlLink}}#{{groupId}}">{{/if}}{{groupOrg}} {{#if parentgroupId}}{{#with (groupIdLookup ../../dataGroups parentgroupId)}}{{groupName}}{{/with}} {{/if}}{{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}}{{#if groupId}}</a>{{/if}}
-            {{/with}}
+              {{#with (groupIdLookup ../dataGroups assignedGroup)}}
+                <span class="badge-reg">
+                  Group:
+                  {{#if groupId}}<a href="../groups/{{../../htmlLink}}#{{groupId}}">{{/if}}
+                    {{groupOrg}} {{#if parentgroupId}}{{#with (groupIdLookup ../../dataGroups parentgroupId)}}{{groupName}}{{/with}} {{/if}}{{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}}
+                  {{#if groupId}}</a>{{/if}}
+                </span>
+              {{/with}}
             {{/if}}
-          </td>
-          <td class="d-none">
-            {{#if assignedGroup}}
-            {{#with (groupIdLookup ../dataGroups assignedGroup)}}
-            {{groupOrg}} {{#if parentgroupId}}{{#with (groupIdLookup ../../dataGroups parentgroupId)}}{{groupName}}{{/with}} {{/if}}{{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}}
-            {{/with}}
+
+            {{#if projectLink}}
+              <span class="ms-auto">Link: <a href="{{projectLink}}" target="_blank" rel="noopener">{{projectLink}}</a></span>
             {{/if}}
-          </td>
-          <td class="p-1">
-            {{#if docAffected}}
-            <ul class="list-group list-group-flush">
-            {{#docAffected}}
-              <li class="list-group-item">
-                <span class="small"><a class="document-link clear-filter" href="../{{../../htmlLink}}?search.search={{this}}">{{getLabel this}}</a> <!-- [{{getStatus this}}] </span>  {{{getstatusButton this "10"}}}-->
-              </li>
-            {{/docAffected}}
-            </ul>
-            {{/if}}
-          </td>
-          <td>
-            {{workNotes}}
-          </td>
-        </tr>
-        {{/data}}
-      </tbody>
-    </table>
+          </div>
+
+          {{#if docAffected}}
+            <div class="small mt-1">
+              <div class="fw-semibold">Affects:</div>
+              <ul class="list-group list-group-flush">
+                {{#docAffected}}
+                  <li class="list-group-item p-1 small">
+                    <a class="document-link " href="../docs/{{this}}/">{{getLabel this}}</a>
+                  </li>
+                {{/docAffected}}
+              </ul>
+            </div>
+          {{/if}}
+
+          {{#if workNotes}}
+            <div class="small mt-2 text-muted">
+              {{workNotes}}
+            </div>
+          {{/if}}
+        </article>
+      </template>
+      {{{{/raw}}}}
+
+      <div id="projectPagerBottom" class="sticky-bottom py-2">
+        <nav class="d-flex justify-content-between align-items-center">
+          <div class="btn-group">
+            <button id="projectPrevPageBottom" type="button" class="btn btn-outline-secondary btn-sm">Prev</button>
+            <button id="projectNextPageBottom" type="button" class="btn btn-outline-secondary btn-sm">Next</button>
+          </div>
+          <div id="projectPageNumsBottom" class="btn-group"></div>
+          <div id="projectPageMetaBottom" class="small text-muted">Page 1 of 1</div>
+        </nav>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- Offcanvas drawer for facets on small screens -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="projectFacetDrawer" aria-labelledby="projectFacetDrawerLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="projectFacetDrawerLabel">Filters</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body" id="projectFacetDrawerBody"><!-- Facets cloned here --></div>
+</div>
+
+<script src="../js/projects.js"></script>
     <!-- Main content ends - do not edit below this line -->
 {{>footer}}

@@ -1,7 +1,9 @@
 # MSRBot.io — Consolidated Technical Chronicle
 
 **Status:** Gold-copy consolidation  
-**Consolidation Date:** 2025-11-05
+> This covers pre-release (via mid 2020) > v1.0.0
+
+**Consolidation Date:** 2025-11-26
 
 This document consolidates the MSRBot.io worklog into a single, category‑organized technical chronicle. Dates are de‑emphasized in favor of system architecture and implementation detail. All filenames, scripts, fields, and JSON keys are shown in monospace.
 
@@ -344,6 +346,232 @@ _Prevents orphaned branches from detached workflows._
 **Result**
 - Deterministic search/filtering with consistent `docType`, status, and metadata rendering.
 - Clear, discoverable search UX; build and data pipelines write to the correct directories.
+
+### 6.5 Frontend Refresh V — Per-Doc Rendering, MSI Surfacing & Citations
+
+**Per-Doc Emit & Resilience**
+- Per-document emit stabilized and debuggable; added defensive `prepareDocForRender()` normalizers to guard against missing/partial fields.
+- Upgraded per-doc failure logs to include `docId`, `publisher`, `docType`, and `refs: yes/no` for faster triage.
+- Sub-registries load correctly: `registries[].subRegistry` now pulls `groups`, `projects`, and `documents` where declared; templates receive `dataDocuments`, `dataGroups`, `dataProjects`.
+- Hardened detail pages against missing subregistry data; isolated doc failures now log cleanly instead of crashing templates.
+
+**MSI Wiring on Pages**
+- Reads `reports/masterSuiteIndex.json` and annotates each document with: `msiLatestAny`, `msiLatestBase`, `isLatestAny`, `isLatestBase`, `docBase`, `docBaseLabel`.
+- Surfaces a per-base **suite** (`docSuite`) sorted by date for clear lineage context on detail views.
+- Suite logic is stable and sorted; title/label preference rules implemented:
+  - `docLabel` used for listings.
+  - `docTitle` preferred in detail view when `docType` is in `titleLabelDocTypes`.
+  - `perDocTitle` and `listTitle` reflect the chosen hierarchy.
+
+**Reference Plumbing (Non-Mutating)**
+- Computes `referencesResolved` in parallel (does not mutate source arrays).
+- Builds `referencedBy` and a bounded `referenceTree` (DFS depth 3) for contextual back-links on pages.
+
+**Status Strings, Badges & DocId Layout**
+- Consolidated `currentStatus` label; `getStatusButton` returns green check for **Active**, red slash for **Superseded/Withdrawn**.
+- Card and detail templates use consistent badge ordering and classes.
+- DocId header layout rebuilt:
+  - Logo → Label → Badges on a tight flex row; label wraps fully without breaking layout.
+  - Status badges moved out of the H1 into a dedicated flex region.
+  - Small screens: header intelligently stacks; badges move to top-left; label wrap and word-break behavior fixed.
+  - H1 title isolated from layout shifts; badge overflow issues resolved.
+- CSS stabilized for badges:
+  - `align-items: flex-end`, per-badge `white-space: nowrap`, controlled flex-basis.
+  - Long titles no longer push logos/badges into odd rows; explicit `min-width: 0` on the title block.
+  - Status badges right-aligned on wide screens, stack correctly on small screens.
+  - Media-query overrides enforce predictable wrap behavior; layout is now stable and deterministic.
+
+**Search & Data Outputs / Build Pipeline**
+- Documents build emits `build/docs/_data/documents.json` (strips `$meta`) for the site layer.
+- `build.search-index.js` produces `_data/search-index.json` and related artifacts; cards render from the search index (no root `documents.json` dependency).
+- Per-doc generator ensures each detail page has access to `groups`, `projects`, and `referencesResolved`; suites use the effective docs dataset.
+- CSV export and effective docs datasets now strip all `$meta` fields, significantly reducing output size and keeping UI-facing data clean.
+
+**Publisher Branding**
+- Server writes `_data/publisher-logos.json` and `_data/publisher-urls.json` from `site.json` (honors alias map).
+- Handlebars helpers `{{publisherLogo}}` and `{{publisherLink}}` added:
+  - Cards display publisher logos next to labels with controlled max-width to prevent runaway logos.
+  - DocId pages place the logo on the title line (next to label) for strong visual identity.
+  - Logos are linkable on detail pages via publisher URLs defined in `site.json`.
+- Fixed 404s by ensuring `_data/` exists under `build/` and using correct asset prefixes.
+
+**Citations System**
+- Centralized helpers: `citeText`, `citeHtmlGeneric`, `citeHtmlSmpte`, plus code-safe variants for copy blocks.
+- Config-driven SMPTE previews vs snippets (`site.json → citations.smpte.preview/snippet`).
+- `joinAuthors` is CSL-JSON aware with Oxford comma support and configurable separators; `[object Object]` issues resolved.
+- New helpers introduced:
+  - `citeIfEq`, `citeIfNotEq`
+  - `getUndatedLabel`, `getUndatedTitle`
+- `citeIfEq` supports config lists (e.g., `nonLineageDocTypes`) or comma-separated lists, allowing templates to branch without hardcoding.
+- Snippet engine:
+  - Copy buttons always pull from snippet text, never the preview.
+  - Uses `innerText` / `textContent` for reliable extraction.
+  - Per-snippet IDs and DOM-safe `getElementById` lookups ensure correct binding.
+- Undated variant infrastructure scaffolded:
+  - Preview + snippet wrappers wired.
+  - Buttons appear only when allowed.
+  - Logic paused mid-implementation pending a cleaner approach after complexity surfaced.
+
+**Template & DX Helpers**
+- Utility helpers added and refined: `ifeq`, `ifnoteq`, `or`, `and`, `len`, `asArray`, `formatLineageKey`, `getLabel`, `getUndatedLabel`, ID-safe slugging in citations, and group/project lookup helpers.
+- Fixed edge cases in `len`, `asArray`, and helper sequencing that previously caused template crashes.
+- Error messages for isolated document failures are clearer and more localized.
+
+**Site Chrome**
+- Build emits `robots.txt`, `sitemap.xml`, `opensearch.xml`, and header/footer-styled `404.html` with penguin quips (consistent with branding and SEO overhauls).
+
+**Result**
+- Fewer brittle template crashes and clearer failure signals.
+- Single source of truth (`site.json`) drives visuals (logos/links) and logic (doc-type lists and publisher metadata).
+- MSI data is first-class on pages; every document exposes suite context and “latestness.”
+- Detail pages (DocId views) present a stable, responsive header with clean logo/badge behavior; CSS is predictable across breakpoints.
+- Editors get copy-ready citations with accurate previews, robust author formatting, and safer snippet behavior.
+
+### 6.6 Reference Tree System — Graph-Based Cross-Reference Explorer
+
+**Overview**
+- Implemented a full **Reference Tree** system that exposes cross-document relationships as a first-class feature.
+- Entry points:
+  - `/reftree/` index page with search and curated starting points.
+  - Per-document RefTree pages generated from registry data and MSI/refs plumbing.
+- RefTree now behaves as a stable, user-facing feature rather than a prototype.
+
+**RefTree Index Page**
+- Built a dedicated landing page at `/reftree/` with two primary panels:
+  - **Start Exploring** — search box with smart matching and suggestions.
+  - **Interesting Starting Points** — auto-ranked “most-connected” documents to onboard new users.
+- Added suggestion UI and preview lists to avoid 404 traps when searching by label/title/number.
+
+**Search Engine & Matching**
+- Normalized queries for robustness (case-insensitive, tolerant of dots/dashes and number formatting).
+- Implemented match scoring:
+  - Exact `docId` matches score highest.
+  - Exact label/title matches score just below.
+  - Compact and substring matches use lower tiers.
+- Auto-redirects only on high-confidence matches; otherwise presents a result list with label + title.
+- Added **“Show all N matches”** behavior for broad queries (e.g., publisher or series searches).
+
+**Most-Connected Documents**
+- Derived “most-connected” ranking from `referencesResolved` + `referencedBy` data.
+- Surface top documents by combined reference degree, showing `label`, `title`, and `docId` for clarity.
+- Used as curated tour starting points (e.g., 428/429 families, IMF, ST 2110, NIST 800-series).
+
+**Per-Document RefTree Pages**
+- Introduced per-doc RefTree views with two modes:
+  - **Simple** — depth-based neighbors only.
+  - **Expanded** — full graph traversal via resolved references.
+- Features:
+  - Depth selector (1–5 plus `max`, with support for values above 5).
+  - Node expand/collapse controls to manage large graphs.
+  - Clear upstream/downstream labeling and parent-level detection.
+  - Graph-line and layout adjustments for readability at multiple depths.
+
+**Root Card & Layout**
+- Root document presented as a **sticky top card**:
+  - Uses build pipeline helpers for accurate label/title/status logic.
+  - Consistent ordering of label, title, status, and publisher icons.
+  - Styling aligned with the main `docId` detail pages.
+- Layout improvements:
+  - Cleaner top-of-page copy oriented toward non-expert users.
+  - Controls (depth selector, expand/collapse) kept on a single stable toolbar row across breakpoints.
+  - No-underline button styles for interactive controls; text remains readable and scan-friendly.
+
+**Templates, Helpers & Shared JS**
+- Split logic between:
+  - `refTree.js` — per-doc tree behavior.
+  - `refTreeIndex.js` — index/search and “most-connected” logic.
+- Removed inline script fragments from templates; moved behavior into shared JS modules.
+- Integrated build-time helpers (e.g., `getLabel`, status helpers, publisher helpers, “any” checks) for consistent display.
+- Fixed missing publisher variables and mismatched helper usage that previously caused inconsistencies.
+
+**Build & Data Plumbing**
+- Updated `build.js` to:
+  - Emit per-doc RefTree JSON cleanly for each document.
+  - Inject a full documents snapshot into `_data` for the RefTree index and search.
+  - Resolve initialization ordering issues (e.g., `docProjs` before use).
+- Ensured RefTree draws exclusively from the registry’s authoritative documents and refs (including `referencesResolved` and `referencedBy`).
+
+**Deferred Enhancements (Future Work)**
+- Left space for future iterations:
+  - Fully interactive GraphViz/SVG-style visualizations.
+  - Path highlighting for step-by-step traversal.
+  - Dedicated `/search/` endpoint for full-registry search.
+  - Specialized typography or indicators for cycles and suite/family clustering.
+
+**Result**
+- RefTree now provides:
+  - A stable UX foundation for exploring document relationships.
+  - Onboarding-friendly entry points for new users.
+  - High-signal tooling for editors working with complex reference graphs.
+  - Clear extension paths for future visualization and search enhancements.
+
+### 6.7 Groups, Projects, Theming & Navigation Overhaul
+
+**Normalized Groups Registry**  
+- Rebuilt groups system as a first-class normalized registry; removed legacy recursive overwrite loop.  
+- `build/groups/_data/groups.json` emitted as the authoritative normalized dataset; raw export provided as `groups.raw.json`.  
+- Stable normalized fields: `groupId`, `groupOrg`, `groupName`, `groupDesc`, `groupType`, `groupStatus.active`, `isActive`, `statusText`, `hasParent`, `tcId`, `groupLabel`, `searchText`.  
+- Standardized `groupLabel` rules:  
+  - TCs: `ORG <tcName> <tcDesc>`  
+  - Child of TC: `ORG <tcName> <childName> <childDesc>`  
+  - Deep children: `ORG <tcName> <nonTC ancestors> <selfName> <selfDesc>`  
+  - TC description not inherited by children.
+
+**Groups UI**  
+- Groups page rebuilt to operate on normalized data only.  
+- Cards display `groupLabel`, `groupOrg`, `groupType`, `groupSummary`, `statusText`, `isActive`.  
+- Parent/TC links working; assigned groups, linked projects, and documents resolve cleanly.  
+- Facets, filters, chips, and URL-hash behavior aligned with documents and cards UI.  
+- Sorting stable on `groupId`, `groupOrg`, `groupType`, `groupLabel`; paging applied after sorting.
+
+**Projects Registry & UI**  
+- Introduced a new Projects registry and UI built parallel to Groups.  
+- Cards display core project metadata: projectId, work type, status, primary/affected docs, repo link.  
+- Cross-link helpers (`getLabel`, `getTitle`, `publisherLink`, logos) applied consistently across doc/project/group lookups.  
+- Facets and filters fully wired; chip + hash behavior matches Groups.  
+- Sorting aligned with dropdown text; no mismatched internal sort keys.
+
+**Documents, RefTree, and Detail View Integration**  
+- RefTree pages built in the documents pass; canonical URLs at `/reftree/{docId}/`.  
+- Per-doc pages include normalized MSI, suite, referencesResolved, referencedBy, referenceTree, docSuite, currentWork, and related group/project context.  
+- RefTree index renewed with intro content, curated starting points, and consistent site styling.
+
+**Build Pipeline Improvements**  
+- `writeFileSafe` fixed to prevent accidental clobbering of groups data.  
+- Removed unused `/documents/_data` emission paths.  
+- RefTree no longer emits its own documents payload; uses effective snapshot.  
+- Project registry integrated via `registryProject` and `docProjsMap`, preferring non-Complete projects.
+
+**Theming System**  
+- Theme popover added with Auto/Light/Dark options; choices persist and update without reload.  
+- Global dark/light modes corrected for cards, facets, and accordions.  
+- Publisher logos now theme-aware: helpers emit `data-logo-light` and `data-logo-dark` and JS switches them dynamically.
+
+**Navigation & Dev Tools**  
+- Navbar cleaned; removed legacy DataTables script remnants.  
+- Core nav centered; tools and preferences kept right-aligned without shifting layout.  
+- Added Dev Tools popover exposing CSV and JSON exports under `build/_data/` with short descriptions.  
+- Site logo linked simply to `/`.
+
+**Search, OpenSearch & Sitemap**  
+- `opensearch.xml` generated declaratively; uses `/docs/?q={searchTerms}`.  
+- New `sitemap.xml` emitted at build time, containing:  
+  - `/`, `/groups/`, `/projects/`, `/docs/`, `/reftree/`  
+  - All document detail pages (`/docs/{docId}/`)  
+  - Absolute URLs from `canonicalBase`; includes `lastmod`, `changefreq`, and `priority`.  
+- Removed static sitemap.xml to avoid clobbering.
+
+**Misc Helpers & Polish**  
+- Added `getUndatedLabel`, `getUndatedDoiCite`, `getUndatedHrefCite`, `getUndatedTitle` to support undated citation display.  
+- Status pipeline unified via `currentStatus`; icons rendered through `getStatus` and `getstatusButton`.  
+- PublisherLink helper now resolves via alias map shared with logos.  
+- Hash offsets again respect sticky headers site-wide.  
+- Numerous CSS adjustments to card headers, facets, and dark-mode cases.
+
+**Deferred / Future Work**  
+- Dev-facing API page with schema versions and filtered slices.  
+- Advanced theming (reduced-motion, density modes).  
+- Namespace/schema validation for XML families (planned core infra).
 
 ## 7 Logging, Diffing, and PR Output
 - `logSmart.js` centralizes logging with a console budget (~3.5 MiB). Excess console chatter is tripwired while full logs are persisted to file.

@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/schema#",
   "$id": "https://github.com/PrZ3r/MSRBot.io/documents/2.0.0",
-  "$comment": "Copyright (c) 2025 Steve LLamb (https://github.com/SteveLLamb) and PrZ3(https://github.com/PrZ3r)",
+  "$comment": "Copyright (c) 2025 [Steve LLamb](https://github.com/SteveLLamb) and [PrZ3](https://github.com/PrZ3r)",
   "docTitle": "Schema for MSRBot.io - Documents",
   "items": {
     "anyOf": [
@@ -31,6 +31,12 @@
             }
           },
           "details": {
+            "type": "string"
+          },
+          "abstract": {
+            "type": "string"
+          },
+          "contentType": {
             "type": "string"
           },
           "docElement": {
@@ -98,6 +104,9 @@
             ]
           },
           "doi": {
+            "type": "string"
+          },
+          "isbn": {
             "type": "string"
           },
           "group": {

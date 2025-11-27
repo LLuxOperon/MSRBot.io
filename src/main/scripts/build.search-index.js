@@ -33,7 +33,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * all display fields derive from canonical registry fields.
  *
  * Output:
- *   build/docs/search-index.json  — flat rows for cards + client search
+ *   build/docs/search-index.json  — flat rows for docList + client search
  *   build/docs/facets.json        — precomputed facet counts + labels
  */
 
@@ -118,10 +118,12 @@ const squash = s => compact(s).replace(/\s+/g, ' ');
   for (const p of Array.isArray(projects) ? projects : []) {
     const wt = p.workType;
     const ps = p.projectStatus;
-    const label = [wt, ps].filter(Boolean).join(' - ');
-    if (p.docId && label) pushWork(p.docId, label);
-    const affected = Array.isArray(p.docAffected) ? p.docAffected : [];
-    for (const did of affected) pushWork(did, label);
+    if (ps !== "Complete") {
+      const label = [wt, ps].filter(Boolean).join(' - ');
+      if (p.docId && label) pushWork(p.docId, label);
+      const affected = Array.isArray(p.docAffected) ? p.docAffected : [];
+      for (const did of affected) pushWork(did, label);
+    }
   }
 
   /** Build the flat, minimal index strictly from canonical doc fields */
@@ -188,13 +190,38 @@ const squash = s => compact(s).replace(/\s+/g, ' ');
     // - facetKeywords: from canonical d.keywords array (for filtering)
     // - searchKeywords: assembled terms for free-text search
     const facetKeywords = Array.isArray(d.keywords) ? d.keywords.map(squash).filter(Boolean) : [];
-    const searchKeywords = Array.from(new Set([
-      d.docId,
-      title,
-      d.docTitle,
-      d.docLabel,
-      ...(Array.isArray(currentWork) ? currentWork : [])
-    ].filter(Boolean).map(squash)));
+
+    // Normalize authors to strings for search — supports ["Last, First"] or [{ givenName, familyName, name }]
+    const authorsList = Array.isArray(d.authors)
+      ? d.authors
+          .map(a => {
+            if (!a) return null;
+            if (typeof a === 'string') return a;
+            if (typeof a === 'object') {
+              const parts = [a.name, a.familyName || a.last || a.surname, a.givenName || a.first || a.forename];
+              const joined = parts.filter(Boolean).join(' ').trim();
+              return joined || null;
+            }
+            return null;
+          })
+          .filter(Boolean)
+          .map(squash)
+      : [];
+
+    const searchKeywords = Array.from(
+      new Set(
+        [
+          //d.docId,
+          title,
+          //d.docTitle,
+          d.docLabel,
+          ...authorsList,            
+          ...(Array.isArray(currentWork) ? currentWork : [])
+        ]
+          .filter(Boolean)
+          .map(squash)
+      )
+    );
 
     // Minimal row — 1‑to‑1 with canonical where applicable
     idx.push({
@@ -211,7 +238,9 @@ const squash = s => compact(s).replace(/\s+/g, ' ');
       year,
       hasDoi: Boolean(d.doi),
       doi: d.doi || null,
+      releaseTag: d.releaseTag,
       hasReleaseTag: Boolean(d.releaseTag),
+      authors: d.authors,
       group,
       groupNames,
       currentWork,
@@ -294,7 +323,7 @@ const squash = s => compact(s).replace(/\s+/g, ' ');
       await fs.writeFile(path.join(DATA_OUT, 'synonyms.json'), synRaw, 'utf8');
     }
   } catch (e) {
-    console.warn('[cards] No synonyms.json found (optional):', e && e.message ? e.message : e);
+    console.warn('[docList] No synonyms.json found (optional):', e && e.message ? e.message : e);
   }
   // --- MiniSearch UMD: ensure a browser-usable bundle is available under build/docs/minisearch/umd/index.min.js ---
   try {
@@ -342,15 +371,15 @@ const squash = s => compact(s).replace(/\s+/g, ' ');
       }
     }
   } catch (e) {
-    console.warn('[cards] Could not acquire MiniSearch UMD (local or CDN):', e && e.message ? e.message : e);
-    console.warn('[cards] Search will fall back to plain includes() if MiniSearch cannot be loaded.');
+    console.warn('[docList] Could not acquire MiniSearch UMD (local or CDN):', e && e.message ? e.message : e);
+    console.warn('[docList] Search will fall back to plain includes() if MiniSearch cannot be loaded.');
   }
 
   /** Write outputs */
   await fs.writeFile(IDX, JSON.stringify(idx, null, 2), 'utf8');
   await fs.writeFile(FAC, JSON.stringify(facets, null, 2), 'utf8');
-  console.log(`[cards] Wrote ${IDX} (${idx.length} docs), ${FAC}`);
+  console.log(`[docList] Wrote ${IDX} (${idx.length} docs), ${FAC}`);
 })().catch(err => {
-  console.error('[cards] Index build failed:', err && err.stack ? err.stack : err);
+  console.error('[docList] Index build failed:', err && err.stack ? err.stack : err);
   process.exitCode = 1;
 });

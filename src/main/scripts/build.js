@@ -30,12 +30,23 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /* pass the option  */
 
 const path = require('path');
-const fs = require('fs').promises;
+const fsRaw = require('fs');
+const fs = fsRaw.promises; // use promises API everywhere by default
 const { promisify } = require('util');
 const execFile = promisify(require('child_process').execFile);
 
+// Capture the original callback writeFile once so later monkey-patching
+// (e.g., during groups build) can't cause recursion.
+const _writeFileCb = fsRaw.writeFile.bind(fsRaw);
+const _writeFile = (filePath, data, encoding = 'utf8') =>
+  new Promise((resolve, reject) => {
+    _writeFileCb(filePath, data, encoding, (err) => (err ? reject(err) : resolve()));
+  });
 
 const hb = require('handlebars');
+const { readFile } = fs; // promises readFile
+const { json2csvAsync } = require('json-2-csv');
+
 // Server-side helper to pass through raw blocks used to embed client-side templates
 hb.registerHelper('raw', function(options) {
   return new hb.SafeString(options.fn(this));
@@ -87,8 +98,6 @@ async function copyRecursive(src, dest) {
 
 // Warn once per process for empty MSI
 let __msiWarnedEmpty = false;
-const { readFile, writeFile } = require('fs').promises;
-const { json2csvAsync } = require('json-2-csv');
 
 /* list the available registries type (lower case), id (single, for links), titles (Upper Case), and schema builds */
 
@@ -102,19 +111,25 @@ const registries = [
     "subRegistry": [
       "groups",
       "projects"
-    ]
+    ],
+    "extras": {
+      "logicOnly": true
+    }
   },
   {
     "listType": "documents",
     "templateType": "documents",
-    "templateName": "dependancies",
+    "templateName": "refTree",
     "idType": "document",
     "listTitle": "Ref Tree",
     "subRegistry": [
       "documents",
       "groups",
       "projects"
-    ]
+    ],
+    "extras": {
+      "logicOnly": true
+    }
   },
   {
     "listType": "projects",
@@ -140,13 +155,217 @@ const registries = [
   }
 ]
 
+// One-shot guard so normalized groups emit can't loop during sub-registry builds
+let __normalizedGroupsEmitted = false;
+
+// Safe write wrapper to strictly prevent legacy groups.json writes.
+// Returns true if a file was actually written, false if skipped.
+const __skippedLegacyWrites = new Set();
+async function writeFileSafe(filePath, data, encoding = 'utf8') {
+  const p = String(filePath || '');
+  if (/build[\\/]groups[\\/]_data[\\/]groups\.json$/.test(p)) {
+    __skippedLegacyWrites.add(p);
+    console.log(`[build] Skipping legacy groups.json write (normalized groups.json is authoritative): ${p}`);
+    return false;
+  }
+  await _writeFile(filePath, data, encoding);
+  return true;
+}
+
+// --- Groups registry normalization + emit (for client-side groups view)
+function normalizeGroupsRegistry(rawGroups){
+  const groups = Array.isArray(rawGroups) ? rawGroups : [];
+  const byId = new Map();
+  groups.forEach(g => {
+    if (g && g.groupId) byId.set(String(g.groupId), g);
+  });
+
+  function findTcId(g){
+    if (!g) return '';
+    let cur = g;
+    const seen = new Set();
+    while (cur && cur.groupId && !seen.has(cur.groupId)) {
+      const curId = String(cur.groupId);
+      seen.add(curId);
+      const curType = String(cur.groupType || '').trim().toUpperCase();
+      if (curType === 'TC') return curId;
+      const pid = cur.parentgroupId ?? cur.parentGroupId;
+      const parentId = pid ? String(pid) : '';
+      if (!parentId) break;
+      cur = byId.get(parentId);
+    }
+    return '';
+  }
+
+  function buildAncestorChain(g){
+    const chain = [];
+    let cur = g;
+    const seen = new Set();
+    while (cur) {
+      const pid = cur.parentgroupId ?? cur.parentGroupId;
+      const parentId = pid ? String(pid) : '';
+      if (!parentId || seen.has(parentId)) break;
+      seen.add(parentId);
+      const parent = byId.get(parentId);
+      if (!parent) break;
+      chain.unshift(parent);
+      cur = parent;
+    }
+    return chain;
+  }
+
+  return groups.map(g => {
+    const out = { ...(g || {}) };
+
+    const active = !!(g && g.groupStatus && g.groupStatus.active);
+    out.isActive = active;
+    out.statusText = active ? 'Active' : 'Closed';
+    out.hasParent = !!(g && g.parentgroupId);
+
+    // tcId: self if TC, otherwise first TC ancestor
+    const gTypeNorm = String((g && g.groupType) || '').trim().toUpperCase();
+    out.tcId = (gTypeNorm === 'TC') ? String(g.groupId || '') : findTcId(g);
+
+    // groupLabel: derived once at build time.
+    // Rules:
+    //  - TC:   "<org> <tcName> <tcDesc?>"
+    //  - Non-TC under a TC: "<org> <tcName> <nonTC ancestor labels...> <selfName> <selfDesc?>"
+    //  - Non-TC without TC: "<org> <nonTC ancestor labels...> <selfName> <selfDesc?>"
+    const org = (g && g.groupOrg) ? String(g.groupOrg).trim() : '';
+
+    const selfName = String((g && g.groupName) || '').trim();
+    const selfDesc = String((g && g.groupDesc) || '').trim();
+    const selfLabel = [selfName, selfDesc].filter(Boolean).join(' ').trim();
+
+    // Non-TC ancestors (exclude any TC so we don't duplicate the TC label)
+    const nonTcAncestors = buildAncestorChain(g)
+      .filter(a => a && String(a.groupType || '').trim().toUpperCase() !== 'TC')
+      .map(a => {
+        const n = String(a.groupName || '').trim();
+        const d = String(a.groupDesc || '').trim();
+        return [n, d].filter(Boolean).join(' ').trim();
+      })
+      .filter(Boolean);
+
+    // TC label (if any)
+    // Rules:
+    //  - For TC cards: include TC name + desc in the TC label (so TC stands on its own).
+    //  - For children under a TC: include TC name ONLY (no TC desc), so child labels stay short.
+    let tcLabel = '';
+    if (out.tcId) {
+      const tcNode = byId.get(String(out.tcId));
+      if (tcNode) {
+        const tcName = String(tcNode.groupName || '').trim();
+        const tcDesc = String(tcNode.groupDesc || '').trim();
+        if (gTypeNorm === 'TC') {
+          tcLabel = [tcName, tcDesc].filter(Boolean).join(' ').trim();
+        } else {
+          tcLabel = tcName; // children get TC NAME ONLY
+        }
+      }
+      // If we still didn't get a TC label, fall back to immediate parent name (NAME ONLY)
+      if (!tcLabel) {
+        const pid = g && (g.parentgroupId ?? g.parentGroupId);
+        const parentId = pid ? String(pid) : '';
+        const parent = parentId ? byId.get(parentId) : null;
+        if (parent) {
+          const pn = String(parent.groupName || '').trim();
+          tcLabel = pn;
+        }
+      }
+    }
+
+    if (gTypeNorm === 'TC') {
+      out.groupLabel = [org, selfLabel]
+        .filter(Boolean)
+        .join(' ')
+        .replace(/\s+/g, ' ')
+        .trim() || String(g && g.groupId || '');
+    } else {
+      out.groupLabel = [org, tcLabel, ...nonTcAncestors, selfLabel]
+        .filter(Boolean)
+        .join(' ')
+        .replace(/\s+/g, ' ')
+        .trim() || String(g && g.groupId || '');
+    }
+
+    // searchText for client search
+    out.searchText = [
+      g && g.groupId,
+      g && g.groupOrg,
+      g && g.groupName,
+      g && g.groupDesc,
+      g && g.groupSummary,
+      g && g.groupType,
+      out.statusText,
+      out.tcId
+    ].filter(Boolean).join(' ').toLowerCase();
+
+    return out;
+  });
+}
+
+async function emitNormalizedGroups({ dataPath }){
+  if (__normalizedGroupsEmitted) {
+    console.log('[build] Skipping normalized groups emit (already emitted once).');
+    return null;
+  }
+  __normalizedGroupsEmitted = true;
+  try {
+    const raw = JSON.parse(await fs.readFile(dataPath, 'utf8'));
+    const norm = normalizeGroupsRegistry(raw);
+    const outDir = path.join(BUILD_PATH, 'groups', '_data');
+    await fs.mkdir(outDir, { recursive: true });
+    // Authoritative normalized groups registry for client-side use
+    const outPath = path.join(outDir, 'groups.json');
+    await _writeFile(outPath, JSON.stringify(norm, null, 2), 'utf8');
+    console.log(`[build] Wrote normalized groups registry: ${outPath} (count=${norm.length})`);
+    return norm;
+  } catch (e) {
+    console.warn('[build] Failed to emit normalized groups registry:', e && e.message ? e.message : e);
+    return null;
+  }
+}
+// --- end groups normalization
+
 /* load and build the templates */
 
 async function buildRegistry ({ listType, templateType, templateName, idType, listTitle, subRegistry, output, extras }) {
+  const logicOnly = extras && extras.logicOnly;
   console.log(`Building ${templateName} started`)
 
   var DATA_PATH = path.join(REGISTRIES_REPO_PATH, "data/" + listType + ".json");
   var TEMPLATE_PATH = "src/main/templates/" + templateName + ".hbs";
+
+  // Load registry data before emitting JSON files
+  let data = JSON.parse(await fs.readFile(DATA_PATH, 'utf8'));
+  const raw = data;
+  // --- Registry JSON emit
+  // Normalized groups must ONLY be emitted during the groups pass.
+  // Sub-registry builds may *read* groups.json but must never rewrite it.
+  if (templateName === 'groups') {
+    const norm = await emitNormalizedGroups({ dataPath: DATA_PATH });
+    if (Array.isArray(norm) && norm.length) {
+      data = norm; // use normalized data for template render / CSV
+    }
+  }
+  // --- Generic registry JSON emit (ALL registries except groups)
+  // Groups are emitted via emitNormalizedGroups() + optional raw copy above.
+  // Skip emitting build/documents/_data/documents.json; that folder is unused now.
+  // Also skip build/refTree/_data/documents.json — refTree client JS reads docs/_data/documents.json directly.
+  if (
+    templateName !== 'groups' &&
+    !(templateName === 'documents' && listType === 'documents') &&
+    !(templateName === 'refTree' && listType === 'documents')
+  ) {
+    const outDir = path.join(BUILD_PATH, templateName, '_data');
+    await fs.mkdir(outDir, { recursive: true });
+    const outPath = path.join(outDir, `${listType}.json`);
+
+    await writeFileSafe(outPath, JSON.stringify(data, null, 2), 'utf8');
+    console.log(`[build] Wrote build/${templateName}/_data/${listType}.json`);
+  }
+  // --- end registry JSON emit
   var PAGE_SITE_PATH
   if (output) {
     PAGE_SITE_PATH = output;
@@ -167,7 +386,12 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   const ogImageAlt = siteConfig.ogImageAlt;
   // Asset prefix for relative local assets in header/footer
   const assetPrefix = '../';
-  var CSV_SITE_PATH = templateType + ".csv";
+  // Emit CSV into the shared /_data/ folder so all pages can link to a single canonical export.
+  // Example outputs:
+  //   build/_data/documents.csv
+  //   build/_data/groups.csv
+  //   build/_data/projects.csv
+  var CSV_SITE_PATH = "_data/" + templateType + ".csv";
   const inputFileName = DATA_PATH;
   const outputFileName = BUILD_PATH + "/" + CSV_SITE_PATH;
 
@@ -175,16 +399,18 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   hb.registerPartial('header', await fs.readFile("src/main/templates/partials/header.hbs", 'utf8'));
   hb.registerPartial('footer', await fs.readFile("src/main/templates/partials/footer.hbs", 'utf8'));
 
-  /* instantiate template */
-  let template = hb.compile(
-    await fs.readFile(
-      TEMPLATE_PATH,
-      'utf8'
-    )
-  );
-  
-  if (!template) {
-    throw "Cannot load HTML template";
+  /* instantiate template (skippable for logic-only registries) */
+  let template = null;
+  if (!logicOnly) {
+    template = hb.compile(
+      await fs.readFile(
+        TEMPLATE_PATH,
+        'utf8'
+      )
+    );
+    if (!template) {
+      throw "Cannot load HTML template";
+    }
   }
 
   /* if Conditional helpers */
@@ -194,6 +420,67 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
       return options.fn(this); 
     }
     return options.inverse(this);
+  });
+
+  // Helper to compare values in citation templates (used inside __renderCiteTpl)
+  // Compare a docType against one or more allowed values or config-defined lists.
+  function buildCiteTargetSet(b) {
+    // Normalize comparison inputs to a lowercase array
+    const toArray = v =>
+      (Array.isArray(v) ? v : String(v || '').split(','))
+        .map(x => String(x).trim().toLowerCase())
+        .filter(Boolean);
+
+    const rawTargets = toArray(b);
+    const outSet = new Set();
+
+    const addList = (arr) => {
+      (Array.isArray(arr) ? arr : []).forEach(x => {
+        const t = String(x || '').trim().toLowerCase();
+        if (t) outSet.add(t);
+      });
+    };
+
+    // Load site config to expand keyword lists
+    let cfg = null;
+    try {
+      cfg = require('../config/site.json');
+    } catch (e) {
+      cfg = null;
+    }
+
+    // Expand keywords and merge results; preserve literal items too
+    for (const t of rawTargets) {
+      if (t === 'nonlineagedoctypes') {
+        addList(cfg && Array.isArray(cfg.nonLineageDocTypes) ? cfg.nonLineageDocTypes : []);
+        continue;
+      }
+      if (t === 'titlelabeldoctypes') {
+        addList(cfg && Array.isArray(cfg.titleLabelDocTypes) ? cfg.titleLabelDocTypes : []);
+        continue;
+      }
+      if (t === 'publishersdateless') {
+        addList(cfg && Array.isArray(cfg.publishersDateless) ? cfg.publishersDateless : []);
+        continue;
+      }
+      // literal compare value
+      outSet.add(t);
+    }
+
+    return outSet;
+  }
+
+  hb.registerHelper('citeIfEq', function (a, b, options) {
+    const val = String(a || '').trim().toLowerCase();
+    const outSet = buildCiteTargetSet(b);
+    return outSet.has(val) ? options.fn(this) : options.inverse(this);
+  });
+
+  // Negated variant: run block when value is NOT in the target set
+  hb.registerHelper('citeIfNotEq', function (a, b, options) {
+    const val = String(a || '').trim().toLowerCase();
+    const outSet = buildCiteTargetSet(b);
+    return !outSet.has(val) ? options.fn(this) : options.inverse(this);
   });
 
   hb.registerHelper('ifactive', function (a, b, options) {
@@ -214,6 +501,45 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     return options.inverse(this);
   });
 
+  hb.registerHelper('or', function (a, b) {
+    return a || b;
+  });
+
+  hb.registerHelper('and', function (a, b) {
+    return a && b;
+  });
+
+  hb.registerHelper('any', function (...args) {
+    const values = args.slice(0, -1);
+    return values.some(v => !!v);
+  });
+
+  // Returns the length of arrays/strings, or the number of keys for objects
+  hb.registerHelper('len', function (val) {
+    if (Array.isArray(val)) return val.length;
+    if (typeof val === 'string') return val.length;
+    if (val && typeof val === 'object') return Object.keys(val).length;
+    return 0;
+  });
+
+  // Helper to ensure a value is always an array
+  hb.registerHelper('asArray', function (val) {
+    if (Array.isArray(val)) return val;
+    if (val == null) return [];
+    return [val];
+  });
+
+  // Helper to set a transient status token on the current context for group cards
+  hb.registerHelper('setStatusToken', function (value, options) {
+    // Store a transient status token on the current context
+    if (options && options.data && options.data.root) {
+      options.data.root.statusToken = value;
+    } else {
+      this.statusToken = value;
+    }
+    return '';
+  });
+
   // Render a human-friendly label from a lineage key like "ISO||15444|1" → "ISO 15444-1"
   hb.registerHelper('formatLineageKey', function(key) {
     if (!key || typeof key !== 'string') return '';
@@ -222,6 +548,240 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     if (suite) out += (out ? ' ' : '') + suite;
     if (number) out += (out ? ' ' : '') + number + (part ? `-${part}` : '');
     return out.trim();
+  });
+
+  // --- Citation helpers (text, HTML-generic, HTML-SMPTE) + code-safe variants
+  function _yearFrom(pubDate){
+    const s = String(pubDate || '').trim();
+    const m = s.match(/^\d{4}/);
+    return m ? m[0] : '';
+  }
+function _doiUrl(doc){
+  const d = (doc && doc.doi) ? String(doc.doi).trim() : '';
+  if (!d) return '';
+  // Build full URL first, then encode the URL as a whole.
+  // encodeURI preserves forward slashes, which is correct for DOI paths.
+  return encodeURI('https://doi.org/' + d);
+}
+  function _bestHref(doc){
+    return _doiUrl(doc) || (doc && doc.href) || '';
+  }
+  function _idOf(doc){
+    return (doc && doc.docId) || '';
+  }
+  function _labelOf(doc){
+    return (doc && doc.docLabel) || '';
+  }
+  function _titleOf(doc){
+    return (doc && (doc.docTitle || doc.title)) || '';
+  }
+  function _publisherOf(doc){
+    return (doc && doc.publisher) || '';
+  }
+  function _docTypeOf(doc){
+    return (doc && doc.docType) || '';
+  }
+  function _docBaseOf(doc){
+    return (doc && doc.docBase) || '';
+  }
+  function _isbnOf(doc){
+    return (doc && doc.isbn) || '';
+  }
+  function _authorsOf(doc){
+    return (doc && doc.authors) || '';
+  }
+  function _escapeHtml(s){
+    return String(s || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  // Robust joinAuthors helper with CSL-JSON support, Oxford comma, and custom separators
+  hb.registerHelper('joinAuthors', function (authors, options) {
+    // Hash options
+    const hash = (options && options.hash) || {};
+    const sep = (typeof hash.sep === 'string') ? hash.sep : ', ';
+    const oxford = (hash.oxford === undefined) ? true : !!hash.oxford;
+    const lastSep = (typeof hash.lastSep === 'string') ? hash.lastSep : ' and ';
+
+    function authorToString(a) {
+      if (a == null) return '';
+      if (typeof a === 'string') return a.trim();
+
+      if (typeof a === 'object') {
+        // CSL-JSON common variants
+        if (typeof a.literal === 'string') return a.literal.trim();
+        if (a.name && typeof a.name === 'string') return a.name.trim();
+        if (a.name && typeof a.name === 'object' && typeof a.name.literal === 'string') return a.name.literal.trim();
+
+        const family = (a.family || a.last || '').toString().trim();
+        const given  = (a.given  || a.first || '').toString().trim();
+        const initials = (a.initials || '').toString().trim();
+
+        if (family && given) return `${given} ${family}`.trim();
+        if (family && initials) return `${initials} ${family}`.trim();
+        if (family) return family;
+        if (given) return given;
+      }
+      return '';
+    }
+
+    const arr = Array.isArray(authors) ? authors.map(authorToString).filter(Boolean) : [];
+    if (arr.length === 0) return '';
+    if (arr.length === 1) return arr[0];
+    if (arr.length === 2) return arr.join(lastSep);
+
+    const head = arr.slice(0, -1).join(sep);
+    const tail = arr[arr.length - 1];
+    // Oxford comma: include an extra separator before 'and' for lists of 3+
+    return oxford ? `${head}${sep}and ${tail}` : `${head}${lastSep}${tail}`;
+  });
+
+  // Public helpers
+  hb.registerHelper('citeText', function(doc){
+    const tpl = siteConfig?.citations?.text?.preview;
+    return tpl ? __renderCiteTpl(tpl, doc) : _buildCiteText(doc);
+  });
+  hb.registerHelper('citeTextUndated', function(doc){
+    const tpl = siteConfig?.citations?.text?.previewUndated;
+    return tpl ? __renderCiteTpl(tpl, doc) : _buildCiteText(doc);
+  });
+  hb.registerHelper('citeHtmlGeneric', function(doc){
+    const tpl = siteConfig?.citations?.generic?.preview;
+    return new hb.SafeString(tpl ? __renderCiteTpl(tpl, doc) : _buildCiteHtmlGeneric(doc));
+  });
+  hb.registerHelper('citeHtmlGenericUndated', function(doc){
+    const tpl = siteConfig?.citations?.generic?.previewUndated;
+    return new hb.SafeString(tpl ? __renderCiteTpl(tpl, doc) : _buildCiteHtmlGeneric(doc));
+  });
+  hb.registerHelper('citeHtmlSmpte', function(doc){
+    return new hb.SafeString(_buildCiteHtmlSmpte(doc));
+  });
+
+  // Code-safe (escaped) versions for &lt;pre&gt; blocks
+  hb.registerHelper('citeCodeText', function(doc){
+    const tpl = siteConfig?.citations?.text?.preview;
+    return new hb.SafeString(_escapeHtml(tpl ? __renderCiteTpl(tpl, doc) : _buildCiteText(doc)));
+  });
+
+  hb.registerHelper('citeCodeTextUndated', function(doc){
+    const tpl = siteConfig?.citations?.text?.previewUndated;
+    return new hb.SafeString(_escapeHtml(tpl ? __renderCiteTpl(tpl, doc) : _buildCiteText(doc)));
+  });
+
+  hb.registerHelper('citeCodeHtmlGeneric', function(doc){
+    const tpl = siteConfig?.citations?.generic?.preview;
+    return new hb.SafeString(_escapeHtml(tpl ? __renderCiteTpl(tpl, doc) : _buildCiteHtmlGeneric(doc)));
+  });
+  
+  hb.registerHelper('citeCodeHtmlGenericUndated', function(doc){
+    const tpl = siteConfig?.citations?.generic?.previewUndated;
+    return new hb.SafeString(_escapeHtml(tpl ? __renderCiteTpl(tpl, doc) : _buildCiteHtmlGeneric(doc)));
+  });
+
+  hb.registerHelper('citeCodeHtmlSmpte', function(doc){
+    return new hb.SafeString(_escapeHtml(_buildCiteHtmlSmpte(doc)));
+  });
+
+  // --- Config-driven template rendering for SMPTE preview/snippet divergence
+  // Render citation template using Handlebars (supports helpers like {{#citeIfEq ...}})
+  function __renderCiteTpl(tpl, doc) {
+    // Gather fields
+    const publisher  = _publisherOf(doc) || 'SMPTE';
+    const docId   = _idOf(doc);
+    const docType = _docTypeOf(doc);
+    const docBase = _docBaseOf(doc);
+    const label  = _labelOf(doc);
+    const title    = _titleOf(doc);
+    const yr     = _yearFrom(doc && doc.publicationDate);
+    const href   = _bestHref(doc); // may be empty string; do NOT default to '#'
+    const isbn = _isbnOf(doc);
+    const authors = _authorsOf(doc);
+    const doi    = (doc && doc.doi) ? String(doc.doi).trim() : '';
+    // Build an anchor-safe refId by flattening non-word chars to dashes (lowercase)
+    const baseForRef = docId || label || title || publisher || '';
+    const bibId = String(baseForRef)
+      .replace(/[^\w]+/g, '-')
+      .replace(/^-+|-+$/g, '')
+      .toLowerCase();
+
+    // Context passed into the template
+    const map = {
+      publisher,
+      docId,
+      docType,
+      docBase,
+      bibId,
+      label,
+      title,
+      year: yr,
+      isbn,
+      authors,
+      href,
+      doi
+    };
+
+    // Compile & render using Handlebars so helpers like {{#citeIfEq ...}} work
+    const compiled = hb.compile(String(tpl || ''));
+    return compiled(map);
+  }
+
+  // Helpers that prefer siteConfig.citations.smpte.{preview|snippet} if present
+  hb.registerHelper('citeHtmlSmptePreview', function(doc){
+    try {
+      const cfgTpl = siteConfig && siteConfig.citations && siteConfig.citations.smpte && siteConfig.citations.smpte.preview;
+      if (cfgTpl) {
+        return new hb.SafeString(__renderCiteTpl(cfgTpl, doc));
+      }
+      // Fallback to the default SMPTE HTML builder
+      return new hb.SafeString(_buildCiteHtmlSmpte(doc));
+    } catch (e) {
+      return new hb.SafeString(_buildCiteHtmlSmpte(doc));
+    }
+  });
+
+  hb.registerHelper('citeCodeHtmlSmpteSnippet', function(doc){
+    try {
+      const cfgTpl = siteConfig && siteConfig.citations && siteConfig.citations.smpte && siteConfig.citations.smpte.snippet;
+      if (cfgTpl) {
+        // For code blocks, escape the rendered HTML so users copy the literal tag string
+        return new hb.SafeString(_escapeHtml(__renderCiteTpl(cfgTpl, doc)));
+      }
+      // Fallback: use the same default SMPTE builder, escaped for code
+      return new hb.SafeString(_escapeHtml(_buildCiteHtmlSmpte(doc)));
+    } catch (e) {
+      return new hb.SafeString(_escapeHtml(_buildCiteHtmlSmpte(doc)));
+    }
+  });
+
+  hb.registerHelper('citeHtmlSmptePreviewUndated', function(doc){
+    try {
+      const cfgTpl = siteConfig && siteConfig.citations && siteConfig.citations.smpte && siteConfig.citations.smpte.previewUndated;
+      if (cfgTpl) {
+        return new hb.SafeString(__renderCiteTpl(cfgTpl, doc));
+      }
+      // Fallback to the default SMPTE HTML builder
+      return new hb.SafeString(_buildCiteHtmlSmpte(doc));
+    } catch (e) {
+      return new hb.SafeString(_buildCiteHtmlSmpte(doc));
+    }
+  });
+
+  hb.registerHelper('citeCodeHtmlSmpteSnippetUndated', function(doc){
+    try {
+      const cfgTpl = siteConfig && siteConfig.citations && siteConfig.citations.smpte && siteConfig.citations.smpte.snippetUndated;
+      if (cfgTpl) {
+        // For code blocks, escape the rendered HTML so users copy the literal tag string
+        return new hb.SafeString(_escapeHtml(__renderCiteTpl(cfgTpl, doc)));
+      }
+      // Fallback: use the same default SMPTE builder, escaped for code
+      return new hb.SafeString(_escapeHtml(_buildCiteHtmlSmpte(doc)));
+    } catch (e) {
+      return new hb.SafeString(_escapeHtml(_buildCiteHtmlSmpte(doc)));
+    }
   });
   
   // --- Load registries (data only). 
@@ -232,14 +792,17 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   let registryProject = [];
 
   // Load any declared sub-registries if their data files exist
+  // Keep separate arrays so templates can always access the full documents/groups/projects sets,
+  // regardless of what the primary listType is for this build.
+  let registryDocsAll = null;
   for (const sub of subRegistry) {
     const subDataPath = path.join(REGISTRIES_REPO_PATH, `data/${sub}.json`);
     try {
       const subData = JSON.parse(await fs.readFile(subDataPath, 'utf8'));
-      if (sub === 'groups') registryGroup = subData;
+      if (sub === 'groups')   registryGroup = subData;
       if (sub === 'projects') registryProject = subData;
+      if (sub === 'documents') registryDocsAll = subData;
     } catch (err) {
-      // If a sub-registry file is missing, warn and continue; templates will handle absent data
       console.warn(`[WARN] Could not load data for sub-registry "${sub}" at ${subDataPath}: ${err.message}`);
     }
   }
@@ -330,6 +893,46 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
       doc.isLatestBase = latestBaseId ? (doc.docId === latestBaseId) : false;
     }
   }
+
+  // --- Build per-base suites and attach minimal arrays to each doc
+  (function attachDocSuites() {
+    try {
+      const suites = new Map();
+      for (const d of registryDocument) {
+        if (!d || !d.docBase) continue;
+        const arr = suites.get(d.docBase) || [];
+        arr.push(d);
+        suites.set(d.docBase, arr);
+      }
+      const byDateThenId = (a, b) => {
+        const ad = a.publicationDate || '';
+        const bd = b.publicationDate || '';
+        if (ad && bd && ad !== bd) return ad.localeCompare(bd); // oldest → newest
+        if (!ad && bd) return 1;
+        if (ad && !bd) return -1;
+        return (a.docId || '').localeCompare(b.docId || '');
+      };
+      for (const [base, arr] of suites.entries()) {
+        arr.sort(byDateThenId);
+        if (arr.length) arr[arr.length - 1].__isNewestInBase = true; // convenience flag
+      }
+      for (const d of registryDocument) {
+        if (!d || !d.docBase) continue;
+        const arr = suites.get(d.docBase) || [];
+        d.docSuite = arr.map(x => ({
+          docId: x.docId,
+          docLabel: x.docLabel,
+          href: x.href,
+          publicationDate: x.publicationDate,
+          status: (x.status && typeof x.status === 'object') ? x.status : {},
+          isLatestBase: !!x.isLatestBase,
+          __isNewestInBase: !!x.__isNewestInBase
+        }));
+      }
+    } catch (e) {
+      console.warn(`[build] docSuite attach failed: ${e.message}`);
+    }
+  })();
 
   /* load the SMPTE abreviated docType */
 
@@ -540,8 +1143,6 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
 
   let docDependancy
   for (let i in registryDocument) {
-    let depCheck = true
-    let depPresent
     if (registryDocument[i].referencedBy && registryDocument[i].referenceTree) {
       docDependancy = true
     }
@@ -617,14 +1218,24 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     return docStatuses[docId];
   });
 
-  const docLabels = {}
-  registryDocument.forEach(item => { 
-    if (item.docType === "Journal Article" || item.docType === "White Paper" || item.docType === "Book" || item.docType === "Guideline" || item.docType === "Registry" )  {
-      docLabels[item.docId] = (item.docTitle)
+  const docLabels = {};
+  // Build a case-insensitive set from siteConfig.titleLabelDocTypes
+  const __titleLabelSet = new Set(
+    Array.isArray(siteConfig && siteConfig.titleLabelDocTypes)
+      ? siteConfig.titleLabelDocTypes.map(t => String(t || '').toLowerCase()).filter(Boolean)
+      : []
+  );
+
+  registryDocument.forEach(item => {
+    const dt = String(item && item.docType || '').toLowerCase();
+    // Prefer docTitle as the label for configured docTypes; otherwise fall back to docLabel.
+    // Also add defensive fallbacks if either field is missing.
+    if (__titleLabelSet.has(dt)) {
+      docLabels[item.docId] = (item.docTitle || item.docLabel || item.docId);
     } else {
-      docLabels[item.docId] = (item.docLabel)
-    }    
-  } );
+      docLabels[item.docId] = (item.docLabel || item.docTitle || item.docId);
+    }
+  });
 
   hb.registerHelper("getLabel", function(docId) {
     if (!docLabels.hasOwnProperty(docId)) {
@@ -641,29 +1252,154 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     return docTitles[docId];
   });
 
-  // Render a label without trailing date (e.g., "SMPTE ST 429-2:2023-09" -> "SMPTE ST 429-2")
-  hb.registerHelper("getUndatedLabel", function(docId) {
-    const label = docLabels.hasOwnProperty(docId) ? docLabels[docId] : docId;
-    // Strip ":YYYY", ":YYYY-MM" or ":YYYYMMDD" and anything after
-    return String(label).replace(/:\s?\d{4}(?:-\d{2}){0,2}.*$/, '');
-  });
+// Render a label without trailing date (e.g., "SMPTE ST 429-2:2023-09" -> "SMPTE ST 429-2")
+hb.registerHelper("getUndatedLabel", function(docId) {
+  const label = docLabels.hasOwnProperty(docId) ? docLabels[docId] : docId;
+  // Strip ":YYYY", ":YYYY-MM" or ":YYYYMMDD" and anything after
+  return String(label).replace(/:\s?\d{4}(?:-\d{2}){0,2}.*$/, '');
+});
+
+// --- Shared stripper for DOI/HREF base identifiers
+function __stripUndatedTail(seg) {
+  if (!seg) return '';
+  return String(seg).replace(
+    /^(.*?)(\.\d{4}(?:\d{2}|-\d{2}(?:-\d{2})?)?(?:Am\d+)?(?:\.\d{4}(?:\d{2}|-\d{2}(?:-\d{2})?)?)?)$/,
+    '$1'
+  );
+}
+
+function __stripUndatedPath(str) {
+  if (!str) return '';
+  const s = String(str);
+  const idx = s.lastIndexOf('/');
+  if (idx === -1) return __stripUndatedTail(s);
+  return s.slice(0, idx + 1) + __stripUndatedTail(s.slice(idx + 1));
+}
+
+hb.registerHelper("getUndatedDoiCite", function(doi) {
+  return __stripUndatedPath(doi);
+});
+
+hb.registerHelper("getUndatedHrefCite", function(href) {
+  return __stripUndatedPath(href);
+});
+
+hb.registerHelper("getUndatedLabelCite", function(docId) {
+  const label = docLabels.hasOwnProperty(docId) ? docLabels[docId] : docId;
+  // Strip ":YYYY", ":YYYY-MM" or ":YYYYMMDD" and anything after
+  return String(label).replace(/:\s?\d{4}(?:-\d{2}){0,2}.*$/, '');
+});
+
+hb.registerHelper("getUndatedTitle", function(title) {
+  if (!title) return '';
+  let s = String(title);
+
+  // 1) Replace any parenthetical chunk that contains the word "Edition" (any case)
+  //    e.g., "(Eighth edition, 2018)" -> "(Latest Edition)"
+  //          "(Third Edition)"        -> "(Latest Edition)"
+  s = s.replace(/\(([^)]*\bedition\b[^)]*)\)/gi, '(Latest Edition)');
+
+  // 2) Replace inline edition phrases with "Latest Edition", without touching "Version"
+  //    Examples:
+  //      "Second Edition"      -> "Latest Edition"
+  //      "14th Edition"        -> "Latest Edition"
+  //      "1999 Edition"        -> "Latest Edition"
+  //      "Edition 6.0"         -> "Latest Edition"
+  s = s
+    // "[word/number] Edition"
+    .replace(
+      /\b(?:\d{4}|\d+(?:st|nd|rd|th)|first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|[A-Za-z]+)\s+edition\b/gi,
+      'Latest Edition'
+    )
+    // "Edition 6.0" / "Edition 2"
+    .replace(/\bedition\s+[0-9.]+\b/gi, 'Latest Edition');
+
+  // 3) If an edition phrase still carries a trailing year (e.g., "Latest Edition, 2018"),
+  //    strip the year so it becomes just "Latest Edition".
+  s = s.replace(/Latest Edition,\s*\d{4}(?:-\d{2}){0,2}/gi, 'Latest Edition');
+
+  // 4) Strip common "version" patterns completely (we do NOT replace with "Latest Version")
+  //    Examples:
+  //      "v1.1"                    -> ''
+  //      "Addendum v1 2022-10-14"  -> 'Addendum'
+  //      "Version 1.4"             -> ''
+  //      "VERSION 2.0.9"           -> ''
+  //      "1986 version"            -> ''
+  s = s
+    // "Version 1.4.1", "VERSION 2.0.9" (keep any leading punctuation/space for cleanup below)
+    .replace(/\bversion\s+[0-9][0-9A-Za-z.\-]*/gi, '')
+    // Bare "v1", "v1.4.1" tokens
+    .replace(/\bv[0-9][0-9A-Za-z.\-]*/gi, '')
+    // Year + "version" suffix: "1986 version"
+    .replace(/\b\d{4}\s+version\b/gi, '')
+    // "Ver. 1.02" / "Ver 1.02"
+    .replace(/\bver\.?\s+[0-9][0-9A-Za-z.\-]*/gi, '');
+
+  // 5) Remove trailing year-only parentheses or loose years left after version removal
+  //    e.g., "Digital Broadcasting Version 2.1 (2007)" -> "Digital Broadcasting"
+  s = s
+    // Parenthesized date: (2007), (2007-01), (2007-01-01)
+    .replace(/\(\s*\d{4}(?:-\d{2}(?:-\d{2})?)?\s*\)/g, '')
+    // Trailing ", 2007" or " 2007-01-01" at the end of the string
+    .replace(/[, ]+\d{4}(?:-\d{2}(?:-\d{2})?)?\s*$/g, '');
+
+  // 6) Collapse any multiple spaces created by the removals
+  s = s.replace(/\s{2,}/g, ' ');
+
+  return s.trim();
+});
+
 
   /* lookup if any projects exist for current document */
-
-  const docProjs = []
-  for (let i in registryProject) {
-    let projs = registryProject[i]["docAffected"]
-    for (let p in projs) {
-      var docProj = {}
-      docProj["docId"] = projs[p]
-      docProj["workType"] = registryProject[i]["workType"]
-      docProj["projectStatus"] = registryProject[i]["projectStatus"]
-      docProj["newDoc"] = registryProject[i]["docId"]
-      docProj["projApproved"] = registryProject[i]["projApproved"]
-      docProjs.push(docProj)
+  
+  // Build a docId → project summary index that includes BOTH:
+  //  - the project's primary docId (i.e., the new/replacing doc under development)
+  //  - every entry listed in docAffected (i.e., existing docs being updated)
+  //
+  // If multiple projects touch the same docId, prefer any non-"Complete" status.
+  const docProjsMap = new Map();
+  
+  function upsertDocProj(key, payload) {
+    if (!key) return;
+    const prev = docProjsMap.get(key);
+    if (!prev) {
+      docProjsMap.set(key, payload);
+      return;
+    }
+    // Prefer a project that is not "Complete" over one that is "Complete".
+    const prevDone = String(prev.projectStatus || '').toLowerCase() === 'complete';
+    const nextDone = String(payload.projectStatus || '').toLowerCase() === 'complete';
+    if (prevDone && !nextDone) {
+      docProjsMap.set(key, payload);
+    }
+    // Otherwise, keep the first seen; we don't attempt deep merges here.
+  }
+  
+  for (const proj of registryProject) {
+    if (!proj || (typeof proj !== 'object')) continue;
+    const payload = {
+      workType: proj.workType,
+      projectStatus: proj.projectStatus,
+      newDoc: proj.newDoc,             // the new/replacing doc being created
+      projApproved: proj.projApproved,
+      projectId: proj.projectId
+    };
+  
+    // 1) Index by the project's primary docId (new/replacing doc under development)
+    if (proj.newDoc) {
+      upsertDocProj(proj.newDoc, { newDoc: proj.newDoc, ...payload });
+    }
+    // 2) Index by each affected existing document
+    const affected = Array.isArray(proj.docAffected) ? proj.docAffected : (proj.docAffected ? [proj.docAffected] : []);
+    for (const a of affected) {
+      if (!a) continue;
+      upsertDocProj(a, { docId: a, ...payload });
     }
   }
-
+  
+  // Handlebars templates currently expect an array; provide both forms just in case.
+  const docProjs = Array.from(docProjsMap.values());
+  
   /* Load Current Work on Doc for filtering */
 
   for (let i in registryDocument) {
@@ -687,19 +1423,25 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
       let pW = registryProject[p]["workType"]
       let pS = registryProject[p]["projectStatus"]
 
-      if (pD === registryDocument[i]["docId"]) {
-        currentWork.push(pW + " - " + pS)
+      if (pS !== "Complete") {
+        if (pD === registryDocument[i]["docId"]) {
+          currentWork.push(pW + " - " + pS)
+        }
       }
+
     }
     for (let ps in docProjs) {
       let psD = docProjs[ps]["docId"]
       let psW = docProjs[ps]["workType"]
       let psS = docProjs[ps]["projectStatus"]
 
-      if (psD === registryDocument[i]["docId"]) {
-        currentWork.push(psW + " - " + psS)
+      if (psS !== "Complete") {
+        if (psD === registryDocument[i]["docId"]) {
+          currentWork.push(psW + " - " + psS)
+        }
       }
     }
+    
     if (currentWork.length !== 0) {
       registryDocument[i]["currentWork"] = currentWork
     }
@@ -736,15 +1478,26 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
 
   /* external json lookup helpers */
 
-  hb.registerHelper('docProjLookup', function(collection, id) {
-      var collectionLength = collection.length;
-      for (var i = 0; i < collectionLength; i++) {
-          if (collection[i].docId === id) {
-              return collection[i];
-          }
-      }
-      return null;
-  });
+hb.registerHelper('docProjLookup', function(collection, id) {
+  if (!id || !collection) return null;
+
+  // Map support
+  if (typeof collection.get === 'function') {
+    return collection.get(id) || null;
+  }
+  // Object/dictionary support
+  if (!Array.isArray(collection) && typeof collection === 'object') {
+    return collection[id] || null;
+  }
+  // Array (legacy) support
+  if (Array.isArray(collection)) {
+    for (let i = 0; i < collection.length; i++) {
+      const item = collection[i];
+      if (item && item.docId === id) return item;
+    }
+  }
+  return null;
+});
 
   hb.registerHelper('groupIdLookup', function(collection, id) {
       var collectionLength = collection.length;
@@ -775,6 +1528,134 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   hb.registerHelper('dotReplace', function(str) {
       return str.replace(/\./g, '-')
   });
+
+  function resolvePublisherLogoFromMapNode(map, aliases, pubRaw) {
+    const input = String(pubRaw || '').trim();
+    if (!input || !map || typeof map !== 'object') return null;
+
+    // 1) Exact
+    if (map[input]) return map[input];
+
+    // 2) Alias (case-insensitive keys)
+    const lowerAliases = {};
+    for (const [a, c] of Object.entries(aliases || {})) {
+      lowerAliases[String(a).toLowerCase()] = String(c);
+    }
+    const canonFromAlias = lowerAliases[input.toLowerCase()];
+    if (canonFromAlias && map[canonFromAlias]) return map[canonFromAlias];
+
+    // 3) Simple tokenization: take first token before common separators (mdash/en dash, hyphen, comma, paren)
+    const firstToken = input.split(/[–—-]|,|\(|\)|:/)[0].trim();
+    if (firstToken && map[firstToken]) return map[firstToken];
+
+    // 4) Case-insensitive direct match on keys
+    const lowerKey = input.toLowerCase();
+    for (const [k, v] of Object.entries(map)) {
+      if (String(k).toLowerCase() === lowerKey) return v;
+    }
+    return null;
+  }
+
+  hb.registerHelper('publisherLogo', function (pub, opts) {
+    if (!pub || typeof pub !== 'string') return '';
+
+    const raw = String(pub).trim();
+    if (!raw) return '';
+
+    // Resolve config maps (light + dark + aliases)
+    const logos = (siteConfig && siteConfig.publisherLogos && typeof siteConfig.publisherLogos === 'object')
+      ? siteConfig.publisherLogos
+      : {};
+    const logosDark = (siteConfig && siteConfig.publisherLogosDark && typeof siteConfig.publisherLogosDark === 'object')
+      ? siteConfig.publisherLogosDark
+      : {};
+    const aliases = (siteConfig && siteConfig.publisherLogoAliases && typeof siteConfig.publisherLogoAliases === 'object')
+      ? siteConfig.publisherLogoAliases
+      : {};
+
+    const relLight = resolvePublisherLogoFromMapNode(logos, aliases, raw);
+    if (!relLight) return '';
+
+    const relDark = resolvePublisherLogoFromMapNode(logosDark, aliases, raw) || null;
+
+    // Access render root for assetPrefix + default height
+    const root = (opts && opts.data && opts.data.root) ? opts.data.root : {};
+    const assetPrefix = (typeof root.assetPrefix === 'string') ? root.assetPrefix : '';
+
+    // Height precedence: explicit hash height > root.publisherLogoHeight > siteConfig.publisherLogoHeight > 25
+    let h = 25;
+    if (opts && opts.hash && opts.hash.height != null && !Number.isNaN(Number(opts.hash.height))) {
+      h = Number(opts.hash.height);
+    } else if (typeof root.publisherLogoHeight === 'number') {
+      h = root.publisherLogoHeight;
+    } else if (siteConfig && typeof siteConfig.publisherLogoHeight === 'number') {
+      h = siteConfig.publisherLogoHeight;
+    }
+
+    // Build URLs relative to assetPrefix
+    const lightUrl = relLight.startsWith('/')
+      ? `${assetPrefix}${relLight.replace(/^\//, '')}`
+      : `${assetPrefix}${relLight}`;
+    const darkUrl = relDark
+      ? (relDark.startsWith('/')
+          ? `${assetPrefix}${relDark.replace(/^\//, '')}`
+          : `${assetPrefix}${relDark}`)
+      : null;
+
+    const alt = `${pub} logo`;
+    const attrs = [
+      `src="${lightUrl}"`,
+      `alt="${alt}"`,
+      `height="${h}"`,
+      'class="align-text-bottom me-1 publisher-logo"',
+      'loading="lazy"',
+      `data-logo-light="${lightUrl}"`
+    ];
+    if (darkUrl) {
+      attrs.push(`data-logo-dark="${darkUrl}"`);
+    }
+
+    return new hb.SafeString(
+      `<img ${attrs.join(' ')}>`
+    );
+  });
+  
+  // Publisher link resolver: resolves publisher to URL using siteConfig.publisherUrls and optional aliases
+  hb.registerHelper('publisherLink', function (pub) {
+    if (!pub || typeof pub !== 'string') return '';
+    const urlMap = (siteConfig && siteConfig.publisherUrls && typeof siteConfig.publisherUrls === 'object')
+      ? siteConfig.publisherUrls
+      : null;
+    if (!urlMap) return '';
+
+    // Normalize basic alias mapping reusing publisherLogoAliases when present
+    const aliases = (siteConfig && siteConfig.publisherLogoAliases && typeof siteConfig.publisherLogoAliases === 'object')
+      ? siteConfig.publisherLogoAliases
+      : {};
+
+    const raw = String(pub).trim();
+    // 1) Exact
+    if (urlMap[raw]) return urlMap[raw];
+
+    // 2) Alias (case-insensitive)
+    const lowerAliases = {};
+    for (const [a, c] of Object.entries(aliases)) {
+      lowerAliases[String(a).toLowerCase()] = String(c);
+    }
+    const canon = lowerAliases[raw.toLowerCase()];
+    if (canon && urlMap[canon]) return urlMap[canon];
+
+    // 3) First-token fallback (before dash/comma/paren/colon)
+    const first = raw.split(/[–—-]|,|\(|\)|:/)[0].trim();
+    if (first && urlMap[first]) return urlMap[first];
+
+    // 4) Case-insensitive direct key match
+    const lower = raw.toLowerCase();
+    for (const [k, v] of Object.entries(urlMap)) {
+      if (String(k).toLowerCase() === lower) return v;
+    }
+    return '';
+  });
   
   /* get the version field */
   
@@ -785,62 +1666,420 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   } catch (e) {
     console.warn(e);
   }
+
+  // --- Emit per-document reference tree pages at /reftree/{docId}/index.html (only once for main documents list)
+  if (listType === 'documents' && templateName === 'documents') {
+    try {
+      const refTreeTplSrc = await fs.readFile('src/main/templates/refTree.hbs', 'utf8');
+      const refTreeTpl = hb.compile(refTreeTplSrc);
+      const refTreeRoot = path.join(BUILD_PATH, 'reftree');
+      await fs.mkdir(refTreeRoot, { recursive: true });
+
+      let __rtOk = 0, __rtFail = 0;
+      for (const d of registryDocument) {
+        if (!d || !d.docId) continue;
+        const id = String(d.docId);
+        const dir = path.join(refTreeRoot, id);
+        await fs.mkdir(dir, { recursive: true });
+
+        try {
+          const canonical = new URL(`/reftree/${encodeURIComponent(id)}/`, siteConfig.canonicalBase).href;
+
+          const titlePrefList = Array.isArray(siteConfig?.titleLabelDocTypes)
+            ? siteConfig.titleLabelDocTypes.map(x => String(x).toLowerCase())
+            : [];
+          const useDocTitleFirst = titlePrefList.includes(String(d.docType || '').toLowerCase());
+          const baseLabel = useDocTitleFirst ? (d.docTitle || d.docLabel || d.docId)
+                                             : (d.docLabel || d.docId);
+          const pageTitle = `Reference Tree — ${baseLabel} — ${siteConfig.siteName}`;
+          const listTitle = `Reference Tree — ${baseLabel}`;
+          const pageDesc  = d.docTitle || siteConfig.siteDescription;
+
+          // Root-style label/title for refTree header + center card:
+          // - label: prefer docLabel, then docTitle, then docId
+          // - title: prefer docTitle, else fall back to label
+          const rootLabel = d.docLabel || d.docTitle || d.docId;
+          const rootTitle = d.docTitle || rootLabel;
+
+          const refTreeHtml = refTreeTpl({
+            // document fields for this root
+            docId: d.docId,
+            docTitle: d.docTitle,
+            docRootLabel: rootLabel,
+            docRootTitle: rootTitle,
+            publisher: d.publisher,
+            docType: d.docType,
+            // collections if the template/partials need lookups
+            dataDocuments: registryDocument,
+            dataGroups: registryGroup,
+            dataProjects: registryProject,
+            docProjs: docProjs,
+            // meta
+            site_version: site_version,
+            siteName: siteConfig.siteName,
+            author: siteConfig.author,
+            authorUrl: siteConfig.authorUrl,
+            copyright: siteConfig.copyright,
+            copyrightHolder: siteConfig.copyrightHolder,
+            copyrightYear: siteConfig.copyrightYear,
+            license: siteConfig.license,
+            licenseUrl: siteConfig.licenseUrl,
+            locale: siteConfig.locale,
+            siteDescription: pageDesc,
+            siteTitle: pageTitle,
+            listTitle,
+            canonicalBase: siteConfig.canonicalBase,
+            canonicalUrl: canonical,
+            ogTitle: pageTitle,
+            ogDescription: pageDesc,
+            ogImage: new URL(siteConfig.ogImage, siteConfig.canonicalBase).href,
+            ogImageAlt: siteConfig.ogImageAlt,
+            assetPrefix: '../../',
+            htmlLink: ('GH_PAGES_BUILD' in process.env) ? '' : 'index.html',
+            date: new Date(),
+            publisherUrls: siteConfig.publisherUrls,
+            titleLabelDocTypes: Array.isArray(siteConfig?.titleLabelDocTypes) ? siteConfig.titleLabelDocTypes : [],
+          });
+
+          const outFile = path.join(dir, 'index.html');
+          await writeFileSafe(outFile, refTreeHtml, 'utf8');
+          __rtOk++;
+        } catch (perDocRtErr) {
+          __rtFail++;
+          console.warn(
+            `[build] Per-doc refTree emit failed for ${id} — pub:${d.publisher || 'unknown'}, type:${d.docType || 'unknown'}`,
+            '\nReason:',
+            perDocRtErr && perDocRtErr.stack ? perDocRtErr.stack : (perDocRtErr && perDocRtErr.message ? perDocRtErr.message : perDocRtErr)
+          );
+          continue;
+        }
+      }
+      if (__rtFail) {
+        console.warn(`[build] RefTree pages emitted with warnings: ok=${__rtOk}, failed=${__rtFail}`);
+      }
+    } catch (e) {
+      console.warn('[build] Could not emit per-doc refTree pages:', e && e.message ? e.message : e);
+    }
+
+    // --- Emit /reftree/index.html landing page using refTreeIndex.hbs
+    try {
+      const refTreeIndexTplSrc = await fs.readFile('src/main/templates/refTreeIndex.hbs', 'utf8');
+      const refTreeIndexTpl = hb.compile(refTreeIndexTplSrc);
+      const refTreeIndexRoot = path.join(BUILD_PATH, 'reftree');
+      await fs.mkdir(refTreeIndexRoot, { recursive: true });
+
+      const refTreeCanonical = new URL('/reftree/', siteConfig.canonicalBase).href;
+      const refTreePageTitle = `Reference Trees — ${siteConfig.siteName}`;
+      const refTreeListTitle = 'Reference Trees';
+      const refTreeDesc = 'Explore dependency and citation trees for documents in the registry.';
+
+      const refTreeIndexHtml = refTreeIndexTpl({
+        templateName: 'refTreeIndex',
+        listTitle: refTreeListTitle,
+        site_version: site_version,
+        date: new Date(),
+        // meta
+        siteName: siteConfig.siteName,
+        author: siteConfig.author,
+        authorUrl: siteConfig.authorUrl,
+        copyright: siteConfig.copyright,
+        copyrightHolder: siteConfig.copyrightHolder,
+        copyrightYear: siteConfig.copyrightYear,
+        license: siteConfig.license,
+        licenseUrl: siteConfig.licenseUrl,
+        locale: siteConfig.locale,
+        siteDescription: refTreeDesc,
+        siteTitle: refTreePageTitle,
+        canonicalBase: siteConfig.canonicalBase,
+        canonicalUrl: refTreeCanonical,
+        ogTitle: refTreePageTitle,
+        ogDescription: refTreeDesc,
+        ogImage: new URL(siteConfig.ogImage, siteConfig.canonicalBase).href,
+        ogImageAlt: siteConfig.ogImageAlt,
+        assetPrefix: '../',
+        publisherUrls: siteConfig.publisherUrls,
+      });
+
+      await writeFileSafe(path.join(refTreeIndexRoot, 'index.html'), refTreeIndexHtml, 'utf8');
+      console.log('[build] Wrote build/reftree/index.html');
+    } catch (e) {
+      console.warn('[build] Could not emit refTree index page:', e && e.message ? e.message : e);
+    }
+  }
   
   /* create build directory */
   
   await fs.mkdir(BUILD_PATH, { recursive: true });
-    if (templateName != "index") { 
-      await fs.mkdir(BUILD_PATH + "/" + templateName, { recursive: true });
+  if (!logicOnly && templateName != "index") { 
+    await fs.mkdir(BUILD_PATH + "/" + templateName, { recursive: true });
+  }
+    // Ensure _data directory exists
+    await fs.mkdir(path.join(BUILD_PATH, '_data'), { recursive: true });
+    // Emit publisher logos + optional aliases for client-side docList.js
+    try {
+      const logosOut = {};
+      if (siteConfig && siteConfig.publisherLogos && typeof siteConfig.publisherLogos === 'object') {
+        for (const [k, v] of Object.entries(siteConfig.publisherLogos)) {
+          if (!v) continue;
+          const rel = String(v).trim();
+          // Normalize to root-absolute so client doesn't need per-page assetPrefix
+          logosOut[String(k).trim()] = rel.startsWith('/') ? rel : '/' + rel;
+        }
+      }
+
+      // Optional dark-logo map (only for publishers that define a dark variant)
+      const logosDarkOut = {};
+      if (siteConfig && siteConfig.publisherLogosDark && typeof siteConfig.publisherLogosDark === 'object') {
+        for (const [k, v] of Object.entries(siteConfig.publisherLogosDark)) {
+          if (!v) continue;
+          const rel = String(v).trim();
+          logosDarkOut[String(k).trim()] = rel.startsWith('/') ? rel : '/' + rel;
+        }
+      }
+
+      // Optional alias map: { "smpte": "SMPTE", "SMPTE – Society of Motion Picture…": "SMPTE" }
+      const aliasesOut = {};
+      if (siteConfig && siteConfig.publisherLogoAliases && typeof siteConfig.publisherLogoAliases === 'object') {
+        for (const [alias, canon] of Object.entries(siteConfig.publisherLogoAliases)) {
+          if (!alias || !canon) continue;
+          aliasesOut[String(alias).trim()] = String(canon).trim();
+        }
+      }
+
+      const logosPayload = {
+        logos: logosOut,
+        logosDark: logosDarkOut,
+        height: (typeof siteConfig.publisherLogoHeight === 'number' ? siteConfig.publisherLogoHeight : 25),
+        aliases: aliasesOut
+      };
+
+      await writeFileSafe(
+        path.join(BUILD_PATH, '_data', 'publisher-logos.json'),
+        JSON.stringify(logosPayload, null, 2),
+        'utf8'
+      );
+    } catch (e) {
+      console.warn('[build] Could not emit publisher-logos.json:', e && e.message ? e.message : e);
+    }
+
+    // Emit publisher URLs (for client-side cards)
+    try {
+      const urlsOut = {};
+      if (siteConfig && siteConfig.publisherUrls && typeof siteConfig.publisherUrls === 'object') {
+        for (const [k, v] of Object.entries(siteConfig.publisherUrls)) {
+          if (!v) continue;
+          urlsOut[String(k).trim()] = String(v).trim();
+        }
+      }
+      const urlAliasesOut = {};
+      if (siteConfig && siteConfig.publisherLogoAliases && typeof siteConfig.publisherLogoAliases === 'object') {
+        for (const [alias, canon] of Object.entries(siteConfig.publisherLogoAliases)) {
+          if (!alias || !canon) continue;
+          urlAliasesOut[String(alias).trim()] = String(canon).trim();
+        }
+      }
+      const urlsPayload = {
+        urls: urlsOut,
+        aliases: urlAliasesOut
+      };
+      await writeFileSafe(
+        path.join(BUILD_PATH, '_data', 'publisher-urls.json'),
+        JSON.stringify(urlsPayload, null, 2),
+        'utf8'
+      );
+    } catch (e) {
+      console.warn('[build] Could not emit publisher-urls.json:', e && e.message ? e.message : e);
     }
 
   /* determine if build on GH to remove "index.html" from internal link */
 
-  let htmlLink = "index.html"
-  if ('GH_PAGES_BUILD' in process.env) {
-    htmlLink = ""
-  }
-  
   /* apply template */
   
-  var html = template({
-    "data" : registryDocument,
-    "dataDocuments": registryDocument,
-    "dataGroups" : registryGroup,
-    "dataProjects" : registryProject,
-    "htmlLink": htmlLink,
-    "docProjs": docProjs,
-    "date" :  new Date(),
-    "csv_path": CSV_SITE_PATH,
-    "site_version": site_version,
-    "listType": listType,
-    "idType": idType,
-    "listTitle": listTitle,
-    "templateName": templateName,
-    // meta
-    "siteName": siteConfig.siteName,
-    "author": siteConfig.author,
-    "authorUrl": siteConfig.authorUrl,
-    "copyright": siteConfig.copyright,
-    "copyrightHolder": siteConfig.copyrightHolder,
-    "copyrightYear": siteConfig.copyrightYear,
-    "license": siteConfig.license,
-    "licenseUrl": siteConfig.licenseUrl,
-    "locale": siteConfig.locale,
-    "siteDescription": siteConfig.siteDescription,
-    "siteTitle": (listTitle ? `${listTitle} — ${siteConfig.siteName}` : siteConfig.siteName),
-    "canonicalBase": siteConfig.canonicalBase,
-    "canonicalUrl": canonicalUrl,
-    "ogTitle": ogTitle,
-    "ogDescription": ogDescription,
-    "ogImage": ogImage,
-    "ogImageAlt": ogImageAlt,
-    "assetPrefix": assetPrefix,
-  });
+  let htmlLink = "index.html";
+  if ('GH_PAGES_BUILD' in process.env) {
+    htmlLink = "";
+  }
   
-  /* write HTML file */
-  await fs.writeFile(path.join(BUILD_PATH, PAGE_SITE_PATH), html, 'utf8');
+  let html = null;
+  if (!logicOnly) {
+    html = template({
+      "data": registryDocument,
+      // If this page's subRegistry included documents, prefer that complete dataset for cross-lookups.
+      // Otherwise, fall back to the primary dataset only when the primary listType is "documents".
+      "dataDocuments": (registryDocsAll && Array.isArray(registryDocsAll)) 
+                        ? registryDocsAll 
+                        : (listType === 'documents' ? registryDocument : []),
+      "dataGroups": registryGroup,
+      "dataProjects": registryProject,
+      "docProjs": docProjs,
+      "htmlLink": htmlLink,
+      "date" :  new Date(),
+      "csv_path": CSV_SITE_PATH,
+      "site_version": site_version,
+      "listType": listType,
+      "idType": idType,
+      "listTitle": listTitle,
+      "templateName": templateName,
+      // meta
+      "siteName": siteConfig.siteName,
+      "author": siteConfig.author,
+      "authorUrl": siteConfig.authorUrl,
+      "copyright": siteConfig.copyright,
+      "copyrightHolder": siteConfig.copyrightHolder,
+      "copyrightYear": siteConfig.copyrightYear,
+      "license": siteConfig.license,
+      "licenseUrl": siteConfig.licenseUrl,
+      "locale": siteConfig.locale,
+      "siteDescription": siteConfig.siteDescription,
+      "siteTitle": (listTitle ? `${listTitle} — ${siteConfig.siteName}` : siteConfig.siteName),
+      "canonicalBase": siteConfig.canonicalBase,
+      "canonicalUrl": canonicalUrl,
+      "ogTitle": ogTitle,
+      "ogDescription": ogDescription,
+      "ogImage": ogImage,
+      "ogImageAlt": ogImageAlt,
+      "assetPrefix": assetPrefix,
+      "publisherUrls": siteConfig.publisherUrls,
+    });
+  }
 
-  // Build card search index (search-index.json + facets.json) once per run
+  // --- Safe normalization for per‑doc rendering (prevents .length on undefined)
+  function __normArray(v) { return Array.isArray(v) ? v : []; }
+  function __normStr(v) { return (typeof v === 'string') ? v : ''; }
+  function __normObj(v) { return (v && typeof v === 'object') ? v : {}; }
+
+  function prepareDocForRender(d) {
+    const out = { ...d };
+
+    // Core strings
+    out.docId = __normStr(out.docId);
+    out.docLabel = __normStr(out.docLabel);
+    out.docTitle = __normStr(out.docTitle);
+    out.publisher = __normStr(out.publisher);
+    out.docType = __normStr(out.docType);
+    out.docTypeAbr = __normStr(out.docTypeAbr);
+    out.publicationDate = __normStr(out.publicationDate);
+    out.href = __normStr(out.href);
+    out.doi = __normStr(out.doi);
+
+    // Status object (and nested flags)
+    out.status = __normObj(out.status);
+
+    // References (raw + resolved)
+    out.references = __normObj(out.references);
+    out.references.normative = __normArray(out.references.normative);
+    out.references.bibliographic = __normArray(out.references.bibliographic);
+
+    out.referencesResolved = __normObj(out.referencesResolved);
+    out.referencesResolved.normative = __normArray(out.referencesResolved.normative);
+    out.referencesResolved.bibliographic = __normArray(out.referencesResolved.bibliographic);
+
+    // Dependency graph
+    out.referencedBy = __normArray(out.referencedBy);
+    out.referenceTree = __normArray(out.referenceTree);
+    out.relatedDocs = __normArray(out.relatedDocs);
+
+    // Work/state
+    out.currentWork = __normArray(out.currentWork);
+
+    // Namespaces (singular legacy or plural new)
+    if (Array.isArray(out.xmlNamespace)) {
+      // keep as-is
+    } else if (Array.isArray(out.xmlNamespaces)) {
+      out.xmlNamespace = out.xmlNamespaces;
+    } else {
+      out.xmlNamespace = [];
+    }
+
+    return out;
+  }
+  // --- Emit per-document static detail pages at /docs/{docId}/index.html
+  try {
+    const docTplSrc = await fs.readFile('src/main/templates/docId.hbs', 'utf8');
+    const docTpl = hb.compile(docTplSrc);
+    const docsOutRoot = path.join(BUILD_PATH, 'docs');
+    await fs.mkdir(docsOutRoot, { recursive: true });
+
+    let __ok = 0, __fail = 0;
+    for (const d of registryDocument) {
+      if (!d || !d.docId) continue;
+      const id = String(d.docId);
+      const docDir = path.join(docsOutRoot, id);
+      await fs.mkdir(docDir, { recursive: true });
+      try {
+        // Per‑doc canonical + social meta
+        const perDocCanonical = new URL(`/docs/${encodeURIComponent(id)}/`, siteConfig.canonicalBase).href;
+        const titlePrefList = Array.isArray(siteConfig?.titleLabelDocTypes)
+          ? siteConfig.titleLabelDocTypes.map(x => String(x).toLowerCase())
+          : [];
+        const useDocTitleFirst = titlePrefList.includes(String(d.docType || '').toLowerCase());
+        const perDocTitle = (useDocTitleFirst ? (d.docTitle || d.docLabel || d.docId) : (d.docLabel || d.docId)) + ' — ' + siteConfig.siteName;
+        const perDocListTitle = (useDocTitleFirst ? (d.docTitle || d.docLabel || d.docId) : (d.docLabel || d.docId));
+        const perDocDesc = d.docTitle || siteConfig.siteDescription;
+
+        const safeDoc = prepareDocForRender(d);
+        const docHtml = docTpl({
+          // data for this document (flat access in template)
+          ...safeDoc,
+          // collections if template needs lookups
+          dataDocuments: registryDocument,
+          dataGroups: registryGroup,
+          dataProjects: registryProject,
+          docProjs: docProjs,
+          // site/meta
+          site_version: site_version,
+          siteName: siteConfig.siteName,
+          author: siteConfig.author,
+          authorUrl: siteConfig.authorUrl,
+          copyright: siteConfig.copyright,
+          copyrightHolder: siteConfig.copyrightHolder,
+          copyrightYear: siteConfig.copyrightYear,
+          license: siteConfig.license,
+          listTitle: perDocListTitle,
+          licenseUrl: siteConfig.licenseUrl,
+          locale: siteConfig.locale,
+          siteDescription: perDocDesc,
+          siteTitle: perDocTitle,
+          ogTitle: perDocTitle,
+          canonicalBase: siteConfig.canonicalBase,
+          canonicalUrl: perDocCanonical,
+          ogImage: new URL(siteConfig.ogImage, siteConfig.canonicalBase).href,
+          ogImageAlt: siteConfig.ogImageAlt,
+          assetPrefix: '../../',
+          htmlLink: ('GH_PAGES_BUILD' in process.env) ? '' : 'index.html',
+          date: new Date(),
+          publisherLogoHeight: 25,
+          publisherUrls: siteConfig.publisherUrls,
+        });
+
+        const outFile = path.join(docDir, 'index.html');
+        await writeFileSafe(outFile, docHtml, 'utf8');
+        __ok++;
+      } catch (perDocErr) {
+        __fail++;
+        console.warn(
+          `[build] Per-doc emit failed for ${id} — pub:${d.publisher || 'unknown'}, type:${d.docType || 'unknown'}, refs:${Array.isArray(d.references?.normative) || Array.isArray(d.references?.bibliographic) ? 'yes' : 'no'}`,
+          '\nReason:',
+          perDocErr && perDocErr.stack ? perDocErr.stack : (perDocErr && perDocErr.message ? perDocErr.message : perDocErr)
+        );
+        continue;
+      }
+    }
+    if (__fail) {
+      console.warn(`[build] Per-doc pages emitted with warnings: ok=${__ok}, failed=${__fail}`);
+    } else {
+      // console.log(`[build] Per-doc pages emitted: ${__ok}`);
+    }
+  } catch (e) {
+    console.warn('[build] Could not emit per-doc pages:', e && e.message ? e.message : e);
+  }
+  
+  /* write HTML file (skip for logic-only registries) */
+  if (!logicOnly && html != null) {
+    await writeFileSafe(path.join(BUILD_PATH, PAGE_SITE_PATH), html, 'utf8');
+  }
+
+  // Build docList search index (search-index.json + facets.json) once per run
   // Only trigger from the main index page to avoid duplicate executions
     if (templateName === 'documents') {
       // Persist the in-memory documents state for downstream consumers (docs/search-index)
@@ -854,7 +2093,7 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
             (key, val) => (typeof key === 'string' && key.includes('$meta') ? undefined : val)
           )
         );
-        await fs.writeFile(EFFECTIVE_DOCS_PATH, JSON.stringify(cleanEffective, null, 2), 'utf8');
+        await writeFileSafe(EFFECTIVE_DOCS_PATH, JSON.stringify(cleanEffective, null, 2), 'utf8');
         console.log(`[build] Wrote ${EFFECTIVE_DOCS_PATH}`);
       } catch (e) {
         console.warn('[build] Could not write documents snapshot:', e && e.message ? e.message : e);
@@ -863,7 +2102,78 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
         const { stdout } = await execFile('node', [path.join('src','main','scripts','build.search-index.js'), EFFECTIVE_DOCS_PATH]);
         if (stdout && stdout.trim()) console.log(stdout.trim());
       } catch (e) {
-        console.warn('[cards] Index build failed:', e && e.message ? e.message : e);
+        console.warn('[docList] Index build failed:', e && e.message ? e.message : e);
+      }
+
+      // --- Emit sitemap.xml including all /docs/{docId}/ detail pages
+      try {
+        const nowIso = new Date().toISOString();
+
+        function xmlEscape(str) {
+          return String(str || '')
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&apos;');
+        }
+
+        const entries = [];
+
+        function addUrl(pathname, changefreq, priority) {
+          try {
+            const loc = new URL(pathname, siteConfig.canonicalBase).href;
+            entries.push({
+              loc,
+              lastmod: nowIso,
+              changefreq,
+              priority
+            });
+          } catch (e) {
+            console.warn('[sitemap] Skipping invalid URL path:', pathname, e && e.message ? e.message : e);
+          }
+        }
+
+        // Core entry points
+        addUrl('/', 'daily', '1.0');
+        addUrl('/groups/', 'daily', '0.8');
+        addUrl('/projects/', 'daily', '0.8');
+        addUrl('/docs/', 'daily', '0.8');
+        addUrl('/reftree/', 'daily', '0.8');
+
+        // Per-document detail pages at /docs/{docId}/
+        if (Array.isArray(registryDocument)) {
+          for (const d of registryDocument) {
+            if (!d || !d.docId) continue;
+            const id = String(d.docId);
+            // Encode docId for URL safety; keep canonicalBase handling via URL()
+            addUrl(`/docs/${encodeURIComponent(id)}/`, 'weekly', '0.6');
+          }
+        }
+
+        const sitemapLines = [];
+        sitemapLines.push('<?xml version="1.0" encoding="UTF-8"?>');
+        sitemapLines.push('  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">');
+        for (const e of entries) {
+          sitemapLines.push('    <url>');
+          sitemapLines.push(`      <loc>${xmlEscape(e.loc)}</loc>`);
+          sitemapLines.push(`      <lastmod>${xmlEscape(e.lastmod)}</lastmod>`);
+          if (e.changefreq) {
+            sitemapLines.push(`      <changefreq>${xmlEscape(e.changefreq)}</changefreq>`);
+          }
+          if (e.priority) {
+            sitemapLines.push(`      <priority>${xmlEscape(e.priority)}</priority>`);
+          }
+          sitemapLines.push('    </url>');
+        }
+        sitemapLines.push('  </urlset>');
+        const sitemapXml = sitemapLines.join('\n') + '\n';
+
+        const sitemapPath = path.join(BUILD_PATH, 'sitemap.xml');
+        await writeFileSafe(sitemapPath, sitemapXml, 'utf8');
+        console.log('[build] Wrote sitemap.xml with', entries.length, 'URLs');
+      } catch (e) {
+        console.warn('[build] Could not emit sitemap.xml:', e && e.message ? e.message : e);
       }
     }
   
@@ -885,7 +2195,7 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
   }
 
   async function writeCSV (fileName, data) {
-    await writeFile(fileName, data, 'utf8');
+    await writeFileSafe(fileName, data, 'utf8');
   }
 
   (async () => {
@@ -918,7 +2228,7 @@ void (async () => {
   await copyRecursive(SITE_PATH, BUILD_PATH);
   console.log('[build] Copied static assets to build/.');
 
-  const tplCards = await fs.readFile(path.join('src','main','templates','cards.hbs'), 'utf8');
+  const tplCards = await fs.readFile(path.join('src','main','templates','docList.hbs'), 'utf8');
   const renderCards = hb.compile(tplCards);
 
   // Create subdirectory for docs page
@@ -930,8 +2240,8 @@ void (async () => {
   const docsOgImage = new URL(siteConfig.ogImage, siteConfig.canonicalBase).href;
   const docsOgImageAlt = siteConfig.ogImageAlt;
   const docsAssetPrefix = '../';
-  await fs.writeFile(path.join('build','docs','index.html'), renderCards({
-    templateName: 'cards',
+  await writeFileSafe(path.join('build','docs','index.html'), renderCards({
+    templateName: 'docList',
     listTitle: 'Docs',
     htmlLink: '', // same relative handling as other pages
     listType: 'documents',
@@ -957,6 +2267,10 @@ void (async () => {
     ogImage: docsOgImage,
     ogImageAlt: docsOgImageAlt,
     assetPrefix: docsAssetPrefix,
+    publisherLogos: siteConfig.publisherLogos,
+    publisherLogosJson: JSON.stringify(siteConfig.publisherLogos || {}),
+    publisherLogoHeight: 25,
+    publisherUrls: siteConfig.publisherUrls,
     robotsMeta: 'noindex,nofollow'
   }), 'utf8');
 
@@ -994,8 +2308,9 @@ void (async () => {
     ogImage: new URL(siteConfig.ogImage, siteConfig.canonicalBase).href,
     ogImageAlt: siteConfig.ogImageAlt,
     assetPrefix: '',
+    publisherUrls: siteConfig.publisherUrls,
   });
-  await fs.writeFile(path.join(BUILD_PATH, 'index.html'), homeHtml, 'utf8');
+  await writeFileSafe(path.join(BUILD_PATH, 'index.html'), homeHtml, 'utf8');
   console.log('[build] Wrote build/index.html');
 
   // --- Emit robots.txt and sitemap.xml
@@ -1004,51 +2319,26 @@ void (async () => {
     '# Managed by PrZ3 Unit — Penguin Parsing Protocol v3-Gen',
     'User-agent: *',
     'Allow: /',
-    'Disallow: /docs/',
     'Disallow: /tmp/',
     'Disallow: /pr/',
     '',
     `Sitemap: ${new URL('/sitemap.xml', siteConfig.canonicalBase).href}`
   ].join('\n');
-  await fs.writeFile(path.join(BUILD_PATH, 'robots.txt'), robotsTxt, 'utf8');
+  await writeFileSafe(path.join(BUILD_PATH, 'robots.txt'), robotsTxt, 'utf8');
   console.log('[build] Wrote build/robots.txt');
-
-  // Build a simple sitemap of core routes
-  const nowISO = new Date().toISOString();
-  const urls = [
-    '/',
-    '/dependancies/',
-    '/groups/',
-    '/projects/',
-    '/docs/'
-  ];
-  const urlset = urls.map(u => {
-    const loc = new URL(u, siteConfig.canonicalBase).href;
-    return `  <url>
-      <loc>${loc}</loc>
-      <lastmod>${nowISO}</lastmod>
-      <changefreq>daily</changefreq>
-      <priority>${u === '/' ? '1.0' : '0.8'}</priority>
-    </url>`;
-  }).join('\n');
-
-  const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
-  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  ${urlset}
-  </urlset>
-  `;
-  await fs.writeFile(path.join(BUILD_PATH, 'sitemap.xml'), sitemapXml, 'utf8');
-  console.log('[build] Wrote build/sitemap.xml');
 
   // --- Emit OpenSearch descriptor
   const openSearchXml = `<?xml version="1.0" encoding="UTF-8"?>
   <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
     <ShortName>MSRBot</ShortName>
     <Description>Search MSRBot.io</Description>
-    <Url type="text/html" template="${new URL('/search', siteConfig.canonicalBase).href}?q={searchTerms}"/>
+    <InputEncoding>UTF-8</InputEncoding>
+    <OutputEncoding>UTF-8</OutputEncoding>
+    <Image height="16" width="16" type="image/png">https://msrbot.io/static/icons/favicon-32.png</Image>
+    <Url type="text/html" template="${new URL('/docs/', siteConfig.canonicalBase).href}?q={searchTerms}"/>
   </OpenSearchDescription>
   `;
-  await fs.writeFile(path.join(BUILD_PATH, 'opensearch.xml'), openSearchXml, 'utf8');
+  await writeFileSafe(path.join(BUILD_PATH, 'opensearch.xml'), openSearchXml, 'utf8');
   console.log('[build] Wrote build/opensearch.xml');
 
   // --- Emit 404.html for GitHub Pages (rendered with header/footer)
@@ -1135,8 +2425,9 @@ void (async () => {
     robotsMeta: 'noindex,follow',
     assetPrefix: '/',
     penguinMessagesJson: penguinMessagesJson,
+    publisherUrls: siteConfig.publisherUrls,
   });
-  await fs.writeFile(path.join(BUILD_PATH, '404.html'), fourOhFourHtml, 'utf8');
+  await writeFileSafe(path.join(BUILD_PATH, '404.html'), fourOhFourHtml, 'utf8');
   console.log('[build] Wrote build/404.html');
 
 })().catch(console.error)

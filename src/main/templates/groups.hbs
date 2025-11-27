@@ -1,93 +1,177 @@
-  {{>header}}
-    <!-- Main content starts - do not edit above this line -->
-    <table id="sorttableGroups" class="table table-small table-hover">
-      <thead class="thead-light">
-        <tr>
-          <th scope="col" class="d-none"></th>
-          <th scope="col">Organization</th>
-          <th scope="col" class="col-2">Group</th>
-          <th scope="col" class="text-center text-nowrap">Group Type</th>
-          <th scope="col" class="d-none"></th>
-          <th scope="col">Status</th>
-          <th scope="col" class="col-3">Description</th>
-          <th scope="col" class="d-none"></th>
-          <th scope="col" class="col-2 text-nowrap">Parent Group</th>
-          <th scope="col"></th>
-          <th scope="col"></th>
-          <th scope="col"></th>
-          <th scope="col"></th>
-          <th scope="col"></th>
-          <th scope="col"></th>
-        </tr>
-      </thead>
-      <tbody id="searchTable">
-        {{#data}}
-        <tr id="{{../idType}}-{{groupId}}" {{#ifeq groupStatus/pending true}}class="pending"{{/ifeq}}>
-          <td class="grouplabel d-none">
-            <code>{{groupId}}</code>
-          </td>
-          <td>
-            <a class="anchor" id="{{groupId}}" href="#{{groupId}}"></a>{{groupOrg}}
-          </td>
-          <td>
-            {{#if groupLink}}<a href="{{groupLink}}" target="_blank">{{/if}}{{#if parentgroupId}}{{#with (groupIdLookup ../data parentgroupId)}}{{#ifnoteq groupType "TC"}}{{#with (groupIdLookup ../../data parentgroupId)}}{{groupName}}{{/with}} {{/ifnoteq}}{{#ifeq groupType "TC"}}{{groupName}}{{/ifeq}} - {{/with}}{{/if}}{{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}}{{#if groupLink}}</a>{{/if}}
-          </td>
-          <td class="text-center">
-            {{groupType}}
-          </td>
-          <td class="d-none">
-            {{#ifeq groupStatus/active true}}Active{{/ifeq}}{{#ifeq groupStatus/active false}}Closed{{/ifeq}}{{#ifeq groupStatus/pending true}}Pending{{/ifeq}}
-          </td>
-          <td>
-            {{#ifeq groupStatus/active true}}<span class="label badge text-bg-success">Active</span>{{/ifeq}}{{#ifeq groupStatus/active false}}<span class="label badge text-bg-warning">Closed</span>{{/ifeq}}{{#ifeq groupStatus/pending true}}<span class="label badge text-bg-warning">Pending</span>{{/ifeq}}
-          </td>
-          <td>
-            {{groupSummary}}
-            {{#ifeq groupStatus/active false}}<span class="font-weight-bold small"><em>** NOTE: This group is no longer active{{#if groupStatus/assignedGroup}}; all work and documents (published, in draft, and repos) have been reassigned to: {{#groupStatus/assignedGroup}}{{#unless @first}}, {{/unless}}{{#with (groupIdLookup ../../data this)}}<a class="group-link clear-filter" href="#{{groupId}}">{{groupOrg}} {{#if parentgroupId}}{{#with (groupIdLookup ../../../data parentgroupId)}}{{#if parentgroupId}}{{#with (groupIdLookup ../../../../data parentgroupId)}}{{groupName}}{{/with}} {{/if}}{{groupName}}{{/with}} {{/if}}{{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}}{{#if groupLink}}{{/if}}</a>{{/with}}{{/groupStatus/assignedGroup}}{{/if}}. **</em></span>{{/ifeq}}
-          </td>
-          <td class="d-none">
-            {{#ifeq groupType "TC"}}{{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}}{{/ifeq}}
-            {{#if parentgroupId}}{{#with (groupIdLookup ../data parentgroupId)}}
-            {{#ifeq groupType "TC"}}{{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}}{{/ifeq}}
-            {{#ifnoteq groupType "TC"}}{{#with (groupIdLookup ../../data parentgroupId)}}{{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}}{{/with}}{{/ifnoteq}}{{/with}}{{/if}}
-          </td>
-          <td>
-            {{#if parentgroupId}}{{#with (groupIdLookup ../data parentgroupId)}}<a class="group-link clear-filter" href="#{{groupId}}">{{groupOrg}} {{#ifnoteq groupType "TC"}}{{#with (groupIdLookup ../../data parentgroupId)}}{{groupName}}{{/with}} - {{/ifnoteq}} {{groupName}}{{#if groupDesc}} {{groupDesc}}{{/if}} {{groupType}}</a>{{/with}}{{/if}}
-          </td>
-          <td class="text-center">
+{{> header}}
+<!-- Main content starts - do not edit above this line -->
+
+<div id="groups-topbar" class="sticky-top">
+  <div class="container px-3 py-2 ">
+    <div id="groupFilterSummary" class="text-muted small mb-1"></div>
+    <div id="groupToolbar" class="d-flex flex-wrap align-items-center gap-2">
+      <button class="btn btn-outline-secondary d-lg-none" type="button"
+        data-bs-toggle="offcanvas" data-bs-target="#groupFacetDrawer" aria-controls="groupFacetDrawer">
+        <i class="bi bi-funnel"></i> Filters
+      </button>
+      <input id="groupSearch" type="search" class="form-control flex-grow-1" placeholder="Search Groups…">
+      <div class="input-group input-group-sm w-auto" aria-label="Sort results">
+        <span class="input-group-text">Sort</span>
+        <select id="groupSort" class="form-select w-auto">
+          <option value="org:asc">Org (A-Z)</option>
+          <option value="org:desc">Org (Z-A)</option>
+          <option value="name:asc">Name (A-Z)</option>
+          <option value="name:desc">Name (Z-A)</option>
+          <option value="type:asc">Type (A-Z)</option>
+          <option value="type:desc">Type (Z-A)</option>
+          <option value="status:asc">Status (A-Z)</option>
+          <option value="status:desc">Status (Z-A)</option>
+        </select>
+      </div>
+      <div class="input-group input-group-sm w-auto" aria-label="Results per page">
+        <span class="input-group-text">Per page</span>
+        <select id="groupPageSize" class="form-select">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="20">20</option>
+          <option value="40" selected>40</option>
+          <option value="100">100</option>
+        </select>
+      </div>
+      <div id="groupActiveFilters" class="d-flex flex-wrap align-items-center gap-1"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-3">
+  <div class="row g-3">
+    <!-- Facets: built dynamically by groups.js from card data -->
+    <aside id="groupFacet" class="col-lg-3 d-none d-lg-block"><!-- Facets injected here --></aside>
+    <section id="groupCardsMain" class="col-lg-9">
+      <div id="groupResultsLine" class="text-muted small mb-2">Showing <strong id="groupResultCount">0</strong> of <strong id="groupTotalCount">0</strong> groups</div>
+      <div class="sticky pt-2">
+        <nav id="groupPager" class="d-flex justify-content-between align-items-center mb-2">
+          <div class="btn-group">
+            <button id="groupPrevPage" type="button" class="btn btn-outline-secondary btn-sm">Prev</button>
+            <button id="groupNextPage" type="button" class="btn btn-outline-secondary btn-sm">Next</button>
+          </div>
+          <div id="groupPageNums" class="btn-group"></div>
+          <div id="groupPageMeta" class="small text-muted">Page 1 of 1</div>
+        </nav>
+      </div>
+      <div id="groupCards" class="cards"><!-- Cards rendered client-side from normalized groups.json --></div>
+
+      {{{{raw}}}}
+      <template id="group-card-tpl-src">
+        <article
+          class="card-reg group-card border border-secondary-subtle"
+          data-org="{{groupOrg}}"
+          data-type="{{groupType}}"
+          data-status="{{statusText}}"
+          data-group-id="{{groupId}}"
+          data-group-name="{{groupName}}"
+          data-group-desc="{{groupDesc}}"
+          data-parent-id="{{parentgroupId}}"
+          data-tc="{{tcId}}"
+        >
+          <header class="d-flex align-items-start gap-2 mb-1">
+            <a class="anchor" id="{{groupId}}" href="#{{groupId}}"></a>
+            <div class="publisher-logo-slot flex-shrink-0 order-0 mt-1">
+              {{#if (publisherLink groupOrg)}}
+                <a href="{{publisherLink groupOrg}}" target="_blank" rel="noopener">{{publisherLogo groupOrg}}</a>
+              {{else}}
+                {{publisherLogo groupOrg}}
+              {{/if}}
+            </div>
+            <div class="title-block mb-2 flex-grow-1 order-1">
+              <h3 class="h6 mb-1">
+                <code class="me-1 d-none">{{groupId}}</code>
+                <a href="../docs/?f.group={{groupId}}" class="text-decoration-none">
+                  <span class="group-label">{{groupLabel}}</span>
+                </a>
+              </h3>
+            </div>
+            <div class="status-badges d-flex gap-1 flex-wrap ms-auto justify-content-end text-end order-2">
+              {{#if isActive}}
+                <span class="badge text-bg-success">Active</span>
+              {{else}}
+                <span class="badge text-bg-secondary">Closed</span>
+              {{/if}}
+              {{#if groupType}}
+                <span class="badge bg-light-subtle text-light-emphasis">{{groupType}}</span>
+              {{/if}}
+            </div>
+          </header>
+          <div class="meta mb-1 small text-muted d-flex flex-wrap align-items-center gap-1">
             {{#if groupRepo}}
-            <a href="{{groupRepo}}" target="_blank">Repo</a>
+              <span class="badge-reg"><a href="{{groupRepo}}" target="_blank">Repo</a></span>
             {{/if}}
-          </td>
-          <td>
             {{#ifeq groupType "TC"}}
-            <a href="../documents/{{../htmlLink}}?search.search={{spaceReplace groupOrg}}{{#if parentgroupId}}{{#with (groupIdLookup ../dataGroups parentgroupId)}}%20{{spaceReplace groupName}}{{/with}}{{/if}}%20{{spaceReplace groupName}}{{#if groupDesc}}%20{{spaceReplace groupDesc}}{{/if}}">Published</a>
+              <span class="badge-reg"><a href="../docs/?f.group={{groupId}}">Published Docs</a></span>
             {{/ifeq}}
-          </td>
-          <td>
             {{#if groupType}}
-            <a href="../projects/{{../htmlLink}}?search.search={{spaceReplace groupOrg}}{{#if parentgroupId}}{{#with (groupIdLookup ../dataGroups parentgroupId)}}%20{{spaceReplace groupName}}{{/with}}{{/if}}%20{{spaceReplace groupName}}{{#if groupDesc}}%20{{spaceReplace groupDesc}}{{/if}}">Projects</a>
+              <span class="badge-reg"><a
+                href="../projects/{{../htmlLink}}?f.group={{spaceReplace groupOrg}}{{#if parentgroupId}}{{#with (groupIdLookup ../data parentgroupId)}}%20{{spaceReplace groupName}}{{/with}}{{/if}}%20{{spaceReplace groupName}}{{#if groupDesc}}%20{{spaceReplace groupDesc}}{{/if}}"
+                >Projects</a></span>
             {{/if}}
-          </td>
-          <td class="text-center">
             {{#if groupDocs}}
-            <a href="{{groupDocs}}" target="_blank">Documents</a>
+              <span class="badge-reg"><a href="{{groupDocs}}" target="_blank">Work Docs</a></span>
             {{/if}}
-          </td>
-          <td class="text-center">
             {{#if groupCal}}
-            <a href="{{groupCal}}" target="_blank">Calendar</a>
+              <span class="badge-reg"><a href="{{groupCal}}" target="_blank">Calendar</a></span>
             {{/if}}
-          </td>
-          <td class="text-center">
             {{#if groupBallots}}
-            <a href="{{groupBallots}}" target="_blank">Ballots</a>
+              <span class="badge-reg"><a href="{{groupBallots}}" target="_blank">Ballots</a></span>
             {{/if}}
-          </td>
-          
-        </tr>
-        {{/data}}
-      </tbody>
-    </table>
-    <!-- Main content ends - do not edit below this line -->
-{{>footer}}
+            {{#if parentgroupId}}
+              {{#with (groupIdLookup ../data parentgroupId)}}
+                <span class="badge-reg">Parent: <a class="group-link " href="#{{groupId}}">{{#if groupLabel}}{{groupLabel}}{{else}}{{groupId}}{{/if}}</a></span>
+              {{/with}}
+            {{/if}}
+
+            {{#if groupLink}}
+              <span class="ms-auto">Link: <a href="{{groupLink}}" target="_blank" rel="noopener">{{groupLink}}</a></span>
+            {{/if}}
+          </div>
+          <div class="small text-muted mt-2 d-flex flex-wrap align-items-center gap-2">
+            {{groupSummary}}
+            {{#ifeq isActive false}}
+              <span class="fw-bold small d-block mt-1">
+                <em>** NOTE: This group is no longer active{{#if groupStatus.assignedGroup}}; all work and documents (published, in draft, and repos) have been reassigned to:
+                  {{#groupStatus.assignedGroup}}
+                    {{#unless @first}}, {{/unless}}
+                    {{#with (groupIdLookup ../../data this)}}
+                      <a class="group-link " href="#{{groupId}}">
+                        {{#if groupLabel}}{{groupLabel}}{{else}}{{groupId}}{{/if}}
+                      </a>
+                    {{/with}}
+                  {{/groupStatus.assignedGroup}}
+                {{/if}}. **</em>
+              </span>
+            {{/ifeq}}
+          </div>
+        </article>
+      </template>
+      {{{{/raw}}}}
+      <div id="groupPagerBottom" class="sticky-bottom py-2">
+        <nav class="d-flex justify-content-between align-items-center">
+          <div class="btn-group">
+            <button id="groupPrevPageBottom" type="button" class="btn btn-outline-secondary btn-sm">Prev</button>
+            <button id="groupNextPageBottom" type="button" class="btn btn-outline-secondary btn-sm">Next</button>
+          </div>
+          <div id="groupPageNumsBottom" class="btn-group"></div>
+          <div id="groupPageMetaBottom" class="small text-muted">Page 1 of 1</div>
+        </nav>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- Offcanvas drawer for facets on small screens -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="groupFacetDrawer" aria-labelledby="groupFacetDrawerLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="groupFacetDrawerLabel">Filters</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body" id="groupFacetDrawerBody"><!-- Facets cloned here --></div>
+</div>
+
+<script src="../js/groups.js"></script>
+
+<!-- Main content ends - do not edit below this line -->
+{{> footer}}
