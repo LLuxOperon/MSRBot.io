@@ -47,17 +47,13 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato&amp;subset=latin,latin-ext">
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.4/b-2.1.1/r-2.2.9/sp-1.4.0/sl-1.3.4/datatables.min.css"/>
   <link rel="stylesheet" type="text/css" href="../../css/msrbot.css">
 
   <title>MSRBot.io | SMPTE ST 2067-103:2014</title>
 
   <!-- Scripts -->
-  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-  <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.4/b-2.1.1/r-2.2.9/sp-1.4.0/sl-1.3.4/datatables.min.js"></script>
-  <script src="https://cdn.datatables.net/plug-ins/1.11.4/features/deepLink/dataTables.deepLink.min.js"></script>
   <script src="../../js/msrbot.js"></script>
 
   <!-- JSON-LD: basic WebSite schema -->
@@ -106,9 +102,9 @@
   
 </head>
 <body>
-  <nav class="navbar navbar-expand-md sticky-top bg-light d-flex px-3 border-bottom shadow">
+  <nav class="navbar navbar-expand-md sticky-top d-flex px-3 border-bottom border-secondary-subtle shadow">
     <div class="container">
-      <div class="navbar-brand"><a class="clear-filter" href="#"><img src="../../static/MSRBot-PrZ3-blue.svg" alt="MSR" width="28" height="28" class="me-2"><img src="../../static/MSRBot-Logo-blue.svg" alt="MSR" height="28"></a></div>
+      <div class="navbar-brand"><a class="" href="#"><img src="../../static/MSRBot-PrZ3-blue.svg" alt="MSR" width="28" height="28" class="me-2"><img src="../../static/MSRBot-Logo-blue.svg" alt="MSR" height="28"></a></div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -135,17 +131,139 @@
           </li>
         </ul>
 
-        <ul class="navbar-nav d-print-none ms-auto">
-          <li class="nav-item">
-            <a id="json-feed" target="_blank" class="nav-link" href="https://raw.githubusercontent.com/PrZ3r/MSRBot.io/master/src/main/data/.json">API <i class="bi bi-code-slash" width="1em" height="1em" viewBox="0 0 16 16"></i></a>
-          </li>
-          <li class="nav-item">
-            <a id="csv-download" target="_blank" class="nav-link" title="Download as CSV" href="../../">CSV <i class="bi bi-table" width="1em" height="1em" viewBox="0 0 16 16"></i></a>
-          </li>
-        </ul>
+        <div class="dev-links-stack">
+          <a
+            id="dev-tools"
+            class="dev-link"
+            title="Developer data exports"
+            href="#"
+            role="button"
+            tabindex="0"
+            data-bs-toggle="popover"
+            data-bs-trigger="focus"
+            data-bs-placement="bottom"
+          >
+            Dev Tools <i class="bi bi-code-slash" width="1em" height="1em" viewBox="0 0 16 16"></i>
+          </a>
+          <a
+            id="user-prefs"
+            class="dev-link"
+            title="Set Preferences"
+            href="#"
+            role="button"
+            tabindex="0"
+            data-bs-toggle="popover"
+            data-bs-trigger="focus"
+            data-bs-placement="bottom"
+          >
+            Preferences <i class="bi bi-gear" width="1em" height="1em" viewBox="0 0 16 16"></i>
+          </a>
+        </div>
       </div>
     </div>
   </nav>
+
+  <!-- Hidden template for Dev Tools popover content -->
+  <div id="dev-tools-popover-content" class="d-none">
+    <div class="small">
+      <strong>Registry JSON</strong>
+      <ul class="mb-2">
+        <li>
+          <a href="../../docs/_data/documents.json" target="_blank" rel="noopener">
+            documents.json
+          </a>
+          &mdash; normalized document registry
+        </li>
+        <li>
+          <a href="../../groups/_data/groups.json" target="_blank" rel="noopener">
+            groups.json
+          </a>
+          &mdash; normalized groups registry
+        </li>
+        <li>
+          <a href="../../projects/_data/projects.json" target="_blank" rel="noopener">
+            projects.json
+          </a>
+          &mdash; project registry with lookups
+        </li>
+      </ul>
+
+      <strong>CSV exports</strong>
+      <ul class="mb-0">
+        <li>
+          <a href="../../_data/documents.csv" target="_blank" rel="noopener">
+            documents.csv
+          </a>
+          &mdash; flat document CSV export
+        </li>
+        <li>
+          <a href="../../_data/groups.csv" target="_blank" rel="noopener">
+            groups.csv
+          </a>
+          &mdash; flat groups CSV export
+        </li>
+        <li>
+          <a href="../../_data/projects.csv" target="_blank" rel="noopener">
+            projects.csv
+          </a>
+          &mdash; flat projects CSV export
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Hidden template for Preferences popover content -->
+  <div id="user-prefs-popover-content" class="d-none">
+    <div class="small">
+      <strong>Theme <span id="theme-current-label" class="text-muted"></span></strong>
+      <p class="mb-2">Choose how MSRBot.io looks on this device.</p>
+      <div class="d-grid gap-1">
+        <a href="#" class="btn btn-sm btn-outline-secondary text-start" data-bs-theme-choice="system">
+          Auto (match system)
+        </a>
+        <a href="#" class="btn btn-sm btn-outline-secondary text-start" data-bs-theme-choice="light">
+          Light mode
+        </a>
+        <a href="#" class="btn btn-sm btn-outline-secondary text-start" data-bs-theme-choice="dark">
+          Dark mode
+        </a>
+      </div>
+      <p class="mt-2 mb-0 text-muted fst-italic">Preference is stored in this browser only.</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Dev Tools popover
+      var devTrigger = document.getElementById('dev-tools');
+      if (devTrigger && window.bootstrap && bootstrap.Popover) {
+        new bootstrap.Popover(devTrigger, {
+          html: true,
+          container: 'body',
+          sanitize: false,
+          content: function () {
+            var tpl = document.getElementById('dev-tools-popover-content');
+            return tpl ? tpl.innerHTML : '';
+          }
+        });
+      }
+
+      // Preferences popover (theme selection)
+      var prefsTrigger = document.getElementById('user-prefs');
+      if (prefsTrigger && window.bootstrap && bootstrap.Popover) {
+        new bootstrap.Popover(prefsTrigger, {
+          html: true,
+          container: 'body',
+          sanitize: false,
+          content: function () {
+            var tpl = document.getElementById('user-prefs-popover-content');
+            return tpl ? tpl.innerHTML : '';
+          }
+        });
+      }
+    });
+  </script>
+
   <a href="#" id="toTopBtn" class="cd-top text-replace js-cd-top cd-top--is-visible cd-top--fade-out" data-abc="true"></a>
   <a class="anchor" id="top" href="#top"></a><!-- Main content starts - do not edit above this line -->
 
@@ -153,7 +271,7 @@
   <header class="mb-3">
     <div class="docid-header-row d-flex gap-2 mb-1">
       <div class="docid-doclogolabel d-flex gap-2 flex-shrink-1 min-w-0">
-          <a href="https://www.smpte.org/" target="_blank" rel="noopener"><img src="../../resources/logos/smpte-logo.png" alt="SMPTE logo" height="25" class="align-text-bottom me-1 publisher-logo" loading="lazy"></a>
+          <a href="https://www.smpte.org/" target="_blank" rel="noopener"><img src="../../resources/logos/smpte-logo.png" alt="SMPTE logo" height="25" class="align-text-bottom me-1 publisher-logo" loading="lazy" data-logo-light="../../resources/logos/smpte-logo.png" data-logo-dark="../../resources/logos/smpte-logo_white.svg"></a>
         <code class="docid-doclabel me-1 fs-6 text-wrap">SMPTE ST 2067-103:2014</code>
       </div>
       <div class="status-badges ms-auto d-inline-flex flex-wrap gap-1">
@@ -185,8 +303,8 @@
         <div class="card-body">
           <dl class="row small mb-0">
             
-            <dt class="col-sm-4">Publisher</dt><dd class="col-sm-8"><a class="clear-filter" href="../?f.publisher=SMPTE">SMPTE</a></dd>
-            <dt class="col-sm-4">Doc Type</dt><dd class="col-sm-8"><a class="clear-filter" href="../?f.docType=Standard">Standard (ST)</a></dd>
+            <dt class="col-sm-4">Publisher</dt><dd class="col-sm-8"><a class="" href="../?f.publisher=SMPTE">SMPTE</a></dd>
+            <dt class="col-sm-4">Doc Type</dt><dd class="col-sm-8"><a class="" href="../?f.docType=Standard">Standard (ST)</a></dd>
             
             
             <dt class="col-sm-4">Release Tag</dt><dd class="col-sm-8"><a href="../?q=20141212-pub">20141212-pub</a></dd>
@@ -202,7 +320,7 @@
             
             
             <dt class="col-sm-4">Group</dt><dd class="col-sm-8"><a href="../../groups/#smpte-35pm-tc">SMPTE 35PM Media Packaging and Interchange</a></dd>
-            
+
             
             
             
@@ -214,7 +332,7 @@
       
     <div class="p-2 text-muted text-center">
       <span class="fst-italic">
-        <i class="bi bi-exclamation-triangle-fill text-warning"></i> Newer version available! <a class="clear-filter" href="../SMPTE.ST2067-103.2020/">SMPTE ST 2067-103:2020</a> [Active] <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#0c9c16" class="bi bi-check-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg> 
+        <i class="bi bi-exclamation-triangle-fill text-warning"></i> Newer version available! <a class="" href="../SMPTE.ST2067-103.2020/">SMPTE ST 2067-103:2020</a> [Active] <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#0c9c16" class="bi bi-check-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg> 
       </span>
     </div>
 
@@ -222,10 +340,10 @@
       <div class="card-body">
         <h2 class="h6 mb-2">Document Suite — SMPTE ST 2067-103</h2>
         <ul class="list-group list-group-flush small">
-          <li class="list-group-item d-flex align-items-start justify-content-between doc-suite-row bg-light">
+          <li class="list-group-item d-flex align-items-start justify-content-between doc-suite-row badge-node-current">
             <div class="me-1 text-wrap">
               <strong>▶</strong>
-              <a class="clear-filter" href="../SMPTE.ST2067-103.2014/">SMPTE ST 2067-103:2014</a>
+              <a class="" href="../SMPTE.ST2067-103.2014/">SMPTE ST 2067-103:2014</a>
                <span class="text-muted">(2014-12-12)</span>
             </div>
             <div class="badges-dsuite ms-auto">
@@ -246,7 +364,7 @@
           <li class="list-group-item d-flex align-items-start justify-content-between doc-suite-row">
             <div class="me-1 text-wrap">
               
-              <a class="clear-filter" href="../SMPTE.ST2067-103.2020/">SMPTE ST 2067-103:2020</a>
+              <a class="" href="../SMPTE.ST2067-103.2020/">SMPTE ST 2067-103:2020</a>
                <span class="text-muted">(2020-11-09)</span>
             </div>
             <div class="badges-dsuite ms-auto">
@@ -267,7 +385,7 @@
           <li class="list-group-item d-flex align-items-start justify-content-between doc-suite-row">
             <div class="me-1 text-wrap">
               
-              <a class="clear-filter" href="../SMPTE.ST2067-103.2021/">SMPTE ST 2067-103:2021</a>
+              <a class="" href="../SMPTE.ST2067-103.2021/">SMPTE ST 2067-103:2021</a>
                <span class="text-muted">(2021-01-27)</span>
             </div>
             <div class="badges-dsuite ms-auto">
@@ -294,7 +412,7 @@
         <br><span class="font-weight-bold small"> Superseded by:</span>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
-              <span class="small"><a class="-link clear-filter" href="../SMPTE.ST2067-103.2020">SMPTE ST 2067-103:2020</a> [Active]</span> <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#0c9c16" class="bi bi-check-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg> 
+              <span class="small"><a class="-link " href="../SMPTE.ST2067-103.2020">SMPTE ST 2067-103:2020</a> [Active]</span> <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#0c9c16" class="bi bi-check-circle-fill align-baseline" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg> 
             </li> 
           </ul>
         </div>
@@ -325,13 +443,13 @@
             <div class="mt-1">Preview:</div>
             <div class="border rounded p-2 bg-body-secondary">SMPTE ST 2067-103:2014, Interoperable Master Format (IMF) — Common Audio Definition and Macros. Available at https://doi.org/10.5594/SMPTE.ST2067-103.2014</div>
             <div class="mt-2">Snippet:</div>
-            <pre id="cite-text-SMPTE.ST2067-103.2014" class="bg-light border rounded p-2 mb-0 snippet">SMPTE ST 2067-103:2014, Interoperable Master Format (IMF) — Common Audio Definition and Macros. Available at https://doi.org/10.5594/SMPTE.ST2067-103.2014</pre>
+            <pre id="cite-text-SMPTE.ST2067-103.2014" class=" border rounded p-2 mb-0 snippet">SMPTE ST 2067-103:2014, Interoperable Master Format (IMF) — Common Audio Definition and Macros. Available at https://doi.org/10.5594/SMPTE.ST2067-103.2014</pre>
             <details class="mt-2">
               <summary class="small text-muted">Undated variant</summary>
               <div class="mt-1">Preview:</div>
               <div class="border rounded p-2 bg-body-secondary">SMPTE ST 2067-103, Interoperable Master Format (IMF) — Common Audio Definition and Macros. Available at https://doi.org/10.5594/SMPTE.ST2067-103</div>
               <div class="mt-2">Snippet:</div>
-              <pre id="cite-text-undated-SMPTE.ST2067-103.2014" class="bg-light border rounded p-2 mb-0 snippet">SMPTE ST 2067-103, Interoperable Master Format (IMF) — Common Audio Definition and Macros. Available at https://doi.org/10.5594/SMPTE.ST2067-103</pre>
+              <pre id="cite-text-undated-SMPTE.ST2067-103.2014" class=" border rounded p-2 mb-0 snippet">SMPTE ST 2067-103, Interoperable Master Format (IMF) — Common Audio Definition and Macros. Available at https://doi.org/10.5594/SMPTE.ST2067-103</pre>
             </details>
           </div>
           
@@ -347,13 +465,13 @@
             <div class="mt-1">Preview:</div>
             <div class="border rounded p-2 bg-body-secondary"><span class="citation"><cite>SMPTE ST 2067-103:2014</cite>, Interoperable Master Format (IMF) — Common Audio Definition and Macros. Available at <a href="https://doi.org/10.5594/SMPTE.ST2067-103.2014" target="_blank" rel="noopener">https://doi.org/10.5594/SMPTE.ST2067-103.2014</a></span></div>
             <div class="mt-2">Snippet:</div>
-            <pre id="cite-html-generic-SMPTE.ST2067-103.2014" class="bg-light border rounded p-2 mb-0 snippet">&lt;span class=&quot;citation&quot;&gt;&lt;cite&gt;SMPTE ST 2067-103:2014&lt;/cite&gt;, Interoperable Master Format (IMF) — Common Audio Definition and Macros. Available at &lt;a href=&quot;https://doi.org/10.5594/SMPTE.ST2067-103.2014&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://doi.org/10.5594/SMPTE.ST2067-103.2014&lt;/a&gt;&lt;/span&gt;</pre>
+            <pre id="cite-html-generic-SMPTE.ST2067-103.2014" class=" border rounded p-2 mb-0 snippet">&lt;span class=&quot;citation&quot;&gt;&lt;cite&gt;SMPTE ST 2067-103:2014&lt;/cite&gt;, Interoperable Master Format (IMF) — Common Audio Definition and Macros. Available at &lt;a href=&quot;https://doi.org/10.5594/SMPTE.ST2067-103.2014&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://doi.org/10.5594/SMPTE.ST2067-103.2014&lt;/a&gt;&lt;/span&gt;</pre>
             <details class="mt-2">
               <summary class="small text-muted">Undated variant</summary>
               <div class="mt-1">Preview:</div>
               <div class="border rounded p-2 bg-body-secondary"><span class="citation"><cite>SMPTE ST 2067-103</cite>, Interoperable Master Format (IMF) — Common Audio Definition and Macros. Available at <a href="https://doi.org/10.5594/SMPTE.ST2067-103" target="_blank" rel="noopener">https://doi.org/10.5594/SMPTE.ST2067-103</a></span></div>
               <div class="mt-2">Snippet:</div>
-              <pre id="cite-html-generic-undated-SMPTE.ST2067-103.2014" class="bg-light border rounded p-2 mb-0 snippet">&lt;span class=&quot;citation&quot;&gt;&lt;cite&gt;SMPTE ST 2067-103&lt;/cite&gt;, Interoperable Master Format (IMF) — Common Audio Definition and Macros. Available at &lt;a href=&quot;https://doi.org/10.5594/SMPTE.ST2067-103&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://doi.org/10.5594/SMPTE.ST2067-103&lt;/a&gt;&lt;/span&gt;</pre>
+              <pre id="cite-html-generic-undated-SMPTE.ST2067-103.2014" class=" border rounded p-2 mb-0 snippet">&lt;span class=&quot;citation&quot;&gt;&lt;cite&gt;SMPTE ST 2067-103&lt;/cite&gt;, Interoperable Master Format (IMF) — Common Audio Definition and Macros. Available at &lt;a href=&quot;https://doi.org/10.5594/SMPTE.ST2067-103&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://doi.org/10.5594/SMPTE.ST2067-103&lt;/a&gt;&lt;/span&gt;</pre>
             </details>
           </div>
 
@@ -369,7 +487,7 @@
             <div class="mt-1">Preview:</div>
             <div class="border rounded p-2 bg-body-secondary"><cite id="bib-smpte-st2067-103-2014">SMPTE ST 2067-103:2014</cite>, Interoperable Master Format (IMF) — Common Audio Definition and Macros<br>doi:&nbsp;<span class="doi">10.5594/SMPTE.ST2067-103.2014</span><br>url:&nbsp;<a href="https://doi.org/10.5594/SMPTE.ST2067-103.2014" class="ext-ref">https://doi.org/10.5594/SMPTE.ST2067-103.2014</a></div>
             <div class="mt-2">Snippet:</div>
-            <pre id="cite-html-smpte-SMPTE.ST2067-103.2014" class="bg-light border rounded p-2 mb-0 snippet">&lt;li&gt;
+            <pre id="cite-html-smpte-SMPTE.ST2067-103.2014" class=" border rounded p-2 mb-0 snippet">&lt;li&gt;
 &lt;cite id=&quot;bib-smpte-st2067-103-2014&quot;&gt;SMPTE ST 2067-103:2014&lt;/cite&gt;, Interoperable Master Format (IMF) — Common Audio Definition and Macros
 &lt;span class=&quot;doi&quot;&gt;10.5594/SMPTE.ST2067-103.2014&lt;/span&gt;
 &lt;/li&gt;</pre>
@@ -378,7 +496,7 @@
               <div class="mt-1">Preview:</div>
               <div class="border rounded p-2 bg-body-secondary"><cite id="bib-smpte-st2067-103-2014">SMPTE ST 2067-103</cite>, Interoperable Master Format (IMF) — Common Audio Definition and Macros<br>doi:&nbsp;<span class="doi">10.5594/SMPTE.ST2067-103</span><br>url:&nbsp;<a href="https://doi.org/10.5594/SMPTE.ST2067-103" class="ext-ref">https://doi.org/10.5594/SMPTE.ST2067-103</a></div>
               <div class="mt-2">Snippet:</div>
-              <pre id="cite-html-smpte-undated-SMPTE.ST2067-103.2014" class="bg-light border rounded p-2 mb-0 snippet">&lt;li&gt;
+              <pre id="cite-html-smpte-undated-SMPTE.ST2067-103.2014" class=" border rounded p-2 mb-0 snippet">&lt;li&gt;
 &lt;cite id=&quot;bib-smpte-st2067-103-2014&quot;&gt;SMPTE ST 2067-103&lt;/cite&gt;, Interoperable Master Format (IMF) — Common Audio Definition and Macros
 &lt;span class=&quot;doi&quot;&gt;10.5594/SMPTE.ST2067-103&lt;/span&gt;
 &lt;/li&gt;</pre>
@@ -435,8 +553,8 @@
         <div class="col col-md-5 col-auto d-flex text-start">
           <small class="text-muted">
             <p>
-              <span class="fw-semibold">Site version:</span> <code>93c7588cad66ff7f2bc3abdba6738940b95398b1</code>
-              <br><span class="fw-semibold">Generated on:</span> <code>Tue Nov 25 2025 21:29:37 GMT+0000 (Coordinated Universal Time)</code>
+              <span class="fw-semibold">Site version:</span> <code>230e68d850781a74cc316b59ebf58a5ceede6834</code>
+              <br><span class="fw-semibold">Generated on:</span> <code>Thu Nov 27 2025 05:12:00 GMT+0000 (Coordinated Universal Time)</code>
             </p>
             <p>
               :: GO TO <i class="bi bi-github"></i> <a href="https://github.com/PrZ3r/MSRBot.io" target="_blank">https://github.com/PrZ3r/MSRBot.io</a> <i class="bi bi-github"></i> TO CONTRIBUTE ::

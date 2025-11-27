@@ -27,238 +27,30 @@ TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-/* Filter accross all collumns in table */
+/* "Back To Top" button functionality (vanilla JS, no jQuery) */
 
-$(document).ready(function(){
-  $("#search").on("input", function() {
-    var value = $(this).val().toLowerCase();
-    $("#searchTable tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+document.addEventListener('DOMContentLoaded', function () {
+  var toTopBtn = document.getElementById('toTopBtn');
+  if (toTopBtn) {
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 20) {
+        toTopBtn.style.display = 'block';
+      } else {
+        toTopBtn.style.display = 'none';
+      }
     });
-  });
-});
 
-/* Clear filtering */
-
-$(document).on('click', '.clear-filter', function(){       
-
-  var docTable = $('#sorttableDocs').DataTable();
-  docTable
-   .search( '' )
-   .columns().search( '' )
-   .draw();
-
-  $('#sorttableDocs').DataTable().searchPanes.clearSelections();
-  $('#sorttableDocs').DataTable().order([1, 'asc']).draw();
-
-  var groupTable = $('#sorttableGroups').DataTable();
-  groupTable
-   .search( '' )
-   .columns().search( '' )
-   .draw();
-
-  $('#sorttableGroups').DataTable().searchPanes.clearSelections();
-  $('#sorttableGroups').DataTable().order([0, 'asc']).draw();
-
-  var groupProj = $('#sorttableProjs').DataTable();
-  groupProj
-   .search( '' )
-   .columns().search( '' )
-   .draw();
-
-  $('#sorttableProjs').DataTable().searchPanes.clearSelections();
-  $('#sorttableProjs').DataTable().order([0, 'asc']).draw();
-
-  var url= document.location.href;
-  window.history.pushState({}, "", url.split("?")[0]);
-
-});
-
-/* DataTable options for sort headers and filtering - Groups*/
-
-$(document).ready(function() {
-
-  var searchOptions = $.fn.dataTable.ext.deepLink( ['search.search' ] );
-
-  var defaultOptions = {
-    autoWidth: false,
-    paging: false,
-    pageLength: 25,
-    lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]], 
-    responsive: true,
-    buttons: [
-      {
-        extend: 'searchPanes',
-        config:{
-          cascadePanes: true,
-          emptyMessage:"<i><b>None Defined</b></i>",
-          dtOpts: {
-            select: {
-                style: 'multi'
-            }
-          }, 
-          layout: 'columns-4',
-          viewTotal: true,
-          columns: [1, 7, 3, 4]
-        }
-      },
-      {
-        text: 'Clear All Filters',
-        action: function ( e, dt, node, config ) {
-          var table = $('#sorttableGroups').DataTable();
-          table
-           .search( '' )
-           .columns().search( '' )
-           .draw();
-
-          $('#sorttableGroups').DataTable().searchPanes.clearSelections();
-          $('#sorttableGroups').DataTable().order([0, 'asc']).draw();
-
-          var url= document.location.href;
-          window.history.pushState({}, "", url.split("?")[0]);
-        }
-      }
-    ],
-    columnDefs:[
-      {
-        width: '16.6%',
-        targets:[2]
-      },
-      {
-        width: '20%',
-        targets:[6]
-      },
-      {
-        visible: true,
-        targets:[7],
-        searchPanes: {
-          header: "Technical Committee"
-        }
-      },
-      {
-        width: '16.6%',
-        targets:[8]
-      }
-    ],
-    dom: 
-      "<'row'<'col d-print-none d-flex align-items-center'B><'col d-flex justify-content-center align-items-center'i><'col d-print-none d-flex justify-content-end align-items-center'f>>" +
-      "<'row'<'col-sm-12't>>" +
-      "<'row'<'col-sm-12'lp>>",
-    language: {
-      processing: "Loading filtering options...",
-      searchPanes: {
-        collapse: {0: 'Filter Options', _: 'Filter Options (%d)'}
-      }
-    }
-  };
-
-  var dt = $('#sorttableGroups').DataTable( 
-    $.extend( defaultOptions, searchOptions )
-  );
-
-});
-
-/* DataTable options for sort headers and filtering - Projects*/
-
-$(document).ready(function() {
-
-  var searchOptions = $.fn.dataTable.ext.deepLink( ['search.search' ] );
-
-  var defaultOptions = {
-    autoWidth: false,
-    paging: false,
-    pageLength: 25,
-    lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]], 
-    responsive: false,
-    buttons: [
-      {
-        extend: 'searchPanes',
-        config:{
-          cascadePanes: true,
-          emptyMessage:"<i><b>None Defined</b></i>",
-          dtOpts: {
-            select: {
-                style: 'multi'
-            }
-          }, 
-          layout: 'columns-3',
-          viewTotal: true,
-          columns: [6, 2, 4]
-        }
-      },
-      {
-        text: 'Clear All Filters',
-        action: function ( e, dt, node, config ) {
-          var table = $('#sorttableProjs').DataTable();
-          table
-           .search( '' )
-           .columns().search( '' )
-           .draw();
-
-          $('#sorttableProjs').DataTable().searchPanes.clearSelections();
-          $('#sorttableProjs').DataTable().order([0, 'asc']).draw();
-
-          var url= document.location.href;
-          window.history.pushState({}, "", url.split("?")[0]);
-        }
-      }
-    ],
-    dom: 
-      "<'row'<'col d-print-none d-flex align-items-center'B><'col d-flex justify-content-center align-items-center'i><'col d-print-none d-flex justify-content-end align-items-center'f>>" +
-      "<'row'<'col-sm-12't>>" +
-      "<'row'<'col-sm-12'lp>>",
-    language: {
-      processing: "Loading filtering options...",
-      searchPanes: {
-        collapse: {0: 'Filter Options', _: 'Filter Options (%d)'}
-      }
-    },
-    columnDefs:[
-
-      {
-        visible: false,
-        targets:[4],
-        searchPanes: {
-          header: "Status"
-        }
-      },
-      {
-        visible: false,
-        targets:[6],
-        searchPanes: {
-          header: "Group"
-        }
-      }
-    ]
+    // Native smooth scroll
+    toTopBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
-
-  var dt = $('#sorttableProjs').DataTable( 
-    $.extend( defaultOptions, searchOptions )
-  );
-
 });
 
-/* "Back To Top" button functionality */
-
-$(document).ready(function() {
-$(window).scroll(function() {
-if ($(this).scrollTop() > 20) {
-$('#toTopBtn').fadeIn();
-} else {
-$('#toTopBtn').fadeOut();
-}
-});
-
-// Native smooth scroll (starts immediately, avoids jQuery animation queue)
-$(document).on('click', '#toTopBtn', function(e){
-  e.preventDefault();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-  return false;
-});
-});
-
-/* Dynamic navbar active state based on current URL vs nav hrefs */
-$(document).ready(function () {
+/* Dynamic navbar active state based on current URL vs nav hrefs (vanilla JS) */
+document.addEventListener('DOMContentLoaded', function () {
   try {
     var here = window.location && window.location.href ? window.location.href : '';
     if (!here) return;
@@ -298,3 +90,192 @@ $(document).ready(function () {
     }
   }
 });
+
+// Theme preference handling (light/dark/auto via localStorage)
+(function () {
+  var STORAGE_KEY = 'msrTheme';
+  var MODE_SYSTEM = 'system';
+
+  function getStoredMode() {
+    try {
+      return localStorage.getItem(STORAGE_KEY);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function storeMode(mode) {
+    try {
+      localStorage.setItem(STORAGE_KEY, mode);
+    } catch (e) {
+      // ignore storage failures
+    }
+  }
+
+  function getSystemMode() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark';
+    }
+    return 'light';
+  }
+
+  function describeMode(requested) {
+    if (requested === MODE_SYSTEM) {
+      return 'Auto';
+    }
+    if (requested === 'light') {
+      return 'Light';
+    }
+    if (requested === 'dark') {
+      return 'Dark';
+    }
+    return requested;
+  }
+
+  function getEffectiveThemeFromDom() {
+    var eff = document.documentElement.getAttribute('data-bs-theme');
+    return (eff === 'dark') ? 'dark' : 'light';
+  }
+
+  function applyThemeToPublisherLogos(effectiveMode) {
+    var mode = effectiveMode || getEffectiveThemeFromDom();
+    var isDark = (mode === 'dark');
+    var imgs = document.querySelectorAll('img.publisher-logo');
+
+    imgs.forEach(function (img) {
+      if (!img) return;
+      var light = img.getAttribute('data-logo-light');
+      var dark = img.getAttribute('data-logo-dark');
+      var target = null;
+
+      if (isDark && dark) {
+        target = dark;
+      } else if (light) {
+        target = light;
+      }
+
+      if (target && img.getAttribute('src') !== target) {
+        img.setAttribute('src', target);
+      }
+    });
+  }
+
+  // Expose a hook so other scripts (e.g., docList.js) can force a re-sync after rendering
+  if (!window.msrApplyThemeToPublisherLogos) {
+    window.msrApplyThemeToPublisherLogos = applyThemeToPublisherLogos;
+  }
+
+  function installPublisherLogoObserver() {
+    if (typeof MutationObserver === 'undefined') return;
+    try {
+      var observer = new MutationObserver(function (mutations) {
+        var hasAdded = false;
+        for (var i = 0; i < mutations.length; i++) {
+          var m = mutations[i];
+          if (m.addedNodes && m.addedNodes.length) {
+            hasAdded = true;
+            break;
+          }
+        }
+        if (!hasAdded) return;
+        // Re-sync any newly added publisher-logo images to the current effective theme
+        applyThemeToPublisherLogos();
+      });
+      if (document.body) {
+        observer.observe(document.body, { childList: true, subtree: true });
+      } else {
+        document.addEventListener('DOMContentLoaded', function () {
+          if (document.body) {
+            observer.observe(document.body, { childList: true, subtree: true });
+          }
+        });
+      }
+    } catch (e) {
+      if (window.console && console.warn) {
+        console.warn('[msrbot] Failed to install publisher logo observer:', e);
+      }
+    }
+  }
+
+  function updateThemeIndicators(requested) {
+    var label = describeMode(requested);
+
+    // Update Preferences link tooltip to reflect current mode
+    var prefsTrigger = document.getElementById('user-prefs');
+    if (prefsTrigger) {
+      prefsTrigger.title = 'Set Preferences';
+    }
+
+    // Update the inline label next to Theme in both the hidden template
+    // and any currently visible popover content.
+    var labelNodes = document.querySelectorAll(
+      '#user-prefs-popover-content #theme-current-label, .popover #theme-current-label'
+    );
+    labelNodes.forEach(function (el) {
+      el.textContent = '(Current Selection: ' + label + ')';
+    });
+  }
+
+  function applyMode(mode) {
+    var requested = mode || MODE_SYSTEM;
+    var effective = (!mode || mode === MODE_SYSTEM) ? getSystemMode() : mode;
+    // Store the logical mode (system/light/dark) for debugging/inspection
+    document.documentElement.setAttribute('data-msr-theme', requested);
+    document.documentElement.setAttribute('data-bs-theme', effective);
+
+    // Keep UI indicators in sync (tooltip + inline label)
+    updateThemeIndicators(requested);
+
+    // Flip publisher logos to match the effective theme
+    applyThemeToPublisherLogos(effective);
+  }
+
+  function initTheme() {
+    var stored = getStoredMode();
+    var mode = stored || MODE_SYSTEM;
+    applyMode(mode);
+  }
+
+  function handleSystemChange() {
+    var stored = getStoredMode();
+    // Only react to system changes when user preference is Auto (system)
+    if (!stored || stored === MODE_SYSTEM) {
+      applyMode(MODE_SYSTEM);
+    }
+  }
+
+  // Watch for OS-level dark/light changes when matchMedia is available
+  if (window.matchMedia) {
+    var mq = window.matchMedia('(prefers-color-scheme: dark)');
+    if (mq.addEventListener) {
+      mq.addEventListener('change', handleSystemChange);
+    } else if (mq.addListener) {
+      mq.addListener(handleSystemChange);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    initTheme();
+    installPublisherLogoObserver();
+  });
+
+  // Delegate clicks from Preferences popover buttons/links
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-bs-theme-choice]');
+    if (!btn) return;
+
+    e.preventDefault();
+    var mode = btn.getAttribute('data-bs-theme-choice') || MODE_SYSTEM;
+    storeMode(mode);
+    applyMode(mode);
+
+    // Hide the preferences popover if it is open
+    if (window.bootstrap && bootstrap.Popover) {
+      var trigger = document.getElementById('user-prefs');
+      if (trigger) {
+        var inst = bootstrap.Popover.getInstance(trigger);
+        if (inst) inst.hide();
+      }
+    }
+  });
+})();
