@@ -1,26 +1,26 @@
 {
-  "generatedAt": "2025-11-26T04:55:45.874Z",
+  "generatedAt": "2025-11-27T07:05:08.305Z",
   "target": "documents.json",
-  "good": 1939,
+  "good": 1919,
   "skippedByDomain": 0,
   "skippedByPublisher": 0,
   "index": {
-    "error": 257,
+    "error": 284,
     "errorBreakdown": {
-      "Unreachable (403)": 61,
-      "Unreachable (404)": 169,
-      "Unreachable (ECONNABORTED)": 1,
-      "Unreachable (ECONNREFUSED)": 4,
+      "Unreachable (403)": 65,
+      "Unreachable (404)": 168,
+      "Unreachable (503)": 2,
+      "Unreachable (ECONNABORTED)": 27,
       "Unreachable (ENOTFOUND)": 2,
       "Unreachable (ERR_BAD_REQUEST)": 1,
       "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)": 2,
       "Unreachable (HPE_INVALID_CONSTANT)": 16,
       "Unreachable (UNABLE_TO_VERIFY_LEAF_SIGNATURE)": 1
     },
-    "redirectMismatch": 15,
+    "redirectMismatch": 16,
     "redirectBreakdown": {
       "undefined": 0,
-      "other": 15
+      "other": 16
     },
     "expectationMismatch": 35,
     "expectationBreakdown": {
@@ -73,7 +73,7 @@
           "riskLevel": "High"
         },
         {
-          "docId": "AES-r2.2004",
+          "docId": "AES-R2.2004",
           "publisher": "AES",
           "field": "href",
           "url": "http://www.aes.org/publications/standards/search.cfm?docID=9",
@@ -214,7 +214,7 @@
         },
         {
           "docId": "AIM.BC4.1999",
-          "publisher": "Association for Automatic Identification & Mobility",
+          "publisher": "Automatic Identification Manufacturers",
           "field": "href",
           "url": "https://www.intertekinform.com/en-ca/standards/aim-bc4-1999-93924_saig_aim_aim_196679/?srsltid=AfmBOorrxiO18fwEVVBbLc4896_WWJF07W3mkf0GKnQNOpIMkeGjxYyT",
           "message": "Unreachable (403)",
@@ -383,6 +383,16 @@
           "riskLevel": "High"
         },
         {
+          "docId": "DMA.TR.8350.2",
+          "publisher": "U.S. Defense Mapping Agency",
+          "field": "href",
+          "url": "https://apps.dtic.mil/sti/citations/ADA280358",
+          "message": "Unreachable (403)",
+          "explanation": "The server refused access to the URL.",
+          "recommendedAction": "Check if the resource requires authentication or is private.",
+          "riskLevel": "High"
+        },
+        {
           "docId": "EBU.Tech3245s.1988",
           "publisher": "EBU",
           "field": "href",
@@ -453,8 +463,38 @@
           "riskLevel": "High"
         },
         {
+          "docId": "ISBN.0201325632",
+          "publisher": "Addison-Wesley",
+          "field": "href",
+          "url": "https://doi.org/10.1093/combul/40.5.30-a",
+          "message": "Unreachable (403)",
+          "explanation": "The server refused access to the URL.",
+          "recommendedAction": "Check if the resource requires authentication or is private.",
+          "riskLevel": "High"
+        },
+        {
+          "docId": "ISBN.9780195392883",
+          "publisher": "Oxford University Press",
+          "field": "href",
+          "url": "https://www.oxfordreference.com/display/10.1093/acref/9780195392883.001.0001/acref-9780195392883",
+          "message": "Unreachable (403)",
+          "explanation": "The server refused access to the URL.",
+          "recommendedAction": "Check if the resource requires authentication or is private.",
+          "riskLevel": "High"
+        },
+        {
+          "docId": "ISBN.9780226103891",
+          "publisher": "University of Chicago Press",
+          "field": "href",
+          "url": "https://www.chicagomanualofstyle.org/",
+          "message": "Unreachable (403)",
+          "explanation": "The server refused access to the URL.",
+          "recommendedAction": "Check if the resource requires authentication or is private.",
+          "riskLevel": "High"
+        },
+        {
           "docId": "ISBN.9780471223573",
-          "publisher": "Wiley",
+          "publisher": "John Wiley & Sons, Inc.",
           "field": "href",
           "url": "https://www.wiley.com/en-gb/Practical+Cryptography-p-9780471223573",
           "message": "Unreachable (403)",
@@ -464,7 +504,7 @@
         },
         {
           "docId": "ISBN.9781119183471",
-          "publisher": "Wiley",
+          "publisher": "John Wiley & Sons, Inc.",
           "field": "href",
           "url": "https://onlinelibrary.wiley.com/doi/book/10.1002/9781119183471",
           "message": "Unreachable (403)",
@@ -474,7 +514,7 @@
         },
         {
           "docId": "ISSN.15502716",
-          "publisher": "The Journal of the Illuminating Engineering Society",
+          "publisher": "Illuminating Engineering Society",
           "field": "href",
           "url": "https://doi.org/10.1080/15502724.2014.839020",
           "message": "Unreachable (403)",
@@ -484,7 +524,7 @@
         },
         {
           "docId": "JAES.v2-i4-215-218.1954",
-          "publisher": "JAES",
+          "publisher": "AES",
           "field": "href",
           "url": "http://www.aes.org/e-lib/browse.cfm?elib=37",
           "message": "Unreachable (403)",
@@ -494,19 +534,9 @@
         },
         {
           "docId": "JAES.v45-i6-456-466.199706",
-          "publisher": "JAES",
+          "publisher": "AES",
           "field": "href",
-          "url": "http://www.aes.org/e-lib/browse.cfm?elib=37",
-          "message": "Unreachable (403)",
-          "explanation": "The server refused access to the URL.",
-          "recommendedAction": "Check if the resource requires authentication or is private.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "JAIC.019713697806124475",
-          "publisher": "Journal of the American Institute for Conservation",
-          "field": "href",
-          "url": "https://doi.org/10.1179/019713697806124475",
+          "url": "https://secure.aes.org/forum/pubs/journal/?elib=7853",
           "message": "Unreachable (403)",
           "explanation": "The server refused access to the URL.",
           "recommendedAction": "Check if the resource requires authentication or is private.",
@@ -633,8 +663,18 @@
           "riskLevel": "High"
         },
         {
+          "docId": "rnc-nce-v16-n2-1981-p64-73",
+          "publisher": "Institute of Noise Control Engineering of the USA",
+          "field": "href",
+          "url": "https://ince.publisher.ingentaconnect.com/contentone/ince/nce/1981/00000016/00000002/art00002?crawler=true&mimetype=application/pdf",
+          "message": "Unreachable (403)",
+          "explanation": "The server refused access to the URL.",
+          "recommendedAction": "Check if the resource requires authentication or is private.",
+          "riskLevel": "High"
+        },
+        {
           "docId": "RTF-ASD-NBSA.2000",
-          "publisher": "UCI",
+          "publisher": "University of California Irvine",
           "field": "href",
           "url": "https://www.ics.uci.edu/~fielding/pubs/dissertation/fielding_dissertation.pdf",
           "message": "Unreachable (403)",
@@ -1085,20 +1125,10 @@
           "riskLevel": "High"
         },
         {
-          "docId": "NIST.SP.800-57pt2r1",
+          "docId": "NIST.FIPS.186-4",
           "publisher": "NIST",
           "field": "href",
-          "url": "https://doi.org/10.6028/NIST.SP.800-57pt2r1",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "NIST.SP.800-57pt3r1",
-          "publisher": "NIST",
-          "field": "href",
-          "url": "https://doi.org/10.6028/NIST.SP.800-57pt3r1",
+          "url": "https://doi.org/10.6028/NIST.FIPS.186-4",
           "message": "Unreachable (404)",
           "explanation": "The URL points to a resource that was not found (dead link).",
           "recommendedAction": "Double-check the URL or remove it if no longer valid.",
@@ -2335,6 +2365,28 @@
           "riskLevel": "High"
         }
       ],
+      "503": [
+        {
+          "docId": "W3C.xmlenc.core.20021210",
+          "publisher": "W3C",
+          "field": "href",
+          "url": "https://www.w3.org/TR/2002/REC-xmlenc-core-20021210/",
+          "message": "Unreachable (503)",
+          "explanation": "Service is temporarily unavailable or overloaded.",
+          "recommendedAction": "Try again later. Consider flagging for recheck.",
+          "riskLevel": "Medium-High"
+        },
+        {
+          "docId": "W3C.xpath3.1.20170321",
+          "publisher": "W3C",
+          "field": "href",
+          "url": "https://www.w3.org/TR/2017/REC-xpath-31-20170321/",
+          "message": "Unreachable (503)",
+          "explanation": "Service is temporarily unavailable or overloaded.",
+          "recommendedAction": "Try again later. Consider flagging for recheck.",
+          "riskLevel": "Medium-High"
+        }
+      ],
       "HPE_INVALID_CONSTANT": [
         {
           "docId": "AMPAS.P.2013-001",
@@ -2509,48 +2561,6 @@
           "riskLevel": "High"
         }
       ],
-      "ECONNREFUSED": [
-        {
-          "docId": "IMFUG.BP.001.2020",
-          "publisher": "IMFUG",
-          "field": "href",
-          "url": "https://www.imfug.com/TR/timecode-in-imf/",
-          "message": "Unreachable (ECONNREFUSED)",
-          "explanation": "Unknown error during URL resolution.",
-          "recommendedAction": "Manual investigation required.",
-          "riskLevel": "Unknown"
-        },
-        {
-          "docId": "IMFUG.BP.002.2020",
-          "publisher": "IMFUG",
-          "field": "href",
-          "url": "https://www.imfug.com/TR/pkg-and-delivery/",
-          "message": "Unreachable (ECONNREFUSED)",
-          "explanation": "Unknown error during URL resolution.",
-          "recommendedAction": "Manual investigation required.",
-          "riskLevel": "Unknown"
-        },
-        {
-          "docId": "IMFUG.BP.003.2020",
-          "publisher": "IMFUG",
-          "field": "href",
-          "url": "https://www.imfug.com/TR/imsc-authoring/",
-          "message": "Unreachable (ECONNREFUSED)",
-          "explanation": "Unknown error during URL resolution.",
-          "recommendedAction": "Manual investigation required.",
-          "riskLevel": "Unknown"
-        },
-        {
-          "docId": "IMFUG.BP.004.2020",
-          "publisher": "IMFUG",
-          "field": "href",
-          "url": "https://www.imfug.com/TR/audio-track-files/",
-          "message": "Unreachable (ECONNREFUSED)",
-          "explanation": "Unknown error during URL resolution.",
-          "recommendedAction": "Manual investigation required.",
-          "riskLevel": "Unknown"
-        }
-      ],
       "UNABLE_TO_VERIFY_LEAF_SIGNATURE": [
         {
           "docId": "ISO.15444-1.2004amd2.2009",
@@ -2587,10 +2597,270 @@
       ],
       "ECONNABORTED": [
         {
-          "docId": "UNICODE.UTF.BOM",
-          "publisher": "Unicode Consortium",
+          "docId": "W3C.qaframe.spec.20041122",
+          "publisher": "W3C",
           "field": "href",
-          "url": "http://www.unicode.org/faq/utf_bom.html",
+          "url": "https://www.w3.org/TR/2004/WD-qaframe-spec-20041122/",
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
+        },
+        {
+          "docId": "W3C.qaframe.spec.20050817",
+          "publisher": "W3C",
+          "field": "href",
+          "url": "https://www.w3.org/TR/2005/REC-qaframe-spec-20050817/",
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
+        },
+        {
+          "docId": "W3C.REC-html52.20171214",
+          "publisher": "W3C",
+          "field": "href",
+          "url": "https://www.w3.org/TR/2017/REC-html52-20171214/",
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
+        },
+        {
+          "docId": "W3C.ttaf1.dfxp.20181108",
+          "publisher": "W3C",
+          "field": "href",
+          "url": "http://www.w3.org/TR/ttaf1-dfxp/",
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
+        },
+        {
+          "docId": "W3C.ttml.imsc1.0.1.20180424",
+          "publisher": "W3C",
+          "field": "href",
+          "url": "https://www.w3.org/TR/2018/REC-ttml-imsc1.0.1-20180424/",
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
+        },
+        {
+          "docId": "W3C.ttml.imsc1.1.20181108",
+          "publisher": "W3C",
+          "field": "href",
+          "url": "https://www.w3.org/TR/2018/REC-ttml-imsc1.1-20181108/",
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
+        },
+        {
+          "docId": "W3C.ttml.imsc1.2.20200804",
+          "publisher": "W3C",
+          "field": "href",
+          "url": "https://www.w3.org/TR/2020/REC-ttml-imsc1.2-20200804/",
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
+        },
+        {
+          "docId": "W3C.ttml1.20181108",
+          "publisher": "W3C",
+          "field": "href",
+          "url": "https://www.w3.org/TR/2018/REC-ttml1-20181108/",
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
+        },
+        {
+          "docId": "W3C.ttml2.20181108",
+          "publisher": "W3C",
+          "field": "href",
+          "url": "https://www.w3.org/TR/2018/REC-ttml2-20181108/",
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
+        },
+        {
+          "docId": "W3C.xkms2.20030418",
+          "publisher": "W3C",
+          "field": "href",
+          "url": "https://www.w3.org/TR/2003/WD-xkms2-20030418/",
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
+        },
+        {
+          "docId": "W3C.xkms2.20050628",
+          "publisher": "W3C",
+          "field": "href",
+          "url": "https://www.w3.org/TR/2005/REC-xkms2-20050628/",
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
+        },
+        {
+          "docId": "W3C.xlink1.1.20100506",
+          "publisher": "W3C",
+          "field": "href",
+          "url": "https://www.w3.org/TR/2010/REC-xlink11-20100506/",
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
+        },
+        {
+          "docId": "W3C.xml-names.19990114",
+          "publisher": "W3C",
+          "field": "href",
+          "url": "https://www.w3.org/TR/1999/REC-xml-names-19990114/",
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
+        },
+        {
+          "docId": "W3C.xml.20040204",
+          "publisher": "W3C",
+          "field": "href",
+          "url": "https://www.w3.org/TR/2004/REC-xml-20040204/",
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
+        },
+        {
+          "docId": "W3C.xml.20081126",
+          "publisher": "W3C",
+          "field": "href",
+          "url": "https://www.w3.org/TR/2008/REC-xml-20081126/",
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
+        },
+        {
+          "docId": "W3C.xmlc14n1.1.20080502",
+          "publisher": "W3C",
+          "field": "href",
+          "url": "http://www.w3.org/TR/2008/REC-xml-c14n11-20080502/",
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
+        },
+        {
+          "docId": "W3C.xmldsig-core.20020212",
+          "publisher": "W3C",
+          "field": "href",
+          "url": "https://www.w3.org/TR/2002/REC-xmldsig-core-20020212/",
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
+        },
+        {
+          "docId": "W3C.xmldsig-core.20080610",
+          "publisher": "W3C",
+          "field": "href",
+          "url": "https://www.w3.org/TR/2008/REC-xmldsig-core-20080610/",
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
+        },
+        {
+          "docId": "W3C.xmldsig-core1.20130411",
+          "publisher": "W3C",
+          "field": "href",
+          "url": "https://www.w3.org/TR/2013/REC-xmldsig-core1-20130411/",
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
+        },
+        {
+          "docId": "W3C.xmldsig-core2.20150723",
+          "publisher": "W3C",
+          "field": "href",
+          "url": "https://www.w3.org/TR/2015/NOTE-xmldsig-core2-20150723/",
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
+        },
+        {
+          "docId": "W3C.xmlenc.core1.20130411",
+          "publisher": "W3C",
+          "field": "href",
+          "url": "https://www.w3.org/TR/2013/REC-xmlenc-core1-20130411/",
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
+        },
+        {
+          "docId": "W3C.xmlschema-0.20041028",
+          "publisher": "W3C",
+          "field": "href",
+          "url": "https://www.w3.org/TR/2004/REC-xmlschema-0-20041028/",
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
+        },
+        {
+          "docId": "W3C.xmlschema-1.20010502",
+          "publisher": "W3C",
+          "field": "href",
+          "url": "https://www.w3.org/TR/2001/REC-xmlschema-1-20010502/",
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
+        },
+        {
+          "docId": "W3C.xmlschema-1.20041028",
+          "publisher": "W3C",
+          "field": "href",
+          "url": "https://www.w3.org/TR/2004/REC-xmlschema-1-20041028/",
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
+        },
+        {
+          "docId": "W3C.xmlschema1.1-1.20120405",
+          "publisher": "W3C",
+          "field": "href",
+          "url": "https://www.w3.org/TR/2012/REC-xmlschema11-1-20120405/",
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
+        },
+        {
+          "docId": "W3C.xmlschema1.1-2.20120405",
+          "publisher": "W3C",
+          "field": "href",
+          "url": "https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/",
+          "message": "Unreachable (ECONNABORTED)",
+          "explanation": "Connection timed out.",
+          "recommendedAction": "Retry later or check the server’s responsiveness.",
+          "riskLevel": "Medium-High"
+        },
+        {
+          "docId": "W3C.xpath.19991116",
+          "publisher": "W3C",
+          "field": "href",
+          "url": "https://www.w3.org/TR/1999/REC-xpath-19991116/",
           "message": "Unreachable (ECONNABORTED)",
           "explanation": "Connection timed out.",
           "recommendedAction": "Retry later or check the server’s responsiveness.",
@@ -2625,12 +2895,22 @@
       "other": [
         {
           "docId": "0950-7671.1.3.302",
-          "publisher": "Scientific Instruments",
+          "publisher": "IOP Publishing Ltd",
           "field": "href",
           "url": "https://doi.org/10.1088/0950-7671/1/3/302",
-          "resolvedUrl": "https://validate.perfdrive.com/fb803c746e9148689b3984a31fccd902/?ssa=16149ca9-667c-4cd2-8516-0b046a58dba6&ssb=72845225007&ssc=https%3A%2F%2Fiopscience.iop.org%2Farticle%2F10.1088%2F0950-7671%2F1%2F3%2F302&ssi=5be192b0-cnvj-473c-b8ef-cbe71a553008&ssk=botmanager_support@radware.com&ssm=19771055297956753100927704583402&ssn=3b7455c9039cdd9309ee861e5de9d1cc0865cdd6c881-b69f-4f66-94eb2c&sso=89b512f2-1c3cae44b44d45639b706df00e9c40a5daa0d26c6e1066f4&ssp=45786984421764168127176414739741484&ssq=91572553219394790039032193057690689068519&ssr=MjAuMTYzLjgyLjI0Ng==&sst=axios/1.12.0&ssu=&ssv=&ssw=&ssx=eyJfX3V6bWYiOiI3ZjkwMDBjZGQ2Yzg4MS1iNjlmLTRmNjYtOTJmMi0xYzNjYWU0NGI0NGQxLTE3NjQxMzIxOTQ1MTkwLTAwMWM1OTE2MThjODc4NzYzN2YxMCIsInV6bXgiOiI3ZjkwMDBmNDBjY2M1My1iNzg0LTQ0MzEtOTZkYi0zN2VhNjE1MjM1YjgxLTE3NjQxMzIxOTQ1MTkwLWQzMGM3ZjIxNzEzN2RjNGUxMCIsInJkIjoiaW9wLm9yZyJ9",
+          "resolvedUrl": "https://validate.perfdrive.com/fb803c746e9148689b3984a31fccd902/?ssa=c749d472-87d6-4ca2-a373-4e5d6590bc8f&ssb=71460274819&ssc=https%3A%2F%2Fiopscience.iop.org%2Farticle%2F10.1088%2F0950-7671%2F1%2F3%2F302&ssi=749dbe70-cnvj-4988-be45-ea24a307ff71&ssk=botmanager_support@radware.com&ssm=83354411506330324107895774666634&ssn=fa229bb4d66959ae772cfbce24f04f92eddf1254f68f-1f58-4a10-b95541&sso=415b46b3-6d1188d4e66902226bce1841ec4c840e0217456dffb40d16&ssp=03993413911764248431176428550956338&ssq=96354782623584753428526235685654706361036&ssr=MTM1LjIzNy4xMzAuMTc5&sst=axios/1.12.0&ssu=&ssv=&ssw=&ssx=eyJfX3V6bWYiOiI3ZjkwMDAxMjU0ZjY4Zi0xZjU4LTRhMTAtYjZiMy02ZDExODhkNGU2NjkxLTE3NjQyMjYyMzU2MzYwLTAwMTBlNTZlODNjMTNiMzU5NDUxMCIsInV6bXgiOiI3ZjkwMDBlYWRhYzA3Yy1hYmQzLTQ5ZTAtOTk5Ny0yZTc1M2RkOTU0NWIxLTE3NjQyMjYyMzU2MzYwLTFkYThmMWM1NTRlYjg0MGIxMCIsInJkIjoiaW9wLm9yZyJ9",
           "resolvedField": "resolvedHref",
           "expectedResolved": "https://iopscience.iop.org/article/10.1088/0950-7671/1/3/302",
+          "message": "resolved url mismatch"
+        },
+        {
+          "docId": "ML3807.M56.1916",
+          "publisher": "MacMillan Co.",
+          "field": "href",
+          "url": "https://ia800204.us.archive.org/19/items/scienceofmusical00mill/scienceofmusical00mill.pdf",
+          "resolvedUrl": "https://ia801303.us.archive.org/1/items/scienceofmusical00mill/scienceofmusical00mill.pdf",
+          "resolvedField": "resolvedHref",
+          "expectedResolved": "https://ia601303.us.archive.org/1/items/scienceofmusical00mill/scienceofmusical00mill.pdf",
           "message": "resolved url mismatch"
         },
         {
