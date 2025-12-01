@@ -1,0 +1,35 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>MSR Stats Viewer</title>
+<style>body{font:14px/1.4 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;max-width:800px;margin:2rem auto;padding:0 1rem} code{white-space:pre;display:block;background:#f6f8fa;border:1px solid #eaecef;padding:1rem;border-radius:6px} .hl{background:#fff3cd}</style>
+<h1>MSR Stats</h1>
+<div id="meta"></div>
+<code id="json"></code>
+<script>
+(async () => {
+  const url = new URL(location.href);
+  const path = url.searchParams.get('path') || '';
+  const data = await fetch('./stats.json', { cache: 'no-store' }).then(r => r.json());
+  const meta = document.getElementById('meta');
+  meta.textContent = path ? `Path: ${path}` : 'Path: (none)';
+  const jsonEl = document.getElementById('json');
+  const jsonStr = JSON.stringify(data, null, 2);
+  let rendered = jsonStr;
+  if (path) {
+    // naive highlight of the key name; safe for simple paths like documents.total
+    const key = path.split('.').pop();
+    const re = new RegExp(`("${key}"\\s*:)`, 'g');
+    rendered = jsonStr.replace(re, '%%HL%%$1');
+    rendered = rendered.replace(/%%HL%%/g, '');
+    // we’ll add span wrapping post-render
+  }
+  jsonEl.textContent = rendered;
+  if (path) {
+    // wrap occurrences in a span.h
+    const key = path.split('.').pop();
+    const html = jsonEl.innerHTML
+      .replace(new RegExp(`(&quot;${key}&quot;\\s*:)`, 'g'), '<span class="hl">$1</span>');
+    jsonEl.innerHTML = html;
+  }
+})();
+</script>
