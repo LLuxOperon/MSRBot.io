@@ -24,6 +24,8 @@ npm run build
 npx http-server build --no-cache
 ```
 
+Using a browser, open http://127.0.0.1:8080/ after starting the http-server to inspect the local built pages.
+
 > These commands ensure your changes don’t break MSR’s automated workflows or data chain. The last commands build the site locally and initiates a local server to render the client side pages. 
 
 ---
