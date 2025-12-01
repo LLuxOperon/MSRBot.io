@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-11-14T20:53:42.597Z",
+  "generatedAt": "2025-12-01T23:43:09.552Z",
   "stats": {
     "uniqueRefIds": 1057
   },
@@ -4197,36 +4197,6 @@
         }
       ]
     },
-    "ISBN.0195392884": {
-      "refId": "ISBN.0195392884",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": false,
-        "sourceDocId": null,
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.828Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.713Z",
-        "mapSource": [
-          "regex",
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json",
-          "/\\bNew Oxford American Dictionary, Third Edition\\b/i"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.AG16",
-          "type": "normative",
-          "cite": "New Oxford American Dictionary, Third Edition, 2010",
-          "href": "",
-          "rawRef": "New Oxford American Dictionary, Third Edition, 2010",
-          "title": null
-        }
-      ]
-    },
     "ISBN.0201325632": {
       "refId": "ISBN.0201325632",
       "normalized": null,
@@ -4364,6 +4334,34 @@
         {
           "docId": "SMPTE.RP141.2020",
           "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "ISBN.9780195392883": {
+      "refId": "ISBN.9780195392883",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "ISBN.9780195392883",
+        "firstConfirmedSourceAt": "2025-12-01T23:43:09.537Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-01T23:43:09.398Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.AG16",
+          "type": "normative",
           "cite": "",
           "href": "",
           "rawRef": "",
