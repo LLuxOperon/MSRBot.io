@@ -1,0 +1,707 @@
+html {
+  font-size: calc(0.85 * 1em);
+}
+
+/* Theme variables: default to light; overridden when [data-bs-theme="dark"] is set on <html> */
+:root {
+  --msr-body-bg: #e1e0dd;
+  --msr-body-color: #212529;
+  --msr-navbar-bg-color: #f3f2ef;
+  --msr-popover-bg: #ffffff;
+  --msr-popover-header-bg: #d6d6d6;
+  --msr-accordian-header-bg: #d6d6d6;
+  --msr-accordian-body-bg: #ffffff;
+  --msr-topbar-bg: #eeeeee;
+  --msr-card-bg: #ffffff;
+  --msr-card-header-bg: #d6d6d6;
+  --msr-link-color: #1398b0;
+  --msr-link-hover-color: #1398b0;
+  --msr-code-color: #9e0000;
+  --msr-pre-bg-color: #f1f1f1;
+  --msr-badge-node-current-bg-color: rgba(237, 237, 237, 0.9);
+  --msr-rt-note-bg-color: rgba(237, 237, 237, 0.9);
+}
+
+/********************************************
+ * Dark mode overrides
+ ********************************************/
+[data-bs-theme="dark"] {
+  --msr-body-bg: #202020;
+  --msr-body-color: #f8f9fa;
+  --msr-navbar-bg-color: #323232;
+  --msr-popover-bg: #202020;
+  --msr-popover-header-bg: #272727;
+  --msr-accordian-header-bg: #272727;
+  --msr-accordian-body-bg: #202020;
+  --msr-topbar-bg: #191919;
+  --msr-card-bg: #333333;
+  --msr-card-header-bg: #272727;
+  --msr-link-color: #1398b0;
+  --msr-link-hover-color: #1398b0;
+  --msr-code-color: #da6e65;
+  --msr-pre-bg-color: #101010;
+  --msr-badge-node-current-bg-color: rgba(75, 75, 75, 0.75);
+  --msr-rt-note-bg-color: rgba(75, 75, 75, 0.75);
+}
+
+@media print{@page {size: landscape}}
+
+/* Anchor targets: no negative offsets; use scroll-margin via CSS var */
+a.anchor {
+    display: block;
+    position: static;
+    height: 0;
+    visibility: hidden;
+}
+/* When navigating to a card via #hash, keep it below sticky headers */
+.card-reg {
+    scroll-margin-top: var(--sticky-offset, 10px);
+}
+
+body {
+    margin-right: 0px;
+    margin-left: 0px;
+    font-family: 'Lato', sans-serif !important;
+    background-color: var(--msr-body-bg);
+    color: var(--msr-body-color);
+}
+
+a {
+  color: var(--msr-link-color);
+}
+
+a:hover {
+  color: var(--msr-link-hover-color);
+  text-decoration: underline;
+}
+
+/* Anchor buttons should look like buttons, not underlined links */
+a.btn,
+a.btn:hover,
+a.btn:focus {
+  text-decoration: none;
+}
+
+.cancelled {
+    text-decoration:line-through;
+    font-style:italic;
+}
+
+.pending {
+    font-style:italic;
+}
+
+.popover {
+  background-color: var(--msr-popover-bg);
+}
+
+/* Header bar (if you use a title) */
+.popover-header {
+  background-color: var(--msr-popover-header-bg);
+}
+
+
+code {
+  color: var(--msr-code-color);
+}
+
+pre {
+  background-color: var(--msr-pre-bg-color);
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.scroll {
+    color: #fff;
+    margin-top: 100px
+}
+
+#toTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1020;
+    padding: 21px;
+    background-color: hsla(5, 76%, 62%, .8)
+} 
+
+.label {
+    min-width: 120px !important;
+    display: inline-block !important;
+    padding: 5px;
+    margin: 1px
+}
+
+.list-group-item {
+    background-color: transparent;
+    padding: 2px;
+}
+
+
+.detaillink a {
+    color: #555;
+}
+
+.detaillink a:hover {
+    color: #555;
+    text-decoration: none;
+
+}
+
+.detaillink .icon {
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+    transition: .3s transform ease-in-out;
+    display: inline-flex;
+}
+
+.detaillink .collapsed .icon {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+[data-toggle="collapse"].collapsed .if-not-collapsed {
+  display: none;
+}
+[data-toggle="collapse"]:not(.collapsed) .if-collapsed {
+  display: none;
+}
+
+.js .cd-top--fade-out {
+    opacity: .5
+}
+
+.js .cd-top--is-visible {
+    visibility: visible;
+    opacity: 1
+}
+
+.js .cd-top {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .3s, visibility .3s, background-color .3s
+}
+
+.cd-top {
+    position: fixed;
+    bottom: 20px;
+    bottom: var(--cd-back-to-top-margin);
+    right: 20px;
+    right: var(--cd-back-to-top-margin);
+    display: inline-block;
+    height: 40px;
+    height: var(--cd-back-to-top-size);
+    width: 40px;
+    width: var(--cd-back-to-top-size);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .05) !important;
+    background: url(https://res.cloudinary.com/dxfq3iotg/image/upload/v1571057658/cd-top-arrow.svg) no-repeat center 50%;
+    background-color: hsla(5, 76%, 62%, .8);
+    background-color: hsla(var(--cd-color-3-h), var(--cd-color-3-s), var(--cd-color-3-l), 0.8)
+}
+
+.cards {
+    font-family: 'Lato', sans-serif !important;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.card-reg {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--msr-card-bg);
+}
+
+.card-header {
+    background-color: var(--msr-card-header-bg);
+}
+
+.card-body {
+    background-color: var(--msr-card-bg);
+}
+
+/* Badge for card metadata (e.g., publisher, docType, year, DOI) */
+.badge-dsuite {
+    font-size: 0.8em;
+    padding: 3px 6px;
+    border-radius: 3px;
+    margin-right: 5px;
+    font-family: 'Lato', sans-serif !important;
+}
+
+.badges-dsuite {
+  display: inline-flex;     
+  flex-wrap: wrap;
+  justify-content: flex-end; 
+  align-items: center;
+  gap: .25rem;
+}
+
+.badge-node-current {
+  background-color: var(--msr-badge-node-current-bg-color);
+}
+
+@media (max-width: 768px) {
+  .badges-dsuite {
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+}
+
+/* Shared status badge container: subtle gradient pill to make status pop */
+.status-badges {
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px; /* pill-like background */
+  background: linear-gradient(
+    90deg,
+    rgba(19, 152, 176, 0.12),
+    rgba(19, 152, 176, 0)
+  );
+}
+
+/* Badge for card metadata (e.g., publisher, docType, year, DOI) */
+.badge-reg {
+    background-color: #1398b0;
+    color: #fff;
+    font-size: 0.8em;
+    padding: 3px 6px;
+    border-radius: 3px;
+    margin-right: 5px;
+    font-family: 'Lato', sans-serif !important;
+}
+
+/* Improve readability of links inside badges (e.g., DOI links) */
+.badge-reg a,
+.badge-reg a:visited {
+  color: #fff;              /* force high contrast on blue badge */
+  text-decoration: none;    /* clean by default */
+}
+.badge-reg a:hover,
+.badge-reg a:focus {
+  color: #fff;
+  text-decoration: underline; /* visible affordance on interaction */
+}
+/* Keep inline code (e.g., DOI) legible inside badges */
+.badge-reg code {
+  color: inherit;            /* inherit white from badge */
+  background: transparent;   /* avoid gray code background inside badge */
+  padding: 0;                /* remove code padding for compact badge */
+}
+
+.badge-work {
+    background-color: #f39c12;
+    color: #fff;
+    font-size: 0.8em;
+    padding: 3px 6px;
+    border-radius: 3px;
+    margin-right: 5px;
+    font-family: 'Lato', sans-serif !important;
+}
+
+/* Improve readability of links inside warning banners (e.g., Withdrawl notices) */
+.label-warn a,
+.label-warn a:visited {
+  color: #000;              /* force high contrast on blue badge */
+}
+.label-warn a:hover,
+.label-warn a:focus {
+  color: #000;
+  text-decoration: underline; /* visible affordance on interaction */
+}
+
+.chip {
+    display: inline-block;
+    padding: 0 10px;
+    height: 24px;
+    font-size: 14px;
+    line-height: 24px;
+    border-radius: 25px;
+    background-color: #e0e0e0;
+    margin: 2px;
+    font-family: 'Lato', sans-serif !important;
+}
+
+.chip-x {
+    text-decoration: none; 
+    color: #fff;
+}
+
+#activeFilters .chip,
+#groupActiveFilters .chip,
+#projectActiveFilters .chip {
+    background-color: #1398b0;
+    color: #fff;
+}
+
+:root {
+  --msr-navbar-height: 64px; 
+}
+
+.navbar {
+  padding-top: 0.25rem;
+  padding-bottom: 0.0rem;
+  background-color: var(--msr-navbar-bg-color);
+}
+
+.navbar.sticky-top {
+  min-height: var(--msr-navbar-height);
+  z-index: 1030; /* Bootstrap default for sticky nav */
+}
+
+a.nav-link,
+a.nav-link:hover,
+a.nav-link:focus {
+  text-decoration: none;
+}
+
+/* LinkedIn-style thick underline for active nav links */
+.navbar .nav-link.active {
+  border-bottom: 3px solid #1398b0;
+  color: #1398b0 !important;
+  font-weight: 600;
+}
+
+.navbar .nav-link {
+  padding-bottom: 0.4rem;
+}
+
+.navbar .nav-link {
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.dev-links-stack {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;              /* slight separation */
+  margin-left: 0.5rem;   /* breathing room from neighbors */
+}
+
+.dev-link,
+.dev-link:hover {
+  font-size: 0.78rem;   
+  line-height: 1.1rem;
+  color: var(--bs-body-color);
+  text-decoration: none;
+}
+
+#cards-topbar.sticky-top, 
+#groups-topbar.sticky-top,
+#projects-topbar.sticky-top {
+  position: sticky;
+  top: calc(var(--msr-navbar-height) + 0.0rem);
+  /*top: 65px; /* height of your navbar */
+  z-index: 1020; /* slightly below navbar so it stays under dropdowns */
+  background-color: var(--msr-topbar-bg);
+}
+
+#ref-root-topbar.sticky-top {
+  position: sticky;
+  top: calc(var(--msr-navbar-height) + 0.0rem);
+  z-index: 1020; /* same layer as cards-topbar, under navbar */
+  background-color: var(--msr-body-bg);
+}
+
+/* Facet accordion cleanup */
+#facet .accordion-button,
+#groupFacet .accordion-button,
+#projectFacet .accordion-button,
+#facetDrawerBody .accordion-button,
+#groupFacetDrawerBody .accordion-button,
+#projectFacetDrawerBody .accordion-button { 
+  padding: .4rem .75rem; 
+  font-weight: 600;
+  background-color: var(--msr-accordian-header-bg);
+}
+
+#facet .accordion-body,
+#groupFacet .accordion-body,
+#projectFacet .accordion-body,
+#facetDrawerBody .accordion-body,
+#groupFacetDrawerBody .accordion-body,
+#projectFacetDrawerBody .accordion-body {
+  padding: .5rem;
+  background-color: var(--msr-accordian-body-bg);
+}
+
+/* Dark mode: keep open facet headers flat (no extra highlight) */
+[data-bs-theme="dark"] #facet .accordion-button:not(.collapsed),
+[data-bs-theme="dark"] #groupFacet .accordion-button:not(.collapsed),
+[data-bs-theme="dark"] #projectFacet .accordion-button:not(.collapsed),
+[data-bs-theme="dark"] #facetDrawerBody .accordion-button:not(.collapsed),
+[data-bs-theme="dark"] #groupFacetDrawerBody .accordion-button:not(.collapsed),
+[data-bs-theme="dark"] #projectFacetDrawerBody .accordion-button:not(.collapsed) {
+  background-color: var(--msr-accordian-header-bg);
+  box-shadow: none;
+}
+
+#facet .form-check { 
+  margin-bottom: .25rem; 
+}
+
+#facet .form-check-label { 
+  width: 100%; 
+}
+
+#facet .facet-list { 
+  max-height: 260px; 
+  overflow: auto; 
+  padding-right: .25rem; 
+}
+
+/* Clone container (drawer) shares styles */
+#facetDrawerBody .accordion-button { 
+  padding: .6rem .75rem; 
+}
+
+#facetDrawerBody .facet-list { 
+  max-height: 60vh; 
+  overflow: auto; 
+}
+
+/* Card header: logo + title + badges in a stable flex row */
+.card-reg header {
+  display: flex;
+  align-items: flex-start;
+  gap: .75rem;
+}
+
+/* Logo left */
+.card-reg .publisher-logo-slot {
+  flex: 0 0 auto;
+}
+
+/* Title middle – grows and wraps, but stays in the center column */
+.card-reg header .title-block {
+  flex: 1 1 auto;
+  min-width: 0; /* allow wrapping without pushing below logo */
+}
+
+.card-reg header .title-block h3 {
+  margin-bottom: .25rem;
+}
+
+/* Status badges right – stacked vertically, anchored to top of card */
+.card-reg header .status-badges {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: .25rem;
+}
+
+/* Keep each badge on its own line */
+.card-reg header .status-badges .badge,
+.card-reg .badge.label {
+  white-space: nowrap;
+}
+
+/* On narrower viewports, allow title + badges to drop under in full-width rows */
+@media (max-width: 640px) {
+  .card-reg header {
+    flex-wrap: wrap;
+  }
+
+  /* Title and badges each take their own row under the logo */
+  .card-reg header .title-block,
+  .card-reg header .status-badges {
+    flex: 0 0 100%;
+  }
+
+  .card-reg header .status-badges {
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: .25rem;
+  }
+}
+
+/* Limit link width in info band, use ellipsis but keep full copyable URL */
+.card-reg .small.text-muted a[href^="http"] {
+  max-width: 32ch;           /* ~45 characters visible */
+  display: inline-block;
+  white-space: nowrap;       /* single line */
+  overflow: hidden;
+  text-overflow: ellipsis;   /* adds … at end */
+  vertical-align: bottom;
+}
+
+/* Ensure small text-muted flex rows don’t expand horizontally */
+.card-reg .small.text-muted {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+pre.snippet {
+  white-space: pre-wrap;      /* preserve spaces + wrap long lines */
+  word-break: break-word;     /* allow wrapping mid-word if needed */
+  overflow-x: auto;           /* scroll if too long */
+}
+
+img.publisher-logo  {
+  max-width: 120px;
+  object-fit: contain;
+}
+/* DocId header: keep logo + label + badges on one row until small screens */
+.docid-header-row {
+  flex-wrap: nowrap;
+  align-items: center; /* vertical center on larger screens */
+}
+
+.docid-doclogolabel {
+  align-items: center; /* vertical center on larger screens */
+}
+
+/* Allow label to wrap within its column while respecting overall layout */
+.docid-doclabel {
+  max-width: 100%;
+  white-space: normal;
+  word-break: break-word; /* just in case a label has very long tokens */
+}
+
+/* On smaller screens, let the header row wrap so layout can stack cleanly */
+@media (max-width: 768px) {
+  .docid-header-row {
+    align-items: flex-start;
+  }
+  
+  .docid-doclogolabel {
+    display: flex;
+    flex-direction: column;   /* force logo then label on its own line */
+    align-items: flex-start;
+  }
+
+  .docid-header-row .status-badges {
+    /* Move badges to the top row when wrapping */
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: .25rem;
+    margin-bottom: .25rem;
+  }
+}
+
+#pager-bottom,
+#groupPagerBottom,
+#projectPagerBottom {
+  background-color: var(--msr-body-bg);
+  z-index: 1010;
+}
+
+/* Reference tree connector styling (scoped to refTree page) */
+.rt-tree,
+.rt-tree ul {
+  position: relative;
+  padding-left: 0.75rem;
+  margin-left: 0.25rem;
+}
+
+.rt-tree-item {
+  position: relative;
+  padding-left: 0.75rem;
+  margin: 0.15rem 0;
+}
+
+.rt-tree-item::before {
+  content: "";
+  position: absolute;
+  left: -0.55rem;
+  top: 0.8rem;
+  width: 0.5rem;
+  border-top: 1px solid rgba(108, 117, 125, 0.6);
+}
+
+.rt-tree-item::after {
+  content: "";
+  position: absolute;
+  top: 0.85rem;
+  left: 0;
+  width: 0.75rem;
+  border-top: 1px solid #dee2e6;
+}
+
+.rt-tree > .rt-tree-item::before {
+  /* Top-level items: only draw from this item downward */
+  top: 0.85rem;
+}
+
+.rt-tree-item:last-child::before {
+  /* Stop the vertical line after the last child for a clean end-cap */
+  bottom: 0.85rem;
+}
+
+.rt-node {
+  position: relative;
+  z-index: 1;
+  background-color: var(--msr-rt-note-bg-color);
+  border-radius: 0.25rem;
+  padding: 0.1rem 0.35rem;
+}
+
+/* Per-node expand/collapse toggle in Expanded view */
+.rt-node-toggle {
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin-right: 0.15rem;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.rt-node-toggle:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Keep nodes without children aligned by reserving space for the toggle */
+.rt-node-toggle-spacer {
+  display: inline-block;
+  width: 0.75rem;
+  margin-right: 0.15rem;
+}
+
+.rt-tree-children {
+  margin-top: 0.15rem;
+  border-left: 1px dashed rgba(108, 117, 125, 0.5); /* muted dashed line */
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+/* Collapse/expand support for Expanded tree view */
+.rt-tree-item.rt-tree-collapsed > .rt-tree-children {
+  display: none;
+}
+
+/* Simple-view level headings: blue for upstream, green for downstream */
+.rt-level-heading-up {
+  border-left: 3px solid rgba(13, 110, 253, 0.6); /* bootstrap primary-ish */
+  padding-left: 0.35rem;
+}
+.rt-level-heading-down {
+  border-left: 3px solid rgba(25, 135, 84, 0.6); /* bootstrap success-ish */
+  padding-left: 0.35rem;
+}
+
+.rt-level-list-up {
+  border-left: 1px solid rgba(13, 110, 253, 0.25);
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+}
+.rt-level-list-down {
+  border-left: 1px solid rgba(25, 135, 84, 0.25);
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+}
