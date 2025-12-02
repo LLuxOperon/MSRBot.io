@@ -1,8 +1,8 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-01T23:43:09.552Z",
+  "generatedAt": "2025-12-02T16:53:28.707Z",
   "stats": {
-    "uniqueRefIds": 1057
+    "uniqueRefIds": 1058
   },
   "refs": {
     "40290752": {
@@ -4197,6 +4197,32 @@
         }
       ]
     },
+    "ISBN.0195392884": {
+      "refId": "ISBN.0195392884",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": false
+      },
+      "provenance": {
+        "firstSeen": "2025-12-02T04:52:54.298Z",
+        "mapSource": [
+          "regex"
+        ],
+        "mapDetails": [
+          "/\\bNew Oxford American Dictionary, Third Edition\\b/i"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.AG16",
+          "type": "normative",
+          "cite": "New Oxford American Dictionary, Third Edition, 2010",
+          "href": "",
+          "rawRef": "New Oxford American Dictionary, Third Edition, 2010",
+          "title": null
+        }
+      ]
+    },
     "ISBN.0201325632": {
       "refId": "ISBN.0201325632",
       "normalized": null,
@@ -4352,19 +4378,21 @@
       "provenance": {
         "firstSeen": "2025-12-01T23:43:09.398Z",
         "mapSource": [
+          "regex",
           "replay"
         ],
         "mapDetails": [
-          "from-documents.json"
+          "from-documents.json",
+          "/\\bNew Oxford American Dictionary, Third Edition\\b/i"
         ]
       },
       "rawVariants": [
         {
           "docId": "SMPTE.AG16",
           "type": "normative",
-          "cite": "",
+          "cite": "New Oxford American Dictionary, Third Edition, 2010",
           "href": "",
-          "rawRef": "",
+          "rawRef": "New Oxford American Dictionary, Third Edition, 2010",
           "title": null
         }
       ]
