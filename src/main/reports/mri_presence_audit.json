@@ -1,13 +1,12 @@
 {
-  "generatedAt": "2025-12-03T20:44:23.999Z",
-  "generatedAt": "2025-12-03T04:42:26.347Z",
+  "generatedAt": "2025-12-03T21:46:59.181Z",
   "sourcePath": "src/main/data/documents.json",
   "processedDocs": 2215,
   "replayMode": "full-replay",
   "seenRefs": 2917,
   "seenSightings": 2917,
-  "presentCount": 1033,
-  "missingCount": 37,
+  "presentCount": 1032,
+  "missingCount": 38,
   "missing": [
     {
       "refId": "AES3-1.2009",
@@ -536,6 +535,21 @@
           "cite": "Visio VSDX Drawing File Format",
           "href": "https://www.loc.gov/preservation/digital/formats/fdd/fdd000021.shtml",
           "rawRef": "Visio VSDX Drawing File Format url: https://www.loc.gov/preservation/digital/formats/fdd/fdd000021.shtml",
+          "title": null
+        }
+      ]
+    },
+    {
+      "refId": "M00395",
+      "sourceDocId": null,
+      "sightingCount": 1,
+      "sightings": [
+        {
+          "docId": "SMPTE.ST202.2010",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
           "title": null
         }
       ]

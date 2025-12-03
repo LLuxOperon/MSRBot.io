@@ -1,20 +1,20 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-03T20:30:13.086Z",
+  "generatedAt": "2025-12-03T21:46:59.166Z",
   "stats": {
     "uniqueRefIds": 1070
   },
   "refs": {
-    "40290752": {
-      "refId": "40290752",
+    "10.1002-j.1538-7305.1925.tb00946.x": {
+      "refId": "10.1002-j.1538-7305.1925.tb00946.x",
       "normalized": null,
       "resolution": {
         "sourcePresent": true,
-        "sourceDocId": "40290752",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.818Z"
+        "sourceDocId": "10.1002-j.1538-7305.1925.tb00946.x",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
       },
       "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.727Z",
+        "firstSeen": "2025-12-03T21:45:15.801Z",
         "mapSource": [
           "replay"
         ],
@@ -24,7 +24,7 @@
       },
       "rawVariants": [
         {
-          "docId": "SMPTE.RP45.1972",
+          "docId": "10.5594-J05508",
           "type": "bibliographic",
           "cite": "",
           "href": "",
@@ -33,16 +33,44 @@
         }
       ]
     },
-    "0141-3910.90.90019-4": {
-      "refId": "0141-3910.90.90019-4",
+    "10.1002-j.1538-7305.1927.tb00216.x": {
+      "refId": "10.1002-j.1538-7305.1927.tb00216.x",
       "normalized": null,
       "resolution": {
         "sourcePresent": true,
-        "sourceDocId": "0141-3910.90.90019-4",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.818Z"
+        "sourceDocId": "10.1002-j.1538-7305.1927.tb00216.x",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
       },
       "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.718Z",
+        "firstSeen": "2025-12-03T21:45:15.801Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J05521",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.1016-0141-3910.90.90019-4": {
+      "refId": "10.1016-0141-3910.90.90019-4",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.1016-0141-3910.90.90019-4",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.831Z",
         "mapSource": [
           "replay"
         ],
@@ -61,16 +89,16 @@
         }
       ]
     },
-    "0950-7671.1.3.302": {
-      "refId": "0950-7671.1.3.302",
+    "10.1016-S0016-0032.18.90991-9": {
+      "refId": "10.1016-S0016-0032.18.90991-9",
       "normalized": null,
       "resolution": {
         "sourcePresent": true,
-        "sourceDocId": "0950-7671.1.3.302",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.818Z"
+        "sourceDocId": "10.1016-S0016-0032.18.90991-9",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
       },
       "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
+        "firstSeen": "2025-12-03T21:45:15.802Z",
         "mapSource": [
           "replay"
         ],
@@ -80,7 +108,7 @@
       },
       "rawVariants": [
         {
-          "docId": "J06549",
+          "docId": "10.5594-J08011",
           "type": "bibliographic",
           "cite": "",
           "href": "",
@@ -89,16 +117,16 @@
         }
       ]
     },
-    "1.1915182": {
-      "refId": "1.1915182",
+    "10.1016-S0016-0032.28.92060-8": {
+      "refId": "10.1016-S0016-0032.28.92060-8",
       "normalized": null,
       "resolution": {
         "sourcePresent": true,
-        "sourceDocId": "1.1915182",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.818Z"
+        "sourceDocId": "10.1016-S0016-0032.28.92060-8",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
       },
       "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
+        "firstSeen": "2025-12-03T21:45:15.801Z",
         "mapSource": [
           "replay"
         ],
@@ -108,7 +136,7 @@
       },
       "rawVariants": [
         {
-          "docId": "J05508",
+          "docId": "10.5594-J06549",
           "type": "bibliographic",
           "cite": "",
           "href": "",
@@ -117,72 +145,16 @@
         }
       ]
     },
-    "1.1915951": {
-      "refId": "1.1915951",
+    "10.1063-1.3061757": {
+      "refId": "10.1063-1.3061757",
       "normalized": null,
       "resolution": {
         "sourcePresent": true,
-        "sourceDocId": "1.1915951",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.818Z"
+        "sourceDocId": "10.1063-1.3061757",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
       },
       "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.712Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "JRPROC.1947.232603",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "1.1916111": {
-      "refId": "1.1916111",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "1.1916111",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.818Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.712Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "JRPROC.1947.232603",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "1.3061757": {
-      "refId": "1.3061757",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "1.3061757",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.818Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.719Z",
+        "firstSeen": "2025-12-03T21:45:15.833Z",
         "mapSource": [
           "replay"
         ],
@@ -201,16 +173,44 @@
         }
       ]
     },
-    "20.105066": {
-      "refId": "20.105066",
+    "10.1088-0950-7671.1.3.302": {
+      "refId": "10.1088-0950-7671.1.3.302",
       "normalized": null,
       "resolution": {
         "sourcePresent": true,
-        "sourceDocId": "20.105066",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.818Z"
+        "sourceDocId": "10.1088-0950-7671.1.3.302",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
       },
       "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.719Z",
+        "firstSeen": "2025-12-03T21:45:15.801Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J06549",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.1109-20.105066": {
+      "refId": "10.1109-20.105066",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.1109-20.105066",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.833Z",
         "mapSource": [
           "replay"
         ],
@@ -229,16 +229,16 @@
         }
       ]
     },
-    "20.179492": {
-      "refId": "20.179492",
+    "10.1109-20.179492": {
+      "refId": "10.1109-20.179492",
       "normalized": null,
       "resolution": {
         "sourcePresent": true,
-        "sourceDocId": "20.179492",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.818Z"
+        "sourceDocId": "10.1109-20.179492",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
       },
       "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.719Z",
+        "firstSeen": "2025-12-03T21:45:15.833Z",
         "mapSource": [
           "replay"
         ],
@@ -257,16 +257,16 @@
         }
       ]
     },
-    "20.179493": {
-      "refId": "20.179493",
+    "10.1109-20.179493": {
+      "refId": "10.1109-20.179493",
       "normalized": null,
       "resolution": {
         "sourcePresent": true,
-        "sourceDocId": "20.179493",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.818Z"
+        "sourceDocId": "10.1109-20.179493",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
       },
       "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.720Z",
+        "firstSeen": "2025-12-03T21:45:15.834Z",
         "mapSource": [
           "replay"
         ],
@@ -285,16 +285,16 @@
         }
       ]
     },
-    "20.179494": {
-      "refId": "20.179494",
+    "10.1109-20.179494": {
+      "refId": "10.1109-20.179494",
       "normalized": null,
       "resolution": {
         "sourcePresent": true,
-        "sourceDocId": "20.179494",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.818Z"
+        "sourceDocId": "10.1109-20.179494",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
       },
       "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.720Z",
+        "firstSeen": "2025-12-03T21:45:15.834Z",
         "mapSource": [
           "replay"
         ],
@@ -313,16 +313,16 @@
         }
       ]
     },
-    "20.278927": {
-      "refId": "20.278927",
+    "10.1109-20.278927": {
+      "refId": "10.1109-20.278927",
       "normalized": null,
       "resolution": {
         "sourcePresent": true,
-        "sourceDocId": "20.278927",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.818Z"
+        "sourceDocId": "10.1109-20.278927",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
       },
       "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.720Z",
+        "firstSeen": "2025-12-03T21:45:15.834Z",
         "mapSource": [
           "replay"
         ],
@@ -341,16 +341,16 @@
         }
       ]
     },
-    "20.312264": {
-      "refId": "20.312264",
+    "10.1109-20.312264": {
+      "refId": "10.1109-20.312264",
       "normalized": null,
       "resolution": {
         "sourcePresent": true,
-        "sourceDocId": "20.312264",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.818Z"
+        "sourceDocId": "10.1109-20.312264",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
       },
       "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.720Z",
+        "firstSeen": "2025-12-03T21:45:15.835Z",
         "mapSource": [
           "replay"
         ],
@@ -362,6 +362,2762 @@
         {
           "docId": "SMPTE.RP190.1996",
           "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.1121-1.1915182": {
+      "refId": "10.1121-1.1915182",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.1121-1.1915182",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.801Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J05508",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.1121-1.1915951": {
+      "refId": "10.1121-1.1915951",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.1121-1.1915951",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.815Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "JRPROC.1947.232603",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.1121-1.1916111": {
+      "refId": "10.1121-1.1916111",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.1121-1.1916111",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.815Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "JRPROC.1947.232603",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.1179-JAIC.019713697806124475": {
+      "refId": "10.1179-JAIC.019713697806124475",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.1179-JAIC.019713697806124475",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.831Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.RP131.2002",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.3397-1.2832172": {
+      "refId": "10.3397-1.2832172",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.3397-1.2832172",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.832Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.RP141.2005",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "SMPTE.RP141.2020",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J01217": {
+      "refId": "10.5594-J01217",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J01217",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.839Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.RP55.1997",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J01273": {
+      "refId": "10.5594-J01273",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J01273",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.803Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J11990",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J01341": {
+      "refId": "10.5594-J01341",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J01341",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.799Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J05436",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J02042": {
+      "refId": "10.5594-J02042",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J02042",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.799Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J05436",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J07462",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J02284": {
+      "refId": "10.5594-J02284",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J02284",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.831Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.RP131.2002",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "SMPTE.RP190.1996",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J02285": {
+      "refId": "10.5594-J02285",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J02285",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.831Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.RP131.2002",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J02850": {
+      "refId": "10.5594-J02850",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J02850",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.831Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.RP131.2002",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J02945": {
+      "refId": "10.5594-J02945",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J02945",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.831Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.RP131.2002",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "SMPTE.RP190.1996",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J04132": {
+      "refId": "10.5594-J04132",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J04132",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.832Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.RP151.1999",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J04161": {
+      "refId": "10.5594-J04161",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J04161",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.801Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J07429",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J05297": {
+      "refId": "10.5594-J05297",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J05297",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.822Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.EG42.2015",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "SMPTE.ST377.2004",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J05384": {
+      "refId": "10.5594-J05384",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J05384",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.803Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J11957",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J05389": {
+      "refId": "10.5594-J05389",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J05389",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.797Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J01273",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J11990",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J05391": {
+      "refId": "10.5594-J05391",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J05391",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.802Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J08632",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J05436": {
+      "refId": "10.5594-J05436",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J05436",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.803Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J11957",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J05459": {
+      "refId": "10.5594-J05459",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J05459",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.815Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "JRPROC.1947.232603",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J05467": {
+      "refId": "10.5594-J05467",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J05467",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.798Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J05391",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J10133",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J10149",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J05482": {
+      "refId": "10.5594-J05482",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J05482",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.803Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J11990",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J12979",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J05508": {
+      "refId": "10.5594-J05508",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J05508",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.795Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J01273",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J11990",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J05514": {
+      "refId": "10.5594-J05514",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J05514",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.974Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.801Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J07430",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J12600",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J05521": {
+      "refId": "10.5594-J05521",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J05521",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.799Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J05391",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J05508",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J05569": {
+      "refId": "10.5594-J05569",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J05569",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.832Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.RP14.1997",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J05604": {
+      "refId": "10.5594-J05604",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J05604",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.799Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J05436",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J05508",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J05608": {
+      "refId": "10.5594-J05608",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J05608",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.800Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J05467",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J07431",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J10133",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J10149",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J06549": {
+      "refId": "10.5594-J06549",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J06549",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.802Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J08011",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J06552": {
+      "refId": "10.5594-J06552",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J06552",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.800Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J05482",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J06591": {
+      "refId": "10.5594-J06591",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J06591",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.802Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J07506",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J12979",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J07182": {
+      "refId": "10.5594-J07182",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J07182",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.828Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.RP104.2005",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J07428": {
+      "refId": "10.5594-J07428",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J07428",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.799Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J05436",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J07429": {
+      "refId": "10.5594-J07429",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J07429",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.797Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J05384",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J07430": {
+      "refId": "10.5594-J07430",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J07430",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.799Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J05436",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J08632",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J12600",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J07431": {
+      "refId": "10.5594-J07431",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J07431",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.797Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J05384",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J05436",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J10122",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J11957",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J12600",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J07441": {
+      "refId": "10.5594-J07441",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J07441",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.799Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J05391",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J07459": {
+      "refId": "10.5594-J07459",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J07459",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.803Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J12600",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J07462": {
+      "refId": "10.5594-J07462",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J07462",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.799Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J05436",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J11957",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J07506": {
+      "refId": "10.5594-J07506",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J07506",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.797Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J05391",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J12979",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J07507": {
+      "refId": "10.5594-J07507",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J07507",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.799Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J05436",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J12979",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J07544": {
+      "refId": "10.5594-J07544",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J07544",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.806Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "AMPAS.TB.2018-001",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J07583": {
+      "refId": "10.5594-J07583",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J07583",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.828Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.RP104.2005",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J08011": {
+      "refId": "10.5594-J08011",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J08011",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.797Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J05389",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J05521",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J11990",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J08310": {
+      "refId": "10.5594-J08310",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J08310",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.860Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.ST237.2003",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J08349": {
+      "refId": "10.5594-J08349",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J08349",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.866Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.ST379-2.2010",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J08426": {
+      "refId": "10.5594-J08426",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J08426",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.833Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.RP17.1964",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J08632": {
+      "refId": "10.5594-J08632",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J08632",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.803Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J11957",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J09039": {
+      "refId": "10.5594-J09039",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J09039",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.839Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.RP45.1972",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J10104": {
+      "refId": "10.5594-J10104",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J10104",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.798Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J05391",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J10122": {
+      "refId": "10.5594-J10122",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J10122",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.803Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J10133",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J11957",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J10133": {
+      "refId": "10.5594-J10133",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J10133",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.799Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J05391",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J10149": {
+      "refId": "10.5594-J10149",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J10149",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.802Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J07431",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J10150": {
+      "refId": "10.5594-J10150",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J10150",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.802Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J07431",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J11990": {
+      "refId": "10.5594-J11990",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J11990",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.803Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J12632",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "JRPROC.1947.232603",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "SMPTE.RP120.2005",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J12212": {
+      "refId": "10.5594-J12212",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J12212",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.831Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.RP131.2002",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J12600": {
+      "refId": "10.5594-J12600",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J12600",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.802Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J07583",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J12632": {
+      "refId": "10.5594-J12632",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J12632",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.829Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.RP120.2005",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J12893": {
+      "refId": "10.5594-J12893",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J12893",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.839Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.RP55.1997",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J12978": {
+      "refId": "10.5594-J12978",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J12978",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.801Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J07430",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J07431",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J07459",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J12600",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J12979": {
+      "refId": "10.5594-J12979",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J12979",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.801Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J07431",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J10122",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J12983": {
+      "refId": "10.5594-J12983",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J12983",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.800Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J05482",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J13034": {
+      "refId": "10.5594-J13034",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J13034",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.801Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J05508",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J12983",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J13050": {
+      "refId": "10.5594-J13050",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J13050",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.802Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J07507",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J12979",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J13051": {
+      "refId": "10.5594-J13051",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J13051",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.797Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J05391",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J05436",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J07506",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J12979",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J13062": {
+      "refId": "10.5594-J13062",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J13062",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.801Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J06549",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J13132": {
+      "refId": "10.5594-J13132",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J13132",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.800Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J05482",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J05508",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J06549",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J13134": {
+      "refId": "10.5594-J13134",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J13134",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.798Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J05391",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J13528": {
+      "refId": "10.5594-J13528",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J13528",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.840Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.RP59.1999",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J13565": {
+      "refId": "10.5594-J13565",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J13565",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.831Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.RP131.2002",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "SMPTE.RP45.1972",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J13858": {
+      "refId": "10.5594-J13858",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J13858",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.833Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.RP17.1964",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J13970": {
+      "refId": "10.5594-J13970",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J13970",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.860Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.ST235.1998",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J14666": {
+      "refId": "10.5594-J14666",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J14666",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.803Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J11957",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J14711": {
+      "refId": "10.5594-J14711",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J14711",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.802Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J07583",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J11990",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "SMPTE.RP104.2005",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J14768": {
+      "refId": "10.5594-J14768",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J14768",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.799Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J05391",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J05436",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "10.5594-J07428",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J14793": {
+      "refId": "10.5594-J14793",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J14793",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.800Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J05482",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J14808": {
+      "refId": "10.5594-J14808",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J14808",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.801Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J06549",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J15292": {
+      "refId": "10.5594-J15292",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J15292",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.831Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.RP131.2002",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J15628": {
+      "refId": "10.5594-J15628",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J15628",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.831Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.RP131.2002",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J17253": {
+      "refId": "10.5594-J17253",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J17253",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.831Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.RP131.2002",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J17622": {
+      "refId": "10.5594-J17622",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J17622",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.836Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.RP2054.2010",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J17832": {
+      "refId": "10.5594-J17832",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J17832",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.839Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.RP55.1997",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J17833": {
+      "refId": "10.5594-J17833",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J17833",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.860Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.ST235.1998",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "10.5594-J18005": {
+      "refId": "10.5594-J18005",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-J18005",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.975Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T21:45:15.801Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "10.5594-J07429",
+          "type": "bibliographic",
           "cite": "",
           "href": "",
           "rawRef": "",
@@ -2520,42 +5276,6 @@
         {
           "docId": "SMPTE.ST330.2011",
           "type": "normative",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "DOI.10.3397-1.2832172": {
-      "refId": "DOI.10.3397-1.2832172",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "DOI.10.3397-1.2832172",
-        "firstConfirmedSourceAt": "2025-12-03T20:25:30.960Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-12-03T20:25:30.839Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.RP141.2005",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "SMPTE.RP141.2020",
-          "type": "bibliographic",
           "cite": "",
           "href": "",
           "rawRef": "",
@@ -4906,7 +7626,7 @@
       },
       "rawVariants": [
         {
-          "docId": "J05508",
+          "docId": "10.5594-J05508",
           "type": "bibliographic",
           "cite": "",
           "href": "",
@@ -9147,2614 +11867,6 @@
         }
       ]
     },
-    "J01217": {
-      "refId": "J01217",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J01217",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.727Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.RP55.1997",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J01273": {
-      "refId": "J01273",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J01273",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J11990",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J01341": {
-      "refId": "J01341",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J01341",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J05436",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J02042": {
-      "refId": "J02042",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J02042",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J05436",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J07462",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J02284": {
-      "refId": "J02284",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J02284",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.718Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.RP131.2002",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "SMPTE.RP190.1996",
-          "type": "normative",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J02285": {
-      "refId": "J02285",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J02285",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.718Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.RP131.2002",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J02850": {
-      "refId": "J02850",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J02850",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.718Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.RP131.2002",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J02945": {
-      "refId": "J02945",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J02945",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.718Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.RP131.2002",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "SMPTE.RP190.1996",
-          "type": "normative",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J04132": {
-      "refId": "J04132",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J04132",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.719Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.RP151.1999",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J04161": {
-      "refId": "J04161",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J04161",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J07429",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J05297": {
-      "refId": "J05297",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J05297",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.715Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.EG42.2015",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "SMPTE.ST377.2004",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J05384": {
-      "refId": "J05384",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J05384",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J11957",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J05389": {
-      "refId": "J05389",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J05389",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J01273",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J11990",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J05391": {
-      "refId": "J05391",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J05391",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J08632",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J05436": {
-      "refId": "J05436",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J05436",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J11957",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J05459": {
-      "refId": "J05459",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J05459",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.712Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "JRPROC.1947.232603",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J05467": {
-      "refId": "J05467",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J05467",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J05391",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J10133",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J10149",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J05482": {
-      "refId": "J05482",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J05482",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J11990",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J12979",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J05508": {
-      "refId": "J05508",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J05508",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.710Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J01273",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J11990",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J05514": {
-      "refId": "J05514",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J05514",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J07430",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J12600",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J05521": {
-      "refId": "J05521",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J05521",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J05391",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J05508",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J05569": {
-      "refId": "J05569",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J05569",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.718Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.RP14.1997",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J05604": {
-      "refId": "J05604",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J05604",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J05436",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J05508",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J05608": {
-      "refId": "J05608",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J05608",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J05467",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J07431",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J10133",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J10149",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J06549": {
-      "refId": "J06549",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J06549",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J08011",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J06552": {
-      "refId": "J06552",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J06552",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J05482",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J06591": {
-      "refId": "J06591",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J06591",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J07506",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J12979",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J07182": {
-      "refId": "J07182",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J07182",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.717Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.RP104.2005",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J07428": {
-      "refId": "J07428",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J07428",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J05436",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J07429": {
-      "refId": "J07429",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J07429",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J05384",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J07430": {
-      "refId": "J07430",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J07430",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J05436",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J08632",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J12600",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J07431": {
-      "refId": "J07431",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J07431",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J05384",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J05436",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J10122",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J11957",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J12600",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J07441": {
-      "refId": "J07441",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J07441",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J05391",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J07459": {
-      "refId": "J07459",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J07459",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J12600",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J07462": {
-      "refId": "J07462",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J07462",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J05436",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J11957",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J07506": {
-      "refId": "J07506",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J07506",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J05391",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J12979",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J07507": {
-      "refId": "J07507",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J07507",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J05436",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J12979",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J07544": {
-      "refId": "J07544",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J07544",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.707Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "AMPAS.TB.2018-001",
-          "type": "normative",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J07583": {
-      "refId": "J07583",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J07583",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.717Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.RP104.2005",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J08011": {
-      "refId": "J08011",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J08011",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J05389",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J05521",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J11990",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J08310": {
-      "refId": "J08310",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J08310",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.748Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.ST237.2003",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J08349": {
-      "refId": "J08349",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J08349",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.755Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.ST379-2.2010",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J08426": {
-      "refId": "J08426",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J08426",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.719Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.RP17.1964",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J08632": {
-      "refId": "J08632",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J08632",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J11957",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J09039": {
-      "refId": "J09039",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J09039",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.727Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.RP45.1972",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J10104": {
-      "refId": "J10104",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J10104",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J05391",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J10122": {
-      "refId": "J10122",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J10122",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J10133",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J11957",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J10133": {
-      "refId": "J10133",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J10133",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J05391",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J10149": {
-      "refId": "J10149",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J10149",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J07431",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J10150": {
-      "refId": "J10150",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J10150",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J07431",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J11990": {
-      "refId": "J11990",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J11990",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J12632",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "JRPROC.1947.232603",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "SMPTE.RP120.2005",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J12212": {
-      "refId": "J12212",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J12212",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.718Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.RP131.2002",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J12600": {
-      "refId": "J12600",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J12600",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J07583",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J12632": {
-      "refId": "J12632",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J12632",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.717Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.RP120.2005",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J12893": {
-      "refId": "J12893",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J12893",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.727Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.RP55.1997",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J12978": {
-      "refId": "J12978",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J12978",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J07430",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J07431",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J07459",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J12600",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J12979": {
-      "refId": "J12979",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J12979",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J07431",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J10122",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J12983": {
-      "refId": "J12983",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J12983",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J05482",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J13034": {
-      "refId": "J13034",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J13034",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J05508",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J12983",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J13050": {
-      "refId": "J13050",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J13050",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J07507",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J12979",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J13051": {
-      "refId": "J13051",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J13051",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J05391",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J05436",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J07506",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J12979",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J13062": {
-      "refId": "J13062",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J13062",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J06549",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J13132": {
-      "refId": "J13132",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J13132",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J05482",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J05508",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J06549",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J13134": {
-      "refId": "J13134",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J13134",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J05391",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J13528": {
-      "refId": "J13528",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J13528",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.728Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.RP59.1999",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J13565": {
-      "refId": "J13565",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J13565",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.718Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.RP131.2002",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "SMPTE.RP45.1972",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J13858": {
-      "refId": "J13858",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J13858",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.719Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.RP17.1964",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J13970": {
-      "refId": "J13970",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J13970",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.748Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.ST235.1998",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J14666": {
-      "refId": "J14666",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J14666",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J11957",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J14711": {
-      "refId": "J14711",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J14711",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J07583",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J11990",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "SMPTE.RP104.2005",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J14768": {
-      "refId": "J14768",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J14768",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J05391",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J05436",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "J07428",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J14793": {
-      "refId": "J14793",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J14793",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J05482",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J14808": {
-      "refId": "J14808",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J14808",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J06549",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J15292": {
-      "refId": "J15292",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J15292",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.718Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.RP131.2002",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J15628": {
-      "refId": "J15628",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J15628",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.718Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.RP131.2002",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J17253": {
-      "refId": "J17253",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J17253",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.718Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.RP131.2002",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J17622": {
-      "refId": "J17622",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J17622",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.720Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.RP2054.2010",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J17832": {
-      "refId": "J17832",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J17832",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.727Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.RP55.1997",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J17833": {
-      "refId": "J17833",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J17833",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.748Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.ST235.1998",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "J18005": {
-      "refId": "J18005",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "J18005",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J07429",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
     "JAES.v2-i4-215-218.1954": {
       "refId": "JAES.v2-i4-215-218.1954",
       "normalized": null,
@@ -11811,34 +11923,6 @@
         }
       ]
     },
-    "JAIC.019713697806124475": {
-      "refId": "JAIC.019713697806124475",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "JAIC.019713697806124475",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.718Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.RP131.2002",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
     "JOSA.12.000559": {
       "refId": "JOSA.12.000559",
       "normalized": null,
@@ -11858,7 +11942,7 @@
       },
       "rawVariants": [
         {
-          "docId": "J06549",
+          "docId": "10.5594-J06549",
           "type": "bibliographic",
           "cite": "",
           "href": "",
@@ -11886,7 +11970,7 @@
       },
       "rawVariants": [
         {
-          "docId": "J06549",
+          "docId": "10.5594-J06549",
           "type": "bibliographic",
           "cite": "",
           "href": "",
@@ -11914,7 +11998,7 @@
       },
       "rawVariants": [
         {
-          "docId": "J05389",
+          "docId": "10.5594-J05389",
           "type": "bibliographic",
           "cite": "",
           "href": "",
@@ -11922,7 +12006,7 @@
           "title": null
         },
         {
-          "docId": "J08011",
+          "docId": "10.5594-J08011",
           "type": "bibliographic",
           "cite": "",
           "href": "",
@@ -11950,7 +12034,7 @@
       },
       "rawVariants": [
         {
-          "docId": "J12632",
+          "docId": "10.5594-J12632",
           "type": "bibliographic",
           "cite": "",
           "href": "",
@@ -12022,7 +12106,7 @@
       },
       "rawVariants": [
         {
-          "docId": "J12632",
+          "docId": "10.5594-J12632",
           "type": "bibliographic",
           "cite": "",
           "href": "",
@@ -12175,8 +12259,8 @@
       "refId": "M00395",
       "normalized": null,
       "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "M00395",
+        "sourcePresent": false,
+        "sourceDocId": null,
         "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
       },
       "provenance": {
@@ -12218,7 +12302,7 @@
       },
       "rawVariants": [
         {
-          "docId": "J05482",
+          "docId": "10.5594-J05482",
           "type": "bibliographic",
           "cite": "",
           "href": "",
@@ -13776,7 +13860,7 @@
       },
       "rawVariants": [
         {
-          "docId": "J06549",
+          "docId": "10.5594-J06549",
           "type": "bibliographic",
           "cite": "",
           "href": "",
@@ -13804,7 +13888,7 @@
       },
       "rawVariants": [
         {
-          "docId": "J08011",
+          "docId": "10.5594-J08011",
           "type": "bibliographic",
           "cite": "",
           "href": "",
@@ -13832,7 +13916,7 @@
       },
       "rawVariants": [
         {
-          "docId": "J06549",
+          "docId": "10.5594-J06549",
           "type": "bibliographic",
           "cite": "",
           "href": "",
@@ -18429,16 +18513,16 @@
         }
       ]
     },
-    "S0016-0032.18.90991-9": {
-      "refId": "S0016-0032.18.90991-9",
+    "SAA.40290752": {
+      "refId": "SAA.40290752",
       "normalized": null,
       "resolution": {
         "sourcePresent": true,
-        "sourceDocId": "S0016-0032.18.90991-9",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.830Z"
+        "sourceDocId": "SAA.40290752",
+        "firstConfirmedSourceAt": "2025-12-03T21:45:15.990Z"
       },
       "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
+        "firstSeen": "2025-12-03T21:45:15.839Z",
         "mapSource": [
           "replay"
         ],
@@ -18448,35 +18532,7 @@
       },
       "rawVariants": [
         {
-          "docId": "J08011",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "S0016-0032.28.92060-8": {
-      "refId": "S0016-0032.28.92060-8",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "S0016-0032.28.92060-8",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.830Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J06549",
+          "docId": "SMPTE.RP45.1972",
           "type": "bibliographic",
           "cite": "",
           "href": "",
@@ -19940,7 +19996,7 @@
       },
       "rawVariants": [
         {
-          "docId": "J07583",
+          "docId": "10.5594-J07583",
           "type": "bibliographic",
           "cite": "",
           "href": "",
@@ -44827,62 +44883,6 @@
           "href": "https://html.spec.whatwg.org/multipage/",
           "rawRef": "HTML Standard, Living Standard. url: https://html.spec.whatwg.org/multipage/",
           "title": "Living Standard."
-        }
-      ]
-    },
-    "j.1538-7305.1925.tb00946.x": {
-      "refId": "j.1538-7305.1925.tb00946.x",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "j.1538-7305.1925.tb00946.x",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.838Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J05508",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "j.1538-7305.1927.tb00216.x": {
-      "refId": "j.1538-7305.1927.tb00216.x",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "j.1538-7305.1927.tb00216.x",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.838Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.711Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "J05521",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
         }
       ]
     },
