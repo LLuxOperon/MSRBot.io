@@ -1,24 +1,22 @@
 {
-  "generatedAt": "2025-12-03T04:54:05.451Z",
+  "generatedAt": "2025-12-03T22:21:17.100Z",
   "target": "documents.json",
-  "good": 1958,
+  "good": 1962,
   "skippedByDomain": 0,
   "skippedByPublisher": 0,
   "index": {
-    "error": 247,
+    "error": 185,
     "errorBreakdown": {
-      "Unreachable (403)": 65,
-      "Unreachable (404)": 160,
+      "Unreachable (403)": 59,
+      "Unreachable (404)": 121,
       "Unreachable (ENOTFOUND)": 2,
-      "Unreachable (ERR_BAD_REQUEST)": 1,
       "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)": 2,
-      "Unreachable (HPE_INVALID_CONSTANT)": 16,
       "Unreachable (UNABLE_TO_VERIFY_LEAF_SIGNATURE)": 1
     },
-    "redirectMismatch": 14,
+    "redirectMismatch": 26,
     "redirectBreakdown": {
-      "undefined": 0,
-      "other": 14
+      "undefined": 9,
+      "other": 17
     },
     "expectationMismatch": 35,
     "expectationBreakdown": {
@@ -31,7 +29,7 @@
     "unreachable": {
       "403": [
         {
-          "docId": "1.1915182",
+          "docId": "10.1121-1.1915182",
           "publisher": "Acoustical Society of America",
           "field": "href",
           "url": "https://doi.org/10.1121/1.1915182",
@@ -41,7 +39,7 @@
           "riskLevel": "High"
         },
         {
-          "docId": "1.1915951",
+          "docId": "10.1121-1.1915951",
           "publisher": "Acoustical Society of America",
           "field": "href",
           "url": "https://doi.org/10.1121/1.1915951",
@@ -51,7 +49,7 @@
           "riskLevel": "High"
         },
         {
-          "docId": "1.1916111",
+          "docId": "10.1121-1.1916111",
           "publisher": "Acoustical Society of America",
           "field": "href",
           "url": "https://doi.org/10.1121/1.1916111",
@@ -61,10 +59,10 @@
           "riskLevel": "High"
         },
         {
-          "docId": "40290752",
-          "publisher": "Society of American Archivists",
+          "docId": "10.3397-1.2832172",
+          "publisher": "Institute of Noise Control Engineering of the USA",
           "field": "href",
-          "url": "https://www.jstor.org/stable/40290752",
+          "url": "https://doi.org/10.3397/1.2832172",
           "message": "Unreachable (403)",
           "explanation": "The server refused access to the URL.",
           "recommendedAction": "Check if the resource requires authentication or is private.",
@@ -215,16 +213,6 @@
           "publisher": "Automatic Identification Manufacturers",
           "field": "href",
           "url": "https://www.intertekinform.com/en-ca/standards/aim-bc4-1999-93924_saig_aim_aim_196679/?srsltid=AfmBOorrxiO18fwEVVBbLc4896_WWJF07W3mkf0GKnQNOpIMkeGjxYyT",
-          "message": "Unreachable (403)",
-          "explanation": "The server refused access to the URL.",
-          "recommendedAction": "Check if the resource requires authentication or is private.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "ASA.S1.11.1986",
-          "publisher": "ANSI/ASA",
-          "field": "href",
-          "url": "https://webstore.ansi.org/standards/asa/ansis1111986r1998",
           "message": "Unreachable (403)",
           "explanation": "The server refused access to the URL.",
           "recommendedAction": "Check if the resource requires authentication or is private.",
@@ -504,7 +492,7 @@
           "docId": "ISBN.9781119183471",
           "publisher": "John Wiley & Sons, Inc.",
           "field": "href",
-          "url": "https://onlinelibrary.wiley.com/doi/book/10.1002/9781119183471",
+          "url": "https://doi.org/10.1002/9781119183471",
           "message": "Unreachable (403)",
           "explanation": "The server refused access to the URL.",
           "recommendedAction": "Check if the resource requires authentication or is private.",
@@ -541,36 +529,6 @@
           "riskLevel": "High"
         },
         {
-          "docId": "NAPM.IT2.18.1996",
-          "publisher": "ANSI/NAPM",
-          "field": "href",
-          "url": "https://webstore.ansi.org/standards/i3a/ansinapmit2191994",
-          "message": "Unreachable (403)",
-          "explanation": "The server refused access to the URL.",
-          "recommendedAction": "Check if the resource requires authentication or is private.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "NAPM.IT2.19.1994",
-          "publisher": "ANSI/NAPM",
-          "field": "href",
-          "url": "https://webstore.ansi.org/standards/i3a/ansinapmit2191994",
-          "message": "Unreachable (403)",
-          "explanation": "The server refused access to the URL.",
-          "recommendedAction": "Check if the resource requires authentication or is private.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "NAPM.IT9.1.1996",
-          "publisher": "ANSI/NAPM",
-          "field": "href",
-          "url": "https://webstore.ansi.org/standards/i3a/ansinapmit91996",
-          "message": "Unreachable (403)",
-          "explanation": "The server refused access to the URL.",
-          "recommendedAction": "Check if the resource requires authentication or is private.",
-          "riskLevel": "High"
-        },
-        {
           "docId": "NAPM.IT9.12.1995",
           "publisher": "ANSI/NAPM",
           "field": "href",
@@ -595,16 +553,6 @@
           "publisher": "ANSI/NAPM",
           "field": "href",
           "url": "https://webstore.ansi.org/standards/i3a/ansiiso82251995napmit91996",
-          "message": "Unreachable (403)",
-          "explanation": "The server refused access to the URL.",
-          "recommendedAction": "Check if the resource requires authentication or is private.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "NAPM.IT9.6.1991",
-          "publisher": "ANSI/NAPM",
-          "field": "href",
-          "url": "https://webstore.ansi.org/standards/i3a/ansinapmit91991r1996",
           "message": "Unreachable (403)",
           "explanation": "The server refused access to the URL.",
           "recommendedAction": "Check if the resource requires authentication or is private.",
@@ -661,20 +609,10 @@
           "riskLevel": "High"
         },
         {
-          "docId": "rnc-nce-v16-n2-1981-p64-73",
-          "publisher": "Institute of Noise Control Engineering of the USA",
+          "docId": "SAA.40290752",
+          "publisher": "Society of American Archivists",
           "field": "href",
-          "url": "https://ince.publisher.ingentaconnect.com/contentone/ince/nce/1981/00000016/00000002/art00002?crawler=true&mimetype=application/pdf",
-          "message": "Unreachable (403)",
-          "explanation": "The server refused access to the URL.",
-          "recommendedAction": "Check if the resource requires authentication or is private.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "RTF-ASD-NBSA.2000",
-          "publisher": "University of California Irvine",
-          "field": "href",
-          "url": "https://www.ics.uci.edu/~fielding/pubs/dissertation/fielding_dissertation.pdf",
+          "url": "https://www.jstor.org/stable/40290752",
           "message": "Unreachable (403)",
           "explanation": "The server refused access to the URL.",
           "recommendedAction": "Check if the resource requires authentication or is private.",
@@ -693,410 +631,10 @@
           "riskLevel": "High"
         },
         {
-          "docId": "DCI.DCA-DVD.2022-0303",
-          "publisher": "DCI",
+          "docId": "NIST.FIPS.140-2",
+          "publisher": "NIST",
           "field": "href",
-          "url": "https://www.dcimovies.com/specification/DCI-Direct-View-Display-Addendum-v100_2022-0330.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.DCA-OBA.2013-0909",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/archives/spec_v1_2_With_Errata_Incorporated/DCI_Object-Based_Audio_Addendum_2013-0909.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.DCA-OBA.2018-1001",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/specification/DCI_Object-Based_Audio_Addendum_2018-1001.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.DCA-S.2017-0711",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/specification/DCI_Stereoscopic_DC_Addendum.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.DCSS.v1.2.2012-1010",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/archives/spec_v1_2_With_Errata_Incorporated/DCI_DCSS_v12_with_errata_2012-1010.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.DCSS.v1.2.2013-0821",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/errata/v1_2_with-errata-8-12/Errata_1-2_2013-0821.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.DCSS.v1.2.2014-0904",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/errata/v1_2_with-errata-8-12/DCI-Errata-3-9_v1-2-inc_2014-0904.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.DCSS.v1.2.2014-0905",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/errata/v1_2_with-errata-8-12/DCSS-replacement_Chapter_9--20140904.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.DCSS.v1.2.2015-0826",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/errata/v1_2_with-errata-8-12/DCI-Errata_10-13_Aug-26-2015_v1-2_08-30-2012.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.DCSS.v1.2.2015-0925",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/errata/v1_2_with-errata-8-12/DCI-Errata_14_Sept-25-2015_v1-2_08-30-2012.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.DCSS.v1.2.2016-0331",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/errata/v1_2_with-errata-8-12/DCI-Errata_15-23_March-31-2016_v1-2_08-30-2012.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.DCSS.v1.2.2016-0428",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/errata/v1_2_with-errata-8-12/DCI-Errata_24_APRIL-28-2016_v1-2_08-30-2012.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.DCSS.v1.2.2017-0302",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/errata/v1_2_with-errata-8-12/DCSS_Errata_25-38_as_Approved_2017-0302.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.DCSS.v1.2.2017-0802",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/errata/v1_2_with-errata-8-12/DCI_DCSS_Erratum_39_2017-0802.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.DCSS.v1.2.2017-0829",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/errata/v1_2_with-errata-8-12/DCI_DCSS_Errata_40-42_2017-0829.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.DCSS.v1.2.2017-1005",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/errata/v1_2_with-errata-8-12/DCI_DCSS_Erratum_43_2017-1005.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.DCSS.v1.2.2018-0124",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/errata/v1_2_with-errata-8-12/DCI_DCSS_Errata_44-45_2018-0124.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.DCSS.v1.3.2018-0627",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/specification/DCI_DCSS_Ver1-3_2018-0627.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.DCSS.v1.3.2018-1001",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/errata/v1_3/DCI_DCSS_Errata_1-9_2018-1001.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.DCSS.v1.3.2018-1207",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/errata/v1_3/DCI_DCSS_Errata_10-12_2018-1207.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.DCSS.v1.3.20190809",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/errata/v1_3/DCI_DCSS_Errata_13-17_2019-0809.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.DCSS.v1.3.20191219",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/errata/v1_3/DCI_DCSS_Errata_18-20_2019-1219.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.DCSS.v1.3.2020-0206",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/errata/v1_3/DCI_DCSS_Erratum_21_2020-0206.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.DCSS.v1.3.2020-0506",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/errata/v1_3/DCI_DCSS_Errata_22-28_2020-0506.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.DCSS.v1.3.2020-0714",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/errata/v1_3/DCI_DCSS_Errata_29_2020-0714.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.DCSS.v1.4.0.2020-0720",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/specification/DCI_DCSS_v1-4_20-July-2020.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.DCSS.v1.4.0.2020-0902",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/specification/DCI_DCSSv1-4_Errata_1-2_9-02-2020.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.DCSS.v1.4.0.2020-1118",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/specification/DCI_DCSSv1-4_Errata_3-15_11-18-2020.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.DCSS.v1.4.0.2021-0106",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/specification/DCI_DCSSv1-4_Errata_16-17_1-6-2021.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.DCSS.v1.4.0.2021-0324",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/specification/DCI_DCSSv1-4_Errata-18-19_2021-03-24.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.DCSS.v1.4.0.2021-0512",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/specification/DCI_DCSSv1-4_Errata_20-23_05-12-2021.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.M-DVD.2018-0627",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/announcements/DCI-Memo-On-Direct-View-Displays_2108-0627.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.M-HDR.2021-0701",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/announcements/DCI-Memo-on-HDR-Image-Testing_2021-0701.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.M-NIST.2020-0701",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/FIPS/DCI_Memo_on_NIST_Standards_transitions_and_Non-FIPS_mode_2020-07-01.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.M-RNG.2018-0511",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/announcements/DCI-Memo-on-RNG-Revocation_20180511.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.RP-HFR.2012-0928",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/Recommended_Practice/DCI_HFR_RP_2015-0716.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "DCI.S-TES.2019-0329",
-          "publisher": "DCI",
-          "field": "href",
-          "url": "https://www.dcimovies.com/announcements/DCI-Technology-Evolution-Statement_2019-0329.pdf",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "ISO.26428-1.20XX",
-          "publisher": "ISO",
-          "field": "href",
-          "url": "https://www.iso.org/standard/80068.html",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "ISO.26430-9.2009am1.20XX",
-          "publisher": "ISO",
-          "field": "href",
-          "url": "https://www.iso.org/standard/80075.html",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "ISO.26433.2009am1.20XX",
-          "publisher": "ISO",
-          "field": "href",
-          "url": "https://www.iso.org/standard/80072.html",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "LSI.WP-PSTA.200307",
-          "publisher": "Live Sound International",
-          "field": "href",
-          "url": "http://www.livesoundint.com/archives/2003/july/align/align.php",
+          "url": "https://doi.org/10.6028/NIST.FIPS.140-2",
           "message": "Unreachable (404)",
           "explanation": "The URL points to a resource that was not found (dead link).",
           "recommendedAction": "Double-check the URL or remove it if no longer valid.",
@@ -1113,10 +651,20 @@
           "riskLevel": "High"
         },
         {
-          "docId": "NIST.SP.800-57pt2r1",
+          "docId": "NIST.SP.800-38A-Add",
           "publisher": "NIST",
           "field": "href",
-          "url": "https://doi.org/10.6028/NIST.SP.800-57pt2r1",
+          "url": "https://doi.org/10.6028/NIST.SP.800-38A-Add",
+          "message": "Unreachable (404)",
+          "explanation": "The URL points to a resource that was not found (dead link).",
+          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
+          "riskLevel": "High"
+        },
+        {
+          "docId": "NIST.SP.800-38F",
+          "publisher": "NIST",
+          "field": "href",
+          "url": "https://csrc.nist.gov/pubs/sp/800/38/f/final",
           "message": "Unreachable (404)",
           "explanation": "The URL points to a resource that was not found (dead link).",
           "recommendedAction": "Double-check the URL or remove it if no longer valid.",
@@ -2283,180 +1831,6 @@
           "riskLevel": "High"
         }
       ],
-      "HPE_INVALID_CONSTANT": [
-        {
-          "docId": "AMPAS.P.2013-001",
-          "publisher": "AMPAS",
-          "field": "href",
-          "url": "http://j.mp/P-2013-001",
-          "message": "Unreachable (HPE_INVALID_CONSTANT)",
-          "explanation": "Malformed response or unexpected protocol from server.",
-          "recommendedAction": "Verify the URL manually. It may be non-HTTP content.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "AMPAS.S.2013-001",
-          "publisher": "AMPAS",
-          "field": "href",
-          "url": "http://j.mp/S-2013-001",
-          "message": "Unreachable (HPE_INVALID_CONSTANT)",
-          "explanation": "Malformed response or unexpected protocol from server.",
-          "recommendedAction": "Verify the URL manually. It may be non-HTTP content.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "AMPAS.S.2014-002",
-          "publisher": "AMPAS",
-          "field": "href",
-          "url": "http://j.mp/S-2014-002",
-          "message": "Unreachable (HPE_INVALID_CONSTANT)",
-          "explanation": "Malformed response or unexpected protocol from server.",
-          "recommendedAction": "Verify the URL manually. It may be non-HTTP content.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "AMPAS.S.2014-003",
-          "publisher": "AMPAS",
-          "field": "href",
-          "url": "http://j.mp/S-2014-003",
-          "message": "Unreachable (HPE_INVALID_CONSTANT)",
-          "explanation": "Malformed response or unexpected protocol from server.",
-          "recommendedAction": "Verify the URL manually. It may be non-HTTP content.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "AMPAS.S.2014-004",
-          "publisher": "AMPAS",
-          "field": "href",
-          "url": "http://j.mp/S-2014-004",
-          "message": "Unreachable (HPE_INVALID_CONSTANT)",
-          "explanation": "Malformed response or unexpected protocol from server.",
-          "recommendedAction": "Verify the URL manually. It may be non-HTTP content.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "AMPAS.S.2014-006",
-          "publisher": "AMPAS",
-          "field": "href",
-          "url": "http://j.mp/S-2014-006",
-          "message": "Unreachable (HPE_INVALID_CONSTANT)",
-          "explanation": "Malformed response or unexpected protocol from server.",
-          "recommendedAction": "Verify the URL manually. It may be non-HTTP content.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "AMPAS.TB.2014-001",
-          "publisher": "AMPAS",
-          "field": "href",
-          "url": "http://j.mp/TB-2014-001",
-          "message": "Unreachable (HPE_INVALID_CONSTANT)",
-          "explanation": "Malformed response or unexpected protocol from server.",
-          "recommendedAction": "Verify the URL manually. It may be non-HTTP content.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "AMPAS.TB.2014-002",
-          "publisher": "AMPAS",
-          "field": "href",
-          "url": "http://j.mp/TB-2014-002",
-          "message": "Unreachable (HPE_INVALID_CONSTANT)",
-          "explanation": "Malformed response or unexpected protocol from server.",
-          "recommendedAction": "Verify the URL manually. It may be non-HTTP content.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "AMPAS.TB.2014-004",
-          "publisher": "AMPAS",
-          "field": "href",
-          "url": "http://j.mp/TB-2014-004",
-          "message": "Unreachable (HPE_INVALID_CONSTANT)",
-          "explanation": "Malformed response or unexpected protocol from server.",
-          "recommendedAction": "Verify the URL manually. It may be non-HTTP content.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "AMPAS.TB.2014-005",
-          "publisher": "AMPAS",
-          "field": "href",
-          "url": "http://j.mp/TB-2014-005",
-          "message": "Unreachable (HPE_INVALID_CONSTANT)",
-          "explanation": "Malformed response or unexpected protocol from server.",
-          "recommendedAction": "Verify the URL manually. It may be non-HTTP content.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "AMPAS.TB.2014-006",
-          "publisher": "AMPAS",
-          "field": "href",
-          "url": "http://j.mp/TB-2014-006",
-          "message": "Unreachable (HPE_INVALID_CONSTANT)",
-          "explanation": "Malformed response or unexpected protocol from server.",
-          "recommendedAction": "Verify the URL manually. It may be non-HTTP content.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "AMPAS.TB.2014-007",
-          "publisher": "AMPAS",
-          "field": "href",
-          "url": "http://j.mp/TB-2014-007",
-          "message": "Unreachable (HPE_INVALID_CONSTANT)",
-          "explanation": "Malformed response or unexpected protocol from server.",
-          "recommendedAction": "Verify the URL manually. It may be non-HTTP content.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "AMPAS.TB.2014-010",
-          "publisher": "AMPAS",
-          "field": "href",
-          "url": "http://j.mp/TB-2014-010",
-          "message": "Unreachable (HPE_INVALID_CONSTANT)",
-          "explanation": "Malformed response or unexpected protocol from server.",
-          "recommendedAction": "Verify the URL manually. It may be non-HTTP content.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "AMPAS.TB.2014-012",
-          "publisher": "AMPAS",
-          "field": "href",
-          "url": "http://j.mp/TB-2014-012",
-          "message": "Unreachable (HPE_INVALID_CONSTANT)",
-          "explanation": "Malformed response or unexpected protocol from server.",
-          "recommendedAction": "Verify the URL manually. It may be non-HTTP content.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "AMPAS.TB.2014-013",
-          "publisher": "AMPAS",
-          "field": "href",
-          "url": "http://j.mp/TB-2014-013",
-          "message": "Unreachable (HPE_INVALID_CONSTANT)",
-          "explanation": "Malformed response or unexpected protocol from server.",
-          "recommendedAction": "Verify the URL manually. It may be non-HTTP content.",
-          "riskLevel": "Medium"
-        },
-        {
-          "docId": "AMPAS.TB.2018-001",
-          "publisher": "AMPAS",
-          "field": "href",
-          "url": "http://j.mp/TB-2018-001",
-          "message": "Unreachable (HPE_INVALID_CONSTANT)",
-          "explanation": "Malformed response or unexpected protocol from server.",
-          "recommendedAction": "Verify the URL manually. It may be non-HTTP content.",
-          "riskLevel": "Medium"
-        }
-      ],
-      "ERR_BAD_REQUEST": [
-        {
-          "docId": "IANA.STZ-DST",
-          "publisher": "IANA",
-          "field": "href",
-          "url": "ftp://ftp.iana.org/tz/tzdb-2016i/tz-link.htm",
-          "message": "Unreachable (ERR_BAD_REQUEST)",
-          "explanation": "The server could not understand the request (client error).",
-          "recommendedAction": "Validate the URL format or encoding.",
-          "riskLevel": "High"
-        }
-      ],
       "UNABLE_TO_VERIFY_LEAF_SIGNATURE": [
         {
           "docId": "ISO.15444-1.2004amd2.2009",
@@ -2474,7 +1848,7 @@
           "docId": "IST.157",
           "publisher": "Society for Imaging Science and Technology",
           "field": "href",
-          "url": "https://www.imaging.org/site/PDFS/Papers/1997/IST-0-4/157.pdf",
+          "url": "https://www.imaging.org/common/uploaded%20files/pdfs/Papers/1997/IST-0-4/157.pdf",
           "message": "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)",
           "explanation": "The URL is stuck in a redirect loop.",
           "recommendedAction": "Check the server config or redirect chain.",
@@ -2515,8 +1889,129 @@
       ]
     },
     "redirect": {
-      "undefined": [],
+      "undefined": [
+        {
+          "docId": "AMPAS.S.2014-002",
+          "publisher": "AMPAS",
+          "field": "href",
+          "url": "https://community.acescentral.com/uploads/short-url/hYpO9LQiUWVY3BFmfwgFstCM636.pdf",
+          "resolvedUrl": "https://community.acescentral.com/uploads/default/original/2X/7/7df94d163d72ee5c835a46c8643a75eb636eaa98.pdf",
+          "resolvedField": "resolvedHref",
+          "expectedResolved": "undefined",
+          "message": "resolved url mismatch"
+        },
+        {
+          "docId": "AMPAS.S.2014-006",
+          "publisher": "AMPAS",
+          "field": "href",
+          "url": "https://community.acescentral.com/uploads/short-url/iHX8xsDczlEg7l7OtIbJrbPvm4C.pdf",
+          "resolvedUrl": "https://community.acescentral.com/uploads/default/original/2X/8/831f148aa5dcdb10a569255fa2341975ad31848e.pdf",
+          "resolvedField": "resolvedHref",
+          "expectedResolved": "undefined",
+          "message": "resolved url mismatch"
+        },
+        {
+          "docId": "AMPAS.TB.2014-002",
+          "publisher": "AMPAS",
+          "field": "href",
+          "url": "https://community.acescentral.com/uploads/short-url/1jOxLydhL9yEBkc2womffYKqfFi.pdf",
+          "resolvedUrl": "https://community.acescentral.com/uploads/default/original/2X/0/093f97cf7804fd98dd8963b667c8bb24c768460c.pdf",
+          "resolvedField": "resolvedHref",
+          "expectedResolved": "undefined",
+          "message": "resolved url mismatch"
+        },
+        {
+          "docId": "AMPAS.TB.2014-006",
+          "publisher": "AMPAS",
+          "field": "href",
+          "url": "https://community.acescentral.com/uploads/short-url/azPBIL1oJicSCV08ro5AbzwUfQP.pdf",
+          "resolvedUrl": "https://community.acescentral.com/uploads/default/original/2X/4/4a22aafa9f3e294771eca75d387226a22a234fa7.pdf",
+          "resolvedField": "resolvedHref",
+          "expectedResolved": "undefined",
+          "message": "resolved url mismatch"
+        },
+        {
+          "docId": "DCI.DCSS.v1.2.2012-1010",
+          "publisher": "DCI",
+          "field": "href",
+          "url": "https://www.dcimovies.com/dci-specification?dcss-version=v1.2",
+          "resolvedUrl": "https://www.dcimovies.com/dci-specification/?dcss-version=v1.2",
+          "resolvedField": "resolvedHref",
+          "expectedResolved": "undefined",
+          "message": "resolved url mismatch"
+        },
+        {
+          "docId": "DCI.DCSS.v1.3.2018-0627",
+          "publisher": "DCI",
+          "field": "href",
+          "url": "https://www.dcimovies.com/dci-specification?dcss-version=v1.3",
+          "resolvedUrl": "https://www.dcimovies.com/dci-specification/?dcss-version=v1.3",
+          "resolvedField": "resolvedHref",
+          "expectedResolved": "undefined",
+          "message": "resolved url mismatch"
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.0.2020-0720",
+          "publisher": "DCI",
+          "field": "href",
+          "url": "https://www.dcimovies.com/dci-specification?dcss-version=v1.4",
+          "resolvedUrl": "https://www.dcimovies.com/dci-specification/?dcss-version=v1.4",
+          "resolvedField": "resolvedHref",
+          "expectedResolved": "undefined",
+          "message": "resolved url mismatch"
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.1.2021-1013",
+          "publisher": "DCI",
+          "field": "href",
+          "url": "https://www.dcimovies.com/dci-specification?dcss-version=v1.4.1",
+          "resolvedUrl": "https://www.dcimovies.com/dci-specification/?dcss-version=v1.4.1",
+          "resolvedField": "resolvedHref",
+          "expectedResolved": "undefined",
+          "message": "resolved url mismatch"
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.2.2022-0615",
+          "publisher": "DCI",
+          "field": "href",
+          "url": "https://www.dcimovies.com/dci-specification?dcss-version=v1.4.2",
+          "resolvedUrl": "https://www.dcimovies.com/dci-specification/?dcss-version=v1.4.2",
+          "resolvedField": "resolvedHref",
+          "expectedResolved": "undefined",
+          "message": "resolved url mismatch"
+        }
+      ],
       "other": [
+        {
+          "docId": "10.1088-0950-7671.1.3.302",
+          "publisher": "IOP Publishing Ltd",
+          "field": "href",
+          "url": "https://doi.org/10.1088/0950-7671/1/3/302",
+          "resolvedUrl": "https://validate.perfdrive.com/fb803c746e9148689b3984a31fccd902/?ssa=c6695bd1-3c18-4546-ac31-8d40d8ced231&ssb=16750275234&ssc=https%3A%2F%2Fiopscience.iop.org%2Farticle%2F10.1088%2F0950-7671%2F1%2F3%2F302&ssi=60e3291f-cnvj-4fd9-aa7a-3892fbf2e0e0&ssk=botmanager_support@radware.com&ssm=11308882741191339105127932725324&ssn=d7a8e45fbab46c0956bde720e7de866b9133b1b70832-504b-4369-b73ebd&sso=9e16a4af-63ecda1d6c5f6cc4b411b5c07bed88e54de564e4e96c1941&ssp=35378140781764742955176473823969139&ssq=74538979935543532743999355811538497821054&ssr=MTcyLjE4Mi4xOTIuMTQ3&sst=axios/1.12.0&ssu=&ssv=&ssw=&ssx=eyJyZCI6ImlvcC5vcmciLCJfX3V6bWYiOiI3ZjkwMDBiMWI3MDgzMi01MDRiLTQzNjktYjRhZi02M2VjZGExZDZjNWYxLTE3NjQ3OTkzNTUxNzIwLTAwMWUxYjllNGQ1NmYwYzAwNDcxMCIsInV6bXgiOiI3ZjkwMDBmM2FjZDkwMC1jNjdlLTRlZWQtYTc0ZS04ZjhkMDk2OGU3NDYxLTE3NjQ3OTkzNTUxNzIwLWYxZjVhMjAxZjY0MjIzNTQxMCJ9",
+          "resolvedField": "resolvedHref",
+          "expectedResolved": "https://iopscience.iop.org/article/10.1088/0950-7671/1/3/302",
+          "message": "resolved url mismatch"
+        },
+        {
+          "docId": "AMPAS.S.2019-001",
+          "publisher": "AMPAS",
+          "field": "href",
+          "url": "https://community.acescentral.com/uploads/short-url/i0MIjbnAz0VA7AwHO5j7SPOCBrU.pdf",
+          "resolvedUrl": "https://community.acescentral.com/uploads/default/original/2X/7/7e3dde6cb20d31eb1320759edc68ed3befa0bee6.pdf",
+          "resolvedField": "resolvedHref",
+          "expectedResolved": "https://www.dropbox.com/scl/fi/vgciceewplbtedvpu38f3/S-2019-001.pdf?rlkey=0jgyf44jcycvpbm4zk3iaf0mf&dl=0",
+          "message": "resolved url mismatch"
+        },
+        {
+          "docId": "ML3807.M56.1916",
+          "publisher": "MacMillan Co.",
+          "field": "href",
+          "url": "https://ia800204.us.archive.org/19/items/scienceofmusical00mill/scienceofmusical00mill.pdf",
+          "resolvedUrl": "https://ia801303.us.archive.org/1/items/scienceofmusical00mill/scienceofmusical00mill.pdf",
+          "resolvedField": "resolvedHref",
+          "expectedResolved": "https://ia601303.us.archive.org/1/items/scienceofmusical00mill/scienceofmusical00mill.pdf",
+          "message": "resolved url mismatch"
+        },
         {
           "docId": "SMPTE.RDD44.2017-11",
           "publisher": "SMPTE",
