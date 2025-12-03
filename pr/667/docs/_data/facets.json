@@ -1,10 +1,5 @@
 {
   "publisher": {
-    "ScienceDirect": 1,
-    "IOP Publishing Ltd": 1,
-    "Acoustical Society of America": 3,
-    "Physics Today": 1,
-    "IEEE": 24,
     "Society of American Archivists": 1,
     "AES": 20,
     "ANSI/AIIM": 1,
@@ -27,6 +22,11 @@
     "CTA": 1,
     "DCI": 45,
     "U.S. Defense Mapping Agency": 1,
+    "ScienceDirect": 1,
+    "Physics Today": 1,
+    "IOP Publishing Ltd": 1,
+    "IEEE": 24,
+    "Acoustical Society of America": 3,
     "Institute of Noise Control Engineering of the USA": 1,
     "DPP": 3,
     "EBU": 17,

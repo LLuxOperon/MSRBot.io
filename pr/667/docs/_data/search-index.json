@@ -1,569 +1,5 @@
 [
   {
-    "id": "0141-3910.90.90019-4",
-    "title": "Archival preservation of photographic films—A perspective",
-    "label": "Polymer Degradation and Stability Volume 29, Issue 1, 1990, Pages 3-29",
-    "publisher": "ScienceDirect",
-    "docType": "Journal Article",
-    "docTypeAbr": null,
-    "status": [
-      "active"
-    ],
-    "statusFlags": {
-      "active": true,
-      "latestVersion": false,
-      "superseded": false,
-      "withdrawn": false,
-      "draft": false,
-      "stabilized": false,
-      "reaffirmed": false,
-      "amended": false,
-      "versionless": false
-    },
-    "pubDate": "",
-    "pubTs": null,
-    "year": null,
-    "hasDoi": true,
-    "doi": "10.1016/0141-3910(90)90019-4",
-    "hasReleaseTag": false,
-    "authors": [
-      "A. Tulsi Ram"
-    ],
-    "group": [],
-    "groupNames": [],
-    "currentWork": [],
-    "hasCurrentWork": false,
-    "keywords": [],
-    "keywordsSearch": [
-      "Archival preservation of photographic films—A perspective",
-      "Polymer Degradation and Stability Volume 29, Issue 1, 1990, Pages 3-29",
-      "A. Tulsi Ram"
-    ],
-    "href": "https://doi.org/10.1016/0141-3910(90)90019-4",
-    "docBase": null,
-    "docBaseLabel": null
-  },
-  {
-    "id": "0950-7671.1.3.302",
-    "title": "The measurement of photographic density",
-    "label": "Journal of Scientific Instruments, Volume 1, Number 3",
-    "publisher": "IOP Publishing Ltd",
-    "docType": "Journal Article",
-    "docTypeAbr": null,
-    "status": [
-      "active"
-    ],
-    "statusFlags": {
-      "active": true,
-      "latestVersion": false,
-      "superseded": false,
-      "withdrawn": false,
-      "draft": false,
-      "stabilized": false,
-      "reaffirmed": false,
-      "amended": false,
-      "versionless": false
-    },
-    "pubDate": "1923-01-01",
-    "pubTs": -1483228800000,
-    "year": 1923,
-    "hasDoi": true,
-    "doi": "10.1088/0950-7671/1/3/302",
-    "hasReleaseTag": false,
-    "authors": [
-      "A J Bull",
-      "H Mills Cartwrigh"
-    ],
-    "group": [],
-    "groupNames": [],
-    "currentWork": [],
-    "hasCurrentWork": false,
-    "keywords": [],
-    "keywordsSearch": [
-      "The measurement of photographic density",
-      "Journal of Scientific Instruments, Volume 1, Number 3",
-      "A J Bull",
-      "H Mills Cartwrigh"
-    ],
-    "href": "https://doi.org/10.1088/0950-7671/1/3/302",
-    "docBase": null,
-    "docBaseLabel": null
-  },
-  {
-    "id": "1.1915182",
-    "title": "Speech Power and Its Measurement",
-    "label": "J. Acoust. Soc. of Amer., vol. 1, no. 2, pp. 1, Jan. 1930",
-    "publisher": "Acoustical Society of America",
-    "docType": "Journal Article",
-    "docTypeAbr": null,
-    "status": [
-      "active"
-    ],
-    "statusFlags": {
-      "active": true,
-      "latestVersion": false,
-      "superseded": false,
-      "withdrawn": false,
-      "draft": false,
-      "stabilized": false,
-      "reaffirmed": false,
-      "amended": false,
-      "versionless": false
-    },
-    "pubDate": "1930-01-01",
-    "pubTs": -1262304000000,
-    "year": 1930,
-    "hasDoi": true,
-    "doi": "10.1121/1.1915182",
-    "hasReleaseTag": false,
-    "authors": [
-      "L. J. Sivian"
-    ],
-    "group": [],
-    "groupNames": [],
-    "currentWork": [],
-    "hasCurrentWork": false,
-    "keywords": [],
-    "keywordsSearch": [
-      "Speech Power and Its Measurement",
-      "J. Acoust. Soc. of Amer., vol. 1, no. 2, pp. 1, Jan. 1930",
-      "L. J. Sivian"
-    ],
-    "href": "https://doi.org/10.1121/1.1915182",
-    "docBase": null,
-    "docBaseLabel": null
-  },
-  {
-    "id": "1.1915951",
-    "title": "On Distortion in Sound Reproduction from Phonograph Records",
-    "label": "Jour. Acous. Soc. Amer., vol. 10, pp. 14-28, July 1938.",
-    "publisher": "Acoustical Society of America",
-    "docType": "Journal Article",
-    "docTypeAbr": null,
-    "status": [
-      "active"
-    ],
-    "statusFlags": {
-      "active": true,
-      "latestVersion": false,
-      "superseded": false,
-      "withdrawn": false,
-      "draft": false,
-      "stabilized": false,
-      "reaffirmed": false,
-      "amended": false,
-      "versionless": false
-    },
-    "pubDate": "1938-01-01",
-    "pubTs": -1009843200000,
-    "year": 1938,
-    "hasDoi": true,
-    "doi": "10.1121/1.1915951",
-    "hasReleaseTag": false,
-    "authors": [
-      "J. A. Pierce",
-      "F. V. Hunt"
-    ],
-    "group": [],
-    "groupNames": [],
-    "currentWork": [],
-    "hasCurrentWork": false,
-    "keywords": [],
-    "keywordsSearch": [
-      "On Distortion in Sound Reproduction from Phonograph Records",
-      "Jour. Acous. Soc. Amer., vol. 10, pp. 14-28, July 1938.",
-      "J. A. Pierce",
-      "F. V. Hunt"
-    ],
-    "href": "https://doi.org/10.1121/1.1915951",
-    "docBase": null,
-    "docBaseLabel": null
-  },
-  {
-    "id": "1.1916111",
-    "title": "A Theory of Tracing Distortion in Sound Reproduction from Phonograph Records",
-    "label": "Jour. Acous. Soc. Amer., vol. 12, pp. 348-365, January 1941",
-    "publisher": "Acoustical Society of America",
-    "docType": "Journal Article",
-    "docTypeAbr": null,
-    "status": [
-      "active"
-    ],
-    "statusFlags": {
-      "active": true,
-      "latestVersion": false,
-      "superseded": false,
-      "withdrawn": false,
-      "draft": false,
-      "stabilized": false,
-      "reaffirmed": false,
-      "amended": false,
-      "versionless": false
-    },
-    "pubDate": "1941-01-01",
-    "pubTs": -915148800000,
-    "year": 1941,
-    "hasDoi": true,
-    "doi": "10.1121/1.1916111",
-    "hasReleaseTag": false,
-    "authors": [
-      "W. D. Lewis",
-      "F. V. Hunt"
-    ],
-    "group": [],
-    "groupNames": [],
-    "currentWork": [],
-    "hasCurrentWork": false,
-    "keywords": [],
-    "keywordsSearch": [
-      "A Theory of Tracing Distortion in Sound Reproduction from Phonograph Records",
-      "Jour. Acous. Soc. Amer., vol. 12, pp. 348-365, January 1941",
-      "W. D. Lewis",
-      "F. V. Hunt"
-    ],
-    "href": "https://doi.org/10.1121/1.1916111",
-    "docBase": null,
-    "docBaseLabel": null
-  },
-  {
-    "id": "1.3061757",
-    "title": "Principles of Color Photography",
-    "label": "Physics Today 7, 9, 18 (1954)",
-    "publisher": "Physics Today",
-    "docType": "Journal Article",
-    "docTypeAbr": null,
-    "status": [
-      "active"
-    ],
-    "statusFlags": {
-      "active": true,
-      "latestVersion": false,
-      "superseded": false,
-      "withdrawn": false,
-      "draft": false,
-      "stabilized": false,
-      "reaffirmed": false,
-      "amended": false,
-      "versionless": false
-    },
-    "pubDate": "1954-09-01",
-    "pubTs": -483926400000,
-    "year": 1954,
-    "hasDoi": true,
-    "doi": "10.1063/1.3061757",
-    "hasReleaseTag": false,
-    "authors": [
-      "Ralph M. Evans",
-      "W. T. Hanson Jr",
-      "W. Lyle Brewer"
-    ],
-    "group": [],
-    "groupNames": [],
-    "currentWork": [],
-    "hasCurrentWork": false,
-    "keywords": [],
-    "keywordsSearch": [
-      "Principles of Color Photography",
-      "Physics Today 7, 9, 18 (1954)",
-      "Ralph M. Evans",
-      "W. T. Hanson Jr",
-      "W. Lyle Brewer"
-    ],
-    "href": "https://doi.org/10.1063/1.3061757",
-    "docBase": null,
-    "docBaseLabel": null
-  },
-  {
-    "id": "20.105066",
-    "title": "Archival stability of IBM 3480/3490 cartridge tapes",
-    "label": "IEEE Transactions on Magnetics ( Volume: 27, Issue: 5, September 1991)",
-    "publisher": "IEEE",
-    "docType": "Journal Article",
-    "docTypeAbr": null,
-    "status": [
-      "active"
-    ],
-    "statusFlags": {
-      "active": true,
-      "latestVersion": false,
-      "superseded": false,
-      "withdrawn": false,
-      "draft": false,
-      "stabilized": false,
-      "reaffirmed": false,
-      "amended": false,
-      "versionless": false
-    },
-    "pubDate": "1991-09-01",
-    "pubTs": 683683200000,
-    "year": 1991,
-    "hasDoi": true,
-    "doi": "10.1109/20.105066",
-    "hasReleaseTag": false,
-    "authors": [
-      "R.L. Bradshaw",
-      "T.W. Reid"
-    ],
-    "group": [],
-    "groupNames": [],
-    "currentWork": [],
-    "hasCurrentWork": false,
-    "keywords": [],
-    "keywordsSearch": [
-      "Archival stability of IBM 3480/3490 cartridge tapes",
-      "IEEE Transactions on Magnetics ( Volume: 27, Issue: 5, September 1991)",
-      "R.L. Bradshaw",
-      "T.W. Reid"
-    ],
-    "href": "https://doi.org/10.1109/20.105066",
-    "docBase": null,
-    "docBaseLabel": null
-  },
-  {
-    "id": "20.179492",
-    "title": "A detailed study of the environmental stability of metal particle tapes",
-    "label": "IEEE Transactions on Magnetics ( Volume: 28, Issue: 5, September 1992)",
-    "publisher": "IEEE",
-    "docType": "Journal Article",
-    "docTypeAbr": null,
-    "status": [
-      "active"
-    ],
-    "statusFlags": {
-      "active": true,
-      "latestVersion": false,
-      "superseded": false,
-      "withdrawn": false,
-      "draft": false,
-      "stabilized": false,
-      "reaffirmed": false,
-      "amended": false,
-      "versionless": false
-    },
-    "pubDate": "1992-09-01",
-    "pubTs": 715305600000,
-    "year": 1992,
-    "hasDoi": true,
-    "doi": "10.1109/20.179492",
-    "hasReleaseTag": false,
-    "authors": [
-      "M.C.A. Mathur",
-      "G.F. Hudson",
-      "L.D. Hackett"
-    ],
-    "group": [],
-    "groupNames": [],
-    "currentWork": [],
-    "hasCurrentWork": false,
-    "keywords": [],
-    "keywordsSearch": [
-      "A detailed study of the environmental stability of metal particle tapes",
-      "IEEE Transactions on Magnetics ( Volume: 28, Issue: 5, September 1992)",
-      "M.C.A. Mathur",
-      "G.F. Hudson",
-      "L.D. Hackett"
-    ],
-    "href": "https://doi.org/10.1109/20.179492",
-    "docBase": null,
-    "docBaseLabel": null
-  },
-  {
-    "id": "20.179493",
-    "title": "Estimating the archival life of metal particulate tape",
-    "label": "IEEE Transactions on Magnetics ( Volume: 28, Issue: 5, September 1992)",
-    "publisher": "IEEE",
-    "docType": "Journal Article",
-    "docTypeAbr": null,
-    "status": [
-      "active"
-    ],
-    "statusFlags": {
-      "active": true,
-      "latestVersion": false,
-      "superseded": false,
-      "withdrawn": false,
-      "draft": false,
-      "stabilized": false,
-      "reaffirmed": false,
-      "amended": false,
-      "versionless": false
-    },
-    "pubDate": "1992-09-01",
-    "pubTs": 715305600000,
-    "year": 1992,
-    "hasDoi": true,
-    "doi": "10.1109/20.179493",
-    "hasReleaseTag": false,
-    "authors": [
-      "Y. Okazaki",
-      "K. Hara",
-      "T. Kawashima",
-      "A. Sato",
-      "T. Hirano"
-    ],
-    "group": [],
-    "groupNames": [],
-    "currentWork": [],
-    "hasCurrentWork": false,
-    "keywords": [],
-    "keywordsSearch": [
-      "Estimating the archival life of metal particulate tape",
-      "IEEE Transactions on Magnetics ( Volume: 28, Issue: 5, September 1992)",
-      "Y. Okazaki",
-      "K. Hara",
-      "T. Kawashima",
-      "A. Sato",
-      "T. Hirano"
-    ],
-    "href": "https://doi.org/10.1109/20.179493",
-    "docBase": null,
-    "docBaseLabel": null
-  },
-  {
-    "id": "20.179494",
-    "title": "Magnetic and magneto-photoellipsometric evaluation of corrosion in metal-particle media",
-    "label": "IEEE Transactions on Magnetics ( Volume: 28, Issue: 5, September 1992)",
-    "publisher": "IEEE",
-    "docType": "Journal Article",
-    "docTypeAbr": null,
-    "status": [
-      "active"
-    ],
-    "statusFlags": {
-      "active": true,
-      "latestVersion": false,
-      "superseded": false,
-      "withdrawn": false,
-      "draft": false,
-      "stabilized": false,
-      "reaffirmed": false,
-      "amended": false,
-      "versionless": false
-    },
-    "pubDate": "1992-09-01",
-    "pubTs": 715305600000,
-    "year": 1992,
-    "hasDoi": true,
-    "doi": "10.1109/20.179494",
-    "hasReleaseTag": false,
-    "authors": [
-      "M.R. Parker",
-      "S. Venkataram",
-      "D. DeSmet"
-    ],
-    "group": [],
-    "groupNames": [],
-    "currentWork": [],
-    "hasCurrentWork": false,
-    "keywords": [],
-    "keywordsSearch": [
-      "Magnetic and magneto-photoellipsometric evaluation of corrosion in metal-particle media",
-      "IEEE Transactions on Magnetics ( Volume: 28, Issue: 5, September 1992)",
-      "M.R. Parker",
-      "S. Venkataram",
-      "D. DeSmet"
-    ],
-    "href": "https://doi.org/10.1109/20.179494",
-    "docBase": null,
-    "docBaseLabel": null
-  },
-  {
-    "id": "20.278927",
-    "title": "Corrosion study of metal particle, metal film, and Ba-ferrite tape",
-    "label": "IEEE Transactions on Magnetics ( Volume: 27, Issue: 6, November 1991)",
-    "publisher": "IEEE",
-    "docType": "Journal Article",
-    "docTypeAbr": null,
-    "status": [
-      "active"
-    ],
-    "statusFlags": {
-      "active": true,
-      "latestVersion": false,
-      "superseded": false,
-      "withdrawn": false,
-      "draft": false,
-      "stabilized": false,
-      "reaffirmed": false,
-      "amended": false,
-      "versionless": false
-    },
-    "pubDate": "1991-11-01",
-    "pubTs": 688953600000,
-    "year": 1991,
-    "hasDoi": true,
-    "doi": "10.1109/20.278927",
-    "hasReleaseTag": false,
-    "authors": [
-      "D.E. Speliotis",
-      "K.J. Peter"
-    ],
-    "group": [],
-    "groupNames": [],
-    "currentWork": [],
-    "hasCurrentWork": false,
-    "keywords": [],
-    "keywordsSearch": [
-      "Corrosion study of metal particle, metal film, and Ba-ferrite tape",
-      "IEEE Transactions on Magnetics ( Volume: 27, Issue: 6, November 1991)",
-      "D.E. Speliotis",
-      "K.J. Peter"
-    ],
-    "href": "https://doi.org/10.1109/20.278927",
-    "docBase": null,
-    "docBaseLabel": null
-  },
-  {
-    "id": "20.312264",
-    "title": "Heat and moisture diffusion in magnetic tape packs",
-    "label": "IEEE Transactions on Magnetics ( Volume: 30, Issue: 2, March 1994)",
-    "publisher": "IEEE",
-    "docType": "Journal Article",
-    "docTypeAbr": null,
-    "status": [
-      "active"
-    ],
-    "statusFlags": {
-      "active": true,
-      "latestVersion": false,
-      "superseded": false,
-      "withdrawn": false,
-      "draft": false,
-      "stabilized": false,
-      "reaffirmed": false,
-      "amended": false,
-      "versionless": false
-    },
-    "pubDate": "1994-03-01",
-    "pubTs": 762480000000,
-    "year": 1994,
-    "hasDoi": true,
-    "doi": "10.1109/20.312264",
-    "hasReleaseTag": false,
-    "authors": [
-      "M. Vos",
-      "G. Ashton",
-      "J. Van Bogart",
-      "R. Ensminger"
-    ],
-    "group": [],
-    "groupNames": [],
-    "currentWork": [],
-    "hasCurrentWork": false,
-    "keywords": [],
-    "keywordsSearch": [
-      "Heat and moisture diffusion in magnetic tape packs",
-      "IEEE Transactions on Magnetics ( Volume: 30, Issue: 2, March 1994)",
-      "M. Vos",
-      "G. Ashton",
-      "J. Van Bogart",
-      "R. Ensminger"
-    ],
-    "href": "https://doi.org/10.1109/20.312264",
-    "docBase": null,
-    "docBaseLabel": null
-  },
-  {
     "id": "40290752",
     "title": "The Preservation of Motion-Picture Film",
     "label": "Vol. 30, No. 3 (Jul., 1967), pp. 517-525 (9 pages)",
@@ -5844,6 +5280,570 @@
     "href": "https://apps.dtic.mil/sti/citations/ADA280358",
     "docBase": "U.S. DEFENSE MAPPING AGENCY|TR|8350.2|",
     "docBaseLabel": "U.S. DEFENSE MAPPING AGENCY TR 8350.2"
+  },
+  {
+    "id": "DOI.10.1016-0141-3910.90.90019-4",
+    "title": "Archival preservation of photographic films—A perspective",
+    "label": "Polymer Degradation and Stability Volume 29, Issue 1, 1990, Pages 3-29",
+    "publisher": "ScienceDirect",
+    "docType": "Journal Article",
+    "docTypeAbr": null,
+    "status": [
+      "active"
+    ],
+    "statusFlags": {
+      "active": true,
+      "latestVersion": false,
+      "superseded": false,
+      "withdrawn": false,
+      "draft": false,
+      "stabilized": false,
+      "reaffirmed": false,
+      "amended": false,
+      "versionless": false
+    },
+    "pubDate": "",
+    "pubTs": null,
+    "year": null,
+    "hasDoi": true,
+    "doi": "10.1016/0141-3910(90)90019-4",
+    "hasReleaseTag": false,
+    "authors": [
+      "A. Tulsi Ram"
+    ],
+    "group": [],
+    "groupNames": [],
+    "currentWork": [],
+    "hasCurrentWork": false,
+    "keywords": [],
+    "keywordsSearch": [
+      "Archival preservation of photographic films—A perspective",
+      "Polymer Degradation and Stability Volume 29, Issue 1, 1990, Pages 3-29",
+      "A. Tulsi Ram"
+    ],
+    "href": "https://doi.org/10.1016/0141-3910(90)90019-4",
+    "docBase": null,
+    "docBaseLabel": null
+  },
+  {
+    "id": "DOI.10.1063-1.3061757",
+    "title": "Principles of Color Photography",
+    "label": "Physics Today 7, 9, 18 (1954)",
+    "publisher": "Physics Today",
+    "docType": "Journal Article",
+    "docTypeAbr": null,
+    "status": [
+      "active"
+    ],
+    "statusFlags": {
+      "active": true,
+      "latestVersion": false,
+      "superseded": false,
+      "withdrawn": false,
+      "draft": false,
+      "stabilized": false,
+      "reaffirmed": false,
+      "amended": false,
+      "versionless": false
+    },
+    "pubDate": "1954-09-01",
+    "pubTs": -483926400000,
+    "year": 1954,
+    "hasDoi": true,
+    "doi": "10.1063/1.3061757",
+    "hasReleaseTag": false,
+    "authors": [
+      "Ralph M. Evans",
+      "W. T. Hanson Jr",
+      "W. Lyle Brewer"
+    ],
+    "group": [],
+    "groupNames": [],
+    "currentWork": [],
+    "hasCurrentWork": false,
+    "keywords": [],
+    "keywordsSearch": [
+      "Principles of Color Photography",
+      "Physics Today 7, 9, 18 (1954)",
+      "Ralph M. Evans",
+      "W. T. Hanson Jr",
+      "W. Lyle Brewer"
+    ],
+    "href": "https://doi.org/10.1063/1.3061757",
+    "docBase": null,
+    "docBaseLabel": null
+  },
+  {
+    "id": "DOI.10.1088-0950-7671.1.3.302",
+    "title": "The measurement of photographic density",
+    "label": "Journal of Scientific Instruments, Volume 1, Number 3",
+    "publisher": "IOP Publishing Ltd",
+    "docType": "Journal Article",
+    "docTypeAbr": null,
+    "status": [
+      "active"
+    ],
+    "statusFlags": {
+      "active": true,
+      "latestVersion": false,
+      "superseded": false,
+      "withdrawn": false,
+      "draft": false,
+      "stabilized": false,
+      "reaffirmed": false,
+      "amended": false,
+      "versionless": false
+    },
+    "pubDate": "1923-01-01",
+    "pubTs": -1483228800000,
+    "year": 1923,
+    "hasDoi": true,
+    "doi": "10.1088/0950-7671/1/3/302",
+    "hasReleaseTag": false,
+    "authors": [
+      "A J Bull",
+      "H Mills Cartwrigh"
+    ],
+    "group": [],
+    "groupNames": [],
+    "currentWork": [],
+    "hasCurrentWork": false,
+    "keywords": [],
+    "keywordsSearch": [
+      "The measurement of photographic density",
+      "Journal of Scientific Instruments, Volume 1, Number 3",
+      "A J Bull",
+      "H Mills Cartwrigh"
+    ],
+    "href": "https://doi.org/10.1088/0950-7671/1/3/302",
+    "docBase": null,
+    "docBaseLabel": null
+  },
+  {
+    "id": "DOI.10.1109-20.105066",
+    "title": "Archival stability of IBM 3480/3490 cartridge tapes",
+    "label": "IEEE Transactions on Magnetics ( Volume: 27, Issue: 5, September 1991)",
+    "publisher": "IEEE",
+    "docType": "Journal Article",
+    "docTypeAbr": null,
+    "status": [
+      "active"
+    ],
+    "statusFlags": {
+      "active": true,
+      "latestVersion": false,
+      "superseded": false,
+      "withdrawn": false,
+      "draft": false,
+      "stabilized": false,
+      "reaffirmed": false,
+      "amended": false,
+      "versionless": false
+    },
+    "pubDate": "1991-09-01",
+    "pubTs": 683683200000,
+    "year": 1991,
+    "hasDoi": true,
+    "doi": "10.1109/20.105066",
+    "hasReleaseTag": false,
+    "authors": [
+      "R.L. Bradshaw",
+      "T.W. Reid"
+    ],
+    "group": [],
+    "groupNames": [],
+    "currentWork": [],
+    "hasCurrentWork": false,
+    "keywords": [],
+    "keywordsSearch": [
+      "Archival stability of IBM 3480/3490 cartridge tapes",
+      "IEEE Transactions on Magnetics ( Volume: 27, Issue: 5, September 1991)",
+      "R.L. Bradshaw",
+      "T.W. Reid"
+    ],
+    "href": "https://doi.org/10.1109/20.105066",
+    "docBase": null,
+    "docBaseLabel": null
+  },
+  {
+    "id": "DOI.10.1109-20.179492",
+    "title": "A detailed study of the environmental stability of metal particle tapes",
+    "label": "IEEE Transactions on Magnetics ( Volume: 28, Issue: 5, September 1992)",
+    "publisher": "IEEE",
+    "docType": "Journal Article",
+    "docTypeAbr": null,
+    "status": [
+      "active"
+    ],
+    "statusFlags": {
+      "active": true,
+      "latestVersion": false,
+      "superseded": false,
+      "withdrawn": false,
+      "draft": false,
+      "stabilized": false,
+      "reaffirmed": false,
+      "amended": false,
+      "versionless": false
+    },
+    "pubDate": "1992-09-01",
+    "pubTs": 715305600000,
+    "year": 1992,
+    "hasDoi": true,
+    "doi": "10.1109/20.179492",
+    "hasReleaseTag": false,
+    "authors": [
+      "M.C.A. Mathur",
+      "G.F. Hudson",
+      "L.D. Hackett"
+    ],
+    "group": [],
+    "groupNames": [],
+    "currentWork": [],
+    "hasCurrentWork": false,
+    "keywords": [],
+    "keywordsSearch": [
+      "A detailed study of the environmental stability of metal particle tapes",
+      "IEEE Transactions on Magnetics ( Volume: 28, Issue: 5, September 1992)",
+      "M.C.A. Mathur",
+      "G.F. Hudson",
+      "L.D. Hackett"
+    ],
+    "href": "https://doi.org/10.1109/20.179492",
+    "docBase": null,
+    "docBaseLabel": null
+  },
+  {
+    "id": "DOI.10.1109-20.179493",
+    "title": "Estimating the archival life of metal particulate tape",
+    "label": "IEEE Transactions on Magnetics ( Volume: 28, Issue: 5, September 1992)",
+    "publisher": "IEEE",
+    "docType": "Journal Article",
+    "docTypeAbr": null,
+    "status": [
+      "active"
+    ],
+    "statusFlags": {
+      "active": true,
+      "latestVersion": false,
+      "superseded": false,
+      "withdrawn": false,
+      "draft": false,
+      "stabilized": false,
+      "reaffirmed": false,
+      "amended": false,
+      "versionless": false
+    },
+    "pubDate": "1992-09-01",
+    "pubTs": 715305600000,
+    "year": 1992,
+    "hasDoi": true,
+    "doi": "10.1109/20.179493",
+    "hasReleaseTag": false,
+    "authors": [
+      "Y. Okazaki",
+      "K. Hara",
+      "T. Kawashima",
+      "A. Sato",
+      "T. Hirano"
+    ],
+    "group": [],
+    "groupNames": [],
+    "currentWork": [],
+    "hasCurrentWork": false,
+    "keywords": [],
+    "keywordsSearch": [
+      "Estimating the archival life of metal particulate tape",
+      "IEEE Transactions on Magnetics ( Volume: 28, Issue: 5, September 1992)",
+      "Y. Okazaki",
+      "K. Hara",
+      "T. Kawashima",
+      "A. Sato",
+      "T. Hirano"
+    ],
+    "href": "https://doi.org/10.1109/20.179493",
+    "docBase": null,
+    "docBaseLabel": null
+  },
+  {
+    "id": "DOI.10.1109-20.179494",
+    "title": "Magnetic and magneto-photoellipsometric evaluation of corrosion in metal-particle media",
+    "label": "IEEE Transactions on Magnetics ( Volume: 28, Issue: 5, September 1992)",
+    "publisher": "IEEE",
+    "docType": "Journal Article",
+    "docTypeAbr": null,
+    "status": [
+      "active"
+    ],
+    "statusFlags": {
+      "active": true,
+      "latestVersion": false,
+      "superseded": false,
+      "withdrawn": false,
+      "draft": false,
+      "stabilized": false,
+      "reaffirmed": false,
+      "amended": false,
+      "versionless": false
+    },
+    "pubDate": "1992-09-01",
+    "pubTs": 715305600000,
+    "year": 1992,
+    "hasDoi": true,
+    "doi": "10.1109/20.179494",
+    "hasReleaseTag": false,
+    "authors": [
+      "M.R. Parker",
+      "S. Venkataram",
+      "D. DeSmet"
+    ],
+    "group": [],
+    "groupNames": [],
+    "currentWork": [],
+    "hasCurrentWork": false,
+    "keywords": [],
+    "keywordsSearch": [
+      "Magnetic and magneto-photoellipsometric evaluation of corrosion in metal-particle media",
+      "IEEE Transactions on Magnetics ( Volume: 28, Issue: 5, September 1992)",
+      "M.R. Parker",
+      "S. Venkataram",
+      "D. DeSmet"
+    ],
+    "href": "https://doi.org/10.1109/20.179494",
+    "docBase": null,
+    "docBaseLabel": null
+  },
+  {
+    "id": "DOI.10.1109-20.278927",
+    "title": "Corrosion study of metal particle, metal film, and Ba-ferrite tape",
+    "label": "IEEE Transactions on Magnetics ( Volume: 27, Issue: 6, November 1991)",
+    "publisher": "IEEE",
+    "docType": "Journal Article",
+    "docTypeAbr": null,
+    "status": [
+      "active"
+    ],
+    "statusFlags": {
+      "active": true,
+      "latestVersion": false,
+      "superseded": false,
+      "withdrawn": false,
+      "draft": false,
+      "stabilized": false,
+      "reaffirmed": false,
+      "amended": false,
+      "versionless": false
+    },
+    "pubDate": "1991-11-01",
+    "pubTs": 688953600000,
+    "year": 1991,
+    "hasDoi": true,
+    "doi": "10.1109/20.278927",
+    "hasReleaseTag": false,
+    "authors": [
+      "D.E. Speliotis",
+      "K.J. Peter"
+    ],
+    "group": [],
+    "groupNames": [],
+    "currentWork": [],
+    "hasCurrentWork": false,
+    "keywords": [],
+    "keywordsSearch": [
+      "Corrosion study of metal particle, metal film, and Ba-ferrite tape",
+      "IEEE Transactions on Magnetics ( Volume: 27, Issue: 6, November 1991)",
+      "D.E. Speliotis",
+      "K.J. Peter"
+    ],
+    "href": "https://doi.org/10.1109/20.278927",
+    "docBase": null,
+    "docBaseLabel": null
+  },
+  {
+    "id": "DOI.10.1109-20.312264",
+    "title": "Heat and moisture diffusion in magnetic tape packs",
+    "label": "IEEE Transactions on Magnetics ( Volume: 30, Issue: 2, March 1994)",
+    "publisher": "IEEE",
+    "docType": "Journal Article",
+    "docTypeAbr": null,
+    "status": [
+      "active"
+    ],
+    "statusFlags": {
+      "active": true,
+      "latestVersion": false,
+      "superseded": false,
+      "withdrawn": false,
+      "draft": false,
+      "stabilized": false,
+      "reaffirmed": false,
+      "amended": false,
+      "versionless": false
+    },
+    "pubDate": "1994-03-01",
+    "pubTs": 762480000000,
+    "year": 1994,
+    "hasDoi": true,
+    "doi": "10.1109/20.312264",
+    "hasReleaseTag": false,
+    "authors": [
+      "M. Vos",
+      "G. Ashton",
+      "J. Van Bogart",
+      "R. Ensminger"
+    ],
+    "group": [],
+    "groupNames": [],
+    "currentWork": [],
+    "hasCurrentWork": false,
+    "keywords": [],
+    "keywordsSearch": [
+      "Heat and moisture diffusion in magnetic tape packs",
+      "IEEE Transactions on Magnetics ( Volume: 30, Issue: 2, March 1994)",
+      "M. Vos",
+      "G. Ashton",
+      "J. Van Bogart",
+      "R. Ensminger"
+    ],
+    "href": "https://doi.org/10.1109/20.312264",
+    "docBase": null,
+    "docBaseLabel": null
+  },
+  {
+    "id": "DOI.10.1121-1.1915182",
+    "title": "Speech Power and Its Measurement",
+    "label": "J. Acoust. Soc. of Amer., vol. 1, no. 2, pp. 1, Jan. 1930",
+    "publisher": "Acoustical Society of America",
+    "docType": "Journal Article",
+    "docTypeAbr": null,
+    "status": [
+      "active"
+    ],
+    "statusFlags": {
+      "active": true,
+      "latestVersion": false,
+      "superseded": false,
+      "withdrawn": false,
+      "draft": false,
+      "stabilized": false,
+      "reaffirmed": false,
+      "amended": false,
+      "versionless": false
+    },
+    "pubDate": "1930-01-01",
+    "pubTs": -1262304000000,
+    "year": 1930,
+    "hasDoi": true,
+    "doi": "10.1121/1.1915182",
+    "hasReleaseTag": false,
+    "authors": [
+      "L. J. Sivian"
+    ],
+    "group": [],
+    "groupNames": [],
+    "currentWork": [],
+    "hasCurrentWork": false,
+    "keywords": [],
+    "keywordsSearch": [
+      "Speech Power and Its Measurement",
+      "J. Acoust. Soc. of Amer., vol. 1, no. 2, pp. 1, Jan. 1930",
+      "L. J. Sivian"
+    ],
+    "href": "https://doi.org/10.1121/1.1915182",
+    "docBase": null,
+    "docBaseLabel": null
+  },
+  {
+    "id": "DOI.10.1121-1.1915951",
+    "title": "On Distortion in Sound Reproduction from Phonograph Records",
+    "label": "Jour. Acous. Soc. Amer., vol. 10, pp. 14-28, July 1938.",
+    "publisher": "Acoustical Society of America",
+    "docType": "Journal Article",
+    "docTypeAbr": null,
+    "status": [
+      "active"
+    ],
+    "statusFlags": {
+      "active": true,
+      "latestVersion": false,
+      "superseded": false,
+      "withdrawn": false,
+      "draft": false,
+      "stabilized": false,
+      "reaffirmed": false,
+      "amended": false,
+      "versionless": false
+    },
+    "pubDate": "1938-01-01",
+    "pubTs": -1009843200000,
+    "year": 1938,
+    "hasDoi": true,
+    "doi": "10.1121/1.1915951",
+    "hasReleaseTag": false,
+    "authors": [
+      "J. A. Pierce",
+      "F. V. Hunt"
+    ],
+    "group": [],
+    "groupNames": [],
+    "currentWork": [],
+    "hasCurrentWork": false,
+    "keywords": [],
+    "keywordsSearch": [
+      "On Distortion in Sound Reproduction from Phonograph Records",
+      "Jour. Acous. Soc. Amer., vol. 10, pp. 14-28, July 1938.",
+      "J. A. Pierce",
+      "F. V. Hunt"
+    ],
+    "href": "https://doi.org/10.1121/1.1915951",
+    "docBase": null,
+    "docBaseLabel": null
+  },
+  {
+    "id": "DOI.10.1121-1.1916111",
+    "title": "A Theory of Tracing Distortion in Sound Reproduction from Phonograph Records",
+    "label": "Jour. Acous. Soc. Amer., vol. 12, pp. 348-365, January 1941",
+    "publisher": "Acoustical Society of America",
+    "docType": "Journal Article",
+    "docTypeAbr": null,
+    "status": [
+      "active"
+    ],
+    "statusFlags": {
+      "active": true,
+      "latestVersion": false,
+      "superseded": false,
+      "withdrawn": false,
+      "draft": false,
+      "stabilized": false,
+      "reaffirmed": false,
+      "amended": false,
+      "versionless": false
+    },
+    "pubDate": "1941-01-01",
+    "pubTs": -915148800000,
+    "year": 1941,
+    "hasDoi": true,
+    "doi": "10.1121/1.1916111",
+    "hasReleaseTag": false,
+    "authors": [
+      "W. D. Lewis",
+      "F. V. Hunt"
+    ],
+    "group": [],
+    "groupNames": [],
+    "currentWork": [],
+    "hasCurrentWork": false,
+    "keywords": [],
+    "keywordsSearch": [
+      "A Theory of Tracing Distortion in Sound Reproduction from Phonograph Records",
+      "Jour. Acous. Soc. Amer., vol. 12, pp. 348-365, January 1941",
+      "W. D. Lewis",
+      "F. V. Hunt"
+    ],
+    "href": "https://doi.org/10.1121/1.1916111",
+    "docBase": null,
+    "docBaseLabel": null
   },
   {
     "id": "DOI.10.3397-1.2832172",
