@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-12-03T21:05:28.458Z",
+  "generatedAt": "2025-12-03T21:49:12.241Z",
   "documents": {
     "total": 2215,
     "references": 2917,
@@ -8,13 +8,13 @@
     "docTypes": 39,
     "docsByType": {
       "Journal Article": 110,
+      "White Paper": 16,
+      "Technical Journal": 5,
       "Report": 4,
       "Standard": 1243,
-      "Technical Journal": 5,
       "Specification": 83,
       "Procedure": 2,
       "Technical Bulletin": 11,
-      "White Paper": 16,
       "Technical Note": 1,
       "Technical Report": 5,
       "Registry": 11,
