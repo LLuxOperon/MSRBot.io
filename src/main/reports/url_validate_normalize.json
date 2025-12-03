@@ -1,16 +1,72 @@
 {
-  "generatedAt": "2025-10-24T19:42:43.778Z",
+  "generatedAt": "2025-12-03T22:21:19.543Z",
   "applyMode": true,
-  "considered": 1,
-  "eligible": 1,
-  "backfillable": 1,
-  "applied": 1,
+  "considered": 9,
+  "eligible": 9,
+  "backfillable": 9,
+  "applied": 9,
   "proposals": [
     {
-      "docId": "SMPTE.ST55.2010",
+      "docId": "AMPAS.S.2014-002",
       "field": "resolvedHref",
       "old": null,
-      "new": "https://my.smpte.org/s/product-details?id=a1BVR0000007Ngo",
+      "new": "https://community.acescentral.com/uploads/default/original/2X/7/7df94d163d72ee5c835a46c8643a75eb636eaa98.pdf",
+      "rule": "resolved"
+    },
+    {
+      "docId": "AMPAS.S.2014-006",
+      "field": "resolvedHref",
+      "old": null,
+      "new": "https://community.acescentral.com/uploads/default/original/2X/8/831f148aa5dcdb10a569255fa2341975ad31848e.pdf",
+      "rule": "resolved"
+    },
+    {
+      "docId": "AMPAS.TB.2014-002",
+      "field": "resolvedHref",
+      "old": null,
+      "new": "https://community.acescentral.com/uploads/default/original/2X/0/093f97cf7804fd98dd8963b667c8bb24c768460c.pdf",
+      "rule": "resolved"
+    },
+    {
+      "docId": "AMPAS.TB.2014-006",
+      "field": "resolvedHref",
+      "old": null,
+      "new": "https://community.acescentral.com/uploads/default/original/2X/4/4a22aafa9f3e294771eca75d387226a22a234fa7.pdf",
+      "rule": "resolved"
+    },
+    {
+      "docId": "DCI.DCSS.v1.2.2012-1010",
+      "field": "resolvedHref",
+      "old": null,
+      "new": "https://www.dcimovies.com/dci-specification/?dcss-version=v1.2",
+      "rule": "resolved"
+    },
+    {
+      "docId": "DCI.DCSS.v1.3.2018-0627",
+      "field": "resolvedHref",
+      "old": null,
+      "new": "https://www.dcimovies.com/dci-specification/?dcss-version=v1.3",
+      "rule": "resolved"
+    },
+    {
+      "docId": "DCI.DCSS.v1.4.0.2020-0720",
+      "field": "resolvedHref",
+      "old": null,
+      "new": "https://www.dcimovies.com/dci-specification/?dcss-version=v1.4",
+      "rule": "resolved"
+    },
+    {
+      "docId": "DCI.DCSS.v1.4.1.2021-1013",
+      "field": "resolvedHref",
+      "old": null,
+      "new": "https://www.dcimovies.com/dci-specification/?dcss-version=v1.4.1",
+      "rule": "resolved"
+    },
+    {
+      "docId": "DCI.DCSS.v1.4.2.2022-0615",
+      "field": "resolvedHref",
+      "old": null,
+      "new": "https://www.dcimovies.com/dci-specification/?dcss-version=v1.4.2",
       "rule": "resolved"
     }
   ]
