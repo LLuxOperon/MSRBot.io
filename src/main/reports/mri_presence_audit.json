@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2025-12-03T04:42:26.347Z",
+  "generatedAt": "2025-12-03T21:46:59.181Z",
   "sourcePath": "src/main/data/documents.json",
-  "processedDocs": 2208,
+  "processedDocs": 2215,
   "replayMode": "full-replay",
-  "seenRefs": 2852,
-  "seenSightings": 2852,
-  "presentCount": 1024,
-  "missingCount": 33,
+  "seenRefs": 2917,
+  "seenSightings": 2917,
+  "presentCount": 1032,
+  "missingCount": 38,
   "missing": [
     {
       "refId": "AES3-1.2009",
@@ -84,6 +84,21 @@
         {
           "docId": "SMPTE.ST339.2008",
           "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    {
+      "refId": "DCI.DCA-HDR",
+      "sourceDocId": null,
+      "sightingCount": 1,
+      "sightings": [
+        {
+          "docId": "DCI.DCA-DVD.2024-0424",
+          "type": "normative",
           "cite": "",
           "href": "",
           "rawRef": "",
@@ -328,6 +343,51 @@
       ]
     },
     {
+      "refId": "ISO.11664",
+      "sourceDocId": null,
+      "sightingCount": 1,
+      "sightings": [
+        {
+          "docId": "DCI.DCA-DVD.2024-0424",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    {
+      "refId": "ISO.11664-5",
+      "sourceDocId": null,
+      "sightingCount": 1,
+      "sightings": [
+        {
+          "docId": "DCI.DCA-HDR.2024-0228",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    {
+      "refId": "ISO.11664-6",
+      "sourceDocId": null,
+      "sightingCount": 1,
+      "sightings": [
+        {
+          "docId": "DCI.DCA-HDR.2024-0228",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    {
       "refId": "ISO.13818-3.1998",
       "sourceDocId": null,
       "sightingCount": 3,
@@ -351,6 +411,21 @@
         {
           "docId": "SMPTE.ST338.2010",
           "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    {
+      "refId": "ISO.15706",
+      "sourceDocId": null,
+      "sightingCount": 1,
+      "sightings": [
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
+          "type": "normative",
           "cite": "",
           "href": "",
           "rawRef": "",
@@ -465,6 +540,21 @@
       ]
     },
     {
+      "refId": "M00395",
+      "sourceDocId": null,
+      "sightingCount": 1,
+      "sightings": [
+        {
+          "docId": "SMPTE.ST202.2010",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    {
       "refId": "NIST.FIPS.197-upd1",
       "sourceDocId": null,
       "sightingCount": 1,
@@ -521,21 +611,6 @@
           "href": "https://www.rfc-editor.org/info/rfc4187",
           "rawRef": "IETF RFC 4187, Extensible Authentication Protocol Method for 3rd Generation Authentication and Key Agreement (EAP-AKA). url: https://www.rfc-editor.org/info/rfc4187",
           "title": "Extensible Authentication Protocol Method for 3rd Generation Authentication and Key Agreement (EAP-AKA)."
-        }
-      ]
-    },
-    {
-      "refId": "RFC9231",
-      "sourceDocId": null,
-      "sightingCount": 1,
-      "sightings": [
-        {
-          "docId": "SMPTE.ST430-5.2023-09",
-          "type": "normative",
-          "cite": "IETF RFC 9231",
-          "href": "https://www.ietf.org/rfc/rfc9231.txt",
-          "rawRef": "IETF RFC 9231, Additional XML Security Uniform Resource Identifiers (URIs). url: https://www.ietf.org/rfc/rfc9231.txt",
-          "title": "Additional XML Security Uniform Resource Identifiers (URIs)."
         }
       ]
     },

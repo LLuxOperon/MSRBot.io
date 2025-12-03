@@ -109,6 +109,9 @@
           "isbn": {
             "type": "string"
           },
+          "issn": {
+            "type": "string"
+          },
           "group": {
             "type": "string"
           },
