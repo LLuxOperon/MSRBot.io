@@ -1,0 +1,24 @@
+{
+  "dcp": [
+    "digital cinema package"
+  ],
+  "kdm": [
+    "key delivery message"
+  ],
+  "isdcf": [
+    "inter-society digital cinema forum"
+  ],
+  "hash": [
+    "checksum",
+    "digest"
+  ],
+  "smpte": [
+    "society of motion picture and television engineers"
+  ],
+  "hdr": [
+    "high dynamic range"
+  ],
+  "slv": [
+    "sign language video"
+  ]
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+    <ShortName>MSRBot</ShortName>
+    <Description>Search MSRBot.io</Description>
+    <InputEncoding>UTF-8</InputEncoding>
+    <OutputEncoding>UTF-8</OutputEncoding>
+    <Image height="16" width="16" type="image/png">https://msrbot.io/static/icons/favicon-32.png</Image>
+    <Url type="text/html" template="https://msrbot.io/docs/?q={searchTerms}"/>
+  </OpenSearchDescription>
+  
