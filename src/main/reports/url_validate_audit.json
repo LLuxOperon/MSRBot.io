@@ -1,25 +1,24 @@
 {
-  "generatedAt": "2025-12-02T17:35:13.946Z",
+  "generatedAt": "2025-12-03T04:54:05.451Z",
   "target": "documents.json",
-  "good": 1954,
+  "good": 1958,
   "skippedByDomain": 0,
   "skippedByPublisher": 0,
   "index": {
-    "error": 249,
+    "error": 247,
     "errorBreakdown": {
       "Unreachable (403)": 65,
-      "Unreachable (404)": 161,
-      "Unreachable (ECONNABORTED)": 1,
+      "Unreachable (404)": 160,
       "Unreachable (ENOTFOUND)": 2,
       "Unreachable (ERR_BAD_REQUEST)": 1,
       "Unreachable (ERR_FR_TOO_MANY_REDIRECTS)": 2,
       "Unreachable (HPE_INVALID_CONSTANT)": 16,
       "Unreachable (UNABLE_TO_VERIFY_LEAF_SIGNATURE)": 1
     },
-    "redirectMismatch": 16,
+    "redirectMismatch": 14,
     "redirectBreakdown": {
       "undefined": 0,
-      "other": 16
+      "other": 14
     },
     "expectationMismatch": 35,
     "expectationBreakdown": {
@@ -1098,16 +1097,6 @@
           "publisher": "Live Sound International",
           "field": "href",
           "url": "http://www.livesoundint.com/archives/2003/july/align/align.php",
-          "message": "Unreachable (404)",
-          "explanation": "The URL points to a resource that was not found (dead link).",
-          "recommendedAction": "Double-check the URL or remove it if no longer valid.",
-          "riskLevel": "High"
-        },
-        {
-          "docId": "NIST.FIPS.140-2",
-          "publisher": "NIST",
-          "field": "href",
-          "url": "https://doi.org/10.6028/NIST.FIPS.140-2",
           "message": "Unreachable (404)",
           "explanation": "The URL points to a resource that was not found (dead link).",
           "recommendedAction": "Double-check the URL or remove it if no longer valid.",
@@ -2502,18 +2491,6 @@
           "riskLevel": "Medium"
         }
       ],
-      "ECONNABORTED": [
-        {
-          "docId": "UNICODE.UTF.BOM",
-          "publisher": "Unicode Consortium",
-          "field": "href",
-          "url": "http://www.unicode.org/faq/utf_bom.html",
-          "message": "Unreachable (ECONNABORTED)",
-          "explanation": "Connection timed out.",
-          "recommendedAction": "Retry later or check the server’s responsiveness.",
-          "riskLevel": "Medium-High"
-        }
-      ],
       "ENOTFOUND": [
         {
           "docId": "W3C.rddl.2002",
@@ -2540,26 +2517,6 @@
     "redirect": {
       "undefined": [],
       "other": [
-        {
-          "docId": "0950-7671.1.3.302",
-          "publisher": "IOP Publishing Ltd",
-          "field": "href",
-          "url": "https://doi.org/10.1088/0950-7671/1/3/302",
-          "resolvedUrl": "https://validate.perfdrive.com/fb803c746e9148689b3984a31fccd902/?ssa=98dbd5ee-284e-4144-a867-830e3a2eaee6&ssb=66872226767&ssc=https%3A%2F%2Fiopscience.iop.org%2Farticle%2F10.1088%2F0950-7671%2F1%2F3%2F302&ssi=1f7fe99c-cnvj-46d5-a490-51514ec8d03d&ssk=botmanager_support@radware.com&ssm=22621782446768965105688045055162&ssn=e674e26dcfd11ab7df46788d3465a2cff622b33fddb5-f780-4f5f-87fc86&sso=482bbae4-55388c2dffc90605f8e53ad793ccaa128bc2e9eff5020995&ssp=65803366281764646090176461178050354&ssq=27086169615146029837196151470530414875030&ssr=NTIuMTc2LjEzOC4xOTc=&sst=axios/1.12.0&ssu=&ssv=&ssw=&ssx=eyJfX3V6bWYiOiI3ZjkwMDBiMzNmZGRiNS1mNzgwLTRmNWYtOGFlNC01NTM4OGMyZGZmYzkxLTE3NjQ2OTYxNTE4MTAwLTAwMTM0M2Y3NzJhZjJlOWM4ZjExMCIsInJkIjoiaW9wLm9yZyIsInV6bXgiOiI3ZjkwMDA4M2Y5ZjQ2OC1hNGI1LTRkNDYtOGUxMC03NDQ0ZWQ3NDFjZGIxLTE3NjQ2OTYxNTE4MTAwLThmZDg5ODU3ODc3ODRiYzIxMCJ9",
-          "resolvedField": "resolvedHref",
-          "expectedResolved": "https://iopscience.iop.org/article/10.1088/0950-7671/1/3/302",
-          "message": "resolved url mismatch"
-        },
-        {
-          "docId": "ML3807.M56.1916",
-          "publisher": "MacMillan Co.",
-          "field": "href",
-          "url": "https://ia800204.us.archive.org/19/items/scienceofmusical00mill/scienceofmusical00mill.pdf",
-          "resolvedUrl": "https://ia801303.us.archive.org/1/items/scienceofmusical00mill/scienceofmusical00mill.pdf",
-          "resolvedField": "resolvedHref",
-          "expectedResolved": "https://ia601303.us.archive.org/1/items/scienceofmusical00mill/scienceofmusical00mill.pdf",
-          "message": "resolved url mismatch"
-        },
         {
           "docId": "SMPTE.RDD44.2017-11",
           "publisher": "SMPTE",
