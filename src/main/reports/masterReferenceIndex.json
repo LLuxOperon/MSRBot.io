@@ -1,8 +1,8 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-02T17:08:53.478Z",
+  "generatedAt": "2025-12-03T20:30:13.086Z",
   "stats": {
-    "uniqueRefIds": 1057
+    "uniqueRefIds": 1070
   },
   "refs": {
     "40290752": {
@@ -2227,6 +2227,34 @@
         }
       ]
     },
+    "CIE.015": {
+      "refId": "CIE.015",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "CIE.015.2018",
+        "firstConfirmedSourceAt": "2025-12-03T20:25:30.960Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T20:25:30.811Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "DCI.DCA-DVD.2024-0424",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
     "CIE.015.1986": {
       "refId": "CIE.015.1986",
       "normalized": null,
@@ -2381,6 +2409,68 @@
         }
       ]
     },
+    "DCI.DCA-HDR": {
+      "refId": "DCI.DCA-HDR",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": false
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T20:25:30.814Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "DCI.DCA-DVD.2024-0424",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "DCI.DCSS": {
+      "refId": "DCI.DCSS",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "DCI.DCSS.v1.3.20191219",
+        "firstConfirmedSourceAt": "2025-12-03T20:25:30.960Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T20:25:30.813Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "DCI.DCA-DVD.2024-0424",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "DCI.DCA-HDR.2024-0228",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
     "DCI.DCSS.v1.3.2018-0627": {
       "refId": "DCI.DCSS.v1.3.2018-0627",
       "normalized": null,
@@ -2430,6 +2520,42 @@
         {
           "docId": "SMPTE.ST330.2011",
           "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "DOI.10.3397-1.2832172": {
+      "refId": "DOI.10.3397-1.2832172",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "DOI.10.3397-1.2832172",
+        "firstConfirmedSourceAt": "2025-12-03T20:25:30.960Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T20:25:30.839Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.RP141.2005",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "SMPTE.RP141.2020",
+          "type": "bibliographic",
           "cite": "",
           "href": "",
           "rawRef": "",
@@ -2652,6 +2778,34 @@
         {
           "docId": "SMPTE.RP197.2003",
           "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "EBU.Tech3285.2011": {
+      "refId": "EBU.Tech3285.2011",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "EBU.Tech3285.2011",
+        "firstConfirmedSourceAt": "2025-12-03T20:29:32.149Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T20:29:32.009Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
+          "type": "normative",
           "cite": "",
           "href": "",
           "rawRef": "",
@@ -4557,6 +4711,34 @@
         }
       ]
     },
+    "ISBN.9780599871182": {
+      "refId": "ISBN.9780599871182",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "ISBN.9780599871182",
+        "firstConfirmedSourceAt": "2025-12-03T20:25:30.961Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T20:25:30.888Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.ST430-15.2017",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
     "ISBN.9780877798071": {
       "refId": "ISBN.9780877798071",
       "normalized": null,
@@ -4988,6 +5170,14 @@
           "title": null
         },
         {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
           "docId": "SMPTE.ST429-2.2013Am1.2018",
           "type": "normative",
           "cite": "",
@@ -5231,6 +5421,32 @@
         }
       ]
     },
+    "ISO.11664": {
+      "refId": "ISO.11664",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": false
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T20:25:30.814Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "DCI.DCA-DVD.2024-0424",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
     "ISO.11664-1": {
       "refId": "ISO.11664-1",
       "normalized": null,
@@ -5250,7 +5466,43 @@
       },
       "rawVariants": [
         {
+          "docId": "DCI.DCA-HDR.2024-0228",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
           "docId": "ISO.5926.2023",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "ISO.11664-3": {
+      "refId": "ISO.11664-3",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "ISO.11664-3.2019",
+        "firstConfirmedSourceAt": "2025-12-03T20:25:30.961Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T20:25:30.814Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "DCI.DCA-HDR.2024-0228",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -5327,6 +5579,58 @@
         },
         {
           "docId": "SMPTE.ST2067-40.2021",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "ISO.11664-5": {
+      "refId": "ISO.11664-5",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": false
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T20:25:30.814Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "DCI.DCA-HDR.2024-0228",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "ISO.11664-6": {
+      "refId": "ISO.11664-6",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": false
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T20:25:30.814Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "DCI.DCA-HDR.2024-0228",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -5910,6 +6214,14 @@
           "href": "",
           "rawRef": "",
           "title": null
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
         }
       ]
     },
@@ -6202,6 +6514,14 @@
           "title": null
         },
         {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
           "docId": "SMPTE.ST422.2022",
           "type": "normative",
           "cite": "",
@@ -6315,6 +6635,14 @@
       "rawVariants": [
         {
           "docId": "DCI.DCSS.v1.4.2.2022-0615",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -6585,6 +6913,32 @@
         }
       ]
     },
+    "ISO.15706": {
+      "refId": "ISO.15706",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": false
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T20:25:30.817Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
     "ISO.15706-1": {
       "refId": "ISO.15706-1",
       "normalized": null,
@@ -6699,6 +7053,14 @@
       "rawVariants": [
         {
           "docId": "DCI.DCSS.v1.4.2.2022-0615",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -6867,6 +7229,14 @@
       "rawVariants": [
         {
           "docId": "DCI.DCSS.v1.4.2.2022-0615",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -12470,6 +12840,14 @@
           "href": "",
           "rawRef": "",
           "title": null
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
         }
       ]
     },
@@ -12493,6 +12871,14 @@
       "rawVariants": [
         {
           "docId": "DCI.DCSS.v1.4.2.2022-0615",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -12553,6 +12939,14 @@
       "rawVariants": [
         {
           "docId": "DCI.DCSS.v1.4.2.2022-0615",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -12744,6 +13138,14 @@
           "href": "",
           "rawRef": "",
           "title": null
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
         }
       ]
     },
@@ -12769,6 +13171,14 @@
       "rawVariants": [
         {
           "docId": "DCI.DCSS.v1.4.2.2022-0615",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
           "type": "bibliographic",
           "cite": "",
           "href": "",
@@ -12958,6 +13368,14 @@
           "href": "",
           "rawRef": "",
           "title": null
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
         }
       ]
     },
@@ -13056,6 +13474,34 @@
           "href": "https://doi.org/10.6028/NIST.SP.800-38A",
           "rawRef": "NIST SP 800-38A, Recommendation for Block Cipher Modes of Operation Methods and Techniques. url: https://doi.org/10.6028/NIST.SP.800-38A",
           "title": "Recommendation for Block Cipher Modes of Operation Methods and Techniques."
+        }
+      ]
+    },
+    "NIST.SP.800-38F": {
+      "refId": "NIST.SP.800-38F",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "NIST.SP.800-38F",
+        "firstConfirmedSourceAt": "2025-12-03T20:25:30.962Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T20:25:30.818Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
         }
       ]
     },
@@ -15920,6 +16366,14 @@
           "title": null
         },
         {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
           "docId": "ISO.26430-2.2008",
           "type": "normative",
           "cite": "",
@@ -16125,6 +16579,14 @@
         ]
       },
       "rawVariants": [
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
         {
           "docId": "ISO.26430-2.2008",
           "type": "normative",
@@ -16543,6 +17005,14 @@
       "rawVariants": [
         {
           "docId": "DCI.DCSS.v1.4.2.2022-0615",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -17933,7 +18403,9 @@
       "refId": "RFC9231",
       "normalized": null,
       "resolution": {
-        "sourcePresent": false
+        "sourcePresent": true,
+        "sourceDocId": "RFC9231",
+        "firstConfirmedSourceAt": "2025-12-03T20:25:30.963Z"
       },
       "provenance": {
         "firstSeen": "2025-10-21T04:34:58.179Z",
@@ -17954,34 +18426,6 @@
           "href": "https://www.ietf.org/rfc/rfc9231.txt",
           "rawRef": "IETF RFC 9231, Additional XML Security Uniform Resource Identifiers (URIs). url: https://www.ietf.org/rfc/rfc9231.txt",
           "title": "Additional XML Security Uniform Resource Identifiers (URIs)."
-        }
-      ]
-    },
-    "RTF-ASD-NBSA.2000": {
-      "refId": "RTF-ASD-NBSA.2000",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "RTF-ASD-NBSA.2000",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.830Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.777Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.ST430-15.2017",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
         }
       ]
     },
@@ -21852,7 +22296,31 @@
       },
       "rawVariants": [
         {
+          "docId": "DCI.DCA-DVD.2024-0424",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "DCI.DCA-HDR.2024-0228",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
           "docId": "DCI.DCSS.v1.4.2.2022-0615",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -27671,6 +28139,34 @@
         }
       ]
     },
+    "SMPTE.ST2084": {
+      "refId": "SMPTE.ST2084",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "SMPTE.ST2084.2014",
+        "firstConfirmedSourceAt": "2025-12-03T20:25:30.963Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T20:25:30.815Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "DCI.DCA-HDR.2024-0228",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
     "SMPTE.ST2084.2014": {
       "refId": "SMPTE.ST2084.2014",
       "normalized": null,
@@ -28136,6 +28632,14 @@
           "href": "",
           "rawRef": "",
           "title": null
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
         }
       ]
     },
@@ -28213,6 +28717,14 @@
       "rawVariants": [
         {
           "docId": "DCI.DCSS.v1.4.2.2022-0615",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -28430,6 +28942,34 @@
         {
           "docId": "SMPTE.ST338.2016",
           "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "SMPTE.ST2113": {
+      "refId": "SMPTE.ST2113",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "SMPTE.ST2113.2018",
+        "firstConfirmedSourceAt": "2025-12-03T20:25:30.963Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T20:25:30.815Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "DCI.DCA-HDR.2024-0228",
+          "type": "normative",
           "cite": "",
           "href": "",
           "rawRef": "",
@@ -30662,6 +31202,14 @@
           "title": null
         },
         {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
           "docId": "SMPTE.ST382.2022",
           "type": "bibliographic",
           "cite": "",
@@ -31191,6 +31739,14 @@
       "rawVariants": [
         {
           "docId": "DCI.DCSS.v1.4.2.2022-0615",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -32106,7 +32662,23 @@
       },
       "rawVariants": [
         {
+          "docId": "DCI.DCA-HDR.2024-0228",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
           "docId": "DCI.DCSS.v1.4.2.2022-0615",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -33102,6 +33674,14 @@
       },
       "rawVariants": [
         {
+          "docId": "DCI.DCA-HDR.2024-0228",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
           "docId": "ISO.26429-18.2009",
           "type": "normative",
           "cite": "",
@@ -34011,6 +34591,14 @@
       "rawVariants": [
         {
           "docId": "DCI.DCSS.v1.4.2.2022-0615",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -35290,7 +35878,31 @@
       },
       "rawVariants": [
         {
+          "docId": "DCI.DCA-DVD.2024-0424",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "DCI.DCA-HDR.2024-0228",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
           "docId": "DCI.DCSS.v1.4.2.2022-0615",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -36014,6 +36626,14 @@
       },
       "rawVariants": [
         {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
           "docId": "SMPTE.ST429-2.2023-09",
           "type": "normative",
           "cite": "SMPTE ST 428-2",
@@ -36237,6 +36857,14 @@
         ]
       },
       "rawVariants": [
+        {
+          "docId": "DCI.DCA-HDR.2024-0228",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
         {
           "docId": "SMPTE.RP428-22.2025-06",
           "type": "normative",
@@ -36726,6 +37354,14 @@
           "title": null
         },
         {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
           "docId": "SMPTE.ST430-1.2023-09",
           "type": "bibliographic",
           "cite": "SMPTE ST 429-14",
@@ -36823,6 +37459,14 @@
         ]
       },
       "rawVariants": [
+        {
+          "docId": "DCI.DCA-HDR.2024-0228",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
         {
           "docId": "SMPTE.ST429-19.2023-09",
           "type": "normative",
@@ -37044,6 +37688,14 @@
           "title": null
         },
         {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
           "docId": "SMPTE.ST429-19.2023-09",
           "type": "normative",
           "cite": "SMPTE ST 429-18",
@@ -37162,6 +37814,14 @@
           "href": "",
           "rawRef": "",
           "title": null
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
         }
       ]
     },
@@ -37223,6 +37883,14 @@
       "rawVariants": [
         {
           "docId": "DCI.DCSS.v1.4.2.2022-0615",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -37539,6 +38207,14 @@
       "rawVariants": [
         {
           "docId": "DCI.DCSS.v1.4.2.2022-0615",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -37982,6 +38658,14 @@
           "title": null
         },
         {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
           "docId": "SMPTE.ST429-2.2023-09",
           "type": "normative",
           "cite": "SMPTE ST 429-5",
@@ -38125,6 +38809,14 @@
       "rawVariants": [
         {
           "docId": "DCI.DCSS.v1.4.2.2022-0615",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -38954,6 +39646,14 @@
           "title": null
         },
         {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
           "docId": "SMPTE.ST429-2.2023-09",
           "type": "bibliographic",
           "cite": "SMPTE ST 430-1",
@@ -39346,6 +40046,14 @@
           "href": "",
           "rawRef": "",
           "title": null
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
         }
       ]
     },
@@ -39402,6 +40110,14 @@
           "href": "",
           "rawRef": "",
           "title": null
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
         }
       ]
     },
@@ -39427,6 +40143,14 @@
       "rawVariants": [
         {
           "docId": "DCI.DCSS.v1.4.2.2022-0615",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -39712,6 +40436,14 @@
           "title": null
         },
         {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
           "docId": "SMPTE.ST430-1.2023-09",
           "type": "normative",
           "cite": "SMPTE ST 430-3",
@@ -39858,6 +40590,14 @@
           "title": null
         },
         {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
           "docId": "SMPTE.ST430-5.2023-09",
           "type": "normative",
           "cite": "SMPTE ST 430-4",
@@ -39931,6 +40671,14 @@
       "rawVariants": [
         {
           "docId": "DCI.DCSS.v1.4.2.2022-0615",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -40025,6 +40773,14 @@
       "rawVariants": [
         {
           "docId": "DCI.DCSS.v1.4.2.2022-0615",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -40133,6 +40889,42 @@
         }
       ]
     },
+    "SMPTE.ST431-1": {
+      "refId": "SMPTE.ST431-1",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "SMPTE.ST431-1.2006",
+        "firstConfirmedSourceAt": "2025-12-03T20:25:30.964Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-03T20:25:30.814Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "DCI.DCA-DVD.2024-0424",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "DCI.DCA-HDR.2024-0228",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
     "SMPTE.ST431-1.2006": {
       "refId": "SMPTE.ST431-1.2006",
       "normalized": null,
@@ -40223,6 +41015,14 @@
       "rawVariants": [
         {
           "docId": "DCI.DCSS.v1.4.2.2022-0615",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -41349,6 +42149,14 @@
       "rawVariants": [
         {
           "docId": "DCI.DCSS.v1.4.2.2022-0615",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
           "type": "bibliographic",
           "cite": "",
           "href": "",
@@ -44099,42 +44907,6 @@
         {
           "docId": "SMPTE.RP190.1996",
           "type": "normative",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "rnc-nce-v16-n2-1981-p64-73": {
-      "refId": "rnc-nce-v16-n2-1981-p64-73",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": true,
-        "sourceDocId": "rnc-nce-v16-n2-1981-p64-73",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.838Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.718Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.RP141.2005",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "SMPTE.RP141.2020",
-          "type": "bibliographic",
           "cite": "",
           "href": "",
           "rawRef": "",

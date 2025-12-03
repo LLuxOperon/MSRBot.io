@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2025-11-26T04:39:53.186Z",
+  "generatedAt": "2025-12-03T20:29:03.363Z",
   "sourcePath": "src/main/data/documents.json",
-  "sourceHash": "sha256:79b9855358f6391e13abe03dedbc2c3b367cc148eccb05642462d4ab55984925",
+  "sourceHash": "sha256:9e089bdf53478aca29c16f722ef169d640bb277bd5e53dc054f2af3b97406ea1",
   "publisherCounts": {
-    "total": 2208,
+    "total": 2215,
     "counts": {
       "SMPTE": 1491,
-      "IETF": 109,
+      "IETF": 111,
       "ISO": 106,
       "ISO/IEC": 87,
-      "DCI": 42,
+      "DCI": 45,
       "W3C": 35,
       "ITU-R": 30,
       "IEEE": 24,
-      "NIST": 23,
+      "NIST": 24,
       "AMPAS": 21,
       "AES": 20,
+      "EBU": 17,
       "ISDCF": 17,
-      "EBU": 16,
       "IEC": 15,
       "ITU-T": 13,
       "NAPM": 12,
@@ -65,6 +65,7 @@
       "MOVIELABS": 1,
       "CTA": 1,
       "U.S. DEFENSE MAPPING AGENCY": 1,
+      "INSTITUTE OF NOISE CONTROL ENGINEERING OF THE USA": 1,
       "FIAF": 1,
       "INTERNATIONAL CIVIL AVIATION ORGANIZATION": 1,
       "INCITS": 1,
@@ -72,6 +73,7 @@
       "OXFORD UNIVERSITY PRESS": 1,
       "PEARSON": 1,
       "UNIVERSITY OF CHICAGO PRESS": 1,
+      "UNIVERSITY OF CALIFORNIA IRVINE": 1,
       "MERRIAM-WEBSTER": 1,
       "EASTMAN KODAK COMPANY": 1,
       "CAMBRIDGE UNIVERSITY PRESS": 1,
@@ -83,8 +85,6 @@
       "NAB": 1,
       "US DEPT OF COMMERCE": 1,
       "OWASP": 1,
-      "INSTITUTE OF NOISE CONTROL ENGINEERING OF THE USA": 1,
-      "UNIVERSITY OF CALIFORNIA, IRVINE": 1,
       "AUDIO MAGAZINE": 1,
       "DLP": 1,
       "ALDUS CORP/ADOBE": 1,
@@ -554,6 +554,21 @@
           }
         ]
       },
+      "INSTITUTE OF NOISE CONTROL ENGINEERING OF THE USA": {
+        "count": 1,
+        "docIds": [
+          "DOI.10.3397-1.2832172"
+        ],
+        "items": [
+          {
+            "docId": "DOI.10.3397-1.2832172",
+            "reason": "FILTERED",
+            "rule": "FILTERED",
+            "ruleDetail": "docType=White Paper",
+            "category": "docType"
+          }
+        ]
+      },
       "EIDR": {
         "count": 1,
         "docIds": [
@@ -795,6 +810,21 @@
             "reason": "FILTERED",
             "rule": "FILTERED",
             "ruleDetail": "docType=Book",
+            "category": "docType"
+          }
+        ]
+      },
+      "UNIVERSITY OF CALIFORNIA IRVINE": {
+        "count": 1,
+        "docIds": [
+          "ISBN.9780599871182"
+        ],
+        "items": [
+          {
+            "docId": "ISBN.9780599871182",
+            "reason": "FILTERED",
+            "rule": "FILTERED",
+            "ruleDetail": "docType=Dissertation",
             "category": "docType"
           }
         ]
@@ -1919,36 +1949,6 @@
             "reason": "FILTERED",
             "rule": "FILTERED",
             "ruleDetail": "docType=Journal Article",
-            "category": "docType"
-          }
-        ]
-      },
-      "INSTITUTE OF NOISE CONTROL ENGINEERING OF THE USA": {
-        "count": 1,
-        "docIds": [
-          "rnc-nce-v16-n2-1981-p64-73"
-        ],
-        "items": [
-          {
-            "docId": "rnc-nce-v16-n2-1981-p64-73",
-            "reason": "FILTERED",
-            "rule": "FILTERED",
-            "ruleDetail": "docType=White Paper",
-            "category": "docType"
-          }
-        ]
-      },
-      "UNIVERSITY OF CALIFORNIA, IRVINE": {
-        "count": 1,
-        "docIds": [
-          "RTF-ASD-NBSA.2000"
-        ],
-        "items": [
-          {
-            "docId": "RTF-ASD-NBSA.2000",
-            "reason": "FILTERED",
-            "rule": "FILTERED",
-            "ruleDetail": "docType=Dissertation",
             "category": "docType"
           }
         ]
@@ -4910,6 +4910,17 @@
           "docId": "DCI.DCA-DVD.2023-0301",
           "publicationDate": "2023-03-01",
           "releaseTag": null,
+          "statusActive": false,
+          "statusSuperseded": true,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        },
+        {
+          "docId": "DCI.DCA-DVD.2024-0424",
+          "publicationDate": "2024-04-24",
+          "releaseTag": null,
           "statusActive": true,
           "statusSuperseded": false,
           "statusWithdrawn": false,
@@ -4918,18 +4929,18 @@
           "statusVersionless": false
         }
       ],
-      "latestBaseId": "DCI.DCA-DVD.2023-0301",
-      "latestAnyId": "DCI.DCA-DVD.2023-0301",
-      "latestDateKey": "20230301",
+      "latestBaseId": "DCI.DCA-DVD.2024-0424",
+      "latestAnyId": "DCI.DCA-DVD.2024-0424",
+      "latestDateKey": "20240424",
       "hasActiveBase": true,
       "hasWithdrawn": false,
       "hasStabilized": false,
-      "latestActiveBaseId": "DCI.DCA-DVD.2023-0301",
-      "latestSupersededBaseId": "DCI.DCA-DVD.2022-0303",
-      "prevBaseId": "DCI.DCA-DVD.2022-0303",
+      "latestActiveBaseId": "DCI.DCA-DVD.2024-0424",
+      "latestSupersededBaseId": "DCI.DCA-DVD.2023-0301",
+      "prevBaseId": "DCI.DCA-DVD.2023-0301",
       "flagInconsistencies": [],
       "counts": {
-        "bases": 2,
+        "bases": 3,
         "amendments": 0,
         "supplements": 0
       }
@@ -4956,6 +4967,17 @@
           "docId": "DCI.DCA-HDR.2023-0301",
           "publicationDate": "2023-03-01",
           "releaseTag": null,
+          "statusActive": false,
+          "statusSuperseded": true,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        },
+        {
+          "docId": "DCI.DCA-HDR.2024-0228",
+          "publicationDate": "2024-02-28",
+          "releaseTag": null,
           "statusActive": true,
           "statusSuperseded": false,
           "statusWithdrawn": false,
@@ -4964,18 +4986,18 @@
           "statusVersionless": false
         }
       ],
-      "latestBaseId": "DCI.DCA-HDR.2023-0301",
-      "latestAnyId": "DCI.DCA-HDR.2023-0301",
-      "latestDateKey": "20230301",
+      "latestBaseId": "DCI.DCA-HDR.2024-0228",
+      "latestAnyId": "DCI.DCA-HDR.2024-0228",
+      "latestDateKey": "20240228",
       "hasActiveBase": true,
       "hasWithdrawn": false,
       "hasStabilized": false,
-      "latestActiveBaseId": "DCI.DCA-HDR.2023-0301",
-      "latestSupersededBaseId": "DCI.DCA-HDR.2022-1014",
-      "prevBaseId": "DCI.DCA-HDR.2022-1014",
+      "latestActiveBaseId": "DCI.DCA-HDR.2024-0228",
+      "latestSupersededBaseId": "DCI.DCA-HDR.2023-0301",
+      "prevBaseId": "DCI.DCA-HDR.2023-0301",
       "flagInconsistencies": [],
       "counts": {
-        "bases": 2,
+        "bases": 3,
         "amendments": 0,
         "supplements": 0
       }
@@ -5384,6 +5406,17 @@
           "docId": "DCI.DCSS.v1.4.2.2022-0615",
           "publicationDate": "2022-06-15",
           "releaseTag": null,
+          "statusActive": false,
+          "statusSuperseded": true,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
+          "publicationDate": "2024-05-29",
+          "releaseTag": null,
           "statusActive": true,
           "statusSuperseded": false,
           "statusWithdrawn": false,
@@ -5392,18 +5425,18 @@
           "statusVersionless": false
         }
       ],
-      "latestBaseId": "DCI.DCSS.v1.4.2.2022-0615",
-      "latestAnyId": "DCI.DCSS.v1.4.2.2022-0615",
-      "latestDateKey": "20220615",
+      "latestBaseId": "DCI.DCSS.v1.4.5.2024-0529",
+      "latestAnyId": "DCI.DCSS.v1.4.5.2024-0529",
+      "latestDateKey": "20240529",
       "hasActiveBase": true,
       "hasWithdrawn": false,
       "hasStabilized": false,
-      "latestActiveBaseId": "DCI.DCSS.v1.4.2.2022-0615",
-      "latestSupersededBaseId": "DCI.DCSS.v1.4.1.2021-1013",
-      "prevBaseId": "DCI.DCSS.v1.4.1.2021-1013",
+      "latestActiveBaseId": "DCI.DCSS.v1.4.5.2024-0529",
+      "latestSupersededBaseId": "DCI.DCSS.v1.4.2.2022-0615",
+      "prevBaseId": "DCI.DCSS.v1.4.2.2022-0615",
       "flagInconsistencies": [],
       "counts": {
-        "bases": 29,
+        "bases": 30,
         "amendments": 0,
         "supplements": 0
       }
@@ -5703,6 +5736,41 @@
       "hasWithdrawn": false,
       "hasStabilized": false,
       "latestActiveBaseId": "EBU.Tech3267.1992",
+      "latestSupersededBaseId": null,
+      "prevBaseId": null,
+      "flagInconsistencies": [],
+      "counts": {
+        "bases": 1,
+        "amendments": 0,
+        "supplements": 0
+      }
+    },
+    {
+      "key": "EBU|TECH|3285|",
+      "publisher": "EBU",
+      "suite": "TECH",
+      "number": "3285",
+      "part": null,
+      "docs": [
+        {
+          "docId": "EBU.Tech3285.2011",
+          "publicationDate": "2011-05-01",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "EBU.Tech3285.2011",
+      "latestAnyId": "EBU.Tech3285.2011",
+      "latestDateKey": "20110501",
+      "hasActiveBase": true,
+      "hasWithdrawn": false,
+      "hasStabilized": false,
+      "latestActiveBaseId": "EBU.Tech3285.2011",
       "latestSupersededBaseId": null,
       "prevBaseId": null,
       "flagInconsistencies": [],
@@ -9532,6 +9600,41 @@
       }
     },
     {
+      "key": "IETF|RFC|6557|",
+      "publisher": "IETF",
+      "suite": "RFC",
+      "number": "6557",
+      "part": null,
+      "docs": [
+        {
+          "docId": "RFC6557",
+          "publicationDate": "2012-02-01",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "RFC6557",
+      "latestAnyId": "RFC6557",
+      "latestDateKey": "20120201",
+      "hasActiveBase": true,
+      "hasWithdrawn": false,
+      "hasStabilized": false,
+      "latestActiveBaseId": "RFC6557",
+      "latestSupersededBaseId": null,
+      "prevBaseId": null,
+      "flagInconsistencies": [],
+      "counts": {
+        "bases": 1,
+        "amendments": 0,
+        "supplements": 0
+      }
+    },
+    {
       "key": "IETF|RFC|6597|",
       "publisher": "IETF",
       "suite": "RFC",
@@ -10751,6 +10854,41 @@
       "hasWithdrawn": false,
       "hasStabilized": false,
       "latestActiveBaseId": "RFC9141",
+      "latestSupersededBaseId": null,
+      "prevBaseId": null,
+      "flagInconsistencies": [],
+      "counts": {
+        "bases": 1,
+        "amendments": 0,
+        "supplements": 0
+      }
+    },
+    {
+      "key": "IETF|RFC|9231|",
+      "publisher": "IETF",
+      "suite": "RFC",
+      "number": "9231",
+      "part": null,
+      "docs": [
+        {
+          "docId": "RFC9231",
+          "publicationDate": "2022-07-05",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "RFC9231",
+      "latestAnyId": "RFC9231",
+      "latestDateKey": "20220705",
+      "hasActiveBase": true,
+      "hasWithdrawn": false,
+      "hasStabilized": false,
+      "latestActiveBaseId": "RFC9231",
       "latestSupersededBaseId": null,
       "prevBaseId": null,
       "flagInconsistencies": [],
@@ -18275,6 +18413,41 @@
       "counts": {
         "bases": 1,
         "amendments": 1,
+        "supplements": 0
+      }
+    },
+    {
+      "key": "NIST|SP|800-38F|",
+      "publisher": "NIST",
+      "suite": "SP",
+      "number": "800-38F",
+      "part": null,
+      "docs": [
+        {
+          "docId": "NIST.SP.800-38F",
+          "publicationDate": "2012-12-01",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "NIST.SP.800-38F",
+      "latestAnyId": "NIST.SP.800-38F",
+      "latestDateKey": "20121201",
+      "hasActiveBase": true,
+      "hasWithdrawn": false,
+      "hasStabilized": false,
+      "latestActiveBaseId": "NIST.SP.800-38F",
+      "latestSupersededBaseId": null,
+      "prevBaseId": null,
+      "flagInconsistencies": [],
+      "counts": {
+        "bases": 1,
+        "amendments": 0,
         "supplements": 0
       }
     },
