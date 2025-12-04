@@ -48,7 +48,7 @@
             {{#if publisher}}<dt class="col-sm-4">Publisher</dt><dd class="col-sm-8"><a class="" href="../?f.publisher={{publisher}}">{{publisher}}</a></dd>{{/if}}
             {{#if docType}}<dt class="col-sm-4">Doc Type</dt><dd class="col-sm-8"><a class="" href="../?f.docType={{docType}}">{{docType}}{{#if docTypeAbr}} ({{docTypeAbr}}){{/if}}</a></dd>{{/if}}
             {{#if contentType}}<dt class="col-sm-4">Content Type</dt><dd class="col-sm-8">{{contentType}}</dd>{{/if}}
-            {{#if abstract}}<dt class="col-sm-4">Abstract</dt><dd class="col-sm-8">{{abstract}}</dd>{{/if}}
+            {{#if abstract}}<dt class="col-sm-4">Abstract</dt><dd class="col-sm-8">{{{nl2br abstract}}}</dd>{{/if}}
             {{#if releaseTag}}<dt class="col-sm-4">Release Tag</dt><dd class="col-sm-8"><a href="../?q={{releaseTag}}">{{releaseTag}}</a></dd>{{/if}}
             {{#if publicationDate}}<dt class="col-sm-4">Publication Date</dt><dd class="col-sm-8">{{publicationDate}}</dd>{{/if}}
             {{#if status.amendedDate}}<dt class="col-sm-4">Amended Date</dt><dd class="col-sm-8">{{status.amendedDate}}</dd>{{/if}}

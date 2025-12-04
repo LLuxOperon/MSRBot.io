@@ -514,6 +514,16 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     return values.some(v => !!v);
   });
 
+  // Convert literal "\n" sequences and real newlines into <br> tags
+  hb.registerHelper('nl2br', function (text) {
+    if (text == null) return '';
+    // Normalize literal "\n" (backslash + n) into real newlines first
+    const normalized = String(text).replace(/\\n/g, '\n');
+    // Escape HTML, then replace newline characters with <br> for rendering
+    const safe = hb.escapeExpression(normalized);
+    return new hb.SafeString(safe.replace(/\n/g, '<br><br>'));
+  });
+
   // Returns the length of arrays/strings, or the number of keys for objects
   hb.registerHelper('len', function (val) {
     if (Array.isArray(val)) return val.length;
@@ -556,6 +566,7 @@ async function buildRegistry ({ listType, templateType, templateName, idType, li
     const m = s.match(/^\d{4}/);
     return m ? m[0] : '';
   }
+
 function _doiUrl(doc){
   const d = (doc && doc.doi) ? String(doc.doi).trim() : '';
   if (!d) return '';
