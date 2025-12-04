@@ -11,6 +11,17 @@
     "groupType": "TC"
   },
   {
+    "groupId": "iso-tc-cie",
+    "groupLink": "https://www.iso.org/committee/55238.html",
+    "groupName": "International Commission on Illumination",
+    "groupOrg": "CIE",
+    "groupStatus": {
+      "active": true
+    },
+    "groupSummary": "The International Commission on Illumination (abbreviated as CIE from its French title) is an organization devoted to international cooperation and exchange of information among its member countries on all matters relating to the science and art of Iighting.",
+    "groupType": "TC"
+  },
+  {
     "groupDesc": "Cinematography",
     "groupId": "iso-tc36",
     "groupLink": "https://www.iso.org/committee/48090.html",

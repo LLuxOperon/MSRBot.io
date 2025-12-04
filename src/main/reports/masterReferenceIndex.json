@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-03T21:46:59.166Z",
+  "generatedAt": "2025-12-04T20:55:19.745Z",
   "stats": {
     "uniqueRefIds": 1070
   },
@@ -3125,6 +3125,34 @@
         }
       ]
     },
+    "10.5594-M00395": {
+      "refId": "10.5594-M00395",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "10.5594-M00395",
+        "firstConfirmedSourceAt": "2025-12-04T17:06:06.905Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-04T17:06:06.801Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.ST202.2010",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
     "AES-R2.2004": {
       "refId": "AES-R2.2004",
       "normalized": null,
@@ -3213,7 +3241,9 @@
       "refId": "AES3-1.2009",
       "normalized": null,
       "resolution": {
-        "sourcePresent": false
+        "sourcePresent": true,
+        "sourceDocId": "AES3-1.2009",
+        "firstConfirmedSourceAt": "2025-12-04T20:55:19.722Z"
       },
       "provenance": {
         "firstSeen": "2025-10-07T22:56:58.752Z",
@@ -3239,7 +3269,9 @@
       "refId": "AES3-2.2009",
       "normalized": null,
       "resolution": {
-        "sourcePresent": false
+        "sourcePresent": true,
+        "sourceDocId": "AES3-2.2009",
+        "firstConfirmedSourceAt": "2025-12-04T20:55:19.722Z"
       },
       "provenance": {
         "firstSeen": "2025-10-07T22:56:58.752Z",
@@ -3265,7 +3297,9 @@
       "refId": "AES3-3.2009",
       "normalized": null,
       "resolution": {
-        "sourcePresent": false
+        "sourcePresent": true,
+        "sourceDocId": "AES3-3.2009",
+        "firstConfirmedSourceAt": "2025-12-04T20:55:19.722Z"
       },
       "provenance": {
         "firstSeen": "2025-10-07T22:56:58.753Z",
@@ -3291,7 +3325,9 @@
       "refId": "AES3-4.2009",
       "normalized": null,
       "resolution": {
-        "sourcePresent": false
+        "sourcePresent": true,
+        "sourceDocId": "AES3-4.2009",
+        "firstConfirmedSourceAt": "2025-12-04T20:55:19.722Z"
       },
       "provenance": {
         "firstSeen": "2025-10-07T22:56:58.753Z",
@@ -5427,7 +5463,9 @@
       "refId": "EBU.R99.2011",
       "normalized": null,
       "resolution": {
-        "sourcePresent": false
+        "sourcePresent": true,
+        "sourceDocId": "EBU.R99.2011",
+        "firstConfirmedSourceAt": "2025-12-04T18:45:48.305Z"
       },
       "provenance": {
         "firstSeen": "2025-10-07T22:56:58.758Z",
@@ -5741,7 +5779,9 @@
       "refId": "IANA",
       "normalized": null,
       "resolution": {
-        "sourcePresent": false
+        "sourcePresent": true,
+        "sourceDocId": "IANA",
+        "firstConfirmedSourceAt": "2025-12-04T19:16:46.067Z"
       },
       "provenance": {
         "firstSeen": "2025-10-07T22:56:58.713Z",
@@ -6213,11 +6253,39 @@
         }
       ]
     },
+    "IEC.61937": {
+      "refId": "IEC.61937",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": false
+      },
+      "provenance": {
+        "firstSeen": "2025-12-04T20:55:19.622Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.ST339.2015",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
     "IEC.61937-1.2007": {
       "refId": "IEC.61937-1.2007",
       "normalized": null,
       "resolution": {
-        "sourcePresent": false
+        "sourcePresent": true,
+        "sourceDocId": "IEC.61937-1.2007",
+        "firstConfirmedSourceAt": "2025-12-04T20:21:08.449Z"
       },
       "provenance": {
         "firstSeen": "2025-10-07T22:56:58.737Z",
@@ -6244,25 +6312,7 @@
           "href": "",
           "rawRef": "",
           "title": null
-        }
-      ]
-    },
-    "IEC.61937-1.2011": {
-      "refId": "IEC.61937-1.2011",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": false
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.753Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
+        },
         {
           "docId": "SMPTE.ST339.2015",
           "type": "bibliographic",
@@ -6273,11 +6323,31 @@
         }
       ]
     },
+    "IEC.61937-1.2011": {
+      "refId": "IEC.61937-1.2011",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "IEC.61937-1.2021",
+        "firstConfirmedSourceAt": "2025-12-04T20:21:08.451Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-10-07T22:56:58.753Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      }
+    },
     "IEC.61937-11.2010": {
       "refId": "IEC.61937-11.2010",
       "normalized": null,
       "resolution": {
-        "sourcePresent": false
+        "sourcePresent": true,
+        "sourceDocId": "IEC.61937-11.2010",
+        "firstConfirmedSourceAt": "2025-12-04T20:21:08.451Z"
       },
       "provenance": {
         "firstSeen": "2025-10-07T22:56:58.737Z",
@@ -6311,7 +6381,9 @@
       "refId": "IEC.61937-2.2007",
       "normalized": null,
       "resolution": {
-        "sourcePresent": false
+        "sourcePresent": true,
+        "sourceDocId": "IEC.61937-2.2007",
+        "firstConfirmedSourceAt": "2025-12-04T19:32:14.190Z"
       },
       "provenance": {
         "firstSeen": "2025-10-07T22:56:58.737Z",
@@ -6338,17 +6410,43 @@
           "href": "",
           "rawRef": "",
           "title": null
+        },
+        {
+          "docId": "SMPTE.ST338.2015",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "SMPTE.ST338.2016Am1.2019",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "SMPTE.ST338.2016",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
         }
       ]
     },
-    "IEC.61937-2.2011": {
-      "refId": "IEC.61937-2.2011",
+    "IEC.61937-2.2007Amd1.2011": {
+      "refId": "IEC.61937-2.2007Amd1.2011",
       "normalized": null,
       "resolution": {
-        "sourcePresent": false
+        "sourcePresent": true,
+        "sourceDocId": "IEC.61937-2.2007Amd1.2011",
+        "firstConfirmedSourceAt": "2025-12-04T20:35:28.311Z"
       },
       "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.753Z",
+        "firstSeen": "2025-12-04T20:35:28.217Z",
         "mapSource": [
           "replay"
         ],
@@ -6367,11 +6465,31 @@
         }
       ]
     },
+    "IEC.61937-2.2011": {
+      "refId": "IEC.61937-2.2011",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "IEC.61937-2.2021",
+        "firstConfirmedSourceAt": "2025-12-04T19:32:14.192Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-10-07T22:56:58.753Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      }
+    },
     "IEC.61937-4.2003": {
       "refId": "IEC.61937-4.2003",
       "normalized": null,
       "resolution": {
-        "sourcePresent": false
+        "sourcePresent": true,
+        "sourceDocId": "IEC.61937-4.2003",
+        "firstConfirmedSourceAt": "2025-12-04T20:21:08.451Z"
       },
       "provenance": {
         "firstSeen": "2025-10-07T22:56:58.737Z",
@@ -6405,7 +6523,9 @@
       "refId": "IEC.61937-6.2006",
       "normalized": null,
       "resolution": {
-        "sourcePresent": false
+        "sourcePresent": true,
+        "sourceDocId": "IEC.61937-6.2006",
+        "firstConfirmedSourceAt": "2025-12-04T20:21:08.451Z"
       },
       "provenance": {
         "firstSeen": "2025-10-07T22:56:58.737Z",
@@ -6453,32 +6573,6 @@
       "rawVariants": [
         {
           "docId": "SMPTE.ST339.2008",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "IEC.61937.2011": {
-      "refId": "IEC.61937.2011",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": false
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.753Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.ST339.2015",
           "type": "bibliographic",
           "cite": "",
           "href": "",
@@ -8007,7 +8101,9 @@
       "refId": "ISO.11172-3.1993",
       "normalized": null,
       "resolution": {
-        "sourcePresent": false
+        "sourcePresent": true,
+        "sourceDocId": "ISO.11172-3.1993",
+        "firstConfirmedSourceAt": "2025-12-04T20:26:12.124Z"
       },
       "provenance": {
         "firstSeen": "2025-10-07T22:56:58.737Z",
@@ -8311,7 +8407,9 @@
       "refId": "ISO.11664-5",
       "normalized": null,
       "resolution": {
-        "sourcePresent": false
+        "sourcePresent": true,
+        "sourceDocId": "ISO.11664-5.2024",
+        "firstConfirmedSourceAt": "2025-12-04T17:06:06.909Z"
       },
       "provenance": {
         "firstSeen": "2025-12-03T20:25:30.814Z",
@@ -8337,7 +8435,9 @@
       "refId": "ISO.11664-6",
       "normalized": null,
       "resolution": {
-        "sourcePresent": false
+        "sourcePresent": true,
+        "sourceDocId": "ISO.11664-6.2022",
+        "firstConfirmedSourceAt": "2025-12-04T17:06:06.909Z"
       },
       "provenance": {
         "firstSeen": "2025-12-03T20:25:30.814Z",
@@ -8639,7 +8739,9 @@
       "refId": "ISO.13818-3.1998",
       "normalized": null,
       "resolution": {
-        "sourcePresent": false
+        "sourcePresent": true,
+        "sourceDocId": "ISO.13818-3.1998",
+        "firstConfirmedSourceAt": "2025-12-04T20:02:02.242Z"
       },
       "provenance": {
         "firstSeen": "2025-10-07T22:56:58.737Z",
@@ -9633,32 +9735,6 @@
         }
       ]
     },
-    "ISO.15706": {
-      "refId": "ISO.15706",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": false
-      },
-      "provenance": {
-        "firstSeen": "2025-12-03T20:25:30.817Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "DCI.DCSS.v1.4.5.2024-0529",
-          "type": "normative",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
     "ISO.15706-1": {
       "refId": "ISO.15706-1",
       "normalized": null,
@@ -9679,6 +9755,14 @@
       "rawVariants": [
         {
           "docId": "DCI.DCSS.v1.4.2.2022-0615",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "DCI.DCSS.v1.4.5.2024-0529",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -10006,7 +10090,7 @@
       "normalized": null,
       "resolution": {
         "sourcePresent": true,
-        "sourceDocId": "ISO.5926.2023",
+        "sourceDocId": "ISO.11664-5.2024",
         "firstConfirmedSourceAt": "2025-10-07T22:56:58.828Z"
       },
       "provenance": {
@@ -10865,48 +10949,6 @@
         }
       ]
     },
-    "ISO.61937-2.2007": {
-      "refId": "ISO.61937-2.2007",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": false
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.751Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.ST338.2015",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "SMPTE.ST338.2016Am1.2019",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "SMPTE.ST338.2016",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
     "ISO.639-2.1998": {
       "refId": "ISO.639-2.1998",
       "normalized": null,
@@ -11274,7 +11316,7 @@
       "normalized": null,
       "resolution": {
         "sourcePresent": true,
-        "sourceDocId": "ISO.5926.2023",
+        "sourceDocId": "ISO.11664-5.2024",
         "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
       },
       "provenance": {
@@ -11695,7 +11737,9 @@
       "refId": "ISO.ICS",
       "normalized": null,
       "resolution": {
-        "sourcePresent": false
+        "sourcePresent": true,
+        "sourceDocId": "ISO.ICS",
+        "firstConfirmedSourceAt": "2025-12-04T19:43:54.059Z"
       },
       "provenance": {
         "firstSeen": "2025-10-07T22:56:58.714Z",
@@ -12175,7 +12219,9 @@
       "refId": "LOC.DWG",
       "normalized": null,
       "resolution": {
-        "sourcePresent": false
+        "sourcePresent": true,
+        "sourceDocId": "LOC.DWG",
+        "firstConfirmedSourceAt": "2025-12-04T18:59:30.843Z"
       },
       "provenance": {
         "firstSeen": "2025-10-07T22:56:58.713Z",
@@ -12203,7 +12249,9 @@
       "refId": "LOC.VSDX",
       "normalized": null,
       "resolution": {
-        "sourcePresent": false
+        "sourcePresent": true,
+        "sourceDocId": "LOC.VSDX",
+        "firstConfirmedSourceAt": "2025-12-04T18:59:30.846Z"
       },
       "provenance": {
         "firstSeen": "2025-10-07T22:56:58.713Z",
@@ -12247,34 +12295,6 @@
       "rawVariants": [
         {
           "docId": "SMPTE.RP2096-1.2017",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "M00395": {
-      "refId": "M00395",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": false,
-        "sourceDocId": null,
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.736Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.ST202.2010",
           "type": "bibliographic",
           "cite": "",
           "href": "",
@@ -13589,16 +13609,16 @@
         }
       ]
     },
-    "OMG.OCL.2-3-1": {
-      "refId": "OMG.OCL.2-3-1",
+    "OMG.OCL.2012": {
+      "refId": "OMG.OCL.2012",
       "normalized": null,
       "resolution": {
         "sourcePresent": true,
-        "sourceDocId": "OMG.OCL.2-3-1",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
+        "sourceDocId": "OMG.OCL.2012",
+        "firstConfirmedSourceAt": "2025-12-04T18:23:49.614Z"
       },
       "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.715Z",
+        "firstSeen": "2025-12-04T18:23:49.490Z",
         "mapSource": [
           "replay"
         ],
@@ -13617,16 +13637,16 @@
         }
       ]
     },
-    "OMG.UML.2-4-1": {
-      "refId": "OMG.UML.2-4-1",
+    "OMG.UML.2011": {
+      "refId": "OMG.UML.2011",
       "normalized": null,
       "resolution": {
         "sourcePresent": true,
-        "sourceDocId": "OMG.UML.2-4-1",
-        "firstConfirmedSourceAt": "2025-10-07T22:56:58.829Z"
+        "sourceDocId": "OMG.UML.2011",
+        "firstConfirmedSourceAt": "2025-12-04T18:23:49.614Z"
       },
       "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.715Z",
+        "firstSeen": "2025-12-04T18:23:49.494Z",
         "mapSource": [
           "replay"
         ],
@@ -13649,7 +13669,9 @@
       "refId": "OMG.XMI",
       "normalized": null,
       "resolution": {
-        "sourcePresent": false
+        "sourcePresent": true,
+        "sourceDocId": "OMG.XMI.2015",
+        "firstConfirmedSourceAt": "2025-12-04T18:23:49.614Z"
       },
       "provenance": {
         "firstSeen": "2025-10-07T22:56:58.713Z",
@@ -14037,14 +14059,34 @@
         }
       ]
     },
-    "R-REC-BS.1352.2007": {
-      "refId": "R-REC-BS.1352.2007",
+    "R-REC-BS.1352": {
+      "refId": "R-REC-BS.1352",
       "normalized": null,
       "resolution": {
-        "sourcePresent": false
+        "sourcePresent": true,
+        "sourceDocId": "R-REC-BS.1352-4.2023",
+        "firstConfirmedSourceAt": "2025-12-04T18:39:42.468Z"
       },
       "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.758Z",
+        "firstSeen": "2025-12-04T18:39:42.372Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      }
+    },
+    "R-REC-BS.1352-3": {
+      "refId": "R-REC-BS.1352-3",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "R-REC-BS.1352-3.2007",
+        "firstConfirmedSourceAt": "2025-12-04T18:45:48.307Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-04T18:45:48.211Z",
         "mapSource": [
           "replay"
         ],
@@ -17429,7 +17471,9 @@
       "refId": "RFC4187",
       "normalized": null,
       "resolution": {
-        "sourcePresent": false
+        "sourcePresent": true,
+        "sourceDocId": "RFC4187",
+        "firstConfirmedSourceAt": "2025-12-04T17:33:15.741Z"
       },
       "provenance": {
         "firstSeen": "2025-10-07T22:56:58.771Z",
@@ -22674,6 +22718,34 @@
         {
           "docId": "SMPTE.RP18.1995",
           "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "SMPTE.RP68.2002": {
+      "refId": "SMPTE.RP68.2002",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "SMPTE.RP68.2002",
+        "firstConfirmedSourceAt": "2025-12-04T18:13:41.987Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-04T18:13:41.877Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.RP69.2002",
+          "type": "bibliographic",
           "cite": "",
           "href": "",
           "rawRef": "",
@@ -41579,32 +41651,6 @@
         }
       ]
     },
-    "SMPTE.ST68.2002": {
-      "refId": "SMPTE.ST68.2002",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": false
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.728Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.RP69.2002",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
     "SMPTE.ST7.1994": {
       "refId": "SMPTE.ST7.1994",
       "normalized": null,
@@ -42597,34 +42643,6 @@
         }
       ]
     },
-    "W3C.WSDL.1.1": {
-      "refId": "W3C.WSDL.1.1",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": false
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.713Z",
-        "mapSource": [
-          "plain",
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json",
-          "=w3c web services description language (wsdl) 1.1"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.AG02",
-          "type": "bibliographic",
-          "cite": "W3C Web Services Description Language (WSDL) 1.1",
-          "href": "https://www.w3.org/TR/2001/NOTE-wsdl-20010315",
-          "rawRef": "W3C Web Services Description Language (WSDL) 1.1 url: https://www.w3.org/TR/2001/NOTE-wsdl-20010315",
-          "title": null
-        }
-      ]
-    },
     "W3C.qaframe.spec.20041122": {
       "refId": "W3C.qaframe.spec.20041122",
       "normalized": null,
@@ -42750,6 +42768,34 @@
         {
           "docId": "SMPTE.ST2067-2.2020",
           "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "W3C.wsdl.20010315": {
+      "refId": "W3C.wsdl.20010315",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "W3C.wsdl.20010315",
+        "firstConfirmedSourceAt": "2025-12-04T18:13:41.989Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-04T18:13:41.858Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.AG02",
+          "type": "bibliographic",
           "cite": "",
           "href": "",
           "rawRef": "",

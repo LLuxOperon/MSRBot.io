@@ -1,37 +1,38 @@
 {
-  "generatedAt": "2025-12-03T22:33:48.900Z",
+  "generatedAt": "2025-12-04T20:55:16.692Z",
   "sourcePath": "src/main/data/documents.json",
-  "sourceHash": "sha256:c3615fd223253c1c1c29e73113cc8a489b543b05124c1cff4441314f30be3c36",
+  "sourceHash": "sha256:9eed2ca2307cf102003bf1c2ad0a507c6d065c4525c8b6caabd59ff60258c3b4",
   "publisherCounts": {
-    "total": 2215,
+    "total": 2250,
     "counts": {
       "SMPTE": 1491,
-      "IETF": 111,
-      "ISO": 106,
-      "ISO/IEC": 87,
+      "IETF": 115,
+      "ISO": 108,
+      "ISO/IEC": 89,
       "DCI": 45,
-      "W3C": 35,
-      "ITU-R": 30,
+      "W3C": 37,
+      "ITU-R": 33,
       "IEEE": 24,
+      "AES": 24,
+      "IEC": 24,
       "NIST": 24,
       "AMPAS": 21,
-      "AES": 20,
-      "EBU": 17,
+      "EBU": 18,
       "ISDCF": 17,
-      "IEC": 15,
       "ITU-T": 13,
       "NAPM": 12,
       "ASA": 11,
       "NFPA": 8,
+      "ISO/CIE": 6,
       "CEA": 5,
       "EIDR": 5,
+      "IANA": 5,
       "IMFUG": 5,
       "ADDISON-WESLEY": 5,
+      "OMG": 5,
       "PIMA": 5,
       "UNICODE CONSORTIUM": 5,
       "JOHN WILEY & SONS, INC.": 4,
-      "IANA": 4,
-      "OMG": 4,
       "ACOUSTICAL SOCIETY OF AMERICA": 3,
       "ATSC": 3,
       "CIE": 3,
@@ -47,7 +48,7 @@
       "AMWA": 2,
       "CEN": 2,
       "ILLUMINATING ENGINEERING SOCIETY": 2,
-      "ISO/CIE": 2,
+      "LIBRARY OF CONGRESS": 2,
       "UL": 2,
       "UNITED NATIONS STATISTICS DIVISION": 2,
       "SCIENCEDIRECT": 1,
@@ -94,7 +95,7 @@
     }
   },
   "skippedDocs": {
-    "totalSkipped": 199,
+    "totalSkipped": 203,
     "byPublisher": {
       "NOKIA BELL LABS": {
         "count": 2,
@@ -1436,14 +1437,22 @@
         ]
       },
       "IANA": {
-        "count": 4,
+        "count": 5,
         "docIds": [
+          "IANA",
           "IANA.LSR",
           "IANA.MT",
           "IANA.PN",
           "IANA.STZ-DST"
         ],
         "items": [
+          {
+            "docId": "IANA",
+            "reason": "FILTERED",
+            "rule": "FILTERED",
+            "ruleDetail": "docType=Registry",
+            "category": "docType"
+          },
           {
             "docId": "IANA.LSR",
             "reason": "FILTERED",
@@ -1703,11 +1712,12 @@
         ]
       },
       "ISO": {
-        "count": 3,
+        "count": 4,
         "docIds": [
           "ISO.26428-1.20XX",
           "ISO.26430-9.2009am1.20XX",
-          "ISO.26433.2009am1.20XX"
+          "ISO.26433.2009am1.20XX",
+          "ISO.ICS"
         ],
         "items": [
           {
@@ -1730,6 +1740,13 @@
             "rule": "FILTERED",
             "ruleDetail": "status.draft=true",
             "category": "policy"
+          },
+          {
+            "docId": "ISO.ICS",
+            "reason": "FILTERED",
+            "rule": "FILTERED",
+            "ruleDetail": "docType=Guideline",
+            "category": "docType"
           }
         ]
       },
@@ -1836,6 +1853,29 @@
             "reason": "FILTERED",
             "rule": "FILTERED",
             "ruleDetail": "docType=White Paper",
+            "category": "docType"
+          }
+        ]
+      },
+      "LIBRARY OF CONGRESS": {
+        "count": 2,
+        "docIds": [
+          "LOC.DWG",
+          "LOC.VSDX"
+        ],
+        "items": [
+          {
+            "docId": "LOC.DWG",
+            "reason": "FILTERED",
+            "rule": "FILTERED",
+            "ruleDetail": "docType=Registry",
+            "category": "docType"
+          },
+          {
+            "docId": "LOC.VSDX",
+            "reason": "FILTERED",
+            "rule": "FILTERED",
+            "ruleDetail": "docType=Registry",
             "category": "docType"
           }
         ]
@@ -2061,20 +2101,36 @@
       }
     },
     "summaryByReason": {
-      "FILTERED": 199,
+      "FILTERED": 203,
       "UNKEYED": 0,
       "UNKNOWN": 0
     }
   },
   "flagSummary": {
-    "totalFlags": 293,
+    "totalFlags": 305,
     "byType": {
       "DOCID_PUBDATE_MISMATCH": {
-        "count": 29,
+        "count": 36,
         "examples": [
           {
             "lineage": "AES||3|",
             "flag": "DOCID_PUBDATE_MISMATCH:AES3.2009:docIdYear=2009,pubYear=2015"
+          },
+          {
+            "lineage": "AES||3|1",
+            "flag": "DOCID_PUBDATE_MISMATCH:AES3-1.2009:docIdYear=2009,pubYear=2019"
+          },
+          {
+            "lineage": "AES||3|2",
+            "flag": "DOCID_PUBDATE_MISMATCH:AES3-2.2009:docIdYear=2009,pubYear=2019"
+          },
+          {
+            "lineage": "AES||3|3",
+            "flag": "DOCID_PUBDATE_MISMATCH:AES3-3.2009:docIdYear=2009,pubYear=2019"
+          },
+          {
+            "lineage": "AES||3|4",
+            "flag": "DOCID_PUBDATE_MISMATCH:AES3-4.2009:docIdYear=2009,pubYear=2019"
           },
           {
             "lineage": "AES||6|",
@@ -2109,6 +2165,10 @@
             "flag": "DOCID_PUBDATE_MISMATCH:IEC.60268-10.1991:docIdYear=1991,pubYear=2018"
           },
           {
+            "lineage": "IEC||61937|1",
+            "flag": "DOCID_PUBDATE_MISMATCH:IEC.61937-1.2007:docIdYear=2007,pubYear=2011"
+          },
+          {
             "lineage": "IEEE|STD|1180|",
             "flag": "DOCID_PUBDATE_MISMATCH:IEEE.STD1180.1990:docIdYear=1990,pubYear=1991"
           },
@@ -2131,6 +2191,14 @@
           {
             "lineage": "ISO||11664|1",
             "flag": "DOCID_PUBDATE_MISMATCH:ISO.11664-1.2007:docIdYear=2007,pubYear=2010"
+          },
+          {
+            "lineage": "ISO||11664|4",
+            "flag": "DOCID_PUBDATE_MISMATCH:ISO.11664-4.2019:docIdYear=2019,pubYear=2024"
+          },
+          {
+            "lineage": "ISO||11664|6",
+            "flag": "DOCID_PUBDATE_MISMATCH:ISO.11664-6.2022:docIdYear=2022,pubYear=2024"
           },
           {
             "lineage": "ISO||13818|1",
@@ -2191,7 +2259,7 @@
         ]
       },
       "SUPERSEDED_BY_OUT_OF_LINEAGE": {
-        "count": 95,
+        "count": 100,
         "examples": [
           {
             "lineage": "AIM|BC|4|",
@@ -2378,6 +2446,10 @@
             "flag": "SUPERSEDED_BY_OUT_OF_LINEAGE:RFC4051->RFC6931"
           },
           {
+            "lineage": "IETF|RFC|4187|",
+            "flag": "SUPERSEDED_BY_OUT_OF_LINEAGE:RFC4187->RFC5448"
+          },
+          {
             "lineage": "IETF|RFC|4234|",
             "flag": "SUPERSEDED_BY_OUT_OF_LINEAGE:RFC4234->RFC5234"
           },
@@ -2406,6 +2478,10 @@
             "flag": "SUPERSEDED_BY_OUT_OF_LINEAGE:RFC5246->RFC8446"
           },
           {
+            "lineage": "IETF|RFC|5448|",
+            "flag": "SUPERSEDED_BY_OUT_OF_LINEAGE:RFC5448->RFC9048"
+          },
+          {
             "lineage": "IETF|RFC|5785|",
             "flag": "SUPERSEDED_BY_OUT_OF_LINEAGE:RFC5785->RFC8615"
           },
@@ -2416,6 +2492,10 @@
           {
             "lineage": "IETF|RFC|7320|",
             "flag": "SUPERSEDED_BY_OUT_OF_LINEAGE:RFC7320->RFC8820"
+          },
+          {
+            "lineage": "IETF|RFC|9048|",
+            "flag": "SUPERSEDED_BY_OUT_OF_LINEAGE:RFC9048->RFC9678"
           },
           {
             "lineage": "ISO||3166|",
@@ -2440,6 +2520,10 @@
           {
             "lineage": "ISO||10646|1",
             "flag": "SUPERSEDED_BY_OUT_OF_LINEAGE:ISO.10646-1.2000->ISO.10646.2003"
+          },
+          {
+            "lineage": "ITU-R|BR|1352|",
+            "flag": "SUPERSEDED_BY_OUT_OF_LINEAGE:R-REC-BR.1352-3.2007->R-REC-BS.1352-3.2007"
           },
           {
             "lineage": "ITU-R|BT|6|",
@@ -2556,6 +2640,10 @@
           {
             "lineage": "W3C|ttaf1.dfxp||",
             "flag": "SUPERSEDED_BY_OUT_OF_LINEAGE:W3C.ttaf1.dfxp.20181108->W3C.ttml1.20181108"
+          },
+          {
+            "lineage": "W3C|wsdl||",
+            "flag": "SUPERSEDED_BY_OUT_OF_LINEAGE:W3C.wsdl.20010315->W3C.xkms2.20050628"
           },
           {
             "lineage": "W3C|xmlc14n||",
@@ -3323,6 +3411,154 @@
       ],
       "counts": {
         "bases": 2,
+        "amendments": 0,
+        "supplements": 0
+      }
+    },
+    {
+      "key": "AES||3|1",
+      "publisher": "AES",
+      "suite": null,
+      "number": "3",
+      "part": "1",
+      "docs": [
+        {
+          "docId": "AES3-1.2009",
+          "publicationDate": "2019-07-05",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "AES3-1.2009",
+      "latestAnyId": "AES3-1.2009",
+      "latestDateKey": "20190705",
+      "hasActiveBase": true,
+      "hasWithdrawn": false,
+      "hasStabilized": false,
+      "latestActiveBaseId": "AES3-1.2009",
+      "latestSupersededBaseId": null,
+      "prevBaseId": null,
+      "flagInconsistencies": [
+        "DOCID_PUBDATE_MISMATCH:AES3-1.2009:docIdYear=2009,pubYear=2019"
+      ],
+      "counts": {
+        "bases": 1,
+        "amendments": 0,
+        "supplements": 0
+      }
+    },
+    {
+      "key": "AES||3|2",
+      "publisher": "AES",
+      "suite": null,
+      "number": "3",
+      "part": "2",
+      "docs": [
+        {
+          "docId": "AES3-2.2009",
+          "publicationDate": "2019-07-05",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "AES3-2.2009",
+      "latestAnyId": "AES3-2.2009",
+      "latestDateKey": "20190705",
+      "hasActiveBase": true,
+      "hasWithdrawn": false,
+      "hasStabilized": false,
+      "latestActiveBaseId": "AES3-2.2009",
+      "latestSupersededBaseId": null,
+      "prevBaseId": null,
+      "flagInconsistencies": [
+        "DOCID_PUBDATE_MISMATCH:AES3-2.2009:docIdYear=2009,pubYear=2019"
+      ],
+      "counts": {
+        "bases": 1,
+        "amendments": 0,
+        "supplements": 0
+      }
+    },
+    {
+      "key": "AES||3|3",
+      "publisher": "AES",
+      "suite": null,
+      "number": "3",
+      "part": "3",
+      "docs": [
+        {
+          "docId": "AES3-3.2009",
+          "publicationDate": "2019-07-05",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "AES3-3.2009",
+      "latestAnyId": "AES3-3.2009",
+      "latestDateKey": "20190705",
+      "hasActiveBase": true,
+      "hasWithdrawn": false,
+      "hasStabilized": false,
+      "latestActiveBaseId": "AES3-3.2009",
+      "latestSupersededBaseId": null,
+      "prevBaseId": null,
+      "flagInconsistencies": [
+        "DOCID_PUBDATE_MISMATCH:AES3-3.2009:docIdYear=2009,pubYear=2019"
+      ],
+      "counts": {
+        "bases": 1,
+        "amendments": 0,
+        "supplements": 0
+      }
+    },
+    {
+      "key": "AES||3|4",
+      "publisher": "AES",
+      "suite": null,
+      "number": "3",
+      "part": "4",
+      "docs": [
+        {
+          "docId": "AES3-4.2009",
+          "publicationDate": "2019-07-05",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "AES3-4.2009",
+      "latestAnyId": "AES3-4.2009",
+      "latestDateKey": "20190705",
+      "hasActiveBase": true,
+      "hasWithdrawn": false,
+      "hasStabilized": false,
+      "latestActiveBaseId": "AES3-4.2009",
+      "latestSupersededBaseId": null,
+      "prevBaseId": null,
+      "flagInconsistencies": [
+        "DOCID_PUBDATE_MISMATCH:AES3-4.2009:docIdYear=2009,pubYear=2019"
+      ],
+      "counts": {
+        "bases": 1,
         "amendments": 0,
         "supplements": 0
       }
@@ -5617,6 +5853,41 @@
       }
     },
     {
+      "key": "EBU|R|99|",
+      "publisher": "EBU",
+      "suite": "R",
+      "number": "99",
+      "part": null,
+      "docs": [
+        {
+          "docId": "EBU.R99.2011",
+          "publicationDate": "2011-10-31",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "EBU.R99.2011",
+      "latestAnyId": "EBU.R99.2011",
+      "latestDateKey": "20111031",
+      "hasActiveBase": true,
+      "hasWithdrawn": false,
+      "hasStabilized": false,
+      "latestActiveBaseId": "EBU.R99.2011",
+      "latestSupersededBaseId": null,
+      "prevBaseId": null,
+      "flagInconsistencies": [],
+      "counts": {
+        "bases": 1,
+        "amendments": 0,
+        "supplements": 0
+      }
+    },
+    {
       "key": "EBU|R|128|",
       "publisher": "EBU",
       "suite": "R",
@@ -6542,6 +6813,227 @@
       "flagInconsistencies": [],
       "counts": {
         "bases": 1,
+        "amendments": 0,
+        "supplements": 0
+      }
+    },
+    {
+      "key": "IEC||61937|1",
+      "publisher": "IEC",
+      "suite": null,
+      "number": "61937",
+      "part": "1",
+      "docs": [
+        {
+          "docId": "IEC.61937-1.2007",
+          "publicationDate": "2011-12-15",
+          "releaseTag": null,
+          "statusActive": false,
+          "statusSuperseded": true,
+          "statusWithdrawn": true,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        },
+        {
+          "docId": "IEC.61937-1.2021",
+          "publicationDate": "2021-02-24",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "IEC.61937-1.2021",
+      "latestAnyId": "IEC.61937-1.2021",
+      "latestDateKey": "20210224",
+      "hasActiveBase": true,
+      "hasWithdrawn": true,
+      "hasStabilized": false,
+      "latestActiveBaseId": "IEC.61937-1.2021",
+      "latestSupersededBaseId": "IEC.61937-1.2007",
+      "prevBaseId": "IEC.61937-1.2007",
+      "flagInconsistencies": [
+        "DOCID_PUBDATE_MISMATCH:IEC.61937-1.2007:docIdYear=2007,pubYear=2011"
+      ],
+      "counts": {
+        "bases": 2,
+        "amendments": 0,
+        "supplements": 0
+      }
+    },
+    {
+      "key": "IEC||61937|2",
+      "publisher": "IEC",
+      "suite": null,
+      "number": "61937",
+      "part": "2",
+      "docs": [
+        {
+          "docId": "IEC.61937-2.2007",
+          "publicationDate": "2007-05-23",
+          "releaseTag": null,
+          "statusActive": false,
+          "statusSuperseded": true,
+          "statusWithdrawn": true,
+          "statusStabilized": false,
+          "statusAmended": true,
+          "statusVersionless": false
+        },
+        {
+          "docId": "IEC.61937-2.2007Amd1.2011",
+          "publicationDate": "2011-12-15",
+          "releaseTag": null,
+          "statusActive": false,
+          "statusSuperseded": true,
+          "statusWithdrawn": true,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        },
+        {
+          "docId": "IEC.61937-2.2021",
+          "publicationDate": "2021-03-08",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": true,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "IEC.61937-2.2021",
+      "latestAnyId": "IEC.61937-2.2021",
+      "latestDateKey": "20210308",
+      "hasActiveBase": true,
+      "hasWithdrawn": true,
+      "hasStabilized": true,
+      "latestActiveBaseId": "IEC.61937-2.2021",
+      "latestSupersededBaseId": "IEC.61937-2.2007",
+      "prevBaseId": "IEC.61937-2.2007",
+      "flagInconsistencies": [],
+      "counts": {
+        "bases": 2,
+        "amendments": 1,
+        "supplements": 0
+      }
+    },
+    {
+      "key": "IEC||61937|4",
+      "publisher": "IEC",
+      "suite": null,
+      "number": "61937",
+      "part": "4",
+      "docs": [
+        {
+          "docId": "IEC.61937-4.2003",
+          "publicationDate": "2003-05-16",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "IEC.61937-4.2003",
+      "latestAnyId": "IEC.61937-4.2003",
+      "latestDateKey": "20030516",
+      "hasActiveBase": true,
+      "hasWithdrawn": false,
+      "hasStabilized": false,
+      "latestActiveBaseId": "IEC.61937-4.2003",
+      "latestSupersededBaseId": null,
+      "prevBaseId": null,
+      "flagInconsistencies": [],
+      "counts": {
+        "bases": 1,
+        "amendments": 0,
+        "supplements": 0
+      }
+    },
+    {
+      "key": "IEC||61937|6",
+      "publisher": "IEC",
+      "suite": null,
+      "number": "61937",
+      "part": "6",
+      "docs": [
+        {
+          "docId": "IEC.61937-6.2006",
+          "publicationDate": "2006-01-25",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "IEC.61937-6.2006",
+      "latestAnyId": "IEC.61937-6.2006",
+      "latestDateKey": "20060125",
+      "hasActiveBase": true,
+      "hasWithdrawn": false,
+      "hasStabilized": false,
+      "latestActiveBaseId": "IEC.61937-6.2006",
+      "latestSupersededBaseId": null,
+      "prevBaseId": null,
+      "flagInconsistencies": [],
+      "counts": {
+        "bases": 1,
+        "amendments": 0,
+        "supplements": 0
+      }
+    },
+    {
+      "key": "IEC||61937|11",
+      "publisher": "IEC",
+      "suite": null,
+      "number": "61937",
+      "part": "11",
+      "docs": [
+        {
+          "docId": "IEC.61937-11.2010",
+          "publicationDate": "2010-05-19",
+          "releaseTag": null,
+          "statusActive": false,
+          "statusSuperseded": true,
+          "statusWithdrawn": true,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        },
+        {
+          "docId": "IEC.61937-11.2021",
+          "publicationDate": "2021-07-15",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "IEC.61937-11.2021",
+      "latestAnyId": "IEC.61937-11.2021",
+      "latestDateKey": "20210715",
+      "hasActiveBase": true,
+      "hasWithdrawn": true,
+      "hasStabilized": false,
+      "latestActiveBaseId": "IEC.61937-11.2021",
+      "latestSupersededBaseId": "IEC.61937-11.2010",
+      "prevBaseId": "IEC.61937-11.2010",
+      "flagInconsistencies": [],
+      "counts": {
+        "bases": 2,
         "amendments": 0,
         "supplements": 0
       }
@@ -8674,6 +9166,43 @@
       }
     },
     {
+      "key": "IETF|RFC|4187|",
+      "publisher": "IETF",
+      "suite": "RFC",
+      "number": "4187",
+      "part": null,
+      "docs": [
+        {
+          "docId": "RFC4187",
+          "publicationDate": "2005-07-01",
+          "releaseTag": null,
+          "statusActive": false,
+          "statusSuperseded": true,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "RFC4187",
+      "latestAnyId": "RFC4187",
+      "latestDateKey": "20050701",
+      "hasActiveBase": false,
+      "hasWithdrawn": false,
+      "hasStabilized": false,
+      "latestActiveBaseId": null,
+      "latestSupersededBaseId": "RFC4187",
+      "prevBaseId": null,
+      "flagInconsistencies": [
+        "SUPERSEDED_BY_OUT_OF_LINEAGE:RFC4187->RFC5448"
+      ],
+      "counts": {
+        "bases": 1,
+        "amendments": 0,
+        "supplements": 0
+      }
+    },
+    {
       "key": "IETF|RFC|4234|",
       "publisher": "IETF",
       "suite": "RFC",
@@ -9346,6 +9875,43 @@
       "latestSupersededBaseId": null,
       "prevBaseId": null,
       "flagInconsistencies": [],
+      "counts": {
+        "bases": 1,
+        "amendments": 0,
+        "supplements": 0
+      }
+    },
+    {
+      "key": "IETF|RFC|5448|",
+      "publisher": "IETF",
+      "suite": "RFC",
+      "number": "5448",
+      "part": null,
+      "docs": [
+        {
+          "docId": "RFC5448",
+          "publicationDate": "2009-05-01",
+          "releaseTag": null,
+          "statusActive": false,
+          "statusSuperseded": true,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "RFC5448",
+      "latestAnyId": "RFC5448",
+      "latestDateKey": "20090501",
+      "hasActiveBase": false,
+      "hasWithdrawn": false,
+      "hasStabilized": false,
+      "latestActiveBaseId": null,
+      "latestSupersededBaseId": "RFC5448",
+      "prevBaseId": null,
+      "flagInconsistencies": [
+        "SUPERSEDED_BY_OUT_OF_LINEAGE:RFC5448->RFC9048"
+      ],
       "counts": {
         "bases": 1,
         "amendments": 0,
@@ -10829,6 +11395,43 @@
       }
     },
     {
+      "key": "IETF|RFC|9048|",
+      "publisher": "IETF",
+      "suite": "RFC",
+      "number": "9048",
+      "part": null,
+      "docs": [
+        {
+          "docId": "RFC9048",
+          "publicationDate": "2021-10-01",
+          "releaseTag": null,
+          "statusActive": false,
+          "statusSuperseded": true,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "RFC9048",
+      "latestAnyId": "RFC9048",
+      "latestDateKey": "20211001",
+      "hasActiveBase": false,
+      "hasWithdrawn": false,
+      "hasStabilized": false,
+      "latestActiveBaseId": null,
+      "latestSupersededBaseId": "RFC9048",
+      "prevBaseId": null,
+      "flagInconsistencies": [
+        "SUPERSEDED_BY_OUT_OF_LINEAGE:RFC9048->RFC9678"
+      ],
+      "counts": {
+        "bases": 1,
+        "amendments": 0,
+        "supplements": 0
+      }
+    },
+    {
       "key": "IETF|RFC|9141|",
       "publisher": "IETF",
       "suite": "RFC",
@@ -10889,6 +11492,41 @@
       "hasWithdrawn": false,
       "hasStabilized": false,
       "latestActiveBaseId": "RFC9231",
+      "latestSupersededBaseId": null,
+      "prevBaseId": null,
+      "flagInconsistencies": [],
+      "counts": {
+        "bases": 1,
+        "amendments": 0,
+        "supplements": 0
+      }
+    },
+    {
+      "key": "IETF|RFC|9678|",
+      "publisher": "IETF",
+      "suite": "RFC",
+      "number": "9678",
+      "part": null,
+      "docs": [
+        {
+          "docId": "RFC9678",
+          "publicationDate": "2025-03-01",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "RFC9678",
+      "latestAnyId": "RFC9678",
+      "latestDateKey": "20250301",
+      "hasActiveBase": true,
+      "hasWithdrawn": false,
+      "hasStabilized": false,
+      "latestActiveBaseId": "RFC9678",
       "latestSupersededBaseId": null,
       "prevBaseId": null,
       "flagInconsistencies": [],
@@ -11978,6 +12616,41 @@
       "counts": {
         "bases": 1,
         "amendments": 1,
+        "supplements": 0
+      }
+    },
+    {
+      "key": "ISO||2108|",
+      "publisher": "ISO",
+      "suite": null,
+      "number": "2108",
+      "part": null,
+      "docs": [
+        {
+          "docId": "ISO.2108.2017",
+          "publicationDate": "2017-12-01",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "ISO.2108.2017",
+      "latestAnyId": "ISO.2108.2017",
+      "latestDateKey": "20171201",
+      "hasActiveBase": true,
+      "hasWithdrawn": false,
+      "hasStabilized": false,
+      "latestActiveBaseId": "ISO.2108.2017",
+      "latestSupersededBaseId": null,
+      "prevBaseId": null,
+      "flagInconsistencies": [],
+      "counts": {
+        "bases": 1,
+        "amendments": 0,
         "supplements": 0
       }
     },
@@ -13434,6 +14107,41 @@
       }
     },
     {
+      "key": "ISO||11172|3",
+      "publisher": "ISO",
+      "suite": null,
+      "number": "11172",
+      "part": "3",
+      "docs": [
+        {
+          "docId": "ISO.11172-3.1993",
+          "publicationDate": "1993-08-12",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "ISO.11172-3.1993",
+      "latestAnyId": "ISO.11172-3.1993",
+      "latestDateKey": "19930812",
+      "hasActiveBase": true,
+      "hasWithdrawn": false,
+      "hasStabilized": false,
+      "latestActiveBaseId": "ISO.11172-3.1993",
+      "latestSupersededBaseId": null,
+      "prevBaseId": null,
+      "flagInconsistencies": [],
+      "counts": {
+        "bases": 1,
+        "amendments": 0,
+        "supplements": 0
+      }
+    },
+    {
       "key": "ISO||11179|1",
       "publisher": "ISO",
       "suite": null,
@@ -13565,6 +14273,41 @@
       }
     },
     {
+      "key": "ISO||11664|2",
+      "publisher": "ISO",
+      "suite": null,
+      "number": "11664",
+      "part": "2",
+      "docs": [
+        {
+          "docId": "ISO.11664-2.2022",
+          "publicationDate": "2022-08-01",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "ISO.11664-2.2022",
+      "latestAnyId": "ISO.11664-2.2022",
+      "latestDateKey": "20220801",
+      "hasActiveBase": true,
+      "hasWithdrawn": false,
+      "hasStabilized": false,
+      "latestActiveBaseId": "ISO.11664-2.2022",
+      "latestSupersededBaseId": null,
+      "prevBaseId": null,
+      "flagInconsistencies": [],
+      "counts": {
+        "bases": 1,
+        "amendments": 0,
+        "supplements": 0
+      }
+    },
+    {
       "key": "ISO||11664|3",
       "publisher": "ISO",
       "suite": null,
@@ -13606,6 +14349,115 @@
       "flagInconsistencies": [],
       "counts": {
         "bases": 2,
+        "amendments": 0,
+        "supplements": 0
+      }
+    },
+    {
+      "key": "ISO||11664|4",
+      "publisher": "ISO",
+      "suite": null,
+      "number": "11664",
+      "part": "4",
+      "docs": [
+        {
+          "docId": "ISO.11664-4.2019",
+          "publicationDate": "2024-06-01",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "ISO.11664-4.2019",
+      "latestAnyId": "ISO.11664-4.2019",
+      "latestDateKey": "20240601",
+      "hasActiveBase": true,
+      "hasWithdrawn": false,
+      "hasStabilized": false,
+      "latestActiveBaseId": "ISO.11664-4.2019",
+      "latestSupersededBaseId": null,
+      "prevBaseId": null,
+      "flagInconsistencies": [
+        "DOCID_PUBDATE_MISMATCH:ISO.11664-4.2019:docIdYear=2019,pubYear=2024"
+      ],
+      "counts": {
+        "bases": 1,
+        "amendments": 0,
+        "supplements": 0
+      }
+    },
+    {
+      "key": "ISO||11664|5",
+      "publisher": "ISO",
+      "suite": null,
+      "number": "11664",
+      "part": "5",
+      "docs": [
+        {
+          "docId": "ISO.11664-5.2024",
+          "publicationDate": "2024-06-01",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "ISO.11664-5.2024",
+      "latestAnyId": "ISO.11664-5.2024",
+      "latestDateKey": "20240601",
+      "hasActiveBase": true,
+      "hasWithdrawn": false,
+      "hasStabilized": false,
+      "latestActiveBaseId": "ISO.11664-5.2024",
+      "latestSupersededBaseId": null,
+      "prevBaseId": null,
+      "flagInconsistencies": [],
+      "counts": {
+        "bases": 1,
+        "amendments": 0,
+        "supplements": 0
+      }
+    },
+    {
+      "key": "ISO||11664|6",
+      "publisher": "ISO",
+      "suite": null,
+      "number": "11664",
+      "part": "6",
+      "docs": [
+        {
+          "docId": "ISO.11664-6.2022",
+          "publicationDate": "2024-06-01",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "ISO.11664-6.2022",
+      "latestAnyId": "ISO.11664-6.2022",
+      "latestDateKey": "20240601",
+      "hasActiveBase": true,
+      "hasWithdrawn": false,
+      "hasStabilized": false,
+      "latestActiveBaseId": "ISO.11664-6.2022",
+      "latestSupersededBaseId": null,
+      "prevBaseId": null,
+      "flagInconsistencies": [
+        "DOCID_PUBDATE_MISMATCH:ISO.11664-6.2022:docIdYear=2022,pubYear=2024"
+      ],
+      "counts": {
+        "bases": 1,
         "amendments": 0,
         "supplements": 0
       }
@@ -13781,6 +14633,41 @@
       ],
       "counts": {
         "bases": 2,
+        "amendments": 0,
+        "supplements": 0
+      }
+    },
+    {
+      "key": "ISO||13818|3",
+      "publisher": "ISO",
+      "suite": null,
+      "number": "13818",
+      "part": "3",
+      "docs": [
+        {
+          "docId": "ISO.13818-3.1998",
+          "publicationDate": "1998-04-01",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "ISO.13818-3.1998",
+      "latestAnyId": "ISO.13818-3.1998",
+      "latestDateKey": "19980401",
+      "hasActiveBase": true,
+      "hasWithdrawn": false,
+      "hasStabilized": false,
+      "latestActiveBaseId": "ISO.13818-3.1998",
+      "latestSupersededBaseId": null,
+      "prevBaseId": null,
+      "flagInconsistencies": [],
+      "counts": {
+        "bases": 1,
         "amendments": 0,
         "supplements": 0
       }
@@ -16495,22 +17382,34 @@
           "statusStabilized": false,
           "statusAmended": false,
           "statusVersionless": false
+        },
+        {
+          "docId": "R-REC-BR.1352-3.2007",
+          "publicationDate": "2007-12-14",
+          "releaseTag": null,
+          "statusActive": false,
+          "statusSuperseded": true,
+          "statusWithdrawn": true,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
         }
       ],
-      "latestBaseId": "R-REC-BR.1352-2.2002",
-      "latestAnyId": "R-REC-BR.1352-2.2002",
-      "latestDateKey": "20020601",
+      "latestBaseId": "R-REC-BR.1352-3.2007",
+      "latestAnyId": "R-REC-BR.1352-3.2007",
+      "latestDateKey": "20071214",
       "hasActiveBase": false,
-      "hasWithdrawn": false,
+      "hasWithdrawn": true,
       "hasStabilized": false,
       "latestActiveBaseId": null,
-      "latestSupersededBaseId": "R-REC-BR.1352-2.2002",
+      "latestSupersededBaseId": "R-REC-BR.1352-3.2007",
       "prevBaseId": null,
       "flagInconsistencies": [
+        "SUPERSEDED_BY_OUT_OF_LINEAGE:R-REC-BR.1352-3.2007->R-REC-BS.1352-3.2007",
         "DOCID_PUBDATE_MISMATCH:R-REC-BR.1352-1.2002:docIdYear=2002,pubYear=2001"
       ],
       "counts": {
-        "bases": 2,
+        "bases": 3,
         "amendments": 0,
         "supplements": 0
       }
@@ -16581,6 +17480,52 @@
       "flagInconsistencies": [],
       "counts": {
         "bases": 1,
+        "amendments": 0,
+        "supplements": 0
+      }
+    },
+    {
+      "key": "ITU-R|BS|1352|",
+      "publisher": "ITU-R",
+      "suite": "BS",
+      "number": "1352",
+      "part": null,
+      "docs": [
+        {
+          "docId": "R-REC-BS.1352-3.2007",
+          "publicationDate": "2007-12-14",
+          "releaseTag": null,
+          "statusActive": false,
+          "statusSuperseded": true,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        },
+        {
+          "docId": "R-REC-BS.1352-4.2023",
+          "publicationDate": "2023-05-28",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "R-REC-BS.1352-4.2023",
+      "latestAnyId": "R-REC-BS.1352-4.2023",
+      "latestDateKey": "20230528",
+      "hasActiveBase": true,
+      "hasWithdrawn": false,
+      "hasStabilized": false,
+      "latestActiveBaseId": "R-REC-BS.1352-4.2023",
+      "latestSupersededBaseId": "R-REC-BS.1352-3.2007",
+      "prevBaseId": "R-REC-BS.1352-3.2007",
+      "flagInconsistencies": [],
+      "counts": {
+        "bases": 2,
         "amendments": 0,
         "supplements": 0
       }
@@ -18597,7 +19542,7 @@
       "part": null,
       "docs": [
         {
-          "docId": "OMG.OCL.2-3-1",
+          "docId": "OMG.OCL.2012",
           "publicationDate": "2012-01-01",
           "releaseTag": null,
           "statusActive": false,
@@ -18608,7 +19553,7 @@
           "statusVersionless": false
         },
         {
-          "docId": "OMG.OCL.2-4",
+          "docId": "OMG.OCL.2014",
           "publicationDate": "2014-02-01",
           "releaseTag": null,
           "statusActive": true,
@@ -18619,15 +19564,15 @@
           "statusVersionless": false
         }
       ],
-      "latestBaseId": "OMG.OCL.2-4",
-      "latestAnyId": "OMG.OCL.2-4",
+      "latestBaseId": "OMG.OCL.2014",
+      "latestAnyId": "OMG.OCL.2014",
       "latestDateKey": "20140201",
       "hasActiveBase": true,
       "hasWithdrawn": false,
       "hasStabilized": false,
-      "latestActiveBaseId": "OMG.OCL.2-4",
-      "latestSupersededBaseId": "OMG.OCL.2-3-1",
-      "prevBaseId": "OMG.OCL.2-3-1",
+      "latestActiveBaseId": "OMG.OCL.2014",
+      "latestSupersededBaseId": "OMG.OCL.2012",
+      "prevBaseId": "OMG.OCL.2012",
       "flagInconsistencies": [],
       "counts": {
         "bases": 2,
@@ -18643,7 +19588,7 @@
       "part": null,
       "docs": [
         {
-          "docId": "OMG.UML.2-4-1",
+          "docId": "OMG.UML.2011",
           "publicationDate": "2011-07-01",
           "releaseTag": null,
           "statusActive": false,
@@ -18654,7 +19599,7 @@
           "statusVersionless": false
         },
         {
-          "docId": "OMG.UML.2-5-1",
+          "docId": "OMG.UML.2017",
           "publicationDate": "2017-12-01",
           "releaseTag": null,
           "statusActive": true,
@@ -18665,18 +19610,53 @@
           "statusVersionless": false
         }
       ],
-      "latestBaseId": "OMG.UML.2-5-1",
-      "latestAnyId": "OMG.UML.2-5-1",
+      "latestBaseId": "OMG.UML.2017",
+      "latestAnyId": "OMG.UML.2017",
       "latestDateKey": "20171201",
       "hasActiveBase": true,
       "hasWithdrawn": false,
       "hasStabilized": false,
-      "latestActiveBaseId": "OMG.UML.2-5-1",
-      "latestSupersededBaseId": "OMG.UML.2-4-1",
-      "prevBaseId": "OMG.UML.2-4-1",
+      "latestActiveBaseId": "OMG.UML.2017",
+      "latestSupersededBaseId": "OMG.UML.2011",
+      "prevBaseId": "OMG.UML.2011",
       "flagInconsistencies": [],
       "counts": {
         "bases": 2,
+        "amendments": 0,
+        "supplements": 0
+      }
+    },
+    {
+      "key": "OMG|XMI||",
+      "publisher": "OMG",
+      "suite": "XMI",
+      "number": null,
+      "part": null,
+      "docs": [
+        {
+          "docId": "OMG.XMI.2015",
+          "publicationDate": "2015-06-01",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "OMG.XMI.2015",
+      "latestAnyId": "OMG.XMI.2015",
+      "latestDateKey": "20150601",
+      "hasActiveBase": true,
+      "hasWithdrawn": false,
+      "hasStabilized": false,
+      "latestActiveBaseId": "OMG.XMI.2015",
+      "latestSupersededBaseId": null,
+      "prevBaseId": null,
+      "flagInconsistencies": [],
+      "counts": {
+        "bases": 1,
         "amendments": 0,
         "supplements": 0
       }
@@ -57468,6 +58448,56 @@
       "flagInconsistencies": [],
       "counts": {
         "bases": 1,
+        "amendments": 0,
+        "supplements": 0
+      }
+    },
+    {
+      "key": "W3C|wsdl||",
+      "publisher": "W3C",
+      "suite": "wsdl",
+      "number": null,
+      "part": null,
+      "w3cFamily": "wsdl",
+      "w3cVersion": null,
+      "docs": [
+        {
+          "docId": "W3C.wsdl.20010315",
+          "publicationDate": "2001-03-15",
+          "releaseTag": null,
+          "statusActive": false,
+          "statusSuperseded": true,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        },
+        {
+          "docId": "W3C.wsdl.20070626",
+          "publicationDate": "2007-06-26",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "W3C.wsdl.20070626",
+      "latestAnyId": "W3C.wsdl.20070626",
+      "latestDateKey": "20070626",
+      "hasActiveBase": true,
+      "hasWithdrawn": false,
+      "hasStabilized": false,
+      "latestActiveBaseId": "W3C.wsdl.20070626",
+      "latestSupersededBaseId": "W3C.wsdl.20010315",
+      "prevBaseId": "W3C.wsdl.20010315",
+      "flagInconsistencies": [
+        "SUPERSEDED_BY_OUT_OF_LINEAGE:W3C.wsdl.20010315->W3C.xkms2.20050628"
+      ],
+      "counts": {
+        "bases": 2,
         "amendments": 0,
         "supplements": 0
       }

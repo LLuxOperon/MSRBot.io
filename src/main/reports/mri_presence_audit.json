@@ -1,73 +1,13 @@
 {
-  "generatedAt": "2025-12-03T22:34:45.649Z",
+  "generatedAt": "2025-12-04T20:55:19.756Z",
   "sourcePath": "src/main/data/documents.json",
-  "processedDocs": 2215,
+  "processedDocs": 2250,
   "replayMode": "full-replay",
   "seenRefs": 2917,
   "seenSightings": 2917,
-  "presentCount": 1032,
-  "missingCount": 38,
+  "presentCount": 1060,
+  "missingCount": 10,
   "missing": [
-    {
-      "refId": "AES3-1.2009",
-      "sourceDocId": null,
-      "sightingCount": 1,
-      "sightings": [
-        {
-          "docId": "SMPTE.ST339.2015",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    {
-      "refId": "AES3-2.2009",
-      "sourceDocId": null,
-      "sightingCount": 1,
-      "sightings": [
-        {
-          "docId": "SMPTE.ST339.2015",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    {
-      "refId": "AES3-3.2009",
-      "sourceDocId": null,
-      "sightingCount": 1,
-      "sightings": [
-        {
-          "docId": "SMPTE.ST339.2015",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    {
-      "refId": "AES3-4.2009",
-      "sourceDocId": null,
-      "sightingCount": 1,
-      "sightings": [
-        {
-          "docId": "SMPTE.ST339.2015",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
     {
       "refId": "ATSC.AC3.A52.AnnexB.2005",
       "sourceDocId": null,
@@ -107,172 +47,12 @@
       ]
     },
     {
-      "refId": "EBU.R99.2011",
-      "sourceDocId": null,
-      "sightingCount": 1,
-      "sightings": [
-        {
-          "docId": "SMPTE.ST382.2022",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    {
-      "refId": "IANA",
-      "sourceDocId": null,
-      "sightingCount": 1,
-      "sightings": [
-        {
-          "docId": "SMPTE.AG02",
-          "type": "bibliographic",
-          "cite": "IANA",
-          "href": "https://www.iana.org/",
-          "rawRef": "IANA url: https://www.iana.org/",
-          "title": null
-        }
-      ]
-    },
-    {
-      "refId": "IEC.61937-1.2007",
-      "sourceDocId": null,
-      "sightingCount": 2,
-      "sightings": [
-        {
-          "docId": "SMPTE.ST2041-2.2010",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "SMPTE.ST2041-3.2010",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    {
-      "refId": "IEC.61937-1.2011",
+      "refId": "IEC.61937",
       "sourceDocId": null,
       "sightingCount": 1,
       "sightings": [
         {
           "docId": "SMPTE.ST339.2015",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    {
-      "refId": "IEC.61937-11.2010",
-      "sourceDocId": null,
-      "sightingCount": 2,
-      "sightings": [
-        {
-          "docId": "SMPTE.ST2041-2.2010",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "SMPTE.ST2041-3.2010",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    {
-      "refId": "IEC.61937-2.2007",
-      "sourceDocId": null,
-      "sightingCount": 2,
-      "sightings": [
-        {
-          "docId": "SMPTE.ST2041-2.2010",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "SMPTE.ST2041-3.2010",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    {
-      "refId": "IEC.61937-2.2011",
-      "sourceDocId": null,
-      "sightingCount": 1,
-      "sightings": [
-        {
-          "docId": "SMPTE.ST339.2015",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    {
-      "refId": "IEC.61937-4.2003",
-      "sourceDocId": null,
-      "sightingCount": 2,
-      "sightings": [
-        {
-          "docId": "SMPTE.ST2041-2.2010",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "SMPTE.ST2041-3.2010",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    {
-      "refId": "IEC.61937-6.2006",
-      "sourceDocId": null,
-      "sightingCount": 2,
-      "sightings": [
-        {
-          "docId": "SMPTE.ST2041-2.2010",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "SMPTE.ST2041-3.2010",
           "type": "bibliographic",
           "cite": "",
           "href": "",
@@ -297,134 +77,12 @@
       ]
     },
     {
-      "refId": "IEC.61937.2011",
-      "sourceDocId": null,
-      "sightingCount": 1,
-      "sightings": [
-        {
-          "docId": "SMPTE.ST339.2015",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    {
-      "refId": "ISO.11172-3.1993",
-      "sourceDocId": null,
-      "sightingCount": 3,
-      "sightings": [
-        {
-          "docId": "SMPTE.ST2041-2.2010",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "SMPTE.ST2041-3.2010",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "SMPTE.ST338.2010",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    {
       "refId": "ISO.11664",
       "sourceDocId": null,
       "sightingCount": 1,
       "sightings": [
         {
           "docId": "DCI.DCA-DVD.2024-0424",
-          "type": "normative",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    {
-      "refId": "ISO.11664-5",
-      "sourceDocId": null,
-      "sightingCount": 1,
-      "sightings": [
-        {
-          "docId": "DCI.DCA-HDR.2024-0228",
-          "type": "normative",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    {
-      "refId": "ISO.11664-6",
-      "sourceDocId": null,
-      "sightingCount": 1,
-      "sightings": [
-        {
-          "docId": "DCI.DCA-HDR.2024-0228",
-          "type": "normative",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    {
-      "refId": "ISO.13818-3.1998",
-      "sourceDocId": null,
-      "sightingCount": 3,
-      "sightings": [
-        {
-          "docId": "SMPTE.ST2041-2.2010",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "SMPTE.ST2041-3.2010",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "SMPTE.ST338.2010",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    {
-      "refId": "ISO.15706",
-      "sourceDocId": null,
-      "sightingCount": 1,
-      "sightings": [
-        {
-          "docId": "DCI.DCSS.v1.4.5.2024-0529",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -449,37 +107,6 @@
       ]
     },
     {
-      "refId": "ISO.61937-2.2007",
-      "sourceDocId": null,
-      "sightingCount": 3,
-      "sightings": [
-        {
-          "docId": "SMPTE.ST338.2015",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "SMPTE.ST338.2016Am1.2019",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "SMPTE.ST338.2016",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    {
       "refId": "ISO.80000",
       "sourceDocId": null,
       "sightingCount": 1,
@@ -495,66 +122,6 @@
       ]
     },
     {
-      "refId": "ISO.ICS",
-      "sourceDocId": null,
-      "sightingCount": 1,
-      "sightings": [
-        {
-          "docId": "SMPTE.AG28",
-          "type": "normative",
-          "cite": "International Classification for Standards\n      (ICS)",
-          "href": "https://www.iso.org/publication/PUB100033.html",
-          "rawRef": "International Classification for Standards (ICS), International Organization for Standardization (ISO). url: https://www.iso.org/publication/PUB100033.html",
-          "title": "International Organization for Standardization (ISO)."
-        }
-      ]
-    },
-    {
-      "refId": "LOC.DWG",
-      "sourceDocId": null,
-      "sightingCount": 1,
-      "sightings": [
-        {
-          "docId": "SMPTE.AG02",
-          "type": "bibliographic",
-          "cite": "DWG (AutoCAD Drawing) Format Family",
-          "href": "https://www.loc.gov/preservation/digital/formats/fdd/fdd000445.shtml",
-          "rawRef": "DWG (AutoCAD Drawing) Format Family url: https://www.loc.gov/preservation/digital/formats/fdd/fdd000445.shtml",
-          "title": null
-        }
-      ]
-    },
-    {
-      "refId": "LOC.VSDX",
-      "sourceDocId": null,
-      "sightingCount": 1,
-      "sightings": [
-        {
-          "docId": "SMPTE.AG02",
-          "type": "bibliographic",
-          "cite": "Visio VSDX Drawing File Format",
-          "href": "https://www.loc.gov/preservation/digital/formats/fdd/fdd000021.shtml",
-          "rawRef": "Visio VSDX Drawing File Format url: https://www.loc.gov/preservation/digital/formats/fdd/fdd000021.shtml",
-          "title": null
-        }
-      ]
-    },
-    {
-      "refId": "M00395",
-      "sourceDocId": null,
-      "sightingCount": 1,
-      "sightings": [
-        {
-          "docId": "SMPTE.ST202.2010",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    {
       "refId": "NIST.FIPS.197-upd1",
       "sourceDocId": null,
       "sightingCount": 1,
@@ -566,51 +133,6 @@
           "href": "https://doi.org/10.6028/NIST.FIPS.197-upd1",
           "rawRef": "NIST FIPS 197, Advanced Encryption Standard (AES). url: https://doi.org/10.6028/NIST.FIPS.197-upd1",
           "title": "Advanced Encryption Standard (AES)."
-        }
-      ]
-    },
-    {
-      "refId": "OMG.XMI",
-      "sourceDocId": null,
-      "sightingCount": 1,
-      "sightings": [
-        {
-          "docId": "SMPTE.AG02",
-          "type": "bibliographic",
-          "cite": "XML Metadata Interchange (XMI)",
-          "href": "http://www.omg.org/spec/XMI/",
-          "rawRef": "XML Metadata Interchange (XMI) url: http://www.omg.org/spec/XMI/",
-          "title": null
-        }
-      ]
-    },
-    {
-      "refId": "R-REC-BS.1352.2007",
-      "sourceDocId": null,
-      "sightingCount": 1,
-      "sightings": [
-        {
-          "docId": "SMPTE.ST382.2022",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    {
-      "refId": "RFC4187",
-      "sourceDocId": null,
-      "sightingCount": 1,
-      "sightings": [
-        {
-          "docId": "SMPTE.ST429-6.2023-05",
-          "type": "normative",
-          "cite": "IETF RFC 4187",
-          "href": "https://www.rfc-editor.org/info/rfc4187",
-          "rawRef": "IETF RFC 4187, Extensible Authentication Protocol Method for 3rd Generation Authentication and Key Agreement (EAP-AKA). url: https://www.rfc-editor.org/info/rfc4187",
-          "title": "Extensible Authentication Protocol Method for 3rd Generation Authentication and Key Agreement (EAP-AKA)."
         }
       ]
     },
@@ -640,36 +162,6 @@
           "cite": "",
           "href": "",
           "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    {
-      "refId": "SMPTE.ST68.2002",
-      "sourceDocId": null,
-      "sightingCount": 1,
-      "sightings": [
-        {
-          "docId": "SMPTE.RP69.2002",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    {
-      "refId": "W3C.WSDL.1.1",
-      "sourceDocId": null,
-      "sightingCount": 1,
-      "sightings": [
-        {
-          "docId": "SMPTE.AG02",
-          "type": "bibliographic",
-          "cite": "W3C Web Services Description Language (WSDL) 1.1",
-          "href": "https://www.w3.org/TR/2001/NOTE-wsdl-20010315",
-          "rawRef": "W3C Web Services Description Language (WSDL) 1.1 url: https://www.w3.org/TR/2001/NOTE-wsdl-20010315",
           "title": null
         }
       ]
