@@ -1,72 +1,37 @@
 {
-  "generatedAt": "2025-12-03T22:21:19.543Z",
+  "generatedAt": "2025-12-04T23:28:35.076Z",
   "applyMode": true,
-  "considered": 9,
-  "eligible": 9,
-  "backfillable": 9,
-  "applied": 9,
+  "considered": 4,
+  "eligible": 4,
+  "backfillable": 4,
+  "applied": 4,
   "proposals": [
     {
-      "docId": "AMPAS.S.2014-002",
+      "docId": "ISO.11664-2.2022",
       "field": "resolvedHref",
       "old": null,
-      "new": "https://community.acescentral.com/uploads/default/original/2X/7/7df94d163d72ee5c835a46c8643a75eb636eaa98.pdf",
+      "new": "https://www.iso.org/standard/77215.html",
       "rule": "resolved"
     },
     {
-      "docId": "AMPAS.S.2014-006",
+      "docId": "ISO.11664-4.2019",
       "field": "resolvedHref",
       "old": null,
-      "new": "https://community.acescentral.com/uploads/default/original/2X/8/831f148aa5dcdb10a569255fa2341975ad31848e.pdf",
+      "new": "https://www.iso.org/standard/74166.html",
       "rule": "resolved"
     },
     {
-      "docId": "AMPAS.TB.2014-002",
+      "docId": "ISO.11664-5.2024",
       "field": "resolvedHref",
       "old": null,
-      "new": "https://community.acescentral.com/uploads/default/original/2X/0/093f97cf7804fd98dd8963b667c8bb24c768460c.pdf",
+      "new": "https://www.iso.org/standard/86224.html",
       "rule": "resolved"
     },
     {
-      "docId": "AMPAS.TB.2014-006",
+      "docId": "W3C.wsdl.20070626",
       "field": "resolvedHref",
       "old": null,
-      "new": "https://community.acescentral.com/uploads/default/original/2X/4/4a22aafa9f3e294771eca75d387226a22a234fa7.pdf",
-      "rule": "resolved"
-    },
-    {
-      "docId": "DCI.DCSS.v1.2.2012-1010",
-      "field": "resolvedHref",
-      "old": null,
-      "new": "https://www.dcimovies.com/dci-specification/?dcss-version=v1.2",
-      "rule": "resolved"
-    },
-    {
-      "docId": "DCI.DCSS.v1.3.2018-0627",
-      "field": "resolvedHref",
-      "old": null,
-      "new": "https://www.dcimovies.com/dci-specification/?dcss-version=v1.3",
-      "rule": "resolved"
-    },
-    {
-      "docId": "DCI.DCSS.v1.4.0.2020-0720",
-      "field": "resolvedHref",
-      "old": null,
-      "new": "https://www.dcimovies.com/dci-specification/?dcss-version=v1.4",
-      "rule": "resolved"
-    },
-    {
-      "docId": "DCI.DCSS.v1.4.1.2021-1013",
-      "field": "resolvedHref",
-      "old": null,
-      "new": "https://www.dcimovies.com/dci-specification/?dcss-version=v1.4.1",
-      "rule": "resolved"
-    },
-    {
-      "docId": "DCI.DCSS.v1.4.2.2022-0615",
-      "field": "resolvedHref",
-      "old": null,
-      "new": "https://www.dcimovies.com/dci-specification/?dcss-version=v1.4.2",
+      "new": "https://www.w3.org/TR/2007/REC-wsdl20-20070626/",
       "rule": "resolved"
     }
   ]
