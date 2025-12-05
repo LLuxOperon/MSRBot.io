@@ -1,38 +1,15 @@
 {
-  "generatedAt": "2025-12-04T23:35:30.642Z",
+  "generatedAt": "2025-12-05T21:22:05.882Z",
   "sourcePath": "src/main/data/documents.json",
-  "processedDocs": 2250,
+  "processedDocs": 2267,
   "replayMode": "full-replay",
   "seenRefs": 2917,
   "seenSightings": 2917,
-  "presentCount": 1060,
-  "missingCount": 10,
+  "presentCount": 1068,
+  "missingCount": 4,
   "missing": [
     {
-      "refId": "ATSC.AC3.A52.AnnexB.2005",
-      "sourceDocId": null,
-      "sightingCount": 2,
-      "sightings": [
-        {
-          "docId": "SMPTE.ST338.2010",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "SMPTE.ST339.2008",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    {
-      "refId": "DCI.DCA-HDR",
+      "refId": "ISO.11664.ALLPARTS",
       "sourceDocId": null,
       "sightingCount": 1,
       "sightings": [
@@ -47,92 +24,17 @@
       ]
     },
     {
-      "refId": "IEC.61937",
-      "sourceDocId": null,
-      "sightingCount": 1,
-      "sightings": [
-        {
-          "docId": "SMPTE.ST339.2015",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    {
-      "refId": "IEC.61937.2000",
-      "sourceDocId": null,
-      "sightingCount": 1,
-      "sightings": [
-        {
-          "docId": "SMPTE.ST339.2008",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    {
-      "refId": "ISO.11664",
-      "sourceDocId": null,
-      "sightingCount": 1,
-      "sightings": [
-        {
-          "docId": "DCI.DCA-DVD.2024-0424",
-          "type": "normative",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    {
-      "refId": "ISO.23003-1.2007",
-      "sourceDocId": null,
-      "sightingCount": 1,
-      "sightings": [
-        {
-          "docId": "SMPTE.ST2041-3.2010",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    {
-      "refId": "ISO.80000",
+      "refId": "ISO.80000.ALLPARTS",
       "sourceDocId": null,
       "sightingCount": 1,
       "sightings": [
         {
           "docId": "SMPTE.AG16",
           "type": "normative",
-          "cite": "ISO 80000 (all parts)",
+          "cite": "",
           "href": "",
-          "rawRef": "ISO 80000 (all parts), Quantities and units",
-          "title": "Quantities and units"
-        }
-      ]
-    },
-    {
-      "refId": "NIST.FIPS.197-upd1",
-      "sourceDocId": null,
-      "sightingCount": 1,
-      "sightings": [
-        {
-          "docId": "SMPTE.ST430-1.2023-09",
-          "type": "bibliographic",
-          "cite": "NIST FIPS 197",
-          "href": "https://doi.org/10.6028/NIST.FIPS.197-upd1",
-          "rawRef": "NIST FIPS 197, Advanced Encryption Standard (AES). url: https://doi.org/10.6028/NIST.FIPS.197-upd1",
-          "title": "Advanced Encryption Standard (AES)."
+          "rawRef": "",
+          "title": null
         }
       ]
     },

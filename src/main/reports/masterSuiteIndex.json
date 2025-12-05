@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2025-12-04T23:34:27.109Z",
+  "generatedAt": "2025-12-05T21:22:02.203Z",
   "sourcePath": "src/main/data/documents.json",
-  "sourceHash": "sha256:7253aac0b6240b70502f2f8ab87f628c63a42f5b04ab8653feb2da840c05edb1",
+  "sourceHash": "sha256:82cdfc91ad86cdf725ff0b1d3fff188577d409aa8066e81580b3529055138052",
   "publisherCounts": {
-    "total": 2250,
+    "total": 2267,
     "counts": {
       "SMPTE": 1491,
       "IETF": 115,
       "ISO": 108,
-      "ISO/IEC": 89,
+      "ISO/IEC": 94,
       "DCI": 45,
       "W3C": 37,
+      "IEC": 34,
       "ITU-R": 33,
+      "NIST": 25,
       "IEEE": 24,
       "AES": 24,
-      "IEC": 24,
-      "NIST": 24,
       "AMPAS": 21,
       "EBU": 18,
       "ISDCF": 17,
@@ -32,9 +32,9 @@
       "OMG": 5,
       "PIMA": 5,
       "UNICODE CONSORTIUM": 5,
+      "ATSC": 4,
       "JOHN WILEY & SONS, INC.": 4,
       "ACOUSTICAL SOCIETY OF AMERICA": 3,
-      "ATSC": 3,
       "CIE": 3,
       "DPP": 3,
       "ETSI": 3,
@@ -2107,10 +2107,10 @@
     }
   },
   "flagSummary": {
-    "totalFlags": 305,
+    "totalFlags": 315,
     "byType": {
       "DOCID_PUBDATE_MISMATCH": {
-        "count": 36,
+        "count": 39,
         "examples": [
           {
             "lineage": "AES||3|",
@@ -2166,7 +2166,19 @@
           },
           {
             "lineage": "IEC||61937|1",
+            "flag": "DOCID_PUBDATE_MISMATCH:IEC.61937-1.2003:docIdYear=2003,pubYear=2004"
+          },
+          {
+            "lineage": "IEC||61937|1",
             "flag": "DOCID_PUBDATE_MISMATCH:IEC.61937-1.2007:docIdYear=2007,pubYear=2011"
+          },
+          {
+            "lineage": "IEC||61937|2",
+            "flag": "DOCID_PUBDATE_MISMATCH:IEC.61937-2.2003:docIdYear=2003,pubYear=2004"
+          },
+          {
+            "lineage": "IEC||61937|3",
+            "flag": "DOCID_PUBDATE_MISMATCH:IEC.61937-3.2003:docIdYear=2003,pubYear=2004"
           },
           {
             "lineage": "IEEE|STD|1180|",
@@ -2259,7 +2271,7 @@
         ]
       },
       "SUPERSEDED_BY_OUT_OF_LINEAGE": {
-        "count": 100,
+        "count": 107,
         "examples": [
           {
             "lineage": "AIM|BC|4|",
@@ -2292,6 +2304,34 @@
           {
             "lineage": "DCI|DCA|S|",
             "flag": "SUPERSEDED_BY_OUT_OF_LINEAGE:DCI.DCA-S.2017-0711->DCI.DCSS.v1.4.2.2022-0615"
+          },
+          {
+            "lineage": "IEC||61937|",
+            "flag": "SUPERSEDED_BY_OUT_OF_LINEAGE:IEC.61937.2000->IEC.61937-1.2003"
+          },
+          {
+            "lineage": "IEC||61937|",
+            "flag": "SUPERSEDED_BY_OUT_OF_LINEAGE:IEC.61937.2000->IEC.61937-2.2003"
+          },
+          {
+            "lineage": "IEC||61937|",
+            "flag": "SUPERSEDED_BY_OUT_OF_LINEAGE:IEC.61937.2000->IEC.61937-3.2003"
+          },
+          {
+            "lineage": "IEC||61937|",
+            "flag": "SUPERSEDED_BY_OUT_OF_LINEAGE:IEC.61937.2000->IEC.61937-4.2003"
+          },
+          {
+            "lineage": "IEC||61937|",
+            "flag": "SUPERSEDED_BY_OUT_OF_LINEAGE:IEC.61937.2000->IEC.61937-5.2002"
+          },
+          {
+            "lineage": "IEC||61937|",
+            "flag": "SUPERSEDED_BY_OUT_OF_LINEAGE:IEC.61937.2000->IEC.61937-6.2002"
+          },
+          {
+            "lineage": "IEC||61937|",
+            "flag": "SUPERSEDED_BY_OUT_OF_LINEAGE:IEC.61937.2000->IEC.61937-7.2002"
           },
           {
             "lineage": "IEEE|STD|1003.1|",
@@ -4821,6 +4861,17 @@
           "statusVersionless": false
         },
         {
+          "docId": "ATSC.AC3.A52.2005",
+          "publicationDate": "2005-06-14",
+          "releaseTag": null,
+          "statusActive": false,
+          "statusSuperseded": true,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        },
+        {
           "docId": "ATSC.AC3.A52.2015",
           "publicationDate": "2015-11-24",
           "releaseTag": null,
@@ -4854,7 +4905,7 @@
       "prevBaseId": "ATSC.AC3.A52.2015",
       "flagInconsistencies": [],
       "counts": {
-        "bases": 2,
+        "bases": 3,
         "amendments": 0,
         "supplements": 1
       }
@@ -6818,12 +6869,66 @@
       }
     },
     {
+      "key": "IEC||61937|",
+      "publisher": "IEC",
+      "suite": null,
+      "number": "61937",
+      "part": null,
+      "docs": [
+        {
+          "docId": "IEC.61937.2000",
+          "publicationDate": "2000-04-18",
+          "releaseTag": null,
+          "statusActive": false,
+          "statusSuperseded": true,
+          "statusWithdrawn": true,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "IEC.61937.2000",
+      "latestAnyId": "IEC.61937.2000",
+      "latestDateKey": "20000418",
+      "hasActiveBase": false,
+      "hasWithdrawn": true,
+      "hasStabilized": false,
+      "latestActiveBaseId": null,
+      "latestSupersededBaseId": "IEC.61937.2000",
+      "prevBaseId": null,
+      "flagInconsistencies": [
+        "SUPERSEDED_BY_OUT_OF_LINEAGE:IEC.61937.2000->IEC.61937-1.2003",
+        "SUPERSEDED_BY_OUT_OF_LINEAGE:IEC.61937.2000->IEC.61937-2.2003",
+        "SUPERSEDED_BY_OUT_OF_LINEAGE:IEC.61937.2000->IEC.61937-3.2003",
+        "SUPERSEDED_BY_OUT_OF_LINEAGE:IEC.61937.2000->IEC.61937-4.2003",
+        "SUPERSEDED_BY_OUT_OF_LINEAGE:IEC.61937.2000->IEC.61937-5.2002",
+        "SUPERSEDED_BY_OUT_OF_LINEAGE:IEC.61937.2000->IEC.61937-6.2002",
+        "SUPERSEDED_BY_OUT_OF_LINEAGE:IEC.61937.2000->IEC.61937-7.2002"
+      ],
+      "counts": {
+        "bases": 1,
+        "amendments": 0,
+        "supplements": 0
+      }
+    },
+    {
       "key": "IEC||61937|1",
       "publisher": "IEC",
       "suite": null,
       "number": "61937",
       "part": "1",
       "docs": [
+        {
+          "docId": "IEC.61937-1.2003",
+          "publicationDate": "2004-03-11",
+          "releaseTag": null,
+          "statusActive": false,
+          "statusSuperseded": true,
+          "statusWithdrawn": true,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        },
         {
           "docId": "IEC.61937-1.2007",
           "publicationDate": "2011-12-15",
@@ -6857,10 +6962,11 @@
       "latestSupersededBaseId": "IEC.61937-1.2007",
       "prevBaseId": "IEC.61937-1.2007",
       "flagInconsistencies": [
+        "DOCID_PUBDATE_MISMATCH:IEC.61937-1.2003:docIdYear=2003,pubYear=2004",
         "DOCID_PUBDATE_MISMATCH:IEC.61937-1.2007:docIdYear=2007,pubYear=2011"
       ],
       "counts": {
-        "bases": 2,
+        "bases": 3,
         "amendments": 0,
         "supplements": 0
       }
@@ -6872,6 +6978,17 @@
       "number": "61937",
       "part": "2",
       "docs": [
+        {
+          "docId": "IEC.61937-2.2003",
+          "publicationDate": "2004-03-11",
+          "releaseTag": null,
+          "statusActive": false,
+          "statusSuperseded": true,
+          "statusWithdrawn": true,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        },
         {
           "docId": "IEC.61937-2.2007",
           "publicationDate": "2007-05-23",
@@ -6915,10 +7032,60 @@
       "latestActiveBaseId": "IEC.61937-2.2021",
       "latestSupersededBaseId": "IEC.61937-2.2007",
       "prevBaseId": "IEC.61937-2.2007",
-      "flagInconsistencies": [],
+      "flagInconsistencies": [
+        "DOCID_PUBDATE_MISMATCH:IEC.61937-2.2003:docIdYear=2003,pubYear=2004"
+      ],
+      "counts": {
+        "bases": 3,
+        "amendments": 1,
+        "supplements": 0
+      }
+    },
+    {
+      "key": "IEC||61937|3",
+      "publisher": "IEC",
+      "suite": null,
+      "number": "61937",
+      "part": "3",
+      "docs": [
+        {
+          "docId": "IEC.61937-3.2003",
+          "publicationDate": "2004-03-11",
+          "releaseTag": null,
+          "statusActive": false,
+          "statusSuperseded": true,
+          "statusWithdrawn": true,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        },
+        {
+          "docId": "IEC.61937-3.2020",
+          "publicationDate": "2020-09-22",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "IEC.61937-3.2020",
+      "latestAnyId": "IEC.61937-3.2020",
+      "latestDateKey": "20200922",
+      "hasActiveBase": true,
+      "hasWithdrawn": true,
+      "hasStabilized": false,
+      "latestActiveBaseId": "IEC.61937-3.2020",
+      "latestSupersededBaseId": "IEC.61937-3.2003",
+      "prevBaseId": "IEC.61937-3.2003",
+      "flagInconsistencies": [
+        "DOCID_PUBDATE_MISMATCH:IEC.61937-3.2003:docIdYear=2003,pubYear=2004"
+      ],
       "counts": {
         "bases": 2,
-        "amendments": 1,
+        "amendments": 0,
         "supplements": 0
       }
     },
@@ -6958,12 +7125,69 @@
       }
     },
     {
+      "key": "IEC||61937|5",
+      "publisher": "IEC",
+      "suite": null,
+      "number": "61937",
+      "part": "5",
+      "docs": [
+        {
+          "docId": "IEC.61937-5.2002",
+          "publicationDate": "2002-08-08",
+          "releaseTag": null,
+          "statusActive": false,
+          "statusSuperseded": true,
+          "statusWithdrawn": true,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        },
+        {
+          "docId": "IEC.61937-5.2019",
+          "publicationDate": "2019-01-24",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "IEC.61937-5.2019",
+      "latestAnyId": "IEC.61937-5.2019",
+      "latestDateKey": "20190124",
+      "hasActiveBase": true,
+      "hasWithdrawn": true,
+      "hasStabilized": false,
+      "latestActiveBaseId": "IEC.61937-5.2019",
+      "latestSupersededBaseId": "IEC.61937-5.2002",
+      "prevBaseId": "IEC.61937-5.2002",
+      "flagInconsistencies": [],
+      "counts": {
+        "bases": 2,
+        "amendments": 0,
+        "supplements": 0
+      }
+    },
+    {
       "key": "IEC||61937|6",
       "publisher": "IEC",
       "suite": null,
       "number": "61937",
       "part": "6",
       "docs": [
+        {
+          "docId": "IEC.61937-6.2002",
+          "publicationDate": "2002-08-08",
+          "releaseTag": null,
+          "statusActive": false,
+          "statusSuperseded": true,
+          "statusWithdrawn": true,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        },
         {
           "docId": "IEC.61937-6.2006",
           "publicationDate": "2006-01-25",
@@ -6980,14 +7204,60 @@
       "latestAnyId": "IEC.61937-6.2006",
       "latestDateKey": "20060125",
       "hasActiveBase": true,
-      "hasWithdrawn": false,
+      "hasWithdrawn": true,
       "hasStabilized": false,
       "latestActiveBaseId": "IEC.61937-6.2006",
-      "latestSupersededBaseId": null,
-      "prevBaseId": null,
+      "latestSupersededBaseId": "IEC.61937-6.2002",
+      "prevBaseId": "IEC.61937-6.2002",
       "flagInconsistencies": [],
       "counts": {
-        "bases": 1,
+        "bases": 2,
+        "amendments": 0,
+        "supplements": 0
+      }
+    },
+    {
+      "key": "IEC||61937|7",
+      "publisher": "IEC",
+      "suite": null,
+      "number": "61937",
+      "part": "7",
+      "docs": [
+        {
+          "docId": "IEC.61937-7.2002",
+          "publicationDate": "2002-05-21",
+          "releaseTag": null,
+          "statusActive": false,
+          "statusSuperseded": true,
+          "statusWithdrawn": true,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        },
+        {
+          "docId": "IEC.61937-7.2016",
+          "publicationDate": "2016-05-13",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "IEC.61937-7.2016",
+      "latestAnyId": "IEC.61937-7.2016",
+      "latestDateKey": "20160513",
+      "hasActiveBase": true,
+      "hasWithdrawn": true,
+      "hasStabilized": false,
+      "latestActiveBaseId": "IEC.61937-7.2016",
+      "latestSupersededBaseId": "IEC.61937-7.2002",
+      "prevBaseId": "IEC.61937-7.2002",
+      "flagInconsistencies": [],
+      "counts": {
+        "bases": 2,
         "amendments": 0,
         "supplements": 0
       }
@@ -15957,6 +16227,85 @@
       }
     },
     {
+      "key": "ISO||23003|1",
+      "publisher": "ISO",
+      "suite": null,
+      "number": "23003",
+      "part": "1",
+      "docs": [
+        {
+          "docId": "ISO.23003-1.2007",
+          "publicationDate": "2007-02-01",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": true,
+          "statusVersionless": false
+        },
+        {
+          "docId": "ISO.23003-1.2007Amd1.2008",
+          "publicationDate": "2008-08-01",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        },
+        {
+          "docId": "ISO.23003-1.2007Amd2.2008",
+          "publicationDate": "2008-08-01",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        },
+        {
+          "docId": "ISO.23003-1.2007Amd3.2016",
+          "publicationDate": "2016-12-01",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        },
+        {
+          "docId": "ISO.23003-1.2007Amd4.2017",
+          "publicationDate": "2017-12-01",
+          "releaseTag": null,
+          "statusActive": true,
+          "statusSuperseded": false,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        }
+      ],
+      "latestBaseId": "ISO.23003-1.2007",
+      "latestAnyId": "ISO.23003-1.2007Amd4.2017",
+      "latestDateKey": "20171201",
+      "hasActiveBase": true,
+      "hasWithdrawn": false,
+      "hasStabilized": false,
+      "latestActiveBaseId": "ISO.23003-1.2007",
+      "latestSupersededBaseId": null,
+      "prevBaseId": null,
+      "flagInconsistencies": [],
+      "counts": {
+        "bases": 1,
+        "amendments": 4,
+        "supplements": 0
+      }
+    },
+    {
       "key": "ISO||23008|2",
       "publisher": "ISO",
       "suite": null,
@@ -19245,6 +19594,17 @@
           "docId": "NIST.FIPS.197",
           "publicationDate": "2001-11-26",
           "releaseTag": null,
+          "statusActive": false,
+          "statusSuperseded": true,
+          "statusWithdrawn": false,
+          "statusStabilized": false,
+          "statusAmended": false,
+          "statusVersionless": false
+        },
+        {
+          "docId": "NIST.FIPS.197-upd1",
+          "publicationDate": "2023-05-09",
+          "releaseTag": null,
           "statusActive": true,
           "statusSuperseded": false,
           "statusWithdrawn": false,
@@ -19253,18 +19613,18 @@
           "statusVersionless": false
         }
       ],
-      "latestBaseId": "NIST.FIPS.197",
-      "latestAnyId": "NIST.FIPS.197",
-      "latestDateKey": "20011126",
+      "latestBaseId": "NIST.FIPS.197-upd1",
+      "latestAnyId": "NIST.FIPS.197-upd1",
+      "latestDateKey": "20230509",
       "hasActiveBase": true,
       "hasWithdrawn": false,
       "hasStabilized": false,
-      "latestActiveBaseId": "NIST.FIPS.197",
-      "latestSupersededBaseId": null,
-      "prevBaseId": null,
+      "latestActiveBaseId": "NIST.FIPS.197-upd1",
+      "latestSupersededBaseId": "NIST.FIPS.197",
+      "prevBaseId": "NIST.FIPS.197",
       "flagInconsistencies": [],
       "counts": {
-        "bases": 1,
+        "bases": 2,
         "amendments": 0,
         "supplements": 0
       }

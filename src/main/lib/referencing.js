@@ -228,12 +228,19 @@ function _findSourceDocIdForRefId(refId) {
   let arr = _docBaseIndex ? _docBaseIndex.get(base) : null;
 
   // Fallback: if base map is empty (e.g., index built from array without docBase fields),
-  // derive candidates by scanning all docIds that start with `${base}.` (dated forms)
+  // derive candidates by scanning all docIds that start with `${base}.` or `${base}-`
   if ((!arr || arr.length === 0) && _docIdIndex && _docIdIndex.size) {
-    const prefix = `${base}.`;
+    const dotPrefix = `${base}.`;
+    const dashPrefix = `${base}-`;
     arr = [];
     for (const cand of _docIdIndex) {
-      if (cand === base || cand.startsWith(prefix)) arr.push(cand);
+      if (
+        cand === base ||
+        cand.startsWith(dotPrefix) ||
+        cand.startsWith(dashPrefix)
+      ) {
+        arr.push(cand);
+      }
     }
   }
 
@@ -244,9 +251,13 @@ function _findSourceDocIdForRefId(refId) {
     for (const cand of arr) {
       if (cand === base) return cand; // exact base id present
       const r = _dateRankFromId(cand);
-      if (r > bestRank) { bestRank = r; best = cand; }
+      if (r > bestRank) {
+        bestRank = r;
+        best = cand;
+      }
     }
-    return best || null;
+    // If all ranks were -Infinity (unparseable dates), just pick the first candidate
+    return best || arr[0] || null;
   }
   return null;
 }

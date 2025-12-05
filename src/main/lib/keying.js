@@ -294,14 +294,24 @@ function keyFromDocId(docId, doc = {}) {
   m = docId.match(/^NAB\.STD\.([A-Za-z0-9-]+)(?:\.(?:\d{8}|\d{4}(?:-\d{2})?))?$/i);
   if (m) return { publisher: 'NAB', suite: 'STD', number: m[1], part: null };
 
-  m = docId.match(/^NIST\.FIPS\.(\d+(?:-\d+)?)$/i);
-  if (m) { const token=m[1]; const fam=token.replace(/^(\d+).*/, '$1'); return { publisher:'NIST', suite:'FIPS', number:fam, part:null }; }
+  m = docId.match(/^NIST\.FIPS\.(\d+(?:-[0-9A-Za-z]+)?)$/i);
+  if (m) {
+    const token = m[1];
+    // Use the leading numeric portion as the family so variants like 180-4 or 197-upd1
+    // all key into the same lineage family (180, 197, etc.)
+    const fam = token.replace(/^(\d+).*/, '$1');
+    return { publisher: 'NIST', suite: 'FIPS', number: fam, part: null };
+  }
 
   m = docId.match(/^NIST\.([A-Za-z0-9-]+)(?:\.(?:\d{8}|\d{4}(?:-\d{2}){1,2}|\d{4}-\d{4}))?$/i);
   if (m) { const token=m[1].toUpperCase(); if (NIST_ALIAS_MAP[token]) { const a=NIST_ALIAS_MAP[token]; return { publisher:'NIST', suite:a.suite, number:a.number, part:a.part||null }; } }
 
   m = docId.match(/^NIST\.SP\.([A-Za-z0-9-]+)(?:\.(\d{4}(?:-\d{2})?|\d{8}))?$/i);
   if (m) { const tail=m[1]; const famMatch=tail.match(/^(\d+-[0-9A-Za-z]+?)(?=(?:pt|p|part)\s*\d+|(?:-?(?:ad|add|amd))(?:\s*\d+)?|r\s*\d+|$)/i); if (famMatch){ const family=famMatch[1]; const rest=tail.slice(family.length); let part=null; const pm=rest.match(/(?:^|[^A-Za-z])(pt|p|part)\s*([0-9]+)/i); if (pm) part=String(parseInt(pm[2],10)); return { publisher:'NIST', suite:'SP', number:family, part }; } return { publisher:'NIST', suite:'SP', number:tail, part:null }; }
+
+  // Bare DCI DCSS family id (used as an undated reference like "DCI.DCSS")
+  m = docId.match(/^DCI\.DCSS\.?$/i);
+  if (m) return { publisher: 'DCI', suite: 'DCSS', number: null, part: null };
 
   m = docId.match(/^DCI\.([A-Za-z]+)\.(v\d+(?:\.\d+)*)\.(?:\d{8}|\d{4}(?:-\d{2}){1,2}|\d{4}-\d{4})$/i);
   if (m && /^DCSS$/i.test(m[1])) return { publisher: 'DCI', suite: m[1].toUpperCase(), number: null, part: null };
