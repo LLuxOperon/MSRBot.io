@@ -172,7 +172,7 @@
     "docAffected": [
       "SMPTE.ST429-14.2014"
     ],
-    "newDoc": "SMPTE.ST429-14:2023-09",
+    "newDoc": "SMPTE.ST429-14.2023-09",
     "projectId": "st429-14-2014-rev-001",
     "projectLink": "https://web.powerapps.com/apps/c8863a6c-f697-4d22-94e7-e9a03ba895a4?projId=2028",
     "projectName": "ST 429-14 Revision - Packaging — Aux Data Track File",
@@ -184,7 +184,7 @@
     "docAffected": [
       "SMPTE.ST429-16.2014"
     ],
-    "newDoc": "SMPTE.ST429-14:2023-09",
+    "newDoc": "SMPTE.ST429-16.2023-09",
     "projectId": "st429-16-2014-rev-001",
     "projectLink": "https://web.powerapps.com/apps/c8863a6c-f697-4d22-94e7-e9a03ba895a4?projId=2027",
     "projectName": "ST 429-16 Revision - Composition Metadata and Guidelines",
@@ -376,7 +376,7 @@
       "SMPTE.ST430-12.2014",
       "SMPTE.ST430-12.2014Am1.2019"
     ],
-    "newDoc": "SMPTE.ST430-12:2023-9",
+    "newDoc": "SMPTE.ST430-12.2023-09",
     "projectId": "st430-12-2014-rev-001",
     "projectLink": "https://web.powerapps.com/apps/c8863a6c-f697-4d22-94e7-e9a03ba895a4?projId=2023",
     "projectName": "ST 430-12 Revision - Operations - FSK Synchronization Signal",

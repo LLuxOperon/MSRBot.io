@@ -1014,6 +1014,14 @@ function _doiUrl(doc){
 
       // Always consult MSI; only *upgrade* when the ref is undated.
       function getLatestRef(r, kind) {
+        // 0) Hard stop for ALLPARTS pseudo-ids: do NOT try to resolve these to a single dated doc
+        if (typeof r === 'string' && /\.ALLPARTS$/i.test(r)) {
+          const wasUndated = true;
+          refs.push(r);
+          // Mark this as a suite-level "all parts" reference for templates/consumers
+          return { id: r, undated: wasUndated, allParts: true };
+        }
+
         // Compute base form by stripping a date tail once; treat rest as the lineage base token
         const base = typeof r === 'string' ? r.replace(DATED_TAIL_RE, '') : r;
         const wasUndated = (base === r);
@@ -1204,6 +1212,7 @@ function _doiUrl(doc){
 
   hb.registerHelper("getStatus", function(docId) {
     if (!docStatuses.hasOwnProperty(docId)) {
+      console.warn(`[WARN:getStatus] docId "${docId}" not found in registry`);
       return "NOT IN REGISTRY";
     } else {
       return docStatuses[docId];

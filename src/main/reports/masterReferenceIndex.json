@@ -1,8 +1,8 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-04T20:55:19.745Z",
+  "generatedAt": "2025-12-05T21:02:55.966Z",
   "stats": {
-    "uniqueRefIds": 1070
+    "uniqueRefIds": 1072
   },
   "refs": {
     "10.1002-j.1538-7305.1925.tb00946.x": {
@@ -4837,6 +4837,42 @@
         }
       ]
     },
+    "ATSC.AC3.A52.2005": {
+      "refId": "ATSC.AC3.A52.2005",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": true,
+        "sourceDocId": "ATSC.AC3.A52.2005",
+        "firstConfirmedSourceAt": "2025-12-05T18:26:57.720Z"
+      },
+      "provenance": {
+        "firstSeen": "2025-12-05T18:26:57.636Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.ST338.2010",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        },
+        {
+          "docId": "SMPTE.ST339.2008",
+          "type": "bibliographic",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
     "ATSC.AC3.A52.AnnexA.1995": {
       "refId": "ATSC.AC3.A52.AnnexA.1995",
       "normalized": null,
@@ -4857,40 +4893,6 @@
       "rawVariants": [
         {
           "docId": "SMPTE.ST377.2004",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
-    },
-    "ATSC.AC3.A52.AnnexB.2005": {
-      "refId": "ATSC.AC3.A52.AnnexB.2005",
-      "normalized": null,
-      "resolution": {
-        "sourcePresent": false
-      },
-      "provenance": {
-        "firstSeen": "2025-10-07T22:56:58.751Z",
-        "mapSource": [
-          "replay"
-        ],
-        "mapDetails": [
-          "from-documents.json"
-        ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.ST338.2010",
-          "type": "bibliographic",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        },
-        {
-          "docId": "SMPTE.ST339.2008",
           "type": "bibliographic",
           "cite": "",
           "href": "",
@@ -5205,7 +5207,9 @@
       "refId": "DCI.DCA-HDR",
       "normalized": null,
       "resolution": {
-        "sourcePresent": false
+        "sourcePresent": true,
+        "sourceDocId": "DCI.DCA-HDR.2022-1014",
+        "firstConfirmedSourceAt": "2025-12-05T20:04:47.932Z"
       },
       "provenance": {
         "firstSeen": "2025-12-03T20:25:30.814Z",
@@ -6257,7 +6261,9 @@
       "refId": "IEC.61937",
       "normalized": null,
       "resolution": {
-        "sourcePresent": false
+        "sourcePresent": true,
+        "sourceDocId": "IEC.61937.2000",
+        "firstConfirmedSourceAt": "2025-12-05T19:02:04.724Z"
       },
       "provenance": {
         "firstSeen": "2025-12-04T20:55:19.622Z",
@@ -6559,7 +6565,9 @@
       "refId": "IEC.61937.2000",
       "normalized": null,
       "resolution": {
-        "sourcePresent": false
+        "sourcePresent": true,
+        "sourceDocId": "IEC.61937.2000",
+        "firstConfirmedSourceAt": "2025-12-05T19:02:04.725Z"
       },
       "provenance": {
         "firstSeen": "2025-10-07T22:56:58.752Z",
@@ -8241,7 +8249,9 @@
       "refId": "ISO.11664",
       "normalized": null,
       "resolution": {
-        "sourcePresent": false
+        "sourcePresent": true,
+        "sourceDocId": "ISO.11664-5.2024",
+        "firstConfirmedSourceAt": "2025-12-05T20:04:47.935Z"
       },
       "provenance": {
         "firstSeen": "2025-12-03T20:25:30.814Z",
@@ -8251,17 +8261,7 @@
         "mapDetails": [
           "from-documents.json"
         ]
-      },
-      "rawVariants": [
-        {
-          "docId": "DCI.DCA-DVD.2024-0424",
-          "type": "normative",
-          "cite": "",
-          "href": "",
-          "rawRef": "",
-          "title": null
-        }
-      ]
+      }
     },
     "ISO.11664-1": {
       "refId": "ISO.11664-1",
@@ -8451,6 +8451,32 @@
       "rawVariants": [
         {
           "docId": "DCI.DCA-HDR.2024-0228",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
+        }
+      ]
+    },
+    "ISO.11664.ALLPARTS": {
+      "refId": "ISO.11664.ALLPARTS",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": false
+      },
+      "provenance": {
+        "firstSeen": "2025-12-05T20:25:35.179Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "DCI.DCA-DVD.2024-0424",
           "type": "normative",
           "cite": "",
           "href": "",
@@ -10259,7 +10285,9 @@
       "refId": "ISO.23003-1.2007",
       "normalized": null,
       "resolution": {
-        "sourcePresent": false
+        "sourcePresent": true,
+        "sourceDocId": "ISO.23003-1.2007",
+        "firstConfirmedSourceAt": "2025-12-05T17:47:14.911Z"
       },
       "provenance": {
         "firstSeen": "2025-10-07T22:56:58.738Z",
@@ -11227,7 +11255,9 @@
       "refId": "ISO.80000",
       "normalized": null,
       "resolution": {
-        "sourcePresent": false
+        "sourcePresent": true,
+        "sourceDocId": "ISO.80000-1.2022",
+        "firstConfirmedSourceAt": "2025-12-05T20:04:47.935Z"
       },
       "provenance": {
         "firstSeen": "2025-10-07T22:56:58.713Z",
@@ -11239,17 +11269,7 @@
           "from-documents.json",
           "iso|iec designator"
         ]
-      },
-      "rawVariants": [
-        {
-          "docId": "SMPTE.AG16",
-          "type": "normative",
-          "cite": "ISO 80000 (all parts)",
-          "href": "",
-          "rawRef": "ISO 80000 (all parts), Quantities and units",
-          "title": "Quantities and units"
-        }
-      ]
+      }
     },
     "ISO.80000-1": {
       "refId": "ISO.80000-1",
@@ -11308,6 +11328,32 @@
           "href": "",
           "rawRef": "ISO 80000-2 (latest edition), Quantities and units — Part 2: Mathematics",
           "title": "(latest edition), Quantities and units — Part 2: Mathematics"
+        }
+      ]
+    },
+    "ISO.80000.ALLPARTS": {
+      "refId": "ISO.80000.ALLPARTS",
+      "normalized": null,
+      "resolution": {
+        "sourcePresent": false
+      },
+      "provenance": {
+        "firstSeen": "2025-12-05T21:02:55.818Z",
+        "mapSource": [
+          "replay"
+        ],
+        "mapDetails": [
+          "from-documents.json"
+        ]
+      },
+      "rawVariants": [
+        {
+          "docId": "SMPTE.AG16",
+          "type": "normative",
+          "cite": "",
+          "href": "",
+          "rawRef": "",
+          "title": null
         }
       ]
     },
@@ -13359,7 +13405,9 @@
       "refId": "NIST.FIPS.197-upd1",
       "normalized": null,
       "resolution": {
-        "sourcePresent": false
+        "sourcePresent": true,
+        "sourceDocId": "NIST.FIPS.197-upd1",
+        "firstConfirmedSourceAt": "2025-12-05T18:01:36.802Z"
       },
       "provenance": {
         "firstSeen": "2025-10-07T22:56:58.775Z",
